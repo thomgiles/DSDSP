@@ -22,27 +22,27 @@ jobs:
     - checkout: self
       submodules: true
 
-    # Install Python 3.11
     - task: UsePythonVersion@0
       inputs:
         versionSpec: '3.11'
       displayName: 'Set up Python 3.11'
 
-    # Install Quarto CLI
+    - script: |
+        pip install jupyter pyyaml
+      displayName: 'Install Jupyter and PyYAML'
+
     - script: |
         curl -sSLO https://quarto.org/download/latest/quarto-linux-amd64.deb
         sudo dpkg -i quarto-linux-amd64.deb
         quarto --version
       displayName: 'Install Quarto CLI'
 
-    # Install R (minimal)
     - script: |
         sudo apt-get update
         sudo apt-get install -y --no-install-recommends r-base
         R --version
       displayName: 'Install R'
 
-    # Configure R user lib and install renv
     - script: |
         mkdir -p ~/.R/library
         echo 'R_LIBS_USER="~/.R/library"' >> ~/.Renviron
@@ -50,32 +50,21 @@ jobs:
       workingDirectory: $(System.DefaultWorkingDirectory)
       displayName: 'Install and configure renv'
 
-    # Restore root-level renv environment
     - script: |
         Rscript -e 'renv::restore()'
       workingDirectory: $(System.DefaultWorkingDirectory)
       displayName: 'Restore R environment with renv'
 
-
-    # Install Python packages if requirements.txt exists
-    - script: |
-        if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
-      workingDirectory: presentations/course-a
-      displayName: 'Install Python packages'
-
-    # Render the Quarto site
     - script: |
         quarto render .
       workingDirectory: presentations/course-a
       displayName: 'Render Quarto site'
 
-    # Optional: Check site was generated
     - script: |
         test -f _site/index.html
       workingDirectory: presentations/course-a
       displayName: 'Verify site output'
 
-    # Deploy to Azure Static Web App
     - task: AzureStaticWebApp@0
       inputs:
         azure_static_web_apps_api_token: $(AZURE_STATIC_WEB_APPS_API_TOKEN_NICE_ROCK_0193CC903)
