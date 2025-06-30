@@ -1,5 +1,5 @@
 project:
-  type: revealjs
+  type: default
 
 format:
   revealjs:

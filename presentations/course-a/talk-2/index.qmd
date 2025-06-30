@@ -16,9 +16,12 @@ editor: visual
 
 This presentation demonstrates an R-only Reveal.js slide deck built with Quarto.
 
----
+------------------------------------------------------------------------
 
 ## R Chunk: Summary Statistics
 
-```{r}
+``` {R}
 summary(mtcars)
+```
+
+{{< include ../../shared-assets/disclaimer.qmd >}}  

@@ -1,0 +1,3 @@
+::: {.callout-warning title="Preliminary results"}
+These slides contain early-stage findings not yet peer-reviewed.
+:::
