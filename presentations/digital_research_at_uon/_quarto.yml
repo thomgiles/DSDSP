@@ -1,12 +1,11 @@
 project:
   type: website
-  output-dir: _site
 
 website:
-  title: "Course A"
+  title: "Essential Digital Skills"
   navbar:
     left:
-      - text: "Talk 1"
-        href: talk-1/index.html
-      - text: "Talk 2"
-        href: talk-2/index.html
+      - text: "EDS M1 (Web)"
+        href: "EDS-M1.html"
+      - text: "EDS M1 (Slides)"
+        href: "EDS-M1.revealjs.html"

@@ -1,30 +1,106 @@
 ---
-title: "Quarto Presentations"
-subtitle: "Create beautiful interactive slide decks with Reveal.js"
+title: "EDS M1: Digital Tools"
 format:
-  revealjs: 
+  html: default
+  revealjs:
     slide-number: true
-    chalkboard: 
-      buttons: false
+    chalkboard: true
     preview-links: auto
-jupyter: python3
 editor: visual
-resources:
-  - demo.pdf
 ---
 
-## Introduction
+# Module Introduction
 
-Welcome to an integrated Quarto talk using **Python** and **R**.
+## What is DS&DSP?
+
+-   Structured training programme for digital skills
+-   Emphasis on reproducible, collaborative, policy-aligned research
+
+::: callout-note
+**Activity:** Shared board (Padlet, Jamboard, etc.) Prompt: *“What’s one digital skill or tool you want to develop this year?”*
+:::
 
 ------------------------------------------------------------------------
 
-## Python Example
+# Institutional Systems
 
-```{python}
-import pandas as pd 
-df = pd.DataFrame({"x": range(5), "y": range(5)}) 
-df
-```
+## Microsoft 365 Tools
 
-{{< include ../../shared-assets/disclaimer.qmd >}}
+-   **Word/Excel**: Templates, track changes
+-   **Teams**: Collaboration and meetings
+-   **OneDrive**: Sync and share research files
+
+## University Platforms
+
+-   **UniCore**: HR, project finances
+-   **RIS**: Research profile and outputs
+
+::: callout-tip
+**Activity:** Pair Matching Match example tasks to the appropriate system (UniCore, Teams, OneDrive, RIS).
+:::
+
+------------------------------------------------------------------------
+
+# Research Identity
+
+## Persistent Profiles
+
+-   **ORCID**: Universal researcher ID
+-   **Scopus/Google Scholar**: Track citations
+
+## Importance
+
+-   Ensures attribution
+-   Enhances discoverability
+
+::: callout-note
+**Activity:** Self-audit Update ORCID and RIS profiles.
+:::
+
+------------------------------------------------------------------------
+
+# Tools for Coding
+
+## Types of Tools
+
+-   **IDEs**: VS Code, RStudio
+-   **Statistical environments**: R, Python
+-   **Version control**: Git/GitHub
+-   **Package managers**: pip, conda, renv
+-   **Databases**: SQL, MongoDB
+
+::: callout-tip
+**Activity:** Prompt Testing Try: *“Summarise this abstract”* in ChatGPT and critique the output.
+:::
+
+------------------------------------------------------------------------
+
+# Linked Training
+
+## Complementary Resources
+
+-   Microsoft 365 training
+-   RIS: Worktribe guidance
+-   Intro to GitHub, VS Code, Jupyter
+
+## Mandatory (if applicable)
+
+-   Info Compliance (PGTA)
+-   Digital Accessibility core training
+
+[Microsoft 365 Resources](https://support.microsoft.com/en-us/training)
+
+[UniCore Training](https://universityofnottingham.ac.uk/unicore)
+
+[GitHub & VS Code Workshop](https://github.com/UoNtraining/workshops)
+
+------------------------------------------------------------------------
+
+# Summary
+
+-   Understand institutional platforms and tools
+-   Maintain research identity
+-   Adopt coding best practices
+-   Explore linked training
+
+*Thank you – move on to Module 2: Data Governance & Policy*

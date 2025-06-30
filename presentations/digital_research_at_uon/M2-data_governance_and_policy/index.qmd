@@ -1,14 +1,11 @@
 ---
-title: "Quarto + R: Exploratory Data Analysis"
-subtitle: "Using Reveal.js with R"
+title: "EDS M1: Digital Tools"
 format:
+  html: default
   revealjs:
     slide-number: true
-    chalkboard:
-      buttons: false
+    chalkboard: true
     preview-links: auto
-    theme: default
-jupyter: false
 editor: visual
 ---
 
