@@ -1,0 +1,37 @@
+[
+  {
+    "objectID": "talk-1/index.html#introduction",
+    "href": "talk-1/index.html#introduction",
+    "title": "Quarto Presentations",
+    "section": "Introduction",
+    "text": "Introduction\nWelcome to an integrated Quarto talk using Python and R."
+  },
+  {
+    "objectID": "talk-1/index.html#python-example",
+    "href": "talk-1/index.html#python-example",
+    "title": "Quarto Presentations",
+    "section": "Python Example",
+    "text": "Python Example\nimport pandas as pd df = pd.DataFrame({“x”: range(5), “y”: range(5)}) df"
+  },
+  {
+    "objectID": "talk-2/index.html#welcome",
+    "href": "talk-2/index.html#welcome",
+    "title": "Quarto + R: Exploratory Data Analysis",
+    "section": "Welcome",
+    "text": "Welcome\nThis presentation demonstrates an R-only Reveal.js slide deck built with Quarto."
+  },
+  {
+    "objectID": "talk-2/index.html#r-chunk-summary-statistics",
+    "href": "talk-2/index.html#r-chunk-summary-statistics",
+    "title": "Quarto + R: Exploratory Data Analysis",
+    "section": "R Chunk: Summary Statistics",
+    "text": "R Chunk: Summary Statistics\nsummary(mtcars)"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Course A: Introduction",
+    "section": "",
+    "text": "Welcome to Course A\nThis course covers:\n\nTalk 1\nTalk 2"
+  }
+]
