@@ -1,0 +1,11 @@
+project:
+  type: revealjs
+
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    slide-number: true
+    transition: slide
+    chalkboard:
+      buttons: true
+    highlight-style: github

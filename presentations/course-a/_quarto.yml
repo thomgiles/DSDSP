@@ -1,0 +1,19 @@
+project:
+  type: website
+  output-dir: _site
+
+website:
+  title: "Course A"
+  navbar:
+    left:
+      - text: "Talk 1"
+        href: talk-1/index.html
+      - text: "Talk 2"
+        href: talk-2/index.html
+
+format:
+  revealjs:
+    slide-number: true
+    chalkboard:
+      buttons: false
+    preview-links: auto

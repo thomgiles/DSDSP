@@ -1,13 +1,13 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-echo "Rendering all Quarto presentations..."
+echo "Rendering Quarto courses and talks..."
 
-for dir in presentations/*; do
-  if [[ -f "$dir/index.qmd" ]]; then
-    echo "Rendering: $dir"
-    quarto render "$dir"
+for course in presentations/*; do
+  if [ -f "$course/_quarto.yml" ]; then
+    echo "Rendering course: $course"
+    quarto render "$course"
   else
-    echo "Skipping $dir (no index.qmd)"
+    echo "Skipping: $course (not a course root)"
   fi
 done

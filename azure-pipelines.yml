@@ -38,26 +38,22 @@ steps:
       pip install -r requirements.txt
     displayName: 'Install Python packages'
 
-  # --- Render all Quarto presentations ---
+  # --- Render all course presentations ---
   - script: |
       chmod +x .azure/scripts/render_quarto.sh
       .azure/scripts/render_quarto.sh
-    displayName: 'Render all Quarto presentations'
+    displayName: 'Render all Quarto course sites'
 
-  # --- Conditionally publish rendered _site for talk-1 ---
+  # --- Conditionally publish each course site if it exists ---
   - script: |
-      if [ -d "presentations/talk-1/_site" ]; then
-        echo "##vso[artifact.upload containerfolder=talk-1-site;artifactname=talk-1-site]presentations/talk-1/_site"
-      else
-        echo "Talk-1 site not found, skipping publish."
-      fi
-    displayName: 'Publish talk-1 site if exists'
-
-  # --- Conditionally publish rendered _site for talk-2 ---
-  - script: |
-      if [ -d "presentations/talk-2/_site" ]; then
-        echo "##vso[artifact.upload containerfolder=talk-2-site;artifactname=talk-2-site]presentations/talk-2/_site"
-      else
-        echo "Talk-2 site not found, skipping publish."
-      fi
-    displayName: 'Publish talk-2 site if exists'
+      for course in presentations/*; do
+        sitedir="$course/_site"
+        name="$(basename "$course")"
+        if [ -d "$sitedir" ]; then
+          echo "Publishing: $sitedir as artifact: $name"
+          echo "##vso[artifact.upload containerfolder=$name;artifactname=$name]$sitedir"
+        else
+          echo "Skipping $name (no _site directory)"
+        fi
+      done
+    displayName: 'Publish course sites as build artifacts'

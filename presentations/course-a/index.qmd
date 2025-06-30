@@ -1,0 +1,11 @@
+---
+title: "Course A: Introduction"
+format: html
+---
+
+# Welcome to Course A
+
+This course covers:
+
+- [Talk 1](talk-1/index.html)
+- [Talk 2](talk-2/index.html)
