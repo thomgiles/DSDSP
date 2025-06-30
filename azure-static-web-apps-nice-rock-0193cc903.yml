@@ -58,6 +58,11 @@ jobs:
       displayName: 'Restore R environment with renv'
 
     - script: |
+        Rscript -e 'pkgs <- c("knitr", "rmarkdown"); install_if_missing <- function(pkg) if (!requireNamespace(pkg, quietly = TRUE)) install.packages(pkg, repos = "https://cloud.r-project.org"); for (p in pkgs) install_if_missing(p)'
+      workingDirectory: $(System.DefaultWorkingDirectory)
+      displayName: 'Ensure knitr and rmarkdown are installed'
+
+    - script: |
         quarto render .
       workingDirectory: presentations/course-a
       displayName: 'Render Quarto site'
