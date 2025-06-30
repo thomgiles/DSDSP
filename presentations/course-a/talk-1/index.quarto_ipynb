@@ -1,0 +1,65 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "---\n",
+        "title: \"Quarto Presentations\"\n",
+        "subtitle: \"Create beautiful interactive slide decks with Reveal.js\"\n",
+        "format:\n",
+        "  revealjs: \n",
+        "    slide-number: true\n",
+        "    chalkboard: \n",
+        "      buttons: false\n",
+        "    preview-links: auto\n",
+        "jupyter: python3\n",
+        "editor: visual\n",
+        "resources:\n",
+        "  - demo.pdf\n",
+        "---\n",
+        "\n",
+        "## Introduction\n",
+        "\n",
+        "Welcome to an integrated Quarto talk using **Python** and **R**.\n",
+        "\n",
+        "------------------------------------------------------------------------\n",
+        "\n",
+        "## Python Example"
+      ],
+      "id": "37d4f54f"
+    },
+    {
+      "cell_type": "code",
+      "metadata": {},
+      "source": [
+        "import pandas as pd \n",
+        "df = pd.DataFrame({\"x\": range(5), \"y\": range(5)}) \n",
+        "df"
+      ],
+      "id": "fde2aeb7",
+      "execution_count": null,
+      "outputs": []
+    },
+    {
+      "cell_type": "markdown",
+      "metadata": {},
+      "source": [
+        "::: {.callout-warning title=\"Submodule\"}\n",
+        "These slides contain a submodule published in /presentation/shared-assets\n",
+        ":::\n"
+      ],
+      "id": "f1a1a89f"
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "python3",
+      "language": "python",
+      "display_name": "Python 3 (ipykernel)",
+      "path": "/Users/svztg/Library/Python/3.10/share/jupyter/kernels/python3"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}
