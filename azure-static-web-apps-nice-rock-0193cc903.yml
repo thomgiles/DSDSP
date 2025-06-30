@@ -30,8 +30,8 @@ jobs:
     - script: |
         pip install -r requirements.txt
         pip install jupyter pyyaml
-      workingDirectory: $(System.DefaultWorkingDirectory)
-      displayName: 'Install Python packages from root'
+      workingDirectory: presentations/course-a
+      displayName: 'Install Python packages from course directory'
 
     - script: |
         curl -sSLO https://quarto.org/download/latest/quarto-linux-amd64.deb
@@ -49,17 +49,17 @@ jobs:
         mkdir -p ~/.R/library
         echo 'R_LIBS_USER="~/.R/library"' >> ~/.Renviron
         Rscript -e 'install.packages("renv", repos = "https://cloud.r-project.org")'
-      workingDirectory: $(System.DefaultWorkingDirectory)
+      workingDirectory: presentations/course-a
       displayName: 'Install and configure renv'
 
     - script: |
         Rscript -e 'renv::restore()'
-      workingDirectory: $(System.DefaultWorkingDirectory)
+      workingDirectory: presentations/course-a
       displayName: 'Restore R environment with renv'
 
     - script: |
         Rscript -e 'renv::install(c("knitr", "rmarkdown")); renv::snapshot()'
-      workingDirectory: $(System.DefaultWorkingDirectory)
+      workingDirectory: presentations/course-a
       displayName: 'Install knitr and rmarkdown into renv'
 
     - script: |
