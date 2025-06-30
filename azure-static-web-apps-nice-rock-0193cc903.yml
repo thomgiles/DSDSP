@@ -58,9 +58,9 @@ jobs:
       displayName: 'Restore R environment with renv'
 
     - script: |
-        Rscript -e 'pkgs <- c("knitr", "rmarkdown"); install_if_missing <- function(pkg) if (!requireNamespace(pkg, quietly = TRUE)) install.packages(pkg, repos = "https://cloud.r-project.org"); for (p in pkgs) install_if_missing(p)'
+        Rscript -e 'renv::install(c("knitr", "rmarkdown")); renv::snapshot()'
       workingDirectory: $(System.DefaultWorkingDirectory)
-      displayName: 'Ensure knitr and rmarkdown are installed'
+      displayName: 'Install knitr and rmarkdown into renv'
 
     - script: |
         export R_LIBS_USER=$HOME/.R/library
