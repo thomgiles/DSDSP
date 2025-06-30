@@ -1,11 +1,12 @@
 ---
-title: "Course A: Introduction"
+title: "Essential Digital Skill:"
 format: html
 ---
 
-# Welcome to Course A
 
-This course covers:
+# Welcome to Essential Digital Skill
+
+This course establishes the baseline digital literacy and governance awareness required for reproducible, collaborative research at Nottingham. This component will give early career researchers practical familiarity with institutional systems, data policies, management good practice and introduces the basic concepts of agile delivery.
 
 - [Talk 1](M1-digital_tools/index.html)
 - [Talk 2](M2-data_governance_and_policy/index.html)
