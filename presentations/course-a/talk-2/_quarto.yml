@@ -3,7 +3,7 @@ project:
 
 format:
   revealjs:
-    theme: [default, custom.scss]
+    theme: [default]
     slide-number: true
     transition: slide
     chalkboard:
