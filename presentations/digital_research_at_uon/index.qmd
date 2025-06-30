@@ -7,6 +7,6 @@ format: html
 
 This course covers:
 
-- [Talk 1](talk-1/index.html)
-- [Talk 2](talk-2/index.html)
+- [Talk 1](M1-digital_tools/index.html)
+- [Talk 2](M2-data_governance_and_policy/index.html)
 
