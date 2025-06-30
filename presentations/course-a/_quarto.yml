@@ -10,10 +10,3 @@ website:
         href: talk-1/index.html
       - text: "Talk 2"
         href: talk-2/index.html
-
-format:
-  revealjs:
-    slide-number: true
-    chalkboard:
-      buttons: false
-    preview-links: auto
