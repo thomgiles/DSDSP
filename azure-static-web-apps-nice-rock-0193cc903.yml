@@ -47,14 +47,15 @@ jobs:
         mkdir -p ~/.R/library
         echo 'R_LIBS_USER="~/.R/library"' >> ~/.Renviron
         Rscript -e 'install.packages("renv", repos = "https://cloud.r-project.org")'
-      workingDirectory: presentations/course-a
+      workingDirectory: $(System.DefaultWorkingDirectory)
       displayName: 'Install and configure renv'
 
-    # Restore R environment using renv
+    # Restore root-level renv environment
     - script: |
         Rscript -e 'renv::restore()'
-      workingDirectory: presentations/course-a
+      workingDirectory: $(System.DefaultWorkingDirectory)
       displayName: 'Restore R environment with renv'
+
 
     # Install Python packages if requirements.txt exists
     - script: |
