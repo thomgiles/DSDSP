@@ -10,4 +10,9 @@ This course establishes the baseline digital literacy and governance awareness r
 
 - [Talk 1](M1-digital_tools/index.html)
 - [Talk 2](M2-data_governance_and_policy/index.html)
-
+- [Talk 3]
+- [Talk 4]
+- [Talk 5]
+- [Talk 6]
+- [Talk 7]
+- [Talk 8]
