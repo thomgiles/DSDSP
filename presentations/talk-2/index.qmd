@@ -1,23 +1,24 @@
 ---
-title: "Talk 1: Integrated Data Science"
+title: "Quarto + R: Exploratory Data Analysis"
+subtitle: "Using Reveal.js with R"
 format:
   revealjs:
-    theme: [default, custom.scss]
     slide-number: true
-    toc: true
-    code-fold: true
-jupyter: python3
+    chalkboard:
+      buttons: false
+    preview-links: auto
+    theme: default
+jupyter: false
 editor: visual
 ---
 
-## Introduction
+## Welcome
 
-Welcome to an integrated Quarto talk using **Python** and **R**.
+This presentation demonstrates an R-only Reveal.js slide deck built with Quarto.
 
 ---
 
-## Python Example
+## R Chunk: Summary Statistics
 
 ```{r}
-summary(cars)
-
+summary(mtcars)

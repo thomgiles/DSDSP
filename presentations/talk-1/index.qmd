@@ -1,13 +1,16 @@
 ---
-title: "Talk 1: Integrated Data Science"
+title: "Quarto Presentations"
+subtitle: "Create beautiful interactive slide decks with Reveal.js"
 format:
-  revealjs:
-    theme: [default, custom.scss]
+  revealjs: 
     slide-number: true
-    toc: true
-    code-fold: true
+    chalkboard: 
+      buttons: false
+    preview-links: auto
 jupyter: python3
 editor: visual
+resources:
+  - demo.pdf
 ---
 
 ## Introduction

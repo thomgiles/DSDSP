@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
-set -e
+set -euo pipefail
 
-echo "Rendering Quarto presentations..."
+echo "Rendering all Quarto presentations..."
 
 for dir in presentations/*; do
-  if [ -f "$dir/index.qmd" ]; then
+  if [[ -f "$dir/index.qmd" ]]; then
     echo "Rendering: $dir"
     quarto render "$dir"
+  else
+    echo "Skipping $dir (no index.qmd)"
   fi
 done
