@@ -13,26 +13,32 @@ steps:
     inputs:
       versionSpec: '3.11'
 
-  - task: RInstaller@1
-    inputs:
-      versionSpec: '4.3.1'
-
+  # --- Install R manually ---
   - script: |
-      pip install -r requirements.txt
-    displayName: 'Install Python packages'
+      sudo apt-get update
+      sudo apt-get install -y --no-install-recommends r-base
+      R --version
+    displayName: 'Install R manually'
 
+  # --- Install renv and restore R environment ---
   - script: |
       Rscript -e 'install.packages("renv", repos="https://cloud.r-project.org")'
       Rscript -e 'renv::restore()'
     displayName: 'Restore R packages with renv'
 
+  # --- Install Python packages for Quarto ---
+  - script: |
+      pip install -r requirements.txt
+    displayName: 'Install Python packages'
+
+  # --- Check and render Quarto presentations ---
   - script: |
       quarto check
       chmod +x .azure/scripts/render_quarto.sh
       .azure/scripts/render_quarto.sh
     displayName: 'Render all Quarto presentations'
 
-  # Publish each talk’s rendered output as a separate artifact
+  # --- Publish each presentation as a separate artifact ---
   - task: PublishBuildArtifacts@1
     inputs:
       PathtoPublish: 'presentations/talk-1/_site'
