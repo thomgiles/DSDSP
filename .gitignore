@@ -1,0 +1,14 @@
+.Rproj.user/
+*.html
+*.pdf
+*.docx
+*.pptx
+*.ipynb
+_quarto/
+_publish/
+_cache/
+__pycache__/
+.env
+.DS_Store
+renv/library/
+renv/python/

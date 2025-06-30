@@ -1,0 +1,24 @@
+---
+title: "Talk 1: Integrated Data Science"
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    slide-number: true
+    toc: true
+    code-fold: true
+jupyter: python3
+editor: visual
+---
+
+## Introduction
+
+Welcome to an integrated Quarto talk using **Python** and **R**.
+
+---
+
+## Python Example
+
+```{python}
+import pandas as pd
+df = pd.DataFrame({"x": range(5), "y": range(5)})
+df

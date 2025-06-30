@@ -1,0 +1,23 @@
+---
+title: "Talk 1: Integrated Data Science"
+format:
+  revealjs:
+    theme: [default, custom.scss]
+    slide-number: true
+    toc: true
+    code-fold: true
+jupyter: python3
+editor: visual
+---
+
+## Introduction
+
+Welcome to an integrated Quarto talk using **Python** and **R**.
+
+---
+
+## Python Example
+
+```{r}
+summary(cars)
+
