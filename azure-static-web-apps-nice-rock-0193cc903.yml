@@ -28,8 +28,10 @@ jobs:
       displayName: 'Set up Python 3.11'
 
     - script: |
+        pip install -r requirements.txt
         pip install jupyter pyyaml
-      displayName: 'Install Jupyter and PyYAML'
+      workingDirectory: $(System.DefaultWorkingDirectory)
+      displayName: 'Install Python packages from root'
 
     - script: |
         curl -sSLO https://quarto.org/download/latest/quarto-linux-amd64.deb
