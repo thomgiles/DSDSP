@@ -46,14 +46,17 @@ steps:
 
   # --- Conditionally publish each course site if it exists ---
   - script: |
+      ROOT=$(pwd)
       for course in presentations/*; do
-        sitedir="$course/_site"
+        sitedir="$ROOT/$course/_site"
         name="$(basename "$course")"
         if [ -d "$sitedir" ]; then
-          echo "Publishing: $sitedir as artifact: $name"
+          echo "✅ Found $sitedir. Publishing as artifact: $name"
           echo "##vso[artifact.upload containerfolder=$name;artifactname=$name]$sitedir"
         else
-          echo "Skipping $name (no _site directory)"
+          echo "⚠️  Not found: $sitedir"
+          ls -la "$course" || true
         fi
       done
-    displayName: 'Publish course sites as build artifacts'
+    displayName: 'Publish course sites as build artifacts (corrected paths)'
+
