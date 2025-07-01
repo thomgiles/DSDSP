@@ -7,7 +7,6 @@ format:
     chalkboard: true
 ---
 
-
 # Module Introduction
 
 ## What is DS&DSP?
