@@ -7,9 +7,10 @@ format: html
 
 The **Data Science & Digital Skills Programme (DS&DS)** is a tiered, in-person training pathway designed to build the core digital competencies, data literacy, and research software skills required for modern, reproducible, and data-intensive research. It supports doctoral researchers at the University of Nottingham in progressing from foundational digital fluency to advanced, domain-specific expertise.
 
-:::{.center}
-![DS&DSP Structure](./assets/DSDSP_plot.jpg){width=70%}
-:::
+## DS&DSP Interactive Overview
+
+<iframe width="768" height="496" src="https://miro.com/app/live-embed/uXjVIl-8SFk=/?focusWidget=3458764632598762721&embedMode=view_only_without_ui&embedId=142763511172" frameborder="0" scrolling="no" allow="fullscreen; clipboard-read; clipboard-write" allowfullscreen></iframe>
+
 
 Structured across **foundation**, **intermediate**, and **advanced** tiers, the programme is aligned with the University's strategic priorities in research integrity, digital enablement, and open scholarship. DS&DS is discipline-agnostic, inclusive of all technical backgrounds, and designed to integrate with existing institutional training provision.
 
