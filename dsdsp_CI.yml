@@ -30,7 +30,7 @@ jobs:
     - script: |
         pip install -r requirements.txt
         pip install jupyter pyyaml
-      workingDirectory: presentations/digital_research_at_uon
+      workingDirectory: training_sites/dsdsp
       displayName: 'Install Python packages from course directory'
 
     - script: |
@@ -49,33 +49,33 @@ jobs:
         mkdir -p ~/.R/library
         echo 'R_LIBS_USER="~/.R/library"' >> ~/.Renviron
         Rscript -e 'install.packages("renv", repos = "https://cloud.r-project.org")'
-      workingDirectory: presentations/digital_research_at_uon
+      workingDirectory: training_sites/dsdsp
       displayName: 'Install and configure renv'
 
     - script: |
         Rscript -e 'renv::restore()'
-      workingDirectory: presentations/digital_research_at_uon
+      workingDirectory: training_sites/dsdsp
       displayName: 'Restore R environment with renv'
 
     - script: |
         Rscript -e 'renv::install(c("knitr", "rmarkdown")); renv::snapshot()'
-      workingDirectory: presentations/digital_research_at_uon
+      workingDirectory: training_sites/dsdsp
       displayName: 'Install knitr and rmarkdown into renv'
 
     - script: |
         export R_LIBS_USER=$HOME/.R/library
         quarto render .
-      workingDirectory: presentations/digital_research_at_uon
+      workingDirectory: training_sites/dsdsp
       displayName: 'Render Quarto site (with user R library)'
 
     - script: |
         test -f _site/index.html
-      workingDirectory: presentations/digital_research_at_uon
+      workingDirectory: training_sites/dsdsp
       displayName: 'Verify site output'
 
     - task: AzureStaticWebApp@0
       inputs:
         azure_static_web_apps_api_token: $(AZURE_STATIC_WEB_APPS_API_TOKEN_NICE_ROCK_0193CC903)
-        app_location: "presentations/digital_research_at_uon"
+        app_location: "training_sites/dsdsp"
         output_location: "_site"
         api_location: ""

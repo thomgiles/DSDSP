@@ -1,0 +1,61 @@
+---
+title: "Data Science and Digital Skills Programme"
+format: html
+---
+
+# Data Science & Digital Skills Programme (DS&DS)
+
+The **Data Science & Digital Skills Programme (DS&DS)** is a tiered, in-person training pathway designed to build the core digital competencies, data literacy, and research software skills required for modern, reproducible, and data-intensive research. It supports doctoral researchers at the University of Nottingham in progressing from foundational digital fluency to advanced, domain-specific expertise.
+
+Structured across **foundation**, **intermediate**, and **advanced** tiers, the programme is aligned with the University's strategic priorities in research integrity, digital enablement, and open scholarship. DS&DS is discipline-agnostic, inclusive of all technical backgrounds, and designed to integrate with existing institutional training provision.
+
+---
+
+## Essential Digital Skills (EDS)
+
+- [Link to programme](esential_digital_skills/index.html)  
+
+### Overview
+
+**Essential Digital Skills (EDS)** is the foundation tier of the DS&DS programme. Delivered in person during the first year of the doctoral training pathway, EDS establishes baseline knowledge in digital infrastructure, data governance, research data management, and delivery methods. The course introduces key tools, concepts, and institutional practices required for effective and compliant participation in collaborative, data-driven research.
+
+### Structure
+
+EDS comprises **12 thematic modules**, delivered across **three core training days**, each built from short, focused teaching segments followed by hands-on exercises and group-based learning. The structure is designed to maximise engagement and practical relevance while accommodating a wide range of research domains and prior experience levels.
+
+### Delivery
+
+Each module combines 10–15 minute teaching components with activities such as:
+- Case-based tasks
+- Prompt testing (e.g. AI-assisted tools)
+- Scenario-based discussions
+- Matching exercises and collaborative reflection
+
+This blended approach ensures content is not only understood but contextualised to each participant’s research practice.
+
+### Assessment
+
+EDS is **formative** by design. Participants are encouraged to complete reflective **learning logs** after each training day. These include:
+- Key takeaways and concepts
+- Tools or practices to explore further
+- Reflections on applicability to their own work
+
+These outputs support personal development planning and can be used in supervisory reviews or training evaluations.
+
+### Feedback and Evaluation
+
+To support continuous improvement, feedback will be collected through:
+- Structured post-session surveys
+- Optional qualitative feedback on tools and formats
+- Informal group reflection and daily wrap-ups
+
+Feedback is reviewed regularly to ensure alignment with institutional frameworks and evolving researcher needs.
+
+### Participant Outcomes
+
+By the end of EDS, participants will:
+- Establish a baseline in digital fluency, reproducibility, and policy compliance  
+- Gain a working understanding of UoN’s research platforms, infrastructure, and governance frameworks  
+- Be ready to engage with more technical, applied, or specialist components in the intermediate and advanced DS&DS tiers  
+
+---
