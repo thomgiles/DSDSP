@@ -69,6 +69,10 @@
         displayName: 'Render Quarto site (with user R library)'
 
       - script: |
+        echo "Debug: list contents"
+          pwd
+          ls -al
+          ls -al _site || echo "_site not found"
           test -f _site/index.html
         workingDirectory: training_sites/dsdsp
         displayName: 'Verify site output'
