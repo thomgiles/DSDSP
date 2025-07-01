@@ -18,14 +18,14 @@
     "href": "esential_digital_skills/M2-data_governance_and_policy/index.html",
     "title": "EDS M2: Data Governance and Policy",
     "section": "",
-    "text": "Structured training programme for digital skills\nEmphasis on reproducible, collaborative, policy-aligned research\n\n\n\n\n\n\n\nNote\n\n\n\nActivity: Shared board (Padlet, Jamboard, etc.) Prompt: “What’s one digital skill or tool you want to develop this year?”"
+    "text": "Structured training programme for digital skills\nEmphasis on reproducible, collaborative, policy-aligned research\n\n\n\n\n\n\n\nNote\n\n\n\nActivity: Shared board (Padlet, Jamboard, etc.) Prompt: “What’s one digital skill or tool you want to develop this year?”\n\n\n???\nSpeaker notes go here. These will show in presenter view."
   },
   {
     "objectID": "esential_digital_skills/M2-data_governance_and_policy/index.html#what-is-dsdsp",
     "href": "esential_digital_skills/M2-data_governance_and_policy/index.html#what-is-dsdsp",
     "title": "EDS M2: Data Governance and Policy",
     "section": "",
-    "text": "Structured training programme for digital skills\nEmphasis on reproducible, collaborative, policy-aligned research\n\n\n\n\n\n\n\nNote\n\n\n\nActivity: Shared board (Padlet, Jamboard, etc.) Prompt: “What’s one digital skill or tool you want to develop this year?”"
+    "text": "Structured training programme for digital skills\nEmphasis on reproducible, collaborative, policy-aligned research\n\n\n\n\n\n\n\nNote\n\n\n\nActivity: Shared board (Padlet, Jamboard, etc.) Prompt: “What’s one digital skill or tool you want to develop this year?”\n\n\n???\nSpeaker notes go here. These will show in presenter view."
   },
   {
     "objectID": "esential_digital_skills/M2-data_governance_and_policy/index.html#microsoft-365-tools",
@@ -81,7 +81,7 @@
     "href": "esential_digital_skills/M2-data_governance_and_policy/revealjs.html#what-is-dsdsp",
     "title": "EDS M2: Data Governance and Policy",
     "section": "What is DS&DSP?",
-    "text": "What is DS&DSP?\n\nStructured training programme for digital skills\nEmphasis on reproducible, collaborative, policy-aligned research\n\n\n\n\n\n\n\nNote\n\n\nActivity: Shared board (Padlet, Jamboard, etc.) Prompt: “What’s one digital skill or tool you want to develop this year?”"
+    "text": "What is DS&DSP?\n\nStructured training programme for digital skills\nEmphasis on reproducible, collaborative, policy-aligned research\n\n\n\n\n\n\n\nNote\n\n\nActivity: Shared board (Padlet, Jamboard, etc.) Prompt: “What’s one digital skill or tool you want to develop this year?”\n\n\n\n???\nSpeaker notes go here. These will show in presenter view."
   },
   {
     "objectID": "esential_digital_skills/M2-data_governance_and_policy/revealjs.html#microsoft-365-tools",
@@ -133,74 +133,18 @@
     "text": "Mandatory (if applicable)\n\nInfo Compliance (PGTA)\nDigital Accessibility core training\n\nMicrosoft 365 Resources\nUniCore Training\nGitHub & VS Code Workshop"
   },
   {
-    "objectID": "esential_digital_skills/M1-digital_tools/revealjs.html#what-is-dsdsp",
-    "href": "esential_digital_skills/M1-digital_tools/revealjs.html#what-is-dsdsp",
-    "title": "EDS M1: Digital Tools",
-    "section": "What is DS&DSP?",
-    "text": "What is DS&DSP?\n\nStructured training programme for digital skills\nEmphasis on reproducible, collaborative, policy-aligned research\n\n\n\n\n\n\n\nNote\n\n\nActivity: Shared board (Padlet, Jamboard, etc.) Prompt: “What’s one digital skill or tool you want to develop this year?”"
-  },
-  {
-    "objectID": "esential_digital_skills/M1-digital_tools/revealjs.html#microsoft-365-tools",
-    "href": "esential_digital_skills/M1-digital_tools/revealjs.html#microsoft-365-tools",
-    "title": "EDS M1: Digital Tools",
-    "section": "Microsoft 365 Tools",
-    "text": "Microsoft 365 Tools\n\nWord/Excel: Templates, track changes\nTeams: Collaboration and meetings\nOneDrive: Sync and share research files"
-  },
-  {
-    "objectID": "esential_digital_skills/M1-digital_tools/revealjs.html#university-platforms",
-    "href": "esential_digital_skills/M1-digital_tools/revealjs.html#university-platforms",
-    "title": "EDS M1: Digital Tools",
-    "section": "University Platforms",
-    "text": "University Platforms\n\nUniCore: HR, project finances\nRIS: Research profile and outputs\n\n\n\n\n\n\n\nTip\n\n\nActivity: Pair Matching Match example tasks to the appropriate system (UniCore, Teams, OneDrive, RIS)."
-  },
-  {
-    "objectID": "esential_digital_skills/M1-digital_tools/revealjs.html#persistent-profiles",
-    "href": "esential_digital_skills/M1-digital_tools/revealjs.html#persistent-profiles",
-    "title": "EDS M1: Digital Tools",
-    "section": "Persistent Profiles",
-    "text": "Persistent Profiles\n\nORCID: Universal researcher ID\nScopus/Google Scholar: Track citations"
-  },
-  {
-    "objectID": "esential_digital_skills/M1-digital_tools/revealjs.html#importance",
-    "href": "esential_digital_skills/M1-digital_tools/revealjs.html#importance",
-    "title": "EDS M1: Digital Tools",
-    "section": "Importance",
-    "text": "Importance\n\nEnsures attribution\nEnhances discoverability\n\n\n\n\n\n\n\nNote\n\n\nActivity: Self-audit Update ORCID and RIS profiles."
-  },
-  {
-    "objectID": "esential_digital_skills/M1-digital_tools/revealjs.html#types-of-tools",
-    "href": "esential_digital_skills/M1-digital_tools/revealjs.html#types-of-tools",
-    "title": "EDS M1: Digital Tools",
-    "section": "Types of Tools",
-    "text": "Types of Tools\n\nIDEs: VS Code, RStudio\nStatistical environments: R, Python\nVersion control: Git/GitHub\nPackage managers: pip, conda, renv\nDatabases: SQL, MongoDB\n\n\n\n\n\n\n\nTip\n\n\nActivity: Prompt Testing Try: “Summarise this abstract” in ChatGPT and critique the output."
-  },
-  {
-    "objectID": "esential_digital_skills/M1-digital_tools/revealjs.html#complementary-resources",
-    "href": "esential_digital_skills/M1-digital_tools/revealjs.html#complementary-resources",
-    "title": "EDS M1: Digital Tools",
-    "section": "Complementary Resources",
-    "text": "Complementary Resources\n\nMicrosoft 365 training\nRIS: Worktribe guidance\nIntro to GitHub, VS Code, Jupyter"
-  },
-  {
-    "objectID": "esential_digital_skills/M1-digital_tools/revealjs.html#mandatory-if-applicable",
-    "href": "esential_digital_skills/M1-digital_tools/revealjs.html#mandatory-if-applicable",
-    "title": "EDS M1: Digital Tools",
-    "section": "Mandatory (if applicable)",
-    "text": "Mandatory (if applicable)\n\nInfo Compliance (PGTA)\nDigital Accessibility core training\n\nMicrosoft 365 Resources\nUniCore Training\nGitHub & VS Code Workshop"
-  },
-  {
     "objectID": "esential_digital_skills/M1-digital_tools/index.html",
     "href": "esential_digital_skills/M1-digital_tools/index.html",
     "title": "EDS M1: Digital Tools",
     "section": "",
-    "text": "Structured training programme for digital skills\nEmphasis on reproducible, collaborative, policy-aligned research\n\n\n\n\n\n\n\nNote\n\n\n\nActivity: Shared board (Padlet, Jamboard, etc.) Prompt: “What’s one digital skill or tool you want to develop this year?”"
+    "text": "Structured training programme for digital skills\nEmphasis on reproducible, collaborative, policy-aligned research\n\n\n\n\n\n\n\nNote\n\n\n\nActivity: Shared board (Padlet, Jamboard, etc.) Prompt: “What’s one digital skill or tool you want to develop this year?”\n\n\n???\nSpeaker notes go here. These will show in presenter view."
   },
   {
     "objectID": "esential_digital_skills/M1-digital_tools/index.html#what-is-dsdsp",
     "href": "esential_digital_skills/M1-digital_tools/index.html#what-is-dsdsp",
     "title": "EDS M1: Digital Tools",
     "section": "",
-    "text": "Structured training programme for digital skills\nEmphasis on reproducible, collaborative, policy-aligned research\n\n\n\n\n\n\n\nNote\n\n\n\nActivity: Shared board (Padlet, Jamboard, etc.) Prompt: “What’s one digital skill or tool you want to develop this year?”"
+    "text": "Structured training programme for digital skills\nEmphasis on reproducible, collaborative, policy-aligned research\n\n\n\n\n\n\n\nNote\n\n\n\nActivity: Shared board (Padlet, Jamboard, etc.) Prompt: “What’s one digital skill or tool you want to develop this year?”\n\n\n???\nSpeaker notes go here. These will show in presenter view."
   },
   {
     "objectID": "esential_digital_skills/M1-digital_tools/index.html#microsoft-365-tools",

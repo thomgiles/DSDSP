@@ -3,10 +3,6 @@ project:
 
 format:
   revealjs:
-    theme: default
     slide-number: true
-    transition: slide
-    chalkboard: true
-    highlight-style: github
-    preview-links: auto
     notes-server: true
+    chalkboard: true

@@ -1,15 +1,12 @@
 ---
 title: "EDS M1: Digital Tools"
 format:
-  html:
-    output-file: index.html
   revealjs:
-    output-file: revealjs.html
     slide-number: true
+    notes-server: true
     chalkboard: true
-    preview-links: auto
-editor: visual
 ---
+
 
 # Module Introduction
 
@@ -22,10 +19,9 @@ editor: visual
 **Activity:** Shared board (Padlet, Jamboard, etc.) Prompt: *“What’s one digital skill or tool you want to develop this year?”*
 :::
 
-???
-
+::: notes
 Speaker notes go here. These will show in presenter view.
-
+:::
 ------------------------------------------------------------------------
 
 # Institutional Systems
