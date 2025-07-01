@@ -22,6 +22,10 @@ editor: visual
 **Activity:** Shared board (Padlet, Jamboard, etc.) Prompt: *“What’s one digital skill or tool you want to develop this year?”*
 :::
 
+???
+
+Speaker notes go here. These will show in presenter view.
+
 ------------------------------------------------------------------------
 
 # Institutional Systems

@@ -8,3 +8,5 @@ format:
     transition: slide
     chalkboard: true
     highlight-style: github
+    preview-links: auto
+    notes-server: true
