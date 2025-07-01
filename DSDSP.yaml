@@ -60,7 +60,7 @@
         displayName: 'Render Quarto site'
 
       - script: |
-        echo "Debug: list contents"
+          echo "Debug: list contents"
           pwd
           ls -al
           ls -al _site || echo "_site not found"
