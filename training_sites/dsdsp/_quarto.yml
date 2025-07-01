@@ -1,12 +1,16 @@
-project:
-  type: website
-
 website:
   title: "Data Science and Digital Skills Programme"
   navbar:
     left:
-      - text: "Esential Digital Skill"
-        href: "esential_digital_skills/index.html"
+      - text: "Essential Digital Skill"
+        menu:
+          - text: "Overview"
+            href: "esential_digital_skills/index.html"
+          - text: "M1: Digital Tools"
+            href: "esential_digital_skills/M1-digital_tools/index.html"
+          - text: "M2: Data Governance & Policy"
+            href: "esential_digital_skills/M2-data_governance_and_policy/index.html"
+
 
 
   
