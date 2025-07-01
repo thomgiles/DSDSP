@@ -14,3 +14,15 @@ website:
             href: "esential_digital_skills/M1-digital_tools/index.html"
           - text: "M2: Data Governance & Policy"
             href: "esential_digital_skills/M2-data_governance_and_policy/index.html"
+  sidebar:
+    style: "floating"
+    contents:
+      - section: "Overview"
+        contents:
+          - index.qmd
+      - section: "Essential Digital Skills"
+        contents:
+          - esential_digital_skills/index.qmd
+          - esential_digital_skills/M1-digital_tools/index.qmd
+          - esential_digital_skills/M2-data_governance_and_policy/index.qmd
+

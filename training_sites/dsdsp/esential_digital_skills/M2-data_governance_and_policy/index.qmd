@@ -2,6 +2,10 @@
 title: "EDS M2: Data Governance and Policy"
 format:
   html:
+    theme: yeti
+    toc: true
+    number-sections: false
+    page-layout: article
     output-file: index.html
   revealjs:
     output-file: revealjs.html

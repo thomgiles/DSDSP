@@ -2,6 +2,10 @@
 title: "EDS M1: Digital Tools"
 format:
   html:
+    theme: yeti
+    toc: true
+    number-sections: false
+    page-layout: article
     output-file: index.html
   revealjs:
     output-file: revealjs.html
@@ -11,21 +15,46 @@ format:
 editor: visual
 ---
 
-
 # Module Introduction
 
-## What is DS&DSP?
+## What is DSDSP?
 
 -   Structured training programme for digital skills
 -   Emphasis on reproducible, collaborative, policy-aligned research
 
 ::: callout-note
-**Activity:** Shared board (Padlet, Jamboard, etc.) Prompt: *“What’s one digital skill or tool you want to develop this year?”*
+**Activity:** *“What’s one digital skill or tool you want to develop this year?”*
 :::
 
 ::: notes
-Speaker notes go here. These will show in presenter view.
+Welcome the group.
+
+Introduce yourself!
+
+Introduce the DSDSP programme
 :::
+
+------------------------------------------------------------------------
+
+# Module Introduction
+
+## What to Expect from this course
+
+Three components: 
+-   Esential Digital Skills (All students)
+-   Applied or theoretical programming (optional) 
+-   Advanced training in domain specific skills (optional) 
+
+**Activity:** *“What training do you think you need for your research needs?”*
+
+::: notes
+Welcome the group.
+
+Introduce yourself!
+
+Introduce the DSDSP programme
+::: 
+
 ------------------------------------------------------------------------
 
 # Institutional Systems

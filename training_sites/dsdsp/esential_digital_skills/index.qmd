@@ -1,9 +1,14 @@
 ---
 title: "Essential Digital Skill:"
-format: html
+format:
+  html:
+    theme: yeti
+    toc: true
+    number-sections: false
+    page-layout: article
 ---
 
-# Welcome to Essential Digital Skill
+# Course Info:
 
 This course establishes the baseline digital literacy and governance awareness required for reproducible, collaborative research at Nottingham. This component will give early career researchers practical familiarity with institutional systems, data policies, management good practice and introduces the basic concepts of agile delivery.
 
@@ -12,7 +17,7 @@ This course establishes the baseline digital literacy and governance awareness r
   - [Slides](M1-digital_tools/revealjs.html)
 - Talk 2:
   - [Web View](M2-data_governance_and_policy/index.html)
-  - [Slides](M2-data_governance_and_policy/revealjs.html)
+  - [Slidxes](M2-data_governance_and_policy/revealjs.html)
 
 - [Talk 3]
 - [Talk 4]
@@ -21,31 +26,27 @@ This course establishes the baseline digital literacy and governance awareness r
 - [Talk 7]
 - [Talk 8]
 
----
-
-## Essential Digital Skills (EDS)
-
-### Overview
+## Overview
 
 EDS is the foundation tier of DS&DSP. This in-person training programme is designed to equip researchers with the fundamental digital competencies, institutional knowledge, and research practices required to operate effectively in the University of Nottingham’s modern, data-intensive research environment.
 
-### Topics
+## Topics
 
 <!-- Insert list of topics here if available -->
 
-### Structure
+## Structure
 
 The course comprises 12 thematic modules delivered over several in-person training days, with each module structured to introduce key concepts and tools, followed by exercises and peer-led activities that consolidate learning in a practical, research-specific context.
 
-### Delivery Approach
+## Delivery Approach
 
 Modules will be delivered through a blended format that combines short (10–15-minute) teaching segments with interactive activities such as case tasks, scenario-based discussions, matching exercises, and prompt testing. Group-based engagement will be used to encourage collaboration, reflection, and shared problem-solving, with a consistent research-focused framing to ensure relevance across disciplines.
 
-### Assessment
+## Assessment
 
 There is no formal summative assessment for the EDS programme. Participants will be encouraged to complete self-directed learning logs after each training day, where they summarise key insights, identify tools or practices to explore further, and reflect on how the learning applies to their own research. These reflective materials are intended to support personal development planning and may inform supervisory discussions or future training reviews.
 
-### Feedback and Evaluation
+## Feedback and Evaluation
 
 To support iterative improvement and ensure alignment with researcher needs, feedback will be gathered through structured post-session surveys (anonymous and standardised), optional open comments on specific sessions, tools, or teaching methods, and facilitated group reflection or informal check-ins at the end of each day. This feedback will inform the ongoing refinement of content, delivery, and alignment with institutional tools and policy frameworks.
 

@@ -1,14 +1,2 @@
 project:
   type: website
-  output-dir: ../_site/esential_digital_skills
-
-website:
-  title: "Essential Digital Skills"
-  navbar:
-    left:
-      - text: "Overview"
-        href: index.html
-      - text: "M1: Digital Tools"
-        href: M1-digital_tools/index.html
-      - text: "M2: Data Governance & Policy"
-        href: M2-data_governance_and_policy/index.html
