@@ -21,8 +21,10 @@ This flexible structure enables tailored progression while maintaining curriculu
 
 ---
 
-## Essential Digital Skills (EDS)
+::: {.callout-sidebar collapse="false" icon="info" title="Essential Digital Skills (EDS)"}
 
 **Essential Digital Skills (EDS)** is the foundation tier of the DS&DS programme. Delivered in person during the first year of the doctoral training pathway, EDS establishes baseline knowledge in digital infrastructure, data governance, research data management, and delivery methods. It is mandatory for all DTP researchers and provides the grounding needed to confidently adopt intermediate and advanced methods later in the programme.
 
-- [Link to programme](esential_digital_skills/index.html)  
+👉 [Link to programme](esential_digital_skills/index.html)
+
+:::
