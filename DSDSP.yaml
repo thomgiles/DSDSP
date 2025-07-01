@@ -58,18 +58,13 @@
         displayName: 'Restore R environment with renv'
 
       - script: |
-          Rscript -e 'renv::install(c("knitr", "rmarkdown")); renv::snapshot()'
-        workingDirectory: training_sites/dsdsp
-        displayName: 'Install knitr and rmarkdown into renv'
-
-      - script: |
           export R_LIBS_USER=$HOME/.R/library
           quarto render .
         workingDirectory: training_sites/dsdsp
         displayName: 'Render Quarto site (with user R library)'
 
       - script: |
-        echo "Debug: list contents"
+          echo "Debug: list contents"
           pwd
           ls -al
           ls -al _site || echo "_site not found"
