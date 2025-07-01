@@ -3,9 +3,8 @@ project:
 
 format:
   revealjs:
-    theme: [default]
+    theme: default
     slide-number: true
     transition: slide
-    chalkboard:
-      buttons: true
+    chalkboard: true
     highlight-style: github

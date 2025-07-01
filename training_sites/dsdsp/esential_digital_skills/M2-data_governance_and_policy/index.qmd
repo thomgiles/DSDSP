@@ -1,8 +1,10 @@
 ---
-title: "EDS M2: Data Govenance and Policy"
+title: "EDS M2: Data Governance and Policy"
 format:
-  html: default
+  html:
+    output-file: index.html
   revealjs:
+    output-file: revealjs.html
     slide-number: true
     chalkboard: true
     preview-links: auto

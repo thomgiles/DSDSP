@@ -1,8 +1,10 @@
 ---
 title: "EDS M1: Digital Tools"
 format:
-  html: default
+  html:
+    output-file: index.html
   revealjs:
+    output-file: revealjs.html
     slide-number: true
     chalkboard: true
     preview-links: auto
