@@ -31,7 +31,7 @@
           pip install -r requirements.txt
           pip install jupyter pyyaml
         workingDirectory: training_sites/dsdsp
-        displayName: 'Install Python packages from course directory'
+        displayName: 'Install Python packages'
 
       - script: |
           curl -sSLO https://quarto.org/download/latest/quarto-linux-amd64.deb
@@ -49,22 +49,18 @@
           mkdir -p ~/.R/library
           echo 'R_LIBS_USER="~/.R/library"' >> ~/.Renviron
           Rscript -e 'install.packages("renv", repos = "https://cloud.r-project.org")'
-        workingDirectory: training_sites/dsdsp
-        displayName: 'Install and configure renv'
-
-      - script: |
           Rscript -e 'renv::restore()'
         workingDirectory: training_sites/dsdsp
-        displayName: 'Restore R environment with renv'
+        displayName: 'Restore R environment'
 
       - script: |
           export R_LIBS_USER=$HOME/.R/library
           quarto render .
         workingDirectory: training_sites/dsdsp
-        displayName: 'Render Quarto site (with user R library)'
+        displayName: 'Render Quarto site'
 
       - script: |
-          echo "Debug: list contents"
+        echo "Debug: list contents"
           pwd
           ls -al
           ls -al _site || echo "_site not found"
