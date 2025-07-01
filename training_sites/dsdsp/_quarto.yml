@@ -1,3 +1,7 @@
+project:
+  type: website
+  output-dir: _site
+
 website:
   title: "Data Science and Digital Skills Programme"
   navbar:
@@ -10,7 +14,3 @@ website:
             href: "esential_digital_skills/M1-digital_tools/index.html"
           - text: "M2: Data Governance & Policy"
             href: "esential_digital_skills/M2-data_governance_and_policy/index.html"
-
-
-
-  
