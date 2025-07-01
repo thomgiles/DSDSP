@@ -1,5 +1,5 @@
 ---
-title: "EDS M1: Digital Tools"
+title: "EDS M2: Data Governance and Policy"
 format:
   html: default
   revealjs:
@@ -9,16 +9,4 @@ format:
 editor: visual
 ---
 
-## Welcome
-
-This presentation demonstrates an R-only Reveal.js slide deck built with Quarto.
-
-------------------------------------------------------------------------
-
-## R Chunk: Summary Statistics
-
-```{R}
-summary(mtcars)
-```
-
-{{< include ../../shared-assets/disclaimer.qmd >}}
+# Module Introduction
