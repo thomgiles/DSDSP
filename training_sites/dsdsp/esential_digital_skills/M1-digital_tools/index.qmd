@@ -36,11 +36,10 @@ Introduce the DSDSP programme
 
 ------------------------------------------------------------------------
 
-# Module Introduction
+# What to Expect from this course
 
-## What to Expect from this course
+## Core Components:
 
-Three components: 
 -   Esential Digital Skills (All students)
 -   Applied or theoretical programming (optional) 
 -   Advanced training in domain specific skills (optional) 
