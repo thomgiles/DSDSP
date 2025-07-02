@@ -19,8 +19,6 @@ editor: visual
 
 <![this is a logo for the dsdp progamme](../../assets/DSDSP-Logo.png)
 
-------------------------------------------------------------------------
-
 # Module Introduction
 
 ## What is DSDSP?
@@ -40,8 +38,6 @@ Introduce yourself!
 Introduce the DSDSP programme
 :::
 
-------------------------------------------------------------------------
-
 # What to Expect from this course
 
 ## Core Components:
@@ -60,8 +56,6 @@ Introduce yourself!
 Introduce the DSDSP programme
 ::: 
 
-------------------------------------------------------------------------
-
 # Institutional Systems
 
 ## Microsoft 365 Tools
@@ -79,8 +73,6 @@ Introduce the DSDSP programme
 **Activity:** Pair Matching Match example tasks to the appropriate system (UniCore, Teams, OneDrive, RIS).
 :::
 
-------------------------------------------------------------------------
-
 # Research Identity
 
 ## Persistent Profiles
@@ -93,12 +85,9 @@ Introduce the DSDSP programme
 -   Ensures attribution
 -   Enhances discoverability
 
-
 ::: callout-note
 **Activity:** Self-audit Update ORCID and RIS profiles.
 :::
-
-------------------------------------------------------------------------
 
 # Tools for Coding
 
@@ -113,8 +102,6 @@ Introduce the DSDSP programme
 ::: callout-tip
 **Activity:** Prompt Testing Try: *“Summarise this abstract”* in ChatGPT and critique the output.
 :::
-
-------------------------------------------------------------------------
 
 # Linked Training
 
@@ -134,8 +121,6 @@ Introduce the DSDSP programme
 [UniCore Training](https://universityofnottingham.ac.uk/unicore)
 
 [GitHub & VS Code Workshop](https://github.com/UoNtraining/workshops)
-
-------------------------------------------------------------------------
 
 # Summary
 
