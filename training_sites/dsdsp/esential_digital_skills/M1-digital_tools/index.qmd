@@ -15,6 +15,12 @@ format:
 editor: visual
 ---
 
+# Essential digital skills {background="#43464B"}
+
+<![this is a logo for the dsdp progamme](../../assets/DSDSP-Logo.png)
+
+------------------------------------------------------------------------
+
 # Module Introduction
 
 ## What is DSDSP?
@@ -86,6 +92,7 @@ Introduce the DSDSP programme
 
 -   Ensures attribution
 -   Enhances discoverability
+
 
 ::: callout-note
 **Activity:** Self-audit Update ORCID and RIS profiles.

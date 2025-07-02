@@ -1,0 +1,18 @@
+---
+title: "EDS M3: Something New"
+format:
+  html:
+    theme: yeti
+    toc: true
+    number-sections: false
+    page-layout: article
+    output-file: index.html
+  revealjs:
+    output-file: revealjs.html
+    slide-number: true
+    chalkboard: true
+    preview-links: auto
+editor: visual
+---
+
+# Next module

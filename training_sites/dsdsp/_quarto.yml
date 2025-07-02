@@ -6,23 +6,19 @@ website:
   title: "Data Science and Digital Skills Programme"
   navbar:
     left:
+      - text: "Overview"
+        href: "index.html"
       - text: "Essential Digital Skill"
-        menu:
-          - text: "Overview"
-            href: "esential_digital_skills/index.html"
-          - text: "M1: Digital Tools"
-            href: "esential_digital_skills/M1-digital_tools/index.html"
-          - text: "M2: Data Governance & Policy"
-            href: "esential_digital_skills/M2-data_governance_and_policy/index.html"
+        href: "esential_digital_skills/index.html"
   sidebar:
     style: "floating"
     contents:
-      - section: "Overview"
-        contents:
-          - index.qmd
-      - section: "Essential Digital Skills"
+      - section: "Learning modules"
         contents:
           - esential_digital_skills/index.qmd
           - esential_digital_skills/M1-digital_tools/index.qmd
           - esential_digital_skills/M2-data_governance_and_policy/index.qmd
+          - esential_digital_skills/M3-something/index.qmd
+          
+
 
