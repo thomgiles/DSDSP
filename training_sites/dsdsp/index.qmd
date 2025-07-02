@@ -36,7 +36,9 @@ The **Data Science & Digital Skills Programme (DS&DS)** is a tiered, in‑person
 
 ### Structure
 
-DS&DS spans three tiers, aligned with institutional priorities in open science and research integrity:
+DS&DS spans three tiers, aligned with institutional priorities in open science and research integrity.
+
+These are:
 
 - **Foundation** – *Essential Digital Skills* (Year 1, mandatory)
 - **Intermediate** – *Methods for Data Science* (Year 2+, optional)
