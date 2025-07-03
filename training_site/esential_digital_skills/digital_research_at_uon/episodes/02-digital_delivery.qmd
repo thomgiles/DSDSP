@@ -1,0 +1,17 @@
+---
+title: "Digital Delivery"
+format:
+  html:
+    toc: true
+    number-sections: false
+    page-layout: article
+    output-file: 02-digital_delivery.html
+  revealjs:
+    output-file: 02-digital_delivery.revealjs.html
+    slide-number: true
+    chalkboard: true
+    preview-links: auto
+editor: visual
+---
+
+# Agile! {background="#43464B"}

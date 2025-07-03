@@ -1,3 +1,0 @@
-::: {.callout-warning title="Submodule"}
-These slides contain a submodule published in /presentation/shared-assets
-:::

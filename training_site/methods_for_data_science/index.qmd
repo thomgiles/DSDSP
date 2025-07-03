@@ -1,0 +1,12 @@
+---
+title: "Methods for Data Science:"
+format:
+  html:
+    toc: true
+    number-sections: false
+    page-layout: article
+---
+
+# Course Info:
+
+This course establishes 
