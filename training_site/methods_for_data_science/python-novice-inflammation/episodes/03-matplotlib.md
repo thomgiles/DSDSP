@@ -5,6 +5,9 @@ exercises: 20
 
 format:
   html:
+    theme: 
+        - default
+        - ../../../uon.scss 
     toc: true
     number-sections: false
     page-layout: article

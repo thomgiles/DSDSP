@@ -3,13 +3,15 @@ project:
   output-dir: _site
 
 website:
-  title: "Data Science and Digital Skills Programme"
   navbar:
+    title: "DSDSP"
+    subtitle: 
+    logo: assets/Logo_dark_500.png
     left:
-      - text: "Overview"
-        href: "index.html"
       - text: "Essential Digital Skill"
         href: "esential_digital_skills/index.html"
+      - text: "Methods for Data Science"
+        href: "methods_for_data_science/index.html"
 
   sidebar:
     style: "floating"

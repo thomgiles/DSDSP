@@ -1,0 +1,52 @@
+/*-- scss:defaults --*/
+
+/* Colour overrides */
+$body-bg: #ffffff;
+$body-color: #364156;
+$link-color: #197278;
+$navbar-bg: #102A43;
+$navbar-fg: #ffffff;
+$sidebar-bg: #197278;
+$sidebar-fg: #ffffff;
+$footer-bg: #102A43;
+$footer-fg: #ffffff;
+$code-block-bg: #f8f9fa;
+
+/* Font overrides */
+$font-family-sans-serif: "Roboto", "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$headings-font-family: "Roboto Condensed", "Arial Narrow", Arial, sans-serif;
+
+/*-- scss:rules --*/
+
+/* Optional: enforce heading font on all heading tags */
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Roboto Condensed", "Arial Narrow", Arial, sans-serif;
+}
+
+/* Base tab style */
+.nav-tabs {
+  background-color: #fff;  // background behind all tabs
+  border-bottom: 0px;
+}
+
+/* Individual tab buttons */
+.nav-tabs .nav-link {
+  color: #fff;
+  background-color: #66C3DA;  // background for inactive tabs
+  border: 0px;
+  border-bottom: none;
+  margin-right: 2px;
+}
+
+/* Active tab */
+.nav-tabs .nav-link.active {
+  color: #fff;
+  background-color: #197278;  // active tab background
+  border-color: #197278;
+}
+
+/* Hover effect */
+.nav-tabs .nav-link:hover {
+  background-color: #197278;
+  color: #fff;
+}

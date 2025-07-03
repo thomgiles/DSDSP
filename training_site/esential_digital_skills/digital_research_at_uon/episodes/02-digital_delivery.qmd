@@ -2,6 +2,9 @@
 title: "Digital Delivery"
 format:
   html:
+    theme: 
+        - default
+        - ../../../uon.scss 
     toc: true
     number-sections: false
     page-layout: article
