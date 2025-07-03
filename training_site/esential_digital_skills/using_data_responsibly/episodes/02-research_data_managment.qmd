@@ -1,0 +1,22 @@
+---
+title: "Research Data Management"
+format:
+  html:
+    theme: 
+        - default
+        - ../../../uon.scss   
+    toc: true
+    number-sections: false
+    page-layout: article
+    output-file: 02-research_data_managment.html
+  revealjs:
+    output-file: 02-research_data_managment.revealjs.html
+    slide-number: true
+    chalkboard: true
+    preview-links: auto
+editor: visual
+---
+
+# stuff {background="#43464B"}
+
+stuff about stuff
