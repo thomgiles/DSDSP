@@ -10,6 +10,7 @@ format:
     page-layout: article
     output-file: 01-intro.html
   revealjs:
+    theme: [black, ../../../uon.scss]
     output-file: 01-intro.revealjs.html
     slide-number: true
     chalkboard: true
@@ -40,6 +41,7 @@ This is a note that you can only see in presenter view
 -   How can I create a new variable in Python?
 -   How do I use a function?
 -   Can I change the value associated with a variable after I create it?
+
 -   How can I get help while learning to program?
 
 ## Variables
