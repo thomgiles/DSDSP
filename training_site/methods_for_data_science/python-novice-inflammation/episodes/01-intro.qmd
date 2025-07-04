@@ -9,7 +9,7 @@ format:
     number-sections: false
     page-layout: article
     output-file: 01-intro.html
-  revealjs:e
+  revealjs:
     theme: [black, ../../../uon.scss]
     output-file: 01-intro.revealjs.html
     slide-number: true
@@ -89,6 +89,8 @@ Python knows various types of data. Three common ones are:
 -   strings.
 
 In the example above, variable `weight_kg` has an integer value of `60`.
+
+------------------------------------------------------------------------
 
 If we want to more precisely track the weight of our patient, we can use a floating point value by executing:
 
@@ -202,7 +204,7 @@ This help message (the function's "docstring") includes a usage statement, a lis
 
 It is normal to encounter error messages while programming, whether you are learning for the first time or have been programming for many years. [We will discuss error messages in more detail later](./09-errors.md). For now, let's explore how people use them to get more help when they are stuck with their Python code.
 
-## Task
+## Task 1
 
 Search the internet: paste the last line of your error message or the word "python" and a short description of what you want to do into your favourite search engine and you will usually find several examples where other people have encountered the same problem and came looking for help.
 
@@ -261,7 +263,7 @@ print('weight in kilograms is now:', weight_kg, 'and weight in pounds is still:'
 
 Since `weight_lb` doesn't "remember" where its value comes from, it is not updated when we change `weight_kg`.
 
-## Task: Check Your Understanding
+## Task 2: Check Your Understanding
 
 ::: {.panel-tabset}
 ### Question:
@@ -290,7 +292,7 @@ print(age)
 ```
 :::
 
-## Task: Sorting Out References
+## Task 3: Sorting Out References
 
 ::: {.panel-tabset}
 ### Question:
@@ -311,7 +313,7 @@ print(third, fourth)
 ```
 ::: 
 
-## Task: Seeing Data Types
+## Task 4: Seeing Data Types
 
 ::: {.panel-tabset}
 ### Question:

@@ -871,7 +871,7 @@
     "href": "methods_for_data_science/python-novice-inflammation/episodes/01-intro.html#types-of-data",
     "title": "Python Fundamentals",
     "section": "Types of data",
-    "text": "Types of data\nPython knows various types of data. Three common ones are:\n\ninteger numbers\nfloating point numbers, and\nstrings.\n\nIn the example above, variable weight_kg has an integer value of 60.\nIf we want to more precisely track the weight of our patient, we can use a floating point value by executing:\n\nweight_kg = 60.3\nprint(weight_kg)\n\n60.3\n\n\n\nTo create a string, we add single or double quotes around some text. To identify and track a patient throughout our study, we can assign each person a unique identifier by storing it in a string:\n\npatient_id = '001'\nprint(patient_id)\n\n001",
+    "text": "Types of data\nPython knows various types of data. Three common ones are:\n\ninteger numbers\nfloating point numbers, and\nstrings.\n\nIn the example above, variable weight_kg has an integer value of 60.\n\nIf we want to more precisely track the weight of our patient, we can use a floating point value by executing:\n\nweight_kg = 60.3\nprint(weight_kg)\n\n60.3\n\n\n\nTo create a string, we add single or double quotes around some text. To identify and track a patient throughout our study, we can assign each person a unique identifier by storing it in a string:\n\npatient_id = '001'\nprint(patient_id)\n\n001",
     "crumbs": [
       "Essential Digital Skill",
       "Learning modules",
@@ -1021,11 +1021,11 @@
     ]
   },
   {
-    "objectID": "methods_for_data_science/python-novice-inflammation/episodes/01-intro.html#task",
-    "href": "methods_for_data_science/python-novice-inflammation/episodes/01-intro.html#task",
+    "objectID": "methods_for_data_science/python-novice-inflammation/episodes/01-intro.html#task-1",
+    "href": "methods_for_data_science/python-novice-inflammation/episodes/01-intro.html#task-1",
     "title": "Python Fundamentals",
-    "section": "Task",
-    "text": "Task\nSearch the internet: paste the last line of your error message or the word “python” and a short description of what you want to do into your favourite search engine and you will usually find several examples where other people have encountered the same problem and came looking for help.",
+    "section": "Task 1",
+    "text": "Task 1\nSearch the internet: paste the last line of your error message or the word “python” and a short description of what you want to do into your favourite search engine and you will usually find several examples where other people have encountered the same problem and came looking for help.",
     "crumbs": [
       "Essential Digital Skill",
       "Learning modules",
@@ -1105,11 +1105,11 @@
     ]
   },
   {
-    "objectID": "methods_for_data_science/python-novice-inflammation/episodes/01-intro.html#task-check-your-understanding",
-    "href": "methods_for_data_science/python-novice-inflammation/episodes/01-intro.html#task-check-your-understanding",
+    "objectID": "methods_for_data_science/python-novice-inflammation/episodes/01-intro.html#task-2-check-your-understanding",
+    "href": "methods_for_data_science/python-novice-inflammation/episodes/01-intro.html#task-2-check-your-understanding",
     "title": "Python Fundamentals",
-    "section": "Task: Check Your Understanding",
-    "text": "Task: Check Your Understanding\nWhat values do the variables mass and age have after each of the following statements? Test your answer by executing the lines.\n\nmass = 47.5\nage = 122\nmass = mass * 2.0\nage = age - 20",
+    "section": "Task 2: Check Your Understanding",
+    "text": "Task 2: Check Your Understanding\n\nQuestion:Solution\n\n\nWhat values do the variables mass and age have after each of the following statements? Test your answer by executing the lines.\n\nmass = 47.5\nage = 122\nmass = mass * 2.0\nage = age - 20\n\n\n\n\nmass = 47.5\nprint(mass)\nage = 122\nprint(age)\nmass = mass * 2.0\nprint(mass)\nage = age - 20\nprint(age)\n\n47.5\n122\n95.0\n102",
     "crumbs": [
       "Essential Digital Skill",
       "Learning modules",
@@ -1119,11 +1119,11 @@
     ]
   },
   {
-    "objectID": "methods_for_data_science/python-novice-inflammation/episodes/01-intro.html#solution",
-    "href": "methods_for_data_science/python-novice-inflammation/episodes/01-intro.html#solution",
+    "objectID": "methods_for_data_science/python-novice-inflammation/episodes/01-intro.html#task-3-sorting-out-references",
+    "href": "methods_for_data_science/python-novice-inflammation/episodes/01-intro.html#task-3-sorting-out-references",
     "title": "Python Fundamentals",
-    "section": "Solution",
-    "text": "Solution\n\nmass = 47.5\nprint(mass)\nage = 122\nprint(age)\nmass = mass * 2.0\nprint(mass)\nage = age - 20\nprint(age)\n\n47.5\n122\n95.0\n102",
+    "section": "Task 3: Sorting Out References",
+    "text": "Task 3: Sorting Out References\n\nQuestion:Solution\n\n\nPython allows you to assign multiple values to multiple variables in one line by separating the variables and values with commas. What does the following program print out?\n\nfirst, second = 'Grace', 'Hopper'\nthird, fourth = second, first\n\n\n\n\nprint(third, fourth)\n\nHopper Grace",
     "crumbs": [
       "Essential Digital Skill",
       "Learning modules",
@@ -1133,53 +1133,11 @@
     ]
   },
   {
-    "objectID": "methods_for_data_science/python-novice-inflammation/episodes/01-intro.html#task-sorting-out-references",
-    "href": "methods_for_data_science/python-novice-inflammation/episodes/01-intro.html#task-sorting-out-references",
+    "objectID": "methods_for_data_science/python-novice-inflammation/episodes/01-intro.html#task-4-seeing-data-types",
+    "href": "methods_for_data_science/python-novice-inflammation/episodes/01-intro.html#task-4-seeing-data-types",
     "title": "Python Fundamentals",
-    "section": "Task: Sorting Out References",
-    "text": "Task: Sorting Out References\nPython allows you to assign multiple values to multiple variables in one line by separating the variables and values with commas. What does the following program print out?\n\nfirst, second = 'Grace', 'Hopper'\nthird, fourth = second, first",
-    "crumbs": [
-      "Essential Digital Skill",
-      "Learning modules",
-      "Methods for Data Science",
-      "Applied Data Sciences (Python)",
-      "Python Fundamentals"
-    ]
-  },
-  {
-    "objectID": "methods_for_data_science/python-novice-inflammation/episodes/01-intro.html#solution-1",
-    "href": "methods_for_data_science/python-novice-inflammation/episodes/01-intro.html#solution-1",
-    "title": "Python Fundamentals",
-    "section": "Solution",
-    "text": "Solution\n\nprint(third, fourth)\n\nHopper Grace",
-    "crumbs": [
-      "Essential Digital Skill",
-      "Learning modules",
-      "Methods for Data Science",
-      "Applied Data Sciences (Python)",
-      "Python Fundamentals"
-    ]
-  },
-  {
-    "objectID": "methods_for_data_science/python-novice-inflammation/episodes/01-intro.html#task-seeing-data-types",
-    "href": "methods_for_data_science/python-novice-inflammation/episodes/01-intro.html#task-seeing-data-types",
-    "title": "Python Fundamentals",
-    "section": "Task: Seeing Data Types",
-    "text": "Task: Seeing Data Types\nWhat are the data types of the following variables?\n\nplanet = 'Earth'\napples = 5\ndistance = 10.5",
-    "crumbs": [
-      "Essential Digital Skill",
-      "Learning modules",
-      "Methods for Data Science",
-      "Applied Data Sciences (Python)",
-      "Python Fundamentals"
-    ]
-  },
-  {
-    "objectID": "methods_for_data_science/python-novice-inflammation/episodes/01-intro.html#solution-2",
-    "href": "methods_for_data_science/python-novice-inflammation/episodes/01-intro.html#solution-2",
-    "title": "Python Fundamentals",
-    "section": "Solution",
-    "text": "Solution\n\nprint(type(planet))\nprint(type(apples))\nprint(type(distance))\n\n&lt;class 'str'&gt;\n&lt;class 'int'&gt;\n&lt;class 'float'&gt;",
+    "section": "Task 4: Seeing Data Types",
+    "text": "Task 4: Seeing Data Types\n\nQuestion:Solution\n\n\nWhat are the data types of the following variables?\n\nplanet = 'Earth'\napples = 5\ndistance = 10.5\n\n\n\n\nprint(type(planet))\nprint(type(apples))\nprint(type(distance))\n\n&lt;class 'str'&gt;\n&lt;class 'int'&gt;\n&lt;class 'float'&gt;",
     "crumbs": [
       "Essential Digital Skill",
       "Learning modules",
@@ -1256,7 +1214,7 @@
     "href": "methods_for_data_science/python-novice-inflammation/episodes/01-intro.revealjs.html#types-of-data",
     "title": "Python Fundamentals",
     "section": "Types of data",
-    "text": "Types of data\nPython knows various types of data. Three common ones are:\n\ninteger numbers\nfloating point numbers, and\nstrings.\n\nIn the example above, variable weight_kg has an integer value of 60.\nIf we want to more precisely track the weight of our patient, we can use a floating point value by executing:\n\nweight_kg = 60.3\nprint(weight_kg)\n\n60.3"
+    "text": "Types of data\nPython knows various types of data. Three common ones are:\n\ninteger numbers\nfloating point numbers, and\nstrings.\n\nIn the example above, variable weight_kg has an integer value of 60."
   },
   {
     "objectID": "methods_for_data_science/python-novice-inflammation/episodes/01-intro.revealjs.html#using-variables-in-python",
@@ -1329,11 +1287,11 @@
     "text": "Error messages\nIt is normal to encounter error messages while programming, whether you are learning for the first time or have been programming for many years. We will discuss error messages in more detail later. For now, let’s explore how people use them to get more help when they are stuck with their Python code."
   },
   {
-    "objectID": "methods_for_data_science/python-novice-inflammation/episodes/01-intro.revealjs.html#task",
-    "href": "methods_for_data_science/python-novice-inflammation/episodes/01-intro.revealjs.html#task",
+    "objectID": "methods_for_data_science/python-novice-inflammation/episodes/01-intro.revealjs.html#task-1",
+    "href": "methods_for_data_science/python-novice-inflammation/episodes/01-intro.revealjs.html#task-1",
     "title": "Python Fundamentals",
-    "section": "Task",
-    "text": "Task\nSearch the internet: paste the last line of your error message or the word “python” and a short description of what you want to do into your favourite search engine and you will usually find several examples where other people have encountered the same problem and came looking for help."
+    "section": "Task 1",
+    "text": "Task 1\nSearch the internet: paste the last line of your error message or the word “python” and a short description of what you want to do into your favourite search engine and you will usually find several examples where other people have encountered the same problem and came looking for help."
   },
   {
     "objectID": "methods_for_data_science/python-novice-inflammation/episodes/01-intro.revealjs.html#hints",
@@ -1371,46 +1329,25 @@
     "text": "Variable Dependancies\n\nSimilar to above, the expression 2.2 * weight_kg is evaluated to 143.0, and then this value is assigned to the variable weight_lb (i.e. the sticky note weight_lb is placed on 143.0). At this point, each variable is “stuck” to completely distinct and unrelated values."
   },
   {
-    "objectID": "methods_for_data_science/python-novice-inflammation/episodes/01-intro.revealjs.html#task-check-your-understanding",
-    "href": "methods_for_data_science/python-novice-inflammation/episodes/01-intro.revealjs.html#task-check-your-understanding",
+    "objectID": "methods_for_data_science/python-novice-inflammation/episodes/01-intro.revealjs.html#task-2-check-your-understanding",
+    "href": "methods_for_data_science/python-novice-inflammation/episodes/01-intro.revealjs.html#task-2-check-your-understanding",
     "title": "Python Fundamentals",
-    "section": "Task: Check Your Understanding",
-    "text": "Task: Check Your Understanding\nWhat values do the variables mass and age have after each of the following statements? Test your answer by executing the lines.\n\nmass = 47.5\nage = 122\nmass = mass * 2.0\nage = age - 20"
+    "section": "Task 2: Check Your Understanding",
+    "text": "Task 2: Check Your Understanding\n\nQuestion:Solution\n\n\nWhat values do the variables mass and age have after each of the following statements? Test your answer by executing the lines.\n\nmass = 47.5\nage = 122\nmass = mass * 2.0\nage = age - 20\n\n\n\n\nmass = 47.5\nprint(mass)\nage = 122\nprint(age)\nmass = mass * 2.0\nprint(mass)\nage = age - 20\nprint(age)\n\n47.5\n122\n95.0\n102"
   },
   {
-    "objectID": "methods_for_data_science/python-novice-inflammation/episodes/01-intro.revealjs.html#solution",
-    "href": "methods_for_data_science/python-novice-inflammation/episodes/01-intro.revealjs.html#solution",
+    "objectID": "methods_for_data_science/python-novice-inflammation/episodes/01-intro.revealjs.html#task-3-sorting-out-references",
+    "href": "methods_for_data_science/python-novice-inflammation/episodes/01-intro.revealjs.html#task-3-sorting-out-references",
     "title": "Python Fundamentals",
-    "section": "Solution",
-    "text": "Solution\n\nmass = 47.5\nprint(mass)\nage = 122\nprint(age)\nmass = mass * 2.0\nprint(mass)\nage = age - 20\nprint(age)\n\n47.5\n122\n95.0\n102"
+    "section": "Task 3: Sorting Out References",
+    "text": "Task 3: Sorting Out References\n\nQuestion:Solution\n\n\nPython allows you to assign multiple values to multiple variables in one line by separating the variables and values with commas. What does the following program print out?\n\nfirst, second = 'Grace', 'Hopper'\nthird, fourth = second, first\n\n\n\n\nprint(third, fourth)\n\nHopper Grace"
   },
   {
-    "objectID": "methods_for_data_science/python-novice-inflammation/episodes/01-intro.revealjs.html#task-sorting-out-references",
-    "href": "methods_for_data_science/python-novice-inflammation/episodes/01-intro.revealjs.html#task-sorting-out-references",
+    "objectID": "methods_for_data_science/python-novice-inflammation/episodes/01-intro.revealjs.html#task-4-seeing-data-types",
+    "href": "methods_for_data_science/python-novice-inflammation/episodes/01-intro.revealjs.html#task-4-seeing-data-types",
     "title": "Python Fundamentals",
-    "section": "Task: Sorting Out References",
-    "text": "Task: Sorting Out References\nPython allows you to assign multiple values to multiple variables in one line by separating the variables and values with commas. What does the following program print out?\n\nfirst, second = 'Grace', 'Hopper'\nthird, fourth = second, first"
-  },
-  {
-    "objectID": "methods_for_data_science/python-novice-inflammation/episodes/01-intro.revealjs.html#solution-1",
-    "href": "methods_for_data_science/python-novice-inflammation/episodes/01-intro.revealjs.html#solution-1",
-    "title": "Python Fundamentals",
-    "section": "Solution",
-    "text": "Solution\n\nprint(third, fourth)\n\nHopper Grace"
-  },
-  {
-    "objectID": "methods_for_data_science/python-novice-inflammation/episodes/01-intro.revealjs.html#task-seeing-data-types",
-    "href": "methods_for_data_science/python-novice-inflammation/episodes/01-intro.revealjs.html#task-seeing-data-types",
-    "title": "Python Fundamentals",
-    "section": "Task: Seeing Data Types",
-    "text": "Task: Seeing Data Types\nWhat are the data types of the following variables?\n\nplanet = 'Earth'\napples = 5\ndistance = 10.5"
-  },
-  {
-    "objectID": "methods_for_data_science/python-novice-inflammation/episodes/01-intro.revealjs.html#solution-2",
-    "href": "methods_for_data_science/python-novice-inflammation/episodes/01-intro.revealjs.html#solution-2",
-    "title": "Python Fundamentals",
-    "section": "Solution",
-    "text": "Solution\n\nprint(type(planet))\nprint(type(apples))\nprint(type(distance))\n\n&lt;class 'str'&gt;\n&lt;class 'int'&gt;\n&lt;class 'float'&gt;"
+    "section": "Task 4: Seeing Data Types",
+    "text": "Task 4: Seeing Data Types\n\nQuestion:Solution\n\n\nWhat are the data types of the following variables?\n\nplanet = 'Earth'\napples = 5\ndistance = 10.5\n\n\n\n\nprint(type(planet))\nprint(type(apples))\nprint(type(distance))\n\n&lt;class 'str'&gt;\n&lt;class 'int'&gt;\n&lt;class 'float'&gt;"
   },
   {
     "objectID": "methods_for_data_science/python-novice-inflammation/episodes/01-intro.revealjs.html#keypoints",
