@@ -10,6 +10,7 @@ format:
     page-layout: article
     output-file: 01-intro.html
   revealjs:
+    theme: [black, ../../../uon.scss]
     output-file: 01-intro.revealjs.html
     slide-number: true
     chalkboard: true
@@ -40,6 +41,7 @@ This is a note that you can only see in presenter view
 -   How can I create a new variable in Python?
 -   How do I use a function?
 -   Can I change the value associated with a variable after I create it?
+
 -   How can I get help while learning to program?
 
 ## Variables
@@ -47,6 +49,7 @@ This is a note that you can only see in presenter view
 Any Python interpreter can be used as a calculator:
 
 ```{python}
+#| echo: true
 3 + 5 * 4
 ```
 
@@ -57,6 +60,7 @@ This is great but not very interesting.
 To do anything useful with data, we need to assign its value to a *variable*. In Python, we can [assign](../learners/reference.md#assign) a value to a [variable](../learners/reference.md#variable), using the equals sign `=`. For example, we can track the weight of a patient who weighs 60 kilograms by assigning the value `60` to a variable `weight_kg`:
 
 ```{python}
+#| echo: true
 weight_kg = 60
 print(weight_kg)
 ```
@@ -86,9 +90,12 @@ Python knows various types of data. Three common ones are:
 
 In the example above, variable `weight_kg` has an integer value of `60`.
 
+------------------------------------------------------------------------
+
 If we want to more precisely track the weight of our patient, we can use a floating point value by executing:
 
 ```{python}
+#| echo: true
 weight_kg = 60.3
 print(weight_kg)
 ```
@@ -98,6 +105,7 @@ print(weight_kg)
 To create a string, we add single or double quotes around some text. To identify and track a patient throughout our study, we can assign each person a unique identifier by storing it in a string:
 
 ```{python}
+#| echo: true
 patient_id = '001'
 print(patient_id)
 ```
@@ -107,6 +115,7 @@ print(patient_id)
 Once we have data stored with variable names, we can make use of it in calculations. We may want to store our patient's weight in pounds as well as kilograms:
 
 ```{python}
+#| echo: true
 weight_lb = 2.2 * weight_kg
 print(weight_lb)
 ```
@@ -114,6 +123,7 @@ print(weight_lb)
 We might decide to add a prefix to our patient identifier:
 
 ```{python}
+#| echo: true
 patient_id = 'inflam_' + patient_id
 print(patient_id)
 ```
@@ -123,6 +133,7 @@ print(patient_id)
 To carry out common tasks with data and variables in Python, the language provides us with several built-in [functions](../learners/reference.md#function). To display information to the screen, we use the `print` function:
 
 ```{python}
+#| echo: true
 print(weight_lb)
 print(patient_id)
 ```
@@ -136,6 +147,7 @@ When we want to make use of a function, referred to as calling the function, we 
 We can display multiple things at once using only one `print` call:
 
 ```{python}
+#| echo: true
 print(patient_id, 'weight in kilograms:', weight_kg)
 ```
 
@@ -144,6 +156,7 @@ print(patient_id, 'weight in kilograms:', weight_kg)
 We can also call a function inside of another [function call](../learners/reference.md#function-call). For example, Python has a built-in function called `type` that tells you a value's data type:
 
 ```{python}
+#| echo: true
 print(type(60.3))
 print(type(patient_id))
 ```
@@ -153,12 +166,14 @@ print(type(patient_id))
 Moreover, we can do arithmetic with variables right inside the `print` function:
 
 ```{python}
+#| echo: true
 print('weight in pounds:', 2.2 * weight_kg)
 ```
 
 Note: The above command, however, did not change the value of `weight_kg`:
 
 ```{python}
+#| echo: true
 print(weight_kg)
 ```
 
@@ -167,6 +182,7 @@ print(weight_kg)
 To change the value of the `weight_kg` variable, we have to **assign** `weight_kg` a new value using the equals `=` sign:
 
 ```{python}
+#| echo: true
 weight_kg = 65.0
 print('weight in kilograms is now:', weight_kg)
 ```
@@ -178,6 +194,7 @@ Use the built-in function `help` to get help for a function. Every built-in func
 ## Help Example
 
 ```{python}
+#| echo: true
 help(print)
 ```
 
@@ -187,7 +204,7 @@ This help message (the function's "docstring") includes a usage statement, a lis
 
 It is normal to encounter error messages while programming, whether you are learning for the first time or have been programming for many years. [We will discuss error messages in more detail later](./09-errors.md). For now, let's explore how people use them to get more help when they are stuck with their Python code.
 
-## Task
+## Task 1
 
 Search the internet: paste the last line of your error message or the word "python" and a short description of what you want to do into your favourite search engine and you will usually find several examples where other people have encountered the same problem and came looking for help.
 
@@ -216,6 +233,7 @@ A variable in Python is analogous to a sticky note with a name written on it: as
 Using this analogy, we can investigate how assigning a value to one variable does **not** change values of other, seemingly related, variables. For example, let's store the subject's weight in pounds in its own variable:
 
 ```{python}
+#| echo: true
 # There are 2.2 pounds per kilogram
 weight_lb = 2.2 * weight_kg
 print('weight in kilograms:', weight_kg, 'and in pounds:', weight_lb)
@@ -236,6 +254,7 @@ Similar to above, the expression `2.2 * weight_kg` is evaluated to `143.0`, and 
 Let's now change `weight_kg`:
 
 ```{python}
+#| echo: true
 weight_kg = 100.0
 print('weight in kilograms is now:', weight_kg, 'and weight in pounds is still:', weight_lb)
 ```
@@ -244,20 +263,24 @@ print('weight in kilograms is now:', weight_kg, 'and weight in pounds is still:'
 
 Since `weight_lb` doesn't "remember" where its value comes from, it is not updated when we change `weight_kg`.
 
-## Task: Check Your Understanding
+## Task 2: Check Your Understanding
 
+::: {.panel-tabset}
+### Question:
 What values do the variables `mass` and `age` have after each of the following statements? Test your answer by executing the lines.
 
 ```{python}
+#| echo: true
 mass = 47.5
 age = 122
 mass = mass * 2.0
 age = age - 20
 ```
 
-## Solution
+### Solution
 
 ```{python}
+#| echo: true
 mass = 47.5
 print(mass)
 age = 122
@@ -267,40 +290,52 @@ print(mass)
 age = age - 20
 print(age)
 ```
+:::
 
-## Task: Sorting Out References
+## Task 3: Sorting Out References
 
+::: {.panel-tabset}
+### Question:
 Python allows you to assign multiple values to multiple variables in one line by separating the variables and values with commas. What does the following program print out?
 
 ```{python}
+#| echo: true
 first, second = 'Grace', 'Hopper'
 third, fourth = second, first
 
 ```
 
-## Solution
+### Solution
 
 ```{python}
+#| echo: true
 print(third, fourth)
 ```
+::: 
 
-## Task: Seeing Data Types
+## Task 4: Seeing Data Types
 
+::: {.panel-tabset}
+### Question:
 What are the data types of the following variables?
 
 ```{python}
+#| echo: true
 planet = 'Earth'
 apples = 5
 distance = 10.5
 ```
 
-## Solution
+### Solution
 
 ```{python}
+#| echo: true
 print(type(planet))
 print(type(apples))
 print(type(distance))
 ```
+
+:::
 
 ## keypoints
 
