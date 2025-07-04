@@ -165,7 +165,7 @@
     "href": "episodes/01-intro.html#task-check-your-understanding",
     "title": "Python Fundamentals",
     "section": "Task: Check Your Understanding",
-    "text": "Task: Check Your Understanding\nWhat values do the variables mass and age have after each of the following statements? Test your answer by executing the lines.\n\nmass = 47.5\nage = 122\nmass = mass * 2.0\nage = age - 20"
+    "text": "Task: Check Your Understanding\n\nQuestion:Solution\n\n\nWhat values do the variables mass and age have after each of the following statements? Test your answer by executing the lines.\n\nmass = 47.5\nage = 122\nmass = mass * 2.0\nage = age - 20\n\n\n\n\nmass = 47.5\nprint(mass)\nage = 122\nprint(age)\nmass = mass * 2.0\nprint(mass)\nage = age - 20\nprint(age)\n\n47.5\n122\n95.0\n102"
   },
   {
     "objectID": "episodes/01-intro.html#solution",
@@ -179,7 +179,7 @@
     "href": "episodes/01-intro.html#task-sorting-out-references",
     "title": "Python Fundamentals",
     "section": "Task: Sorting Out References",
-    "text": "Task: Sorting Out References\nPython allows you to assign multiple values to multiple variables in one line by separating the variables and values with commas. What does the following program print out?\n\nfirst, second = 'Grace', 'Hopper'\nthird, fourth = second, first"
+    "text": "Task: Sorting Out References\n\nQuestion:Solution\n\n\nPython allows you to assign multiple values to multiple variables in one line by separating the variables and values with commas. What does the following program print out?\n\nfirst, second = 'Grace', 'Hopper'\nthird, fourth = second, first\n\n\n\n\nprint(third, fourth)\n\nHopper Grace"
   },
   {
     "objectID": "episodes/01-intro.html#solution-1",
@@ -193,7 +193,7 @@
     "href": "episodes/01-intro.html#task-seeing-data-types",
     "title": "Python Fundamentals",
     "section": "Task: Seeing Data Types",
-    "text": "Task: Seeing Data Types\nWhat are the data types of the following variables?\n\nplanet = 'Earth'\napples = 5\ndistance = 10.5"
+    "text": "Task: Seeing Data Types\n\nQuestion:Solution\n\n\nWhat are the data types of the following variables?\n\nplanet = 'Earth'\napples = 5\ndistance = 10.5\n\n\n\n\nprint(type(planet))\nprint(type(apples))\nprint(type(distance))\n\n&lt;class 'str'&gt;\n&lt;class 'int'&gt;\n&lt;class 'float'&gt;"
   },
   {
     "objectID": "episodes/01-intro.html#solution-2",
@@ -1334,7 +1334,7 @@
     "href": "episodes/01-intro.revealjs.html#task-check-your-understanding",
     "title": "Python Fundamentals",
     "section": "Task: Check Your Understanding",
-    "text": "Task: Check Your Understanding\nWhat values do the variables mass and age have after each of the following statements? Test your answer by executing the lines.\n\nmass = 47.5\nage = 122\nmass = mass * 2.0\nage = age - 20"
+    "text": "Task: Check Your Understanding\n\nQuestion:Solution\n\n\nWhat values do the variables mass and age have after each of the following statements? Test your answer by executing the lines.\n\nmass = 47.5\nage = 122\nmass = mass * 2.0\nage = age - 20\n\n\n\n\nmass = 47.5\nprint(mass)\nage = 122\nprint(age)\nmass = mass * 2.0\nprint(mass)\nage = age - 20\nprint(age)\n\n47.5\n122\n95.0\n102"
   },
   {
     "objectID": "episodes/01-intro.revealjs.html#solution",
@@ -1348,7 +1348,7 @@
     "href": "episodes/01-intro.revealjs.html#task-sorting-out-references",
     "title": "Python Fundamentals",
     "section": "Task: Sorting Out References",
-    "text": "Task: Sorting Out References\nPython allows you to assign multiple values to multiple variables in one line by separating the variables and values with commas. What does the following program print out?\n\nfirst, second = 'Grace', 'Hopper'\nthird, fourth = second, first"
+    "text": "Task: Sorting Out References\n\nQuestion:Solution\n\n\nPython allows you to assign multiple values to multiple variables in one line by separating the variables and values with commas. What does the following program print out?\n\nfirst, second = 'Grace', 'Hopper'\nthird, fourth = second, first\n\n\n\n\nprint(third, fourth)\n\nHopper Grace"
   },
   {
     "objectID": "episodes/01-intro.revealjs.html#solution-1",
@@ -1362,7 +1362,7 @@
     "href": "episodes/01-intro.revealjs.html#task-seeing-data-types",
     "title": "Python Fundamentals",
     "section": "Task: Seeing Data Types",
-    "text": "Task: Seeing Data Types\nWhat are the data types of the following variables?\n\nplanet = 'Earth'\napples = 5\ndistance = 10.5"
+    "text": "Task: Seeing Data Types\n\nQuestion:Solution\n\n\nWhat are the data types of the following variables?\n\nplanet = 'Earth'\napples = 5\ndistance = 10.5\n\n\n\n\nprint(type(planet))\nprint(type(apples))\nprint(type(distance))\n\n&lt;class 'str'&gt;\n&lt;class 'int'&gt;\n&lt;class 'float'&gt;"
   },
   {
     "objectID": "episodes/01-intro.revealjs.html#solution-2",
