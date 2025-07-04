@@ -37,6 +37,7 @@
           curl -sSLO https://quarto.org/download/latest/quarto-linux-amd64.deb
           sudo dpkg -i quarto-linux-amd64.deb
           quarto --version
+          quarto install tinytex
         displayName: 'Install Quarto CLI'
 
       - script: |
