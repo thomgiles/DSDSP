@@ -4,14 +4,14 @@
     "href": "episodes/01-intro.html",
     "title": "Python Fundamentals",
     "section": "",
-    "text": "Assign values to variables."
+    "text": "Assign values to variables.\n\n\n\nThis is a note that you can only see in presenter view"
   },
   {
     "objectID": "episodes/01-intro.html#objectives",
     "href": "episodes/01-intro.html#objectives",
     "title": "Python Fundamentals",
     "section": "",
-    "text": "Assign values to variables."
+    "text": "Assign values to variables.\n\n\n\nThis is a note that you can only see in presenter view"
   },
   {
     "objectID": "episodes/01-intro.html#questions",
@@ -25,14 +25,14 @@
     "href": "episodes/01-intro.html#variables",
     "title": "Python Fundamentals",
     "section": "Variables",
-    "text": "Variables\nAny Python interpreter can be used as a calculator:\n3 + 5 * 4\n23\nThis is great but not very interesting."
+    "text": "Variables\nAny Python interpreter can be used as a calculator:\n\n3 + 5 * 4\n\n23\n\n\nThis is great but not very interesting."
   },
   {
     "objectID": "episodes/01-intro.html#variable-assignment",
     "href": "episodes/01-intro.html#variable-assignment",
     "title": "Python Fundamentals",
     "section": "Variable assignment",
-    "text": "Variable assignment\nTo do anything useful with data, we need to assign its value to a variable. In Python, we can assign a value to a variable, using the equals sign =. For example, we can track the weight of a patient who weighs 60 kilograms by assigning the value 60 to a variable weight_kg:\nweight_kg = 60\nFrom now on, whenever we use weight_kg, Python will substitute the value we assigned to it. In layperson’s terms, a variable is a name for a value."
+    "text": "Variable assignment\nTo do anything useful with data, we need to assign its value to a variable. In Python, we can assign a value to a variable, using the equals sign =. For example, we can track the weight of a patient who weighs 60 kilograms by assigning the value 60 to a variable weight_kg:\n\nweight_kg = 60\nprint(weight_kg)\n\n60\n\n\nFrom now on, whenever we use weight_kg, Python will substitute the value we assigned to it. In layperson’s terms, a variable is a name for a value."
   },
   {
     "objectID": "episodes/01-intro.html#variable-names-in-python",
@@ -46,21 +46,21 @@
     "href": "episodes/01-intro.html#types-of-data",
     "title": "Python Fundamentals",
     "section": "Types of data",
-    "text": "Types of data\nPython knows various types of data. Three common ones are:\n\ninteger numbers\nfloating point numbers, and\nstrings.\n\nIn the example above, variable weight_kg has an integer value of 60.\nIf we want to more precisely track the weight of our patient, we can use a floating point value by executing:\nweight_kg = 60.3\n\nTo create a string, we add single or double quotes around some text. To identify and track a patient throughout our study, we can assign each person a unique identifier by storing it in a string:\npatient_id = '001'"
+    "text": "Types of data\nPython knows various types of data. Three common ones are:\n\ninteger numbers\nfloating point numbers, and\nstrings.\n\nIn the example above, variable weight_kg has an integer value of 60.\nIf we want to more precisely track the weight of our patient, we can use a floating point value by executing:\n\nweight_kg = 60.3\nprint(weight_kg)\n\n60.3\n\n\n\nTo create a string, we add single or double quotes around some text. To identify and track a patient throughout our study, we can assign each person a unique identifier by storing it in a string:\n\npatient_id = '001'\nprint(patient_id)\n\n001"
   },
   {
     "objectID": "episodes/01-intro.html#using-variables-in-python",
     "href": "episodes/01-intro.html#using-variables-in-python",
     "title": "Python Fundamentals",
     "section": "Using Variables in Python",
-    "text": "Using Variables in Python\nOnce we have data stored with variable names, we can make use of it in calculations. We may want to store our patient’s weight in pounds as well as kilograms:\nweight_lb = 2.2 * weight_kg\nWe might decide to add a prefix to our patient identifier:\npatient_id = 'inflam_' + patient_id"
+    "text": "Using Variables in Python\nOnce we have data stored with variable names, we can make use of it in calculations. We may want to store our patient’s weight in pounds as well as kilograms:\n\nweight_lb = 2.2 * weight_kg\nprint(weight_lb)\n\n132.66\n\n\nWe might decide to add a prefix to our patient identifier:\n\npatient_id = 'inflam_' + patient_id\nprint(patient_id)\n\ninflam_001"
   },
   {
     "objectID": "episodes/01-intro.html#built-in-python-functions",
     "href": "episodes/01-intro.html#built-in-python-functions",
     "title": "Python Fundamentals",
     "section": "Built-in Python functions",
-    "text": "Built-in Python functions\nTo carry out common tasks with data and variables in Python, the language provides us with several built-in functions. To display information to the screen, we use the print function:\nprint(weight_lb)\nprint(patient_id)\n132.66\ninflam_001"
+    "text": "Built-in Python functions\nTo carry out common tasks with data and variables in Python, the language provides us with several built-in functions. To display information to the screen, we use the print function:\n\nprint(weight_lb)\nprint(patient_id)\n\n132.66\ninflam_001"
   },
   {
     "objectID": "episodes/01-intro.html#parentheses",
@@ -74,28 +74,28 @@
     "href": "episodes/01-intro.html#combining-outputs-using-print",
     "title": "Python Fundamentals",
     "section": "Combining outputs using “print”",
-    "text": "Combining outputs using “print”\nWe can display multiple things at once using only one print call:\nprint(patient_id, 'weight in kilograms:', weight_kg)\ninflam_001 weight in kilograms: 60.3"
+    "text": "Combining outputs using “print”\nWe can display multiple things at once using only one print call:\n\nprint(patient_id, 'weight in kilograms:', weight_kg)\n\ninflam_001 weight in kilograms: 60.3"
   },
   {
     "objectID": "episodes/01-intro.html#nested-functions",
     "href": "episodes/01-intro.html#nested-functions",
     "title": "Python Fundamentals",
     "section": "Nested Functions",
-    "text": "Nested Functions\nWe can also call a function inside of another function call. For example, Python has a built-in function called type that tells you a value’s data type:\nprint(type(60.3))\nprint(type(patient_id))\n&lt;class 'float'&gt;\n&lt;class 'str'&gt;"
+    "text": "Nested Functions\nWe can also call a function inside of another function call. For example, Python has a built-in function called type that tells you a value’s data type:\n\nprint(type(60.3))\nprint(type(patient_id))\n\n&lt;class 'float'&gt;\n&lt;class 'str'&gt;"
   },
   {
     "objectID": "episodes/01-intro.html#nested-print",
     "href": "episodes/01-intro.html#nested-print",
     "title": "Python Fundamentals",
     "section": "Nested Print",
-    "text": "Nested Print\nMoreover, we can do arithmetic with variables right inside the print function:\nprint('weight in pounds:', 2.2 * weight_kg)\nweight in pounds: 132.66\nNote: The above command, however, did not change the value of weight_kg:\nprint(weight_kg)\n60.3"
+    "text": "Nested Print\nMoreover, we can do arithmetic with variables right inside the print function:\n\nprint('weight in pounds:', 2.2 * weight_kg)\n\nweight in pounds: 132.66\n\n\nNote: The above command, however, did not change the value of weight_kg:\n\nprint(weight_kg)\n\n60.3"
   },
   {
     "objectID": "episodes/01-intro.html#updating-variables",
     "href": "episodes/01-intro.html#updating-variables",
     "title": "Python Fundamentals",
     "section": "Updating variables",
-    "text": "Updating variables\nTo change the value of the weight_kg variable, we have to assign weight_kg a new value using the equals = sign:\nweight_kg = 65.0\nprint('weight in kilograms is now:', weight_kg)\nweight in kilograms is now: 65.0"
+    "text": "Updating variables\nTo change the value of the weight_kg variable, we have to assign weight_kg a new value using the equals = sign:\n\nweight_kg = 65.0\nprint('weight in kilograms is now:', weight_kg)\n\nweight in kilograms is now: 65.0"
   },
   {
     "objectID": "episodes/01-intro.html#getting-help",
@@ -109,7 +109,7 @@
     "href": "episodes/01-intro.html#help-example",
     "title": "Python Fundamentals",
     "section": "Help Example",
-    "text": "Help Example\nhelp(print)\nHelp on built-in function print in module builtins:\n\nprint(*args, sep=' ', end='\\n', file=None, flush=False)\n    Prints the values to a stream, or to sys.stdout by default.\n\n    sep\n      string inserted between values, default a space.\n    end\n      string appended after the last value, default a newline.\n    file\n      a file-like object (stream); defaults to the current sys.stdout.\n    flush\n      whether to forcibly flush the stream.\nThis help message (the function’s “docstring”) includes a usage statement, a list of parameters accepted by the function, and their default values if they have them."
+    "text": "Help Example\n\nhelp(print)\n\nHelp on built-in function print in module builtins:\n\nprint(...)\n    print(value, ..., sep=' ', end='\\n', file=sys.stdout, flush=False)\n    \n    Prints the values to a stream, or to sys.stdout by default.\n    Optional keyword arguments:\n    file:  a file-like object (stream); defaults to the current sys.stdout.\n    sep:   string inserted between values, default a space.\n    end:   string appended after the last value, default a newline.\n    flush: whether to forcibly flush the stream.\n\n\n\nThis help message (the function’s “docstring”) includes a usage statement, a list of parameters accepted by the function, and their default values if they have them."
   },
   {
     "objectID": "episodes/01-intro.html#error-messages",
@@ -144,7 +144,7 @@
     "href": "episodes/01-intro.html#variables-as-sticky-notes",
     "title": "Python Fundamentals",
     "section": "Variables as Sticky Notes",
-    "text": "Variables as Sticky Notes\nA variable in Python is analogous to a sticky note with a name written on it: assigning a value to a variable is like putting that sticky note on a particular value.\n\n\nUsing this analogy, we can investigate how assigning a value to one variable does not change values of other, seemingly related, variables. For example, let’s store the subject’s weight in pounds in its own variable:\n# There are 2.2 pounds per kilogram\nweight_lb = 2.2 * weight_kg\nprint('weight in kilograms:', weight_kg, 'and in pounds:', weight_lb)\nweight in kilograms: 65.0 and in pounds: 143.0"
+    "text": "Variables as Sticky Notes\nA variable in Python is analogous to a sticky note with a name written on it: assigning a value to a variable is like putting that sticky note on a particular value.\n\n\nUsing this analogy, we can investigate how assigning a value to one variable does not change values of other, seemingly related, variables. For example, let’s store the subject’s weight in pounds in its own variable:\n\n# There are 2.2 pounds per kilogram\nweight_lb = 2.2 * weight_kg\nprint('weight in kilograms:', weight_kg, 'and in pounds:', weight_lb)\n\nweight in kilograms: 65.0 and in pounds: 143.0"
   },
   {
     "objectID": "episodes/01-intro.html#commenting",
@@ -158,49 +158,49 @@
     "href": "episodes/01-intro.html#variable-dependancies",
     "title": "Python Fundamentals",
     "section": "Variable Dependancies",
-    "text": "Variable Dependancies\n\nSimilar to above, the expression 2.2 * weight_kg is evaluated to 143.0, and then this value is assigned to the variable weight_lb (i.e. the sticky note weight_lb is placed on 143.0). At this point, each variable is “stuck” to completely distinct and unrelated values.\n\nLet’s now change weight_kg:\nweight_kg = 100.0\nprint('weight in kilograms is now:', weight_kg, 'and weight in pounds is still:', weight_lb)\nweight in kilograms is now: 100.0 and weight in pounds is still: 143.0\n\nSince weight_lb doesn’t “remember” where its value comes from, it is not updated when we change weight_kg."
+    "text": "Variable Dependancies\n\nSimilar to above, the expression 2.2 * weight_kg is evaluated to 143.0, and then this value is assigned to the variable weight_lb (i.e. the sticky note weight_lb is placed on 143.0). At this point, each variable is “stuck” to completely distinct and unrelated values.\n\nLet’s now change weight_kg:\n\nweight_kg = 100.0\nprint('weight in kilograms is now:', weight_kg, 'and weight in pounds is still:', weight_lb)\n\nweight in kilograms is now: 100.0 and weight in pounds is still: 143.0\n\n\n\nSince weight_lb doesn’t “remember” where its value comes from, it is not updated when we change weight_kg."
   },
   {
     "objectID": "episodes/01-intro.html#task-check-your-understanding",
     "href": "episodes/01-intro.html#task-check-your-understanding",
     "title": "Python Fundamentals",
     "section": "Task: Check Your Understanding",
-    "text": "Task: Check Your Understanding\nWhat values do the variables mass and age have after each of the following statements? Test your answer by executing the lines.\nmass = 47.5\nage = 122\nmass = mass * 2.0\nage = age - 20"
+    "text": "Task: Check Your Understanding\nWhat values do the variables mass and age have after each of the following statements? Test your answer by executing the lines.\n\nmass = 47.5\nage = 122\nmass = mass * 2.0\nage = age - 20"
   },
   {
     "objectID": "episodes/01-intro.html#solution",
     "href": "episodes/01-intro.html#solution",
     "title": "Python Fundamentals",
     "section": "Solution",
-    "text": "Solution\n`mass` holds a value of 47.5, `age` does not exist\n`mass` still holds a value of 47.5, `age` holds a value of 122\n`mass` now has a value of 95.0, `age`'s value is still 122\n`mass` still has a value of 95.0, `age` now holds 102"
+    "text": "Solution\n\nmass = 47.5\nprint(mass)\nage = 122\nprint(age)\nmass = mass * 2.0\nprint(mass)\nage = age - 20\nprint(age)\n\n47.5\n122\n95.0\n102"
   },
   {
     "objectID": "episodes/01-intro.html#task-sorting-out-references",
     "href": "episodes/01-intro.html#task-sorting-out-references",
     "title": "Python Fundamentals",
     "section": "Task: Sorting Out References",
-    "text": "Task: Sorting Out References\nPython allows you to assign multiple values to multiple variables in one line by separating the variables and values with commas. What does the following program print out?\nfirst, second = 'Grace', 'Hopper'\nthird, fourth = second, first\nprint(third, fourth)"
+    "text": "Task: Sorting Out References\nPython allows you to assign multiple values to multiple variables in one line by separating the variables and values with commas. What does the following program print out?\n\nfirst, second = 'Grace', 'Hopper'\nthird, fourth = second, first"
   },
   {
     "objectID": "episodes/01-intro.html#solution-1",
     "href": "episodes/01-intro.html#solution-1",
     "title": "Python Fundamentals",
     "section": "Solution",
-    "text": "Solution\nHopper Grace"
+    "text": "Solution\n\nprint(third, fourth)\n\nHopper Grace"
   },
   {
     "objectID": "episodes/01-intro.html#task-seeing-data-types",
     "href": "episodes/01-intro.html#task-seeing-data-types",
     "title": "Python Fundamentals",
     "section": "Task: Seeing Data Types",
-    "text": "Task: Seeing Data Types\nWhat are the data types of the following variables?\nplanet = 'Earth'\napples = 5\ndistance = 10.5"
+    "text": "Task: Seeing Data Types\nWhat are the data types of the following variables?\n\nplanet = 'Earth'\napples = 5\ndistance = 10.5"
   },
   {
     "objectID": "episodes/01-intro.html#solution-2",
     "href": "episodes/01-intro.html#solution-2",
     "title": "Python Fundamentals",
     "section": "Solution",
-    "text": "Solution\nprint(type(planet))\nprint(type(apples))\nprint(type(distance))\n&lt;class 'str'&gt;\n&lt;class 'int'&gt;\n&lt;class 'float'&gt;"
+    "text": "Solution\n\nprint(type(planet))\nprint(type(apples))\nprint(type(distance))\n\n&lt;class 'str'&gt;\n&lt;class 'int'&gt;\n&lt;class 'float'&gt;"
   },
   {
     "objectID": "episodes/01-intro.html#keypoints",
@@ -1180,7 +1180,7 @@
     "href": "episodes/01-intro.revealjs.html#objectives",
     "title": "Python Fundamentals",
     "section": "Objectives",
-    "text": "Objectives\n\nAssign values to variables."
+    "text": "Objectives\n\nAssign values to variables.\n\n\n\nThis is a note that you can only see in presenter view"
   },
   {
     "objectID": "episodes/01-intro.revealjs.html#questions",
@@ -1194,14 +1194,14 @@
     "href": "episodes/01-intro.revealjs.html#variables",
     "title": "Python Fundamentals",
     "section": "Variables",
-    "text": "Variables\nAny Python interpreter can be used as a calculator:\n3 + 5 * 4\n23\nThis is great but not very interesting."
+    "text": "Variables\nAny Python interpreter can be used as a calculator:\n\n3 + 5 * 4\n\n23\n\n\nThis is great but not very interesting."
   },
   {
     "objectID": "episodes/01-intro.revealjs.html#variable-assignment",
     "href": "episodes/01-intro.revealjs.html#variable-assignment",
     "title": "Python Fundamentals",
     "section": "Variable assignment",
-    "text": "Variable assignment\nTo do anything useful with data, we need to assign its value to a variable. In Python, we can assign a value to a variable, using the equals sign =. For example, we can track the weight of a patient who weighs 60 kilograms by assigning the value 60 to a variable weight_kg:\nweight_kg = 60\nFrom now on, whenever we use weight_kg, Python will substitute the value we assigned to it. In layperson’s terms, a variable is a name for a value."
+    "text": "Variable assignment\nTo do anything useful with data, we need to assign its value to a variable. In Python, we can assign a value to a variable, using the equals sign =. For example, we can track the weight of a patient who weighs 60 kilograms by assigning the value 60 to a variable weight_kg:\n\nweight_kg = 60\nprint(weight_kg)\n\n60\n\n\nFrom now on, whenever we use weight_kg, Python will substitute the value we assigned to it. In layperson’s terms, a variable is a name for a value."
   },
   {
     "objectID": "episodes/01-intro.revealjs.html#variable-names-in-python",
@@ -1215,21 +1215,21 @@
     "href": "episodes/01-intro.revealjs.html#types-of-data",
     "title": "Python Fundamentals",
     "section": "Types of data",
-    "text": "Types of data\nPython knows various types of data. Three common ones are:\n\ninteger numbers\nfloating point numbers, and\nstrings.\n\nIn the example above, variable weight_kg has an integer value of 60.\nIf we want to more precisely track the weight of our patient, we can use a floating point value by executing:\nweight_kg = 60.3"
+    "text": "Types of data\nPython knows various types of data. Three common ones are:\n\ninteger numbers\nfloating point numbers, and\nstrings.\n\nIn the example above, variable weight_kg has an integer value of 60.\nIf we want to more precisely track the weight of our patient, we can use a floating point value by executing:\n\nweight_kg = 60.3\nprint(weight_kg)\n\n60.3"
   },
   {
     "objectID": "episodes/01-intro.revealjs.html#using-variables-in-python",
     "href": "episodes/01-intro.revealjs.html#using-variables-in-python",
     "title": "Python Fundamentals",
     "section": "Using Variables in Python",
-    "text": "Using Variables in Python\nOnce we have data stored with variable names, we can make use of it in calculations. We may want to store our patient’s weight in pounds as well as kilograms:\nweight_lb = 2.2 * weight_kg\nWe might decide to add a prefix to our patient identifier:\npatient_id = 'inflam_' + patient_id"
+    "text": "Using Variables in Python\nOnce we have data stored with variable names, we can make use of it in calculations. We may want to store our patient’s weight in pounds as well as kilograms:\n\nweight_lb = 2.2 * weight_kg\nprint(weight_lb)\n\n132.66\n\n\nWe might decide to add a prefix to our patient identifier:\n\npatient_id = 'inflam_' + patient_id\nprint(patient_id)\n\ninflam_001"
   },
   {
     "objectID": "episodes/01-intro.revealjs.html#built-in-python-functions",
     "href": "episodes/01-intro.revealjs.html#built-in-python-functions",
     "title": "Python Fundamentals",
     "section": "Built-in Python functions",
-    "text": "Built-in Python functions\nTo carry out common tasks with data and variables in Python, the language provides us with several built-in functions. To display information to the screen, we use the print function:\nprint(weight_lb)\nprint(patient_id)\n132.66\ninflam_001"
+    "text": "Built-in Python functions\nTo carry out common tasks with data and variables in Python, the language provides us with several built-in functions. To display information to the screen, we use the print function:\n\nprint(weight_lb)\nprint(patient_id)\n\n132.66\ninflam_001"
   },
   {
     "objectID": "episodes/01-intro.revealjs.html#parentheses",
@@ -1243,28 +1243,28 @@
     "href": "episodes/01-intro.revealjs.html#combining-outputs-using-print",
     "title": "Python Fundamentals",
     "section": "Combining outputs using “print”",
-    "text": "Combining outputs using “print”\nWe can display multiple things at once using only one print call:\nprint(patient_id, 'weight in kilograms:', weight_kg)\ninflam_001 weight in kilograms: 60.3"
+    "text": "Combining outputs using “print”\nWe can display multiple things at once using only one print call:\n\nprint(patient_id, 'weight in kilograms:', weight_kg)\n\ninflam_001 weight in kilograms: 60.3"
   },
   {
     "objectID": "episodes/01-intro.revealjs.html#nested-functions",
     "href": "episodes/01-intro.revealjs.html#nested-functions",
     "title": "Python Fundamentals",
     "section": "Nested Functions",
-    "text": "Nested Functions\nWe can also call a function inside of another function call. For example, Python has a built-in function called type that tells you a value’s data type:\nprint(type(60.3))\nprint(type(patient_id))\n&lt;class 'float'&gt;\n&lt;class 'str'&gt;"
+    "text": "Nested Functions\nWe can also call a function inside of another function call. For example, Python has a built-in function called type that tells you a value’s data type:\n\nprint(type(60.3))\nprint(type(patient_id))\n\n&lt;class 'float'&gt;\n&lt;class 'str'&gt;"
   },
   {
     "objectID": "episodes/01-intro.revealjs.html#nested-print",
     "href": "episodes/01-intro.revealjs.html#nested-print",
     "title": "Python Fundamentals",
     "section": "Nested Print",
-    "text": "Nested Print\nMoreover, we can do arithmetic with variables right inside the print function:\nprint('weight in pounds:', 2.2 * weight_kg)\nweight in pounds: 132.66\nNote: The above command, however, did not change the value of weight_kg:\nprint(weight_kg)\n60.3"
+    "text": "Nested Print\nMoreover, we can do arithmetic with variables right inside the print function:\n\nprint('weight in pounds:', 2.2 * weight_kg)\n\nweight in pounds: 132.66\n\n\nNote: The above command, however, did not change the value of weight_kg:\n\nprint(weight_kg)\n\n60.3"
   },
   {
     "objectID": "episodes/01-intro.revealjs.html#updating-variables",
     "href": "episodes/01-intro.revealjs.html#updating-variables",
     "title": "Python Fundamentals",
     "section": "Updating variables",
-    "text": "Updating variables\nTo change the value of the weight_kg variable, we have to assign weight_kg a new value using the equals = sign:\nweight_kg = 65.0\nprint('weight in kilograms is now:', weight_kg)\nweight in kilograms is now: 65.0"
+    "text": "Updating variables\nTo change the value of the weight_kg variable, we have to assign weight_kg a new value using the equals = sign:\n\nweight_kg = 65.0\nprint('weight in kilograms is now:', weight_kg)\n\nweight in kilograms is now: 65.0"
   },
   {
     "objectID": "episodes/01-intro.revealjs.html#getting-help",
@@ -1278,7 +1278,7 @@
     "href": "episodes/01-intro.revealjs.html#help-example",
     "title": "Python Fundamentals",
     "section": "Help Example",
-    "text": "Help Example\nhelp(print)\nHelp on built-in function print in module builtins:\n\nprint(*args, sep=' ', end='\\n', file=None, flush=False)\n    Prints the values to a stream, or to sys.stdout by default.\n\n    sep\n      string inserted between values, default a space.\n    end\n      string appended after the last value, default a newline.\n    file\n      a file-like object (stream); defaults to the current sys.stdout.\n    flush\n      whether to forcibly flush the stream.\nThis help message (the function’s “docstring”) includes a usage statement, a list of parameters accepted by the function, and their default values if they have them."
+    "text": "Help Example\n\nhelp(print)\n\nHelp on built-in function print in module builtins:\n\nprint(...)\n    print(value, ..., sep=' ', end='\\n', file=sys.stdout, flush=False)\n    \n    Prints the values to a stream, or to sys.stdout by default.\n    Optional keyword arguments:\n    file:  a file-like object (stream); defaults to the current sys.stdout.\n    sep:   string inserted between values, default a space.\n    end:   string appended after the last value, default a newline.\n    flush: whether to forcibly flush the stream.\n\n\n\nThis help message (the function’s “docstring”) includes a usage statement, a list of parameters accepted by the function, and their default values if they have them."
   },
   {
     "objectID": "episodes/01-intro.revealjs.html#error-messages",
@@ -1334,42 +1334,42 @@
     "href": "episodes/01-intro.revealjs.html#task-check-your-understanding",
     "title": "Python Fundamentals",
     "section": "Task: Check Your Understanding",
-    "text": "Task: Check Your Understanding\nWhat values do the variables mass and age have after each of the following statements? Test your answer by executing the lines.\nmass = 47.5\nage = 122\nmass = mass * 2.0\nage = age - 20"
+    "text": "Task: Check Your Understanding\nWhat values do the variables mass and age have after each of the following statements? Test your answer by executing the lines.\n\nmass = 47.5\nage = 122\nmass = mass * 2.0\nage = age - 20"
   },
   {
     "objectID": "episodes/01-intro.revealjs.html#solution",
     "href": "episodes/01-intro.revealjs.html#solution",
     "title": "Python Fundamentals",
     "section": "Solution",
-    "text": "Solution\n`mass` holds a value of 47.5, `age` does not exist\n`mass` still holds a value of 47.5, `age` holds a value of 122\n`mass` now has a value of 95.0, `age`'s value is still 122\n`mass` still has a value of 95.0, `age` now holds 102"
+    "text": "Solution\n\nmass = 47.5\nprint(mass)\nage = 122\nprint(age)\nmass = mass * 2.0\nprint(mass)\nage = age - 20\nprint(age)\n\n47.5\n122\n95.0\n102"
   },
   {
     "objectID": "episodes/01-intro.revealjs.html#task-sorting-out-references",
     "href": "episodes/01-intro.revealjs.html#task-sorting-out-references",
     "title": "Python Fundamentals",
     "section": "Task: Sorting Out References",
-    "text": "Task: Sorting Out References\nPython allows you to assign multiple values to multiple variables in one line by separating the variables and values with commas. What does the following program print out?\nfirst, second = 'Grace', 'Hopper'\nthird, fourth = second, first\nprint(third, fourth)"
+    "text": "Task: Sorting Out References\nPython allows you to assign multiple values to multiple variables in one line by separating the variables and values with commas. What does the following program print out?\n\nfirst, second = 'Grace', 'Hopper'\nthird, fourth = second, first"
   },
   {
     "objectID": "episodes/01-intro.revealjs.html#solution-1",
     "href": "episodes/01-intro.revealjs.html#solution-1",
     "title": "Python Fundamentals",
     "section": "Solution",
-    "text": "Solution\nHopper Grace"
+    "text": "Solution\n\nprint(third, fourth)\n\nHopper Grace"
   },
   {
     "objectID": "episodes/01-intro.revealjs.html#task-seeing-data-types",
     "href": "episodes/01-intro.revealjs.html#task-seeing-data-types",
     "title": "Python Fundamentals",
     "section": "Task: Seeing Data Types",
-    "text": "Task: Seeing Data Types\nWhat are the data types of the following variables?\nplanet = 'Earth'\napples = 5\ndistance = 10.5"
+    "text": "Task: Seeing Data Types\nWhat are the data types of the following variables?\n\nplanet = 'Earth'\napples = 5\ndistance = 10.5"
   },
   {
     "objectID": "episodes/01-intro.revealjs.html#solution-2",
     "href": "episodes/01-intro.revealjs.html#solution-2",
     "title": "Python Fundamentals",
     "section": "Solution",
-    "text": "Solution\nprint(type(planet))\nprint(type(apples))\nprint(type(distance))\n&lt;class 'str'&gt;\n&lt;class 'int'&gt;\n&lt;class 'float'&gt;"
+    "text": "Solution\n\nprint(type(planet))\nprint(type(apples))\nprint(type(distance))\n\n&lt;class 'str'&gt;\n&lt;class 'int'&gt;\n&lt;class 'float'&gt;"
   },
   {
     "objectID": "episodes/01-intro.revealjs.html#keypoints",
