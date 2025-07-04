@@ -143,7 +143,7 @@ print(patient_id, 'weight in kilograms:', weight_kg)
 
 We can also call a function inside of another [function call](../learners/reference.md#function-call). For example, Python has a built-in function called `type` that tells you a value's data type:
 
-``` {python}
+```{python}
 print(type(60.3))
 print(type(patient_id))
 ```
@@ -152,13 +152,13 @@ print(type(patient_id))
 
 Moreover, we can do arithmetic with variables right inside the `print` function:
 
-``` {python}
+```{python}
 print('weight in pounds:', 2.2 * weight_kg)
 ```
 
 Note: The above command, however, did not change the value of `weight_kg`:
 
-``` {python}
+```{python}
 print(weight_kg)
 ```
 
@@ -166,11 +166,10 @@ print(weight_kg)
 
 To change the value of the `weight_kg` variable, we have to **assign** `weight_kg` a new value using the equals `=` sign:
 
-``` {python}
+```{python}
 weight_kg = 65.0
 print('weight in kilograms is now:', weight_kg)
 ```
-
 
 ## Getting Help
 
@@ -178,7 +177,7 @@ Use the built-in function `help` to get help for a function. Every built-in func
 
 ## Help Example
 
-``` {python}
+```{python}
 help(print)
 ```
 
@@ -216,7 +215,7 @@ A variable in Python is analogous to a sticky note with a name written on it: as
 
 Using this analogy, we can investigate how assigning a value to one variable does **not** change values of other, seemingly related, variables. For example, let's store the subject's weight in pounds in its own variable:
 
-``` {python}
+```{python}
 # There are 2.2 pounds per kilogram
 weight_lb = 2.2 * weight_kg
 print('weight in kilograms:', weight_kg, 'and in pounds:', weight_lb)
@@ -236,7 +235,7 @@ Similar to above, the expression `2.2 * weight_kg` is evaluated to `143.0`, and 
 
 Let's now change `weight_kg`:
 
-``` {python}
+```{python}
 weight_kg = 100.0
 print('weight in kilograms is now:', weight_kg, 'and weight in pounds is still:', weight_lb)
 ```
@@ -249,7 +248,7 @@ Since `weight_lb` doesn't "remember" where its value comes from, it is not updat
 
 What values do the variables `mass` and `age` have after each of the following statements? Test your answer by executing the lines.
 
-``` {python}
+```{python}
 mass = 47.5
 age = 122
 mass = mass * 2.0
@@ -258,7 +257,7 @@ age = age - 20
 
 ## Solution
 
-``` {python}
+```{python}
 mass = 47.5
 print(mass)
 age = 122
@@ -303,7 +302,6 @@ print(type(apples))
 print(type(distance))
 ```
 
-
 ## keypoints
 
 -   Basic data types in Python include integers, strings, and floating-point numbers.
@@ -317,4 +315,3 @@ print(type(distance))
 -   Use `print(something)` to display the value of `something`.
 -   Use `# some kind of explanation` to add comments to programs.
 -   Use `help(thing)` to view help for something.
-
