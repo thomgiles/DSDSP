@@ -3,10 +3,10 @@
 /* Colour overrides */
 $body-bg: #ffffff;
 $body-color: #364156;
-$link-color: #197278;
+$link-color: #37B4B0;
 $navbar-bg: #102A43;
 $navbar-fg: #ffffff;
-$sidebar-bg: #197278;
+$sidebar-bg: #37B4B0;
 $sidebar-fg: #ffffff;
 $footer-bg: #102A43;
 $footer-fg: #ffffff;
@@ -14,13 +14,13 @@ $code-block-bg: #f8f9fa;
 
 /* Font overrides */
 $font-family-sans-serif: "Roboto", "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
-$headings-font-family: "Roboto Condensed", "Arial Narrow", Arial, sans-serif;
+$headings-font-family: "Roboto", "Helvetica", Arial, sans-serif;
 
 /*-- scss:rules --*/
 
 /* Optional: enforce heading font on all heading tags */
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Roboto Condensed", "Arial Narrow", Arial, sans-serif;
+  font-family: "Roboto", "Helvetica", Arial, sans-serif;
 }
 
 /* Base tab style */
@@ -32,7 +32,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Individual tab buttons */
 .nav-tabs .nav-link {
   color: #fff;
-  background-color: #66C3DA;  // background for inactive tabs
+  background-color: #009BC1;  // background for inactive tabs
   border: 0px;
   border-bottom: none;
   margin-right: 2px;
@@ -41,12 +41,12 @@ h1, h2, h3, h4, h5, h6 {
 /* Active tab */
 .nav-tabs .nav-link.active {
   color: #fff;
-  background-color: #197278;  // active tab background
-  border-color: #197278;
+  background-color: #37B4B0;  // active tab background
+  border-color: #37B4B0;
 }
 
 /* Hover effect */
 .nav-tabs .nav-link:hover {
-  background-color: #197278;
+  background-color: #37B4B0;
   color: #fff;
 }
