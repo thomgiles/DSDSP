@@ -1,0 +1,801 @@
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "7f11ae5a",
+   "metadata": {},
+   "source": [
+    "---\n",
+    "title: Python Fundamentals\n",
+    "format:\n",
+    "  html:\n",
+    "    theme: \n",
+    "        - default\n",
+    "        - ../../../uon.scss\n",
+    "    toc: true\n",
+    "    number-sections: false\n",
+    "    page-layout: article\n",
+    "    output-file: 01-intro.html\n",
+    "  revealjs:\n",
+    "    theme: [black, ../../../uon.scss]\n",
+    "    output-file: 01-intro.revealjs.html\n",
+    "    slide-number: true\n",
+    "    chalkboard: true\n",
+    "    preview-links: auto\n",
+    "    logo: fig/logo.png\n",
+    "    footer: \"Data Science and Digital Skills\"\n",
+    "  pdf: \n",
+    "    output-file: 01-intro.pdf\n",
+    "resources:\n",
+    "  - fig/logo.png\n",
+    "\n",
+    "editor: visual\n",
+    "---\n",
+    "\n",
+    "## Objectives\n",
+    "\n",
+    "-   Assign values to variables.\n",
+    "\n",
+    ":::: content-revealjs\n",
+    "::: notes\n",
+    "This is a note that you can only see in presenter view\n",
+    ":::\n",
+    "::::\n",
+    "\n",
+    "## Questions\n",
+    "\n",
+    "-   What basic data types can I work with in Python?\n",
+    "-   How can I create a new variable in Python?\n",
+    "-   How do I use a function?\n",
+    "-   Can I change the value associated with a variable after I create it?\n",
+    "\n",
+    "-   How can I get help while learning to program?\n",
+    "\n",
+    "## Variables\n",
+    "\n",
+    "Any Python interpreter can be used as a calculator:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "id": "db3dfe2e",
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "23"
+      ]
+     },
+     "execution_count": 1,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "#| echo: true\n",
+    "3 + 5 * 4"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "a7089b1b",
+   "metadata": {},
+   "source": [
+    "This is great but not very interesting.\n",
+    "\n",
+    "## Variable assignment\n",
+    "\n",
+    "To do anything useful with data, we need to assign its value to a *variable*. In Python, we can [assign](../learners/reference.md#assign) a value to a [variable](../learners/reference.md#variable), using the equals sign `=`. For example, we can track the weight of a patient who weighs 60 kilograms by assigning the value `60` to a variable `weight_kg`:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 2,
+   "id": "b2e0a781",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "60\n"
+     ]
+    }
+   ],
+   "source": [
+    "#| echo: true\n",
+    "weight_kg = 60\n",
+    "print(weight_kg)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "6e57b042",
+   "metadata": {},
+   "source": [
+    "From now on, whenever we use `weight_kg`, Python will substitute the value we assigned to it. In layperson's terms, **a variable is a name for a value**.\n",
+    "\n",
+    "## Variable names In Python:\n",
+    "\n",
+    "variable names:\n",
+    "\n",
+    "-   can include letters, digits, and underscores\n",
+    "-   cannot start with a digit\n",
+    "-   are [case sensitive](../learners/reference.md#case-sensitive).\n",
+    "\n",
+    "This means that, for example:\n",
+    "\n",
+    "-   `weight0` is a valid variable name, whereas `0weight` is not\n",
+    "-   `weight` and `Weight` are different variables\n",
+    "\n",
+    "## Types of data\n",
+    "\n",
+    "Python knows various types of data. Three common ones are:\n",
+    "\n",
+    "-   integer numbers\n",
+    "-   floating point numbers, and\n",
+    "-   strings.\n",
+    "\n",
+    "In the example above, variable `weight_kg` has an integer value of `60`.\n",
+    "\n",
+    "If we want to more precisely track the weight of our patient, we can use a floating point value by executing:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "id": "7fd3a067",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "60.3\n"
+     ]
+    }
+   ],
+   "source": [
+    "#| echo: true\n",
+    "weight_kg = 60.3\n",
+    "print(weight_kg)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "9b2a8466",
+   "metadata": {},
+   "source": [
+    "------------------------------------------------------------------------\n",
+    "\n",
+    "To create a string, we add single or double quotes around some text. To identify and track a patient throughout our study, we can assign each person a unique identifier by storing it in a string:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 4,
+   "id": "1fa7a952",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "001\n"
+     ]
+    }
+   ],
+   "source": [
+    "#| echo: true\n",
+    "patient_id = '001'\n",
+    "print(patient_id)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "dee9700d",
+   "metadata": {},
+   "source": [
+    "## Using Variables in Python\n",
+    "\n",
+    "Once we have data stored with variable names, we can make use of it in calculations. We may want to store our patient's weight in pounds as well as kilograms:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "id": "95983966",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "132.66\n"
+     ]
+    }
+   ],
+   "source": [
+    "#| echo: true\n",
+    "weight_lb = 2.2 * weight_kg\n",
+    "print(weight_lb)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "0e9b1529",
+   "metadata": {},
+   "source": [
+    "We might decide to add a prefix to our patient identifier:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "id": "2032cc50",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "inflam_001\n"
+     ]
+    }
+   ],
+   "source": [
+    "#| echo: true\n",
+    "patient_id = 'inflam_' + patient_id\n",
+    "print(patient_id)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "606a6ac7",
+   "metadata": {},
+   "source": [
+    "## Built-in Python functions\n",
+    "\n",
+    "To carry out common tasks with data and variables in Python, the language provides us with several built-in [functions](../learners/reference.md#function). To display information to the screen, we use the `print` function:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 7,
+   "id": "47faaa48",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "132.66\n",
+      "inflam_001\n"
+     ]
+    }
+   ],
+   "source": [
+    "#| echo: true\n",
+    "print(weight_lb)\n",
+    "print(patient_id)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "6ee90cbe",
+   "metadata": {},
+   "source": [
+    "## Parentheses\n",
+    "\n",
+    "When we want to make use of a function, referred to as calling the function, we follow its name by parentheses. The parentheses are important: if you leave them off, the function doesn't actually run! Sometimes you will include values or variables inside the parentheses for the function to use. In the case of `print`, we use the parentheses to tell the function what value we want to display. We will learn more about how functions work and how to create our own in later episodes.\n",
+    "\n",
+    "## Combining outputs using \"print\"\n",
+    "\n",
+    "We can display multiple things at once using only one `print` call:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "id": "bcfdc250",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "inflam_001 weight in kilograms: 60.3\n"
+     ]
+    }
+   ],
+   "source": [
+    "#| echo: true\n",
+    "print(patient_id, 'weight in kilograms:', weight_kg)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "04b8f09a",
+   "metadata": {},
+   "source": [
+    "## Nested Functions\n",
+    "\n",
+    "We can also call a function inside of another [function call](../learners/reference.md#function-call). For example, Python has a built-in function called `type` that tells you a value's data type:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "id": "3e99d0d8",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "<class 'float'>\n",
+      "<class 'str'>\n"
+     ]
+    }
+   ],
+   "source": [
+    "#| echo: true\n",
+    "print(type(60.3))\n",
+    "print(type(patient_id))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "c2d12c54",
+   "metadata": {},
+   "source": [
+    "## Nested Print\n",
+    "\n",
+    "Moreover, we can do arithmetic with variables right inside the `print` function:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 10,
+   "id": "c15cee55",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "weight in pounds: 132.66\n"
+     ]
+    }
+   ],
+   "source": [
+    "#| echo: true\n",
+    "print('weight in pounds:', 2.2 * weight_kg)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "2d63d6e0",
+   "metadata": {},
+   "source": [
+    "Note: The above command, however, did not change the value of `weight_kg`:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 11,
+   "id": "26d0edc3",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "60.3\n"
+     ]
+    }
+   ],
+   "source": [
+    "#| echo: true\n",
+    "print(weight_kg)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "535b583c",
+   "metadata": {},
+   "source": [
+    "## Updating variables\n",
+    "\n",
+    "To change the value of the `weight_kg` variable, we have to **assign** `weight_kg` a new value using the equals `=` sign:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 12,
+   "id": "80a72955",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "weight in kilograms is now: 65.0\n"
+     ]
+    }
+   ],
+   "source": [
+    "#| echo: true\n",
+    "weight_kg = 65.0\n",
+    "print('weight in kilograms is now:', weight_kg)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "36fb8de7",
+   "metadata": {},
+   "source": [
+    "## Getting Help\n",
+    "\n",
+    "Use the built-in function `help` to get help for a function. Every built-in function has extensive [documentation that can also be found online](https://docs.python.org/3/library/index.html).\n",
+    "\n",
+    "## Help Example"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 13,
+   "id": "c65d351d",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Help on built-in function print in module builtins:\n",
+      "\n",
+      "print(...)\n",
+      "    print(value, ..., sep=' ', end='\\n', file=sys.stdout, flush=False)\n",
+      "    \n",
+      "    Prints the values to a stream, or to sys.stdout by default.\n",
+      "    Optional keyword arguments:\n",
+      "    file:  a file-like object (stream); defaults to the current sys.stdout.\n",
+      "    sep:   string inserted between values, default a space.\n",
+      "    end:   string appended after the last value, default a newline.\n",
+      "    flush: whether to forcibly flush the stream.\n",
+      "\n"
+     ]
+    }
+   ],
+   "source": [
+    "#| echo: true\n",
+    "help(print)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "66fbdee7",
+   "metadata": {},
+   "source": [
+    "This help message (the function's \"docstring\") includes a usage statement, a list of parameters accepted by the function, and their default values if they have them.\n",
+    "\n",
+    "## Error messages\n",
+    "\n",
+    "It is normal to encounter error messages while programming, whether you are learning for the first time or have been programming for many years. [We will discuss error messages in more detail later](./09-errors.md). For now, let's explore how people use them to get more help when they are stuck with their Python code.\n",
+    "\n",
+    "## Task\n",
+    "\n",
+    "Search the internet: paste the last line of your error message or the word \"python\" and a short description of what you want to do into your favourite search engine and you will usually find several examples where other people have encountered the same problem and came looking for help.\n",
+    "\n",
+    "## Hints\n",
+    "\n",
+    "[StackOverflow](https://stackoverflow.com/questions) can be particularly helpful for this: answers to questions are presented as a ranked thread ordered according to how useful other users found them to be.\n",
+    "\n",
+    "**Take care:** copying and pasting code written by somebody else is risky unless you understand exactly what it is doing!\n",
+    "\n",
+    "## Alternative approach\n",
+    "\n",
+    "Ask somebody \"in the real world\".\n",
+    "\n",
+    "If you have a colleague or friend with more expertise in Python than you have, show them the problem you are having and ask them for help.\n",
+    "\n",
+    "[We will discuss more debugging strategies in greater depth later in the lesson](./11-debugging.md).\n",
+    "\n",
+    "## Variables as Sticky Notes\n",
+    "\n",
+    "A variable in Python is analogous to a sticky note with a name written on it: assigning a value to a variable is like putting that sticky note on a particular value.\n",
+    "\n",
+    "![](fig/python-sticky-note-variables-01.svg){alt=\"Value of 65.0 with weight_kg label stuck on it\"}\n",
+    "\n",
+    "------------------------------------------------------------------------\n",
+    "\n",
+    "Using this analogy, we can investigate how assigning a value to one variable does **not** change values of other, seemingly related, variables. For example, let's store the subject's weight in pounds in its own variable:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 14,
+   "id": "3f7a03b2",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "weight in kilograms: 65.0 and in pounds: 143.0\n"
+     ]
+    }
+   ],
+   "source": [
+    "#| echo: true\n",
+    "# There are 2.2 pounds per kilogram\n",
+    "weight_lb = 2.2 * weight_kg\n",
+    "print('weight in kilograms:', weight_kg, 'and in pounds:', weight_lb)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "3b24435d",
+   "metadata": {},
+   "source": [
+    "## Commenting\n",
+    "\n",
+    "Everything in a line of code following the '\\#' symbol is a [comment](../learners/reference.md#comment) that is ignored by Python. Comments allow programmers to leave explanatory notes for other programmers or their future selves.\n",
+    "\n",
+    "## Variable Dependancies\n",
+    "\n",
+    "![](fig/python-sticky-note-variables-02.svg){alt=\"Value of 65.0 with weight_kg label stuck on it, and value of 143.0 with weight_lb label stuck on it\"}\n",
+    "\n",
+    "Similar to above, the expression `2.2 * weight_kg` is evaluated to `143.0`, and then this value is assigned to the variable `weight_lb` (i.e. the sticky note `weight_lb` is placed on `143.0`). At this point, each variable is \"stuck\" to completely distinct and unrelated values.\n",
+    "\n",
+    "------------------------------------------------------------------------\n",
+    "\n",
+    "Let's now change `weight_kg`:"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 15,
+   "id": "ec6fca30",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "weight in kilograms is now: 100.0 and weight in pounds is still: 143.0\n"
+     ]
+    }
+   ],
+   "source": [
+    "#| echo: true\n",
+    "weight_kg = 100.0\n",
+    "print('weight in kilograms is now:', weight_kg, 'and weight in pounds is still:', weight_lb)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "13adefd7",
+   "metadata": {},
+   "source": [
+    "![](fig/python-sticky-note-variables-03.svg){alt=\"Value of 100.0 with label weight_kg stuck on it, and value of 143.0 with label weight_lbstuck on it\"}\n",
+    "\n",
+    "Since `weight_lb` doesn't \"remember\" where its value comes from, it is not updated when we change `weight_kg`.\n",
+    "\n",
+    "## Task: Check Your Understanding\n",
+    "\n",
+    "::: {.panel-tabset}\n",
+    "### Question:\n",
+    "What values do the variables `mass` and `age` have after each of the following statements? Test your answer by executing the lines."
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 16,
+   "id": "5d0d38b7",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#| echo: true\n",
+    "mass = 47.5\n",
+    "age = 122\n",
+    "mass = mass * 2.0\n",
+    "age = age - 20"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d29ce5f2",
+   "metadata": {},
+   "source": [
+    "### Solution"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 17,
+   "id": "0dd4edde",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "47.5\n",
+      "122\n",
+      "95.0\n",
+      "102\n"
+     ]
+    }
+   ],
+   "source": [
+    "#| echo: true\n",
+    "mass = 47.5\n",
+    "print(mass)\n",
+    "age = 122\n",
+    "print(age)\n",
+    "mass = mass * 2.0\n",
+    "print(mass)\n",
+    "age = age - 20\n",
+    "print(age)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "bf60fde6",
+   "metadata": {},
+   "source": [
+    ":::\n",
+    "\n",
+    "## Task: Sorting Out References\n",
+    "\n",
+    "::: {.panel-tabset}\n",
+    "### Question:\n",
+    "Python allows you to assign multiple values to multiple variables in one line by separating the variables and values with commas. What does the following program print out?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 18,
+   "id": "1fbab8ac",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#| echo: true\n",
+    "first, second = 'Grace', 'Hopper'\n",
+    "third, fourth = second, first"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ba12f6ad",
+   "metadata": {},
+   "source": [
+    "### Solution"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 19,
+   "id": "ed78df9e",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "Hopper Grace\n"
+     ]
+    }
+   ],
+   "source": [
+    "#| echo: true\n",
+    "print(third, fourth)"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "fae7442d",
+   "metadata": {},
+   "source": [
+    "::: \n",
+    "\n",
+    "## Task: Seeing Data Types\n",
+    "\n",
+    "::: {.panel-tabset}\n",
+    "### Question:\n",
+    "What are the data types of the following variables?"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 20,
+   "id": "d9db9589",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "#| echo: true\n",
+    "planet = 'Earth'\n",
+    "apples = 5\n",
+    "distance = 10.5"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "459f16de",
+   "metadata": {},
+   "source": [
+    "### Solution"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 21,
+   "id": "b1483057",
+   "metadata": {},
+   "outputs": [
+    {
+     "name": "stdout",
+     "output_type": "stream",
+     "text": [
+      "<class 'str'>\n",
+      "<class 'int'>\n",
+      "<class 'float'>\n"
+     ]
+    }
+   ],
+   "source": [
+    "#| echo: true\n",
+    "print(type(planet))\n",
+    "print(type(apples))\n",
+    "print(type(distance))"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "18251015",
+   "metadata": {},
+   "source": [
+    ":::\n",
+    "\n",
+    "## keypoints\n",
+    "\n",
+    "-   Basic data types in Python include integers, strings, and floating-point numbers.\n",
+    "-   Variables are created on demand whenever a value is assigned to them.\n",
+    "-   Built-in functions are always available to use.\n",
+    "-   Error messages provide information about what has gone wrong with your program and where.\n",
+    "\n",
+    "## hints\n",
+    "\n",
+    "-   Use `variable = value` to assign a value to a variable in order to record it in memory.\n",
+    "-   Use `print(something)` to display the value of `something`.\n",
+    "-   Use `# some kind of explanation` to add comments to programs.\n",
+    "-   Use `help(thing)` to view help for something."
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3",
+   "path": "/Users/svztg/Library/Python/3.10/share/jupyter/kernels/python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.10.17"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}

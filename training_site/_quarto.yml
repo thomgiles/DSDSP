@@ -57,7 +57,7 @@ website:
                 href: methods_for_data_science/python-novice-inflammation/index.qmd
                 contents:
                   - methods_for_data_science/python-novice-inflammation/episodes/01-intro.qmd
-                  - methods_for_data_science/python-novice-inflammation/episodes/02-numpy.md
+                  - methods_for_data_science/python-novice-inflammation/episodes/02-numpy.qmd
                   - methods_for_data_science/python-novice-inflammation/episodes/03-matplotlib.md
                   - methods_for_data_science/python-novice-inflammation/episodes/04-lists.md
                   - methods_for_data_science/python-novice-inflammation/episodes/05-loop.md
