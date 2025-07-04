@@ -3,6 +3,24 @@ project:
   output-dir: _site
 
 website:
+  cookie-consent:
+    type: express
+    style: headline
+    palette: dark
+  open-graph:
+    locale: es_ES
+    site-name: Quarto
+  announcement: 
+    icon: info-circle
+    dismissable: true
+    content: "**Alert** - This site is currently under construction"
+    type: primary
+    position: below-navbar
+
+  page-footer:
+    left: |
+      ![Logo image](assets/UoN_dark_logo.png)
+      
   navbar:
     title: "DSDSP"
     subtitle: 
@@ -15,22 +33,28 @@ website:
 
   sidebar:
     style: "floating"
+    collapse-level: 0
     contents:
       - section: "Learning modules"
         contents:
           - section: "Esential Digital Skills"
+            href: esential_digital_skills/index.qmd
             contents:
               - section: "Digital Research at UoN"
+                href: esential_digital_skills/digital_research_at_uon/index.qmd
                 contents:
                   - esential_digital_skills/digital_research_at_uon/episodes/01-digital_tools.qmd
                   - esential_digital_skills/digital_research_at_uon/episodes/02-digital_delivery.qmd
               - section: "Using Data Responsibly"
+                href: esential_digital_skills/using_data_responsibly/index.qmd
                 contents:
                   - esential_digital_skills/using_data_responsibly/episodes/01-data_governance_and_policy.qmd
                   - esential_digital_skills/using_data_responsibly/episodes/02-research_data_managment.qmd
           - section: "Methods for Data Science"
+            href: methods_for_data_science/index.qmd
             contents:
               - section: "Applied Data Sciences (Python)"
+                href: methods_for_data_science/python-novice-inflammation/index.qmd
                 contents:
                   - methods_for_data_science/python-novice-inflammation/episodes/01-intro.qmd
                   - methods_for_data_science/python-novice-inflammation/episodes/02-numpy.md
