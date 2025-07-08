@@ -4,7 +4,29 @@ author: "DRS Training"
 output: html_document
 ---
 
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(renv)
+renv::snapshot(prompt = FALSE)
+renv::restore(prompt = FALSE)
 
+required_pkgs <- c(
+  "rmarkdown", "knitr"
+)
+installed <- rownames(installed.packages())
+to_install <- setdiff(required_pkgs, installed)
+
+if (length(to_install) > 0) {
+  install.packages(to_install)
+}
+
+invisible(lapply(required_pkgs, library, character.only = TRUE))
+
+renv::snapshot(prompt = FALSE)
+
+```
 
 # R Functions
 
@@ -15,6 +37,7 @@ If you are duplicating sections of code to carry out similar actions in differen
 The appropriate use of functions makes code more robust and efficient.
 
 In a way the R language is really just a massive collection of functions!
+
   
 ## Structure
 
