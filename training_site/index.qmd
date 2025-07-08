@@ -1,6 +1,15 @@
 ---
 title: "Data Science and Digital Skills Programme"
 subtitle: "Building core competencies for modern, reproducible research"
+format:
+  html:
+    theme: 
+        - default
+        - ./uon.scss
+    toc: true
+    number-sections: false
+    page-layout: article
+editor: visual
 ---
 
 # Programme Overview
@@ -11,7 +20,7 @@ subtitle: "Building core competencies for modern, reproducible research"
 :::
 
 ::: g-col-9
-The **Data Science & Digital Skills Programme (DS&DSP)** is a one-year, tiered in-person training pathway designed to equip researchers with the core digital competencies required for modern, reproducible, and data-intensive research. 
+The **Data Science & Digital Skills Programme (DS&DSP)** is a one-year, tiered in-person training pathway designed to equip researchers with the core digital competencies required for modern, reproducible, and data-intensive research.
 
 In a landscape where computational literacy, responsible data handling, and digital best practices are integral to research quality, the programme offers structured, progressive training to address skill gaps across disciplines.
 :::

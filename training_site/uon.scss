@@ -6,7 +6,7 @@ $body-color: #364156;
 $link-color: #37B4B0;
 $navbar-bg: #102A43;
 $navbar-fg: #ffffff;
-$sidebar-bg: #405162;
+$sidebar-bg: #37B4B0;
 $sidebar-fg: #ffffff;
 $footer-bg: #102A43;
 $footer-fg: #ffffff;
@@ -27,17 +27,6 @@ h1, h2, h3, h4, h5, h6 {
 .nav-tabs {
   background-color: #fff;  // background behind all tabs
   border-bottom: 0px;
-}
-
-header#title-block-header {
-    color: white;
-    padding: 20px;
-    background-color: #405162;
-}
-
-.breadcrumb {
-    --bs-breadcrumb-divider-color: white;
-    --bs-breadcrumb-item-active-color: white;
 }
 
 /* Individual tab buttons */
@@ -64,28 +53,4 @@ header#title-block-header {
 
 .reveal .slide-logo {
    max-height: 1.5em !important;
-}
-
-
-/* custom callout 1  */
-.callout-c1 {
-  padding: 10px; 
-  color: white;
-  background-color: #37B4B0;
-}
-
-/* custom callout 2  */
-.callout-c2 {
-  padding: 10px;
-  color: white;
-  background-color: #009BC1;
-}
-
-.termsfeed-com---palette-dark.termsfeed-com---nb {
-  background-color: #405162;
-}
-
-.termsfeed-com---palette-dark .cc-nb-okagree, .termsfeed-com---palette-dark .cc-nb-changep, .termsfeed-com---palette-dark .cc-nb-reject{
-  background-color: #009BC1;
-  color: white; 
 }

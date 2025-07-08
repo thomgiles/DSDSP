@@ -12,4 +12,4 @@ format:
 
 # Course Info:
 
-This course establishes
+This course establishes 
