@@ -28,8 +28,6 @@
         displayName: 'Set up Python 3.11'
 
       - script: |
-          python -m venv .venv
-          source .venv/bin/activate
           pip install -r requirements.txt
           pip install jupyter pyyaml
         workingDirectory: training_site
@@ -43,6 +41,7 @@
           sudo dpkg -i quarto-linux-amd64.deb
           quarto --version
           quarto install tinytex
+          /opt/quarto/bin/tools/jupyter/bin/python3 -m pip install jupyter pyyaml
         displayName: 'Install Quarto CLI'
 
       - script: |
