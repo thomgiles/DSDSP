@@ -4,18 +4,6 @@ author: "Data Analysis with R"
 date: "July 7, 2025"
 ---
 
-# Introduction
-This R Markdown document demonstrates data manipulation and visualization using the `tidyverse` suite of packages, particularly `dplyr`, `tidyr`, `readr`, `stringr`, and `ggplot2`. We will use the `gapminder` dataset to perform various data operations and create visualizations. The document also includes solutions to the provided exercises.
-
-
-# Installing and Loading Packages
-First, we load the necessary packages using renv.
-
-```r
-library(renv)
-renv::restore(prompt = FALSE)
-```
-
 ```{r}
 #| echo: false
 #| message: false
@@ -39,6 +27,18 @@ invisible(lapply(required_pkgs, library, character.only = TRUE))
 
 renv::snapshot(prompt = FALSE)
 
+```
+
+# Introduction
+This R Markdown document demonstrates data manipulation and visualization using the `tidyverse` suite of packages, particularly `dplyr`, `tidyr`, `readr`, `stringr`, and `ggplot2`. We will use the `gapminder` dataset to perform various data operations and create visualizations. The document also includes solutions to the provided exercises.
+
+
+# Installing and Loading Packages
+First, we load the necessary packages using renv.
+
+```r
+library(renv)
+renv::restore(prompt = FALSE)
 ```
 
 # Exploring the Gapminder Dataset

@@ -3,6 +3,30 @@ title: "R Variables"
 author: "DRS Training"
 ---
 
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(renv)
+renv::snapshot(prompt = FALSE)
+renv::restore(prompt = FALSE)
+
+required_pkgs <- c(
+  "rmarkdown", "knitr"
+)
+installed <- rownames(installed.packages())
+to_install <- setdiff(required_pkgs, installed)
+
+if (length(to_install) > 0) {
+  install.packages(to_install)
+}
+
+invisible(lapply(required_pkgs, library, character.only = TRUE))
+
+renv::snapshot(prompt = FALSE)
+
+```
+
 # Doing Maths in R
 R can just be used directly as a calculator but mathematical manipulations come up all the time as parts of R scripts. You can use the R console as a place to test commands and as a calculator.
 
