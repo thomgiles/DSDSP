@@ -11,5 +11,4 @@ __pycache__/
 .env
 .DS_Store
 renv/library/
-renv/python/venv/
-.venv
+renv/python/
