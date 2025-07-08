@@ -4,6 +4,20 @@ author: "Data Analysis with R"
 date: "July 7, 2025"
 ---
 
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+
+required_pkgs <- c(
+  "rmarkdown", "gapminder", "tidyverse", "readxl",
+  "openxlsx", "gridExtra", "ggExtra", "knitr"
+)
+
+invisible(lapply(required_pkgs, library, character.only = TRUE))
+
+```
+
 # Introduction
 This R Markdown document demonstrates data manipulation and visualization using the `tidyverse` suite of packages, particularly `dplyr`, `tidyr`, `readr`, `stringr`, and `ggplot2`. We will use the `gapminder` dataset to perform various data operations and create visualizations. The document also includes solutions to the provided exercises.
 
