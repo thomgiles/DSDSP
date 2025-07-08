@@ -4,30 +4,6 @@ author: "DRS Training"
 output: html_document
 ---
 
-```{r}
-#| echo: false
-#| message: false
-#| warning: false
-library(renv)
-renv::snapshot(prompt = FALSE)
-renv::restore(prompt = FALSE)
-
-required_pkgs <- c(
-  "rmarkdown", "knitr"
-)
-installed <- rownames(installed.packages())
-to_install <- setdiff(required_pkgs, installed)
-
-if (length(to_install) > 0) {
-  install.packages(to_install)
-}
-
-invisible(lapply(required_pkgs, library, character.only = TRUE))
-
-renv::snapshot(prompt = FALSE)
-
-```
-
 # R Functions
 
 A function is a discrete section of code that carries out a particular routine task.
