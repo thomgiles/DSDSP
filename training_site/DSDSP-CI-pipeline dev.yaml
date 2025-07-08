@@ -41,7 +41,7 @@
           sudo dpkg -i quarto-linux-amd64.deb
           quarto --version
           quarto install tinytex
-          /opt/quarto/bin/tools/jupyter/bin/python3 -m pip install jupyter pyyaml
+          quarto install jupyter
         displayName: 'Install Quarto CLI'
 
       - script: |
