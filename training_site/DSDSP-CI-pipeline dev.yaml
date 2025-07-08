@@ -52,14 +52,15 @@
 
       - script: |
           mkdir -p ~/.R/library
+          export R_LIBS_USER=$HOME/.R/library
           echo 'R_LIBS_USER="~/.R/library"' >> ~/.Renviron
           Rscript -e 'install.packages("renv", repos = "https://cloud.r-project.org")'
-          Rscript -e 'renv::restore()'
-          export R_LIBS_USER=$HOME/.R/library
+          Rscript -e 'renv::activate(); renv::restore()'
         workingDirectory: training_site
         displayName: 'Restore R environment'
 
       - script: |
+          export R_LIBS_USER=$HOME/.R/library
           quarto render .
           echo "Debug: list contents"
           pwd
