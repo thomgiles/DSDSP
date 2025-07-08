@@ -67,7 +67,7 @@
       - script: |
           export R_LIBS_USER=$HOME/.R/library
           quarto render .
-          echo "Debug: list contents"
+          echo "list contents"
           pwd
           ls -al
           ls -al _site || echo "_site not found"
