@@ -15,7 +15,7 @@ Vectorization approaches are also used extensively within dataframes.
 
 The general structure of a for loop is:
 
-```{r view_data}
+```{r}
 #| echo: true
 sequence=c(1:10)
 for (val in sequence)
@@ -34,27 +34,27 @@ The sequence is a vector/list and val takes on each of element of the sequence i
 
 Copy the provided test code and run it
 
-  
-```{r view_data}
+
+```{r}
 #| echo: true
-  
-  for(i in 1:10){
-    cat(paste(i, '*', i, '=', i^2, '\n'))
-  }
-  
+
+for(i in 1:10){
+  cat(paste(i, '*', i, '=', i^2, '\n'))
+}
+
 ```
 
 ## Task 2
 
 Try a vectorised alternative 
 
-  
-```{r view_data}
+
+```{r}
 #| echo: true
-  
-  nums <- 1:10
-  cat(paste(nums, '*', nums, '=', nums^2, collapse = "\n"))
-  
+
+nums <- 1:10
+cat(paste(nums, '*', nums, '=', nums^2, collapse = "\n"))
+
 ```
 
 ---
@@ -69,24 +69,23 @@ You can investigate the commands/functions cat and paste further using R help e.
 
 Copy the provided test code, that saves some dataframes as files, and run it
 
- 
- ```{r eval = FALSE}
- 
- library(gapminder)
- library(dplyr)
- library(readr)
- 
- continents <- as.character(unique(gapminder$continent))
- 
- for(cont in continents){
-   
-   gm_cont_data <- gapminder %>%  dplyr::filter(continent == cont)
-   
-   write_csv(gm_cont_data, paste0('gapminder_', cont,'.csv' ))
-   cat(paste0('gapminder_', cont,'.csv', '\n' ))
-   
- }
- ```
+
+```{r eval = FALSE}
+
+library(gapminder)
+library(dplyr)
+library(readr)
+
+continents <- as.character(unique(gapminder$continent))
+
+for(cont in continents){
+  gm_cont_data <- gapminder %>%  dplyr::filter(continent == cont)
+
+  write_csv(gm_cont_data, paste0('gapminder_', cont,'.csv' ))
+  cat(paste0('gapminder_', cont,'.csv', '\n' ))
+
+}
+```
 
 ## Task 4
 

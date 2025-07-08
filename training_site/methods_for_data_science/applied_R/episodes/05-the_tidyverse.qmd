@@ -21,6 +21,7 @@ renv::restore(prompt = FALSE)
 #| message: false
 #| warning: false
 library(renv)
+renv::snapshot(prompt = FALSE)
 renv::restore(prompt = FALSE)
 
 required_pkgs <- c(
@@ -130,6 +131,9 @@ Select columns using indices, ranges, or specific patterns.
 gapminder %>% select(c(2, 3)) %>% head()
 
 ```
+
+## Select by index range
+
 ```{r select_additional2}
 #| echo: true
 # Select by index range
@@ -142,6 +146,9 @@ gapminder %>% select(2:3) %>% head()
 # Select by labels
 gapminder %>% select(c('country', 'continent')) %>% head()
 ```
+
+## Exclude by labels
+
 ```{r select_additional4}
 #| echo: true
 # Exclude by labels
@@ -154,11 +161,15 @@ gapminder %>% select(-c('country', 'continent')) %>% head()
 # Select columns starting with 'co'
 gapminder %>% select(starts_with('co')) %>% head()
 ```
+
+## Select columns ending with 'p'
 ```{r select_additional6}
 #| echo: true
 # Select columns ending with 'p'
 gapminder %>% select(ends_with('p')) %>% head()
 ```
+
+# # Select columns containing 'pop'
 ```{r select_additional7}
 #| echo: true
 # Select columns containing 'pop'
@@ -284,7 +295,7 @@ gapminder %>%
 Perform joins using `inner_join()`, `left_join()`, `right_join()`, and `full_join()`.
 
 ## Example data for joining
-```{r join_data1}
+```{r join_data0}
 #| echo: true
 # Create sample datasets
 employees <- data.frame(
@@ -292,7 +303,13 @@ employees <- data.frame(
   name = c("Alice", "Bob", "Charlie", "David"),
   age = c(25, 30, 22, 28)
 )
+```
 
+---
+
+```{r join_data1}
+#| echo: true
+# Create sample datasets
 departments <- data.frame(
   id = c(2, 3, 5, 6),
   department = c("HR", "Finance", "IT", "Sales")
@@ -404,6 +421,8 @@ words <- str_split(text, " ")
 print(words)
 ```
 
+Here we split the sentence up into a list of words
+
 ## Access specific word with stringr
 
 ```{r stringr2}
@@ -412,21 +431,27 @@ print(words)
 print(words[[1]][3])
 ```
 
+We can print specific works in the list
+
 ## Extract substring with stringr
 ```{r stringr3}#| echo: true
-
+#| echo: true
 # Extract substring
 sub_text <- str_sub(text, 7, 11)
 print(sub_text)
 ```
 
-## EReplace substring with stringr
+we can extract a substring
+
+## Replace substring with stringr
 ```{r stringr4}
 #| echo: true
 # Replace substring
 str_sub(text, 1, 5) <- "Hi"
 print(text)
 ```
+
+and we can replace a substring directly
 
 # Visualizations with ggplot2
 Create visualizations using `ggplot2`.

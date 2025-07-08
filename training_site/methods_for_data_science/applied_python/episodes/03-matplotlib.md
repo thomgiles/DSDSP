@@ -279,7 +279,7 @@ fig.tight_layout()
 matplotlib.pyplot.show()
 ```
 
-![](fig/inflammation-01-line-styles.svg){alt='Three line graphs, with step lines connecting the points, showing the daily average, maximumand minimum inflammation over a 40-day period.'}
+![](./fig/inflammation-01-line-styles.svg){alt='Three line graphs, with step lines connecting the points, showing the daily average, maximumand minimum inflammation over a 40-day period.'}
 
 
 
