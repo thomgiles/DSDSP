@@ -2,6 +2,15 @@ project:
   type: website
   output-dir: _site
 
+format:
+  html:
+    theme: 
+        - default
+        - ./uon.scss
+    toc: true
+    number-sections: false
+    page-layout: article
+
 website:
   cookie-consent:
     type: express
@@ -19,7 +28,7 @@ website:
 
   page-footer:
     left: |
-      ![Logo image](assets/UoN_dark_logo.png)
+      ![Logo image](/training_site/assets/UoN_dark_logo.png)
       
   navbar:
     title: "DSDSP"
@@ -37,34 +46,81 @@ website:
     contents:
       - section: "Learning modules"
         contents:
-          - section: "Esential Digital Skills"
-            href: esential_digital_skills/index.qmd
+          - section: "Essential Digital Skills"
+            href: essential_digital_skills/index.qmd
             contents:
               - section: "Digital Research at UoN"
-                href: esential_digital_skills/digital_research_at_uon/index.qmd
+                href: essential_digital_skills/digital_research_at_uon/index.qmd
                 contents:
-                  - esential_digital_skills/digital_research_at_uon/episodes/01-digital_tools.qmd
-                  - esential_digital_skills/digital_research_at_uon/episodes/02-digital_delivery.qmd
+                  - essential_digital_skills/digital_research_at_uon/episodes/01-digital_tools.qmd
+                  - essential_digital_skills/digital_research_at_uon/episodes/02-digital_delivery.qmd
               - section: "Using Data Responsibly"
-                href: esential_digital_skills/using_data_responsibly/index.qmd
+                href: essential_digital_skills/using_data_responsibly/index.qmd
                 contents:
-                  - esential_digital_skills/using_data_responsibly/episodes/01-data_governance_and_policy.qmd
-                  - esential_digital_skills/using_data_responsibly/episodes/02-research_data_managment.qmd
+                  - essential_digital_skills/using_data_responsibly/episodes/01-data_governance_and_policy.qmd
+                  - essential_digital_skills/using_data_responsibly/episodes/02-research_data_managment.qmd
+
           - section: "Methods for Data Science"
             href: methods_for_data_science/index.qmd
             contents:
               - section: "Applied Data Sciences (Python)"
-                href: methods_for_data_science/python-novice-inflammation/index.qmd
+                href: methods_for_data_science/applied_python/index.qmd
                 contents:
-                  - methods_for_data_science/python-novice-inflammation/episodes/01-intro.qmd
-                  - methods_for_data_science/python-novice-inflammation/episodes/02-numpy.qmd
-                  - methods_for_data_science/python-novice-inflammation/episodes/03-matplotlib.md
-                  - methods_for_data_science/python-novice-inflammation/episodes/04-lists.md
-                  - methods_for_data_science/python-novice-inflammation/episodes/05-loop.md
-                  - methods_for_data_science/python-novice-inflammation/episodes/06-files.md
-                  - methods_for_data_science/python-novice-inflammation/episodes/07-cond.md
-                  - methods_for_data_science/python-novice-inflammation/episodes/08-func.md
-                  - methods_for_data_science/python-novice-inflammation/episodes/09-errors.md
-                  - methods_for_data_science/python-novice-inflammation/episodes/10-defensive.md
-                  - methods_for_data_science/python-novice-inflammation/episodes/11-debugging.md
-                  - methods_for_data_science/python-novice-inflammation/episodes/12-cmdline.md
+                  - section: "Episodes"
+                    contents:
+                      - methods_for_data_science/applied_python/episodes/01-intro.qmd
+                      - methods_for_data_science/applied_python/episodes/02-numpy.qmd
+                      - methods_for_data_science/applied_python/episodes/03-matplotlib.md
+                      - methods_for_data_science/applied_python/episodes/04-lists.md
+                      - methods_for_data_science/applied_python/episodes/05-loop.md
+                      - methods_for_data_science/applied_python/episodes/06-files.md
+                      - methods_for_data_science/applied_python/episodes/07-cond.md
+                      - methods_for_data_science/applied_python/episodes/08-func.md
+                      - methods_for_data_science/applied_python/episodes/09-errors.md
+                      - methods_for_data_science/applied_python/episodes/10-defensive.md
+                      - methods_for_data_science/applied_python/episodes/11-debugging.md
+                      - methods_for_data_science/applied_python/episodes/12-cmdline.md
+                  - section: "Learners"
+                    contents:
+                      - methods_for_data_science/applied_python/learners/setup.md
+                      - methods_for_data_science/applied_python/learners/discuss.md
+                      - methods_for_data_science/applied_python/learners/reference.md
+                  - section: "Instructors"
+                    contents:
+                      - methods_for_data_science/applied_python/instructors/additional_material.md
+                      - methods_for_data_science/applied_python/instructors/extra_exercises.md
+                      - methods_for_data_science/applied_python/instructors/instructor-notes.md
+                  - section: "Community & Metadata"
+                    contents:
+                      - methods_for_data_science/applied_python/README.md
+                      - methods_for_data_science/applied_python/CONTRIBUTING.md
+                      - methods_for_data_science/applied_python/CODE_OF_CONDUCT.md
+                      - methods_for_data_science/applied_python/LICENSE.md
+                      - methods_for_data_science/applied_python/AUTHORS.md
+                      - methods_for_data_science/applied_python/profiles/learner-profiles.md
+
+              - section: "Applied Data Sciences (R)"
+                href: methods_for_data_science/applied_R/index.md
+                contents:
+                  - section: "Episodes"
+                    contents:
+                      - methods_for_data_science/applied_R/episodes/01-Rstudio_intro.qmd
+                      - methods_for_data_science/applied_R/episodes/02-R_variables_intro.qmd
+                      - methods_for_data_science/applied_R/episodes/03-R_functions.qmd
+                      - methods_for_data_science/applied_R/episodes/04-for_loops.qmd
+                      - methods_for_data_science/applied_R/episodes/05-the_tidyverse.qmd
+                  - section: "Learners"
+                    contents:
+                      - methods_for_data_science/applied_R/learners/setup.md
+                      - methods_for_data_science/applied_R/learners/discuss.md
+                      - methods_for_data_science/applied_R/learners/reference.md
+                  - section: "Instructors"
+                    contents:
+                      - methods_for_data_science/applied_R/instructors/instructor-notes.md
+                  - section: "Community & Metadata"
+                    contents:
+                      - methods_for_data_science/applied_R/README.md
+                      - methods_for_data_science/applied_R/CONTRIBUTING.md
+                      - methods_for_data_science/applied_R/CODE_OF_CONDUCT.md
+                      - methods_for_data_science/applied_R/LICENSE.md
+                      - methods_for_data_science/applied_R/profiles/learner-profiles.md
