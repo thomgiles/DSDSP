@@ -1,20 +1,5 @@
 ---
 title: "Data Governance and Policy"
-format:
-  html:
-    theme: 
-        - default
-        - ../../../uon.scss    
-    toc: true
-    number-sections: false
-    page-layout: article
-    output-file: 01-data_governance_and_policy.html
-  revealjs:
-    output-file: 01-data_governance_and_policy.revealjs.html
-    slide-number: true
-    chalkboard: true
-    preview-links: auto
-editor: visual
 ---
 
 ## stuff

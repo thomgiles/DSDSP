@@ -1,15 +1,6 @@
 ---
 title: "Data Science and Digital Skills Programme"
 subtitle: "Building core competencies for modern, reproducible research"
-format:
-  html:
-    theme: 
-        - default
-        - ./uon.scss
-    toc: true
-    number-sections: false
-    page-layout: article
-editor: visual
 ---
 
 # Programme Overview

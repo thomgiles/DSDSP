@@ -1,0 +1,765 @@
+---
+title: "Tidyverse and ggplot2 Analysis with Gapminder Dataset"
+author: "Data Analysis with R"
+date: "July 7, 2025"
+---
+
+# Introduction
+This R Markdown document demonstrates data manipulation and visualization using the `tidyverse` suite of packages, particularly `dplyr`, `tidyr`, `readr`, `stringr`, and `ggplot2`. We will use the `gapminder` dataset to perform various data operations and create visualizations. The document also includes solutions to the provided exercises.
+
+
+# Installing and Loading Packages
+First, we load the necessary packages using renv.
+
+```r
+library(renv)
+renv::restore(prompt = FALSE)
+```
+
+```{r}
+#| echo: false
+#| message: false
+#| warning: false
+library(renv)
+renv::restore(prompt = FALSE)
+
+required_pkgs <- c(
+  "rmarkdown", "gapminder", "tidyverse", "readxl",
+  "openxlsx", "gridExtra", "ggExtra", "knitr"
+)
+installed <- rownames(installed.packages())
+to_install <- setdiff(required_pkgs, installed)
+
+if (length(to_install) > 0) {
+  install.packages(to_install)
+}
+
+invisible(lapply(required_pkgs, library, character.only = TRUE))
+
+renv::snapshot(prompt = FALSE)
+
+```
+
+# Exploring the Gapminder Dataset
+Let's take a look at the first few rows of the `gapminder` dataset.
+
+```{r view_data}
+#| echo: true
+# View first six rows
+head(gapminder) 
+```
+
+# Data Manipulation with dplyr
+The `dplyr` package provides functions for data manipulation, such as `select()`, `filter()`, `mutate()`, `arrange()`, `summarise()`, and `group_by()`.
+
+# Selecting Columns
+Select specific columns using `select()`.
+
+## individual columns
+```{r select_columns1}
+#| echo: true
+# Select individual columns
+sel_data <- gapminder %>% select(country, continent, pop)
+head(sel_data)
+```
+
+## range of columns
+
+```{r select_columns2}
+#| echo: true
+# Select range of columns
+sel_data <- gapminder %>% select(country, year:pop)
+head(sel_data)
+```
+
+## Exclude columns
+```{r select_columns3}
+#| echo: true
+# Exclude columns
+sel_data <- gapminder %>% select(-pop)
+head(sel_data)
+```
+
+## Exclude multiple columns
+```{r select_columns4}
+#| echo: true
+# Exclude multiple columns
+sel_data <- gapminder %>% select(-pop, -country)
+head(sel_data)
+```
+
+## Exclude a vector of columns
+```{r select_columns5}
+#| echo: true
+# Exclude a vector of columns
+sel_data <- gapminder %>% select(-c(pop, country))
+head(sel_data)
+```
+
+## Exclude a Complement of columns
+```{r select_columns6}
+#| echo: true
+# Complement of columns
+f1 <- gapminder %>% select(!c(continent, gdpPercap))
+head(f1)
+```
+
+## Rename columns with select
+```{r select_columns7}
+#| echo: true
+# Rename columns with select
+sel_data <- gapminder %>% select(Life_Expectancy = lifeExp)
+head(sel_data)
+```
+
+## Rename columns with rename()
+```{r select_columns8}
+#| echo: true
+# Rename columns with rename()
+sel_data <- gapminder %>% rename(Life_Expectancy = lifeExp)
+head(sel_data)
+```
+
+# Additional Selection Methods
+Select columns using indices, ranges, or specific patterns.
+
+## Select by index
+```{r select_additional1}
+#| echo: true
+# Select by index
+gapminder %>% select(c(2, 3)) %>% head()
+
+```
+```{r select_additional2}
+#| echo: true
+# Select by index range
+gapminder %>% select(2:3) %>% head()
+```
+
+## Exclude by labels
+```{r select_additional3}
+#| echo: true
+# Select by labels
+gapminder %>% select(c('country', 'continent')) %>% head()
+```
+```{r select_additional4}
+#| echo: true
+# Exclude by labels
+gapminder %>% select(-c('country', 'continent')) %>% head()
+```
+
+## Select columns ending with 'p'
+```{r select_additional5}
+#| echo: true
+# Select columns starting with 'co'
+gapminder %>% select(starts_with('co')) %>% head()
+```
+```{r select_additional6}
+#| echo: true
+# Select columns ending with 'p'
+gapminder %>% select(ends_with('p')) %>% head()
+```
+```{r select_additional7}
+#| echo: true
+# Select columns containing 'pop'
+gapminder %>% select(contains('pop')) %>% head()
+```
+
+# Filtering Rows
+Use `filter()` to subset rows based on conditions.
+
+## Filter for Belgium
+```{r filter_rows1}
+#| echo: true
+# Filter for Belgium
+filt_data <- gapminder %>% filter(country == "Belgium") %>% head(8)
+filt_data
+```
+
+## Filter with multiple conditions
+```{r filter_rows2}
+#| echo: true
+# Filter with multiple conditions
+gapminder %>% 
+  filter(country == "Oman" & year > 1980 & year <= 2000) %>% 
+  head(8)
+```
+
+## Filter using %in% operator
+```{r filter_rows3}
+#| echo: true
+# Filter using %in% operator
+scandinavia <- c("Denmark", "Iceland", "Norway", "Sweden", "Finland")
+res <- gapminder %>% filter(country %in% scandinavia)
+head(res)
+```
+
+# Combining Select and Filter
+Combine `select()` and `filter()` to extract specific data.
+
+```{r combine_select_filter}
+#| echo: true
+uk_gdp <- gapminder %>%
+  filter(country == "United Kingdom") %>%
+  select(country, year, gdpPercap)
+head(uk_gdp)
+```
+
+# Mutating Data
+Use `mutate()` to create new columns and `transmute()` to keep only new columns.
+
+# Using Mutate to add new columns
+```{r mutate_data1}
+#| echo: true
+# Add new columns
+gapminder %>%  
+  mutate(pop_million = pop / 1000000,
+         countName = substring(country, 1, 3)) %>%
+  head()
+```
+
+# Using Mutate to Keep only new columns
+```{r mutate_data2}
+#| echo: true
+# Keep only new columns
+gapminder %>% transmute(total_years = lifeExp * pop) %>% head()
+```
+
+# Using Mutate to Classify GDP per capita
+```{r mutate_data3}
+#| echo: true
+# Classify GDP per capita
+gapminder %>%
+  mutate(GDP_Category = ifelse(gdpPercap > 10000, "High", "Low")) %>%
+  select(country, year, gdpPercap, GDP_Category) %>%
+  head(10)
+```
+
+# Arranging Data
+Sort data using `arrange()`.
+
+## Sort in ascending order
+```{r arrange_data1}
+#| echo: true
+# Sort in ascending order
+gapminder %>% arrange(year, gdpPercap) %>% head()
+```
+
+## Sort in descending order
+```{r arrange_data2}
+#| echo: true
+# Sort in descending order
+gapminder %>% arrange(year, desc(gdpPercap)) %>% head()
+```
+
+## Summarizing Data
+Compute summary statistics with `summarise()`.
+
+```{r summarise_data}
+#| echo: true
+scandinavia <- c("Denmark", "Iceland", "Norway", "Sweden", "Finland")
+gapminder %>% 
+  filter(year == 1982 & country %in% scandinavia) %>% 
+  summarise(n_obs = n(),
+            total_pop = sum(pop),
+            mean_life_exp = mean(lifeExp),
+            range_life_exp = max(lifeExp) - min(lifeExp))
+```
+
+## Grouping Data
+Group data with `group_by()` for per-group summaries.
+
+```{r group_by_data}
+#| echo: true
+gapminder %>% 
+  group_by(year) %>% 
+  summarise(n_obs = n(),
+            n_countries = n_distinct(country),
+            total_pop = sum(pop),
+            mean_life_exp = mean(lifeExp),
+            range_life_exp = max(lifeExp) - min(lifeExp))
+```
+
+# Joining Data
+Perform joins using `inner_join()`, `left_join()`, `right_join()`, and `full_join()`.
+
+## Example data for joining
+```{r join_data1}
+#| echo: true
+# Create sample datasets
+employees <- data.frame(
+  id = c(1, 2, 3, 4),
+  name = c("Alice", "Bob", "Charlie", "David"),
+  age = c(25, 30, 22, 28)
+)
+
+departments <- data.frame(
+  id = c(2, 3, 5, 6),
+  department = c("HR", "Finance", "IT", "Sales")
+)
+```
+
+## Inner join
+
+```{r join_data2}
+#| echo: true
+# Perform inner join
+employees %>% inner_join(departments, by = "id")
+```
+
+## left join
+```{r join_data3}
+#| echo: true
+# Perform left join
+employees %>% left_join(departments, by = "id")
+```
+
+## right join
+```{r join_data4}
+#| echo: true
+# Perform right join
+employees %>% right_join(departments, by = "id")
+```
+
+## full join
+```{r join_data5}
+#| echo: true
+# Perform full join
+employees %>% full_join(departments, by = "id")
+```
+
+# Reading and Writing Files
+Use `readr` to read and write delimited files, and `openxlsx` for Excel files.
+
+## Write to a file
+
+```{r read_write1, eval=FALSE}
+#| echo: true
+# Write to a file
+write_delim(res, "./methods_for_data_scince/applied_R/episodes/data/gapminder2.txt", delim = "\t")
+```
+
+
+## Write to Excel
+```{r read_write2, eval=FALSE}
+#| echo: true
+# Write to Excel
+write.xlsx(res, file = "./methods_for_data_scince/applied_R/episodes/data//gapm3.xlsx", sheetName = "gap", colNames = TRUE, rowNames = TRUE)
+```
+
+## Read from Excel
+```{r read_write3, eval=FALSE}
+#| echo: true
+# Read from Excel
+xl <- read.xlsx("./methods_for_data_scince/applied_R/episodes/data//gapm3.xlsx", sheet = "gap")
+```
+
+# Tidying Data with tidyr
+Handle missing values using `tidyr`.
+
+## Sample data with missing values
+```{r tidyr1}
+#| echo: true
+# Sample data with missing values
+df <- data.frame(
+  Name = c("Alice", "Bob", "Charlie", NA, "Eve"),
+  Age = c(25, NA, 30, 28, 22),
+  Score = c(80, 90, NA, 75, 95)
+)
+```
+
+## Remove rows with any NA
+
+```{r tidyr2}
+#| echo: true
+# Remove rows with any NA
+df_clean <- drop_na(df)
+```
+
+## Remove rows with NA in specific column
+
+```{r tidyr3}
+#| echo: true
+# Remove rows with NA in specific column
+df_clean_age <- drop_na(df, Age)
+```
+
+## Replace NA values
+
+```{r tidyr4}
+#| echo: true
+# Replace NA values
+df_filled <- df %>% replace_na(list(Age = 0, Score = 50, Name = "Unknown"))
+```
+
+# String Manipulation with stringr
+Perform string operations using `stringr`.
+
+## Split string with stringr
+```{r stringr1}
+#| echo: true
+# Split string
+text <- "Hello world, welcome to R programming!"
+words <- str_split(text, " ")
+print(words)
+```
+
+## Access specific word with stringr
+
+```{r stringr2}
+#| echo: true
+# Access specific word
+print(words[[1]][3])
+```
+
+## Extract substring with stringr
+```{r stringr3}#| echo: true
+
+# Extract substring
+sub_text <- str_sub(text, 7, 11)
+print(sub_text)
+```
+
+## EReplace substring with stringr
+```{r stringr4}
+#| echo: true
+# Replace substring
+str_sub(text, 1, 5) <- "Hi"
+print(text)
+```
+
+# Visualizations with ggplot2
+Create visualizations using `ggplot2`.
+
+## Scatter plot with ggplot2
+```{r ggplot21}
+#| echo: true
+# Basic scatter plot
+ggplot(data = gapminder, aes(x = lifeExp, y = gdpPercap)) +
+  geom_point()
+```
+
+## Bar plot with ggplot2
+```{r ggplot22}
+#| echo: true
+# Bar plot
+ggplot(data = gapminder, aes(x = continent)) +
+  geom_bar()
+```
+
+## Histogram plot with ggplot2
+
+```{r ggplot23}
+#| echo: true
+# Histogram
+ggplot(data = gapminder, aes(x = lifeExp)) +
+  geom_histogram()
+``` 
+
+## Box plot with ggplot2
+
+```{r ggplot24}
+#| echo: true
+# Box plot
+ggplot(gapminder, aes(x = continent, y = lifeExp)) +
+  geom_boxplot()
+``` 
+
+## Violin plot with ggplot2
+```{r ggplot25}
+#| echo: true
+# Violin plot
+ggplot(gapminder, aes(x = continent, y = gdpPercap)) +
+  geom_violin()
+``` 
+
+## Scatter plot with color aesthetic with ggplot2
+
+```{r ggplot26}
+#| echo: true
+# Scatter plot with color aesthetic
+ggplot(data = gapminder, aes(x = lifeExp, y = gdpPercap, color = continent)) +
+  geom_point()
+``` 
+
+## Scatter plot with custom color
+
+```{r ggplot27}
+#| echo: true
+# Scatter plot with custom color
+ggplot(data = gapminder, aes(x = lifeExp, y = gdpPercap)) +
+  geom_point(color = "red")
+``` 
+
+## Scatter plot with smooth line
+```{r ggplot28}
+#| echo: true
+# Scatter plot with smooth line
+ggplot(data = gapminder, aes(x = lifeExp, y = gdpPercap)) +
+  geom_point() +
+  geom_smooth(alpha = 0.5)
+``` 
+
+## Faceted plot in ggplot2
+```{r ggplot29}
+#| echo: true
+# Faceted plot
+ggplot(data = gapminder, aes(x = lifeExp, y = gdpPercap)) +
+  geom_point() +
+  geom_smooth(alpha = 0.5) +
+  facet_wrap(~continent)
+``` 
+
+## Customized axes
+```{r ggplot210}
+#| echo: true
+# Customized axes
+ggplot(data = gapminder, aes(x = lifeExp, y = gdpPercap)) +
+  geom_point() +
+  geom_smooth(alpha = 0.5) +
+  xlab("Life Expectancy") +
+  ylab("GDP Per Capita") +
+  xlim(0, 70) +
+  ylim(0, 100000)
+``` 
+
+## Box plot with customized y-axis
+
+```{r ggplot211}
+#| echo: true
+# Box plot with customized y-axis
+ggplot(gapminder, aes(x = continent, y = lifeExp)) +
+  geom_boxplot() +
+  scale_y_continuous(name = "Life Expectancy (Years)",
+                     limits = c(10, 90),
+                     breaks = c(10, 20, 30, 40, 50, 60, 70, 80, 90))
+``` 
+
+## Box plot with customized x-axis
+
+```{r ggplot212}
+#| echo: true
+# Box plot with customized x-axis
+ggplot(gapminder, aes(x = continent, y = lifeExp)) +
+  geom_boxplot() +
+  scale_x_discrete(name = "Continent",
+                   labels = c("Africa" = "AF", "Americas" = "AM",
+                              "Asia" = "AS", "Europe" = "EU", "Oceania" = "OC"))
+``` 
+
+## Color gradient scale
+
+```{r ggplot213}
+#| echo: true
+# Color gradient scale
+ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp, color = pop)) +
+  geom_point() +
+  scale_color_gradient(low = "blue", high = "red")
+``` 
+
+## Discrete color scale
+```{r ggplot214}
+#| echo: true
+# Discrete color scale
+ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp, color = continent)) +
+  geom_point() +
+  scale_color_manual(values = c("#1f78b4", "#33a02c", "#e31a1c", "#ff7f00", "#6a3d9a"))
+``` 
+
+
+## Plot with color palette
+
+```{r ggplot215}
+#| echo: true
+# Plot with color palette
+ggplot(data = gapminder, aes(x = lifeExp, y = gdpPercap)) +
+  geom_point(aes(fill = continent), size = 5, shape = 21) +
+  geom_smooth(alpha = 0.5) +
+  scale_fill_brewer(palette = "Set2") +
+  theme_minimal()
+``` 
+
+## Box plot with theme_classic
+
+```{r ggplot216}
+#| echo: true
+# Box plot with theme_classic
+ggplot(gapminder, aes(x = continent, y = lifeExp)) +
+  geom_boxplot() +
+  theme_classic()
+``` 
+
+## Box plot with jitter
+
+```{r ggplot217}
+#| echo: true
+# Box plot with jitter
+ggplot(gapminder, aes(x = continent, y = lifeExp)) +
+  geom_boxplot(outlier.colour = "hotpink") +
+  geom_jitter(position = position_jitter(width = 0.1, height = 0), alpha = 1/4)
+``` 
+
+## Combined violin and box plot
+
+```{r ggplot218}
+#| echo: true
+# Combined violin and box plot
+ggplot(gapminder) +
+  geom_violin(aes(x = continent, y = gdpPercap), scale = "width") +
+  geom_boxplot(aes(x = continent, y = gdpPercap), width = 0.1)
+``` 
+
+## Multiple plots with gridExtra
+
+```{r ggplot219}
+#| echo: true
+# Multiple plots with gridExtra
+p1 <- ggplot(gapminder) + geom_boxplot(aes(x = continent, y = gdpPercap, fill = continent))
+p2 <- ggplot(gapminder) + geom_violin(aes(x = continent, y = gdpPercap, fill = continent))
+grid.arrange(p1, p2, nrow = 1)
+``` 
+
+## Marginal histogram
+
+```{r ggplot220}
+#| echo: true
+# Marginal histogram
+p <- ggplot(data = gapminder, aes(x = lifeExp, y = gdpPercap, fill = continent)) +
+  geom_point() +
+  theme(legend.position = "none")
+ggMarginal(p, type = "histogram")
+```
+
+# Saving Plots
+Save a plot to a file using `ggsave`.
+
+```{r save_plot}
+#| echo: true
+p1 <- ggplot(data = gapminder, aes(x = lifeExp, y = gdpPercap)) +
+  geom_point(aes(fill = continent), size = 5, shape = 21) +
+  geom_smooth(alpha = 0.5) +
+  scale_fill_brewer(palette = "Set2") +
+  theme_minimal()
+
+ggsave("myplot.png", plot = p1)
+```
+
+# Exercise Solutions
+Below are the solutions to the provided exercises.
+
+## Exercise 1: Select year, lifeExp, and country
+```{r exercise1}
+#| echo: true
+gapminder %>% select(year, lifeExp, country) %>% head()
+```
+
+## Exercise 2: Select all columns except year, lifeExp, and country
+```{r exercise2}
+#| echo: true
+gapminder %>% select(-year, -lifeExp, -country) %>% head()
+```
+
+## Exercise 3: Filter for year 2002
+```{r exercise3}
+#| echo: true
+gapminder %>% filter(year == 2002) %>% head()
+```
+
+## Exercise 4: Store and display data for Asian countries
+```{r exercise4}
+#| echo: true
+gapminder_asia <- gapminder %>% filter(continent == "Asia")
+head(gapminder_asia)
+```
+
+## Exercise 5: Compare Ireland and Brazil in 1977
+```{r exercise5}
+#| echo: true
+# Ireland
+gapminder %>% filter(year == 1977, country == "Ireland")
+
+# Brazil
+gapminder %>% filter(year == 1977, country == "Brazil")
+```
+
+## Exercise 6: African countries in 2012 with specific criteria
+```{r exercise6}
+#| echo: true
+df <- gapminder %>%
+  filter(continent == "Africa" & year == 2012 & pop <= 3 & lifeExp >= 70) %>%
+  select(country, continent)
+df
+```
+
+## Exercise 7: Lowest life expectancy
+```{r exercise7}
+#| echo: true
+gapminder %>% arrange(lifeExp) %>% head(1)
+```
+
+## Exercise 8: Highest life expectancy
+```{r exercise8}
+#| echo: true
+gapminder %>% arrange(desc(lifeExp)) %>% head(1)
+```
+
+## Exercise 9: Shortest life expectancy in the Americas in 1962
+```{r exercise9}
+#| echo: true
+gapminder %>%
+  mutate(lifeExpMonths = 12 * lifeExp) %>%
+  filter(year == 1962, continent == "Americas") %>%
+  arrange(lifeExpMonths) %>% head(1)
+```
+
+## Exercise 10: Summary statistics for life expectancy
+```{r exercise10}
+#| echo: true
+gapminder %>%
+  summarise(
+    lifeExp_min = min(lifeExp),
+    lifeExp_max = max(lifeExp),
+    lifeExp_mean = mean(lifeExp)
+  )
+```
+
+## Exercise 11: Life expectancy by year
+```{r exercise11}
+#| echo: true
+gapminder %>%
+  group_by(year) %>%
+  summarise(
+    lifeExp_min = min(lifeExp),
+    lifeExp_max = max(lifeExp),
+    lifeExp_mean = mean(lifeExp)
+  )
+```
+
+## Exercise 12: Explore join statements
+Already demonstrated in the "Joining Data" section above.
+
+## Exercise 13: Read a file
+This requires a file like `gapminder.xlsx`. Assuming it's available:
+
+```{r exercise13, eval=FALSE}
+#| echo: true
+xl <- read.xlsx("./methods_for_data_scince/applied_R/episodes/data/gapm3.xlsx", sheet = "gap")
+head(xl)
+```
+
+## Exercise 14: Get and split working directory path
+```{r exercise14}
+#| echo: true
+# Get working directory
+wd <- getwd()
+# Split by appropriate delimiter
+path_parts <- str_split(wd, "/")[[1]]
+# Fetch last element
+last_element <- path_parts[length(path_parts)]
+print(last_element)
+```
+
+# Conclusion
+This document covers key `tidyverse` functionalities and `ggplot2` visualizations using the `gapminder` dataset. It includes data manipulation, file handling, string manipulation, and various plotting techniques, along with solutions to the exercises.
+
+To download this R Markdown file, save it with a `.Rmd` extension and open it in RStudio or another R Markdown-compatible environment.

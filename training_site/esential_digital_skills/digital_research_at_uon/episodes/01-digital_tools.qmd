@@ -1,25 +1,10 @@
 ---
 title: "Digital Tools"
-format:
-  html:
-    theme: 
-        - default
-        - ../../../uon.scss   
-    toc: true
-    number-sections: false
-    page-layout: article
-    output-file: 01-digital_tools.html
-  revealjs:
-    output-file: 01-digital_tools.revealjs.html
-    slide-number: true
-    chalkboard: true
-    preview-links: auto
-editor: visual
 ---
 
 # Essential digital skills {background="#43464B"}
 
-\<![this is a logo for the dsdp progamme](../../assets/DSDSP-Logo.png)
+\<![this is a logo for the dsdp progamme](../../../assets/Logo_white_500.png)
 
 # Module Introduction
 
@@ -44,7 +29,7 @@ Introduce the DSDSP programme
 
 ## Core Components:
 
--   Esential Digital Skills (All students)
+-   Esential Digital Skills (Recomended for all students)
 -   Applied or theoretical programming (optional)
 -   Advanced training in domain specific skills (optional)
 

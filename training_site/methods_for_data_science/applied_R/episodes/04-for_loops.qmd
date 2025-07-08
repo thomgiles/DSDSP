@@ -1,0 +1,96 @@
+---
+title: "For Loops"
+author: "DRS Training"
+output: html_document
+---
+
+# R For Loops
+
+Loops are a useful part of many programming languages but are perhaps used in more limited ways in R due to the extensive use of "Vectorization".  
+
+"Most of R's functions are vectorized, meaning that the function will operate on all elements of a vector without needing to loop through and act on each element one at a time. This makes writing code more concise, easy to read, and less error prone."
+
+Vectorization approaches are also used extensively within dataframes.  
+---
+
+The general structure of a for loop is:
+
+```{r view_data}
+#| echo: true
+sequence=c(1:10)
+for (val in sequence)
+{
+  # do something
+}
+```
+
+---
+
+The sequence is a vector/list and val takes on each of element of the sequence in turn during the loop. In each iteration, the main code is evaluated in conjunction with that value.  
+
+---
+
+## Task 1
+
+Copy the provided test code and run it
+
+  
+```{r view_data}
+#| echo: true
+  
+  for(i in 1:10){
+    cat(paste(i, '*', i, '=', i^2, '\n'))
+  }
+  
+```
+
+## Task 2
+
+Try a vectorised alternative 
+
+  
+```{r view_data}
+#| echo: true
+  
+  nums <- 1:10
+  cat(paste(nums, '*', nums, '=', nums^2, collapse = "\n"))
+  
+```
+
+---
+
+You can investigate the commands/functions cat and paste further using R help e.g: <strong>?cat</strong>
+
+---
+
+**But some tasks do lend themselves to for loops, in particular reading things from or writing things to files**
+
+## Task 3
+
+Copy the provided test code, that saves some dataframes as files, and run it
+
+ 
+ ```{r eval = FALSE}
+ 
+ library(gapminder)
+ library(dplyr)
+ library(readr)
+ 
+ continents <- as.character(unique(gapminder$continent))
+ 
+ for(cont in continents){
+   
+   gm_cont_data <- gapminder %>%  dplyr::filter(continent == cont)
+   
+   write_csv(gm_cont_data, paste0('gapminder_', cont,'.csv' ))
+   cat(paste0('gapminder_', cont,'.csv', '\n' ))
+   
+ }
+ ```
+
+## Task 4
+
+Check the resulting files in the RStudio 'Files' tab
+
+Can you see the difference between paste and paste0?
+
