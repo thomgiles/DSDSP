@@ -1,14 +1,14 @@
-  name: Azure Static Web Apps CI/CD
+  name:  dsdsp-dev-$(Date:yyyyMMdd)
 
   trigger:
     branches:
       include:
-        - dev
+        - Dev
 
   pr:
     branches:
       include:
-        - dev
+        - Dev
 
   jobs:
   - job: build_and_deploy_job
@@ -50,7 +50,7 @@
           libxml2-dev libcurl4-openssl-dev libssl-dev \
           libfontconfig1-dev libfreetype6-dev \
           libharfbuzz-dev libfribidi-dev libpng-dev \
-          libtiff5-dev libjpeg-dev libgl1-mesa-dev libgmp-dev
+          libtiff5-dev libjpeg-dev libgl1-mesa-dev libgmp-dev pandoc
           sudo apt-get install -y --no-install-recommends r-base
           R --version
         displayName: 'Install R'
