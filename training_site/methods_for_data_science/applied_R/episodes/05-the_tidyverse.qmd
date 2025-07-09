@@ -13,8 +13,12 @@ required_pkgs <- c(
   "rmarkdown", "gapminder", "tidyverse", "readxl","openxlsx", "gridExtra", "ggExtra", "knitr"
 )
 
-# Load all packages
-lapply(required_pkgs, library, character.only = TRUE)
+# Quietly load packages and suppress messages/errors
+invisible(lapply(required_pkgs, function(pkg) {
+  suppressPackageStartupMessages(
+    try(library(pkg, character.only = TRUE), silent = TRUE)
+  )
+}))
 ```
 
 # Introduction

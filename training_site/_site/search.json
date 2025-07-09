@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Data Science and Digital Skills Programme",
     "section": "",
-    "text": "The Data Science & Digital Skills Programme (DS&DSP) is a one-year, tiered in-person training pathway designed to equip researchers with the core digital competencies required for modern, reproducible, and data-intensive research.\n \n  \n   \n  \n    \n     twitter\n  \n  \n    \n     Github"
+    "text": "The Data Science & Digital Skills Programme (DS&DSP) is a one-year, tiered in-person training pathway designed to equip researchers with the core digital competencies required for modern, reproducible, and data-intensive research."
   },
   {
     "objectID": "index.html#compulsory-training-essential-digital-skills",
@@ -740,7 +740,7 @@
     "href": "methods_for_data_science/applied_R/episodes/05-the_tidyverse.html",
     "title": "Tidyverse and ggplot2 Analysis with Gapminder Dataset",
     "section": "",
-    "text": "[[1]]\n[1] \"rmarkdown\" \"stats\"     \"graphics\"  \"grDevices\" \"datasets\"  \"utils\"    \n[7] \"methods\"   \"base\"     \n\n[[2]]\n[1] \"gapminder\" \"rmarkdown\" \"stats\"     \"graphics\"  \"grDevices\" \"datasets\" \n[7] \"utils\"     \"methods\"   \"base\"     \n\n[[3]]\n [1] \"lubridate\" \"forcats\"   \"stringr\"   \"dplyr\"     \"purrr\"     \"readr\"    \n [7] \"tidyr\"     \"tibble\"    \"ggplot2\"   \"tidyverse\" \"gapminder\" \"rmarkdown\"\n[13] \"stats\"     \"graphics\"  \"grDevices\" \"datasets\"  \"utils\"     \"methods\"  \n[19] \"base\"     \n\n[[4]]\n [1] \"readxl\"    \"lubridate\" \"forcats\"   \"stringr\"   \"dplyr\"     \"purrr\"    \n [7] \"readr\"     \"tidyr\"     \"tibble\"    \"ggplot2\"   \"tidyverse\" \"gapminder\"\n[13] \"rmarkdown\" \"stats\"     \"graphics\"  \"grDevices\" \"datasets\"  \"utils\"    \n[19] \"methods\"   \"base\"     \n\n[[5]]\n [1] \"openxlsx\"  \"readxl\"    \"lubridate\" \"forcats\"   \"stringr\"   \"dplyr\"    \n [7] \"purrr\"     \"readr\"     \"tidyr\"     \"tibble\"    \"ggplot2\"   \"tidyverse\"\n[13] \"gapminder\" \"rmarkdown\" \"stats\"     \"graphics\"  \"grDevices\" \"datasets\" \n[19] \"utils\"     \"methods\"   \"base\"     \n\n[[6]]\n [1] \"gridExtra\" \"openxlsx\"  \"readxl\"    \"lubridate\" \"forcats\"   \"stringr\"  \n [7] \"dplyr\"     \"purrr\"     \"readr\"     \"tidyr\"     \"tibble\"    \"ggplot2\"  \n[13] \"tidyverse\" \"gapminder\" \"rmarkdown\" \"stats\"     \"graphics\"  \"grDevices\"\n[19] \"datasets\"  \"utils\"     \"methods\"   \"base\"     \n\n[[7]]\n [1] \"ggExtra\"   \"gridExtra\" \"openxlsx\"  \"readxl\"    \"lubridate\" \"forcats\"  \n [7] \"stringr\"   \"dplyr\"     \"purrr\"     \"readr\"     \"tidyr\"     \"tibble\"   \n[13] \"ggplot2\"   \"tidyverse\" \"gapminder\" \"rmarkdown\" \"stats\"     \"graphics\" \n[19] \"grDevices\" \"datasets\"  \"utils\"     \"methods\"   \"base\"     \n\n[[8]]\n [1] \"knitr\"     \"ggExtra\"   \"gridExtra\" \"openxlsx\"  \"readxl\"    \"lubridate\"\n [7] \"forcats\"   \"stringr\"   \"dplyr\"     \"purrr\"     \"readr\"     \"tidyr\"    \n[13] \"tibble\"    \"ggplot2\"   \"tidyverse\" \"gapminder\" \"rmarkdown\" \"stats\"    \n[19] \"graphics\"  \"grDevices\" \"datasets\"  \"utils\"     \"methods\"   \"base\"",
+    "text": "This R Markdown document demonstrates data manipulation and visualization using the tidyverse suite of packages, particularly dplyr, tidyr, readr, stringr, and ggplot2. We will use the gapminder dataset to perform various data operations and create visualizations. The document also includes solutions to the provided exercises.",
     "crumbs": [
       "Essential Digital Skill",
       "Learning modules",
@@ -1280,7 +1280,7 @@
     "href": "methods_for_data_science/applied_R/episodes/05-the_tidyverse.html#extract-substring-with-stringr",
     "title": "Tidyverse and ggplot2 Analysis with Gapminder Dataset",
     "section": "Extract substring with stringr",
-    "text": "Extract substring with stringr\nkirtqsdorsbh#| echo: true #| echo: true # Extract substring sub_text &lt;- str_sub(text, 7, 11) print(sub_text)\nwe can extract a substring",
+    "text": "Extract substring with stringr\nzxtcxhdpbzjg#| echo: true #| echo: true # Extract substring sub_text &lt;- str_sub(text, 7, 11) print(sub_text)\nwe can extract a substring",
     "crumbs": [
       "Essential Digital Skill",
       "Learning modules",
@@ -2065,7 +2065,7 @@
     "href": "methods_for_data_science/applied_R/episodes/05-the_tidyverse.revealjs.html#extract-substring-with-stringr",
     "title": "Tidyverse and ggplot2 Analysis with Gapminder Dataset",
     "section": "Extract substring with stringr",
-    "text": "Extract substring with stringr\nwepwwmmviyhr#| echo: true #| echo: true # Extract substring sub_text &lt;- str_sub(text, 7, 11) print(sub_text)\nwe can extract a substring"
+    "text": "Extract substring with stringr\nswdriqpacmur#| echo: true #| echo: true # Extract substring sub_text &lt;- str_sub(text, 7, 11) print(sub_text)\nwe can extract a substring"
   },
   {
     "objectID": "methods_for_data_science/applied_R/episodes/05-the_tidyverse.revealjs.html#replace-substring-with-stringr",
@@ -2093,7 +2093,7 @@
     "href": "methods_for_data_science/applied_R/episodes/05-the_tidyverse.revealjs.html#histogram-plot-with-ggplot2",
     "title": "Tidyverse and ggplot2 Analysis with Gapminder Dataset",
     "section": "Histogram plot with ggplot2",
-    "text": "Histogram plot with ggplot2\n\n# Histogram\nggplot(data = gapminder, aes(x = lifeExp)) +\n  geom_histogram()"
+    "text": "Histogram plot with ggplot2\n\n# Histogram\nggplot(data = gapminder, aes(x = lifeExp)) +\n  geom_histogram()\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`."
   },
   {
     "objectID": "methods_for_data_science/applied_R/episodes/05-the_tidyverse.revealjs.html#box-plot-with-ggplot2",
@@ -2128,21 +2128,21 @@
     "href": "methods_for_data_science/applied_R/episodes/05-the_tidyverse.revealjs.html#scatter-plot-with-smooth-line",
     "title": "Tidyverse and ggplot2 Analysis with Gapminder Dataset",
     "section": "Scatter plot with smooth line",
-    "text": "Scatter plot with smooth line\n\n# Scatter plot with smooth line\nggplot(data = gapminder, aes(x = lifeExp, y = gdpPercap)) +\n  geom_point() +\n  geom_smooth(alpha = 0.5)"
+    "text": "Scatter plot with smooth line\n\n# Scatter plot with smooth line\nggplot(data = gapminder, aes(x = lifeExp, y = gdpPercap)) +\n  geom_point() +\n  geom_smooth(alpha = 0.5)\n\n`geom_smooth()` using method = 'gam' and formula = 'y ~ s(x, bs = \"cs\")'"
   },
   {
     "objectID": "methods_for_data_science/applied_R/episodes/05-the_tidyverse.revealjs.html#faceted-plot-in-ggplot2",
     "href": "methods_for_data_science/applied_R/episodes/05-the_tidyverse.revealjs.html#faceted-plot-in-ggplot2",
     "title": "Tidyverse and ggplot2 Analysis with Gapminder Dataset",
     "section": "Faceted plot in ggplot2",
-    "text": "Faceted plot in ggplot2\n\n# Faceted plot\nggplot(data = gapminder, aes(x = lifeExp, y = gdpPercap)) +\n  geom_point() +\n  geom_smooth(alpha = 0.5) +\n  facet_wrap(~continent)"
+    "text": "Faceted plot in ggplot2\n\n# Faceted plot\nggplot(data = gapminder, aes(x = lifeExp, y = gdpPercap)) +\n  geom_point() +\n  geom_smooth(alpha = 0.5) +\n  facet_wrap(~continent)\n\n`geom_smooth()` using method = 'loess' and formula = 'y ~ x'"
   },
   {
     "objectID": "methods_for_data_science/applied_R/episodes/05-the_tidyverse.revealjs.html#customized-axes",
     "href": "methods_for_data_science/applied_R/episodes/05-the_tidyverse.revealjs.html#customized-axes",
     "title": "Tidyverse and ggplot2 Analysis with Gapminder Dataset",
     "section": "Customized axes",
-    "text": "Customized axes\n\n# Customized axes\nggplot(data = gapminder, aes(x = lifeExp, y = gdpPercap)) +\n  geom_point() +\n  geom_smooth(alpha = 0.5) +\n  xlab(\"Life Expectancy\") +\n  ylab(\"GDP Per Capita\") +\n  xlim(0, 70) +\n  ylim(0, 100000)"
+    "text": "Customized axes\n\n# Customized axes\nggplot(data = gapminder, aes(x = lifeExp, y = gdpPercap)) +\n  geom_point() +\n  geom_smooth(alpha = 0.5) +\n  xlab(\"Life Expectancy\") +\n  ylab(\"GDP Per Capita\") +\n  xlim(0, 70) +\n  ylim(0, 100000)\n\n`geom_smooth()` using method = 'gam' and formula = 'y ~ s(x, bs = \"cs\")'\n\n\nWarning: Removed 496 rows containing non-finite outside the scale range\n(`stat_smooth()`).\n\n\nWarning: Removed 496 rows containing missing values or values outside the scale range\n(`geom_point()`)."
   },
   {
     "objectID": "methods_for_data_science/applied_R/episodes/05-the_tidyverse.revealjs.html#box-plot-with-customized-y-axis",
@@ -2177,7 +2177,7 @@
     "href": "methods_for_data_science/applied_R/episodes/05-the_tidyverse.revealjs.html#plot-with-color-palette",
     "title": "Tidyverse and ggplot2 Analysis with Gapminder Dataset",
     "section": "Plot with color palette",
-    "text": "Plot with color palette\n\n# Plot with color palette\nggplot(data = gapminder, aes(x = lifeExp, y = gdpPercap)) +\n  geom_point(aes(fill = continent), size = 5, shape = 21) +\n  geom_smooth(alpha = 0.5) +\n  scale_fill_brewer(palette = \"Set2\") +\n  theme_minimal()"
+    "text": "Plot with color palette\n\n# Plot with color palette\nggplot(data = gapminder, aes(x = lifeExp, y = gdpPercap)) +\n  geom_point(aes(fill = continent), size = 5, shape = 21) +\n  geom_smooth(alpha = 0.5) +\n  scale_fill_brewer(palette = \"Set2\") +\n  theme_minimal()\n\n`geom_smooth()` using method = 'gam' and formula = 'y ~ s(x, bs = \"cs\")'"
   },
   {
     "objectID": "methods_for_data_science/applied_R/episodes/05-the_tidyverse.revealjs.html#box-plot-with-theme_classic",
@@ -3756,7 +3756,7 @@
     "href": "methods_for_data_science/applied_python/episodes/02-numpy.revealjs.html#loading-data-into-python",
     "title": "Analyzing Patient Data",
     "section": "Loading data into Python",
-    "text": "Loading data into Python\nTo begin processing the clinical trial inflammation data, we need to load it into Python. We can do that using a library called NumPy, which stands for Numerical Python. In general, you should use this library when you want to do fancy things with lots of numbers, especially if you have matrices or arrays. To tell Python that we’d like to start using NumPy, we need to import it:\nImporting a library is like getting a piece of lab equipment out of a storage locker and setting it up on the bench. Libraries provide additional functionality to the basic Python package, much like a new piece of equipment adds functionality to a lab space. Just like in the lab, importing too many libraries can sometimes complicate and slow down your programs - so we only import what we need for each program.\nOnce we’ve imported the library, we can ask the library to read our data file for us:\n\n\narray([[0., 0., 1., ..., 3., 0., 0.],\n       [0., 1., 2., ..., 1., 0., 1.],\n       [0., 1., 1., ..., 2., 1., 1.],\n       ...,\n       [0., 1., 1., ..., 1., 1., 1.],\n       [0., 0., 0., ..., 0., 2., 0.],\n       [0., 0., 1., ..., 1., 1., 0.]])\n\n\nThe expression numpy.loadtxt(...) is a function call that asks Python to run the function loadtxt which belongs to the numpy library. The dot notation in Python is used most of all as an object attribute/property specifier or for invoking its method. object.property will give you the object.property value, object_name.method() will invoke on object_name method.\nAs an example, John Smith is the John that belongs to the Smith family. We could use the dot notation to write his name smith.john, just as loadtxt is a function that belongs to the numpy library.\nnumpy.loadtxt has two parameters: the name of the file we want to read and the delimiter that separates values on a line. These both need to be character strings (or strings for short), so we put them in quotes.\nSince we haven’t told it to do anything else with the function’s output, the notebook displays it. In this case, that output is the data we just loaded. By default, only a few rows and columns are shown (with ... to omit elements when displaying big arrays). Note that, to save space when displaying NumPy arrays, Python does not show us trailing zeros, so 1.0 becomes 1..\nOur call to numpy.loadtxt read our file but didn’t save the data in memory. To do that, we need to assign the array to a variable. In a similar manner to how we assign a single value to a variable, we can also assign an array of values to a variable using the same syntax. Let’s re-run numpy.loadtxt and save the returned data:\ndata = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')\nThis statement doesn’t produce any output because we’ve assigned the output to the variable data. If we want to check that the data have been loaded, we can print the variable’s value:\nprint(data)\n[[ 0.  0.  1. ...,  3.  0.  0.]\n [ 0.  1.  2. ...,  1.  0.  1.]\n [ 0.  1.  1. ...,  2.  1.  1.]\n ...,\n [ 0.  1.  1. ...,  1.  1.  1.]\n [ 0.  0.  0. ...,  0.  2.  0.]\n [ 0.  0.  1. ...,  1.  1.  0.]]\nNow that the data are in memory, we can manipulate them. First, let’s ask what type of thing data refers to:\nprint(type(data))\n&lt;class 'numpy.ndarray'&gt;\nThe output tells us that data currently refers to an N-dimensional array, the functionality for which is provided by the NumPy library. These data correspond to arthritis patients’ inflammation. The rows are the individual patients, and the columns are their daily inflammation measurements.\n\n\n\nData Type\n\n\nA Numpy array contains one or more elements of the same type. The type function will only tell you that a variable is a NumPy array but won’t tell you the type of thing inside the array. We can find out the type of the data contained in the NumPy array.\nprint(data.dtype)\nfloat64\nThis tells us that the NumPy array’s elements are floating-point numbers.\n\n\n\nWith the following command, we can see the array’s shape:\nprint(data.shape)\n(60, 40)\nThe output tells us that the data array variable contains 60 rows and 40 columns. When we created the variable data to store our arthritis data, we did not only create the array; we also created information about the array, called members or attributes. This extra information describes data in the same way an adjective describes a noun. data.shape is an attribute of data which describes the dimensions of data. We use the same dotted notation for the attributes of variables that we use for the functions in libraries because they have the same part-and-whole relationship.\nIf we want to get a single number from the array, we must provide an index in square brackets after the variable name, just as we do in math when referring to an element of a matrix. Our inflammation data has two dimensions, so we will need to use two indices to refer to one specific value:\nprint('first value in data:', data[0, 0])\nfirst value in data: 0.0\nprint('middle value in data:', data[29, 19])\nmiddle value in data: 16.0\nThe expression data[29, 19] accesses the element at row 30, column 20. While this expression may not surprise you, data[0, 0] might. Programming languages like Fortran, MATLAB and R start counting at 1 because that’s what human beings have done for thousands of years. Languages in the C family (including C++, Java, Perl, and Python) count from 0 because it represents an offset from the first value in the array (the second value is offset by one index from the first value). This is closer to the way that computers represent arrays (if you are interested in the historical reasons behind counting indices from zero, you can read Mike Hoye’s blog post). As a result, if we have an M×N array in Python, its indices go from 0 to M-1 on the first axis and 0 to N-1 on the second. It takes a bit of getting used to, but one way to remember the rule is that the index is how many steps we have to take from the start to get the item we want.\n\n\n\n\nIn the Corner\n\n\nWhat may also surprise you is that when Python displays an array, it shows the element with index [0, 0] in the upper left corner rather than the lower left. This is consistent with the way mathematicians draw matrices but different from the Cartesian coordinates. The indices are (row, column) instead of (column, row) for the same reason, which can be confusing when plotting data."
+    "text": "Loading data into Python\nTo begin processing the clinical trial inflammation data, we need to load it into Python. We can do that using a library called NumPy, which stands for Numerical Python. In general, you should use this library when you want to do fancy things with lots of numbers, especially if you have matrices or arrays. To tell Python that we’d like to start using NumPy, we need to import it:\n\nimport numpy\n\nImporting a library is like getting a piece of lab equipment out of a storage locker and setting it up on the bench. Libraries provide additional functionality to the basic Python package, much like a new piece of equipment adds functionality to a lab space. Just like in the lab, importing too many libraries can sometimes complicate and slow down your programs - so we only import what we need for each program.\nOnce we’ve imported the library, we can ask the library to read our data file for us:\n\nnumpy.loadtxt(fname='data/inflammation-01.csv', delimiter=',')\n\narray([[0., 0., 1., ..., 3., 0., 0.],\n       [0., 1., 2., ..., 1., 0., 1.],\n       [0., 1., 1., ..., 2., 1., 1.],\n       ...,\n       [0., 1., 1., ..., 1., 1., 1.],\n       [0., 0., 0., ..., 0., 2., 0.],\n       [0., 0., 1., ..., 1., 1., 0.]])\n\n\nThe expression numpy.loadtxt(...) is a function call that asks Python to run the function loadtxt which belongs to the numpy library. The dot notation in Python is used most of all as an object attribute/property specifier or for invoking its method. object.property will give you the object.property value, object_name.method() will invoke on object_name method.\nAs an example, John Smith is the John that belongs to the Smith family. We could use the dot notation to write his name smith.john, just as loadtxt is a function that belongs to the numpy library.\nnumpy.loadtxt has two parameters: the name of the file we want to read and the delimiter that separates values on a line. These both need to be character strings (or strings for short), so we put them in quotes.\nSince we haven’t told it to do anything else with the function’s output, the notebook displays it. In this case, that output is the data we just loaded. By default, only a few rows and columns are shown (with ... to omit elements when displaying big arrays). Note that, to save space when displaying NumPy arrays, Python does not show us trailing zeros, so 1.0 becomes 1..\nOur call to numpy.loadtxt read our file but didn’t save the data in memory. To do that, we need to assign the array to a variable. In a similar manner to how we assign a single value to a variable, we can also assign an array of values to a variable using the same syntax. Let’s re-run numpy.loadtxt and save the returned data:\ndata = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')\nThis statement doesn’t produce any output because we’ve assigned the output to the variable data. If we want to check that the data have been loaded, we can print the variable’s value:\nprint(data)\n[[ 0.  0.  1. ...,  3.  0.  0.]\n [ 0.  1.  2. ...,  1.  0.  1.]\n [ 0.  1.  1. ...,  2.  1.  1.]\n ...,\n [ 0.  1.  1. ...,  1.  1.  1.]\n [ 0.  0.  0. ...,  0.  2.  0.]\n [ 0.  0.  1. ...,  1.  1.  0.]]\nNow that the data are in memory, we can manipulate them. First, let’s ask what type of thing data refers to:\nprint(type(data))\n&lt;class 'numpy.ndarray'&gt;\nThe output tells us that data currently refers to an N-dimensional array, the functionality for which is provided by the NumPy library. These data correspond to arthritis patients’ inflammation. The rows are the individual patients, and the columns are their daily inflammation measurements.\n\n\n\nData Type\n\n\nA Numpy array contains one or more elements of the same type. The type function will only tell you that a variable is a NumPy array but won’t tell you the type of thing inside the array. We can find out the type of the data contained in the NumPy array.\nprint(data.dtype)\nfloat64\nThis tells us that the NumPy array’s elements are floating-point numbers.\n\n\n\nWith the following command, we can see the array’s shape:\nprint(data.shape)\n(60, 40)\nThe output tells us that the data array variable contains 60 rows and 40 columns. When we created the variable data to store our arthritis data, we did not only create the array; we also created information about the array, called members or attributes. This extra information describes data in the same way an adjective describes a noun. data.shape is an attribute of data which describes the dimensions of data. We use the same dotted notation for the attributes of variables that we use for the functions in libraries because they have the same part-and-whole relationship.\nIf we want to get a single number from the array, we must provide an index in square brackets after the variable name, just as we do in math when referring to an element of a matrix. Our inflammation data has two dimensions, so we will need to use two indices to refer to one specific value:\nprint('first value in data:', data[0, 0])\nfirst value in data: 0.0\nprint('middle value in data:', data[29, 19])\nmiddle value in data: 16.0\nThe expression data[29, 19] accesses the element at row 30, column 20. While this expression may not surprise you, data[0, 0] might. Programming languages like Fortran, MATLAB and R start counting at 1 because that’s what human beings have done for thousands of years. Languages in the C family (including C++, Java, Perl, and Python) count from 0 because it represents an offset from the first value in the array (the second value is offset by one index from the first value). This is closer to the way that computers represent arrays (if you are interested in the historical reasons behind counting indices from zero, you can read Mike Hoye’s blog post). As a result, if we have an M×N array in Python, its indices go from 0 to M-1 on the first axis and 0 to N-1 on the second. It takes a bit of getting used to, but one way to remember the rule is that the index is how many steps we have to take from the start to get the item we want.\n\n\n\n\nIn the Corner\n\n\nWhat may also surprise you is that when Python displays an array, it shows the element with index [0, 0] in the upper left corner rather than the lower left. This is consistent with the way mathematicians draw matrices but different from the Cartesian coordinates. The indices are (row, column) instead of (column, row) for the same reason, which can be confusing when plotting data."
   },
   {
     "objectID": "methods_for_data_science/applied_python/episodes/02-numpy.revealjs.html#slicing-data",
@@ -5432,7 +5432,7 @@
     "href": "methods_for_data_science/applied_R/episodes/04-for_loops.revealjs.html#task-3",
     "title": "For Loops",
     "section": "Task 3",
-    "text": "Task 3\nCopy the provided test code, that saves some dataframes as files, and run it"
+    "text": "Task 3\nCopy the provided test code, that saves some dataframes as files, and run it\n\nlibrary(gapminder)\nlibrary(dplyr)\nlibrary(readr)\n\ncontinents &lt;- as.character(unique(gapminder$continent))\n\nfor(cont in continents){\n  gm_cont_data &lt;- gapminder %&gt;%  dplyr::filter(continent == cont)\n\n  write_csv(gm_cont_data, paste0('gapminder_', cont,'.csv' ))\n  cat(paste0('gapminder_', cont,'.csv', '\\n' ))\n\n}"
   },
   {
     "objectID": "methods_for_data_science/applied_R/episodes/04-for_loops.revealjs.html#task-4",
@@ -5536,28 +5536,28 @@
     "href": "methods_for_data_science/applied_R/episodes/03-R_functions.revealjs.html#structure",
     "title": "Functions in R",
     "section": "Structure",
-    "text": "Structure\nThe general structure of a function is:"
+    "text": "Structure\nThe general structure of a function is:\n\nmy_function &lt;- function(parameters) {\n  # perform action\n  # return stuff\n}"
   },
   {
     "objectID": "methods_for_data_science/applied_R/episodes/03-R_functions.revealjs.html#defining-a-function",
     "href": "methods_for_data_science/applied_R/episodes/03-R_functions.revealjs.html#defining-a-function",
     "title": "Functions in R",
     "section": "Defining a Function",
-    "text": "Defining a Function\nLet’s define a function fahr_to_kelvin() that converts temperatures from Fahrenheit to Kelvin:"
+    "text": "Defining a Function\nLet’s define a function fahr_to_kelvin() that converts temperatures from Fahrenheit to Kelvin:\n\nfahr_to_kelvin &lt;- function(temp) {\n  kelvin &lt;- ((temp - 32) * (5 / 9)) + 273.15\n  return(kelvin)\n}"
   },
   {
     "objectID": "methods_for_data_science/applied_R/episodes/03-R_functions.revealjs.html#hint",
     "href": "methods_for_data_science/applied_R/episodes/03-R_functions.revealjs.html#hint",
     "title": "Functions in R",
     "section": "hint",
-    "text": "hint\nNote On running the code the function information is then listed under ‘functions’ in the Rstudio environment tab."
+    "text": "hint\n\nreturn(round(kelvin, 2))\n\nNote On running the code the function information is then listed under ‘functions’ in the Rstudio environment tab."
   },
   {
     "objectID": "methods_for_data_science/applied_R/episodes/03-R_functions.revealjs.html#hint-1",
     "href": "methods_for_data_science/applied_R/episodes/03-R_functions.revealjs.html#hint-1",
     "title": "Functions in R",
     "section": "Hint",
-    "text": "Hint\n\n\n[1] 36.66667"
+    "text": "Hint\n\nfahr_to_celsius &lt;- function(temp) {\n  celsius &lt;- ((temp - 32) * (5 / 9))\n  return(celsius)\n}\n\nfahr_to_celsius(98)\n\n[1] 36.66667"
   },
   {
     "objectID": "methods_for_data_science/applied_R/episodes/03-R_functions.html",

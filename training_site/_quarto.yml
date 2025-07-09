@@ -2,6 +2,9 @@ project:
   type: website
   output-dir: _site
 
+execute:
+  freeze: auto
+
 format:
   html:
     theme: 
@@ -41,8 +44,9 @@ website:
         href: "methods_for_data_science/index.html"
 
   sidebar:
-    style: "floating"
-    collapse-level: 0
+    style: "docked"
+    search: true
+    collapse-level: 4
     contents:
       - section: "Learning modules"
         contents:
