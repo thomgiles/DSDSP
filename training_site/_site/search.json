@@ -1280,7 +1280,7 @@
     "href": "methods_for_data_science/applied_R/episodes/05-the_tidyverse.html#extract-substring-with-stringr",
     "title": "Tidyverse and ggplot2 Analysis with Gapminder Dataset",
     "section": "Extract substring with stringr",
-    "text": "Extract substring with stringr\nyuleynrohhvb#| echo: true #| echo: true # Extract substring sub_text &lt;- str_sub(text, 7, 11) print(sub_text)\nwe can extract a substring",
+    "text": "Extract substring with stringr\nkirtqsdorsbh#| echo: true #| echo: true # Extract substring sub_text &lt;- str_sub(text, 7, 11) print(sub_text)\nwe can extract a substring",
     "crumbs": [
       "Essential Digital Skill",
       "Learning modules",
@@ -2065,7 +2065,7 @@
     "href": "methods_for_data_science/applied_R/episodes/05-the_tidyverse.revealjs.html#extract-substring-with-stringr",
     "title": "Tidyverse and ggplot2 Analysis with Gapminder Dataset",
     "section": "Extract substring with stringr",
-    "text": "Extract substring with stringr\ndmcfpmwrxmes#| echo: true #| echo: true # Extract substring sub_text &lt;- str_sub(text, 7, 11) print(sub_text)\nwe can extract a substring"
+    "text": "Extract substring with stringr\nwepwwmmviyhr#| echo: true #| echo: true # Extract substring sub_text &lt;- str_sub(text, 7, 11) print(sub_text)\nwe can extract a substring"
   },
   {
     "objectID": "methods_for_data_science/applied_R/episodes/05-the_tidyverse.revealjs.html#replace-substring-with-stringr",
@@ -5277,7 +5277,7 @@
     "href": "methods_for_data_science/applied_R/episodes/01-Rstudio_intro.revealjs.html#hint",
     "title": "Introduction to Rstudio",
     "section": "Hint",
-    "text": "Hint\nNote: If a package is not currently loaded it will be suggested to try ??package_name for a more extensive search"
+    "text": "Hint\n\n?paste\n\n?getwd\n\nNote: If a package is not currently loaded it will be suggested to try ??package_name for a more extensive search"
   },
   {
     "objectID": "methods_for_data_science/applied_R/episodes/01-Rstudio_intro.revealjs.html#hint-1",
