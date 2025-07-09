@@ -2,6 +2,7 @@
 .Rprofile/
 _quarto/
 _publish/
+_freeze/
 _cache/
 __pycache__/
 .env

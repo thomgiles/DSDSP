@@ -231,56 +231,6 @@ Data Analysis with R
 
   <p class="date">2025-07-07</p>
 </section>
-<section class="slide level2">
-
-<div class="cell">
-<div class="cell-output cell-output-stdout">
-<pre><code>[[1]]
-[1] "rmarkdown" "stats"     "graphics"  "grDevices" "datasets"  "utils"    
-[7] "methods"   "base"     
-
-[[2]]
-[1] "gapminder" "rmarkdown" "stats"     "graphics"  "grDevices" "datasets" 
-[7] "utils"     "methods"   "base"     
-
-[[3]]
- [1] "lubridate" "forcats"   "stringr"   "dplyr"     "purrr"     "readr"    
- [7] "tidyr"     "tibble"    "ggplot2"   "tidyverse" "gapminder" "rmarkdown"
-[13] "stats"     "graphics"  "grDevices" "datasets"  "utils"     "methods"  
-[19] "base"     
-
-[[4]]
- [1] "readxl"    "lubridate" "forcats"   "stringr"   "dplyr"     "purrr"    
- [7] "readr"     "tidyr"     "tibble"    "ggplot2"   "tidyverse" "gapminder"
-[13] "rmarkdown" "stats"     "graphics"  "grDevices" "datasets"  "utils"    
-[19] "methods"   "base"     
-
-[[5]]
- [1] "openxlsx"  "readxl"    "lubridate" "forcats"   "stringr"   "dplyr"    
- [7] "purrr"     "readr"     "tidyr"     "tibble"    "ggplot2"   "tidyverse"
-[13] "gapminder" "rmarkdown" "stats"     "graphics"  "grDevices" "datasets" 
-[19] "utils"     "methods"   "base"     
-
-[[6]]
- [1] "gridExtra" "openxlsx"  "readxl"    "lubridate" "forcats"   "stringr"  
- [7] "dplyr"     "purrr"     "readr"     "tidyr"     "tibble"    "ggplot2"  
-[13] "tidyverse" "gapminder" "rmarkdown" "stats"     "graphics"  "grDevices"
-[19] "datasets"  "utils"     "methods"   "base"     
-
-[[7]]
- [1] "ggExtra"   "gridExtra" "openxlsx"  "readxl"    "lubridate" "forcats"  
- [7] "stringr"   "dplyr"     "purrr"     "readr"     "tidyr"     "tibble"   
-[13] "ggplot2"   "tidyverse" "gapminder" "rmarkdown" "stats"     "graphics" 
-[19] "grDevices" "datasets"  "utils"     "methods"   "base"     
-
-[[8]]
- [1] "knitr"     "ggExtra"   "gridExtra" "openxlsx"  "readxl"    "lubridate"
- [7] "forcats"   "stringr"   "dplyr"     "purrr"     "readr"     "tidyr"    
-[13] "tibble"    "ggplot2"   "tidyverse" "gapminder" "rmarkdown" "stats"    
-[19] "graphics"  "grDevices" "datasets"  "utils"     "methods"   "base"     </code></pre>
-</div>
-</div>
-</section>
 <section id="introduction" class="title-slide slide level1 center">
 <h1>Introduction</h1>
 <p>This R Markdown document demonstrates data manipulation and visualization using the <code>tidyverse</code> suite of packages, particularly <code>dplyr</code>, <code>tidyr</code>, <code>readr</code>, <code>stringr</code>, and <code>ggplot2</code>. We will use the <code>gapminder</code> dataset to perform various data operations and create visualizations. The document also includes solutions to the provided exercises.</p>
@@ -289,16 +239,16 @@ Data Analysis with R
 <section id="installing-and-loading-packages" class="title-slide slide level1 center">
 <h1>Installing and Loading Packages</h1>
 <p>First, we load the necessary packages using renv.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">library</span>(renv)</span>
-<span id="cb2-2"><a></a>renv<span class="sc">::</span><span class="fu">restore</span>(<span class="at">prompt =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">library</span>(renv)</span>
+<span id="cb1-2"><a></a>renv<span class="sc">::</span><span class="fu">restore</span>(<span class="at">prompt =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 
 <section id="exploring-the-gapminder-dataset" class="title-slide slide level1 center">
 <h1>Exploring the Gapminder Dataset</h1>
 <p>Let’s take a look at the first few rows of the <code>gapminder</code> dataset.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="co"># View first six rows</span></span>
-<span id="cb3-2"><a></a><span class="fu">head</span>(gapminder) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="co"># View first six rows</span></span>
+<span id="cb2-2"><a></a><span class="fu">head</span>(gapminder) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 6
   country     continent  year lifeExp      pop gdpPercap
@@ -326,9 +276,9 @@ Data Analysis with R
 <section id="individual-columns" class="slide level2">
 <h2>individual columns</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="co"># Select individual columns</span></span>
-<span id="cb5-2"><a></a>sel_data <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span> <span class="fu">select</span>(country, continent, pop)</span>
-<span id="cb5-3"><a></a><span class="fu">head</span>(sel_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="co"># Select individual columns</span></span>
+<span id="cb4-2"><a></a>sel_data <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span> <span class="fu">select</span>(country, continent, pop)</span>
+<span id="cb4-3"><a></a><span class="fu">head</span>(sel_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 3
   country     continent      pop
@@ -345,9 +295,9 @@ Data Analysis with R
 <section id="range-of-columns" class="slide level2">
 <h2>range of columns</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="co"># Select range of columns</span></span>
-<span id="cb7-2"><a></a>sel_data <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span> <span class="fu">select</span>(country, year<span class="sc">:</span>pop)</span>
-<span id="cb7-3"><a></a><span class="fu">head</span>(sel_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="co"># Select range of columns</span></span>
+<span id="cb6-2"><a></a>sel_data <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span> <span class="fu">select</span>(country, year<span class="sc">:</span>pop)</span>
+<span id="cb6-3"><a></a><span class="fu">head</span>(sel_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 4
   country      year lifeExp      pop
@@ -364,9 +314,9 @@ Data Analysis with R
 <section id="exclude-columns" class="slide level2">
 <h2>Exclude columns</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="co"># Exclude columns</span></span>
-<span id="cb9-2"><a></a>sel_data <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span>pop)</span>
-<span id="cb9-3"><a></a><span class="fu">head</span>(sel_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="co"># Exclude columns</span></span>
+<span id="cb8-2"><a></a>sel_data <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span>pop)</span>
+<span id="cb8-3"><a></a><span class="fu">head</span>(sel_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 5
   country     continent  year lifeExp gdpPercap
@@ -383,9 +333,9 @@ Data Analysis with R
 <section id="exclude-multiple-columns" class="slide level2">
 <h2>Exclude multiple columns</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a></a><span class="co"># Exclude multiple columns</span></span>
-<span id="cb11-2"><a></a>sel_data <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span>pop, <span class="sc">-</span>country)</span>
-<span id="cb11-3"><a></a><span class="fu">head</span>(sel_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="co"># Exclude multiple columns</span></span>
+<span id="cb10-2"><a></a>sel_data <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span>pop, <span class="sc">-</span>country)</span>
+<span id="cb10-3"><a></a><span class="fu">head</span>(sel_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 4
   continent  year lifeExp gdpPercap
@@ -402,9 +352,9 @@ Data Analysis with R
 <section id="exclude-a-vector-of-columns" class="slide level2">
 <h2>Exclude a vector of columns</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="co"># Exclude a vector of columns</span></span>
-<span id="cb13-2"><a></a>sel_data <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(pop, country))</span>
-<span id="cb13-3"><a></a><span class="fu">head</span>(sel_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a><span class="co"># Exclude a vector of columns</span></span>
+<span id="cb12-2"><a></a>sel_data <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(pop, country))</span>
+<span id="cb12-3"><a></a><span class="fu">head</span>(sel_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 4
   continent  year lifeExp gdpPercap
@@ -421,9 +371,9 @@ Data Analysis with R
 <section id="exclude-a-complement-of-columns" class="slide level2">
 <h2>Exclude a Complement of columns</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="co"># Complement of columns</span></span>
-<span id="cb15-2"><a></a>f1 <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">!</span><span class="fu">c</span>(continent, gdpPercap))</span>
-<span id="cb15-3"><a></a><span class="fu">head</span>(f1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="co"># Complement of columns</span></span>
+<span id="cb14-2"><a></a>f1 <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">!</span><span class="fu">c</span>(continent, gdpPercap))</span>
+<span id="cb14-3"><a></a><span class="fu">head</span>(f1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 4
   country      year lifeExp      pop
@@ -440,9 +390,9 @@ Data Analysis with R
 <section id="rename-columns-with-select" class="slide level2">
 <h2>Rename columns with select</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a><span class="co"># Rename columns with select</span></span>
-<span id="cb17-2"><a></a>sel_data <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="at">Life_Expectancy =</span> lifeExp)</span>
-<span id="cb17-3"><a></a><span class="fu">head</span>(sel_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a><span class="co"># Rename columns with select</span></span>
+<span id="cb16-2"><a></a>sel_data <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="at">Life_Expectancy =</span> lifeExp)</span>
+<span id="cb16-3"><a></a><span class="fu">head</span>(sel_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 1
   Life_Expectancy
@@ -459,9 +409,9 @@ Data Analysis with R
 <section id="rename-columns-with-rename" class="slide level2">
 <h2>Rename columns with rename()</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a><span class="co"># Rename columns with rename()</span></span>
-<span id="cb19-2"><a></a>sel_data <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span> <span class="fu">rename</span>(<span class="at">Life_Expectancy =</span> lifeExp)</span>
-<span id="cb19-3"><a></a><span class="fu">head</span>(sel_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="co"># Rename columns with rename()</span></span>
+<span id="cb18-2"><a></a>sel_data <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span> <span class="fu">rename</span>(<span class="at">Life_Expectancy =</span> lifeExp)</span>
+<span id="cb18-3"><a></a><span class="fu">head</span>(sel_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 6
   country     continent  year Life_Expectancy      pop gdpPercap
@@ -483,8 +433,8 @@ Data Analysis with R
 <section id="select-by-index" class="slide level2">
 <h2>Select by index</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a></a><span class="co"># Select by index</span></span>
-<span id="cb21-2"><a></a>gapminder <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>)) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a><span class="co"># Select by index</span></span>
+<span id="cb20-2"><a></a>gapminder <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>)) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 2
   continent  year
@@ -501,8 +451,8 @@ Data Analysis with R
 <section id="select-by-index-range" class="slide level2">
 <h2>Select by index range</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a></a><span class="co"># Select by index range</span></span>
-<span id="cb23-2"><a></a>gapminder <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">3</span>) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a></a><span class="co"># Select by index range</span></span>
+<span id="cb22-2"><a></a>gapminder <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="dv">2</span><span class="sc">:</span><span class="dv">3</span>) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 2
   continent  year
@@ -519,8 +469,8 @@ Data Analysis with R
 <section id="exclude-by-labels" class="slide level2">
 <h2>Exclude by labels</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a><span class="co"># Select by labels</span></span>
-<span id="cb25-2"><a></a>gapminder <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">c</span>(<span class="st">'country'</span>, <span class="st">'continent'</span>)) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a><span class="co"># Select by labels</span></span>
+<span id="cb24-2"><a></a>gapminder <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">c</span>(<span class="st">'country'</span>, <span class="st">'continent'</span>)) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 2
   country     continent
@@ -537,8 +487,8 @@ Data Analysis with R
 <section id="exclude-by-labels-1" class="slide level2">
 <h2>Exclude by labels</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a><span class="co"># Exclude by labels</span></span>
-<span id="cb27-2"><a></a>gapminder <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(<span class="st">'country'</span>, <span class="st">'continent'</span>)) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a></a><span class="co"># Exclude by labels</span></span>
+<span id="cb26-2"><a></a>gapminder <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span><span class="fu">c</span>(<span class="st">'country'</span>, <span class="st">'continent'</span>)) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 4
    year lifeExp      pop gdpPercap
@@ -555,8 +505,8 @@ Data Analysis with R
 <section id="select-columns-ending-with-p" class="slide level2">
 <h2>Select columns ending with ‘p’</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a></a><span class="co"># Select columns starting with 'co'</span></span>
-<span id="cb29-2"><a></a>gapminder <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">'co'</span>)) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a></a><span class="co"># Select columns starting with 'co'</span></span>
+<span id="cb28-2"><a></a>gapminder <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">starts_with</span>(<span class="st">'co'</span>)) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 2
   country     continent
@@ -573,8 +523,8 @@ Data Analysis with R
 <section id="select-columns-ending-with-p-1" class="slide level2">
 <h2>Select columns ending with ‘p’</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a></a><span class="co"># Select columns ending with 'p'</span></span>
-<span id="cb31-2"><a></a>gapminder <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">ends_with</span>(<span class="st">'p'</span>)) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a></a><span class="co"># Select columns ending with 'p'</span></span>
+<span id="cb30-2"><a></a>gapminder <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">ends_with</span>(<span class="st">'p'</span>)) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 3
   lifeExp      pop gdpPercap
@@ -591,8 +541,8 @@ Data Analysis with R
 <section id="select-columns-containing-pop" class="title-slide slide level1 center">
 <h1># Select columns containing ‘pop’</h1>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a></a><span class="co"># Select columns containing 'pop'</span></span>
-<span id="cb33-2"><a></a>gapminder <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">contains</span>(<span class="st">'pop'</span>)) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a></a><span class="co"># Select columns containing 'pop'</span></span>
+<span id="cb32-2"><a></a>gapminder <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="fu">contains</span>(<span class="st">'pop'</span>)) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 1
        pop
@@ -615,9 +565,9 @@ Data Analysis with R
 <section id="filter-for-belgium" class="slide level2">
 <h2>Filter for Belgium</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a></a><span class="co"># Filter for Belgium</span></span>
-<span id="cb35-2"><a></a>filt_data <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span> <span class="fu">filter</span>(country <span class="sc">==</span> <span class="st">"Belgium"</span>) <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">8</span>)</span>
-<span id="cb35-3"><a></a>filt_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a></a><span class="co"># Filter for Belgium</span></span>
+<span id="cb34-2"><a></a>filt_data <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span> <span class="fu">filter</span>(country <span class="sc">==</span> <span class="st">"Belgium"</span>) <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">8</span>)</span>
+<span id="cb34-3"><a></a>filt_data</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 8 × 6
   country continent  year lifeExp     pop gdpPercap
@@ -636,10 +586,10 @@ Data Analysis with R
 <section id="filter-with-multiple-conditions" class="slide level2">
 <h2>Filter with multiple conditions</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a></a><span class="co"># Filter with multiple conditions</span></span>
-<span id="cb37-2"><a></a>gapminder <span class="sc">%&gt;%</span> </span>
-<span id="cb37-3"><a></a>  <span class="fu">filter</span>(country <span class="sc">==</span> <span class="st">"Oman"</span> <span class="sc">&amp;</span> year <span class="sc">&gt;</span> <span class="dv">1980</span> <span class="sc">&amp;</span> year <span class="sc">&lt;=</span> <span class="dv">2000</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb37-4"><a></a>  <span class="fu">head</span>(<span class="dv">8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a></a><span class="co"># Filter with multiple conditions</span></span>
+<span id="cb36-2"><a></a>gapminder <span class="sc">%&gt;%</span> </span>
+<span id="cb36-3"><a></a>  <span class="fu">filter</span>(country <span class="sc">==</span> <span class="st">"Oman"</span> <span class="sc">&amp;</span> year <span class="sc">&gt;</span> <span class="dv">1980</span> <span class="sc">&amp;</span> year <span class="sc">&lt;=</span> <span class="dv">2000</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb36-4"><a></a>  <span class="fu">head</span>(<span class="dv">8</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 4 × 6
   country continent  year lifeExp     pop gdpPercap
@@ -654,10 +604,10 @@ Data Analysis with R
 <section id="filter-using-in-operator" class="slide level2">
 <h2>Filter using %in% operator</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a></a><span class="co"># Filter using %in% operator</span></span>
-<span id="cb39-2"><a></a>scandinavia <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Denmark"</span>, <span class="st">"Iceland"</span>, <span class="st">"Norway"</span>, <span class="st">"Sweden"</span>, <span class="st">"Finland"</span>)</span>
-<span id="cb39-3"><a></a>res <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span> <span class="fu">filter</span>(country <span class="sc">%in%</span> scandinavia)</span>
-<span id="cb39-4"><a></a><span class="fu">head</span>(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a></a><span class="co"># Filter using %in% operator</span></span>
+<span id="cb38-2"><a></a>scandinavia <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Denmark"</span>, <span class="st">"Iceland"</span>, <span class="st">"Norway"</span>, <span class="st">"Sweden"</span>, <span class="st">"Finland"</span>)</span>
+<span id="cb38-3"><a></a>res <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span> <span class="fu">filter</span>(country <span class="sc">%in%</span> scandinavia)</span>
+<span id="cb38-4"><a></a><span class="fu">head</span>(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 6
   country continent  year lifeExp     pop gdpPercap
@@ -675,10 +625,10 @@ Data Analysis with R
 <h1>Combining Select and Filter</h1>
 <p>Combine <code>select()</code> and <code>filter()</code> to extract specific data.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a></a>uk_gdp <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span></span>
-<span id="cb41-2"><a></a>  <span class="fu">filter</span>(country <span class="sc">==</span> <span class="st">"United Kingdom"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb41-3"><a></a>  <span class="fu">select</span>(country, year, gdpPercap)</span>
-<span id="cb41-4"><a></a><span class="fu">head</span>(uk_gdp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a></a>uk_gdp <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span></span>
+<span id="cb40-2"><a></a>  <span class="fu">filter</span>(country <span class="sc">==</span> <span class="st">"United Kingdom"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb40-3"><a></a>  <span class="fu">select</span>(country, year, gdpPercap)</span>
+<span id="cb40-4"><a></a><span class="fu">head</span>(uk_gdp)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 3
   country         year gdpPercap
@@ -701,11 +651,11 @@ Data Analysis with R
 <section id="using-mutate-to-add-new-columns" class="title-slide slide level1 center">
 <h1>Using Mutate to add new columns</h1>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a></a><span class="co"># Add new columns</span></span>
-<span id="cb43-2"><a></a>gapminder <span class="sc">%&gt;%</span>  </span>
-<span id="cb43-3"><a></a>  <span class="fu">mutate</span>(<span class="at">pop_million =</span> pop <span class="sc">/</span> <span class="dv">1000000</span>,</span>
-<span id="cb43-4"><a></a>         <span class="at">countName =</span> <span class="fu">substring</span>(country, <span class="dv">1</span>, <span class="dv">3</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb43-5"><a></a>  <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a></a><span class="co"># Add new columns</span></span>
+<span id="cb42-2"><a></a>gapminder <span class="sc">%&gt;%</span>  </span>
+<span id="cb42-3"><a></a>  <span class="fu">mutate</span>(<span class="at">pop_million =</span> pop <span class="sc">/</span> <span class="dv">1000000</span>,</span>
+<span id="cb42-4"><a></a>         <span class="at">countName =</span> <span class="fu">substring</span>(country, <span class="dv">1</span>, <span class="dv">3</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb42-5"><a></a>  <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 8
   country     continent  year lifeExp      pop gdpPercap pop_million countName
@@ -723,8 +673,8 @@ Data Analysis with R
 <section id="using-mutate-to-keep-only-new-columns" class="title-slide slide level1 center">
 <h1>Using Mutate to Keep only new columns</h1>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a></a><span class="co"># Keep only new columns</span></span>
-<span id="cb45-2"><a></a>gapminder <span class="sc">%&gt;%</span> <span class="fu">transmute</span>(<span class="at">total_years =</span> lifeExp <span class="sc">*</span> pop) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a></a><span class="co"># Keep only new columns</span></span>
+<span id="cb44-2"><a></a>gapminder <span class="sc">%&gt;%</span> <span class="fu">transmute</span>(<span class="at">total_years =</span> lifeExp <span class="sc">*</span> pop) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 1
   total_years
@@ -742,11 +692,11 @@ Data Analysis with R
 <section id="using-mutate-to-classify-gdp-per-capita" class="title-slide slide level1 center">
 <h1>Using Mutate to Classify GDP per capita</h1>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a></a><span class="co"># Classify GDP per capita</span></span>
-<span id="cb47-2"><a></a>gapminder <span class="sc">%&gt;%</span></span>
-<span id="cb47-3"><a></a>  <span class="fu">mutate</span>(<span class="at">GDP_Category =</span> <span class="fu">ifelse</span>(gdpPercap <span class="sc">&gt;</span> <span class="dv">10000</span>, <span class="st">"High"</span>, <span class="st">"Low"</span>)) <span class="sc">%&gt;%</span></span>
-<span id="cb47-4"><a></a>  <span class="fu">select</span>(country, year, gdpPercap, GDP_Category) <span class="sc">%&gt;%</span></span>
-<span id="cb47-5"><a></a>  <span class="fu">head</span>(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a></a><span class="co"># Classify GDP per capita</span></span>
+<span id="cb46-2"><a></a>gapminder <span class="sc">%&gt;%</span></span>
+<span id="cb46-3"><a></a>  <span class="fu">mutate</span>(<span class="at">GDP_Category =</span> <span class="fu">ifelse</span>(gdpPercap <span class="sc">&gt;</span> <span class="dv">10000</span>, <span class="st">"High"</span>, <span class="st">"Low"</span>)) <span class="sc">%&gt;%</span></span>
+<span id="cb46-4"><a></a>  <span class="fu">select</span>(country, year, gdpPercap, GDP_Category) <span class="sc">%&gt;%</span></span>
+<span id="cb46-5"><a></a>  <span class="fu">head</span>(<span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 10 × 4
    country      year gdpPercap GDP_Category
@@ -773,8 +723,8 @@ Data Analysis with R
 <section id="sort-in-ascending-order" class="slide level2">
 <h2>Sort in ascending order</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a></a><span class="co"># Sort in ascending order</span></span>
-<span id="cb49-2"><a></a>gapminder <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(year, gdpPercap) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a></a><span class="co"># Sort in ascending order</span></span>
+<span id="cb48-2"><a></a>gapminder <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(year, gdpPercap) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 6
   country       continent  year lifeExp      pop gdpPercap
@@ -791,8 +741,8 @@ Data Analysis with R
 <section id="sort-in-descending-order" class="slide level2">
 <h2>Sort in descending order</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a></a><span class="co"># Sort in descending order</span></span>
-<span id="cb51-2"><a></a>gapminder <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(year, <span class="fu">desc</span>(gdpPercap)) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a></a><span class="co"># Sort in descending order</span></span>
+<span id="cb50-2"><a></a>gapminder <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(year, <span class="fu">desc</span>(gdpPercap)) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 6
   country       continent  year lifeExp       pop gdpPercap
@@ -810,13 +760,13 @@ Data Analysis with R
 <h2>Summarizing Data</h2>
 <p>Compute summary statistics with <code>summarise()</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a></a>scandinavia <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Denmark"</span>, <span class="st">"Iceland"</span>, <span class="st">"Norway"</span>, <span class="st">"Sweden"</span>, <span class="st">"Finland"</span>)</span>
-<span id="cb53-2"><a></a>gapminder <span class="sc">%&gt;%</span> </span>
-<span id="cb53-3"><a></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">1982</span> <span class="sc">&amp;</span> country <span class="sc">%in%</span> scandinavia) <span class="sc">%&gt;%</span> </span>
-<span id="cb53-4"><a></a>  <span class="fu">summarise</span>(<span class="at">n_obs =</span> <span class="fu">n</span>(),</span>
-<span id="cb53-5"><a></a>            <span class="at">total_pop =</span> <span class="fu">sum</span>(pop),</span>
-<span id="cb53-6"><a></a>            <span class="at">mean_life_exp =</span> <span class="fu">mean</span>(lifeExp),</span>
-<span id="cb53-7"><a></a>            <span class="at">range_life_exp =</span> <span class="fu">max</span>(lifeExp) <span class="sc">-</span> <span class="fu">min</span>(lifeExp))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a></a>scandinavia <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Denmark"</span>, <span class="st">"Iceland"</span>, <span class="st">"Norway"</span>, <span class="st">"Sweden"</span>, <span class="st">"Finland"</span>)</span>
+<span id="cb52-2"><a></a>gapminder <span class="sc">%&gt;%</span> </span>
+<span id="cb52-3"><a></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">1982</span> <span class="sc">&amp;</span> country <span class="sc">%in%</span> scandinavia) <span class="sc">%&gt;%</span> </span>
+<span id="cb52-4"><a></a>  <span class="fu">summarise</span>(<span class="at">n_obs =</span> <span class="fu">n</span>(),</span>
+<span id="cb52-5"><a></a>            <span class="at">total_pop =</span> <span class="fu">sum</span>(pop),</span>
+<span id="cb52-6"><a></a>            <span class="at">mean_life_exp =</span> <span class="fu">mean</span>(lifeExp),</span>
+<span id="cb52-7"><a></a>            <span class="at">range_life_exp =</span> <span class="fu">max</span>(lifeExp) <span class="sc">-</span> <span class="fu">min</span>(lifeExp))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 4
   n_obs total_pop mean_life_exp range_life_exp
@@ -829,13 +779,13 @@ Data Analysis with R
 <h2>Grouping Data</h2>
 <p>Group data with <code>group_by()</code> for per-group summaries.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a></a>gapminder <span class="sc">%&gt;%</span> </span>
-<span id="cb55-2"><a></a>  <span class="fu">group_by</span>(year) <span class="sc">%&gt;%</span> </span>
-<span id="cb55-3"><a></a>  <span class="fu">summarise</span>(<span class="at">n_obs =</span> <span class="fu">n</span>(),</span>
-<span id="cb55-4"><a></a>            <span class="at">n_countries =</span> <span class="fu">n_distinct</span>(country),</span>
-<span id="cb55-5"><a></a>            <span class="at">total_pop =</span> <span class="fu">sum</span>(pop),</span>
-<span id="cb55-6"><a></a>            <span class="at">mean_life_exp =</span> <span class="fu">mean</span>(lifeExp),</span>
-<span id="cb55-7"><a></a>            <span class="at">range_life_exp =</span> <span class="fu">max</span>(lifeExp) <span class="sc">-</span> <span class="fu">min</span>(lifeExp))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a></a>gapminder <span class="sc">%&gt;%</span> </span>
+<span id="cb54-2"><a></a>  <span class="fu">group_by</span>(year) <span class="sc">%&gt;%</span> </span>
+<span id="cb54-3"><a></a>  <span class="fu">summarise</span>(<span class="at">n_obs =</span> <span class="fu">n</span>(),</span>
+<span id="cb54-4"><a></a>            <span class="at">n_countries =</span> <span class="fu">n_distinct</span>(country),</span>
+<span id="cb54-5"><a></a>            <span class="at">total_pop =</span> <span class="fu">sum</span>(pop),</span>
+<span id="cb54-6"><a></a>            <span class="at">mean_life_exp =</span> <span class="fu">mean</span>(lifeExp),</span>
+<span id="cb54-7"><a></a>            <span class="at">range_life_exp =</span> <span class="fu">max</span>(lifeExp) <span class="sc">-</span> <span class="fu">min</span>(lifeExp))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 12 × 6
     year n_obs n_countries  total_pop mean_life_exp range_life_exp
@@ -863,29 +813,29 @@ Data Analysis with R
 <section id="example-data-for-joining" class="slide level2">
 <h2>Example data for joining</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a></a><span class="co"># Create sample datasets</span></span>
-<span id="cb57-2"><a></a>employees <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb57-3"><a></a>  <span class="at">id =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>),</span>
-<span id="cb57-4"><a></a>  <span class="at">name =</span> <span class="fu">c</span>(<span class="st">"Alice"</span>, <span class="st">"Bob"</span>, <span class="st">"Charlie"</span>, <span class="st">"David"</span>),</span>
-<span id="cb57-5"><a></a>  <span class="at">age =</span> <span class="fu">c</span>(<span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">22</span>, <span class="dv">28</span>)</span>
-<span id="cb57-6"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a></a><span class="co"># Create sample datasets</span></span>
+<span id="cb56-2"><a></a>employees <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb56-3"><a></a>  <span class="at">id =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>),</span>
+<span id="cb56-4"><a></a>  <span class="at">name =</span> <span class="fu">c</span>(<span class="st">"Alice"</span>, <span class="st">"Bob"</span>, <span class="st">"Charlie"</span>, <span class="st">"David"</span>),</span>
+<span id="cb56-5"><a></a>  <span class="at">age =</span> <span class="fu">c</span>(<span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">22</span>, <span class="dv">28</span>)</span>
+<span id="cb56-6"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section class="slide level2">
 
 <div class="cell">
-<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a></a><span class="co"># Create sample datasets</span></span>
-<span id="cb58-2"><a></a>departments <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb58-3"><a></a>  <span class="at">id =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">6</span>),</span>
-<span id="cb58-4"><a></a>  <span class="at">department =</span> <span class="fu">c</span>(<span class="st">"HR"</span>, <span class="st">"Finance"</span>, <span class="st">"IT"</span>, <span class="st">"Sales"</span>)</span>
-<span id="cb58-5"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb57"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb57-1"><a></a><span class="co"># Create sample datasets</span></span>
+<span id="cb57-2"><a></a>departments <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb57-3"><a></a>  <span class="at">id =</span> <span class="fu">c</span>(<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">5</span>, <span class="dv">6</span>),</span>
+<span id="cb57-4"><a></a>  <span class="at">department =</span> <span class="fu">c</span>(<span class="st">"HR"</span>, <span class="st">"Finance"</span>, <span class="st">"IT"</span>, <span class="st">"Sales"</span>)</span>
+<span id="cb57-5"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="inner-join" class="slide level2">
 <h2>Inner join</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb59"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb59-1"><a></a><span class="co"># Perform inner join</span></span>
-<span id="cb59-2"><a></a>employees <span class="sc">%&gt;%</span> <span class="fu">inner_join</span>(departments, <span class="at">by =</span> <span class="st">"id"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb58-1"><a></a><span class="co"># Perform inner join</span></span>
+<span id="cb58-2"><a></a>employees <span class="sc">%&gt;%</span> <span class="fu">inner_join</span>(departments, <span class="at">by =</span> <span class="st">"id"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  id    name age department
 1  2     Bob  30         HR
@@ -896,8 +846,8 @@ Data Analysis with R
 <section id="left-join" class="slide level2">
 <h2>left join</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb61"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb61-1"><a></a><span class="co"># Perform left join</span></span>
-<span id="cb61-2"><a></a>employees <span class="sc">%&gt;%</span> <span class="fu">left_join</span>(departments, <span class="at">by =</span> <span class="st">"id"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb60-1"><a></a><span class="co"># Perform left join</span></span>
+<span id="cb60-2"><a></a>employees <span class="sc">%&gt;%</span> <span class="fu">left_join</span>(departments, <span class="at">by =</span> <span class="st">"id"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  id    name age department
 1  1   Alice  25       &lt;NA&gt;
@@ -910,8 +860,8 @@ Data Analysis with R
 <section id="right-join" class="slide level2">
 <h2>right join</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb63"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a></a><span class="co"># Perform right join</span></span>
-<span id="cb63-2"><a></a>employees <span class="sc">%&gt;%</span> <span class="fu">right_join</span>(departments, <span class="at">by =</span> <span class="st">"id"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb62-1"><a></a><span class="co"># Perform right join</span></span>
+<span id="cb62-2"><a></a>employees <span class="sc">%&gt;%</span> <span class="fu">right_join</span>(departments, <span class="at">by =</span> <span class="st">"id"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  id    name age department
 1  2     Bob  30         HR
@@ -924,8 +874,8 @@ Data Analysis with R
 <section id="full-join" class="slide level2">
 <h2>full join</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb65"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb65-1"><a></a><span class="co"># Perform full join</span></span>
-<span id="cb65-2"><a></a>employees <span class="sc">%&gt;%</span> <span class="fu">full_join</span>(departments, <span class="at">by =</span> <span class="st">"id"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb64-1"><a></a><span class="co"># Perform full join</span></span>
+<span id="cb64-2"><a></a>employees <span class="sc">%&gt;%</span> <span class="fu">full_join</span>(departments, <span class="at">by =</span> <span class="st">"id"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  id    name age department
 1  1   Alice  25       &lt;NA&gt;
@@ -945,22 +895,22 @@ Data Analysis with R
 <section id="write-to-a-file" class="slide level2">
 <h2>Write to a file</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a></a><span class="co"># Write to a file</span></span>
-<span id="cb67-2"><a></a><span class="fu">write_delim</span>(res, <span class="st">"./methods_for_data_scince/applied_R/episodes/data/gapminder2.txt"</span>, <span class="at">delim =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb66"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb66-1"><a></a><span class="co"># Write to a file</span></span>
+<span id="cb66-2"><a></a><span class="fu">write_delim</span>(res, <span class="st">"./methods_for_data_scince/applied_R/episodes/data/gapminder2.txt"</span>, <span class="at">delim =</span> <span class="st">"</span><span class="sc">\t</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="write-to-excel" class="slide level2">
 <h2>Write to Excel</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a></a><span class="co"># Write to Excel</span></span>
-<span id="cb68-2"><a></a><span class="fu">write.xlsx</span>(res, <span class="at">file =</span> <span class="st">"./methods_for_data_scince/applied_R/episodes/data//gapm3.xlsx"</span>, <span class="at">sheetName =</span> <span class="st">"gap"</span>, <span class="at">colNames =</span> <span class="cn">TRUE</span>, <span class="at">rowNames =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb67"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb67-1"><a></a><span class="co"># Write to Excel</span></span>
+<span id="cb67-2"><a></a><span class="fu">write.xlsx</span>(res, <span class="at">file =</span> <span class="st">"./methods_for_data_scince/applied_R/episodes/data//gapm3.xlsx"</span>, <span class="at">sheetName =</span> <span class="st">"gap"</span>, <span class="at">colNames =</span> <span class="cn">TRUE</span>, <span class="at">rowNames =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="read-from-excel" class="slide level2">
 <h2>Read from Excel</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a></a><span class="co"># Read from Excel</span></span>
-<span id="cb69-2"><a></a>xl <span class="ot">&lt;-</span> <span class="fu">read.xlsx</span>(<span class="st">"./methods_for_data_scince/applied_R/episodes/data//gapm3.xlsx"</span>, <span class="at">sheet =</span> <span class="st">"gap"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb68"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb68-1"><a></a><span class="co"># Read from Excel</span></span>
+<span id="cb68-2"><a></a>xl <span class="ot">&lt;-</span> <span class="fu">read.xlsx</span>(<span class="st">"./methods_for_data_scince/applied_R/episodes/data//gapm3.xlsx"</span>, <span class="at">sheet =</span> <span class="st">"gap"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section></section>
 <section>
@@ -971,33 +921,33 @@ Data Analysis with R
 <section id="sample-data-with-missing-values" class="slide level2">
 <h2>Sample data with missing values</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a></a><span class="co"># Sample data with missing values</span></span>
-<span id="cb70-2"><a></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb70-3"><a></a>  <span class="at">Name =</span> <span class="fu">c</span>(<span class="st">"Alice"</span>, <span class="st">"Bob"</span>, <span class="st">"Charlie"</span>, <span class="cn">NA</span>, <span class="st">"Eve"</span>),</span>
-<span id="cb70-4"><a></a>  <span class="at">Age =</span> <span class="fu">c</span>(<span class="dv">25</span>, <span class="cn">NA</span>, <span class="dv">30</span>, <span class="dv">28</span>, <span class="dv">22</span>),</span>
-<span id="cb70-5"><a></a>  <span class="at">Score =</span> <span class="fu">c</span>(<span class="dv">80</span>, <span class="dv">90</span>, <span class="cn">NA</span>, <span class="dv">75</span>, <span class="dv">95</span>)</span>
-<span id="cb70-6"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb69"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb69-1"><a></a><span class="co"># Sample data with missing values</span></span>
+<span id="cb69-2"><a></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb69-3"><a></a>  <span class="at">Name =</span> <span class="fu">c</span>(<span class="st">"Alice"</span>, <span class="st">"Bob"</span>, <span class="st">"Charlie"</span>, <span class="cn">NA</span>, <span class="st">"Eve"</span>),</span>
+<span id="cb69-4"><a></a>  <span class="at">Age =</span> <span class="fu">c</span>(<span class="dv">25</span>, <span class="cn">NA</span>, <span class="dv">30</span>, <span class="dv">28</span>, <span class="dv">22</span>),</span>
+<span id="cb69-5"><a></a>  <span class="at">Score =</span> <span class="fu">c</span>(<span class="dv">80</span>, <span class="dv">90</span>, <span class="cn">NA</span>, <span class="dv">75</span>, <span class="dv">95</span>)</span>
+<span id="cb69-6"><a></a>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="remove-rows-with-any-na" class="slide level2">
 <h2>Remove rows with any NA</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a></a><span class="co"># Remove rows with any NA</span></span>
-<span id="cb71-2"><a></a>df_clean <span class="ot">&lt;-</span> <span class="fu">drop_na</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb70"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a></a><span class="co"># Remove rows with any NA</span></span>
+<span id="cb70-2"><a></a>df_clean <span class="ot">&lt;-</span> <span class="fu">drop_na</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="remove-rows-with-na-in-specific-column" class="slide level2">
 <h2>Remove rows with NA in specific column</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a></a><span class="co"># Remove rows with NA in specific column</span></span>
-<span id="cb72-2"><a></a>df_clean_age <span class="ot">&lt;-</span> <span class="fu">drop_na</span>(df, Age)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb71"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb71-1"><a></a><span class="co"># Remove rows with NA in specific column</span></span>
+<span id="cb71-2"><a></a>df_clean_age <span class="ot">&lt;-</span> <span class="fu">drop_na</span>(df, Age)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="replace-na-values" class="slide level2">
 <h2>Replace NA values</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a></a><span class="co"># Replace NA values</span></span>
-<span id="cb73-2"><a></a>df_filled <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">replace_na</span>(<span class="fu">list</span>(<span class="at">Age =</span> <span class="dv">0</span>, <span class="at">Score =</span> <span class="dv">50</span>, <span class="at">Name =</span> <span class="st">"Unknown"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb72"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb72-1"><a></a><span class="co"># Replace NA values</span></span>
+<span id="cb72-2"><a></a>df_filled <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span> <span class="fu">replace_na</span>(<span class="fu">list</span>(<span class="at">Age =</span> <span class="dv">0</span>, <span class="at">Score =</span> <span class="dv">50</span>, <span class="at">Name =</span> <span class="st">"Unknown"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section></section>
 <section>
@@ -1008,10 +958,10 @@ Data Analysis with R
 <section id="split-string-with-stringr" class="slide level2">
 <h2>Split string with stringr</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb74"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb74-1"><a></a><span class="co"># Split string</span></span>
-<span id="cb74-2"><a></a>text <span class="ot">&lt;-</span> <span class="st">"Hello world, welcome to R programming!"</span></span>
-<span id="cb74-3"><a></a>words <span class="ot">&lt;-</span> <span class="fu">str_split</span>(text, <span class="st">" "</span>)</span>
-<span id="cb74-4"><a></a><span class="fu">print</span>(words)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb73"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb73-1"><a></a><span class="co"># Split string</span></span>
+<span id="cb73-2"><a></a>text <span class="ot">&lt;-</span> <span class="st">"Hello world, welcome to R programming!"</span></span>
+<span id="cb73-3"><a></a>words <span class="ot">&lt;-</span> <span class="fu">str_split</span>(text, <span class="st">" "</span>)</span>
+<span id="cb73-4"><a></a><span class="fu">print</span>(words)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[[1]]
 [1] "Hello"        "world,"       "welcome"      "to"           "R"           
@@ -1023,8 +973,8 @@ Data Analysis with R
 <section id="access-specific-word-with-stringr" class="slide level2">
 <h2>Access specific word with stringr</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb76"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb76-1"><a></a><span class="co"># Access specific word</span></span>
-<span id="cb76-2"><a></a><span class="fu">print</span>(words[[<span class="dv">1</span>]][<span class="dv">3</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb75"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb75-1"><a></a><span class="co"># Access specific word</span></span>
+<span id="cb75-2"><a></a><span class="fu">print</span>(words[[<span class="dv">1</span>]][<span class="dv">3</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "welcome"</code></pre>
 </div>
@@ -1033,15 +983,15 @@ Data Analysis with R
 </section>
 <section id="extract-substring-with-stringr" class="slide level2">
 <h2>Extract substring with stringr</h2>
-<p><code>wepwwmmviyhr#| echo: true #| echo: true # Extract substring sub_text &lt;- str_sub(text, 7, 11) print(sub_text)</code></p>
+<p><code>swdriqpacmur#| echo: true #| echo: true # Extract substring sub_text &lt;- str_sub(text, 7, 11) print(sub_text)</code></p>
 <p>we can extract a substring</p>
 </section>
 <section id="replace-substring-with-stringr" class="slide level2">
 <h2>Replace substring with stringr</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb78"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb78-1"><a></a><span class="co"># Replace substring</span></span>
-<span id="cb78-2"><a></a><span class="fu">str_sub</span>(text, <span class="dv">1</span>, <span class="dv">5</span>) <span class="ot">&lt;-</span> <span class="st">"Hi"</span></span>
-<span id="cb78-3"><a></a><span class="fu">print</span>(text)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb77"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb77-1"><a></a><span class="co"># Replace substring</span></span>
+<span id="cb77-2"><a></a><span class="fu">str_sub</span>(text, <span class="dv">1</span>, <span class="dv">5</span>) <span class="ot">&lt;-</span> <span class="st">"Hi"</span></span>
+<span id="cb77-3"><a></a><span class="fu">print</span>(text)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Hi world, welcome to R programming!"</code></pre>
 </div>
@@ -1056,30 +1006,33 @@ Data Analysis with R
 <section id="scatter-plot-with-ggplot2" class="slide level2">
 <h2>Scatter plot with ggplot2</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a></a><span class="co"># Basic scatter plot</span></span>
-<span id="cb80-2"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> gapminder, <span class="fu">aes</span>(<span class="at">x =</span> lifeExp, <span class="at">y =</span> gdpPercap)) <span class="sc">+</span></span>
-<span id="cb80-3"><a></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb79"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb79-1"><a></a><span class="co"># Basic scatter plot</span></span>
+<span id="cb79-2"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> gapminder, <span class="fu">aes</span>(<span class="at">x =</span> lifeExp, <span class="at">y =</span> gdpPercap)) <span class="sc">+</span></span>
+<span id="cb79-3"><a></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="05-the_tidyverse_files/figure-revealjs/ggplot21-1.png" width="960" class="r-stretch"></section>
+<img data-src="05-the_tidyverse_files/figure-html/ggplot21-1.png" width="672" class="r-stretch"></section>
 <section id="bar-plot-with-ggplot2" class="slide level2">
 <h2>Bar plot with ggplot2</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a></a><span class="co"># Bar plot</span></span>
-<span id="cb81-2"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> gapminder, <span class="fu">aes</span>(<span class="at">x =</span> continent)) <span class="sc">+</span></span>
-<span id="cb81-3"><a></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb80"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb80-1"><a></a><span class="co"># Bar plot</span></span>
+<span id="cb80-2"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> gapminder, <span class="fu">aes</span>(<span class="at">x =</span> continent)) <span class="sc">+</span></span>
+<span id="cb80-3"><a></a>  <span class="fu">geom_bar</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="05-the_tidyverse_files/figure-revealjs/ggplot22-1.png" width="960" class="r-stretch"></section>
+<img data-src="05-the_tidyverse_files/figure-html/ggplot22-1.png" width="672" class="r-stretch"></section>
 <section id="histogram-plot-with-ggplot2" class="slide level2">
 <h2>Histogram plot with ggplot2</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb82"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb82-1"><a></a><span class="co"># Histogram</span></span>
-<span id="cb82-2"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> gapminder, <span class="fu">aes</span>(<span class="at">x =</span> lifeExp)) <span class="sc">+</span></span>
-<span id="cb82-3"><a></a>  <span class="fu">geom_histogram</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb81"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb81-1"><a></a><span class="co"># Histogram</span></span>
+<span id="cb81-2"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> gapminder, <span class="fu">aes</span>(<span class="at">x =</span> lifeExp)) <span class="sc">+</span></span>
+<span id="cb81-3"><a></a>  <span class="fu">geom_histogram</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+</div>
 
 </div>
-<img data-src="05-the_tidyverse_files/figure-revealjs/ggplot23-1.png" width="960" class="r-stretch"></section>
+<img data-src="05-the_tidyverse_files/figure-html/ggplot23-1.png" width="672" class="r-stretch"></section>
 <section id="box-plot-with-ggplot2" class="slide level2">
 <h2>Box plot with ggplot2</h2>
 <div class="cell">
@@ -1088,7 +1041,7 @@ Data Analysis with R
 <span id="cb83-3"><a></a>  <span class="fu">geom_boxplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="05-the_tidyverse_files/figure-revealjs/ggplot24-1.png" width="960" class="r-stretch"></section>
+<img data-src="05-the_tidyverse_files/figure-html/ggplot24-1.png" width="672" class="r-stretch"></section>
 <section id="violin-plot-with-ggplot2" class="slide level2">
 <h2>Violin plot with ggplot2</h2>
 <div class="cell">
@@ -1097,7 +1050,7 @@ Data Analysis with R
 <span id="cb84-3"><a></a>  <span class="fu">geom_violin</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="05-the_tidyverse_files/figure-revealjs/ggplot25-1.png" width="960" class="r-stretch"></section>
+<img data-src="05-the_tidyverse_files/figure-html/ggplot25-1.png" width="672" class="r-stretch"></section>
 <section id="scatter-plot-with-color-aesthetic-with-ggplot2" class="slide level2">
 <h2>Scatter plot with color aesthetic with ggplot2</h2>
 <div class="cell">
@@ -1106,7 +1059,7 @@ Data Analysis with R
 <span id="cb85-3"><a></a>  <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="05-the_tidyverse_files/figure-revealjs/ggplot26-1.png" width="960" class="r-stretch"></section>
+<img data-src="05-the_tidyverse_files/figure-html/ggplot26-1.png" width="672" class="r-stretch"></section>
 <section id="scatter-plot-with-custom-color" class="slide level2">
 <h2>Scatter plot with custom color</h2>
 <div class="cell">
@@ -1115,7 +1068,7 @@ Data Analysis with R
 <span id="cb86-3"><a></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"red"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="05-the_tidyverse_files/figure-revealjs/ggplot27-1.png" width="960" class="r-stretch"></section>
+<img data-src="05-the_tidyverse_files/figure-html/ggplot27-1.png" width="672" class="r-stretch"></section>
 <section id="scatter-plot-with-smooth-line" class="slide level2">
 <h2>Scatter plot with smooth line</h2>
 <div class="cell">
@@ -1123,152 +1076,179 @@ Data Analysis with R
 <span id="cb87-2"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> gapminder, <span class="fu">aes</span>(<span class="at">x =</span> lifeExp, <span class="at">y =</span> gdpPercap)) <span class="sc">+</span></span>
 <span id="cb87-3"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
 <span id="cb87-4"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using method = 'gam' and formula = 'y ~ s(x, bs = "cs")'</code></pre>
+</div>
 
 </div>
-<img data-src="05-the_tidyverse_files/figure-revealjs/ggplot28-1.png" width="960" class="r-stretch"></section>
+<img data-src="05-the_tidyverse_files/figure-html/ggplot28-1.png" width="672" class="r-stretch"></section>
 <section id="faceted-plot-in-ggplot2" class="slide level2">
 <h2>Faceted plot in ggplot2</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb88"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a></a><span class="co"># Faceted plot</span></span>
-<span id="cb88-2"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> gapminder, <span class="fu">aes</span>(<span class="at">x =</span> lifeExp, <span class="at">y =</span> gdpPercap)) <span class="sc">+</span></span>
-<span id="cb88-3"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb88-4"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb88-5"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>continent)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-
-</div>
-<img data-src="05-the_tidyverse_files/figure-revealjs/ggplot29-1.png" width="960" class="r-stretch"></section>
-<section id="customized-axes" class="slide level2">
-<h2>Customized axes</h2>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb89"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb89-1"><a></a><span class="co"># Customized axes</span></span>
+<div class="sourceCode cell-code" id="cb89"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb89-1"><a></a><span class="co"># Faceted plot</span></span>
 <span id="cb89-2"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> gapminder, <span class="fu">aes</span>(<span class="at">x =</span> lifeExp, <span class="at">y =</span> gdpPercap)) <span class="sc">+</span></span>
 <span id="cb89-3"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
 <span id="cb89-4"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb89-5"><a></a>  <span class="fu">xlab</span>(<span class="st">"Life Expectancy"</span>) <span class="sc">+</span></span>
-<span id="cb89-6"><a></a>  <span class="fu">ylab</span>(<span class="st">"GDP Per Capita"</span>) <span class="sc">+</span></span>
-<span id="cb89-7"><a></a>  <span class="fu">xlim</span>(<span class="dv">0</span>, <span class="dv">70</span>) <span class="sc">+</span></span>
-<span id="cb89-8"><a></a>  <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="dv">100000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb89-5"><a></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>continent)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using method = 'loess' and formula = 'y ~ x'</code></pre>
+</div>
 
 </div>
-<img data-src="05-the_tidyverse_files/figure-revealjs/ggplot210-1.png" width="960" class="r-stretch"></section>
+<img data-src="05-the_tidyverse_files/figure-html/ggplot29-1.png" width="672" class="r-stretch"></section>
+<section id="customized-axes" class="slide level2">
+<h2>Customized axes</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb91"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a></a><span class="co"># Customized axes</span></span>
+<span id="cb91-2"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> gapminder, <span class="fu">aes</span>(<span class="at">x =</span> lifeExp, <span class="at">y =</span> gdpPercap)) <span class="sc">+</span></span>
+<span id="cb91-3"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb91-4"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb91-5"><a></a>  <span class="fu">xlab</span>(<span class="st">"Life Expectancy"</span>) <span class="sc">+</span></span>
+<span id="cb91-6"><a></a>  <span class="fu">ylab</span>(<span class="st">"GDP Per Capita"</span>) <span class="sc">+</span></span>
+<span id="cb91-7"><a></a>  <span class="fu">xlim</span>(<span class="dv">0</span>, <span class="dv">70</span>) <span class="sc">+</span></span>
+<span id="cb91-8"><a></a>  <span class="fu">ylim</span>(<span class="dv">0</span>, <span class="dv">100000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using method = 'gam' and formula = 'y ~ s(x, bs = "cs")'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 496 rows containing non-finite outside the scale range
+(`stat_smooth()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 496 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+
+</div>
+<img data-src="05-the_tidyverse_files/figure-html/ggplot210-1.png" width="672" class="r-stretch"></section>
 <section id="box-plot-with-customized-y-axis" class="slide level2">
 <h2>Box plot with customized y-axis</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb90"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb90-1"><a></a><span class="co"># Box plot with customized y-axis</span></span>
-<span id="cb90-2"><a></a><span class="fu">ggplot</span>(gapminder, <span class="fu">aes</span>(<span class="at">x =</span> continent, <span class="at">y =</span> lifeExp)) <span class="sc">+</span></span>
-<span id="cb90-3"><a></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb90-4"><a></a>  <span class="fu">scale_y_continuous</span>(<span class="at">name =</span> <span class="st">"Life Expectancy (Years)"</span>,</span>
-<span id="cb90-5"><a></a>                     <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">90</span>),</span>
-<span id="cb90-6"><a></a>                     <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>, <span class="dv">60</span>, <span class="dv">70</span>, <span class="dv">80</span>, <span class="dv">90</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb95"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb95-1"><a></a><span class="co"># Box plot with customized y-axis</span></span>
+<span id="cb95-2"><a></a><span class="fu">ggplot</span>(gapminder, <span class="fu">aes</span>(<span class="at">x =</span> continent, <span class="at">y =</span> lifeExp)) <span class="sc">+</span></span>
+<span id="cb95-3"><a></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb95-4"><a></a>  <span class="fu">scale_y_continuous</span>(<span class="at">name =</span> <span class="st">"Life Expectancy (Years)"</span>,</span>
+<span id="cb95-5"><a></a>                     <span class="at">limits =</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">90</span>),</span>
+<span id="cb95-6"><a></a>                     <span class="at">breaks =</span> <span class="fu">c</span>(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>, <span class="dv">60</span>, <span class="dv">70</span>, <span class="dv">80</span>, <span class="dv">90</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="05-the_tidyverse_files/figure-revealjs/ggplot211-1.png" width="960" class="r-stretch"></section>
+<img data-src="05-the_tidyverse_files/figure-html/ggplot211-1.png" width="672" class="r-stretch"></section>
 <section id="box-plot-with-customized-x-axis" class="slide level2">
 <h2>Box plot with customized x-axis</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb91"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb91-1"><a></a><span class="co"># Box plot with customized x-axis</span></span>
-<span id="cb91-2"><a></a><span class="fu">ggplot</span>(gapminder, <span class="fu">aes</span>(<span class="at">x =</span> continent, <span class="at">y =</span> lifeExp)) <span class="sc">+</span></span>
-<span id="cb91-3"><a></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb91-4"><a></a>  <span class="fu">scale_x_discrete</span>(<span class="at">name =</span> <span class="st">"Continent"</span>,</span>
-<span id="cb91-5"><a></a>                   <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Africa"</span> <span class="ot">=</span> <span class="st">"AF"</span>, <span class="st">"Americas"</span> <span class="ot">=</span> <span class="st">"AM"</span>,</span>
-<span id="cb91-6"><a></a>                              <span class="st">"Asia"</span> <span class="ot">=</span> <span class="st">"AS"</span>, <span class="st">"Europe"</span> <span class="ot">=</span> <span class="st">"EU"</span>, <span class="st">"Oceania"</span> <span class="ot">=</span> <span class="st">"OC"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb96"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb96-1"><a></a><span class="co"># Box plot with customized x-axis</span></span>
+<span id="cb96-2"><a></a><span class="fu">ggplot</span>(gapminder, <span class="fu">aes</span>(<span class="at">x =</span> continent, <span class="at">y =</span> lifeExp)) <span class="sc">+</span></span>
+<span id="cb96-3"><a></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb96-4"><a></a>  <span class="fu">scale_x_discrete</span>(<span class="at">name =</span> <span class="st">"Continent"</span>,</span>
+<span id="cb96-5"><a></a>                   <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"Africa"</span> <span class="ot">=</span> <span class="st">"AF"</span>, <span class="st">"Americas"</span> <span class="ot">=</span> <span class="st">"AM"</span>,</span>
+<span id="cb96-6"><a></a>                              <span class="st">"Asia"</span> <span class="ot">=</span> <span class="st">"AS"</span>, <span class="st">"Europe"</span> <span class="ot">=</span> <span class="st">"EU"</span>, <span class="st">"Oceania"</span> <span class="ot">=</span> <span class="st">"OC"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="05-the_tidyverse_files/figure-revealjs/ggplot212-1.png" width="960" class="r-stretch"></section>
+<img data-src="05-the_tidyverse_files/figure-html/ggplot212-1.png" width="672" class="r-stretch"></section>
 <section id="color-gradient-scale" class="slide level2">
 <h2>Color gradient scale</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb92"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb92-1"><a></a><span class="co"># Color gradient scale</span></span>
-<span id="cb92-2"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> gapminder, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, <span class="at">y =</span> lifeExp, <span class="at">color =</span> pop)) <span class="sc">+</span></span>
-<span id="cb92-3"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb92-4"><a></a>  <span class="fu">scale_color_gradient</span>(<span class="at">low =</span> <span class="st">"blue"</span>, <span class="at">high =</span> <span class="st">"red"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb97"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb97-1"><a></a><span class="co"># Color gradient scale</span></span>
+<span id="cb97-2"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> gapminder, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, <span class="at">y =</span> lifeExp, <span class="at">color =</span> pop)) <span class="sc">+</span></span>
+<span id="cb97-3"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb97-4"><a></a>  <span class="fu">scale_color_gradient</span>(<span class="at">low =</span> <span class="st">"blue"</span>, <span class="at">high =</span> <span class="st">"red"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="05-the_tidyverse_files/figure-revealjs/ggplot213-1.png" width="960" class="r-stretch"></section>
+<img data-src="05-the_tidyverse_files/figure-html/ggplot213-1.png" width="672" class="r-stretch"></section>
 <section id="discrete-color-scale" class="slide level2">
 <h2>Discrete color scale</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb93"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb93-1"><a></a><span class="co"># Discrete color scale</span></span>
-<span id="cb93-2"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> gapminder, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, <span class="at">y =</span> lifeExp, <span class="at">color =</span> continent)) <span class="sc">+</span></span>
-<span id="cb93-3"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb93-4"><a></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#1f78b4"</span>, <span class="st">"#33a02c"</span>, <span class="st">"#e31a1c"</span>, <span class="st">"#ff7f00"</span>, <span class="st">"#6a3d9a"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb98"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb98-1"><a></a><span class="co"># Discrete color scale</span></span>
+<span id="cb98-2"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> gapminder, <span class="fu">aes</span>(<span class="at">x =</span> gdpPercap, <span class="at">y =</span> lifeExp, <span class="at">color =</span> continent)) <span class="sc">+</span></span>
+<span id="cb98-3"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb98-4"><a></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"#1f78b4"</span>, <span class="st">"#33a02c"</span>, <span class="st">"#e31a1c"</span>, <span class="st">"#ff7f00"</span>, <span class="st">"#6a3d9a"</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="05-the_tidyverse_files/figure-revealjs/ggplot214-1.png" width="960" class="r-stretch"></section>
+<img data-src="05-the_tidyverse_files/figure-html/ggplot214-1.png" width="672" class="r-stretch"></section>
 <section id="plot-with-color-palette" class="slide level2">
 <h2>Plot with color palette</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb94"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb94-1"><a></a><span class="co"># Plot with color palette</span></span>
-<span id="cb94-2"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> gapminder, <span class="fu">aes</span>(<span class="at">x =</span> lifeExp, <span class="at">y =</span> gdpPercap)) <span class="sc">+</span></span>
-<span id="cb94-3"><a></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">fill =</span> continent), <span class="at">size =</span> <span class="dv">5</span>, <span class="at">shape =</span> <span class="dv">21</span>) <span class="sc">+</span></span>
-<span id="cb94-4"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb94-5"><a></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Set2"</span>) <span class="sc">+</span></span>
-<span id="cb94-6"><a></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb99"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb99-1"><a></a><span class="co"># Plot with color palette</span></span>
+<span id="cb99-2"><a></a><span class="fu">ggplot</span>(<span class="at">data =</span> gapminder, <span class="fu">aes</span>(<span class="at">x =</span> lifeExp, <span class="at">y =</span> gdpPercap)) <span class="sc">+</span></span>
+<span id="cb99-3"><a></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">fill =</span> continent), <span class="at">size =</span> <span class="dv">5</span>, <span class="at">shape =</span> <span class="dv">21</span>) <span class="sc">+</span></span>
+<span id="cb99-4"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb99-5"><a></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Set2"</span>) <span class="sc">+</span></span>
+<span id="cb99-6"><a></a>  <span class="fu">theme_minimal</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using method = 'gam' and formula = 'y ~ s(x, bs = "cs")'</code></pre>
+</div>
 
 </div>
-<img data-src="05-the_tidyverse_files/figure-revealjs/ggplot215-1.png" width="960" class="r-stretch"></section>
+<img data-src="05-the_tidyverse_files/figure-html/ggplot215-1.png" width="672" class="r-stretch"></section>
 <section id="box-plot-with-theme_classic" class="slide level2">
 <h2>Box plot with theme_classic</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb95"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb95-1"><a></a><span class="co"># Box plot with theme_classic</span></span>
-<span id="cb95-2"><a></a><span class="fu">ggplot</span>(gapminder, <span class="fu">aes</span>(<span class="at">x =</span> continent, <span class="at">y =</span> lifeExp)) <span class="sc">+</span></span>
-<span id="cb95-3"><a></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb95-4"><a></a>  <span class="fu">theme_classic</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb101"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb101-1"><a></a><span class="co"># Box plot with theme_classic</span></span>
+<span id="cb101-2"><a></a><span class="fu">ggplot</span>(gapminder, <span class="fu">aes</span>(<span class="at">x =</span> continent, <span class="at">y =</span> lifeExp)) <span class="sc">+</span></span>
+<span id="cb101-3"><a></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb101-4"><a></a>  <span class="fu">theme_classic</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="05-the_tidyverse_files/figure-revealjs/ggplot216-1.png" width="960" class="r-stretch"></section>
+<img data-src="05-the_tidyverse_files/figure-html/ggplot216-1.png" width="672" class="r-stretch"></section>
 <section id="box-plot-with-jitter" class="slide level2">
 <h2>Box plot with jitter</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb96"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb96-1"><a></a><span class="co"># Box plot with jitter</span></span>
-<span id="cb96-2"><a></a><span class="fu">ggplot</span>(gapminder, <span class="fu">aes</span>(<span class="at">x =</span> continent, <span class="at">y =</span> lifeExp)) <span class="sc">+</span></span>
-<span id="cb96-3"><a></a>  <span class="fu">geom_boxplot</span>(<span class="at">outlier.colour =</span> <span class="st">"hotpink"</span>) <span class="sc">+</span></span>
-<span id="cb96-4"><a></a>  <span class="fu">geom_jitter</span>(<span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="at">width =</span> <span class="fl">0.1</span>, <span class="at">height =</span> <span class="dv">0</span>), <span class="at">alpha =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb102"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb102-1"><a></a><span class="co"># Box plot with jitter</span></span>
+<span id="cb102-2"><a></a><span class="fu">ggplot</span>(gapminder, <span class="fu">aes</span>(<span class="at">x =</span> continent, <span class="at">y =</span> lifeExp)) <span class="sc">+</span></span>
+<span id="cb102-3"><a></a>  <span class="fu">geom_boxplot</span>(<span class="at">outlier.colour =</span> <span class="st">"hotpink"</span>) <span class="sc">+</span></span>
+<span id="cb102-4"><a></a>  <span class="fu">geom_jitter</span>(<span class="at">position =</span> <span class="fu">position_jitter</span>(<span class="at">width =</span> <span class="fl">0.1</span>, <span class="at">height =</span> <span class="dv">0</span>), <span class="at">alpha =</span> <span class="dv">1</span><span class="sc">/</span><span class="dv">4</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="05-the_tidyverse_files/figure-revealjs/ggplot217-1.png" width="960" class="r-stretch"></section>
+<img data-src="05-the_tidyverse_files/figure-html/ggplot217-1.png" width="672" class="r-stretch"></section>
 <section id="combined-violin-and-box-plot" class="slide level2">
 <h2>Combined violin and box plot</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb97"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb97-1"><a></a><span class="co"># Combined violin and box plot</span></span>
-<span id="cb97-2"><a></a><span class="fu">ggplot</span>(gapminder) <span class="sc">+</span></span>
-<span id="cb97-3"><a></a>  <span class="fu">geom_violin</span>(<span class="fu">aes</span>(<span class="at">x =</span> continent, <span class="at">y =</span> gdpPercap), <span class="at">scale =</span> <span class="st">"width"</span>) <span class="sc">+</span></span>
-<span id="cb97-4"><a></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> continent, <span class="at">y =</span> gdpPercap), <span class="at">width =</span> <span class="fl">0.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb103"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb103-1"><a></a><span class="co"># Combined violin and box plot</span></span>
+<span id="cb103-2"><a></a><span class="fu">ggplot</span>(gapminder) <span class="sc">+</span></span>
+<span id="cb103-3"><a></a>  <span class="fu">geom_violin</span>(<span class="fu">aes</span>(<span class="at">x =</span> continent, <span class="at">y =</span> gdpPercap), <span class="at">scale =</span> <span class="st">"width"</span>) <span class="sc">+</span></span>
+<span id="cb103-4"><a></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> continent, <span class="at">y =</span> gdpPercap), <span class="at">width =</span> <span class="fl">0.1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="05-the_tidyverse_files/figure-revealjs/ggplot218-1.png" width="960" class="r-stretch"></section>
+<img data-src="05-the_tidyverse_files/figure-html/ggplot218-1.png" width="672" class="r-stretch"></section>
 <section id="multiple-plots-with-gridextra" class="slide level2">
 <h2>Multiple plots with gridExtra</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb98"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb98-1"><a></a><span class="co"># Multiple plots with gridExtra</span></span>
-<span id="cb98-2"><a></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(gapminder) <span class="sc">+</span> <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> continent, <span class="at">y =</span> gdpPercap, <span class="at">fill =</span> continent))</span>
-<span id="cb98-3"><a></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(gapminder) <span class="sc">+</span> <span class="fu">geom_violin</span>(<span class="fu">aes</span>(<span class="at">x =</span> continent, <span class="at">y =</span> gdpPercap, <span class="at">fill =</span> continent))</span>
-<span id="cb98-4"><a></a><span class="fu">grid.arrange</span>(p1, p2, <span class="at">nrow =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb104"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb104-1"><a></a><span class="co"># Multiple plots with gridExtra</span></span>
+<span id="cb104-2"><a></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(gapminder) <span class="sc">+</span> <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> continent, <span class="at">y =</span> gdpPercap, <span class="at">fill =</span> continent))</span>
+<span id="cb104-3"><a></a>p2 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(gapminder) <span class="sc">+</span> <span class="fu">geom_violin</span>(<span class="fu">aes</span>(<span class="at">x =</span> continent, <span class="at">y =</span> gdpPercap, <span class="at">fill =</span> continent))</span>
+<span id="cb104-4"><a></a><span class="fu">grid.arrange</span>(p1, p2, <span class="at">nrow =</span> <span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="05-the_tidyverse_files/figure-revealjs/ggplot219-1.png" width="960" class="r-stretch"></section>
+<img data-src="05-the_tidyverse_files/figure-html/ggplot219-1.png" width="672" class="r-stretch"></section>
 <section id="marginal-histogram" class="slide level2">
 <h2>Marginal histogram</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb99"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb99-1"><a></a><span class="co"># Marginal histogram</span></span>
-<span id="cb99-2"><a></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> gapminder, <span class="fu">aes</span>(<span class="at">x =</span> lifeExp, <span class="at">y =</span> gdpPercap, <span class="at">fill =</span> continent)) <span class="sc">+</span></span>
-<span id="cb99-3"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb99-4"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span>
-<span id="cb99-5"><a></a><span class="fu">ggMarginal</span>(p, <span class="at">type =</span> <span class="st">"histogram"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb105"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb105-1"><a></a><span class="co"># Marginal histogram</span></span>
+<span id="cb105-2"><a></a>p <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> gapminder, <span class="fu">aes</span>(<span class="at">x =</span> lifeExp, <span class="at">y =</span> gdpPercap, <span class="at">fill =</span> continent)) <span class="sc">+</span></span>
+<span id="cb105-3"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb105-4"><a></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">"none"</span>)</span>
+<span id="cb105-5"><a></a><span class="fu">ggMarginal</span>(p, <span class="at">type =</span> <span class="st">"histogram"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 </div>
-<img data-src="05-the_tidyverse_files/figure-revealjs/ggplot220-1.png" width="960" class="r-stretch"></section></section>
+<img data-src="05-the_tidyverse_files/figure-html/ggplot220-1.png" width="672" class="r-stretch"></section></section>
 <section id="saving-plots" class="title-slide slide level1 center">
 <h1>Saving Plots</h1>
 <p>Save a plot to a file using <code>ggsave</code>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb100"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb100-1"><a></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> gapminder, <span class="fu">aes</span>(<span class="at">x =</span> lifeExp, <span class="at">y =</span> gdpPercap)) <span class="sc">+</span></span>
-<span id="cb100-2"><a></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">fill =</span> continent), <span class="at">size =</span> <span class="dv">5</span>, <span class="at">shape =</span> <span class="dv">21</span>) <span class="sc">+</span></span>
-<span id="cb100-3"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
-<span id="cb100-4"><a></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Set2"</span>) <span class="sc">+</span></span>
-<span id="cb100-5"><a></a>  <span class="fu">theme_minimal</span>()</span>
-<span id="cb100-6"><a></a></span>
-<span id="cb100-7"><a></a><span class="fu">ggsave</span>(<span class="st">"myplot.png"</span>, <span class="at">plot =</span> p1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb106"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb106-1"><a></a>p1 <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="at">data =</span> gapminder, <span class="fu">aes</span>(<span class="at">x =</span> lifeExp, <span class="at">y =</span> gdpPercap)) <span class="sc">+</span></span>
+<span id="cb106-2"><a></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">fill =</span> continent), <span class="at">size =</span> <span class="dv">5</span>, <span class="at">shape =</span> <span class="dv">21</span>) <span class="sc">+</span></span>
+<span id="cb106-3"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">alpha =</span> <span class="fl">0.5</span>) <span class="sc">+</span></span>
+<span id="cb106-4"><a></a>  <span class="fu">scale_fill_brewer</span>(<span class="at">palette =</span> <span class="st">"Set2"</span>) <span class="sc">+</span></span>
+<span id="cb106-5"><a></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb106-6"><a></a><span class="fu">print</span>(<span class="fu">getwd</span>())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "/Users/svztg/Library/CloudStorage/OneDrive-TheUniversityofNottingham/Digital_Research/Source_Control/Data Science and Digital Skills/training_site/methods_for_data_science/applied_R/episodes"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb108"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb108-1"><a></a><span class="fu">ggsave</span>(<span class="st">"myplot.png"</span>, <span class="at">plot =</span> p1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Saving 7 x 5 in image
+`geom_smooth()` using method = 'gam' and formula = 'y ~ s(x, bs = "cs")'</code></pre>
+</div>
 </div>
 </section>
 
@@ -1280,7 +1260,7 @@ Data Analysis with R
 <section id="exercise-1-select-year-lifeexp-and-country" class="slide level2">
 <h2>Exercise 1: Select year, lifeExp, and country</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb101"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb101-1"><a></a>gapminder <span class="sc">%&gt;%</span> <span class="fu">select</span>(year, lifeExp, country) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb110"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb110-1"><a></a>gapminder <span class="sc">%&gt;%</span> <span class="fu">select</span>(year, lifeExp, country) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 3
    year lifeExp country    
@@ -1297,7 +1277,7 @@ Data Analysis with R
 <section id="exercise-2-select-all-columns-except-year-lifeexp-and-country" class="slide level2">
 <h2>Exercise 2: Select all columns except year, lifeExp, and country</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb103"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb103-1"><a></a>gapminder <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span>year, <span class="sc">-</span>lifeExp, <span class="sc">-</span>country) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb112"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb112-1"><a></a>gapminder <span class="sc">%&gt;%</span> <span class="fu">select</span>(<span class="sc">-</span>year, <span class="sc">-</span>lifeExp, <span class="sc">-</span>country) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 3
   continent      pop gdpPercap
@@ -1314,7 +1294,7 @@ Data Analysis with R
 <section id="exercise-3-filter-for-year-2002" class="slide level2">
 <h2>Exercise 3: Filter for year 2002</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb105"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb105-1"><a></a>gapminder <span class="sc">%&gt;%</span> <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2002</span>) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb114"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb114-1"><a></a>gapminder <span class="sc">%&gt;%</span> <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">2002</span>) <span class="sc">%&gt;%</span> <span class="fu">head</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 6
   country     continent  year lifeExp      pop gdpPercap
@@ -1331,8 +1311,8 @@ Data Analysis with R
 <section id="exercise-4-store-and-display-data-for-asian-countries" class="slide level2">
 <h2>Exercise 4: Store and display data for Asian countries</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb107"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb107-1"><a></a>gapminder_asia <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span> <span class="fu">filter</span>(continent <span class="sc">==</span> <span class="st">"Asia"</span>)</span>
-<span id="cb107-2"><a></a><span class="fu">head</span>(gapminder_asia)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb116"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb116-1"><a></a>gapminder_asia <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span> <span class="fu">filter</span>(continent <span class="sc">==</span> <span class="st">"Asia"</span>)</span>
+<span id="cb116-2"><a></a><span class="fu">head</span>(gapminder_asia)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 6
   country     continent  year lifeExp      pop gdpPercap
@@ -1349,16 +1329,16 @@ Data Analysis with R
 <section id="exercise-5-compare-ireland-and-brazil-in-1977" class="slide level2">
 <h2>Exercise 5: Compare Ireland and Brazil in 1977</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb109"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb109-1"><a></a><span class="co"># Ireland</span></span>
-<span id="cb109-2"><a></a>gapminder <span class="sc">%&gt;%</span> <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">1977</span>, country <span class="sc">==</span> <span class="st">"Ireland"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb118"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb118-1"><a></a><span class="co"># Ireland</span></span>
+<span id="cb118-2"><a></a>gapminder <span class="sc">%&gt;%</span> <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">1977</span>, country <span class="sc">==</span> <span class="st">"Ireland"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 6
   country continent  year lifeExp     pop gdpPercap
   &lt;fct&gt;   &lt;fct&gt;     &lt;int&gt;   &lt;dbl&gt;   &lt;int&gt;     &lt;dbl&gt;
 1 Ireland Europe     1977    72.0 3271900    11151.</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb111"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb111-1"><a></a><span class="co"># Brazil</span></span>
-<span id="cb111-2"><a></a>gapminder <span class="sc">%&gt;%</span> <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">1977</span>, country <span class="sc">==</span> <span class="st">"Brazil"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb120"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb120-1"><a></a><span class="co"># Brazil</span></span>
+<span id="cb120-2"><a></a>gapminder <span class="sc">%&gt;%</span> <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">1977</span>, country <span class="sc">==</span> <span class="st">"Brazil"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 6
   country continent  year lifeExp       pop gdpPercap
@@ -1370,10 +1350,10 @@ Data Analysis with R
 <section id="exercise-6-african-countries-in-2012-with-specific-criteria" class="slide level2">
 <h2>Exercise 6: African countries in 2012 with specific criteria</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb113"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb113-1"><a></a>df <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span></span>
-<span id="cb113-2"><a></a>  <span class="fu">filter</span>(continent <span class="sc">==</span> <span class="st">"Africa"</span> <span class="sc">&amp;</span> year <span class="sc">==</span> <span class="dv">2012</span> <span class="sc">&amp;</span> pop <span class="sc">&lt;=</span> <span class="dv">3</span> <span class="sc">&amp;</span> lifeExp <span class="sc">&gt;=</span> <span class="dv">70</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb113-3"><a></a>  <span class="fu">select</span>(country, continent)</span>
-<span id="cb113-4"><a></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb122"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb122-1"><a></a>df <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span></span>
+<span id="cb122-2"><a></a>  <span class="fu">filter</span>(continent <span class="sc">==</span> <span class="st">"Africa"</span> <span class="sc">&amp;</span> year <span class="sc">==</span> <span class="dv">2012</span> <span class="sc">&amp;</span> pop <span class="sc">&lt;=</span> <span class="dv">3</span> <span class="sc">&amp;</span> lifeExp <span class="sc">&gt;=</span> <span class="dv">70</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb122-3"><a></a>  <span class="fu">select</span>(country, continent)</span>
+<span id="cb122-4"><a></a>df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 0 × 2
 # ℹ 2 variables: country &lt;fct&gt;, continent &lt;fct&gt;</code></pre>
@@ -1383,7 +1363,7 @@ Data Analysis with R
 <section id="exercise-7-lowest-life-expectancy" class="slide level2">
 <h2>Exercise 7: Lowest life expectancy</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb115"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb115-1"><a></a>gapminder <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(lifeExp) <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb124"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb124-1"><a></a>gapminder <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(lifeExp) <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 6
   country continent  year lifeExp     pop gdpPercap
@@ -1395,7 +1375,7 @@ Data Analysis with R
 <section id="exercise-8-highest-life-expectancy" class="slide level2">
 <h2>Exercise 8: Highest life expectancy</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb117"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb117-1"><a></a>gapminder <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(<span class="fu">desc</span>(lifeExp)) <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb126"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb126-1"><a></a>gapminder <span class="sc">%&gt;%</span> <span class="fu">arrange</span>(<span class="fu">desc</span>(lifeExp)) <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 6
   country continent  year lifeExp       pop gdpPercap
@@ -1407,10 +1387,10 @@ Data Analysis with R
 <section id="exercise-9-shortest-life-expectancy-in-the-americas-in-1962" class="slide level2">
 <h2>Exercise 9: Shortest life expectancy in the Americas in 1962</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb119"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb119-1"><a></a>gapminder <span class="sc">%&gt;%</span></span>
-<span id="cb119-2"><a></a>  <span class="fu">mutate</span>(<span class="at">lifeExpMonths =</span> <span class="dv">12</span> <span class="sc">*</span> lifeExp) <span class="sc">%&gt;%</span></span>
-<span id="cb119-3"><a></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">1962</span>, continent <span class="sc">==</span> <span class="st">"Americas"</span>) <span class="sc">%&gt;%</span></span>
-<span id="cb119-4"><a></a>  <span class="fu">arrange</span>(lifeExpMonths) <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb128"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb128-1"><a></a>gapminder <span class="sc">%&gt;%</span></span>
+<span id="cb128-2"><a></a>  <span class="fu">mutate</span>(<span class="at">lifeExpMonths =</span> <span class="dv">12</span> <span class="sc">*</span> lifeExp) <span class="sc">%&gt;%</span></span>
+<span id="cb128-3"><a></a>  <span class="fu">filter</span>(year <span class="sc">==</span> <span class="dv">1962</span>, continent <span class="sc">==</span> <span class="st">"Americas"</span>) <span class="sc">%&gt;%</span></span>
+<span id="cb128-4"><a></a>  <span class="fu">arrange</span>(lifeExpMonths) <span class="sc">%&gt;%</span> <span class="fu">head</span>(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 7
   country continent  year lifeExp     pop gdpPercap lifeExpMonths
@@ -1422,12 +1402,12 @@ Data Analysis with R
 <section id="exercise-10-summary-statistics-for-life-expectancy" class="slide level2">
 <h2>Exercise 10: Summary statistics for life expectancy</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb121"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb121-1"><a></a>gapminder <span class="sc">%&gt;%</span></span>
-<span id="cb121-2"><a></a>  <span class="fu">summarise</span>(</span>
-<span id="cb121-3"><a></a>    <span class="at">lifeExp_min =</span> <span class="fu">min</span>(lifeExp),</span>
-<span id="cb121-4"><a></a>    <span class="at">lifeExp_max =</span> <span class="fu">max</span>(lifeExp),</span>
-<span id="cb121-5"><a></a>    <span class="at">lifeExp_mean =</span> <span class="fu">mean</span>(lifeExp)</span>
-<span id="cb121-6"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb130"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb130-1"><a></a>gapminder <span class="sc">%&gt;%</span></span>
+<span id="cb130-2"><a></a>  <span class="fu">summarise</span>(</span>
+<span id="cb130-3"><a></a>    <span class="at">lifeExp_min =</span> <span class="fu">min</span>(lifeExp),</span>
+<span id="cb130-4"><a></a>    <span class="at">lifeExp_max =</span> <span class="fu">max</span>(lifeExp),</span>
+<span id="cb130-5"><a></a>    <span class="at">lifeExp_mean =</span> <span class="fu">mean</span>(lifeExp)</span>
+<span id="cb130-6"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 3
   lifeExp_min lifeExp_max lifeExp_mean
@@ -1439,13 +1419,13 @@ Data Analysis with R
 <section id="exercise-11-life-expectancy-by-year" class="slide level2">
 <h2>Exercise 11: Life expectancy by year</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb123"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb123-1"><a></a>gapminder <span class="sc">%&gt;%</span></span>
-<span id="cb123-2"><a></a>  <span class="fu">group_by</span>(year) <span class="sc">%&gt;%</span></span>
-<span id="cb123-3"><a></a>  <span class="fu">summarise</span>(</span>
-<span id="cb123-4"><a></a>    <span class="at">lifeExp_min =</span> <span class="fu">min</span>(lifeExp),</span>
-<span id="cb123-5"><a></a>    <span class="at">lifeExp_max =</span> <span class="fu">max</span>(lifeExp),</span>
-<span id="cb123-6"><a></a>    <span class="at">lifeExp_mean =</span> <span class="fu">mean</span>(lifeExp)</span>
-<span id="cb123-7"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb132"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb132-1"><a></a>gapminder <span class="sc">%&gt;%</span></span>
+<span id="cb132-2"><a></a>  <span class="fu">group_by</span>(year) <span class="sc">%&gt;%</span></span>
+<span id="cb132-3"><a></a>  <span class="fu">summarise</span>(</span>
+<span id="cb132-4"><a></a>    <span class="at">lifeExp_min =</span> <span class="fu">min</span>(lifeExp),</span>
+<span id="cb132-5"><a></a>    <span class="at">lifeExp_max =</span> <span class="fu">max</span>(lifeExp),</span>
+<span id="cb132-6"><a></a>    <span class="at">lifeExp_mean =</span> <span class="fu">mean</span>(lifeExp)</span>
+<span id="cb132-7"><a></a>  )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 12 × 4
     year lifeExp_min lifeExp_max lifeExp_mean
@@ -1473,20 +1453,20 @@ Data Analysis with R
 <h2>Exercise 13: Read a file</h2>
 <p>This requires a file like <code>gapminder.xlsx</code>. Assuming it’s available:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb125"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb125-1"><a></a>xl <span class="ot">&lt;-</span> <span class="fu">read.xlsx</span>(<span class="st">"./methods_for_data_scince/applied_R/episodes/data/gapm3.xlsx"</span>, <span class="at">sheet =</span> <span class="st">"gap"</span>)</span>
-<span id="cb125-2"><a></a><span class="fu">head</span>(xl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb134"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb134-1"><a></a>xl <span class="ot">&lt;-</span> <span class="fu">read.xlsx</span>(<span class="st">"./methods_for_data_scince/applied_R/episodes/data/gapm3.xlsx"</span>, <span class="at">sheet =</span> <span class="st">"gap"</span>)</span>
+<span id="cb134-2"><a></a><span class="fu">head</span>(xl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="exercise-14-get-and-split-working-directory-path" class="slide level2">
 <h2>Exercise 14: Get and split working directory path</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb126"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb126-1"><a></a><span class="co"># Get working directory</span></span>
-<span id="cb126-2"><a></a>wd <span class="ot">&lt;-</span> <span class="fu">getwd</span>()</span>
-<span id="cb126-3"><a></a><span class="co"># Split by appropriate delimiter</span></span>
-<span id="cb126-4"><a></a>path_parts <span class="ot">&lt;-</span> <span class="fu">str_split</span>(wd, <span class="st">"/"</span>)[[<span class="dv">1</span>]]</span>
-<span id="cb126-5"><a></a><span class="co"># Fetch last element</span></span>
-<span id="cb126-6"><a></a>last_element <span class="ot">&lt;-</span> path_parts[<span class="fu">length</span>(path_parts)]</span>
-<span id="cb126-7"><a></a><span class="fu">print</span>(last_element)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb135"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb135-1"><a></a><span class="co"># Get working directory</span></span>
+<span id="cb135-2"><a></a>wd <span class="ot">&lt;-</span> <span class="fu">getwd</span>()</span>
+<span id="cb135-3"><a></a><span class="co"># Split by appropriate delimiter</span></span>
+<span id="cb135-4"><a></a>path_parts <span class="ot">&lt;-</span> <span class="fu">str_split</span>(wd, <span class="st">"/"</span>)[[<span class="dv">1</span>]]</span>
+<span id="cb135-5"><a></a><span class="co"># Fetch last element</span></span>
+<span id="cb135-6"><a></a>last_element <span class="ot">&lt;-</span> path_parts[<span class="fu">length</span>(path_parts)]</span>
+<span id="cb135-7"><a></a><span class="fu">print</span>(last_element)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "episodes"</code></pre>
 </div>
@@ -1716,44 +1696,6 @@ Data Analysis with R
         ]
       });
     </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script>
-
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")

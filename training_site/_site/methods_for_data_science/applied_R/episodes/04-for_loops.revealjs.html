@@ -302,6 +302,21 @@ DRS Training
 <section id="task-3" class="slide level2">
 <h2>Task 3</h2>
 <p>Copy the provided test code, that saves some dataframes as files, and run it</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a><span class="fu">library</span>(gapminder)</span>
+<span id="cb6-2"><a></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb6-3"><a></a><span class="fu">library</span>(readr)</span>
+<span id="cb6-4"><a></a></span>
+<span id="cb6-5"><a></a>continents <span class="ot">&lt;-</span> <span class="fu">as.character</span>(<span class="fu">unique</span>(gapminder<span class="sc">$</span>continent))</span>
+<span id="cb6-6"><a></a></span>
+<span id="cb6-7"><a></a><span class="cf">for</span>(cont <span class="cf">in</span> continents){</span>
+<span id="cb6-8"><a></a>  gm_cont_data <span class="ot">&lt;-</span> gapminder <span class="sc">%&gt;%</span>  dplyr<span class="sc">::</span><span class="fu">filter</span>(continent <span class="sc">==</span> cont)</span>
+<span id="cb6-9"><a></a></span>
+<span id="cb6-10"><a></a>  <span class="fu">write_csv</span>(gm_cont_data, <span class="fu">paste0</span>(<span class="st">'gapminder_'</span>, cont,<span class="st">'.csv'</span> ))</span>
+<span id="cb6-11"><a></a>  <span class="fu">cat</span>(<span class="fu">paste0</span>(<span class="st">'gapminder_'</span>, cont,<span class="st">'.csv'</span>, <span class="st">'</span><span class="sc">\n</span><span class="st">'</span> ))</span>
+<span id="cb6-12"><a></a></span>
+<span id="cb6-13"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 </section>
 <section id="task-4" class="slide level2">
 <h2>Task 4</h2>
@@ -527,44 +542,6 @@ DRS Training
         ]
       });
     </script>
-    
-    <script>
-      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
-      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
-      // slide changes (different for each slide format).
-      (function () {
-        // dispatch for htmlwidgets
-        function fireSlideEnter() {
-          const event = window.document.createEvent("Event");
-          event.initEvent("slideenter", true, true);
-          window.document.dispatchEvent(event);
-        }
-
-        function fireSlideChanged(previousSlide, currentSlide) {
-          fireSlideEnter();
-
-          // dispatch for shiny
-          if (window.jQuery) {
-            if (previousSlide) {
-              window.jQuery(previousSlide).trigger("hidden");
-            }
-            if (currentSlide) {
-              window.jQuery(currentSlide).trigger("shown");
-            }
-          }
-        }
-
-        // hookup for slidy
-        if (window.w3c_slidy) {
-          window.w3c_slidy.add_observer(function (slide_num) {
-            // slide_num starts at position 1
-            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
-          });
-        }
-
-      })();
-    </script>
-
     <script id="quarto-html-after-body" type="application/javascript">
       window.document.addEventListener("DOMContentLoaded", function (event) {
         const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
