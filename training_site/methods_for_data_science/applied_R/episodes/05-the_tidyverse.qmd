@@ -14,16 +14,6 @@ required_pkgs <- c(
   "openxlsx", "gridExtra", "ggExtra", "knitr"
 )
 
-installed <- rownames(installed.packages())
-
-missing <- setdiff(required_pkgs, installed)
-
-if (length(missing) > 0) {
-  suppressMessages(
-    install.packages(missing, repos = "https://cloud.r-project.org", quiet = TRUE)
-  )
-}
-
 # Load all packages
 lapply(required_pkgs, library, character.only = TRUE)
 ```
