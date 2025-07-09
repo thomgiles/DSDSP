@@ -1,6 +1,18 @@
 ---
 title: "Data Science and Digital Skills Programme"
 subtitle: "Building core competencies for modern, reproducible research"
+
+about:
+  id: hero-heading
+  template: jolla
+  image: assets/Logo_white_500.png
+  links:
+    - icon: twitter
+      text: twitter
+      href: https://twitter.com
+    - icon: github
+      text: Github
+      href: https://github.com
 ---
 
 :::{#hero-heading}
