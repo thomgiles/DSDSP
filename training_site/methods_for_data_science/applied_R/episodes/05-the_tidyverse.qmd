@@ -10,8 +10,7 @@ date: "July 7, 2025"
 #| warning: false
 
 required_pkgs <- c(
-  "rmarkdown", "gapminder", "tidyverse", "readxl",
-  "openxlsx", "gridExtra", "ggExtra", "knitr"
+  "rmarkdown", "gapminder", "tidyverse", "readxl","openxlsx", "gridExtra", "ggExtra", "knitr"
 )
 
 # Load all packages

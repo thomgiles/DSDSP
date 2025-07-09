@@ -60,7 +60,9 @@
           export R_LIBS_USER=$HOME/.R/library
           echo 'R_LIBS_USER="~/.R/library"' >> ~/.Renviron
           Rscript -e 'install.packages("renv", repos = "https://cloud.r-project.org")'
-          Rscript -e 'renv::activate(); renv::restore()'
+          Rscript -e 'renv::clean()'
+          Rscript -e 'renv::install("rmarkdown", "gapminder", "tidyverse", "readxl","openxlsx", "gridExtra", "ggExtra", "knitr")'
+          Rscript -e 'renv::snapshot()'
         workingDirectory: training_site
         displayName: 'Restore R environment'
 
