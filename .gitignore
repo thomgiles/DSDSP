@@ -12,4 +12,7 @@ __pycache__/
 .DS_Store
 renv/library/
 renv/python/venv/
+renv/local/
+renv/cellar/
 .venv
+.quarto/
