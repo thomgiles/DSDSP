@@ -4,42 +4,7 @@
     "href": "index.html",
     "title": "Data Science and Digital Skills Programme",
     "section": "",
-    "text": "The Data Science & Digital Skills Programme (DS&DSP) is a one-year, tiered in-person training pathway designed to equip researchers with the core digital competencies required for modern, reproducible, and data-intensive research.\n \n  \n   \n  \n    \n     twitter\n  \n  \n    \n     Github"
-  },
-  {
-    "objectID": "index.html#compulsory-training-essential-digital-skills",
-    "href": "index.html#compulsory-training-essential-digital-skills",
-    "title": "Data Science and Digital Skills Programme",
-    "section": "Compulsory Training: Essential Digital Skills",
-    "text": "Compulsory Training: Essential Digital Skills\n\n\nEssential Digital Skills (EDS) is the foundation tier of DS&DSP. This in-person training programme is designed to equip researchers with the fundamental digital competencies, institutional knowledge, and research practices required to operate effectively in the University of Nottingham’s modern, data-intensive research environment.\nThe course comprises 8 thematic modules delivered over four in-person training days, with each module structured to introduce key concepts and tools, followed by exercises and peer-led activities that consolidate learning in a practical, research-specific context.\nModules will be delivered through a blended format that combines short (10–15-minute) teaching segments with interactive activities such as case tasks, scenario-based discussions, matching exercises, and prompt testing. Group-based engagement will be used to encourage collaboration, reflection, and shared problem-solving, with a consistent research-focused framing to ensure relevance across disciplines.\n\n\n\n\n\nCompulsory Training\n\n\n\n\n\nTheoretical PathwayApplied Pathway – PythonApplied Pathway – R\n\n\n\n\n\n\n\nTheoretical Pathway\n\n\n\n\nThe theoretical pathway\n\n\n\n\n\n\n\n\n\nApplied Pathway – Python\n\n\n\n\nThe Applied Pathway in python\n\n\n\n\n\n\n\n\n\nApplied Pathway – R\n\n\n\n\nThe Applied Pathway in R"
-  },
-  {
-    "objectID": "index.html#standalone-modules",
-    "href": "index.html#standalone-modules",
-    "title": "Data Science and Digital Skills Programme",
-    "section": "Standalone Modules",
-    "text": "Standalone Modules\n\n\n\nStandalone Modules\n\n\n\n\nProgramme MaterialsStructureDelivery\n\n\n👉 Access EDS programme\n\n\n\nDS&DS spans three tiers, aligned with institutional priorities in open science and research integrity.\nThese are:\n\nFoundation – Essential Digital Skills (Year 1, mandatory)\nIntermediate – Methods for Data Science (Year 2+, optional)\nAdvanced – Domain-Specific Specialisations (tailored)\n\nThis progression builds confidence and research-ready capability at every stage.\n\n\n\nThe programme is modular and primarily in-person:\n\nYear 1: Core skills workshops (EDS)\nYear 2: Optional intermediate/advanced modules\nCohort delivery initially for the BBSRC DTP (2025)\n\nAll materials are developed for reuse and open dissemination."
-  },
-  {
-    "objectID": "index.html#curriculum-outcomes",
-    "href": "index.html#curriculum-outcomes",
-    "title": "Data Science and Digital Skills Programme",
-    "section": "Curriculum & Outcomes",
-    "text": "Curriculum & Outcomes\nParticipants will:\n\nManage data using FAIR principles\nBuild reproducible pipelines (Git, Quarto, Jupyter)\nAnalyse data with statistical and domain-relevant tools\nDocument and share research outputs openly\nOperate within governance and policy frameworks\n\nAll materials are shared openly via GitHub, with linked workshops and exercises."
-  },
-  {
-    "objectID": "index.html#participants",
-    "href": "index.html#participants",
-    "title": "Data Science and Digital Skills Programme",
-    "section": "Participants",
-    "text": "Participants\n\nOpen to BBSRC doctoral researchers at Nottingham\nDesigned for those with some / no prior coding experience\nDelivered in inclusive, discipline-agnostic format\nEncourages peer-led learning and shared practice\n\nProgression is supported via optional pathways following completion of the foundation modules."
-  },
-  {
-    "objectID": "index.html#contact",
-    "href": "index.html#contact",
-    "title": "Data Science and Digital Skills Programme",
-    "section": "Contact",
-    "text": "Contact\n\nProgramme Lead: Dr. Thomas Giles\n\nEmail: tom.giles@nottingham.ac.uk\n\nFor registration, accessibility, or module questions, please contact the DS&DS team directly."
+    "text": "The Data Science & Digital Skills Programme (DS&DSP) is a one-year, in-person training initiative that equips researchers with the essential digital competencies for modern, reproducible, and data-intensive research.\n \n  \n   \n  \n    \n     Twitter\n  \n  \n    \n     GitHub\n  \n\n\n\n\n\nProgramme Overview\n\n\n\n\n\nTraining Tiers\n\n\n\n\nIn an environment where computational literacy and responsible data handling are essential, DS&DSP provides a structured and progressive training pathway aligned with open science and research integrity goals.\n\n\n\n\n\nTraining Tiers\n\nFoundation – Essential Digital SkillsIntermediate – Theoretical PathwayIntermediate – Applied Pathway (Python)Intermediate – Applied Pathway (R)\n\n\n\n\nEssential Digital Skills (EDS) is the foundation tier, delivered through four full-day, in-person sessions. It includes 8 themed modules covering:\n\nInstitutional tools and infrastructure\nGovernance and data policy\nFAIR data principles\nCore tools like Git, Quarto, R, and Python\n\nModules use short lectures, scenario-based tasks, and collaborative activities with a research-focused framing.\n\n\n\n\n\nEDS\n\n\n\n\n\n\n\n\n\n\n\n\nTheoretical Pathway\n\n\n\n\nFocuses on conceptual and methodological foundations for data-intensive research across disciplines.\n\n\n\n\n\n\n\n\n\n\nApplied Pathway – Python\n\n\n\n\nFocuses on hands-on data wrangling, analysis, and automation using Python, with structured lesson modules and exercises.\n\n\n\n\n\n\n\n\n\n\nApplied Pathway – R\n\n\n\n\nTargets R users interested in reproducible workflows and data visualisation in a modern applied context.\n\n\n\n\n\n\n\n\nStandalone Modules\n\n\n\nStandalone Modules\n\n\n\n\n\nStructure and Delivery\n\n\nStructure\nThe DS&DS Programme spans three levels:\n\nFoundation: Essential Digital Skills (Year 1, mandatory)\nIntermediate: Methods for Data Science (Year 2+, optional)\nAdvanced: Domain-Specific Training (Year 2–3+, tailored)\n\nProgression ensures increased confidence and research capability at each stage.\n\n\nDelivery\n\nDelivered primarily in-person\nIncludes workshops, exercises, and cohort-based activities\nInitial delivery targeted to BBSRC DTP students (2025)\nAll materials developed for open reuse and dissemination\n\n\n\n\n\n\nLearning Outcomes\nParticipants will:\n\nApply FAIR principles to manage research data\nUse Git, Quarto, and Jupyter for reproducible workflows\nAnalyse data using discipline-relevant tools\nDocument and share research outputs openly\nNavigate data governance and ethics\n\nAll course materials are open-source and available via GitHub.\n\n\n\nAccess Materials\n\nEssential Digital Skills\n\n\n👉 Explore the EDS Programme\n\n\n\n\n\n\nParticipant Info\n\nOpen to BBSRC doctoral researchers at the University of Nottingham\nSuitable for those with limited or no coding experience\nDelivered in a discipline-agnostic, inclusive format\nEncourages collaboration and peer learning\n\n\n\n\nContact\nProgramme Lead: Dr. Thomas Giles\n📧 tom.giles@nottingham.ac.uk\nFor registration or accessibility queries, please contact the DS&DS team."
   },
   {
     "objectID": "essential_digital_skills/digital_research_at_uon/episodes/01-digital_tools.html",
@@ -1280,7 +1245,7 @@
     "href": "methods_for_data_science/applied_R/episodes/05-the_tidyverse.html#extract-substring-with-stringr",
     "title": "Tidyverse and ggplot2 Analysis with Gapminder Dataset",
     "section": "Extract substring with stringr",
-    "text": "Extract substring with stringr\nzxtcxhdpbzjg#| echo: true #| echo: true # Extract substring sub_text &lt;- str_sub(text, 7, 11) print(sub_text)\nwe can extract a substring",
+    "text": "Extract substring with stringr\nomovqpwrlluk#| echo: true #| echo: true # Extract substring sub_text &lt;- str_sub(text, 7, 11) print(sub_text)\nwe can extract a substring",
     "crumbs": [
       "Essential Digital Skill",
       "Learning modules",
@@ -2065,7 +2030,7 @@
     "href": "methods_for_data_science/applied_R/episodes/05-the_tidyverse.revealjs.html#extract-substring-with-stringr",
     "title": "Tidyverse and ggplot2 Analysis with Gapminder Dataset",
     "section": "Extract substring with stringr",
-    "text": "Extract substring with stringr\nswdriqpacmur#| echo: true #| echo: true # Extract substring sub_text &lt;- str_sub(text, 7, 11) print(sub_text)\nwe can extract a substring"
+    "text": "Extract substring with stringr\nymdyocilskui#| echo: true #| echo: true # Extract substring sub_text &lt;- str_sub(text, 7, 11) print(sub_text)\nwe can extract a substring"
   },
   {
     "objectID": "methods_for_data_science/applied_R/episodes/05-the_tidyverse.revealjs.html#replace-substring-with-stringr",
@@ -5210,16 +5175,61 @@
   {
     "objectID": "methods_for_data_science/applied_python/profiles/learner-profiles.html",
     "href": "methods_for_data_science/applied_python/profiles/learner-profiles.html",
-    "title": "FIXME",
+    "title": "Learner Profiles",
     "section": "",
-    "text": "This is a placeholder file. Please add content here.",
+    "text": "The training is designed to cater to a wide range of learners, ensuring that everyone can build a strong foundation in Python programming for data analysis. Below are key learner profiles who will benefit from the course in different ways:",
     "crumbs": [
       "Essential Digital Skill",
       "Learning modules",
       "Methods for Data Science",
       "Applied Data Sciences (Python)",
       "Community & Metadata",
-      "FIXME"
+      "Learner Profiles"
+    ]
+  },
+  {
+    "objectID": "methods_for_data_science/applied_python/profiles/learner-profiles.html#profile-1-wet-lab-scientists-transitioning-to-data-analysis",
+    "href": "methods_for_data_science/applied_python/profiles/learner-profiles.html#profile-1-wet-lab-scientists-transitioning-to-data-analysis",
+    "title": "Learner Profiles",
+    "section": "Profile 1: Wet Lab Scientists Transitioning to Data Analysis",
+    "text": "Profile 1: Wet Lab Scientists Transitioning to Data Analysis\n\nBackground:\n\nLearners with no previous experience in Python, transitioning from experimental/laboratory-based research toward computational data analysis.\n\nMotivation:\n\nTo enhance research through skills in data wrangling, statistical analysis, and visualisation using Python.\n\nChallenges:\n\nUnfamiliarity with basic programming logic and syntax.\n\nDifficulty navigating Python development environments (e.g. Jupyter, VS Code).\n\nUnderstanding core data types, control flow, and library usage.\n\nLearning Objectives:\n\nUnderstand fundamental Python programming concepts.\n\nLoad, clean, and manipulate data using pandas.\n\nBuild confidence in using Jupyter notebooks for transparent, reproducible workflows.",
+    "crumbs": [
+      "Essential Digital Skill",
+      "Learning modules",
+      "Methods for Data Science",
+      "Applied Data Sciences (Python)",
+      "Community & Metadata",
+      "Learner Profiles"
+    ]
+  },
+  {
+    "objectID": "methods_for_data_science/applied_python/profiles/learner-profiles.html#profile-2-programmers-new-to-python-for-data-science",
+    "href": "methods_for_data_science/applied_python/profiles/learner-profiles.html#profile-2-programmers-new-to-python-for-data-science",
+    "title": "Learner Profiles",
+    "section": "Profile 2: Programmers New to Python for Data Science",
+    "text": "Profile 2: Programmers New to Python for Data Science\n\nBackground:\n\nLearners with programming experience (e.g., R, MATLAB, Java) but limited exposure to Python for data science.\n\nMotivation:\n\nTo translate general coding knowledge into data-focused Python workflows using numpy, pandas, matplotlib, and related tools.\n\nChallenges:\n\nAdjusting to Python’s syntax, ecosystem, and object-oriented design.\n\nUnderstanding idiomatic Python for data operations.\n\nNavigating the Python packaging and environment system (e.g. venv, pip, conda).\n\nLearning Objectives:\n\nLearn the Pythonic way of writing clean, maintainable code.\n\nGain fluency in common libraries for data analysis.\n\nIntegrate Python into multi-language analysis pipelines.",
+    "crumbs": [
+      "Essential Digital Skill",
+      "Learning modules",
+      "Methods for Data Science",
+      "Applied Data Sciences (Python)",
+      "Community & Metadata",
+      "Learner Profiles"
+    ]
+  },
+  {
+    "objectID": "methods_for_data_science/applied_python/profiles/learner-profiles.html#profile-3-data-scientists-expanding-into-research-applications",
+    "href": "methods_for_data_science/applied_python/profiles/learner-profiles.html#profile-3-data-scientists-expanding-into-research-applications",
+    "title": "Learner Profiles",
+    "section": "Profile 3: Data Scientists Expanding into Research Applications",
+    "text": "Profile 3: Data Scientists Expanding into Research Applications\n\nBackground:\n\nPractitioners with experience in Python and data science, looking to apply these skills in a research context (e.g. life sciences, social sciences).\n\nMotivation:\n\nTo apply Python tools to real-world, domain-specific research datasets.\n\nTo adopt best practices in reproducibility, documentation, and pipeline development.\n\nChallenges:\n\nAdapting general-purpose data workflows to discipline-specific challenges.\n\nUnderstanding nuances of scientific data formats and metadata.\n\nProducing research outputs that meet academic and publishing standards.\n\nLearning Objectives:\n\nWork confidently with structured and semi-structured research data.\n\nUse Python to generate reproducible, shareable analysis outputs.\n\nApply good research software practices (e.g. testing, version control, documentation).",
+    "crumbs": [
+      "Essential Digital Skill",
+      "Learning modules",
+      "Methods for Data Science",
+      "Applied Data Sciences (Python)",
+      "Community & Metadata",
+      "Learner Profiles"
     ]
   },
   {
