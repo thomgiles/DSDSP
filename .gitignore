@@ -1,9 +1,5 @@
 .Rproj.user/
-*.html
-*.pdf
-*.docx
-*.pptx
-*.ipynb
+.Rprofile/
 _quarto/
 _publish/
 _cache/
