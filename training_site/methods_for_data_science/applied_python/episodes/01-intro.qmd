@@ -337,11 +337,12 @@ print(type(distance))
 
 # keypoints
 
-:::: callout-c1
+::: callout-c1
 -   Basic data types in Python include integers, strings, and floating-point numbers.
 -   Variables are created on demand whenever a value is assigned to them.
 -   Built-in functions are always available to use.
 -   Error messages provide information about what has gone wrong with your program and where.
+:::
 
 # hints
 
@@ -351,4 +352,3 @@ print(type(distance))
 -   Use `# some kind of explanation` to add comments to programs.
 -   Use `help(thing)` to view help for something.
 :::
-::::

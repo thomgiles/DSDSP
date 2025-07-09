@@ -654,7 +654,7 @@ p1 <- ggplot(data = gapminder, aes(x = lifeExp, y = gdpPercap)) +
   geom_smooth(alpha = 0.5) +
   scale_fill_brewer(palette = "Set2") +
   theme_minimal()
-
+print(getwd())
 ggsave("myplot.png", plot = p1)
 ```
 
