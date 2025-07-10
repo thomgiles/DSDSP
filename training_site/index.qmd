@@ -1,15 +1,24 @@
 ---
 title: "Data Science and Digital Skills Programme"
 subtitle: "Building core competencies for modern, reproducible research"
-format:
-  html:
-    theme: 
-        - default
-        - ./uon.scss
-    toc: true
-    number-sections: false
-    page-layout: article
-editor: visual
+
+about:
+  id: hero-heading
+  template: jolla
+  image: assets/Logo_white_500.png
+  links:
+    - icon: twitter
+      text: Twitter
+      href: https://twitter.com
+    - icon: github
+      text: GitHub
+      href: https://github.com
+---
+
+:::{#hero-heading}
+The **Data Science & Digital Skills Programme (DS&DSP)** is a one-year, in-person training initiative that equips researchers with the essential digital competencies for modern, reproducible, and data-intensive research. 
+:::
+
 ---
 
 # Programme Overview
@@ -18,134 +27,147 @@ editor: visual
 ::: g-col-3
 ![Training Tiers](assets/Training_Teirs.jpg){width="100%"}
 :::
-
 ::: g-col-9
-The **Data Science & Digital Skills Programme (DS&DSP)** is a one-year, tiered in-person training pathway designed to equip researchers with the core digital competencies required for modern, reproducible, and data-intensive research.
-
-In a landscape where computational literacy, responsible data handling, and digital best practices are integral to research quality, the programme offers structured, progressive training to address skill gaps across disciplines.
+In an environment where computational literacy and responsible data handling are essential, DS&DSP provides a structured and progressive training pathway aligned with open science and research integrity goals.
 :::
 :::::
 
-------------------------------------------------------------------------
+---
 
-## Compulsory Training: Essential Digital Skills
+# Training Tiers
+
+:::::: panel-tabset
+
+### Foundation – Essential Digital Skills
 
 ::::: grid
 ::: g-col-7
-**Essential Digital Skills (EDS)** is the foundation tier of DS&DSP. This in-person training programme is designed to equip researchers with the fundamental digital competencies, institutional knowledge, and research practices required to operate effectively in the University of Nottingham’s modern, data-intensive research environment.
+**Essential Digital Skills (EDS)** is the foundation tier, delivered through four full-day, in-person sessions. It includes 8 themed modules covering:
 
-The course comprises 8 thematic modules delivered over four in-person training days, with each module structured to introduce key concepts and tools, followed by exercises and peer-led activities that consolidate learning in a practical, research-specific context.
+- Institutional tools and infrastructure
+- Governance and data policy
+- FAIR data principles
+- Core tools like Git, Quarto, R, and Python
 
-Modules will be delivered through a blended format that combines short (10–15-minute) teaching segments with interactive activities such as case tasks, scenario-based discussions, matching exercises, and prompt testing. Group-based engagement will be used to encourage collaboration, reflection, and shared problem-solving, with a consistent research-focused framing to ensure relevance across disciplines.
+Modules use short lectures, scenario-based tasks, and collaborative activities with a research-focused framing.
 :::
-
 ::: g-col-5
-![Compulsory Training](assets/Compulsory_Training.jpg){width="100%"}
+![EDS](assets/Compulsory_Training.jpg){width="100%"}
 :::
 :::::
 
-:::::::::::: panel-tabset
-## Theoretical Pathway
+---
+
+### Intermediate – Theoretical Pathway
 
 ::::: grid
 ::: g-col-5
-![Theoretical Pathway](assets/Theoretical_Pathway.jpg)
+![Theoretical Pathway](assets/Theoretical_Pathway.jpg){width="100%"}
 :::
-
 ::: g-col-7
-The theoretical pathway
+Focuses on conceptual and methodological foundations for data-intensive research across disciplines.
 :::
 :::::
 
-## Applied Pathway – Python
+---
+
+### Intermediate – Applied Pathway (Python)
 
 ::::: grid
 ::: g-col-5
-![Applied Pathway – Python](assets/Applied_Pathway_Python.jpg)
+![Applied Pathway – Python](assets/Applied_Pathway_Python.jpg){width="100%"}
 :::
-
 ::: g-col-7
-The Applied Pathway in python
+Focuses on hands-on data wrangling, analysis, and automation using Python, with structured lesson modules and exercises.
 :::
 :::::
 
-## Applied Pathway – R
+---
+
+### Intermediate – Applied Pathway (R)
 
 ::::: grid
 ::: g-col-5
-![Applied Pathway – R](assets/Applied_Pathway_R.jpg)
+![Applied Pathway – R](assets/Applied_Pathway_R.jpg){width="100%"}
 :::
-
 ::: g-col-7
-The Applied Pathway in R
+Targets R users interested in reproducible workflows and data visualisation in a modern applied context.
 :::
 :::::
-::::::::::::
 
-## Standalone Modules
+::::::
 
-![Standalone Modules](assets/Standalone_modules.jpg)
+---
 
-------------------------------------------------------------------------
+# Standalone Modules
 
-::: panel-tabset
-### Programme Materials
+![Standalone Modules](assets/Standalone_modules.jpg){width="100%"}
 
-👉 [Access EDS programme](essential_digital_skills/index.html)
+---
 
-------------------------------------------------------------------------
+# Structure and Delivery
 
+:::::: grid
+::: g-col-6
 ### Structure
 
-DS&DS spans three tiers, aligned with institutional priorities in open science and research integrity.
+The DS&DS Programme spans three levels:
 
-These are:
+- **Foundation**: *Essential Digital Skills* (Year 1, mandatory)
+- **Intermediate**: *Methods for Data Science* (Year 2+, optional)
+- **Advanced**: *Domain-Specific Training* (Year 2–3+, tailored)
 
--   **Foundation** – *Essential Digital Skills* (Year 1, mandatory)
--   **Intermediate** – *Methods for Data Science* (Year 2+, optional)
--   **Advanced** – *Domain-Specific Specialisations* (tailored)
-
-This progression builds confidence and research-ready capability at every stage.
-
-------------------------------------------------------------------------
-
+Progression ensures increased confidence and research capability at each stage.
+:::
+::: g-col-6
 ### Delivery
 
-The programme is modular and primarily in-person:
-
--   **Year 1**: Core skills workshops (EDS)
--   **Year 2**: Optional intermediate/advanced modules
--   Cohort delivery initially for the BBSRC DTP (2025)
-
-All materials are developed for reuse and open dissemination.
+- Delivered primarily in-person
+- Includes workshops, exercises, and cohort-based activities
+- Initial delivery targeted to BBSRC DTP students (2025)
+- All materials developed for open reuse and dissemination
 :::
+::::::
 
-## Curriculum & Outcomes
+---
+
+# Learning Outcomes
 
 Participants will:
 
--   Manage data using FAIR principles
--   Build reproducible pipelines (Git, Quarto, Jupyter)
--   Analyse data with statistical and domain-relevant tools
--   Document and share research outputs openly
--   Operate within governance and policy frameworks
+- Apply FAIR principles to manage research data
+- Use Git, Quarto, and Jupyter for reproducible workflows
+- Analyse data using discipline-relevant tools
+- Document and share research outputs openly
+- Navigate data governance and ethics
 
-All materials are shared openly via GitHub, with linked workshops and exercises.
+All course materials are open-source and available via GitHub.
 
-## Participants
+---
 
--   Open to BBSRC doctoral researchers at Nottingham
--   Designed for those with some / no prior coding experience
--   Delivered in inclusive, discipline-agnostic format
--   Encourages peer-led learning and shared practice
+# Access Materials
 
-Progression is supported via optional pathways following completion of the foundation modules.
+::: panel-tabset
+### Essential Digital Skills
+👉 [Explore the EDS Programme](essential_digital_skills/index.html)
+:::
+  
+---
 
-## Contact
+# Participant Info
 
--   Programme Lead: *Dr. Thomas Giles*\
--   Email: **tom.giles\@nottingham.ac.uk**
+- Open to BBSRC doctoral researchers at the University of Nottingham
+- Suitable for those with limited or no coding experience
+- Delivered in a discipline-agnostic, inclusive format
+- Encourages collaboration and peer learning
 
-For registration, accessibility, or module questions, please contact the DS&DS team directly.
+---
 
-------------------------------------------------------------------------
+# Contact
+
+**Programme Lead**: *Dr. Thomas Giles*  
+📧 **tom.giles@nottingham.ac.uk**
+
+For registration or accessibility queries, please contact the DS&DS team.
+
+---

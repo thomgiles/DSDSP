@@ -1,14 +1,14 @@
-  name: Azure Static Web Apps CI/CD
+  name:  dsdsp-dev-$(Date:yyyyMMdd)
 
   trigger:
     branches:
       include:
-        - dev
+        - Dev
 
   pr:
     branches:
       include:
-        - dev
+        - Dev
 
   jobs:
   - job: build_and_deploy_job
@@ -21,6 +21,25 @@
     steps:
       - checkout: self
         submodules: true
+
+      - script: |
+          sudo apt-get update
+          sudo apt-get install -y curl \
+          libxml2-dev libcurl4-openssl-dev libssl-dev \
+          libfontconfig1-dev libfreetype6-dev \
+          libharfbuzz-dev libfribidi-dev libpng-dev \
+          libtiff5-dev libjpeg-dev libgl1-mesa-dev libgmp-dev pandoc
+          sudo apt-get install -y --no-install-recommends r-base
+          R --version
+        displayName: 'Set up R'
+
+      - script: |
+          mkdir -p ~/.R/library
+          export R_LIBS_USER=$HOME/.R/library
+          echo 'R_LIBS_USER="~/.R/library"' >> ~/.Renviron
+          Rscript -e 'install.packages(c("renv","rmarkdown", "gapminder", "tidyverse", "readxl", "openxlsx", "gridExtra", "ggExtra", "knitr"))'
+        workingDirectory: training_site
+        displayName: 'Restore R environment'
 
       - task: UsePythonVersion@0
         inputs:
@@ -40,28 +59,7 @@
           sudo dpkg -i quarto-linux-amd64.deb
           quarto --version
           quarto install tinytex
-          quarto install jupyter
         displayName: 'Install Quarto CLI'
-
-      - script: |
-          sudo apt-get update
-          sudo apt-get install -y curl \
-          libxml2-dev libcurl4-openssl-dev libssl-dev \
-          libfontconfig1-dev libfreetype6-dev \
-          libharfbuzz-dev libfribidi-dev libpng-dev \
-          libtiff5-dev libjpeg-dev libgl1-mesa-dev libgmp-dev
-          sudo apt-get install -y --no-install-recommends r-base
-          R --version
-        displayName: 'Install R'
-
-      - script: |
-          mkdir -p ~/.R/library
-          export R_LIBS_USER=$HOME/.R/library
-          echo 'R_LIBS_USER="~/.R/library"' >> ~/.Renviron
-          Rscript -e 'install.packages("renv", repos = "https://cloud.r-project.org")'
-          Rscript -e 'renv::activate(); renv::restore()'
-        workingDirectory: training_site
-        displayName: 'Restore R environment'
 
       - script: |
           export R_LIBS_USER=$HOME/.R/library
