@@ -18,7 +18,7 @@
     variables:
       - group: Azure-Static-Web-Apps-nice-rock-0193cc903-variable-group
 
-steps:
+    steps:
       - checkout: self
         submodules: true
 
