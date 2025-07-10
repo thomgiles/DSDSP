@@ -1,0 +1,82 @@
+  name:  dsdsp-dev-full-$(Date:yyyyMMdd)
+
+  trigger:
+    branches:
+      include:
+        - Dev
+
+  pr:
+    branches:
+      include:
+        - Dev
+        
+  jobs:
+  - job: build_and_deploy_job
+    displayName: Build and Deploy Job
+    pool:
+      vmImage: ubuntu-latest
+    variables:
+      - group: Azure-Static-Web-Apps-victorious-moss-01eb84103-variable-group
+
+    steps:
+      - checkout: self
+        submodules: true
+
+      - script: |
+          sudo apt-get update
+          sudo apt-get install -y curl \
+          libxml2-dev libcurl4-openssl-dev libssl-dev \
+          libfontconfig1-dev libfreetype6-dev \
+          libharfbuzz-dev libfribidi-dev libpng-dev \
+          libtiff5-dev libjpeg-dev libgl1-mesa-dev libgmp-dev pandoc
+          sudo apt-get install -y --no-install-recommends r-base
+          R --version
+        displayName: 'Set up R'
+
+      - script: |
+          mkdir -p ~/.R/library
+          export R_LIBS_USER=$HOME/.R/library
+          echo 'R_LIBS_USER="~/.R/library"' >> ~/.Renviron
+          Rscript -e 'install.packages(c("renv","rmarkdown", "gapminder", "tidyverse", "readxl", "openxlsx", "gridExtra", "ggExtra", "knitr"))'
+        workingDirectory: training_site
+        displayName: 'Restore R environment'
+
+      - task: UsePythonVersion@0
+        inputs:
+          versionSpec: '3.11'
+        displayName: 'Set up Python 3.11'
+
+      - script: |
+          pip install -r requirements.txt
+          pip install jupyter pyyaml
+        workingDirectory: training_site
+        displayName: 'Restore Python environment'
+
+      - script: |
+          sudo apt-get update
+          sudo apt-get install librsvg2-bin
+          sudo apt-get install texlive-xetex
+          curl -sSLO https://quarto.org/download/latest/quarto-linux-amd64.deb
+          sudo dpkg -i quarto-linux-amd64.deb
+          quarto --version
+          quarto install tinytex
+          quarto install jupyter
+        displayName: 'Install Quarto CLI'
+
+      - script: |
+          export R_LIBS_USER=$HOME/.R/library
+          quarto render .
+          echo "list contents"
+          pwd
+          ls -al
+          ls -al _site || echo "_site not found"
+          test -f _site/index.html
+        workingDirectory: training_site
+        displayName: 'Render Quarto site'
+
+      - task: AzureStaticWebApp@0
+        inputs:
+          azure_static_web_apps_api_token: $(AZURE_STATIC_WEB_APPS_API_TOKEN_VICTORIOUS_MOSS_01EB84103)
+          app_location: "training_site"
+          output_location: "_site"
+          api_location: ""
