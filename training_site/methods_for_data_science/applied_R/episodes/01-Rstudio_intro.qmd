@@ -9,7 +9,7 @@ We’ll be using RStudio: a free, open source R Integrated Development Environme
 
 ## Basic Layout
 
-When you open RStudio for the first time, you will be greeted by three panels:  
+When you open RStudio for the first time, you will be greeted by three main panels:  
 
 - The interactive R console/Terminal/... (entire left)
 - Environment/History/Connections/... (tabbed in upper right)
