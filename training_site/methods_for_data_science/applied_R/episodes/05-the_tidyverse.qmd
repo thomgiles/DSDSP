@@ -10,15 +10,22 @@ date: "July 7, 2025"
 #| warning: false
 
 required_pkgs <- c(
-  "rmarkdown", "gapminder", "tidyverse", "readxl","openxlsx", "gridExtra", "ggExtra", "knitr"
+  "rmarkdown", "gapminder", "tidyverse", "readxl",
+  "openxlsx", "gridExtra", "ggExtra", "knitr"
 )
 
-# Quietly load packages and suppress messages/errors
-invisible(lapply(required_pkgs, function(pkg) {
-  suppressPackageStartupMessages(
-    try(library(pkg, character.only = TRUE), silent = TRUE)
+installed <- rownames(installed.packages())
+
+missing <- setdiff(required_pkgs, installed)
+
+if (length(missing) > 0) {
+  suppressMessages(
+    install.packages(missing, repos = "https://cloud.r-project.org", quiet = TRUE)
   )
-}))
+}
+
+# Load all packages
+lapply(required_pkgs, library, character.only = TRUE)
 ```
 
 # Introduction
@@ -657,7 +664,7 @@ p1 <- ggplot(data = gapminder, aes(x = lifeExp, y = gdpPercap)) +
   geom_smooth(alpha = 0.5) +
   scale_fill_brewer(palette = "Set2") +
   theme_minimal()
-print(getwd())
+
 ggsave("myplot.png", plot = p1)
 ```
 

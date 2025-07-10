@@ -5287,7 +5287,7 @@
     "href": "methods_for_data_science/applied_R/episodes/01-Rstudio_intro.revealjs.html#hint",
     "title": "Introduction to Rstudio",
     "section": "Hint",
-    "text": "Hint\n\n?paste\n\n?getwd\n\nNote: If a package is not currently loaded it will be suggested to try ??package_name for a more extensive search"
+    "text": "Hint\nNote: If a package is not currently loaded it will be suggested to try ??package_name for a more extensive search"
   },
   {
     "objectID": "methods_for_data_science/applied_R/episodes/01-Rstudio_intro.revealjs.html#hint-1",
