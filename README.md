@@ -16,7 +16,12 @@ cd training_site
 Activate the Python virtual environment:
 
 ```bash
+which python    
+python -m venv .venv
+ 
 source .venv/bin/activate
+ 
+pip install -r requirements.txt
 ```
 
 ### 3. Check the R Environment
@@ -30,6 +35,7 @@ R
 From the R console:
 
 ```r
+renv::restore()
 renv::status()
 ```
 
