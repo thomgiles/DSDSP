@@ -16,7 +16,7 @@
     pool:
       vmImage: ubuntu-latest
     variables:
-      - group: Azure-Static-Web-Apps-nice-rock-0193cc903-variable-group
+      - group: Azure-Static-Web-Apps-victorious-moss-01eb84103-variable-group
 
     steps:
       - checkout: self

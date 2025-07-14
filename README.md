@@ -13,15 +13,60 @@ cd training_site
 
 ### 2. Set Up the Python Environment
 
-Activate the Python virtual environment:
+When using VS Code for Python development, we recommend installing the Python extension. The Python extension enables many features that will be useful for Python developers, including support for managing and using virtual environments.
+
+This page focuses on VS Code-specific features for working with Python virtual environments.
+
+#### VS Code Selecting an interpreter
+VS Code will automatically detect when you are in a directory that contains Python files. You will know that VS Code has correctly detected a Python project when you see a Python interpreter appear in the bottom right corner.
+
+To change the selected interpreter open the Command Palette using Cmd + Shift + P on Mac or Ctrl + Shift + P on Windows. Then type “Python: Select Interpreter”. Alternatively, you can click on the current interpreter in the bottom right corner.
+
+VS Code will automatically detect available interpreters and virtual environments. If VS Code does not automatically detect your desired interpreter, you can manually specify the path.
+
+Now that you have selected an interpreter, VS Code will:
+
+Use this interpreter to execute Python code when you press the play button in the top right corner.
+
+Automatically activate this interpreter when you open a new terminal.
+Use this interpreter for Notebooks and Interactive Windows.
+
+#### Activating and building the python env
+
+Assuming you have python at path, activate the Python virtual environment as follows:
 
 ```bash
 which python    
+
 python -m venv .venv
  
 source .venv/bin/activate
  
 pip install -r requirements.txt
+
+```
+
+n.b. if python not found, then you can theoretically link to any python env that is supported for execution. 
+
+For example one could do: 
+
+```bash
+/usr/local/bin/python3.11 -m venv .venv
+```
+
+followed by: 
+
+```bash
+source .venv/bin/activate
+ 
+pip install -r requirements.txt
+```
+
+if you are seeking to change the Quarto project for this site, you will need to install ipykernel and update your Jupyter env: 
+
+```bash
+pip install ipykernel
+python -m ipykernel install --user --name=DSDSP-env --display-name "DSDSP"
 ```
 
 ### 3. Check the R Environment

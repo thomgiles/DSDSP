@@ -1,0 +1,87 @@
+---
+title: "Install Python and R in VScode"
+author: "Data Analysis with R"
+date: "July 7, 2025"
+---
+
+Set up Python
+
+```{python}
+
+import os
+import subprocess
+from pathlib import Path
+
+venv_path = Path(".venv")
+
+# Find Python
+import sys
+python_path = sys.executable  
+
+# Create or reuse venv
+if not venv_path.exists():
+    print("Creating virtual environment...")
+    subprocess.run([python_path, "-m", "venv", ".venv"])
+else:
+    print("Using existing virtual environment...")
+
+# Install pip packages
+pip_path = venv_path / "bin" / "pip"
+
+import os
+print(os.getcwd())
+
+requirements = Path("./training_site/requirements.txt")
+
+subprocess.run([pip_path, "install", "--upgrade", "pip"])
+
+if requirements.exists():
+    subprocess.run([pip_path, "install", "-r", "./training_site/requirements.txt"])
+else:
+    print("No requirements.txt found.")
+
+# Show Python version
+python_exec = venv_path / "bin" / "python"
+subprocess.run([python_exec, "--version"])
+```
+
+Set up R
+
+```{r}
+
+options(repos = c(CRAN = "https://cran.rstudio.com/"))
+
+if (!requireNamespace("renv", quietly = TRUE)) {
+  install.packages("renv")
+}
+
+# Use existing renv environment if renv.lock exists; otherwise init
+if (file.exists("renv.lock")) {
+  renv::restore(prompt = FALSE)
+} else {
+  renv::init(bare = TRUE)  # avoids reinstalling base packages
+}
+
+# Define required packages
+required_pkgs <- c(
+  "rmarkdown", "gapminder", "tidyverse", "readxl",
+  "openxlsx", "gridExtra", "ggExtra", "knitr","reticulate"
+)
+
+# Install missing packages
+missing_pkgs <- setdiff(required_pkgs, installed.packages()[,"Package"])
+if (length(missing_pkgs) > 0) {
+  install.packages(missing_pkgs)
+}
+
+# Load packages quietly
+invisible(lapply(required_pkgs, function(pkg) {
+  suppressPackageStartupMessages(
+    try(library(pkg, character.only = TRUE), silent = TRUE)
+  )
+}))
+
+# Snapshot the current state
+renv::snapshot(prompt = FALSE)
+
+```
