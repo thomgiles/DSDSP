@@ -2,6 +2,16 @@
 title: "Data Science and Digital Skills Programme"
 subtitle: "Building core competencies for modern, reproducible research"
 
+format:
+  html:
+    theme: 
+        - default
+        - ./uon.scss
+    toc: false      
+    number-sections: false
+    page-layout: full   
+    sidebar: false 
+
 about:
   id: hero-heading
   template: jolla
@@ -36,9 +46,9 @@ In an environment where computational literacy and responsible data handling are
 
 # Training Tiers
 
-:::::: panel-tabset
+## Foundation 
 
-### Foundation – Essential Digital Skills
+### Essential Digital Skills
 
 ::::: grid
 ::: g-col-7
@@ -58,7 +68,9 @@ Modules use short lectures, scenario-based tasks, and collaborative activities w
 
 ---
 
-### Intermediate – Theoretical Pathway
+## Intermediate
+
+### Theoretical Pathway
 
 ::::: grid
 ::: g-col-5
@@ -71,7 +83,7 @@ Focuses on conceptual and methodological foundations for data-intensive research
 
 ---
 
-### Intermediate – Applied Pathway (Python)
+### Applied Pathway (Python)
 
 ::::: grid
 ::: g-col-5
@@ -84,7 +96,7 @@ Focuses on hands-on data wrangling, analysis, and automation using Python, with 
 
 ---
 
-### Intermediate – Applied Pathway (R)
+### Applied Pathway (R)
 
 ::::: grid
 ::: g-col-5
@@ -95,11 +107,9 @@ Targets R users interested in reproducible workflows and data visualisation in a
 :::
 :::::
 
-::::::
+## Standalone Modules
 
----
-
-# Standalone Modules
+In addtion to the core course we are also developing targeted training in domain specfic areas including bioinformatics and HPC. 
 
 ![Standalone Modules](assets/Standalone_modules.jpg){width="100%"}
 

@@ -32,16 +32,64 @@ website:
   page-footer:
     left: |
       ![Logo image](/training_site/assets/UoN_dark_logo.png)
-      
+  
   navbar:
-    title: "DSDSP"
-    subtitle: 
-    logo: assets/Logo_dark_500.png
-    left:
-      - text: "Essential Digital Skill"
-        href: "esential_digital_skills/index.html"
-      - text: "Methods for Data Science"
-        href: "methods_for_data_science/index.html"
+    title: "DSDS Programme"
+    collapse: true
+    background: primary
+    right:
+      - text: "Essential Digital Skills"
+        menu:
+          - text: "Digital Research at UoN – Digital Tools"
+            href: essential_digital_skills/digital_research_at_uon/episodes/01-digital_tools.qmd
+          - text: "Digital Research at UoN – Digital Delivery"
+            href: essential_digital_skills/digital_research_at_uon/episodes/02-digital_delivery.qmd
+          - text: "Using Data Responsibly – Data Governance and Policy"
+            href: essential_digital_skills/using_data_responsibly/episodes/01-data_governance_and_policy.qmd
+          - text: "Using Data Responsibly – Research Data Management"
+            href: essential_digital_skills/using_data_responsibly/episodes/02-research_data_managment.qmd
+
+      - text: "Applied Data Science (Python)"
+        menu:
+          - text: "01 Intro"
+            href: methods_for_data_science/applied_python/episodes/01-intro.qmd
+          - text: "02 Numpy"
+            href: methods_for_data_science/applied_python/episodes/02-numpy.qmd
+          - text: "03 Matplotlib"
+            href: methods_for_data_science/applied_python/episodes/03-matplotlib.md
+          - text: "04 Lists"
+            href: methods_for_data_science/applied_python/episodes/04-lists.md
+          - text: "05 Loops"
+            href: methods_for_data_science/applied_python/episodes/05-loop.md
+          - text: "06 Files"
+            href: methods_for_data_science/applied_python/episodes/06-files.md
+          - text: "07 Conditionals"
+            href: methods_for_data_science/applied_python/episodes/07-cond.md
+          - text: "08 Functions"
+            href: methods_for_data_science/applied_python/episodes/08-func.md
+          - text: "09 Errors"
+            href: methods_for_data_science/applied_python/episodes/09-errors.md
+          - text: "10 Defensive Programming"
+            href: methods_for_data_science/applied_python/episodes/10-defensive.md
+          - text: "11 Debugging"
+            href: methods_for_data_science/applied_python/episodes/11-debugging.md
+          - text: "12 Command Line"
+            href: methods_for_data_science/applied_python/episodes/12-cmdline.md
+
+      - text: "Applied Data Science (R)"
+        menu:
+          - text: "01 RStudio Intro"
+            href: methods_for_data_science/applied_R/episodes/01-Rstudio_intro.qmd
+          - text: "02 R Variables"
+            href: methods_for_data_science/applied_R/episodes/02-R_variables_intro.qmd
+          - text: "03 R Functions"
+            href: methods_for_data_science/applied_R/episodes/03-R_functions.qmd
+          - text: "04 For Loops"
+            href: methods_for_data_science/applied_R/episodes/04-for_loops.qmd
+          - text: "05 The Tidyverse"
+            href: methods_for_data_science/applied_R/episodes/05-the_tidyverse.qmd
+
+
 
   sidebar:
     style: "docked"
