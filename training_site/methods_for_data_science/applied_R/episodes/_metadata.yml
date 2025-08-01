@@ -11,7 +11,7 @@ format:
     output-ext: revealjs.html
     slide-number: true
     chalkboard: true
-    navigation-mode: vertical
+    navigation-mode: linear
     controls: true
     controls-layout: bottom-right
     preview-links: auto
