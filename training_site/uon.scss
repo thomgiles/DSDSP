@@ -1,16 +1,16 @@
 /*-- scss:defaults --*/
 
 /* Colour overrides */
-$body-bg: #ffffff;
-$body-color: #364156;
+$body-bg: #fff;
+$body-color: #434341;
 $link-color: #37B4B0;
-$navbar-bg: #102A43;
-$navbar-fg: #ffffff;
-$sidebar-bg: #405162;
-$sidebar-fg: #ffffff;
+$navbar-bg: #efefef;
+$navbar-fg: #102A43;
+$sidebar-bg: #efefef;
+$sidebar-fg: #102A43;
 $footer-bg: #102A43;
 $footer-fg: #ffffff;
-$code-block-bg: #f8f9fa;
+$code-block-bg: #FDFBF9;
 
 /* Font overrides */
 $font-family-sans-serif: "Roboto", "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -19,20 +19,53 @@ $headings-font-family: "Roboto", "Helvetica", Arial, sans-serif;
 /*-- scss:rules --*/
 
 /* Optional: enforce heading font on all heading tags */
+
 h1, h2, h3, h4, h5, h6 {
   font-family: "Roboto", "Helvetica", Arial, sans-serif;
 }
 
-/* Base tab style */
-.nav-tabs {
-  background-color: #fff;  // background behind all tabs
-  border-bottom: 0px;
+h1{
+  border: none;
+   font-size: 35px;
+
+}
+
+h2{
+  border: none;
+   font-size: 25px;
+}
+
+h3 {
+    font-size: 20px;
+    color: #37B4B0;
+}
+
+h4 {
+    font-size: 20px;
+    color: #009BC1;
+}
+
+h5 {
+    font-size: 20px;
+    color: white;
+}
+.panel-tabset{
+  border: none !important;
+}
+
+.tab-content{
+  border-top: #405162 solid 1px;
+  border-bottom: #405162 solid 1px;
+  border-right: none !important;
+  border-left: none !important;
 }
 
 header#title-block-header {
     color: white;
     padding: 20px;
     background-color: #405162;
+    border: #405162 solid 1px;
+    border-radius: 5px;
 }
 
 .breadcrumb {
@@ -44,7 +77,7 @@ header#title-block-header {
 .nav-tabs .nav-link {
   color: #fff;
   background-color: #009BC1;  // background for inactive tabs
-  border: 0px;
+  border: #405162 solid 1px;
   border-bottom: none;
   margin-right: 2px;
 }
@@ -54,6 +87,7 @@ header#title-block-header {
   color: #fff;
   background-color: #37B4B0;  // active tab background
   border-color: #37B4B0;
+  border: #405162 solid 1px;
 }
 
 /* Hover effect */
@@ -71,6 +105,8 @@ header#title-block-header {
   padding: 10px; 
   color: white;
   background-color: #37B4B0;
+  border: #405162 solid 1px;
+  border-radius: 5px;
 }
 
 /* custom callout 2  */
@@ -78,6 +114,8 @@ header#title-block-header {
   padding: 10px;
   color: white;
   background-color: #009BC1;
+  border: #405162 solid 1px;
+  border-radius: 5px;
 }
 
 .termsfeed-com---palette-dark.termsfeed-com---nb {
