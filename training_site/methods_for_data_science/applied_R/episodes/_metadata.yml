@@ -10,11 +10,13 @@ format:
       - ../../../uon.scss
     output-ext: revealjs.html
     slide-number: true
+    smaller: true
+    scrollable: true
     chalkboard: true
-    navigation-mode: linear
     controls: true
     controls-layout: bottom-right
     preview-links: auto
+    navigation-mode: linear
     footer: "Data Science and Digital Skills"
 
   pdf:

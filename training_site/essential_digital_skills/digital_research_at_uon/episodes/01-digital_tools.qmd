@@ -7,10 +7,12 @@ exercises: 40
 
 # Module Overview
 
-- **Module:** EDS-M1 -  Digital Tools
+- **Module:** EDS-M1 -  Digital Tools 
 - **Course:** Essential Digital Skills (EDS)
 - **Audience:** Early Career Researchers (PhD, Postdoc)  
 - **Duration:** ~40 minutes directed teaching (+4 exercises)  
+
+---
 
 ::: callout-c1
 
@@ -19,10 +21,10 @@ exercises: 40
 - Navigate core UoN digital ecosystem
 - Apply digital best practices in collaboration & file organisation
 - Manage your research identity
-- Identify essential tools for coding & reproducible research
+- Identify essential practices for secure research
 :::
 
-<br>
+---
 
 ::: callout-c2
 
@@ -33,12 +35,14 @@ exercises: 40
 3. What digital tools may I need to support my research aims?  
 :::
 
+---
+
 ## Structure & Agenda
 
-1. Introduction to DS&DSP (~10 min)  
-2. Institutional Systems for Digital Research (~10 min)  
-3. Research Identity and Profiles (~10 min)  
-4. Tools for Coding & Reproducibility (~10 min)  
+1. Introduction to DS&DSP (~10+10 min)  
+2. Institutional Systems for Digital Research (~10+10 min)  
+3. Research Identity and Profiles (~10+10 min)  
+4. Digital Security & Good Practice (~10+10min)  
 
 > 🔧 4 Activities spaced every 10 minutes.
 
@@ -48,9 +52,13 @@ exercises: 40
 
 ![](fig/office365.png){fig-align="center" width=500px}
 
+---
+
 ## What is DS&DSP?
 
 The Digital Skills & Digital Scholarship Programme aims to equips researchers with foundational digital competencies, focusing on core themes such as digital collaboration, data management, coding and reproducibility.
+
+---
 
 ### Why Digital Skills Matter
 
@@ -59,10 +67,14 @@ The Digital Skills & Digital Scholarship Programme aims to equips researchers wi
 - Enable data-driven methods  
 - Increase research visibility and impact  
 
+---
+
 ## Course Structure
 
 
 There are three training tiers, each progressively developing digital skills from foundational competencies to applied and specialist practice.
+
+---
 
 ### Esential Digital Skills
 
@@ -70,6 +82,7 @@ There are three training tiers, each progressively developing digital skills fro
 |------------------------------------|-----------------------------------------------------------------------------|----------------|------|
 | Essential Digital Skills – Foundation | Introduces the tools, practices, and principles needed to participate confidently in digital research. | 4× half days   |      |
 
+---
 
 ### Methods for Data Science
 
@@ -79,6 +92,7 @@ There are three training tiers, each progressively developing digital skills fro
 | Methods for Data Science – Applied Python | Provides practical experience in data analysis and interpretation using Python. | 2 days         | Introductory and intermediate |
 | Methods for Data Science – Applied R      | Provides practical experience in data analysis and interpretation using R.     | 2 days         | Introductory and intermediate |
 
+---
 
 ### Standalone modules
 
@@ -87,6 +101,8 @@ There are three training tiers, each progressively developing digital skills fro
 | Bioinformatics       | —           | 1 day    |      |
 | Advanced Computing   | —           | 1 day    |      |
 | ML and AI            | —           | 1 day    |      |
+
+---
 
 ## How DS&DSP will be Delivered
 
@@ -118,13 +134,19 @@ Post your response on the shared board.
 
 ![](fig/sharepoint.png){fig-align="center" width=500px}
 
+---
+
 ## Microsoft 365: 
+
+---
 
 ### Core Tools
 
 - **Word & Excel:** writing, data capture  
 - **OneDrive:** personal cloud, autosave  
 - **Teams:** shared spaces, chat, files, meetings  
+
+---
 
 ### File Collaboration Best Practices
 
@@ -133,12 +155,16 @@ Post your response on the shared board.
 - Use version history over file renaming  
 - Plan clear folder structures  
 
+---
+
 ## UoN Tools: UniCore & RIS
 
 | Tool     | Purpose                           |
 |----------|-----------------------------------|
 | UniCore  | HR, finance, procurement          |
 | RIS      | Research lifecycle & outputs mgmt |
+
+---
 
 ### UniCore Quick Facts
 
@@ -149,6 +175,8 @@ Post your response on the shared board.
   - Leave, sickness, HR tasks  
 - Secure login via MFA  
 
+---
+
 ### RIS (Research Information System)
 
 - Based on Worktribe  
@@ -157,6 +185,8 @@ Post your response on the shared board.
   - Research outputs & REF  
   - Impact recording & compliance  
   - Links with repository and ORCID  
+
+---
 
 ## When to Use What
 
@@ -203,12 +233,16 @@ In groups, suggest the most appropriate digital tool or system for each of the f
 
 ![](fig/orchid.png){fig-align="center" width=500px}
 
+---
+
 ## Why Identity Matters
 
 - Disambiguate names  
 - Improve visibility & citation  
 - Link your outputs across systems  
 - Enable collaboration & networking  
+
+---
 
 ### ORCID – Persistent Identifier
 
@@ -217,6 +251,8 @@ In groups, suggest the most appropriate digital tool or system for each of the f
 - Automated updates  
 - Lifetime use across institutions  
 
+---
+
 ### RIS Profile (UoN)
 
 - Connects with ORCID  
@@ -224,11 +260,15 @@ In groups, suggest the most appropriate digital tool or system for each of the f
 - Syncs to public staff page  
 - Use for REF and reporting  
 
+---
+
 ### Other Profiles
 
 - **Scopus Author ID:** citation tracking  
 - **Google Scholar:** broad coverage, h-index  
 - **ResearchGate / Academia.edu:** optional, social layer  
+
+---
 
 ## Profile Management Tips
 
@@ -262,100 +302,66 @@ Visit [Orcid](https://orcid.org/), Log in / sign up
 
 ---
 
-# Tools for Coding & Reproducibility
+# Digital Security & Good Practice
 
-![](fig/code.png){fig-align="center" width=500px}
-
-## Code Editors / IDEs
-
-- **VS Code:** multi-language, extensible  
-- **RStudio:** R-centric, easy plotting  
-- **Jupyter Notebooks:** narrative + code + output  
-
-
-## Research Languages
-
-- **Python:** general scripting, ML, automation  
-- **R:** statistics, visualisation, reporting  
-- **MATLAB/SPSS:** discipline-specific tools  
-
-
-## Version Control: Git + GitHub
-
-- Record and revert code changes  
-- Collaborate via branches  
-- Share code via GitHub  
-- Use GUI (e.g., GitHub Desktop) if new to Git  
-
-
-## Managing Environments
-
-- Use **conda**, **pip**, **renv** for package control  
-- **Docker** for containerised reproducibility  
-- **Binder** to share notebooks online  
-
-
-## Databases in Research
-
-- Structured data = relational DBs (SQL)  
-- Use MySQL, PostgreSQL, SQLite  
-- Learn basic SQL for querying data  
-
-
-## AI Tools (e.g. ChatGPT)
-
-- Summarise, explain, debug  
-- Beware of hallucinations  
-- Don’t trust citations blindly  
-- Don’t enter confidential info  
+Effective research is not just about tools—it’s also about safeguarding your data, tools, and identity from digital risks. This section outlines basic practices every researcher at UoN should adopt to protect their work and comply with institutional policy.
 
 ---
 
-#### Task 4: AI Prompt Testing with Code
+## Passwords & Access Management
+
+- UoN recommends: at least **12 characters**, mixing upper/lowercase, numbers, and symbols; use **unique passwords** for university systems 
+- Use a **password manager** instead of reusing or writing passwords down 
+- Never share passwords or respond to requests for them via email or chat  
+
+---
+
+## Multi-Factor Authentication (MFA)
+
+- MFA is required for accessing UoN digital systems; strongly recommended to enable **phone sign-in** with Microsoft Authenticator for security and convenience 
+
+---
+
+## Device & Data Protection
+
+- Always store files on **UoN-approved platforms**: OneDrive, SharePoint, Teams—not on local or personal folders :contentReference[oaicite:5]{index=5}  
+- Ensure **encryption** is enabled on university or personal devices; UoN devices come pre-encrypted, but personal devices need manual setup  
+
+---
+
+## Secure Remote Access
+
+- Use **VPN** when accessing sensitive data or UoN systems from public networks—a secure tunnel between your device and the university network  
+
+---
+
+#### Task 4: Digital Security Self-Audit (10 min)
 
 ::: panel-tabset
-##### Question
+##### Question  
+Reflect on your current digital setup. How secure is your research environment?
 
-Try entering the following prompt into ChatGPT or another AI assistant:
+##### Exercise  
+<details>
+<summary><strong>Checklist</strong></summary>
 
-[ChatGPT](https://chatgpt.com/)
+- [ ] Passwords meet length and uniqueness guidelines  
+- [ ] MFA is enabled (preferably with phone sign-in)  
+- [ ] Files are stored in university-approved platforms  
+- [ ] Device encryption is active  
+- [ ] VPN used when working off-campus or with sensitive information  
+</details>
 
-> “Plot me a graph using the mtcars data”
-
-##### Check the output
-
-Explore what the assistant returns:
-- Does it use an appropriate language (e.g. R or Python)?
-- Are the correct libraries used (e.g. `ggplot2`, `matplotlib`)?
-- Is the code executable and complete?
-
-##### Hint
- 
-Then try refining the prompt:
-- “Add a regression line to the plot”
-- “Label the x-axis as ‘Horsepower’”
-
-##### Reflection
-
-- Does the AI-generated code run correctly in your chosen environment?
-- What parts of the code are correct and helpful?
-- What is missing, misleading, or wrong?
-- Did the assistant fabricate functions or libraries?
-- Would you feel confident using this output in your research?
-
-##### Takeaway
-
-Always verify AI-generated code:
-- Test it in your environment
-- Understand what each line does
-- Cross-check against official documentation
-
-Using AI can accelerate your workflow — **only** if you apply critical thinking and validate outputs.
+##### Follow-up  
+- Identify one action to improve your security in the coming week  
+- Reflect on what was easy/hard to assess, and what barriers exist for better practice  
 :::
 
 ---
 
 # Further Information
+
+---
 
 ## UoN Training Resources
 
@@ -365,8 +371,10 @@ Using AI can accelerate your workflow — **only** if you apply critical thinkin
 - Digital Accessibility: The Core Nottingham Accessible Practices
 - RIS: Worktribe User Guidance 
 - UniCore Training Materials
-- Introduction to GitHub, VS Code, and Jupyter 
+- UoN Information Security: Protect Your Data & Devices
  
+---
+
 ::: callout-c1
 
 ## keypoints
@@ -374,10 +382,10 @@ Using AI can accelerate your workflow — **only** if you apply critical thinkin
 - UoN currently uses Microsoft 365 tools support collaborative writing, file sharing, and communication
 - UniCore manages research-related administration  and RIS manages the research lifecycle.
 - A well-maintained research identity increases visibility and attribution of your work.
-- Coding tools (e.g. VS Code, GitHub, Jupyter) and version control (Git) are essential for reproducible research.
+- Store research data in encrypted, university-backed platforms and ensure your account details are protected
 :::
 
-<br>
+---
 
 ::: callout-c2
 
@@ -386,5 +394,4 @@ Using AI can accelerate your workflow — **only** if you apply critical thinkin
 - Store shared project files in Microsoft Teams rather than OneDrive to ensure long-term access for collaborators.
 - Use version history in OneDrive/SharePoint instead of manually renaming file versions.
 - Link your ORCID iD to your RIS profile to automate tracking of publications and outputs.
-- Use an IDE to organise scripts with reproducibility in mind.
-:::
+- Practice “security by default”

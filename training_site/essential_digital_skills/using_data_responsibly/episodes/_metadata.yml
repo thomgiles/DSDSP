@@ -10,8 +10,9 @@ format:
       - ../../../uon.scss
     output-ext: revealjs.html
     slide-number: true
+    smaller: true
+    scrollable: true
     chalkboard: true
-    navigation-mode: vertical
     controls: true
     controls-layout: bottom-right
     preview-links: auto
