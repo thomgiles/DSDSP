@@ -9,16 +9,13 @@ date: "July 7, 2025"
 #| message: false
 #| warning: false
 
-required_pkgs <- c(
-  "rmarkdown", "gapminder", "tidyverse", "readxl","openxlsx", "gridExtra", "ggExtra", "knitr"
-)
-install.packages(required_pkgs)
-# Quietly load packages and suppress messages/errors
-invisible(lapply(required_pkgs, function(pkg) {
-  suppressPackageStartupMessages(
-    try(library(pkg, character.only = TRUE), silent = TRUE)
-  )
-}))
+options(repos = c(CRAN = "https://cloud.r-project.org"))
+
+pkgs <- c("rmarkdown","gapminder","tidyverse","readxl","openxlsx","gridExtra","ggExtra","knitr")
+need <- setdiff(pkgs, rownames(installed.packages()))
+if (length(need)) install.packages(need, dependencies = TRUE)
+
+invisible(lapply(pkgs, require, character.only = TRUE))
 ```
 
 # Introduction
