@@ -55,9 +55,11 @@ exercises: 50
 
 Artificial intelligence describes systems that mimic aspects of human intelligence such as learning, reasoning and language.  Generative AI tools use large language models to generate text, code or images by predicting the most likely next token, but they do not possess general intelligence [UoN guidance](https://www.nottingham.ac.uk/studyingeffectively/studying/ai.aspx).  Predictive models use statistical patterns to make forecasts or classifications.
 
-### Current applications
+## Current applications
 
 Researchers use AI for literature search, summarising research papers, coding assistance, data analysis, image processing and translation.  These tools accelerate repetitive tasks and enable exploration of large datasets [UoN guidance](https://www.nottingham.ac.uk/studyingeffectively/studying/ai.aspx).  
+
+---
 
 #### Poll: Which AI tools have you used?
 
@@ -80,6 +82,8 @@ Generative AI can accelerate scientific discovery by summarising literature, gen
 
 ## Risks and challenges
 AI outputs can be factually incorrect (hallucinations), plagiarise sources, perpetuate bias, infringe copyright or erode critical skills.  Unauthorised sharing of confidential data with AI tools may violate data protection rules [TechTarget article](https://www.techtarget.com/searchenterpriseai/tip/Generative-AI-ethics-8-biggest-concerns).  Always verify outputs against trusted sources and document AI contributions.  
+
+---
 
 #### Case demonstration: AI‑assisted literature summary
 
@@ -113,6 +117,8 @@ Publishers and institutions emphasise that AI tools cannot be credited as author
 
 International guidelines recommend avoiding AI tools in peer review, being vigilant about integrity, confidentiality and intellectual property, monitoring AI use in organisations and encouraging transparency in grant applications [Swedish Research Council news](https://www.vr.se/english/just-now/news/news-archive/2024-04-09-new-guidelines-for-using-ai-in-europe.html).  Many funding bodies and journals are developing policies; check current guidelines relevant to your discipline and institution.  
 
+---
+
 #### Prompt: Declaring AI use & Q&A
 
 ::: panel-tabset
@@ -137,6 +143,8 @@ Do not share sensitive or confidential data with AI tools because inputs may be 
 ## Future outlook
 
 AI capabilities continue to evolve.  Researchers, funders and institutions are updating guidelines and legislation (e.g. EU AI Act).  Maintaining AI literacy and monitoring policy developments are essential.  Responsible AI use will increasingly be expected as a core research skill [Swedish Research Council news](https://www.vr.se/english/just-now/news/news-archive/2024-04-09-new-guidelines-for-using-ai-in-europe.html).
+
+---
 
 #### Poll: Confidence in responsible AI use
 
