@@ -7,7 +7,7 @@ format:
   revealjs:
     theme:
       - black
-      - ../../../uon.scss
+      - ../../uon.scss
     output-ext: revealjs.html
     slide-number: true
     smaller: true

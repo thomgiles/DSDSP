@@ -41,13 +41,13 @@ website:
       - text: "Essential Digital Skills"
         menu:
           - text: "Digital Research at UoN – Digital Tools"
-            href: essential_digital_skills/digital_research_at_uon/episodes/01-digital_tools.qmd
+            href: essential_digital_skills/episodes/01-digital_tools.qmd
           - text: "Digital Research at UoN – Digital Delivery"
-            href: essential_digital_skills/digital_research_at_uon/episodes/02-digital_delivery.qmd
+            href: essential_digital_skills/episodes/02-digital_delivery.qmd
           - text: "Using Data Responsibly – Data Governance and Policy"
-            href: essential_digital_skills/using_data_responsibly/episodes/01-data_governance_and_policy.qmd
+            href: essential_digital_skills/episodes/03-data_governance_and_policy.qmd
           - text: "Using Data Responsibly – Research Data Management"
-            href: essential_digital_skills/using_data_responsibly/episodes/02-research_data_managment.qmd
+            href: essential_digital_skills/episodes/04-research_data_managment.qmd
 
       - text: "Applied Data Science (Python)"
         menu:
@@ -101,16 +101,10 @@ website:
           - section: "Essential Digital Skills"
             href: essential_digital_skills/index.qmd
             contents:
-              - section: "Digital Research at UoN"
-                href: essential_digital_skills/digital_research_at_uon/index.qmd
-                contents:
-                  - essential_digital_skills/digital_research_at_uon/episodes/01-digital_tools.qmd
-                  - essential_digital_skills/digital_research_at_uon/episodes/02-digital_delivery.qmd
-              - section: "Using Data Responsibly"
-                href: essential_digital_skills/using_data_responsibly/index.qmd
-                contents:
-                  - essential_digital_skills/using_data_responsibly/episodes/01-data_governance_and_policy.qmd
-                  - essential_digital_skills/using_data_responsibly/episodes/02-research_data_managment.qmd
+              - essential_digital_skills/episodes/01-digital_tools.qmd
+              - essential_digital_skills/episodes/02-digital_delivery.qmd
+              - essential_digital_skills/episodes/03-data_governance_and_policy.qmd
+              - essential_digital_skills/episodes/04-research_data_managment.qmd
 
           - section: "Methods for Data Science"
             href: methods_for_data_science/index.qmd

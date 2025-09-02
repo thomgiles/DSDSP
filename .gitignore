@@ -7,6 +7,7 @@ _publish/
 _freeze/
 _cache/
 _site/
+site_libs/
 index_files/
  
 # Python-related
