@@ -13,7 +13,7 @@ exercises: 40
 
 ---
 
-::: callout-c1
+::: callout-outcomes
 
 ## Learning Outcomes
 
@@ -25,7 +25,7 @@ exercises: 40
 
 ---
 
-::: callout-c2
+::: callout-questions
 
 ## Questions
 
@@ -256,7 +256,7 @@ Discuss how this changed how you’d approach the work vs. a linear plan.
 
 ---
 
-::: callout-c1
+::: callout-keypoints
 
 ## Keypoints
 
@@ -268,7 +268,7 @@ Discuss how this changed how you’d approach the work vs. a linear plan.
 
 ---
 
-::: callout-c2
+::: callout-hints
 
 ## Hints
 

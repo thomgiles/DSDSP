@@ -14,7 +14,7 @@ exercises: 40
 
 ---
 
-::: callout-c1
+::: callout-outcomes
 
 ## Learning Outcomes
 
@@ -26,7 +26,7 @@ exercises: 40
 
 ---
 
-::: callout-c2
+::: callout-questions
 
 ## Questions
 
@@ -375,7 +375,7 @@ Reflect on your current digital setup. How secure is your research environment?
  
 ---
 
-::: callout-c1
+::: callout-keypoints
 
 ## keypoints
 
@@ -387,7 +387,7 @@ Reflect on your current digital setup. How secure is your research environment?
 
 ---
 
-::: callout-c2
+::: callout-hints
 
 ## hints
 

@@ -55,6 +55,8 @@ exercises: 50
 
 Artificial intelligence describes systems that mimic aspects of human intelligence such as learning, reasoning and language.  Generative AI tools use large language models to generate text, code or images by predicting the most likely next token, but they do not possess general intelligence [UoN guidance](https://www.nottingham.ac.uk/studyingeffectively/studying/ai.aspx).  Predictive models use statistical patterns to make forecasts or classifications.
 
+---
+
 ## Current applications
 
 Researchers use AI for literature search, summarising research papers, coding assistance, data analysis, image processing and translation.  These tools accelerate repetitive tasks and enable exploration of large datasets [UoN guidance](https://www.nottingham.ac.uk/studyingeffectively/studying/ai.aspx).  
@@ -77,8 +79,12 @@ Which AI tools (if any) have you used so far in your research workflow?  Select 
 
 # Opportunities and Risks
 
+---
+
 ## Opportunities
 Generative AI can accelerate scientific discovery by summarising literature, generating hypotheses, drafting code, assisting with data visualisation and enabling creative exploration of ideas.  Automating tedious tasks can increase productivity and free researchers to focus on critical thinking.
+
+---
 
 ## Risks and challenges
 AI outputs can be factually incorrect (hallucinations), plagiarise sources, perpetuate bias, infringe copyright or erode critical skills.  Unauthorised sharing of confidential data with AI tools may violate data protection rules [TechTarget article](https://www.techtarget.com/searchenterpriseai/tip/Generative-AI-ethics-8-biggest-concerns).  Always verify outputs against trusted sources and document AI contributions.  
@@ -107,11 +113,15 @@ In small groups, spend 10 minutes critiquing the AI summary:
 
 # Ethics, Governance and Good Practice
 
+---
+
 ## Ethical principles
 
 Responsible AI use rests on principles including accountability, inclusiveness, reliability & safety, fairness, transparency and privacy & security [AzureMentor blog](https://azurementor.wordpress.com/2024/03/08/the-6-microsoft-responsible-ai-principles-explained/).  Researchers must identify and mitigate bias, be transparent about AI use, engage affected communities and safeguard personal data.  
 
 Publishers and institutions emphasise that AI tools cannot be credited as authors.  Any AI assistance must be acknowledged in the methods or acknowledgements section [Nature editorial](https://www.nature.com/articles/d41586-023-00191-1).  Universities warn that submitting AI‑generated content as your own constitutes misconduct; you must verify and cite AI-generated material [UoN guidance](https://www.nottingham.ac.uk/studyingeffectively/studying/ai.aspx).  
+
+---
 
 ## Policies and expectations
 
@@ -136,9 +146,13 @@ Reconvene for a live Q&A.  Bring your examples and concerns for discussion.  The
 
 # AI, Data Security and Future Directions
 
+---
+
 ## Data security and confidentiality
 
 Do not share sensitive or confidential data with AI tools because inputs may be stored and reused for model training.  Follow institutional policies by using approved tools and anonymising or pseudonymising data [TechTarget article](https://www.techtarget.com/searchenterpriseai/tip/Generative-AI-ethics-8-biggest-concerns).  Check whether your university offers secure AI tools; avoid uploading personal information to public platforms.
+
+---
 
 ## Future outlook
 

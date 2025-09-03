@@ -7,9 +7,9 @@ execute:
 
 format:
   html:
-    theme: 
+    theme:
         - default
-        - ./uon.scss
+        - uon.scss
     toc: true
     number-sections: false
     page-layout: article
@@ -36,18 +36,24 @@ website:
   navbar:
     title: "DSDS Programme"
     collapse: true
-    background: primary
+    background: "#0e1a2b"
+    foreground: "#ffffff"
     right:
       - text: "Essential Digital Skills"
         menu:
-          - text: "Digital Research at UoN – Digital Tools"
+          - text: "Digital Tools"
             href: essential_digital_skills/episodes/01-digital_tools.qmd
-          - text: "Digital Research at UoN – Digital Delivery"
+          - text: "Digital Delivery"
             href: essential_digital_skills/episodes/02-digital_delivery.qmd
-          - text: "Using Data Responsibly – Data Governance and Policy"
+          - text: "Data Governance and Policy"
             href: essential_digital_skills/episodes/03-data_governance_and_policy.qmd
-          - text: "Using Data Responsibly – Research Data Management"
+          - text: "Research Data Management"
             href: essential_digital_skills/episodes/04-research_data_managment.qmd
+          - text: "Responsible AI"
+            href: essential_digital_skills/episodes/ext1-responsible_ai.qmd
+          - text: "Hands-on AI"
+            href: essential_digital_skills/episodes/ext2-hands_on_ai.qmd
+
 
       - text: "Applied Data Science (Python)"
         menu:
@@ -105,6 +111,8 @@ website:
               - essential_digital_skills/episodes/02-digital_delivery.qmd
               - essential_digital_skills/episodes/03-data_governance_and_policy.qmd
               - essential_digital_skills/episodes/04-research_data_managment.qmd
+              - essential_digital_skills/episodes/ext1-responsible_ai.qmd
+              - essential_digital_skills/episodes/ext2-hands_on_ai.qmd
 
           - section: "Methods for Data Science"
             href: methods_for_data_science/index.qmd
@@ -170,3 +178,5 @@ website:
                       - methods_for_data_science/applied_R/CODE_OF_CONDUCT.md
                       - methods_for_data_science/applied_R/LICENSE.md
                       - methods_for_data_science/applied_R/profiles/learner-profiles.md
+
+
