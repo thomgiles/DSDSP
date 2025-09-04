@@ -379,11 +379,22 @@ h5 {
   border-radius: 5px;
 }
 
-.callout-DSS h5{
-  background-color: darken($teal, 12%);
-  padding: 0.3em;
-  margin: -10px -10px 10px -10px;
-  border-radius: 5px 5px 0 0;
+.callout-MDS{
+
+  text-align: center; 
+  background-color: $blue2;
+   /* force full width */
+  width: 100%;
+  color: $white;
+}
+
+
+.callout-DSS{
+
+  text-align: center; 
+  background-color: $teal;
+   /* force full width */
+  width: 100%;
   color: $white;
 }
 

@@ -110,6 +110,13 @@ Essential Digital Skills (*year 1; mandatory*).  Four half‑day sessions intro
 Domain‑specific training (*year 2–3+; tailored*).  Short intensive modules (1-2 days) are scheduled throughout the year based on demand and availability of instructors.
 :::
 
+::: callout-MDS
+- **Intermediate** – Methods for Data Science (*year 2+; optional*).  Follow up workshops run over one or two academic terms.  Participants choose theoretical and/or applied streams.
+:::
+
+::: callout-DSS
+- **Advanced** – Domain‑specific training (*year 2–3+; tailored*).  Short intensive modules (1-2 days) are scheduled throughout the year based on demand and availability of instructors.
+:::
 
 :::
 
