@@ -1,5 +1,5 @@
 ---
-title: "Data Science & Digital Skills Programme"
+title: "About theData Science & Digital Skills Programme"
 subtitle: "Building core competencies for modern, reproducible research"
 format:
   html:
@@ -12,79 +12,10 @@ format:
     sidebar: false
 ---
 
-::: {.callout-quote}
-*"Modern research projects routinely involve code, large data sets and complex computational workflows.  
-Yet many researchers have limited exposure to software engineering, digital infrastructure or best practices for managing data.  The DS&DSP addresses this gap by providing a structured training pathway aligned with open science and research integrity principles."*
-:::
-
-
-
-::: {.two-col-grid}
-::: {.item}
-
-<br>
-
-## Introduction
-
-The Data Science & Digital Skills Programme (DS&DSP) is a one-year, in-person training initiative that equips researchers with the essential digital competencies for modern, reproducible, and data-intensive research. This curriculum is built around clear navigation and intuitive organisation so that participants can easily locate resources and modules on the website.  All materials are mobile‑friendly and accessible, ensuring that learners can engage with content on different devices.  
-:::
-
-::: {.item}
-
-<br>
-
-![](assets/learning_diagram.png)
-:::
-:::
-
-::: {.dark}
-
-<h2> The 5 principles of the DS&DSP programme </h2>
-
-::: {.five-col-grid}
-
-::: {.item}
-![](assets/foundation.png){.round-img width="120px"}
-**Structured progression**  
-<br>
-The programme is organised into foundation, intermediate and advanced tiers, allowing participants to build their skills incrementally and revisit concepts as needed.
-:::
-
-::: {.item}
-![](assets/hands-on.png){.round-img width="120px"}
-**Hands-on learning**  
-<br>
-Each session combines didactic lectures and collaborative exercises such as scenario-based tasks to reinforce understanding through practice.
-:::
-
-::: {.item}
-![](assets/open-science.png){.round-img width="120px"}
-**Open science focus**  
-<br>
-Modules emphasise FAIR (findable, accessible, interoperable and reusable) data principles, reproducible workflows and responsible data governance.
-:::
-
-::: {.item}
-![](assets/discipline.png){.round-img width="120px"}
-**Discipline-agnostic**  
-<br>
-Although developed for BBSRC doctoral researchers, the methods and tools apply across research domains, and later tiers offer optional domain-specific modules.
-:::
-
-::: {.item}
-![](assets/portfolio.png){.round-img width="120px"}
-**Portfolio-building**  
-<br>
-Participants develop a digital portfolio of skills, improve their competencies and gain tools that they can be reused in their own research.
-:::
-:::
-:::
-
----
-
 ### Structure
 
 The DS&DSP is structured to support learners
+[label](https://dev.azure.com/UniversityOfNottingham/DRS/_library)
 
 ::: {.two-col-grid}
 ::: {.item}
@@ -125,8 +56,6 @@ Progression through the tiers ensures that participants build confidence gradual
 All materials are released under permissive licences via GitHub, enabling reuse and adaptation by the wider research community.
 :::
 :::::
-
-
 
 ### Overview
 
@@ -260,11 +189,3 @@ The DS&DSP is designed to be inclusive and supportive:
 - **Support** — teaching assistants and data champions are available during sessions and via online forums to answer questions and provide feedback.  Peer learning is encouraged through group exercises and cohort projects.
 - **Community** — participants join a growing community of digital researchers across the University.  Alumni are invited to contribute to later cohorts as mentors and to co‑develop future modules.
 
----
-
-## Contact
-
-**Programme lead:** Dr Thomas Giles  
-📧 <tom.giles@nottingham.ac.uk>
-
-For general enquiries, registration or accessibility queries please contact the DS&DSP administrative team via email at <dsdsp@nottingham.ac.uk>.  You can also follow programme updates on social media using the links in the page header.  We welcome feedback on the curriculum and suggestions for new modules.
