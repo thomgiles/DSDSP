@@ -11,7 +11,7 @@ exercises: 20
 - **Audience:** Early Career Researchers (PhD, Postdoc)  
 - **Duration:** ~50 minutes directed teaching (+20 minutes exercises)  
 
-::: callout-c1
+::: callout-outcomes
 
 ## Learning Outcomes
 
@@ -23,7 +23,7 @@ exercises: 20
 
 <br>
 
-::: callout-c2
+::: callout-questions
 
 ## Questions
 
@@ -302,12 +302,20 @@ Match scenarios to relevant UoN or national policy.
 - [Information Security and Classification Guidance](https://www.nottingham.ac.uk/it-services/security)  
 - Annual Data Protection and Information Security Awareness (mandatory)  
 
+
+::: callout-keypoints
+
 ## Keypoints
 
 - GDPR requires lawful basis and safeguards for personal/special category data  
 - UoN ethics approval processes ensure integrity and accountability  
 - Data must be classified and secured according to institutional policy  
 - Compliance involves institutional, team, and individual responsibility  
+:::
+
+<br>
+
+::: callout-hints
 
 ## Hints
 
@@ -315,3 +323,4 @@ Match scenarios to relevant UoN or national policy.
 - Build compliance tasks into project planning from the outset  
 - Record decisions in your Data Management Plan  
 - International collaboration may trigger Trusted Research checks  
+:::
