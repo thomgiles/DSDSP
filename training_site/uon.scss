@@ -11,6 +11,7 @@ $headings-font-family: "Roboto", "Helvetica", Arial, sans-serif !default;
 
 /* Palette */
 $teal:  #37B4B0;
+$blue2 :#66C3DA; 
 $blue:  #009BC1;
 $slate: #405162;
 $ink:   #102A43;
@@ -335,6 +336,26 @@ h5 {
   width: 100%;
   color: $white;
 }
+
+.callout-MDS{
+
+  text-align: center; 
+  background-color: $blue2;
+   /* force full width */
+  width: 100%;
+  color: $white;
+}
+
+
+.callout-DSS{
+
+  text-align: center; 
+  background-color: $teal;
+   /* force full width */
+  width: 100%;
+  color: $white;
+}
+
 
 /* Horizontal rule */
 hr { border: 0; border-top: 1px solid $white; }
