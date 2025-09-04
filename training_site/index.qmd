@@ -86,10 +86,14 @@ Participants develop a digital portfolio of skills, improve their competencies a
 
 The DS&DSP is structured to support learners
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 =======
 [label](https://dev.azure.com/UniversityOfNottingham/DRS/_library)
 >>>>>>> More
+=======
+
+>>>>>>> Update
 ::: {.two-col-grid}
 ::: {.item}
 
