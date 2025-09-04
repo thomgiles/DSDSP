@@ -1,6 +1,9 @@
 /*-- scss:defaults --*/
 $theme: "lumen" !default;
 
+/* Prevent horizontal scrollbar from bleeds */
+html, body { overflow-x: hidden; }
+
 /* Typography */
 $font-family-sans-serif: "Roboto", "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $font-family-monospace: "Fira Mono", Fira, monospace !default;
@@ -133,7 +136,7 @@ h5 {
 }
 
 /* Title block */
-#title-block-header { margin-top: 0 !important; }
+#title-block-header { margin: 0 !important; }
 
 .quarto-title {
   padding: 200px;
@@ -143,29 +146,20 @@ h5 {
   font-family: $headings-font-family;
   font-weight: bold;
 
-  background-image: url("assets/dsdsp_abstract_cropped.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  /* fixed background */
+  background: url("assets/dsdsp_abstract_cropped.png") center / cover no-repeat fixed;
 
   /* force full width */
   width: 100vw;
   margin-left: calc(-50vw + 50%);
-}
+  min-height: 40vh; /* adjust as needed */
 
-/* avoid spacing at top */
-main#quarto-document-content {
-    margin-top: 0;
-}
-
-html, body { overflow-x: hidden; } /* avoid 100vw scrollbar */
-
-@supports (width: 100svw) {
-  .quarto-title {
+  @supports (width: 100svw) {
     width: 100svw;
     margin-left: calc(-50svw + 50%);
   }
 }
+
 
 /* Breadcrumb */
 .breadcrumb {
@@ -175,10 +169,13 @@ html, body { overflow-x: hidden; } /* avoid 100vw scrollbar */
 
 /* dark banner */
 .dark {
+  /* fixed background */
+  background: url("assets/dsdsp_abstract_cropped.png") center / cover no-repeat fixed;
+
+  /* force full width */
   width: 100vw;
   margin-left: calc(-50vw + 50%);
-
-  background-image: url("assets/dsdsp_abstract_cropped.png");
+  min-height: 40vh; /* adjust as needed */
   color: $white;
   padding: 20px;
 
@@ -188,9 +185,39 @@ html, body { overflow-x: hidden; } /* avoid 100vw scrollbar */
   }
 }
 
+/* Full-bleed (both sides) */
+.breakout {
+  display: block;
+  width: 200%;
+  margin: 20px;
+  height: auto;
+}
+
+
+/* Use modern viewport units when available */
+@supports (width: 100svw) {
+  .breakout-full {
+    width: 100svw;
+    margin-left: calc(-50svw + 50%);
+  }
+  .breakout-right { margin-right: max(0px, calc(-50svw + 50%)); }
+  .breakout-left  { margin-left:  max(0px, calc(-50svw + 50%)); }
+}
+
+
 /* centre dark text */
 .dark h2{
   text-align: center;
+}
+
+/* Round images, responsive sizing */
+.round-img {
+  width: clamp(72px, 14vw, 120px);
+  height: clamp(72px, 14vw, 120px);
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 1rem;
 }
 
 /* Five-column grid */
@@ -202,16 +229,6 @@ html, body { overflow-x: hidden; } /* avoid 100vw scrollbar */
   .item { text-align: center; }
 
   h2 { text-align: center; }
-}
-
-/* Round images, responsive sizing */
-.round-img {
-  width: clamp(72px, 14vw, 120px);
-  height: clamp(72px, 14vw, 120px);
-  object-fit: cover;
-  border-radius: 50%;
-  display: block;
-  margin: 0 auto 1rem;
 }
 
 /* Responsive breakpoints for the grid */
@@ -239,6 +256,28 @@ html, body { overflow-x: hidden; } /* avoid 100vw scrollbar */
   }
 }
 
+
+
+/* Five-column grid */
+.two-col-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+
+  .item { text-align: left; }
+
+  h2 { text-align: left; }
+}
+
+@media (max-width: 900px) {
+  .two-col-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    padding: 12px;
+  }
+}
+
+
 /* Reveal slides logo */
 .reveal .slide-logo { max-height: 1.5em !important; }
 
@@ -260,13 +299,42 @@ html, body { overflow-x: hidden; } /* avoid 100vw scrollbar */
 }
 
 .callout-outcomes   { @include callout($teal,  $slate, darken($teal, 12%),  "h2"); }
-.callout-questions  { @include callout($blue,  $slate, #007799,             "h2"); }
-.callout-keypoints  { @include callout($blue,  $slate, #007799,             "h2"); }
+.callout-questions  { @include callout($blue,  $slate, #007799,           "h2"); }
+.callout-keypoints  { @include callout($blue,  $slate, #007799,           "h2"); }
 .callout-hints      { @include callout($teal,  $slate, darken($teal, 12%),  "h2"); }
-.callout-task       { @include callout($slate, $slate, #2b3641,             "h4"); }
+.callout-task       { @include callout($slate, $slate, #2b3641,           "h4"); }
+.callout-quote  
 
 .callout-hints a { color: $white; }
 .callout-task .blockquote { color: $white; }
+
+.callout-quote{
+
+  text-align: center; 
+  font-size: 20px;
+  background-color: $slate;
+   /* force full width */
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  min-height: 10vh; /* adjust as needed */
+  color: $white;
+  padding: 100px;
+
+  @supports (width: 100svw) {
+    width: 100svw;
+    margin-left: calc(-50svw + 50%);
+  }
+}
+
+
+.callout-EDS{
+
+  text-align: center; 
+  background-color: $blue;
+   /* force full width */
+  width: 100%;
+  color: $white;
+}
 
 /* Horizontal rule */
 hr { border: 0; border-top: 1px solid $white; }

@@ -12,63 +12,102 @@ format:
     sidebar: false
 ---
 
-::::: grid
-::: g-col-6
-
-## Programme overview
-
-Modern research projects routinely involve code, large data sets and complex computational workflows.  Yet many researchers have limited exposure to software engineering, digital infrastructure or best practices for managing data.  The DS&DSP addresses this gap by providing a structured training pathway aligned with open science and research integrity principles.  The curriculum is built around clear navigation and intuitive organisation so that participants can easily locate resources and modules on the website.  All materials are mobile‑friendly and accessible, ensuring that learners can engage with content on different devices.  
+::: {.callout-quote}
+*"Modern research projects routinely involve code, large data sets and complex computational workflows.  
+Yet many researchers have limited exposure to software engineering, digital infrastructure or best practices for managing data.  The DS&DSP addresses this gap by providing a structured training pathway aligned with open science and research integrity principles."*
 :::
 
-::: g-col-6
-![](assets/Logo_white_500.png){width="400px"}
- 
 
-:::
-:::
 
+::: {.two-col-grid}
+::: {.item}
 
 <br>
 
+## Introduction
+
+The Data Science & Digital Skills Programme (DS&DSP) is a one-year, in-person training initiative that equips researchers with the essential digital competencies for modern, reproducible, and data-intensive research. This curriculum is built around clear navigation and intuitive organisation so that participants can easily locate resources and modules on the website.  All materials are mobile‑friendly and accessible, ensuring that learners can engage with content on different devices.  
+:::
+
+::: {.item}
+
+<br>
+
+![](assets/learning_diagram.png)
+:::
+:::
+
 ::: {.dark}
 
-<h2> Key Factors </h2>
+<h2> The 5 principles of the DS&DSP programme </h2>
 
 ::: {.five-col-grid}
 
 ::: {.item}
 ![](assets/foundation.png){.round-img width="120px"}
 **Structured progression**  
+<br>
 The programme is organised into foundation, intermediate and advanced tiers, allowing participants to build their skills incrementally and revisit concepts as needed.
 :::
 
 ::: {.item}
 ![](assets/hands-on.png){.round-img width="120px"}
 **Hands-on learning**  
-Each session combines didactic lectures, live coding demonstrations, scenario-based tasks and collaborative exercises to reinforce understanding through practice.
+<br>
+Each session combines didactic lectures and collaborative exercises such as scenario-based tasks to reinforce understanding through practice.
 :::
 
 ::: {.item}
 ![](assets/open-science.png){.round-img width="120px"}
 **Open science focus**  
+<br>
 Modules emphasise FAIR (findable, accessible, interoperable and reusable) data principles, reproducible workflows and responsible data governance.
 :::
 
 ::: {.item}
 ![](assets/discipline.png){.round-img width="120px"}
 **Discipline-agnostic**  
+<br>
 Although developed for BBSRC doctoral researchers, the methods and tools apply across research domains, and later tiers offer optional domain-specific modules.
 :::
 
 ::: {.item}
 ![](assets/portfolio.png){.round-img width="120px"}
 **Portfolio-building**  
-Participants develop a digital portfolio of scripts, notebooks and reports that demonstrate their competencies and can be reused in their own research.
+<br>
+Participants develop a digital portfolio of skills, improve their competencies and gain tools that they can be reused in their own research.
 :::
 :::
 :::
 
 ---
+
+::: {.two-col-grid}
+::: {.item}
+### Structure
+
+The DS&DSP is structured to support learners:
+
+::: callout-EDS
+- **Foundation** – Essential Digital Skills (*year 1; mandatory*).  Four half‑day sessions introduce the core tools, policies and principles required for computational research.
+:::
+
+- **Intermediate** – Methods for Data Science (*year 2+; optional*).  Follow up workshops run over one or two academic terms.  Participants choose theoretical and/or applied streams.
+- **Advanced** – Domain‑specific training (*year 2–3+; tailored*).  Short intensive modules (1-2 days) are scheduled throughout the year based on demand and availability of instructors.
+
+Progression through the tiers ensures that participants build confidence gradually.  Assessment is formative: each tier culminates in a small project or portfolio review rather than a high‑stakes examination.  Feedback is provided by instructors and peers.
+:::
+
+::: {.item}
+### Delivery
+
+Initial delivery is targeted to BBSRC DTP students (2025 cohort), but the programme will be opened to other doctoral and early‑career researchers in subsequent years.  A continuous improvement process ensures that content is updated in response to participant feedback and advances in digital research methods. 
+
+Sessions are delivered primarily in person to foster discussion and collaboration.  Some lectures and code demonstrations are recorded to support revision and remote participation. Participants work in small cohorts, promoting peer learning and networking.  Cohorts are cross‑disciplinary to encourage exchange of ideas. 
+
+All materials are released under permissive licences via GitHub, enabling reuse and adaptation by the wider research community.
+:::
+:::::
 
 ## Training tiers
 
@@ -152,32 +191,7 @@ Beyond the core programme, DS&DSP offers a portfolio of advanced modules tailore
 
 ---
 
-## Structure and delivery
-::::: grid
-::: g-col-6
-### Structure
 
-The DS&DSP is structured to support learners over multiple years:
-
-- **Foundation** – Essential Digital Skills (*year 1; mandatory*).  Four full‑day sessions introduce the core tools, policies and principles required for computational research.
-- **Intermediate** – Methods for Data Science (*year 2+; optional*).  Weekly or fortnightly seminars and workshops run over one or two academic terms.  Participants choose theoretical and/or applied streams.
-- **Advanced** – Domain‑specific training (*year 2–3+; tailored*).  Short intensive modules (2–5 days) are scheduled throughout the year based on demand and availability of instructors.
-
-Progression through the tiers ensures that participants build confidence gradually.  Assessment is formative: each tier culminates in a small project or portfolio review rather than a high‑stakes examination.  Feedback is provided by instructors and peers.
-:::
-
-::: g-col-6
-### Delivery
-
-- **Mode of delivery** — sessions are delivered primarily in person to foster discussion and collaboration.  Some lectures and code demonstrations are recorded to support revision and remote participation.
-- **Learning materials** — each module includes pre‑class reading or exercises, live demonstrations and hands‑on practice.  Participants receive comprehensive notes, code templates and example datasets.
-- **Support** — teaching assistants and data champions provide one‑to‑one support during workshop sessions.  Weekly drop‑in clinics and online forums offer additional help.
-- **Cohort model** — participants work in small cohorts, promoting peer learning and networking.  Cohorts are cross‑disciplinary to encourage exchange of ideas.
-- **Open resources** — all materials are released under permissive licences via GitHub, enabling reuse and adaptation by the wider research community.
-
-Initial delivery is targeted to BBSRC DTP students (2025 cohort), but the programme will be opened to other doctoral and early‑career researchers in subsequent years.  A continuous improvement process ensures that content is updated in response to participant feedback and advances in digital research methods.
-:::
-:::::
 
 ---
 
@@ -198,7 +212,7 @@ By the end of the programme participants will be able to:
 
 ## Access materials
 
-All teaching materials are openly licensed and hosted in version‑controlled repositories.  Each module includes lecture notes, slide decks, example datasets, scripts and step‑by‑step exercises.  Participants are encouraged to clone or fork the repositories, complete the exercises and contribute improvements via pull requests.  The repositories include continuous integration workflows that test code for reproducibility and correctness.
+All teaching materials are openly licensed and hosted in a version‑controlled repository.  Each module includes lecture notes, slide decks, example datasets, scripts and step‑by‑step exercises.  Participants are encouraged to clone or fork the repositories, complete the exercises and contribute improvements via pull requests.  The repositories include continuous integration workflows that test code for reproducibility and correctness.
 
 Use the navigation bar or the links below to explore specific modules:
 
