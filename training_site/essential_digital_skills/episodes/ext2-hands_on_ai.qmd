@@ -1,0 +1,193 @@
+---
+title: Hands‑on with AI for Research
+teaching: 20
+exercises: 100
+---
+
+# Module Overview
+
+- **Module:** EDS‑EXT2 – Hands‑on with AI for Research  
+- **Course:** Essential Digital Skills – AI for Research Extension  
+- **Audience:** Early Career Researchers (PhD, Postdoc)  
+- **Duration:** ~20 minutes directed teaching (+100 minutes practical exercises)  
+
+::: callout-outcomes
+## 💡 Learning Outcomes
+- Practise designing effective prompts for policy‑oriented research questions and document the results.  
+- Critically assess and validate AI‑generated summaries against authoritative policy documents and identify inaccuracies or omissions. 
+- Explore how role prompting influences ChatGPT responses and appreciate the limitations of AI advice.  
+- Reflect on responsible AI use through group exercises and develop plans for integrating AI into your research practice
+:::
+
+<br>
+
+::: callout-questions
+## ❓ Questions 
+1. How can you leverage ChatGPT to explore policy‑related questions effectively?  
+2. How do you verify and critique AI outputs against official sources?  
+3. How does the tone and content of ChatGPT’s response change when you specify different roles?  
+4. How will you integrate AI responsibly into your research workflow after this workshop?  
+:::
+
+## Structure & Agenda
+
+1. **Orientation and Prompting** – 5 minutes introduction followed by a 10 minute prompt practice.  
+2. **Group Research with ChatGPT** – 5 minutes orientation followed by a 15 minute small‑group task and 15 minute plenary.  
+3. **Critique and Validation** – 5 minutes setup followed by a 15 minute group critique and 15 minute plenary.  
+4. **Prompt Framing and Role Effects** – 5 minutes introduction followed by a 15 minute role‑prompting experiment and 15 minute plenary.  
+
+> 🔧 The emphasis is on practical exercises; short teaching segments introduce each activity.
+
+# Orientation and Prompting
+
+![](fig/hands_on_ai.png){fig-align="center" width=500px}
+
+## Introduction
+
+This workshop builds on the principles introduced in the lecture. Responsible AI use requires transparency, verification, documentation, equity and continuous monitoring.  Participants will practise constructing clear and specific prompts and learn to record prompts and outputs for transparency.  Remember not to include confidential or proprietary information in prompts.
+
+---
+
+::: callout-task
+
+#### Task 1: Prompt practice
+
+::: panel-tabset
+##### Question
+Open ChatGPT and formulate a prompt such as:
+
+> *“Summarise Elsevier’s policy on the use of generative AI tools in preparing manuscripts. List any disclosure requirements, and note whether AI can be credited as an author.”*
+
+##### Follow‑up
+- Was your prompt specific enough?  
+- Did ChatGPT cite sources or mention limitations?  
+- What uncertainties remain about the policy?  
+- Adjust your prompt to clarify ambiguous points and note how the response changes.  
+:::
+
+:::
+
+---
+
+# Group Research with ChatGPT
+
+## Assigned Policy Domains
+
+Split into small groups. Each group will investigate one of the following specific topics:
+
+- **Journal publisher – Nature / Springer Nature** 
+- **Academic society – Political Studies Review / SAGE Publications** 
+- **Research funder – Cancer Research UK** 
+- **National guidelines – UKRI generative AI policy** 
+
+- Develop 2–3 prompts to ask ChatGPT about the policy (e.g. “What does *Nature*’s policy say about the use of generative AI in submitted manuscripts?”).  
+- For each prompt, record the exact wording, the date/time and the AI’s response [UoN guidance](https://www.nottingham.ac.uk/studyingeffectively/studying/ai.aspx).  
+- Note whether the response includes citations, acknowledges limitations or fabricates information.  
+
+---
+
+::: callout-task
+
+#### Task 2: Small-group work
+
+::: panel-tabset
+##### Exercise
+Work collaboratively for 15 minutes using ChatGPT to gather information about your assigned policy. Capture the responses in a shared document or whiteboard. Consider using different wording or levels of specificity in your prompts.
+
+Each group will need to:
+
+- Presents the prompts used and concise summary of the policy based on ChatGPT’s output.  
+- Identify Uncertainties, gaps or hallucinations.  
+- Check whether sources were cited and how reliable they appear to be.    
+
+##### Plenary (15 min)
+
+:::
+:::
+
+---
+
+# Critique and Validation
+
+## Comparing AI Outputs to Official Documents
+
+The these are the official policy documents:
+
+- **Journal publisher – Nature / Springer Nature** – see [Springer Nature Editorial Policies – Artificial Intelligence](https://www.nature.com/nature-portfolio/editorial-policies/ai)  
+- **Academic society – Political Studies Review / SAGE Publications** – see [SAGE AI Policy: Ethical Use of Generative AI in Research and Scholarly Publishing](https://psr.brunel.ac.uk/2024/10/04/the-ethical-use-of-generative-ai-in-publishing-and-research/) 
+- **Research funder – Cancer Research UK (joint funder statement)** – see [Joint Approach to Generative AI in Funding Applications (Cancer Research UK)](https://news.cancerresearchuk.org/2023/09/19/joint-approach-to-generative-ai-in-funding-applications/) 
+- **National guidelines – UKRI generative AI policy** – see [UKRI Generative AI in Application and Assessment Policy (Sept 2024; updated Dec 2024)](https://www.ukri.org/publications/generative-artificial-intelligence-in-application-and-assessment-policy/)
+
+---
+
+::: callout-task
+
+#### Task 3: Group critique
+
+::: panel-tabset
+##### Exercise (15 min)
+In your groups, compare ChatGPT’s summaries with these authoritative texts. Note that AI tools cannot be credited as authors and must be acknowledged in the methods or acknowledgements sections [Nature editorial](https://www.nature.com/articles/d41586-023-00191-1).
+
+##### Hint
+
+For at least two points made by ChatGPT, locate the corresponding statements (or absence thereof) in the official documents. Note any discrepancies, omissions or additions. Consider why the AI may have misrepresented or omitted information (e.g. outdated training data, biased sources or ambiguous prompts).
+
+##### Discussion (15 min)
+
+- How accurate were the AI outputs?  
+- What patterns of error or bias did you observe?  
+- How can you verify AI-generated information efficiently in your own work?  
+- What safeguards will you adopt when using AI to support research tasks?  
+:::
+:::
+
+---
+
+# Prompt Framing and Role Effects
+
+## Role Prompting
+
+The tone and content of ChatGPT’s output can vary depending on the role specified. Asking ChatGPT to answer “as a researcher”, “as a policy adviser” or “as a science journalist” can change the depth, formality and focus of the response. Prompt engineering strategies emphasise that the quality of outputs depends on the clarity and context provided.
+
+---
+
+::: callout-task
+
+#### Task 4: Role effects experiment
+
+::: panel-tabset
+##### Exercise (15 min)
+Using the same policy question from Task 1, re-ask ChatGPT with at least three different role instructions (e.g. “You are a research policy adviser”, “You are a PhD student”, “You are a science journalist”). Record each response and note differences in style, depth and factual content.
+
+##### Plenary (15 min)
+- Compare role-based responses across groups.  
+- Discuss how the role framing affected the apparent authority and confidence of the AI.  
+- Consider the risks of over-interpreting stylistic differences as differences in accuracy.  
+:::
+
+:::
+
+---
+
+# Further Information
+
+::: callout-keypoints
+## 📚 Key points
+- Major publishers (e.g. *Nature*) prohibit AI authorship but allow limited use of AI tools with disclosure.  
+- National and international bodies (UKRI, European Commission) provide explicit guidelines on responsible use of generative AI.  
+- Universities issue their own integrity guidance — always check local policy.  
+- Prompt engineering skills help improve clarity and reduce ambiguity in AI responses.  
+- Ethical use requires verification, transparency and acknowledgement of limitations.  
+:::
+
+<br>
+
+::: callout-hints
+
+## 🔦 Hints
+- **Publisher policies on AI**: [Nature editorial](https://www.nature.com/articles/d41586-023-00191-1)  
+- **International guidelines**: [European Commission living guidelines](https://www.vr.se/english/just-now/news/news-archive/2024-04-09-new-guidelines-for-using-ai-in-europe.html)  
+- **Institutional resources**: [UoN guidance](https://www.nottingham.ac.uk/studyingeffectively/studying/ai.aspx)  
+- **Prompt engineering resources**: explore official guides and examples of effective prompts.  
+- **Ethics & integrity**: [Microsoft’s 6 Responsible AI principles](https://azurementor.wordpress.com/2024/03/08/the-6-microsoft-responsible-ai-principles-explained/)  
+:::

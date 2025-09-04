@@ -7,9 +7,9 @@ execute:
 
 format:
   html:
-    theme: 
+    theme:
         - default
-        - ./uon.scss
+        - uon.scss
     toc: true
     number-sections: false
     page-layout: article
@@ -36,18 +36,24 @@ website:
   navbar:
     title: "DSDS Programme"
     collapse: true
-    background: primary
+    background: "#0e1a2b"
+    foreground: "#ffffff"
     right:
       - text: "Essential Digital Skills"
         menu:
-          - text: "Digital Research at UoN – Digital Tools"
-            href: essential_digital_skills/digital_research_at_uon/episodes/01-digital_tools.qmd
-          - text: "Digital Research at UoN – Digital Delivery"
-            href: essential_digital_skills/digital_research_at_uon/episodes/02-digital_delivery.qmd
-          - text: "Using Data Responsibly – Data Governance and Policy"
-            href: essential_digital_skills/using_data_responsibly/episodes/01-data_governance_and_policy.qmd
-          - text: "Using Data Responsibly – Research Data Management"
-            href: essential_digital_skills/using_data_responsibly/episodes/02-research_data_managment.qmd
+          - text: "Digital Tools"
+            href: essential_digital_skills/episodes/01-digital_tools.qmd
+          - text: "Digital Delivery"
+            href: essential_digital_skills/episodes/02-digital_delivery.qmd
+          - text: "Data Governance and Policy"
+            href: essential_digital_skills/episodes/03-data_governance_and_policy.qmd
+          - text: "Research Data Management"
+            href: essential_digital_skills/episodes/04-research_data_managment.qmd
+          - text: "Responsible AI"
+            href: essential_digital_skills/episodes/ext1-responsible_ai.qmd
+          - text: "Hands-on AI"
+            href: essential_digital_skills/episodes/ext2-hands_on_ai.qmd
+
 
       - text: "Applied Data Science (Python)"
         menu:
@@ -101,16 +107,12 @@ website:
           - section: "Essential Digital Skills"
             href: essential_digital_skills/index.qmd
             contents:
-              - section: "Digital Research at UoN"
-                href: essential_digital_skills/digital_research_at_uon/index.qmd
-                contents:
-                  - essential_digital_skills/digital_research_at_uon/episodes/01-digital_tools.qmd
-                  - essential_digital_skills/digital_research_at_uon/episodes/02-digital_delivery.qmd
-              - section: "Using Data Responsibly"
-                href: essential_digital_skills/using_data_responsibly/index.qmd
-                contents:
-                  - essential_digital_skills/using_data_responsibly/episodes/01-data_governance_and_policy.qmd
-                  - essential_digital_skills/using_data_responsibly/episodes/02-research_data_managment.qmd
+              - essential_digital_skills/episodes/01-digital_tools.qmd
+              - essential_digital_skills/episodes/02-digital_delivery.qmd
+              - essential_digital_skills/episodes/03-data_governance_and_policy.qmd
+              - essential_digital_skills/episodes/04-research_data_managment.qmd
+              - essential_digital_skills/episodes/ext1-responsible_ai.qmd
+              - essential_digital_skills/episodes/ext2-hands_on_ai.qmd
 
           - section: "Methods for Data Science"
             href: methods_for_data_science/index.qmd
@@ -176,3 +178,5 @@ website:
                       - methods_for_data_science/applied_R/CODE_OF_CONDUCT.md
                       - methods_for_data_science/applied_R/LICENSE.md
                       - methods_for_data_science/applied_R/profiles/learner-profiles.md
+
+

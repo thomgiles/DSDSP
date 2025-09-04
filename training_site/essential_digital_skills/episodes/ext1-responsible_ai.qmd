@@ -1,0 +1,192 @@
+---
+title: Responsible Use of AI in Research
+teaching: 70
+exercises: 50
+---
+
+# Module Overview
+
+- **Module:** EDS‑EXT1 – Responsible Use of AI in Research 
+- **Course:** Essential Digital Skills – AI for Research Extension
+- **Audience:** Early Career Researchers (PhD, Postdoc)
+- **Duration:** ~70 minutes directed teaching (+50 minutes exercises)  
+
+---
+
+::: callout-c1
+## Learning Outcomes
+- Recognise how AI and generative AI are defined and how they are applied in research, including literature search, data analysis and coding assistance [UoN guidance](https://www.nottingham.ac.uk/studyingeffectively/studying/ai.aspx).
+- Identify opportunities and risks associated with using AI in research, such as efficiency, creativity, bias, hallucinations, copyright and reproducibility [TechTarget article](https://www.techtarget.com/searchenterpriseai/tip/Generative-AI-ethics-8-biggest-concerns).
+- Apply ethical principles—transparency, accountability, fairness, privacy and human oversight—when integrating AI into your workflow [AzureMentor blog](https://azurementor.wordpress.com/2024/03/08/the-6-microsoft-responsible-ai-principles-explained/).
+- Interpret institutional and publisher policies on AI authorship, disclosure and data security [Nature editorial](https://www.nature.com/articles/d41586-023-00191-1) [UoN guidance](https://www.nottingham.ac.uk/studyingeffectively/studying/ai.aspx).
+- Incorporate data security and governance considerations when using AI tools and anticipate future directions for responsible AI use [EU guidelines](https://www.vr.se/english/just-now/news/news-archive/2024-04-09-new-guidelines-for-using-ai-in-europe.html).
+:::
+
+---
+
+::: callout-c2
+## Questions
+1. What opportunities can AI offer for research?
+2. What are the main risks and challenges in using AI for research?
+3. Which ethical principles should guide your use of AI in research?
+4. How can frameworks and policies help govern the responsible use of AI?
+:::
+
+---
+
+## Structure & Agenda
+
+1. **Foundations and Context** – 15 minutes teaching followed by a 10 minute poll.  
+2. **Opportunities and Risks** – 15 minutes teaching followed by a 10 minute case demonstration and critique.  
+3. **Ethics, Governance and Good Practice** – 20 minutes teaching followed by a 10 minute prompt activity and a 10 minute live Q&A.  
+4. **AI, Data Security and Future Directions** – 20 minutes teaching followed by a 10 minute confidence poll.  
+
+> 🔧 Four activities provide opportunities for reflection, critique and discussion.
+
+---
+
+# Foundations and Context
+
+![](fig/responsible_ai.png){fig-align="center" width=500px}
+
+---
+
+## Basic concepts
+
+Artificial intelligence describes systems that mimic aspects of human intelligence such as learning, reasoning and language.  Generative AI tools use large language models to generate text, code or images by predicting the most likely next token, but they do not possess general intelligence [UoN guidance](https://www.nottingham.ac.uk/studyingeffectively/studying/ai.aspx).  Predictive models use statistical patterns to make forecasts or classifications.
+
+---
+
+## Current applications
+
+Researchers use AI for literature search, summarising research papers, coding assistance, data analysis, image processing and translation.  These tools accelerate repetitive tasks and enable exploration of large datasets [UoN guidance](https://www.nottingham.ac.uk/studyingeffectively/studying/ai.aspx).  
+
+---
+
+#### Poll: Which AI tools have you used?
+
+::: panel-tabset
+##### Question
+Which AI tools (if any) have you used so far in your research workflow?  Select one or more options in the poll provided.  If you have not yet used any AI tools, indicate “None” and reflect on where AI might help.
+
+##### Follow‑up
+- After voting, discuss your responses in pairs or small groups.  
+- Identify one specific task where AI could support your research.  
+- Share any reservations you have about using AI for this task.  
+:::
+
+---
+
+# Opportunities and Risks
+
+---
+
+## Opportunities
+Generative AI can accelerate scientific discovery by summarising literature, generating hypotheses, drafting code, assisting with data visualisation and enabling creative exploration of ideas.  Automating tedious tasks can increase productivity and free researchers to focus on critical thinking.
+
+---
+
+## Risks and challenges
+AI outputs can be factually incorrect (hallucinations), plagiarise sources, perpetuate bias, infringe copyright or erode critical skills.  Unauthorised sharing of confidential data with AI tools may violate data protection rules [TechTarget article](https://www.techtarget.com/searchenterpriseai/tip/Generative-AI-ethics-8-biggest-concerns).  Always verify outputs against trusted sources and document AI contributions.  
+
+---
+
+#### Case demonstration: AI‑assisted literature summary
+
+::: panel-tabset
+##### Demonstration & critique
+The facilitator will use an AI tool to generate a summary of a recent research paper.  Observe how the AI condenses the literature and note strengths and weaknesses.
+
+##### Group discussion
+In small groups, spend 10 minutes critiquing the AI summary:
+1. Identify useful elements of the summary.  
+2. Highlight any factual errors, missing context or biases.  
+3. Discuss whether the AI cited sources and how you would verify its claims.  
+
+##### Reflection
+- Share your observations with the class.  
+- Suggest ways to improve the prompt or decide whether AI is appropriate for this task.  
+- Consider how to document AI assistance in your own work.  
+:::
+
+---
+
+# Ethics, Governance and Good Practice
+
+---
+
+## Ethical principles
+
+Responsible AI use rests on principles including accountability, inclusiveness, reliability & safety, fairness, transparency and privacy & security [AzureMentor blog](https://azurementor.wordpress.com/2024/03/08/the-6-microsoft-responsible-ai-principles-explained/).  Researchers must identify and mitigate bias, be transparent about AI use, engage affected communities and safeguard personal data.  
+
+Publishers and institutions emphasise that AI tools cannot be credited as authors.  Any AI assistance must be acknowledged in the methods or acknowledgements section [Nature editorial](https://www.nature.com/articles/d41586-023-00191-1).  Universities warn that submitting AI‑generated content as your own constitutes misconduct; you must verify and cite AI-generated material [UoN guidance](https://www.nottingham.ac.uk/studyingeffectively/studying/ai.aspx).  
+
+---
+
+## Policies and expectations
+
+International guidelines recommend avoiding AI tools in peer review, being vigilant about integrity, confidentiality and intellectual property, monitoring AI use in organisations and encouraging transparency in grant applications [Swedish Research Council news](https://www.vr.se/english/just-now/news/news-archive/2024-04-09-new-guidelines-for-using-ai-in-europe.html).  Many funding bodies and journals are developing policies; check current guidelines relevant to your discipline and institution.  
+
+---
+
+#### Prompt: Declaring AI use & Q&A
+
+::: panel-tabset
+##### Prompt activity (10 min)
+Reflect individually on the question: “In which parts of your research workflow would you feel comfortable declaring AI use?”  In pairs, discuss tasks where disclosure is mandatory (e.g. writing, peer review) and tasks where AI should be avoided.
+
+##### Exercise (10 min)
+Create a table listing stages of the research lifecycle (e.g. literature review, data analysis, writing, peer review).  For each stage, decide whether AI could be used and record ethical considerations (bias, consent, data privacy, authorship) and any relevant policies.  
+
+##### Live Q&A (10 min)
+Reconvene for a live Q&A.  Bring your examples and concerns for discussion.  The facilitator will address common misconceptions and challenges, drawing on institutional guidance and publisher policies.  
+:::
+
+---
+
+# AI, Data Security and Future Directions
+
+---
+
+## Data security and confidentiality
+
+Do not share sensitive or confidential data with AI tools because inputs may be stored and reused for model training.  Follow institutional policies by using approved tools and anonymising or pseudonymising data [TechTarget article](https://www.techtarget.com/searchenterpriseai/tip/Generative-AI-ethics-8-biggest-concerns).  Check whether your university offers secure AI tools; avoid uploading personal information to public platforms.
+
+---
+
+## Future outlook
+
+AI capabilities continue to evolve.  Researchers, funders and institutions are updating guidelines and legislation (e.g. EU AI Act).  Maintaining AI literacy and monitoring policy developments are essential.  Responsible AI use will increasingly be expected as a core research skill [Swedish Research Council news](https://www.vr.se/english/just-now/news/news-archive/2024-04-09-new-guidelines-for-using-ai-in-europe.html).
+
+---
+
+#### Poll: Confidence in responsible AI use
+
+::: panel-tabset
+##### Question
+“How confident are you now about using AI responsibly in your research?” Choose from options such as very confident, somewhat confident, neutral or unsure.
+
+##### Reflection
+- Compare your confidence now to your initial response.  
+- Identify one skill or knowledge gap you plan to address over the next few months.  
+- Set a date to review your progress.  
+:::
+
+---
+
+# Further Information
+- **University guidance on AI:** [UoN guidance](https://www.nottingham.ac.uk/studyingeffectively/studying/ai.aspx) summarises definitions, permitted uses and academic integrity expectations.  
+- **Publisher policies:** [Nature editorial](https://www.nature.com/articles/d41586-023-00191-1) explains why LLMs cannot be credited as authors and when to document AI use.  
+- **Living guidelines:** The European Research Area’s living guidelines on generative AI provide best‑practice recommendations [Swedish Research Council news](https://www.vr.se/english/just-now/news/news-archive/2024-04-09-new-guidelines-for-using-ai-in-europe.html).  
+- **Microsoft responsible AI:** [AzureMentor blog](https://azurementor.wordpress.com/2024/03/08/the-6-microsoft-responsible-ai-principles-explained/) explains the six pillars of Microsoft’s responsible AI framework.  
+- **Generative AI ethics:** [TechTarget article](https://www.techtarget.com/searchenterpriseai/tip/Generative-AI-ethics-8-biggest-concerns) lists ethical concerns and risks of generative AI.  
+
+---
+## References
+
+1. University of Nottingham. “Using generative artificial intelligence (AI).” Available at: [https://www.nottingham.ac.uk/studyingeffectively/studying/ai.aspx](https://www.nottingham.ac.uk/studyingeffectively/studying/ai.aspx).  
+2. Nature Editorial. “Tools such as ChatGPT threaten transparent science; here are our ground rules for their use.” *Nature*, 2023. Available at: [https://www.nature.com/articles/d41586-023-00191-1](https://www.nature.com/articles/d41586-023-00191-1).  
+3. Lawton, G. “Generative AI ethics: 11 biggest concerns and risks.” *TechTarget*, 2025. Available at: [https://www.techtarget.com/searchenterpriseai/tip/Generative-AI-ethics-8-biggest-concerns](https://www.techtarget.com/searchenterpriseai/tip/Generative-AI-ethics-8-biggest-concerns).  
+4. AzureMentor. “The 6 Microsoft Responsible AI principles explained.” 2024. Available at: [https://azurementor.wordpress.com/2024/03/08/the-6-microsoft-responsible-ai-principles-explained/](https://azurementor.wordpress.com/2024/03/08/the-6-microsoft-responsible-ai-principles-explained/).  
+5. Swedish Research Council. “New guidelines for using AI in Europe.” 2024. Available at: [https://www.vr.se/english/just-now/news/news-archive/2024-04-09-new-guidelines-for-using-ai-in-europe.html](https://www.vr.se/english/just-now/news/news-archive/2024-04-09-new-guidelines-for-using-ai-in-europe.html).  
+6. European Commission. “Living guidelines on the responsible use of generative AI in research.” 2024. Available at: [https://research-and-innovation.ec.europa.eu/document/download/2b6cf7e5-36ac-41cb-aab5-0d32050143dc_en](https://research-and-innovation.ec.europa.eu/document/download/2b6cf7e5-36ac-41cb-aab5-0d32050143dc_en).  
