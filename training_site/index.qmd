@@ -82,39 +82,51 @@ Participants develop a digital portfolio of skills, improve their competencies a
 
 ---
 
-::: {.two-col-grid}
-::: {.item}
 ### Structure
 
-The DS&DSP is structured to support learners:
+The DS&DSP is structured to support learners
+[label](https://dev.azure.com/UniversityOfNottingham/DRS/_library)
+::: {.two-col-grid}
+::: {.item}
+
+#### Training tiers
 
 ::: callout-EDS
-- **Foundation** – Essential Digital Skills (*year 1; mandatory*).  Four half‑day sessions introduce the core tools, policies and principles required for computational research.
+##### Foundation 
+Essential Digital Skills (*year 1; mandatory*).  Four half‑day sessions introduce the core tools, policies and principles required for computational research.
 :::
+
+<br>
 
 ::: callout-MDS
-- **Intermediate** – Methods for Data Science (*year 2+; optional*).  Follow up workshops run over one or two academic terms.  Participants choose theoretical and/or applied streams.
+##### Intermediate
+ Methods for Data Science (*year 2+; optional*).  Follow up workshops run over one or two academic terms.  Participants choose theoretical and/or applied streams.
 :::
+
+<br>
 
 ::: callout-DSS
-- **Advanced** – Domain‑specific training (*year 2–3+; tailored*).  Short intensive modules (1-2 days) are scheduled throughout the year based on demand and availability of instructors.
+##### Advanced
+Domain‑specific training (*year 2–3+; tailored*).  Short intensive modules (1-2 days) are scheduled throughout the year based on demand and availability of instructors.
 :::
 
-Progression through the tiers ensures that participants build confidence gradually.  Assessment is formative: each tier culminates in a small project or portfolio review rather than a high‑stakes examination.  Feedback is provided by instructors and peers.
+
 :::
 
 ::: {.item}
-### Delivery
+#### Delivery
 
 Initial delivery is targeted to BBSRC DTP students (2025 cohort), but the programme will be opened to other doctoral and early‑career researchers in subsequent years.  A continuous improvement process ensures that content is updated in response to participant feedback and advances in digital research methods. 
 
 Sessions are delivered primarily in person to foster discussion and collaboration.  Some lectures and code demonstrations are recorded to support revision and remote participation. Participants work in small cohorts, promoting peer learning and networking.  Cohorts are cross‑disciplinary to encourage exchange of ideas. 
 
+Progression through the tiers ensures that participants build confidence gradually.  Assessment is formative: each tier culminates in a small project or portfolio review rather than a high‑stakes examination.  Feedback is provided by instructors and peers.
+
 All materials are released under permissive licences via GitHub, enabling reuse and adaptation by the wider research community.
 :::
 :::::
 
-## Training tiers
+
 
 ### Overview
 

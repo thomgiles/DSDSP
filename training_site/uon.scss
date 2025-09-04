@@ -331,28 +331,59 @@ h5 {
 .callout-EDS{
 
   text-align: center; 
+  padding: 10px;
   background-color: $blue;
    /* force full width */
   width: 100%;
+  color: $white;
+  border: black 1px solid;  
+  border-radius: 5px;
+}
+
+.callout-EDS h5{
+  background-color: darken($blue, 12%);
+  padding: 0.3em;
+  margin: -10px -10px 10px -10px;
+  border-radius: 5px 5px 0 0;
   color: $white;
 }
 
 .callout-MDS{
 
   text-align: center; 
+  padding: 10px;
   background-color: $blue2;
    /* force full width */
   width: 100%;
   color: $white;
+    border: black 1px solid;  
+  border-radius: 5px;
 }
-
+.callout-MDS h5{
+  background-color: darken($blue2, 12%);
+  padding: 0.3em;
+  margin: -10px -10px 10px -10px;
+  border-radius: 5px 5px 0 0;
+  color: $white;
+} 
 
 .callout-DSS{
 
   text-align: center; 
+  padding: 10px;
   background-color: $teal;
    /* force full width */
   width: 100%;
+  color: $white;
+  border: black 1px solid;  
+  border-radius: 5px;
+}
+
+.callout-DSS h5{
+  background-color: darken($teal, 12%);
+  padding: 0.3em;
+  margin: -10px -10px 10px -10px;
+  border-radius: 5px 5px 0 0;
   color: $white;
 }
 
