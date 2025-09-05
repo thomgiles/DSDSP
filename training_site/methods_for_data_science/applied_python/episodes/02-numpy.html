@@ -1,0 +1,1534 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Analyzing Patient Data</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="../../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../../">
+<script src="../../../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../../../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="../../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-3040e6aa784e25eb09acdf8fef43c5e0.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../../site_libs/bootstrap/bootstrap-32781d4f82ce9bab6abafb894ebf0902.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+<script type="text/javascript" charset="UTF-8">
+document.addEventListener('DOMContentLoaded', function () {
+cookieconsent.run({
+  "notice_banner_type":"headline",
+  "consent_type":"express",
+  "palette":"dark",
+  "language":"en",
+  "page_load_consent_levels":["strictly-necessary"],
+  "notice_banner_reject_button_hide":false,
+  "preferences_center_close_button_hide":false,
+  "website_name":""
+  ,
+"language":"en"
+  });
+});
+</script> 
+  
+
+
+<meta property="og:title" content="Analyzing Patient Data">
+<meta property="og:description" content="">
+<meta property="og:image" content="fig/python-zero-index.svg">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="Quarto">
+<meta property="og:image:alt" content="'data' is a 3 by 3 numpy array containing row 0: ['A', 'B', 'C'], row 1: ['D', 'E', 'F'], androw 2: ['G', 'H', 'I']. Starting in the upper left hand corner, data[0, 0] = 'A', data[0, 1] = 'B',data[0, 2] = 'C', data[1, 0] = 'D', data[1, 1] = 'E', data[1, 2] = 'F', data[2, 0] = 'G',data[2, 1] = 'H', and data[2, 2] = 'I', in the bottom right hand corner.">
+</head>
+
+<body class="nav-sidebar docked nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a class="navbar-brand" href="../../../index.html">
+    <span class="navbar-title">DSDS Programme</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-essential-digital-skills" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Essential Digital Skills</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-essential-digital-skills">    
+        <li>
+    <a class="dropdown-item" href="../../../essential_digital_skills/episodes/01-digital_tools.html">
+ <span class="dropdown-text">Digital Tools</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../essential_digital_skills/episodes/02-digital_delivery.html">
+ <span class="dropdown-text">Digital Delivery</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../essential_digital_skills/episodes/03-data_governance_and_policy.html">
+ <span class="dropdown-text">Data Governance and Policy</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../essential_digital_skills/episodes/02-research_data_managment.html">
+ <span class="dropdown-text">Research Data Management</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../essential_digital_skills/episodes/ext1-responsible_ai.html">
+ <span class="dropdown-text">Responsible AI</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../essential_digital_skills/episodes/ext2-hands_on_ai.html">
+ <span class="dropdown-text">Hands-on AI</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-applied-data-science-(python" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Applied Data Science (Python)</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-applied-data-science-(python">    
+        <li>
+    <a class="dropdown-item" href="../../../methods_for_data_science/applied_python/episodes/01-intro.html">
+ <span class="dropdown-text">01 Intro</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../methods_for_data_science/applied_python/episodes/02-numpy.html">
+ <span class="dropdown-text">02 Numpy</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../methods_for_data_science/applied_python/episodes/03-matplotlib.html">
+ <span class="dropdown-text">03 Matplotlib</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../methods_for_data_science/applied_python/episodes/04-lists.html">
+ <span class="dropdown-text">04 Lists</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../methods_for_data_science/applied_python/episodes/05-loop.html">
+ <span class="dropdown-text">05 Loops</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../methods_for_data_science/applied_python/episodes/06-files.html">
+ <span class="dropdown-text">06 Files</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../methods_for_data_science/applied_python/episodes/07-cond.html">
+ <span class="dropdown-text">07 Conditionals</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../methods_for_data_science/applied_python/episodes/08-func.html">
+ <span class="dropdown-text">08 Functions</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../methods_for_data_science/applied_python/episodes/09-errors.html">
+ <span class="dropdown-text">09 Errors</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../methods_for_data_science/applied_python/episodes/10-defensive.html">
+ <span class="dropdown-text">10 Defensive Programming</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../methods_for_data_science/applied_python/episodes/11-debugging.html">
+ <span class="dropdown-text">11 Debugging</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../methods_for_data_science/applied_python/episodes/12-cmdline.html">
+ <span class="dropdown-text">12 Command Line</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-applied-data-science-(r" role="link" data-bs-toggle="dropdown" aria-expanded="false">
+ <span class="menu-text">Applied Data Science (R)</span>
+    </a>
+    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-applied-data-science-(r">    
+        <li>
+    <a class="dropdown-item" href="../../../methods_for_data_science/applied_R/episodes/01-Rstudio_intro.html">
+ <span class="dropdown-text">01 RStudio Intro</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../methods_for_data_science/applied_R/episodes/02-R_variables_intro.html">
+ <span class="dropdown-text">02 R Variables</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../methods_for_data_science/applied_R/episodes/03-R_functions.html">
+ <span class="dropdown-text">03 R Functions</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../methods_for_data_science/applied_R/episodes/04-for_loops.html">
+ <span class="dropdown-text">04 For Loops</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../../../methods_for_data_science/applied_R/episodes/05-the_tidyverse.html">
+ <span class="dropdown-text">05 The Tidyverse</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../essential_digital_skills/index.html">Learning modules</a></li><li class="breadcrumb-item"><a href="../../../methods_for_data_science/index.html">Methods for Data Science</a></li><li class="breadcrumb-item"><a href="../../../methods_for_data_science/applied_python/index.html">Applied Data Sciences (Python)</a></li><li class="breadcrumb-item"><a href="../../../methods_for_data_science/applied_python/episodes/01-intro.html">Episodes</a></li><li class="breadcrumb-item"><a href="../../../methods_for_data_science/applied_python/episodes/02-numpy.html">Analyzing Patient Data</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+  <div id="quarto-announcement" data-announcement-id="bce56eb0bac3c7a5c7957504a2e591c9" class="alert alert-primary hidden"><i class="bi bi-info-circle quarto-announcement-icon"></i><div class="quarto-announcement-content">
+<p><strong>Alert</strong> - This site is currently under construction</p>
+</div><i class="bi bi-x-lg quarto-announcement-action"></i></div>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Learning modules</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../essential_digital_skills/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Essential Digital Skills</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../essential_digital_skills/episodes/01-digital_tools.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Digital Tools</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../essential_digital_skills/episodes/02-digital_delivery.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Digital Delivery</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../essential_digital_skills/episodes/03-data_governance_and_policy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Governance &amp; Policy</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../essential_digital_skills/episodes/02-research_data_managment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Research Data Management</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../essential_digital_skills/episodes/ext1-responsible_ai.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Responsible Use of AI in Research</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../essential_digital_skills/episodes/ext2-hands_on_ai.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Hands‑on with AI for Research</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../methods_for_data_science/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Methods for Data Science</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../methods_for_data_science/applied_python/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Applied Data Sciences (Python)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth3 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true">
+ <span class="menu-text">Episodes</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth4 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../methods_for_data_science/applied_python/episodes/01-intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python Fundamentals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../methods_for_data_science/applied_python/episodes/02-numpy.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Analyzing Patient Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../methods_for_data_science/applied_python/episodes/03-matplotlib.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Visualizing Tabular Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../methods_for_data_science/applied_python/episodes/04-lists.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Storing Multiple Values in Lists</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../methods_for_data_science/applied_python/episodes/05-loop.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Repeating Actions with Loops</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../methods_for_data_science/applied_python/episodes/06-files.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Analyzing Data from Multiple Files</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../methods_for_data_science/applied_python/episodes/07-cond.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Making Choices</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../methods_for_data_science/applied_python/episodes/08-func.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Creating Functions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../methods_for_data_science/applied_python/episodes/09-errors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Errors and Exceptions</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../methods_for_data_science/applied_python/episodes/10-defensive.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Defensive Programming</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../methods_for_data_science/applied_python/episodes/11-debugging.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Debugging</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../methods_for_data_science/applied_python/episodes/12-cmdline.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Command-Line Programs</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false">
+ <span class="menu-text">Learners</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../methods_for_data_science/applied_python/learners/setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Setup</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../methods_for_data_science/applied_python/learners/discuss.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Discussion</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../methods_for_data_science/applied_python/learners/reference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Glossary</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false">
+ <span class="menu-text">Instructors</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../methods_for_data_science/applied_python/instructors/additional_material.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Additional material</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../methods_for_data_science/applied_python/instructors/extra_exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Additional Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../methods_for_data_science/applied_python/instructors/instructor-notes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instructor Notes</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false">
+ <span class="menu-text">Community &amp; Metadata</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../methods_for_data_science/applied_python/CONTRIBUTING.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Contributing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../methods_for_data_science/applied_python/CODE_OF_CONDUCT.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Contributor Code of Conduct</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../methods_for_data_science/applied_python/LICENSE.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Licenses</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../methods_for_data_science/applied_python/AUTHORS.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Authors</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../methods_for_data_science/applied_python/profiles/learner-profiles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Learner Profiles</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="../../../methods_for_data_science/applied_R/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Applied Data Sciences (R)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth3 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false">
+ <span class="menu-text">Episodes</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../methods_for_data_science/applied_R/episodes/01-Rstudio_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction to Rstudio</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../methods_for_data_science/applied_R/episodes/02-R_variables_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R Variables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../methods_for_data_science/applied_R/episodes/03-R_functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Functions in R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../methods_for_data_science/applied_R/episodes/04-for_loops.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">For Loops</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../methods_for_data_science/applied_R/episodes/05-the_tidyverse.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tidyverse and ggplot2 Analysis with Gapminder Dataset</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false">
+ <span class="menu-text">Learners</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../methods_for_data_science/applied_R/learners/setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Setup</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../methods_for_data_science/applied_R/learners/discuss.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Discussion</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../methods_for_data_science/applied_R/learners/reference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Basic Operation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false">
+ <span class="menu-text">Instructors</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../methods_for_data_science/applied_R/instructors/instructor-notes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instructor Notes</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false">
+ <span class="menu-text">Community &amp; Metadata</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../methods_for_data_science/applied_R/CONTRIBUTING.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Contributing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../methods_for_data_science/applied_R/CODE_OF_CONDUCT.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Contributor Code of Conduct</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../methods_for_data_science/applied_R/LICENSE.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Licenses</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../../../methods_for_data_science/applied_R/profiles/learner-profiles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Learner profiles</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#loading-data-into-python" id="toc-loading-data-into-python" class="nav-link active" data-scroll-target="#loading-data-into-python">Loading data into Python</a></li>
+  <li><a href="#slicing-data" id="toc-slicing-data" class="nav-link" data-scroll-target="#slicing-data">Slicing data</a></li>
+  <li><a href="#analyzing-data" id="toc-analyzing-data" class="nav-link" data-scroll-target="#analyzing-data">Analyzing data</a></li>
+  <li><a href="#slicing-strings" id="toc-slicing-strings" class="nav-link" data-scroll-target="#slicing-strings">Slicing Strings</a></li>
+  <li><a href="#thin-slices" id="toc-thin-slices" class="nav-link" data-scroll-target="#thin-slices">Thin Slices</a></li>
+  <li><a href="#stacking-arrays" id="toc-stacking-arrays" class="nav-link" data-scroll-target="#stacking-arrays">Stacking Arrays</a></li>
+  <li><a href="#change-in-inflammation" id="toc-change-in-inflammation" class="nav-link" data-scroll-target="#change-in-inflammation">Change In Inflammation</a></li>
+  </ul>
+<div class="quarto-alternate-formats"><h2>Other Formats</h2><ul><li><a href="02-numpy.revealjs.html"><i class="bi bi-file-slides"></i>RevealJS</a></li><li><a href="02-numpy.pdf"><i class="bi bi-file-pdf"></i>PDF</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../../../essential_digital_skills/index.html">Learning modules</a></li><li class="breadcrumb-item"><a href="../../../methods_for_data_science/index.html">Methods for Data Science</a></li><li class="breadcrumb-item"><a href="../../../methods_for_data_science/applied_python/index.html">Applied Data Sciences (Python)</a></li><li class="breadcrumb-item"><a href="../../../methods_for_data_science/applied_python/episodes/01-intro.html">Episodes</a></li><li class="breadcrumb-item"><a href="../../../methods_for_data_science/applied_python/episodes/02-numpy.html">Analyzing Patient Data</a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title">Analyzing Patient Data</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<div class="objectives">
+<ul>
+<li>Explain what a library is and what libraries are used for.</li>
+<li>Import a Python library and use the functions it contains.</li>
+<li>Read tabular data from a file into a program.</li>
+<li>Select individual values and subsections from data.</li>
+<li>Perform operations on arrays of data.</li>
+</ul>
+</div>
+<div class="questions">
+<ul>
+<li>How can I process tabular data files in Python?</li>
+</ul>
+</div>
+<p>Words are useful, but what’s more useful are the sentences and stories we build with them. Similarly, while a lot of powerful, general tools are built into Python, specialized tools built up from these basic units live in <a href="../../../methods_for_data_science/applied_python/learners/reference.html#library">libraries</a> that can be called upon when needed.</p>
+<section id="loading-data-into-python" class="level2">
+<h2 class="anchored" data-anchor-id="loading-data-into-python">Loading data into Python</h2>
+<p>To begin processing the clinical trial inflammation data, we need to load it into Python. We can do that using a library called <a href="https://numpy.org/doc/stable" title="NumPy Documentation">NumPy</a>, which stands for Numerical Python. In general, you should use this library when you want to do fancy things with lots of numbers, especially if you have matrices or arrays. To tell Python that we’d like to start using NumPy, we need to <a href="../../../methods_for_data_science/applied_python/learners/reference.html#import">import</a> it:</p>
+<div id="3f94016b" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Importing a library is like getting a piece of lab equipment out of a storage locker and setting it up on the bench. Libraries provide additional functionality to the basic Python package, much like a new piece of equipment adds functionality to a lab space. Just like in the lab, importing too many libraries can sometimes complicate and slow down your programs - so we only import what we need for each program.</p>
+<p>Once we’ve imported the library, we can ask the library to read our data file for us:</p>
+<div id="69a257ec" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>numpy.loadtxt(fname<span class="op">=</span><span class="st">'data/inflammation-01.csv'</span>, delimiter<span class="op">=</span><span class="st">','</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="2">
+<pre><code>array([[0., 0., 1., ..., 3., 0., 0.],
+       [0., 1., 2., ..., 1., 0., 1.],
+       [0., 1., 1., ..., 2., 1., 1.],
+       ...,
+       [0., 1., 1., ..., 1., 1., 1.],
+       [0., 0., 0., ..., 0., 2., 0.],
+       [0., 0., 1., ..., 1., 1., 0.]], shape=(60, 40))</code></pre>
+</div>
+</div>
+<p>The expression <code>numpy.loadtxt(...)</code> is a <a href="../../../methods_for_data_science/applied_python/learners/reference.html#function-call">function call</a> that asks Python to run the <a href="../../../methods_for_data_science/applied_python/learners/reference.html#function">function</a> <code>loadtxt</code> which belongs to the <code>numpy</code> library. The dot notation in Python is used most of all as an object attribute/property specifier or for invoking its method. <code>object.property</code> will give you the object.property value, <code>object_name.method()</code> will invoke on object_name method.</p>
+<p>As an example, John Smith is the John that belongs to the Smith family. We could use the dot notation to write his name <code>smith.john</code>, just as <code>loadtxt</code> is a function that belongs to the <code>numpy</code> library.</p>
+<p><code>numpy.loadtxt</code> has two <a href="../../../methods_for_data_science/applied_python/learners/reference.html#parameter">parameters</a>: the name of the file we want to read and the <a href="../../../methods_for_data_science/applied_python/learners/reference.html#delimiter">delimiter</a> that separates values on a line. These both need to be character strings (or <a href="../../../methods_for_data_science/applied_python/learners/reference.html#string">strings</a> for short), so we put them in quotes.</p>
+<p>Since we haven’t told it to do anything else with the function’s output, the <a href="../../../methods_for_data_science/applied_python/learners/reference.html#notebook">notebook</a> displays it. In this case, that output is the data we just loaded. By default, only a few rows and columns are shown (with <code>...</code> to omit elements when displaying big arrays). Note that, to save space when displaying NumPy arrays, Python does not show us trailing zeros, so <code>1.0</code> becomes <code>1.</code>.</p>
+<p>Our call to <code>numpy.loadtxt</code> read our file but didn’t save the data in memory. To do that, we need to assign the array to a variable. In a similar manner to how we assign a single value to a variable, we can also assign an array of values to a variable using the same syntax. Let’s re-run <code>numpy.loadtxt</code> and save the returned data:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> numpy.loadtxt(fname<span class="op">=</span><span class="st">'inflammation-01.csv'</span>, delimiter<span class="op">=</span><span class="st">','</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This statement doesn’t produce any output because we’ve assigned the output to the variable <code>data</code>. If we want to check that the data have been loaded, we can print the variable’s value:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre class="output"><code>[[ 0.  0.  1. ...,  3.  0.  0.]
+ [ 0.  1.  2. ...,  1.  0.  1.]
+ [ 0.  1.  1. ...,  2.  1.  1.]
+ ...,
+ [ 0.  1.  1. ...,  1.  1.  1.]
+ [ 0.  0.  0. ...,  0.  2.  0.]
+ [ 0.  0.  1. ...,  1.  1.  0.]]</code></pre>
+<p>Now that the data are in memory, we can manipulate them. First, let’s ask what <a href="../../../methods_for_data_science/applied_python/learners/reference.html#type">type</a> of thing <code>data</code> refers to:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(data))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre class="output"><code>&lt;class 'numpy.ndarray'&gt;</code></pre>
+<p>The output tells us that <code>data</code> currently refers to an N-dimensional array, the functionality for which is provided by the NumPy library. These data correspond to arthritis patients’ inflammation. The rows are the individual patients, and the columns are their daily inflammation measurements.</p>
+<div class="callout callout-style-simple callout-none no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Data Type
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A Numpy array contains one or more elements of the same type. The <code>type</code> function will only tell you that a variable is a NumPy array but won’t tell you the type of thing inside the array. We can find out the type of the data contained in the NumPy array.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data.dtype)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre class="output"><code>float64</code></pre>
+<p>This tells us that the NumPy array’s elements are <a href="../../../methods_for_data_science/applied_python/learners/reference.html#floating-point-number">floating-point numbers</a>.</p>
+</div>
+</div>
+<p>With the following command, we can see the array’s <a href="../../../methods_for_data_science/applied_python/learners/reference.html#shape">shape</a>:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data.shape)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre class="output"><code>(60, 40)</code></pre>
+<p>The output tells us that the <code>data</code> array variable contains 60 rows and 40 columns. When we created the variable <code>data</code> to store our arthritis data, we did not only create the array; we also created information about the array, called <a href="../../../methods_for_data_science/applied_python/learners/reference.html#member">members</a> or attributes. This extra information describes <code>data</code> in the same way an adjective describes a noun. <code>data.shape</code> is an attribute of <code>data</code> which describes the dimensions of <code>data</code>. We use the same dotted notation for the attributes of variables that we use for the functions in libraries because they have the same part-and-whole relationship.</p>
+<p>If we want to get a single number from the array, we must provide an <a href="../../../methods_for_data_science/applied_python/learners/reference.html#index">index</a> in square brackets after the variable name, just as we do in math when referring to an element of a matrix. Our inflammation data has two dimensions, so we will need to use two indices to refer to one specific value:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'first value in data:'</span>, data[<span class="dv">0</span>, <span class="dv">0</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre class="output"><code>first value in data: 0.0</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'middle value in data:'</span>, data[<span class="dv">29</span>, <span class="dv">19</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre class="output"><code>middle value in data: 16.0</code></pre>
+<p>The expression <code>data[29, 19]</code> accesses the element at row 30, column 20. While this expression may not surprise you, <code>data[0, 0]</code> might. Programming languages like Fortran, MATLAB and R start counting at 1 because that’s what human beings have done for thousands of years. Languages in the C family (including C++, Java, Perl, and Python) count from 0 because it represents an offset from the first value in the array (the second value is offset by one index from the first value). This is closer to the way that computers represent arrays (if you are interested in the historical reasons behind counting indices from zero, you can read <a href="https://exple.tive.org/blarg/2013/10/22/citation-needed/">Mike Hoye’s blog post</a>). As a result, if we have an M×N array in Python, its indices go from 0 to M-1 on the first axis and 0 to N-1 on the second. It takes a bit of getting used to, but one way to remember the rule is that the index is how many steps we have to take from the start to get the item we want.</p>
+<p><img src="fig/python-zero-index.svg" class="img-fluid" alt="'data' is a 3 by 3 numpy array containing row 0: ['A', 'B', 'C'], row 1: ['D', 'E', 'F'], androw 2: ['G', 'H', 'I']. Starting in the upper left hand corner, data[0, 0] = 'A', data[0, 1] = 'B',data[0, 2] = 'C', data[1, 0] = 'D', data[1, 1] = 'E', data[1, 2] = 'F', data[2, 0] = 'G',data[2, 1] = 'H', and data[2, 2] = 'I', in the bottom right hand corner."></p>
+<div class="callout callout-style-simple callout-none no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+In the Corner
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>What may also surprise you is that when Python displays an array, it shows the element with index <code>[0, 0]</code> in the upper left corner rather than the lower left. This is consistent with the way mathematicians draw matrices but different from the Cartesian coordinates. The indices are (row, column) instead of (column, row) for the same reason, which can be confusing when plotting data.</p>
+</div>
+</div>
+</section>
+<section id="slicing-data" class="level2">
+<h2 class="anchored" data-anchor-id="slicing-data">Slicing data</h2>
+<p>An index like <code>[30, 20]</code> selects a single element of an array, but we can select whole sections as well. For example, we can select the first ten days (columns) of values for the first four patients (rows) like this:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data[<span class="dv">0</span>:<span class="dv">4</span>, <span class="dv">0</span>:<span class="dv">10</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre class="output"><code>[[ 0.  0.  1.  3.  1.  2.  4.  7.  8.  3.]
+ [ 0.  1.  2.  1.  2.  1.  3.  2.  2.  6.]
+ [ 0.  1.  1.  3.  3.  2.  6.  2.  5.  9.]
+ [ 0.  0.  2.  0.  4.  2.  2.  1.  6.  7.]]</code></pre>
+<p>The <a href="../../../methods_for_data_science/applied_python/learners/reference.html#slice">slice</a> <code>0:4</code> means, “Start at index 0 and go up to, but not including, index 4”. Again, the up-to-but-not-including takes a bit of getting used to, but the rule is that the difference between the upper and lower bounds is the number of values in the slice.</p>
+<p>We don’t have to start slices at 0:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(data[<span class="dv">5</span>:<span class="dv">10</span>, <span class="dv">0</span>:<span class="dv">10</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre class="output"><code>[[ 0.  0.  1.  2.  2.  4.  2.  1.  6.  4.]
+ [ 0.  0.  2.  2.  4.  2.  2.  5.  5.  8.]
+ [ 0.  0.  1.  2.  3.  1.  2.  3.  5.  3.]
+ [ 0.  0.  0.  3.  1.  5.  6.  5.  5.  8.]
+ [ 0.  1.  1.  2.  1.  3.  5.  3.  5.  8.]]</code></pre>
+<p>We also don’t have to include the upper and lower bound on the slice. If we don’t include the lower bound, Python uses 0 by default; if we don’t include the upper, the slice runs to the end of the axis, and if we don’t include either (i.e., if we use ‘:’ on its own), the slice includes everything:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>small <span class="op">=</span> data[:<span class="dv">3</span>, <span class="dv">36</span>:]</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'small is:'</span>)</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(small)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The above example selects rows 0 through 2 and columns 36 through to the end of the array.</p>
+<pre class="output"><code>small is:
+[[ 2.  3.  0.  0.]
+ [ 1.  1.  0.  1.]
+ [ 2.  2.  1.  1.]]</code></pre>
+</section>
+<section id="analyzing-data" class="level2">
+<h2 class="anchored" data-anchor-id="analyzing-data">Analyzing data</h2>
+<p>NumPy has several useful functions that take an array as input to perform operations on its values. If we want to find the average inflammation for all patients on all days, for example, we can ask NumPy to compute <code>data</code>’s mean value:</p>
+<div class="sourceCode" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(numpy.mean(data))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre class="output"><code>6.14875</code></pre>
+<p><code>mean</code> is a <a href="../../../methods_for_data_science/applied_python/learners/reference.html#function">function</a> that takes an array as an <a href="../../../methods_for_data_science/applied_python/learners/reference.html#argument">argument</a>.</p>
+<div class="callout callout-style-simple callout-none no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Not All Functions Have Input
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Generally, a function uses inputs to produce outputs. However, some functions produce outputs without needing any input. For example, checking the current time doesn’t require any input.</p>
+<div class="sourceCode" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(time.ctime())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre class="output"><code>Sat Mar 26 13:07:33 2016</code></pre>
+<p>For functions that don’t take in any arguments, we still need parentheses (<code>()</code>) to tell Python to go and do something for us.</p>
+</div>
+</div>
+<p>Let’s use three other NumPy functions to get some descriptive values about the dataset. We’ll also use multiple assignment, a convenient Python feature that will enable us to do this all in one line.</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>maxval, minval, stdval <span class="op">=</span> numpy.amax(data), numpy.amin(data), numpy.std(data)</span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'maximum inflammation:'</span>, maxval)</span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'minimum inflammation:'</span>, minval)</span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'standard deviation:'</span>, stdval)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Here we’ve assigned the return value from <code>numpy.amax(data)</code> to the variable <code>maxval</code>, the value from <code>numpy.amin(data)</code> to <code>minval</code>, and so on.</p>
+<pre class="output"><code>maximum inflammation: 20.0
+minimum inflammation: 0.0
+standard deviation: 4.61383319712</code></pre>
+<div class="callout callout-style-simple callout-none no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Mystery Functions in IPython
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>How did we know what functions NumPy has and how to use them? If you are working in IPython or in a Jupyter Notebook, there is an easy way to find out. If you type the name of something followed by a dot, then you can use <a href="../../../methods_for_data_science/applied_python/learners/reference.html#tab-completion">tab completion</a> (e.g.&nbsp;type <code>numpy.</code> and then press <kbd>Tab</kbd>) to see a list of all functions and attributes that you can use. After selecting one, you can also add a question mark (e.g.&nbsp;<code>numpy.cumprod?</code>), and IPython will return an explanation of the method! This is the same as doing <code>help(numpy.cumprod)</code>. Similarly, if you are using the “plain vanilla” Python interpreter, you can type <code>numpy.</code> and press the <kbd>Tab</kbd> key twice for a listing of what is available. You can then use the <code>help()</code> function to see an explanation of the function you’re interested in, for example: <code>help(numpy.cumprod)</code>.</p>
+</div>
+</div>
+<div class="callout callout-style-simple callout-none no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Confusing Function Names
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>One might wonder why the functions are called <code>amax</code> and <code>amin</code> and not <code>max</code> and <code>min</code> or why the other is called <code>mean</code> and not <code>amean</code>. The package <code>numpy</code> does provide functions <code>max</code> and <code>min</code> that are fully equivalent to <code>amax</code> and <code>amin</code>, but they share a name with standard library functions <code>max</code> and <code>min</code> that come with Python itself. Referring to the functions like we did above, that is <code>numpy.max</code> for example, does not cause problems, but there are other ways to refer to them that could. In addition, text editors might highlight (color) these functions like standard library function, even though they belong to NumPy, which can be confusing and lead to errors. Since there is no function called <code>mean</code> in the standard library, there is no function called <code>amean</code>.</p>
+</div>
+</div>
+<p>When analyzing data, though, we often want to look at variations in statistical values, such as the maximum inflammation per patient or the average inflammation per day. One way to do this is to create a new temporary array of the data we want, then ask it to do the calculation:</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>patient_0 <span class="op">=</span> data[<span class="dv">0</span>, :] <span class="co"># 0 on the first axis (rows), everything on the second (columns)</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'maximum inflammation for patient 0:'</span>, numpy.amax(patient_0))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre class="output"><code>maximum inflammation for patient 0: 18.0</code></pre>
+<p>We don’t actually need to store the row in a variable of its own. Instead, we can combine the selection and the function call:</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'maximum inflammation for patient 2:'</span>, numpy.amax(data[<span class="dv">2</span>, :]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre class="output"><code>maximum inflammation for patient 2: 19.0</code></pre>
+<p>What if we need the maximum inflammation for each patient over all days (as in the next diagram on the left) or the average for each day (as in the diagram on the right)? As the diagram below shows, we want to perform the operation across an axis:</p>
+<p><img src="fig/python-operations-across-axes.png" class="img-fluid" alt="Per-patient maximum inflammation is computed row-wise across all columns usingnumpy.amax(data, axis=1). Per-day average inflammation is computed column-wise across all rows usingnumpy.mean(data, axis=0)."></p>
+<p>To support this functionality, most array functions allow us to specify the axis we want to work on. If we ask for the average across axis 0 (rows in our 2D example), we get:</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(numpy.mean(data, axis<span class="op">=</span><span class="dv">0</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre class="output"><code>[  0.           0.45         1.11666667   1.75         2.43333333   3.15
+   3.8          3.88333333   5.23333333   5.51666667   5.95         5.9
+   8.35         7.73333333   8.36666667   9.5          9.58333333
+  10.63333333  11.56666667  12.35        13.25        11.96666667
+  11.03333333  10.16666667  10.           8.66666667   9.15         7.25
+   7.33333333   6.58333333   6.06666667   5.95         5.11666667   3.6
+   3.3          3.56666667   2.48333333   1.5          1.13333333
+   0.56666667]</code></pre>
+<p>As a quick check, we can ask this array what its shape is:</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(numpy.mean(data, axis<span class="op">=</span><span class="dv">0</span>).shape)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre class="output"><code>(40,)</code></pre>
+<p>The expression <code>(40,)</code> tells us we have an N×1 vector, so this is the average inflammation per day for all patients. If we average across axis 1 (columns in our 2D example), we get:</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(numpy.mean(data, axis<span class="op">=</span><span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre class="output"><code>[ 5.45   5.425  6.1    5.9    5.55   6.225  5.975  6.65   6.625  6.525
+  6.775  5.8    6.225  5.75   5.225  6.3    6.55   5.7    5.85   6.55
+  5.775  5.825  6.175  6.1    5.8    6.425  6.05   6.025  6.175  6.55
+  6.175  6.35   6.725  6.125  7.075  5.725  5.925  6.15   6.075  5.75
+  5.975  5.725  6.3    5.9    6.75   5.925  7.225  6.15   5.95   6.275  5.7
+  6.1    6.825  5.975  6.725  5.7    6.25   6.4    7.05   5.9  ]</code></pre>
+<p>which is the average inflammation per patient across all days.</p>
+</section>
+<section id="slicing-strings" class="level2 challenge">
+<h2 class="anchored" data-anchor-id="slicing-strings">Slicing Strings</h2>
+<p>A section of an array is called a <a href="../../../methods_for_data_science/applied_python/learners/reference.html#slice">slice</a>. We can take slices of character strings as well:</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a>element <span class="op">=</span> <span class="st">'oxygen'</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'first three characters:'</span>, element[<span class="dv">0</span>:<span class="dv">3</span>])</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'last three characters:'</span>, element[<span class="dv">3</span>:<span class="dv">6</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre class="output"><code>first three characters: oxy
+last three characters: gen</code></pre>
+<p>What is the value of <code>element[:4]</code>? What about <code>element[4:]</code>? Or <code>element[:]</code>?</p>
+<div class="proof solution">
+<p><span class="proof-title"><em>Solution</em> (Solution). </span></p>
+<pre class="output"><code>oxyg
+en
+oxygen</code></pre>
+</div>
+<p>What is <code>element[-1]</code>? What is <code>element[-2]</code>?</p>
+<div class="proof solution">
+<p><span class="proof-title"><em>Solution</em> (Solution). </span></p>
+<pre class="output"><code>n
+e</code></pre>
+</div>
+<p>Given those answers, explain what <code>element[1:-1]</code> does.</p>
+<div class="proof solution">
+<p><span class="proof-title"><em>Solution</em> (Solution). </span>Creates a substring from index 1 up to (not including) the final index, effectively removing the first and last letters from ‘oxygen’</p>
+</div>
+<p>How can we rewrite the slice for getting the last three characters of <code>element</code>, so that it works even if we assign a different string to <code>element</code>? Test your solution with the following strings: <code>carpentry</code>, <code>clone</code>, <code>hi</code>.</p>
+<div class="proof solution">
+<p><span class="proof-title"><em>Solution</em> (Solution). </span></p>
+<div class="sourceCode" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>element <span class="op">=</span> <span class="st">'oxygen'</span></span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'last three characters:'</span>, element[<span class="op">-</span><span class="dv">3</span>:])</span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>element <span class="op">=</span> <span class="st">'carpentry'</span></span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'last three characters:'</span>, element[<span class="op">-</span><span class="dv">3</span>:])</span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a>element <span class="op">=</span> <span class="st">'clone'</span></span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'last three characters:'</span>, element[<span class="op">-</span><span class="dv">3</span>:])</span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a>element <span class="op">=</span> <span class="st">'hi'</span></span>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'last three characters:'</span>, element[<span class="op">-</span><span class="dv">3</span>:])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre class="output"><code>last three characters: gen
+last three characters: try
+last three characters: one
+last three characters: hi</code></pre>
+</div>
+</section>
+<section id="thin-slices" class="level2 challenge">
+<h2 class="anchored" data-anchor-id="thin-slices">Thin Slices</h2>
+<p>The expression <code>element[3:3]</code> produces an <a href="../../../methods_for_data_science/applied_python/learners/reference.html#empty-string">empty string</a>, i.e., a string that contains no characters. If <code>data</code> holds our array of patient data, what does <code>data[3:3, 4:4]</code> produce? What about <code>data[3:3, :]</code>?</p>
+<div class="proof solution">
+<p><span class="proof-title"><em>Solution</em> (Solution). </span></p>
+<pre class="output"><code>array([], shape=(0, 0), dtype=float64)
+array([], shape=(0, 40), dtype=float64)</code></pre>
+</div>
+</section>
+<section id="stacking-arrays" class="level2 challenge">
+<h2 class="anchored" data-anchor-id="stacking-arrays">Stacking Arrays</h2>
+<p>Arrays can be concatenated and stacked on top of one another, using NumPy’s <code>vstack</code> and <code>hstack</code> functions for vertical and horizontal stacking, respectively.</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy</span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>A <span class="op">=</span> numpy.array([[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], [<span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>], [<span class="dv">7</span>, <span class="dv">8</span>, <span class="dv">9</span>]])</span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'A = '</span>)</span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(A)</span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-7"><a href="#cb46-7" aria-hidden="true" tabindex="-1"></a>B <span class="op">=</span> numpy.hstack([A, A])</span>
+<span id="cb46-8"><a href="#cb46-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'B = '</span>)</span>
+<span id="cb46-9"><a href="#cb46-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(B)</span>
+<span id="cb46-10"><a href="#cb46-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb46-11"><a href="#cb46-11" aria-hidden="true" tabindex="-1"></a>C <span class="op">=</span> numpy.vstack([A, A])</span>
+<span id="cb46-12"><a href="#cb46-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'C = '</span>)</span>
+<span id="cb46-13"><a href="#cb46-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(C)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre class="output"><code>A =
+[[1 2 3]
+ [4 5 6]
+ [7 8 9]]
+B =
+[[1 2 3 1 2 3]
+ [4 5 6 4 5 6]
+ [7 8 9 7 8 9]]
+C =
+[[1 2 3]
+ [4 5 6]
+ [7 8 9]
+ [1 2 3]
+ [4 5 6]
+ [7 8 9]]</code></pre>
+<p>Write some additional code that slices the first and last columns of <code>A</code>, and stacks them into a 3x2 array. Make sure to <code>print</code> the results to verify your solution.</p>
+<div class="proof solution">
+<p><span class="proof-title"><em>Solution</em> (Solution). </span>A ‘gotcha’ with array indexing is that singleton dimensions are dropped by default. That means <code>A[:, 0]</code> is a one dimensional array, which won’t stack as desired. To preserve singleton dimensions, the index itself can be a slice or array. For example, <code>A[:, :1]</code> returns a two dimensional array with one singleton dimension (i.e.&nbsp;a column vector).</p>
+<div class="sourceCode" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a>D <span class="op">=</span> numpy.hstack((A[:, :<span class="dv">1</span>], A[:, <span class="op">-</span><span class="dv">1</span>:]))</span>
+<span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'D = '</span>)</span>
+<span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(D)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre class="output"><code>D =
+[[1 3]
+ [4 6]
+ [7 9]]</code></pre>
+</div>
+<div class="proof solution">
+<p><span class="proof-title"><em>Solution</em> (Solution). </span>An alternative way to achieve the same result is to use Numpy’s delete function to remove the second column of A. If you’re not sure what the parameters of numpy.delete mean, use the help files.</p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a>D <span class="op">=</span> numpy.delete(arr<span class="op">=</span>A, obj<span class="op">=</span><span class="dv">1</span>, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">'D = '</span>)</span>
+<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(D)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre class="output"><code>D =
+[[1 3]
+ [4 6]
+ [7 9]]</code></pre>
+</div>
+</section>
+<section id="change-in-inflammation" class="level2 challenge">
+<h2 class="anchored" data-anchor-id="change-in-inflammation">Change In Inflammation</h2>
+<p>The patient data is <em>longitudinal</em> in the sense that each row represents a series of observations relating to one individual. This means that the change in inflammation over time is a meaningful concept. Let’s find out how to calculate changes in the data contained in an array with NumPy.</p>
+<p>The <code>numpy.diff()</code> function takes an array and returns the differences between two successive values. Let’s use it to examine the changes each day across the first week of patient 3 from our inflammation dataset.</p>
+<div class="sourceCode" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>patient3_week1 <span class="op">=</span> data[<span class="dv">3</span>, :<span class="dv">7</span>]</span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(patient3_week1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre class="output"><code> [0. 0. 2. 0. 4. 2. 2.]</code></pre>
+<p>Calling <code>numpy.diff(patient3_week1)</code> would do the following calculations</p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>[ <span class="dv">0</span> <span class="op">-</span> <span class="dv">0</span>, <span class="dv">2</span> <span class="op">-</span> <span class="dv">0</span>, <span class="dv">0</span> <span class="op">-</span> <span class="dv">2</span>, <span class="dv">4</span> <span class="op">-</span> <span class="dv">0</span>, <span class="dv">2</span> <span class="op">-</span> <span class="dv">4</span>, <span class="dv">2</span> <span class="op">-</span> <span class="dv">2</span> ]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>and return the 6 difference values in a new array.</p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>numpy.diff(patient3_week1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<pre class="output"><code>array([ 0.,  2., -2.,  4., -2.,  0.])</code></pre>
+<p>Note that the array of differences is shorter by one element (length 6).</p>
+<p>When calling <code>numpy.diff</code> with a multi-dimensional array, an <code>axis</code> argument may be passed to the function to specify which axis to process. When applying <code>numpy.diff</code> to our 2D inflammation array <code>data</code>, which axis would we specify?</p>
+<div class="proof solution">
+<p><span class="proof-title"><em>Solution</em> (Solution). </span>Since the row axis (0) is patients, it does not make sense to get the difference between two arbitrary patients. The column axis (1) is in days, so the difference is the change in inflammation – a meaningful concept.</p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a>numpy.diff(data, axis<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>If the shape of an individual data file is <code>(60, 40)</code> (60 rows and 40 columns), what would the shape of the array be after you run the <code>diff()</code> function and why?</p>
+<div class="proof solution">
+<p><span class="proof-title"><em>Solution</em> (Solution). </span>The shape will be <code>(60, 39)</code> because there is one fewer difference between columns than there are columns in the data.</p>
+</div>
+<p>How would you find the largest change in inflammation for each patient? Does it matter if the change in inflammation is an increase or a decrease?</p>
+<div class="proof solution">
+<p><span class="proof-title"><em>Solution</em> (Solution). </span>By using the <code>numpy.amax()</code> function after you apply the <code>numpy.diff()</code> function, you will get the largest difference between days.</p>
+<div class="sourceCode" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a>numpy.amax(numpy.diff(data, axis<span class="op">=</span><span class="dv">1</span>), axis<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb59"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a>array([  <span class="fl">7.</span>,  <span class="fl">12.</span>,  <span class="fl">11.</span>,  <span class="fl">10.</span>,  <span class="fl">11.</span>,  <span class="fl">13.</span>,  <span class="fl">10.</span>,   <span class="fl">8.</span>,  <span class="fl">10.</span>,  <span class="fl">10.</span>,   <span class="fl">7.</span>,</span>
+<span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a>         <span class="fl">7.</span>,  <span class="fl">13.</span>,   <span class="fl">7.</span>,  <span class="fl">10.</span>,  <span class="fl">10.</span>,   <span class="fl">8.</span>,  <span class="fl">10.</span>,   <span class="fl">9.</span>,  <span class="fl">10.</span>,  <span class="fl">13.</span>,   <span class="fl">7.</span>,</span>
+<span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a>        <span class="fl">12.</span>,   <span class="fl">9.</span>,  <span class="fl">12.</span>,  <span class="fl">11.</span>,  <span class="fl">10.</span>,  <span class="fl">10.</span>,   <span class="fl">7.</span>,  <span class="fl">10.</span>,  <span class="fl">11.</span>,  <span class="fl">10.</span>,   <span class="fl">8.</span>,</span>
+<span id="cb59-4"><a href="#cb59-4" aria-hidden="true" tabindex="-1"></a>        <span class="fl">11.</span>,  <span class="fl">12.</span>,  <span class="fl">10.</span>,   <span class="fl">9.</span>,  <span class="fl">10.</span>,  <span class="fl">13.</span>,  <span class="fl">10.</span>,   <span class="fl">7.</span>,   <span class="fl">7.</span>,  <span class="fl">10.</span>,  <span class="fl">13.</span>,</span>
+<span id="cb59-5"><a href="#cb59-5" aria-hidden="true" tabindex="-1"></a>        <span class="fl">12.</span>,   <span class="fl">8.</span>,   <span class="fl">8.</span>,  <span class="fl">10.</span>,  <span class="fl">10.</span>,   <span class="fl">9.</span>,   <span class="fl">8.</span>,  <span class="fl">13.</span>,  <span class="fl">10.</span>,   <span class="fl">7.</span>,  <span class="fl">10.</span>,</span>
+<span id="cb59-6"><a href="#cb59-6" aria-hidden="true" tabindex="-1"></a>         <span class="fl">8.</span>,  <span class="fl">12.</span>,  <span class="fl">10.</span>,   <span class="fl">7.</span>,  <span class="fl">12.</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>If inflammation values <em>decrease</em> along an axis, then the difference from one element to the next will be negative. If you are interested in the <strong>magnitude</strong> of the change and not the direction, the <code>numpy.absolute()</code> function will provide that.</p>
+<p>Notice the difference if you get the largest <em>absolute</em> difference between readings.</p>
+<div class="sourceCode" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a>numpy.amax(numpy.absolute(numpy.diff(data, axis<span class="op">=</span><span class="dv">1</span>)), axis<span class="op">=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb61"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a>array([ <span class="fl">12.</span>,  <span class="fl">14.</span>,  <span class="fl">11.</span>,  <span class="fl">13.</span>,  <span class="fl">11.</span>,  <span class="fl">13.</span>,  <span class="fl">10.</span>,  <span class="fl">12.</span>,  <span class="fl">10.</span>,  <span class="fl">10.</span>,  <span class="fl">10.</span>,</span>
+<span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a>        <span class="fl">12.</span>,  <span class="fl">13.</span>,  <span class="fl">10.</span>,  <span class="fl">11.</span>,  <span class="fl">10.</span>,  <span class="fl">12.</span>,  <span class="fl">13.</span>,   <span class="fl">9.</span>,  <span class="fl">10.</span>,  <span class="fl">13.</span>,   <span class="fl">9.</span>,</span>
+<span id="cb61-3"><a href="#cb61-3" aria-hidden="true" tabindex="-1"></a>        <span class="fl">12.</span>,   <span class="fl">9.</span>,  <span class="fl">12.</span>,  <span class="fl">11.</span>,  <span class="fl">10.</span>,  <span class="fl">13.</span>,   <span class="fl">9.</span>,  <span class="fl">13.</span>,  <span class="fl">11.</span>,  <span class="fl">11.</span>,   <span class="fl">8.</span>,</span>
+<span id="cb61-4"><a href="#cb61-4" aria-hidden="true" tabindex="-1"></a>        <span class="fl">11.</span>,  <span class="fl">12.</span>,  <span class="fl">13.</span>,   <span class="fl">9.</span>,  <span class="fl">10.</span>,  <span class="fl">13.</span>,  <span class="fl">11.</span>,  <span class="fl">11.</span>,  <span class="fl">13.</span>,  <span class="fl">11.</span>,  <span class="fl">13.</span>,</span>
+<span id="cb61-5"><a href="#cb61-5" aria-hidden="true" tabindex="-1"></a>        <span class="fl">13.</span>,  <span class="fl">10.</span>,   <span class="fl">9.</span>,  <span class="fl">10.</span>,  <span class="fl">10.</span>,   <span class="fl">9.</span>,   <span class="fl">9.</span>,  <span class="fl">13.</span>,  <span class="fl">10.</span>,   <span class="fl">9.</span>,  <span class="fl">10.</span>,</span>
+<span id="cb61-6"><a href="#cb61-6" aria-hidden="true" tabindex="-1"></a>        <span class="fl">11.</span>,  <span class="fl">13.</span>,  <span class="fl">10.</span>,  <span class="fl">10.</span>,  <span class="fl">12.</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<div class="keypoints">
+<ul>
+<li>Import a library into a program using <code>import libraryname</code>.</li>
+<li>Use the <code>numpy</code> library to work with arrays in Python.</li>
+<li>The expression <code>array.shape</code> gives the shape of an array.</li>
+<li>Use <code>array[x, y]</code> to select a single element from a 2D array.</li>
+<li>Array indices start at 0, not 1.</li>
+<li>Use <code>low:high</code> to specify a <code>slice</code> that includes the indices from <code>low</code> to <code>high-1</code>.</li>
+<li>Use <code># some kind of explanation</code> to add comments to programs.</li>
+<li>Use <code>numpy.mean(array)</code>, <code>numpy.amax(array)</code>, and <code>numpy.amin(array)</code> to calculate simple statistics.</li>
+<li>Use <code>numpy.mean(array, axis=0)</code> or <code>numpy.mean(array, axis=1)</code> to calculate statistics across the specified axis.</li>
+</ul>
+</div>
+
+
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../../../training_site/assets/UoN_dark_logo.png" class="img-fluid figure-img"></p>
+<figcaption>Logo image</figcaption>
+</figure>
+</div>
+</div>   
+    <div class="nav-footer-center">
+
+<div class="cookie-consent-footer"><a href="#" id="open_preferences_center">Cookie Preferences</a></div></div>
+    <div class="nav-footer-right">
+      &nbsp;
+    </div>
+  </div>
+</footer>
+
+
+
+
+</body></html>

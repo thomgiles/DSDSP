@@ -1,6 +1,18 @@
 ---
 title: "Data Science & Digital Skills Programme"
 subtitle: "Building core competencies for modern, reproducible research"
+
+about:
+  id: hero-heading
+  template: jolla
+  image: assets/Logo_white_500.png
+  links:
+    - icon: twitter
+      text: Twitter
+      href: https://twitter.com
+    - icon: github
+      text: GitHub
+      href: https://github.com
 format:
   html:
     theme:
@@ -12,12 +24,15 @@ format:
     sidebar: false
 ---
 
+:::{#hero-heading}
+The **Data Science & Digital Skills Programme (DS&DSP)** is a one-year, in-person training initiative that equips researchers with the essential digital competencies for modern, reproducible, and data-intensive research. 
+:::
+
+
 ::: {.callout-quote}
 *"Modern research projects routinely involve code, large data sets and complex computational workflows.  
 Yet many researchers have limited exposure to software engineering, digital infrastructure or best practices for managing data.  The DS&DSP addresses this gap by providing a structured training pathway aligned with open science and research integrity principles."*
 :::
-
-
 
 ::: {.two-col-grid}
 ::: {.item}
@@ -48,6 +63,7 @@ The Data Science & Digital Skills Programme (DS&DSP) is a one-year, in-person tr
 **Structured progression**  
 <br>
 The programme is organised into foundation, intermediate and advanced tiers, allowing participants to build their skills incrementally and revisit concepts as needed.
+
 :::
 
 ::: {.item}
@@ -55,6 +71,7 @@ The programme is organised into foundation, intermediate and advanced tiers, all
 **Hands-on learning**  
 <br>
 Each session combines didactic lectures and collaborative exercises such as scenario-based tasks to reinforce understanding through practice.
+
 :::
 
 ::: {.item}
@@ -62,6 +79,7 @@ Each session combines didactic lectures and collaborative exercises such as scen
 **Open science focus**  
 <br>
 Modules emphasise FAIR (findable, accessible, interoperable and reusable) data principles, reproducible workflows and responsible data governance.
+
 :::
 
 ::: {.item}
@@ -69,6 +87,7 @@ Modules emphasise FAIR (findable, accessible, interoperable and reusable) data p
 **Discipline-agnostic**  
 <br>
 Although developed for BBSRC doctoral researchers, the methods and tools apply across research domains, and later tiers offer optional domain-specific modules.
+
 :::
 
 ::: {.item}
@@ -76,6 +95,7 @@ Although developed for BBSRC doctoral researchers, the methods and tools apply a
 **Portfolio-building**  
 <br>
 Participants develop a digital portfolio of skills, improve their competencies and gain tools that they can be reused in their own research.
+
 :::
 :::
 :::
@@ -85,15 +105,9 @@ Participants develop a digital portfolio of skills, improve their competencies a
 ### Structure
 
 The DS&DSP is structured to support learners
-<<<<<<< HEAD
-<<<<<<< HEAD
 
-=======
 [label](https://dev.azure.com/UniversityOfNottingham/DRS/_library)
->>>>>>> More
-=======
 
->>>>>>> Update
 ::: {.two-col-grid}
 ::: {.item}
 
@@ -103,23 +117,6 @@ The DS&DSP is structured to support learners
 ::: callout-EDS
 ##### Foundation 
 Essential Digital Skills (*year 1; mandatory*).  Four half‑day sessions introduce the core tools, policies and principles required for computational research.
-<<<<<<< HEAD
-:::
-
-<br>
-
-::: callout-MDS
-##### Intermediate
- Methods for Data Science (*year 2+; optional*).  Follow up workshops run over one or two academic terms.  Participants choose theoretical and/or applied streams.
-:::
-
-<br>
-
-::: callout-DSS
-##### Advanced
-Domain‑specific training (*year 2–3+; tailored*).  Short intensive modules (1-2 days) are scheduled throughout the year based on demand and availability of instructors.
-=======
->>>>>>> More
 :::
 
 <br>
@@ -136,10 +133,20 @@ Domain‑specific training (*year 2–3+; tailored*).  Short intensive modules 
 Domain‑specific training (*year 2–3+; tailored*).  Short intensive modules (1-2 days) are scheduled throughout the year based on demand and availability of instructors.
 :::
 
-<<<<<<< HEAD
-=======
+<br>
 
->>>>>>> More
+::: callout-MDS
+##### Intermediate
+ Methods for Data Science (*year 2+; optional*).  Follow up workshops run over one or two academic terms.  Participants choose theoretical and/or applied streams.
+:::
+
+<br>
+
+::: callout-DSS
+##### Advanced
+Domain‑specific training (*year 2–3+; tailored*).  Short intensive modules (1-2 days) are scheduled throughout the year based on demand and availability of instructors.
+:::
+
 :::
 
 ::: {.item}

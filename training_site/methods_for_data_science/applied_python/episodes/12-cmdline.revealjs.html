@@ -1,0 +1,1249 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="../../../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../../../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="../../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../../../site_libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.7.32">
+
+  <title>Command-Line Programs</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    html { -webkit-text-size-adjust: 100%; }
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; font-weight: bold; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../../../site_libs/revealjs/dist/theme/quarto-4fca5682252e98be3e7ec7a8de00b0cb.css">
+  
+  <script type="text/javascript" charset="UTF-8">
+  document.addEventListener('DOMContentLoaded', function () {
+  cookieconsent.run({
+    "notice_banner_type":"headline",
+    "consent_type":"express",
+    "palette":"dark",
+    "language":"en",
+    "page_load_consent_levels":["strictly-necessary"],
+    "notice_banner_reject_button_hide":false,
+    "preferences_center_close_button_hide":false,
+    "website_name":""
+    ,
+  "language":"en"
+    });
+  });
+  </script> 
+    
+  <link href="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../../../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="../../../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="../../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+<meta property="og:title" content="Command-Line Programs">
+<meta property="og:locale" content="es_ES">
+<meta property="og:site_name" content="Quarto">
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" class="quarto-title-block center">
+  <h1 class="title">Command-Line Programs</h1>
+
+<div class="quarto-title-authors">
+</div>
+
+</section>
+<section class="slide level2 scrollable">
+
+<div class="objectives">
+<ul>
+<li>Use the values of command-line arguments in a program.</li>
+<li>Handle flags and files separately in a command-line program.</li>
+<li>Read data from standard input in a program so that it can be used in a pipeline.</li>
+</ul>
+</div>
+<div class="questions">
+<ul>
+<li>How can I write Python programs that will work like Unix command-line tools?</li>
+</ul>
+</div>
+<p>The Jupyter Notebook and other interactive tools are great for prototyping code and exploring data, but sooner or later we will want to use our program in a pipeline or run it in a shell script to process thousands of data files. In order to do that in an efficient way, we need to make our programs work like other Unix command-line tools. For example, we may want a program that reads a dataset and prints the average inflammation per patient.</p>
+<div class="callout callout-none no-icon callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Switching to Shell Commands</strong></p>
+</div>
+<div class="callout-content">
+<p>In this lesson we are switching from typing commands in a Python interpreter to typing commands in a shell terminal window (such as bash). When you see a <code>$</code> in front of a command that tells you to run that command in the shell rather than the Python interpreter.</p>
+</div>
+</div>
+</div>
+<p>This program does exactly what we want - it prints the average inflammation per patient for a given file.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a></a><span class="ex">$</span> python ../code/readings_04.py <span class="at">--mean</span> inflammation-01.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource output number-lines code-with-copy"><code class="sourceCode"><span id="cb2-1"><a></a>5.45</span>
+<span id="cb2-2"><a></a>5.425</span>
+<span id="cb2-3"><a></a>6.1</span>
+<span id="cb2-4"><a></a>...</span>
+<span id="cb2-5"><a></a>6.4</span>
+<span id="cb2-6"><a></a>7.05</span>
+<span id="cb2-7"><a></a>5.9</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>We might also want to look at the minimum of the first four lines</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a></a><span class="ex">$</span> head <span class="at">-4</span> inflammation-01.csv <span class="kw">|</span> <span class="ex">python</span> ../code/readings_06.py <span class="at">--min</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>or the maximum inflammations in several files one after another:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a></a><span class="ex">$</span> python ../code/readings_04.py <span class="at">--max</span> inflammation-<span class="pp">*</span>.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Our scripts should do the following:</p>
+<ol type="1">
+<li>If no filename is given on the command line, read data from <a href="../../../methods_for_data_science/applied_python/learners/reference.html#standard-input">standard input</a>.</li>
+<li>If one or more filenames are given, read data from them and report statistics for each file separately.</li>
+<li>Use the <code>--min</code>, <code>--mean</code>, or <code>--max</code> flag to determine what statistic to print.</li>
+</ol>
+<p>To make this work, we need to know how to handle command-line arguments in a program, and understand how to handle standard input. We’ll tackle these questions in turn below.</p>
+</section>
+<section id="command-line-arguments" class="slide level2">
+<h2>Command-Line Arguments</h2>
+<p>We are going to create a file with our python code in, then use the bash shell to run the code. Using the text editor of your choice, save the following in a text file called <code>sys_version.py</code>:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a></a><span class="im">import</span> sys</span>
+<span id="cb5-2"><a></a><span class="bu">print</span>(<span class="st">'version is'</span>, sys.version)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The first line imports a library called <code>sys</code>, which is short for “system”. It defines values such as <code>sys.version</code>, which describes which version of Python we are running. We can run this script from the command line like this:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a></a><span class="ex">$</span> python sys_version.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode numberSource output number-lines code-with-copy"><code class="sourceCode"><span id="cb7-1"><a></a>version is 3.4.3+ (default, Jul 28 2015, 13:17:50)</span>
+<span id="cb7-2"><a></a>[GCC 4.9.3]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Create another file called <code>argv_list.py</code> and save the following text to it.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a></a><span class="im">import</span> sys</span>
+<span id="cb8-2"><a></a><span class="bu">print</span>(<span class="st">'sys.argv is'</span>, sys.argv)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>The strange name <code>argv</code> stands for “argument values”. Whenever Python runs a program, it takes all of the values given on the command line and puts them in the list <code>sys.argv</code> so that the program can determine what they were. If we run this program with no arguments:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a></a><span class="ex">$</span> python argv_list.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode numberSource output number-lines code-with-copy"><code class="sourceCode"><span id="cb10-1"><a></a>sys.argv is ['argv_list.py']</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>the only thing in the list is the full path to our script, which is always <code>sys.argv[0]</code>. If we run it with a few arguments, however:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a></a><span class="ex">$</span> python argv_list.py first second third</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode numberSource output number-lines code-with-copy"><code class="sourceCode"><span id="cb12-1"><a></a>sys.argv is ['argv_list.py', 'first', 'second', 'third']</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>then Python adds each of those arguments to that magic list.</p>
+<p>With this in hand, let’s build a version of <code>readings.py</code> that always prints the per-patient mean of a single data file. The first step is to write a function that outlines our implementation, and a placeholder for the function that does the actual work. By convention this function is usually called <code>main</code>, though we can call it whatever we want:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a></a><span class="ex">$</span> cat ../code/readings_01.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a></a><span class="im">import</span> sys</span>
+<span id="cb14-2"><a></a><span class="im">import</span> numpy</span>
+<span id="cb14-3"><a></a></span>
+<span id="cb14-4"><a></a></span>
+<span id="cb14-5"><a></a><span class="kw">def</span> main():</span>
+<span id="cb14-6"><a></a>    script <span class="op">=</span> sys.argv[<span class="dv">0</span>]</span>
+<span id="cb14-7"><a></a>    filename <span class="op">=</span> sys.argv[<span class="dv">1</span>]</span>
+<span id="cb14-8"><a></a>    data <span class="op">=</span> numpy.loadtxt(filename, delimiter<span class="op">=</span><span class="st">','</span>)</span>
+<span id="cb14-9"><a></a>    <span class="cf">for</span> row_mean <span class="kw">in</span> numpy.mean(data, axis<span class="op">=</span><span class="dv">1</span>):</span>
+<span id="cb14-10"><a></a>        <span class="bu">print</span>(row_mean)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This function gets the name of the script from <code>sys.argv[0]</code>, because that’s where it’s always put, and the name of the file to process from <code>sys.argv[1]</code>. Here’s a simple test:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb15-1"><a></a><span class="ex">$</span> python ../code/readings_01.py inflammation-01.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>There is no output because we have defined a function, but haven’t actually called it. Let’s add a call to <code>main</code>:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb16-1"><a></a><span class="ex">$</span> cat ../code/readings_02.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a></a><span class="im">import</span> sys</span>
+<span id="cb17-2"><a></a><span class="im">import</span> numpy</span>
+<span id="cb17-3"><a></a></span>
+<span id="cb17-4"><a></a><span class="kw">def</span> main():</span>
+<span id="cb17-5"><a></a>    script <span class="op">=</span> sys.argv[<span class="dv">0</span>]</span>
+<span id="cb17-6"><a></a>    filename <span class="op">=</span> sys.argv[<span class="dv">1</span>]</span>
+<span id="cb17-7"><a></a>    data <span class="op">=</span> numpy.loadtxt(filename, delimiter<span class="op">=</span><span class="st">','</span>)</span>
+<span id="cb17-8"><a></a>    <span class="cf">for</span> row_mean <span class="kw">in</span> numpy.mean(data, axis<span class="op">=</span><span class="dv">1</span>):</span>
+<span id="cb17-9"><a></a>        <span class="bu">print</span>(row_mean)</span>
+<span id="cb17-10"><a></a></span>
+<span id="cb17-11"><a></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">'__main__'</span>:</span>
+<span id="cb17-12"><a></a>    main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>and run that:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb18-1"><a></a><span class="ex">$</span> python ../code/readings_02.py inflammation-01.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode numberSource output number-lines code-with-copy"><code class="sourceCode"><span id="cb19-1"><a></a>5.45</span>
+<span id="cb19-2"><a></a>5.425</span>
+<span id="cb19-3"><a></a>6.1</span>
+<span id="cb19-4"><a></a>5.9</span>
+<span id="cb19-5"><a></a>5.55</span>
+<span id="cb19-6"><a></a>6.225</span>
+<span id="cb19-7"><a></a>5.975</span>
+<span id="cb19-8"><a></a>6.65</span>
+<span id="cb19-9"><a></a>6.625</span>
+<span id="cb19-10"><a></a>6.525</span>
+<span id="cb19-11"><a></a>6.775</span>
+<span id="cb19-12"><a></a>5.8</span>
+<span id="cb19-13"><a></a>6.225</span>
+<span id="cb19-14"><a></a>5.75</span>
+<span id="cb19-15"><a></a>5.225</span>
+<span id="cb19-16"><a></a>6.3</span>
+<span id="cb19-17"><a></a>6.55</span>
+<span id="cb19-18"><a></a>5.7</span>
+<span id="cb19-19"><a></a>5.85</span>
+<span id="cb19-20"><a></a>6.55</span>
+<span id="cb19-21"><a></a>5.775</span>
+<span id="cb19-22"><a></a>5.825</span>
+<span id="cb19-23"><a></a>6.175</span>
+<span id="cb19-24"><a></a>6.1</span>
+<span id="cb19-25"><a></a>5.8</span>
+<span id="cb19-26"><a></a>6.425</span>
+<span id="cb19-27"><a></a>6.05</span>
+<span id="cb19-28"><a></a>6.025</span>
+<span id="cb19-29"><a></a>6.175</span>
+<span id="cb19-30"><a></a>6.55</span>
+<span id="cb19-31"><a></a>6.175</span>
+<span id="cb19-32"><a></a>6.35</span>
+<span id="cb19-33"><a></a>6.725</span>
+<span id="cb19-34"><a></a>6.125</span>
+<span id="cb19-35"><a></a>7.075</span>
+<span id="cb19-36"><a></a>5.725</span>
+<span id="cb19-37"><a></a>5.925</span>
+<span id="cb19-38"><a></a>6.15</span>
+<span id="cb19-39"><a></a>6.075</span>
+<span id="cb19-40"><a></a>5.75</span>
+<span id="cb19-41"><a></a>5.975</span>
+<span id="cb19-42"><a></a>5.725</span>
+<span id="cb19-43"><a></a>6.3</span>
+<span id="cb19-44"><a></a>5.9</span>
+<span id="cb19-45"><a></a>6.75</span>
+<span id="cb19-46"><a></a>5.925</span>
+<span id="cb19-47"><a></a>7.225</span>
+<span id="cb19-48"><a></a>6.15</span>
+<span id="cb19-49"><a></a>5.95</span>
+<span id="cb19-50"><a></a>6.275</span>
+<span id="cb19-51"><a></a>5.7</span>
+<span id="cb19-52"><a></a>6.1</span>
+<span id="cb19-53"><a></a>6.825</span>
+<span id="cb19-54"><a></a>5.975</span>
+<span id="cb19-55"><a></a>6.725</span>
+<span id="cb19-56"><a></a>5.7</span>
+<span id="cb19-57"><a></a>6.25</span>
+<span id="cb19-58"><a></a>6.4</span>
+<span id="cb19-59"><a></a>7.05</span>
+<span id="cb19-60"><a></a>5.9</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-none no-icon callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>Running Versus Importing</strong></p>
+</div>
+<div class="callout-content">
+<p>Running a Python script in bash is very similar to importing that file in Python. The biggest difference is that we don’t expect anything to happen when we import a file, whereas when running a script, we expect to see some output printed to the console.</p>
+<p>In order for a Python script to work as expected when imported or when run as a script, we typically put the part of the script that produces output in the following if statement:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">'__main__'</span>:</span>
+<span id="cb20-2"><a></a>    main()  <span class="co"># Or whatever function produces output</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>When you import a Python file, <code>__name__</code> is the name of that file (e.g., when importing <code>readings.py</code>, <code>__name__</code> is <code>'readings'</code>). However, when running a script in bash, <code>__name__</code> is always set to <code>'__main__'</code> in that script so that you can determine if the file is being imported or run as a script.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-none no-icon callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>The Right Way to Do It</strong></p>
+</div>
+<div class="callout-content">
+<p>If our programs can take complex parameters or multiple filenames, we shouldn’t handle <code>sys.argv</code> directly. Instead, we should use Python’s <code>argparse</code> library, which handles common cases in a systematic way, and also makes it easy for us to provide sensible error messages for our users. We will not cover this module in this lesson but you can go to Tshepang Lekhonkhobe’s <a href="https://docs.python.org/3/howto/argparse.html">Argparse tutorial</a> that is part of Python’s Official Documentation.</p>
+<p>We can also use the <code>argh</code> library, a wrapper around the <code>argparse</code> library that simplifies its usage (see <a href="https://pythonhosted.org/argh/">the argh documentation</a> for more information).</p>
+</div>
+</div>
+</div>
+</section>
+<section id="handling-multiple-files" class="slide level2">
+<h2>Handling Multiple Files</h2>
+<p>The next step is to teach our program how to handle multiple files. Since 60 lines of output per file is a lot to page through, we’ll start by using three smaller files, each of which has three days of data for two patients:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a></a><span class="ex">$</span> ls small-<span class="pp">*</span>.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode numberSource output number-lines code-with-copy"><code class="sourceCode"><span id="cb22-1"><a></a>small-01.csv small-02.csv small-03.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb23-1"><a></a><span class="ex">$</span> cat small-01.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode numberSource output number-lines code-with-copy"><code class="sourceCode"><span id="cb24-1"><a></a>0,0,1</span>
+<span id="cb24-2"><a></a>0,1,2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb25"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a></a><span class="ex">$</span> python ../code/readings_02.py small-01.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode numberSource output number-lines code-with-copy"><code class="sourceCode"><span id="cb26-1"><a></a>0.333333333333</span>
+<span id="cb26-2"><a></a>1.0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Using small data files as input also allows us to check our results more easily: here, for example, we can see that our program is calculating the mean correctly for each line, whereas we were really taking it on faith before. This is yet another rule of programming: <em>test the simple things first</em>.</p>
+<p>We want our program to process each file separately, so we need a loop that executes once for each filename. If we specify the files on the command line, the filenames will be in <code>sys.argv</code>, but we need to be careful: <code>sys.argv[0]</code> will always be the name of our script, rather than the name of a file. We also need to handle an unknown number of filenames, since our program could be run for any number of files.</p>
+<p>The solution to both problems is to loop over the contents of <code>sys.argv[1:]</code>. The ‘1’ tells Python to start the slice at location 1, so the program’s name isn’t included; since we’ve left off the upper bound, the slice runs to the end of the list, and includes all the filenames. Here’s our changed program <code>readings_03.py</code>:</p>
+<div class="sourceCode" id="cb27"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb27-1"><a></a><span class="ex">$</span> cat ../code/readings_03.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a></a><span class="im">import</span> sys</span>
+<span id="cb28-2"><a></a><span class="im">import</span> numpy</span>
+<span id="cb28-3"><a></a></span>
+<span id="cb28-4"><a></a><span class="kw">def</span> main():</span>
+<span id="cb28-5"><a></a>    script <span class="op">=</span> sys.argv[<span class="dv">0</span>]</span>
+<span id="cb28-6"><a></a>    <span class="cf">for</span> filename <span class="kw">in</span> sys.argv[<span class="dv">1</span>:]:</span>
+<span id="cb28-7"><a></a>        data <span class="op">=</span> numpy.loadtxt(filename, delimiter<span class="op">=</span><span class="st">','</span>)</span>
+<span id="cb28-8"><a></a>        <span class="cf">for</span> row_mean <span class="kw">in</span> numpy.mean(data, axis<span class="op">=</span><span class="dv">1</span>):</span>
+<span id="cb28-9"><a></a>            <span class="bu">print</span>(row_mean)</span>
+<span id="cb28-10"><a></a></span>
+<span id="cb28-11"><a></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">'__main__'</span>:</span>
+<span id="cb28-12"><a></a>    main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>and here it is in action:</p>
+<div class="sourceCode" id="cb29"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a></a><span class="ex">$</span> python ../code/readings_03.py small-01.csv small-02.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode numberSource output number-lines code-with-copy"><code class="sourceCode"><span id="cb30-1"><a></a>0.333333333333</span>
+<span id="cb30-2"><a></a>1.0</span>
+<span id="cb30-3"><a></a>13.6666666667</span>
+<span id="cb30-4"><a></a>11.0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-none no-icon callout-titled callout-style-simple">
+<div class="callout-body">
+<div class="callout-title">
+<p><strong>The Right Way to Do It</strong></p>
+</div>
+<div class="callout-content">
+<p>At this point, we have created three versions of our script called <code>readings_01.py</code>, <code>readings_02.py</code>, and <code>readings_03.py</code>. We wouldn’t do this in real life: instead, we would have one file called <code>readings.py</code> that we committed to version control every time we got an enhancement working. For teaching, though, we need all the successive versions side by side.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="handling-command-line-flags" class="slide level2 scrollable">
+<h2>Handling Command-Line Flags</h2>
+<p>The next step is to teach our program to pay attention to the <code>--min</code>, <code>--mean</code>, and <code>--max</code> flags. These always appear before the names of the files, so we could do this:</p>
+<div class="sourceCode" id="cb31"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb31-1"><a></a><span class="ex">$</span> cat ../code/readings_04.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a></a><span class="im">import</span> sys</span>
+<span id="cb32-2"><a></a><span class="im">import</span> numpy</span>
+<span id="cb32-3"><a></a></span>
+<span id="cb32-4"><a></a><span class="kw">def</span> main():</span>
+<span id="cb32-5"><a></a>    script <span class="op">=</span> sys.argv[<span class="dv">0</span>]</span>
+<span id="cb32-6"><a></a>    action <span class="op">=</span> sys.argv[<span class="dv">1</span>]</span>
+<span id="cb32-7"><a></a>    filenames <span class="op">=</span> sys.argv[<span class="dv">2</span>:]</span>
+<span id="cb32-8"><a></a></span>
+<span id="cb32-9"><a></a>    <span class="cf">for</span> filename <span class="kw">in</span> filenames:</span>
+<span id="cb32-10"><a></a>        data <span class="op">=</span> numpy.loadtxt(filename, delimiter<span class="op">=</span><span class="st">','</span>)</span>
+<span id="cb32-11"><a></a></span>
+<span id="cb32-12"><a></a>        <span class="cf">if</span> action <span class="op">==</span> <span class="st">'--min'</span>:</span>
+<span id="cb32-13"><a></a>            values <span class="op">=</span> numpy.amin(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb32-14"><a></a>        <span class="cf">elif</span> action <span class="op">==</span> <span class="st">'--mean'</span>:</span>
+<span id="cb32-15"><a></a>            values <span class="op">=</span> numpy.mean(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb32-16"><a></a>        <span class="cf">elif</span> action <span class="op">==</span> <span class="st">'--max'</span>:</span>
+<span id="cb32-17"><a></a>            values <span class="op">=</span> numpy.amax(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb32-18"><a></a></span>
+<span id="cb32-19"><a></a>        <span class="cf">for</span> val <span class="kw">in</span> values:</span>
+<span id="cb32-20"><a></a>            <span class="bu">print</span>(val)</span>
+<span id="cb32-21"><a></a></span>
+<span id="cb32-22"><a></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">'__main__'</span>:</span>
+<span id="cb32-23"><a></a>    main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This works:</p>
+<div class="sourceCode" id="cb33"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb33-1"><a></a><span class="ex">$</span> python ../code/readings_04.py <span class="at">--max</span> small-01.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode numberSource output number-lines code-with-copy"><code class="sourceCode"><span id="cb34-1"><a></a>1.0</span>
+<span id="cb34-2"><a></a>2.0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>but there are several things wrong with it:</p>
+<ol type="1">
+<li><p><code>main</code> is too large to read comfortably.</p></li>
+<li><p>If we do not specify at least two additional arguments on the command-line, one for the <strong>flag</strong> and one for the <strong>filename</strong>, but only one, the program will not throw an exception but will run. It assumes that the file list is empty, as <code>sys.argv[1]</code> will be considered the <code>action</code>, even if it is a filename. <a href="../../../methods_for_data_science/applied_python/learners/reference.html#silence-failure">Silent failures</a> like this are always hard to debug.</p></li>
+<li><p>The program should check if the submitted <code>action</code> is one of the three recognized flags.</p></li>
+</ol>
+<p>This version pulls the processing of each file out of the loop into a function of its own. It also checks that <code>action</code> is one of the allowed flags before doing any processing, so that the program fails fast:</p>
+<div class="sourceCode" id="cb35"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb35-1"><a></a><span class="ex">$</span> cat ../code/readings_05.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb36"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a></a><span class="im">import</span> sys</span>
+<span id="cb36-2"><a></a><span class="im">import</span> numpy</span>
+<span id="cb36-3"><a></a></span>
+<span id="cb36-4"><a></a><span class="kw">def</span> main():</span>
+<span id="cb36-5"><a></a>    script <span class="op">=</span> sys.argv[<span class="dv">0</span>]</span>
+<span id="cb36-6"><a></a>    action <span class="op">=</span> sys.argv[<span class="dv">1</span>]</span>
+<span id="cb36-7"><a></a>    filenames <span class="op">=</span> sys.argv[<span class="dv">2</span>:]</span>
+<span id="cb36-8"><a></a>    <span class="cf">assert</span> action <span class="kw">in</span> [<span class="st">'--min'</span>, <span class="st">'--mean'</span>, <span class="st">'--max'</span>], <span class="op">\</span></span>
+<span id="cb36-9"><a></a>           <span class="st">'Action is not one of --min, --mean, or --max: '</span> <span class="op">+</span> action</span>
+<span id="cb36-10"><a></a>    <span class="cf">for</span> filename <span class="kw">in</span> filenames:</span>
+<span id="cb36-11"><a></a>        process(filename, action)</span>
+<span id="cb36-12"><a></a></span>
+<span id="cb36-13"><a></a><span class="kw">def</span> process(filename, action):</span>
+<span id="cb36-14"><a></a>    data <span class="op">=</span> numpy.loadtxt(filename, delimiter<span class="op">=</span><span class="st">','</span>)</span>
+<span id="cb36-15"><a></a></span>
+<span id="cb36-16"><a></a>    <span class="cf">if</span> action <span class="op">==</span> <span class="st">'--min'</span>:</span>
+<span id="cb36-17"><a></a>        values <span class="op">=</span> numpy.amin(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb36-18"><a></a>    <span class="cf">elif</span> action <span class="op">==</span> <span class="st">'--mean'</span>:</span>
+<span id="cb36-19"><a></a>        values <span class="op">=</span> numpy.mean(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb36-20"><a></a>    <span class="cf">elif</span> action <span class="op">==</span> <span class="st">'--max'</span>:</span>
+<span id="cb36-21"><a></a>        values <span class="op">=</span> numpy.amax(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb36-22"><a></a></span>
+<span id="cb36-23"><a></a>    <span class="cf">for</span> val <span class="kw">in</span> values:</span>
+<span id="cb36-24"><a></a>        <span class="bu">print</span>(val)</span>
+<span id="cb36-25"><a></a></span>
+<span id="cb36-26"><a></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">'__main__'</span>:</span>
+<span id="cb36-27"><a></a>    main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This is four lines longer than its predecessor, but broken into more digestible chunks of 8 and 12 lines.</p>
+</section>
+<section id="handling-standard-input" class="slide level2">
+<h2>Handling Standard Input</h2>
+<p>The next thing our program has to do is read data from standard input if no filenames are given so that we can put it in a pipeline, redirect input to it, and so on. Let’s experiment in another script called <code>count_stdin.py</code>:</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb37-1"><a></a><span class="ex">$</span> cat ../code/count_stdin.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a></a><span class="im">import</span> sys</span>
+<span id="cb38-2"><a></a></span>
+<span id="cb38-3"><a></a>count <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb38-4"><a></a><span class="cf">for</span> line <span class="kw">in</span> sys.stdin:</span>
+<span id="cb38-5"><a></a>    count <span class="op">+=</span> <span class="dv">1</span></span>
+<span id="cb38-6"><a></a></span>
+<span id="cb38-7"><a></a><span class="bu">print</span>(count, <span class="st">'lines in standard input'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>This little program reads lines from a special “file” called <code>sys.stdin</code>, which is automatically connected to the program’s standard input. We don’t have to open it — Python and the operating system take care of that when the program starts up — but we can do almost anything with it that we could do to a regular file. Let’s try running it as if it were a regular command-line program:</p>
+<div class="sourceCode" id="cb39"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb39-1"><a></a><span class="ex">$</span> python ../code/count_stdin.py <span class="op">&lt;</span> small-01.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode numberSource output number-lines code-with-copy"><code class="sourceCode"><span id="cb40-1"><a></a>2 lines in standard input</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>A common mistake is to try to run something that reads from standard input like this:</p>
+<div class="sourceCode" id="cb41"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb41-1"><a></a><span class="ex">$</span> python ../code/count_stdin.py small-01.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>i.e., to forget the <code>&lt;</code> character that redirects the file to standard input. In this case, there’s nothing in standard input, so the program waits at the start of the loop for someone to type something on the keyboard. Since there’s no way for us to do this, our program is stuck, and we have to halt it using the <code>Interrupt</code> option from the <code>Kernel</code> menu in the Notebook.</p>
+<p>We now need to rewrite the program so that it loads data from <code>sys.stdin</code> if no filenames are provided. Luckily, <code>numpy.loadtxt</code> can handle either a filename or an open file as its first parameter, so we don’t actually need to change <code>process</code>. Only <code>main</code> changes:</p>
+<div class="sourceCode" id="cb42"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb42-1"><a></a><span class="ex">$</span> cat ../code/readings_06.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a></a><span class="im">import</span> sys</span>
+<span id="cb43-2"><a></a><span class="im">import</span> numpy</span>
+<span id="cb43-3"><a></a></span>
+<span id="cb43-4"><a></a><span class="kw">def</span> main():</span>
+<span id="cb43-5"><a></a>    script <span class="op">=</span> sys.argv[<span class="dv">0</span>]</span>
+<span id="cb43-6"><a></a>    action <span class="op">=</span> sys.argv[<span class="dv">1</span>]</span>
+<span id="cb43-7"><a></a>    filenames <span class="op">=</span> sys.argv[<span class="dv">2</span>:]</span>
+<span id="cb43-8"><a></a>    <span class="cf">assert</span> action <span class="kw">in</span> [<span class="st">'--min'</span>, <span class="st">'--mean'</span>, <span class="st">'--max'</span>], <span class="op">\</span></span>
+<span id="cb43-9"><a></a>           <span class="st">'Action is not one of --min, --mean, or --max: '</span> <span class="op">+</span> action</span>
+<span id="cb43-10"><a></a>    <span class="cf">if</span> <span class="bu">len</span>(filenames) <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb43-11"><a></a>        process(sys.stdin, action)</span>
+<span id="cb43-12"><a></a>    <span class="cf">else</span>:</span>
+<span id="cb43-13"><a></a>        <span class="cf">for</span> filename <span class="kw">in</span> filenames:</span>
+<span id="cb43-14"><a></a>            process(filename, action)</span>
+<span id="cb43-15"><a></a></span>
+<span id="cb43-16"><a></a><span class="kw">def</span> process(filename, action):</span>
+<span id="cb43-17"><a></a>    data <span class="op">=</span> numpy.loadtxt(filename, delimiter<span class="op">=</span><span class="st">','</span>)</span>
+<span id="cb43-18"><a></a></span>
+<span id="cb43-19"><a></a>    <span class="cf">if</span> action <span class="op">==</span> <span class="st">'--min'</span>:</span>
+<span id="cb43-20"><a></a>        values <span class="op">=</span> numpy.amin(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb43-21"><a></a>    <span class="cf">elif</span> action <span class="op">==</span> <span class="st">'--mean'</span>:</span>
+<span id="cb43-22"><a></a>        values <span class="op">=</span> numpy.mean(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb43-23"><a></a>    <span class="cf">elif</span> action <span class="op">==</span> <span class="st">'--max'</span>:</span>
+<span id="cb43-24"><a></a>        values <span class="op">=</span> numpy.amax(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb43-25"><a></a></span>
+<span id="cb43-26"><a></a>    <span class="cf">for</span> val <span class="kw">in</span> values:</span>
+<span id="cb43-27"><a></a>        <span class="bu">print</span>(val)</span>
+<span id="cb43-28"><a></a></span>
+<span id="cb43-29"><a></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">'__main__'</span>:</span>
+<span id="cb43-30"><a></a>    main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Let’s try it out:</p>
+<div class="sourceCode" id="cb44"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb44-1"><a></a><span class="ex">$</span> python ../code/readings_06.py <span class="at">--mean</span> <span class="op">&lt;</span> small-01.csv</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode numberSource output number-lines code-with-copy"><code class="sourceCode"><span id="cb45-1"><a></a>0.333333333333</span>
+<span id="cb45-2"><a></a>1.0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>That’s better. In fact, that’s done: the program now does everything we set out to do.</p>
+</section>
+<section id="arithmetic-on-the-command-line" class="slide level2 challenge">
+<h2>Arithmetic on the Command Line</h2>
+<p>Write a Python program that adds, subtracts, multiplies, or divides two numbers provided on the command line:</p>
+<div class="sourceCode" id="cb46"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb46-1"><a></a><span class="ex">$</span> python arith.py <span class="at">--add</span> 1 2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb47"><pre class="sourceCode numberSource output number-lines code-with-copy"><code class="sourceCode"><span id="cb47-1"><a></a>3.0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb48"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb48-1"><a></a><span class="ex">$</span> python arith.py <span class="at">--subtract</span> 3 4</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb49"><pre class="sourceCode numberSource output number-lines code-with-copy"><code class="sourceCode"><span id="cb49-1"><a></a>-1.0</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="proof solution">
+<p><span class="proof-title"><em>Solution</em> (Solution). </span></p>
+<div class="sourceCode" id="cb50"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a></a><span class="im">import</span> sys</span>
+<span id="cb50-2"><a></a></span>
+<span id="cb50-3"><a></a><span class="kw">def</span> main():</span>
+<span id="cb50-4"><a></a>    <span class="cf">assert</span> <span class="bu">len</span>(sys.argv) <span class="op">==</span> <span class="dv">4</span>, <span class="st">'Need exactly 3 arguments'</span></span>
+<span id="cb50-5"><a></a></span>
+<span id="cb50-6"><a></a>    operator <span class="op">=</span> sys.argv[<span class="dv">1</span>]</span>
+<span id="cb50-7"><a></a>    <span class="cf">assert</span> operator <span class="kw">in</span> [<span class="st">'--add'</span>, <span class="st">'--subtract'</span>, <span class="st">'--multiply'</span>, <span class="st">'--divide'</span>], <span class="op">\</span></span>
+<span id="cb50-8"><a></a>        <span class="st">'Operator is not one of --add, --subtract, --multiply, or --divide: bailing out'</span></span>
+<span id="cb50-9"><a></a>    <span class="cf">try</span>:</span>
+<span id="cb50-10"><a></a>        operand1, operand2 <span class="op">=</span> <span class="bu">float</span>(sys.argv[<span class="dv">2</span>]), <span class="bu">float</span>(sys.argv[<span class="dv">3</span>])</span>
+<span id="cb50-11"><a></a>    <span class="cf">except</span> <span class="pp">ValueError</span>:</span>
+<span id="cb50-12"><a></a>        <span class="bu">print</span>(<span class="st">'cannot convert input to a number: bailing out'</span>)</span>
+<span id="cb50-13"><a></a>        <span class="cf">return</span></span>
+<span id="cb50-14"><a></a></span>
+<span id="cb50-15"><a></a>    do_arithmetic(operand1, operator, operand2)</span>
+<span id="cb50-16"><a></a></span>
+<span id="cb50-17"><a></a><span class="kw">def</span> do_arithmetic(operand1, operator, operand2):</span>
+<span id="cb50-18"><a></a></span>
+<span id="cb50-19"><a></a>    <span class="cf">if</span> operator <span class="op">==</span> <span class="st">'add'</span>:</span>
+<span id="cb50-20"><a></a>        value <span class="op">=</span> operand1 <span class="op">+</span> operand2</span>
+<span id="cb50-21"><a></a>    <span class="cf">elif</span> operator <span class="op">==</span> <span class="st">'subtract'</span>:</span>
+<span id="cb50-22"><a></a>        value <span class="op">=</span> operand1 <span class="op">-</span> operand2</span>
+<span id="cb50-23"><a></a>    <span class="cf">elif</span> operator <span class="op">==</span> <span class="st">'multiply'</span>:</span>
+<span id="cb50-24"><a></a>        value <span class="op">=</span> operand1 <span class="op">*</span> operand2</span>
+<span id="cb50-25"><a></a>    <span class="cf">elif</span> operator <span class="op">==</span> <span class="st">'divide'</span>:</span>
+<span id="cb50-26"><a></a>        value <span class="op">=</span> operand1 <span class="op">/</span> operand2</span>
+<span id="cb50-27"><a></a>    <span class="bu">print</span>(value)</span>
+<span id="cb50-28"><a></a></span>
+<span id="cb50-29"><a></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="finding-particular-files" class="slide level2 challenge">
+<h2>Finding Particular Files</h2>
+<p>Using the <code>glob</code> module introduced <a href="06-files.html">earlier</a>, write a simple version of <code>ls</code> that shows files in the current directory with a particular suffix. A call to this script should look like this:</p>
+<div class="sourceCode" id="cb51"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb51-1"><a></a><span class="ex">$</span> python my_ls.py py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb52"><pre class="sourceCode numberSource output number-lines code-with-copy"><code class="sourceCode"><span id="cb52-1"><a></a>left.py</span>
+<span id="cb52-2"><a></a>right.py</span>
+<span id="cb52-3"><a></a>zero.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="proof solution">
+<p><span class="proof-title"><em>Solution</em> (Solution). </span></p>
+<div class="sourceCode" id="cb53"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a></a><span class="im">import</span> sys</span>
+<span id="cb53-2"><a></a><span class="im">import</span> glob</span>
+<span id="cb53-3"><a></a></span>
+<span id="cb53-4"><a></a><span class="kw">def</span> main():</span>
+<span id="cb53-5"><a></a>    <span class="co">"""prints names of all files with sys.argv as suffix"""</span></span>
+<span id="cb53-6"><a></a>    <span class="cf">assert</span> <span class="bu">len</span>(sys.argv) <span class="op">&gt;=</span> <span class="dv">2</span>, <span class="st">'Argument list cannot be empty'</span></span>
+<span id="cb53-7"><a></a>    suffix <span class="op">=</span> sys.argv[<span class="dv">1</span>] <span class="co"># NB: behaviour is not as you'd expect if sys.argv[1] is *</span></span>
+<span id="cb53-8"><a></a>    glob_input <span class="op">=</span> <span class="st">'*.'</span> <span class="op">+</span> suffix <span class="co"># construct the input</span></span>
+<span id="cb53-9"><a></a>    glob_output <span class="op">=</span> <span class="bu">sorted</span>(glob.glob(glob_input)) <span class="co"># call the glob function</span></span>
+<span id="cb53-10"><a></a>    <span class="cf">for</span> item <span class="kw">in</span> glob_output: <span class="co"># print the output</span></span>
+<span id="cb53-11"><a></a>        <span class="bu">print</span>(item)</span>
+<span id="cb53-12"><a></a>    <span class="cf">return</span></span>
+<span id="cb53-13"><a></a></span>
+<span id="cb53-14"><a></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="changing-flags" class="slide level2 challenge">
+<h2>Changing Flags</h2>
+<p>Rewrite <code>readings.py</code> so that it uses <code>-n</code>, <code>-m</code>, and <code>-x</code> instead of <code>--min</code>, <code>--mean</code>, and <code>--max</code> respectively. Is the code easier to read? Is the program easier to understand?</p>
+<div class="proof solution">
+<p><span class="proof-title"><em>Solution</em> (Solution). </span></p>
+<div class="sourceCode" id="cb54"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a></a><span class="co"># this is code/readings_07.py</span></span>
+<span id="cb54-2"><a></a><span class="im">import</span> sys</span>
+<span id="cb54-3"><a></a><span class="im">import</span> numpy</span>
+<span id="cb54-4"><a></a></span>
+<span id="cb54-5"><a></a><span class="kw">def</span> main():</span>
+<span id="cb54-6"><a></a>    script <span class="op">=</span> sys.argv[<span class="dv">0</span>]</span>
+<span id="cb54-7"><a></a>    action <span class="op">=</span> sys.argv[<span class="dv">1</span>]</span>
+<span id="cb54-8"><a></a>    filenames <span class="op">=</span> sys.argv[<span class="dv">2</span>:]</span>
+<span id="cb54-9"><a></a>    <span class="cf">assert</span> action <span class="kw">in</span> [<span class="st">'-n'</span>, <span class="st">'-m'</span>, <span class="st">'-x'</span>], <span class="op">\</span></span>
+<span id="cb54-10"><a></a>           <span class="st">'Action is not one of -n, -m, or -x: '</span> <span class="op">+</span> action</span>
+<span id="cb54-11"><a></a>    <span class="cf">if</span> <span class="bu">len</span>(filenames) <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb54-12"><a></a>        process(sys.stdin, action)</span>
+<span id="cb54-13"><a></a>    <span class="cf">else</span>:</span>
+<span id="cb54-14"><a></a>        <span class="cf">for</span> filename <span class="kw">in</span> filenames:</span>
+<span id="cb54-15"><a></a>            process(filename, action)</span>
+<span id="cb54-16"><a></a></span>
+<span id="cb54-17"><a></a><span class="kw">def</span> process(filename, action):</span>
+<span id="cb54-18"><a></a>    data <span class="op">=</span> numpy.loadtxt(filename, delimiter<span class="op">=</span><span class="st">','</span>)</span>
+<span id="cb54-19"><a></a></span>
+<span id="cb54-20"><a></a>    <span class="cf">if</span> action <span class="op">==</span> <span class="st">'-n'</span>:</span>
+<span id="cb54-21"><a></a>        values <span class="op">=</span> numpy.amin(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb54-22"><a></a>    <span class="cf">elif</span> action <span class="op">==</span> <span class="st">'-m'</span>:</span>
+<span id="cb54-23"><a></a>        values <span class="op">=</span> numpy.mean(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb54-24"><a></a>    <span class="cf">elif</span> action <span class="op">==</span> <span class="st">'-x'</span>:</span>
+<span id="cb54-25"><a></a>        values <span class="op">=</span> numpy.amax(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb54-26"><a></a></span>
+<span id="cb54-27"><a></a>    <span class="cf">for</span> val <span class="kw">in</span> values:</span>
+<span id="cb54-28"><a></a>        <span class="bu">print</span>(val)</span>
+<span id="cb54-29"><a></a></span>
+<span id="cb54-30"><a></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="adding-a-help-message" class="slide level2 challenge">
+<h2>Adding a Help Message</h2>
+<p>Separately, modify <code>readings.py</code> so that if no parameters are given (i.e., no action is specified and no filenames are given), it prints a message explaining how it should be used.</p>
+<div class="proof solution">
+<p><span class="proof-title"><em>Solution</em> (Solution). </span></p>
+<div class="sourceCode" id="cb55"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a></a><span class="co"># this is code/readings_08.py</span></span>
+<span id="cb55-2"><a></a><span class="im">import</span> sys</span>
+<span id="cb55-3"><a></a><span class="im">import</span> numpy</span>
+<span id="cb55-4"><a></a></span>
+<span id="cb55-5"><a></a><span class="kw">def</span> main():</span>
+<span id="cb55-6"><a></a>    script <span class="op">=</span> sys.argv[<span class="dv">0</span>]</span>
+<span id="cb55-7"><a></a>    <span class="cf">if</span> <span class="bu">len</span>(sys.argv) <span class="op">==</span> <span class="dv">1</span>:  <span class="co"># no arguments, so print help message</span></span>
+<span id="cb55-8"><a></a>        <span class="bu">print</span>(<span class="st">"Usage: python readings_08.py action filenames</span><span class="ch">\n</span><span class="st">"</span></span>
+<span id="cb55-9"><a></a>              <span class="st">"Action:</span><span class="ch">\n</span><span class="st">"</span></span>
+<span id="cb55-10"><a></a>              <span class="st">"    Must be one of --min, --mean, or --max.</span><span class="ch">\n</span><span class="st">"</span></span>
+<span id="cb55-11"><a></a>              <span class="st">"Filenames:</span><span class="ch">\n</span><span class="st">"</span></span>
+<span id="cb55-12"><a></a>              <span class="st">"    If blank, input is taken from standard input (stdin).</span><span class="ch">\n</span><span class="st">"</span></span>
+<span id="cb55-13"><a></a>              <span class="st">"    Otherwise, each filename in the list of arguments is processed in turn."</span>)</span>
+<span id="cb55-14"><a></a>        <span class="cf">return</span></span>
+<span id="cb55-15"><a></a></span>
+<span id="cb55-16"><a></a>    action <span class="op">=</span> sys.argv[<span class="dv">1</span>]</span>
+<span id="cb55-17"><a></a>    filenames <span class="op">=</span> sys.argv[<span class="dv">2</span>:]</span>
+<span id="cb55-18"><a></a>    <span class="cf">assert</span> action <span class="kw">in</span> [<span class="st">'--min'</span>, <span class="st">'--mean'</span>, <span class="st">'--max'</span>], (</span>
+<span id="cb55-19"><a></a>        <span class="st">'Action is not one of --min, --mean, or --max: '</span> <span class="op">+</span> action)</span>
+<span id="cb55-20"><a></a>    <span class="cf">if</span> <span class="bu">len</span>(filenames) <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb55-21"><a></a>        process(sys.stdin, action)</span>
+<span id="cb55-22"><a></a>    <span class="cf">else</span>:</span>
+<span id="cb55-23"><a></a>        <span class="cf">for</span> filename <span class="kw">in</span> filenames:</span>
+<span id="cb55-24"><a></a>            process(filename, action)</span>
+<span id="cb55-25"><a></a></span>
+<span id="cb55-26"><a></a><span class="kw">def</span> process(filename, action):</span>
+<span id="cb55-27"><a></a>    data <span class="op">=</span> numpy.loadtxt(filename, delimiter<span class="op">=</span><span class="st">','</span>)</span>
+<span id="cb55-28"><a></a></span>
+<span id="cb55-29"><a></a>    <span class="cf">if</span> action <span class="op">==</span> <span class="st">'--min'</span>:</span>
+<span id="cb55-30"><a></a>        values <span class="op">=</span> numpy.amin(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb55-31"><a></a>    <span class="cf">elif</span> action <span class="op">==</span> <span class="st">'--mean'</span>:</span>
+<span id="cb55-32"><a></a>        values <span class="op">=</span> numpy.mean(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb55-33"><a></a>    <span class="cf">elif</span> action <span class="op">==</span> <span class="st">'--max'</span>:</span>
+<span id="cb55-34"><a></a>        values <span class="op">=</span> numpy.amax(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb55-35"><a></a></span>
+<span id="cb55-36"><a></a>    <span class="cf">for</span> val <span class="kw">in</span> values:</span>
+<span id="cb55-37"><a></a>        <span class="bu">print</span>(val)</span>
+<span id="cb55-38"><a></a></span>
+<span id="cb55-39"><a></a><span class="cf">if</span> <span class="va">__name__</span> <span class="op">==</span> <span class="st">'__main__'</span>:</span>
+<span id="cb55-40"><a></a>    main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="adding-a-default-action" class="slide level2 challenge">
+<h2>Adding a Default Action</h2>
+<p>Separately, modify <code>readings.py</code> so that if no action is given it displays the means of the data.</p>
+<div class="proof solution">
+<p><span class="proof-title"><em>Solution</em> (Solution). </span></p>
+<div class="sourceCode" id="cb56"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a></a><span class="co"># this is code/readings_09.py</span></span>
+<span id="cb56-2"><a></a><span class="im">import</span> sys</span>
+<span id="cb56-3"><a></a><span class="im">import</span> numpy</span>
+<span id="cb56-4"><a></a></span>
+<span id="cb56-5"><a></a><span class="kw">def</span> main():</span>
+<span id="cb56-6"><a></a>    script <span class="op">=</span> sys.argv[<span class="dv">0</span>]</span>
+<span id="cb56-7"><a></a>    action <span class="op">=</span> sys.argv[<span class="dv">1</span>]</span>
+<span id="cb56-8"><a></a>    <span class="cf">if</span> action <span class="kw">not</span> <span class="kw">in</span> [<span class="st">'--min'</span>, <span class="st">'--mean'</span>, <span class="st">'--max'</span>]: <span class="co"># if no action given</span></span>
+<span id="cb56-9"><a></a>        action <span class="op">=</span> <span class="st">'--mean'</span>    <span class="co"># set a default action, that being mean</span></span>
+<span id="cb56-10"><a></a>        filenames <span class="op">=</span> sys.argv[<span class="dv">1</span>:] <span class="co"># start the filenames one place earlier in the argv list</span></span>
+<span id="cb56-11"><a></a>    <span class="cf">else</span>:</span>
+<span id="cb56-12"><a></a>        filenames <span class="op">=</span> sys.argv[<span class="dv">2</span>:]</span>
+<span id="cb56-13"><a></a></span>
+<span id="cb56-14"><a></a>    <span class="cf">if</span> <span class="bu">len</span>(filenames) <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb56-15"><a></a>        process(sys.stdin, action)</span>
+<span id="cb56-16"><a></a>    <span class="cf">else</span>:</span>
+<span id="cb56-17"><a></a>        <span class="cf">for</span> filename <span class="kw">in</span> filenames:</span>
+<span id="cb56-18"><a></a>            process(filename, action)</span>
+<span id="cb56-19"><a></a></span>
+<span id="cb56-20"><a></a><span class="kw">def</span> process(filename, action):</span>
+<span id="cb56-21"><a></a>    data <span class="op">=</span> numpy.loadtxt(filename, delimiter<span class="op">=</span><span class="st">','</span>)</span>
+<span id="cb56-22"><a></a></span>
+<span id="cb56-23"><a></a>    <span class="cf">if</span> action <span class="op">==</span> <span class="st">'--min'</span>:</span>
+<span id="cb56-24"><a></a>        values <span class="op">=</span> numpy.amin(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb56-25"><a></a>    <span class="cf">elif</span> action <span class="op">==</span> <span class="st">'--mean'</span>:</span>
+<span id="cb56-26"><a></a>        values <span class="op">=</span> numpy.mean(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb56-27"><a></a>    <span class="cf">elif</span> action <span class="op">==</span> <span class="st">'--max'</span>:</span>
+<span id="cb56-28"><a></a>        values <span class="op">=</span> numpy.amax(data, axis<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb56-29"><a></a></span>
+<span id="cb56-30"><a></a>    <span class="cf">for</span> val <span class="kw">in</span> values:</span>
+<span id="cb56-31"><a></a>        <span class="bu">print</span>(val)</span>
+<span id="cb56-32"><a></a></span>
+<span id="cb56-33"><a></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="a-file-checker" class="slide level2 challenge">
+<h2>A File-Checker</h2>
+<p>Write a program called <code>check.py</code> that takes the names of one or more inflammation data files as arguments and checks that all the files have the same number of rows and columns. What is the best way to test your program?</p>
+<div class="proof solution">
+<p><span class="proof-title"><em>Solution</em> (Solution). </span></p>
+<div class="sourceCode" id="cb57"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a></a><span class="im">import</span> sys</span>
+<span id="cb57-2"><a></a><span class="im">import</span> numpy</span>
+<span id="cb57-3"><a></a></span>
+<span id="cb57-4"><a></a><span class="kw">def</span> main():</span>
+<span id="cb57-5"><a></a>    script <span class="op">=</span> sys.argv[<span class="dv">0</span>]</span>
+<span id="cb57-6"><a></a>    filenames <span class="op">=</span> sys.argv[<span class="dv">1</span>:]</span>
+<span id="cb57-7"><a></a>    <span class="cf">if</span> <span class="bu">len</span>(filenames) <span class="op">&lt;=</span><span class="dv">1</span>: <span class="co">#nothing to check</span></span>
+<span id="cb57-8"><a></a>        <span class="bu">print</span>(<span class="st">'Only 1 file specified on input'</span>)</span>
+<span id="cb57-9"><a></a>    <span class="cf">else</span>:</span>
+<span id="cb57-10"><a></a>        nrow0, ncol0 <span class="op">=</span> row_col_count(filenames[<span class="dv">0</span>])</span>
+<span id="cb57-11"><a></a>        <span class="bu">print</span>(<span class="st">'First file </span><span class="sc">%s</span><span class="st">: </span><span class="sc">%d</span><span class="st"> rows and </span><span class="sc">%d</span><span class="st"> columns'</span> <span class="op">%</span> (filenames[<span class="dv">0</span>], nrow0, ncol0))</span>
+<span id="cb57-12"><a></a>        <span class="cf">for</span> filename <span class="kw">in</span> filenames[<span class="dv">1</span>:]:</span>
+<span id="cb57-13"><a></a>            nrow, ncol <span class="op">=</span> row_col_count(filename)</span>
+<span id="cb57-14"><a></a>            <span class="cf">if</span> nrow <span class="op">!=</span> nrow0 <span class="kw">or</span> ncol <span class="op">!=</span> ncol0:</span>
+<span id="cb57-15"><a></a>                <span class="bu">print</span>(<span class="st">'File </span><span class="sc">%s</span><span class="st"> does not check: </span><span class="sc">%d</span><span class="st"> rows and </span><span class="sc">%d</span><span class="st"> columns'</span> <span class="op">%</span> (filename, nrow, ncol))</span>
+<span id="cb57-16"><a></a>            <span class="cf">else</span>:</span>
+<span id="cb57-17"><a></a>                <span class="bu">print</span>(<span class="st">'File </span><span class="sc">%s</span><span class="st"> checks'</span> <span class="op">%</span> filename)</span>
+<span id="cb57-18"><a></a>        <span class="cf">return</span></span>
+<span id="cb57-19"><a></a></span>
+<span id="cb57-20"><a></a><span class="kw">def</span> row_col_count(filename):</span>
+<span id="cb57-21"><a></a>    <span class="cf">try</span>:</span>
+<span id="cb57-22"><a></a>        nrow, ncol <span class="op">=</span> numpy.loadtxt(filename, delimiter<span class="op">=</span><span class="st">','</span>).shape</span>
+<span id="cb57-23"><a></a>    <span class="cf">except</span> <span class="pp">ValueError</span>:</span>
+<span id="cb57-24"><a></a>        <span class="co"># 'ValueError' error is raised when numpy encounters lines that</span></span>
+<span id="cb57-25"><a></a>        <span class="co"># have different number of data elements in them than the rest of the lines,</span></span>
+<span id="cb57-26"><a></a>        <span class="co"># or when lines have non-numeric elements</span></span>
+<span id="cb57-27"><a></a>        nrow, ncol <span class="op">=</span> (<span class="dv">0</span>, <span class="dv">0</span>)</span>
+<span id="cb57-28"><a></a>    <span class="cf">return</span> nrow, ncol</span>
+<span id="cb57-29"><a></a></span>
+<span id="cb57-30"><a></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="counting-lines" class="slide level2 challenge">
+<h2>Counting Lines</h2>
+<p>Write a program called <code>line_count.py</code> that works like the Unix <code>wc</code> command:</p>
+<ul>
+<li>If no filenames are given, it reports the number of lines in standard input.</li>
+<li>If one or more filenames are given, it reports the number of lines in each, followed by the total number of lines.</li>
+</ul>
+<div class="proof solution">
+<p><span class="proof-title"><em>Solution</em> (Solution). </span></p>
+<div class="sourceCode" id="cb58"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a></a><span class="im">import</span> sys</span>
+<span id="cb58-2"><a></a></span>
+<span id="cb58-3"><a></a><span class="kw">def</span> main():</span>
+<span id="cb58-4"><a></a>    <span class="co">"""print each input filename and the number of lines in it,</span></span>
+<span id="cb58-5"><a></a><span class="co">       and print the sum of the number of lines"""</span></span>
+<span id="cb58-6"><a></a>    filenames <span class="op">=</span> sys.argv[<span class="dv">1</span>:]</span>
+<span id="cb58-7"><a></a>    sum_nlines <span class="op">=</span> <span class="dv">0</span> <span class="co">#initialize counting variable</span></span>
+<span id="cb58-8"><a></a></span>
+<span id="cb58-9"><a></a>    <span class="cf">if</span> <span class="bu">len</span>(filenames) <span class="op">==</span> <span class="dv">0</span>: <span class="co"># no filenames, just stdin</span></span>
+<span id="cb58-10"><a></a>        sum_nlines <span class="op">=</span> count_file_like(sys.stdin)</span>
+<span id="cb58-11"><a></a>        <span class="bu">print</span>(<span class="st">'stdin: </span><span class="sc">%d</span><span class="st">'</span> <span class="op">%</span> sum_nlines)</span>
+<span id="cb58-12"><a></a>    <span class="cf">else</span>:</span>
+<span id="cb58-13"><a></a>        <span class="cf">for</span> filename <span class="kw">in</span> filenames:</span>
+<span id="cb58-14"><a></a>            nlines <span class="op">=</span> count_file(filename)</span>
+<span id="cb58-15"><a></a>            <span class="bu">print</span>(<span class="st">'</span><span class="sc">%s</span><span class="st"> </span><span class="sc">%d</span><span class="st">'</span> <span class="op">%</span> (filename, nlines))</span>
+<span id="cb58-16"><a></a>            sum_nlines <span class="op">+=</span> nlines</span>
+<span id="cb58-17"><a></a>        <span class="bu">print</span>(<span class="st">'total: </span><span class="sc">%d</span><span class="st">'</span> <span class="op">%</span> sum_nlines)</span>
+<span id="cb58-18"><a></a></span>
+<span id="cb58-19"><a></a><span class="kw">def</span> count_file(filename):</span>
+<span id="cb58-20"><a></a>    <span class="co">"""count the number of lines in a file"""</span></span>
+<span id="cb58-21"><a></a>    f <span class="op">=</span> <span class="bu">open</span>(filename, <span class="st">'r'</span>)</span>
+<span id="cb58-22"><a></a>    nlines <span class="op">=</span> <span class="bu">len</span>(f.readlines())</span>
+<span id="cb58-23"><a></a>    f.close()</span>
+<span id="cb58-24"><a></a>    <span class="cf">return</span>(nlines)</span>
+<span id="cb58-25"><a></a></span>
+<span id="cb58-26"><a></a><span class="kw">def</span> count_file_like(file_like):</span>
+<span id="cb58-27"><a></a>    <span class="co">"""count the number of lines in a file-like object (eg stdin)"""</span></span>
+<span id="cb58-28"><a></a>    n <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb58-29"><a></a>    <span class="cf">for</span> line <span class="kw">in</span> file_like:</span>
+<span id="cb58-30"><a></a>        n <span class="op">=</span> n<span class="op">+</span><span class="dv">1</span></span>
+<span id="cb58-31"><a></a>    <span class="cf">return</span> n</span>
+<span id="cb58-32"><a></a></span>
+<span id="cb58-33"><a></a>main()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="generate-an-error-message" class="slide level2 challenge">
+<h2>Generate an Error Message</h2>
+<p>Write a program called <code>check_arguments.py</code> that prints usage then exits the program if no arguments are provided. (Hint: You can use <code>sys.exit()</code> to exit the program.)</p>
+<div class="sourceCode" id="cb59"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb59-1"><a></a><span class="ex">$</span> python check_arguments.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb60"><pre class="sourceCode numberSource output number-lines code-with-copy"><code class="sourceCode"><span id="cb60-1"><a></a>usage: python check_argument.py filename.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb61"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb61-1"><a></a><span class="ex">$</span> python check_arguments.py filename.txt</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb62"><pre class="sourceCode numberSource output number-lines code-with-copy"><code class="sourceCode"><span id="cb62-1"><a></a>Thanks for specifying arguments!</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<div class="keypoints">
+<ul>
+<li>The <code>sys</code> library connects a Python program to the system it is running on.</li>
+<li>The list <code>sys.argv</code> contains the command-line arguments that a program was run with.</li>
+<li>Avoid silent failures.</li>
+<li>The pseudo-file <code>sys.stdin</code> connects to a program’s standard input.</li>
+</ul>
+</div>
+
+
+    </div>
+  <div class="quarto-auto-generated-content" style="display: none;">
+<div class="footer footer-default">
+<p>Data Science and Digital Skills</p>
+</div>
+</div></div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../../../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../../../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../../../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': false,
+'previewLinksAuto': true,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'jumpToSlide': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleScrollView(event)\"><kbd>r</kbd> Scroll View Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"8\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true},
+'smaller': true,
+ 
+        // Display controls in the bottom right corner
+        controls: true,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'bottom-right',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: false,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+      window.document.addEventListener("DOMContentLoaded", function (event) {
+        const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+        tabsets.forEach(function(tabset) {
+          const tabby = new Tabby('#' + tabset.id);
+        });
+        const isCodeAnnotation = (el) => {
+          for (const clz of el.classList) {
+            if (clz.startsWith('code-annotation-')) {                     
+              return true;
+            }
+          }
+          return false;
+        }
+        const onCopySuccess = function(e) {
+          // button target
+          const button = e.trigger;
+          // don't keep focus
+          button.blur();
+          // flash "checked"
+          button.classList.add('code-copy-button-checked');
+          var currentTitle = button.getAttribute("title");
+          button.setAttribute("title", "Copied!");
+          let tooltip;
+          if (window.bootstrap) {
+            button.setAttribute("data-bs-toggle", "tooltip");
+            button.setAttribute("data-bs-placement", "left");
+            button.setAttribute("data-bs-title", "Copied!");
+            tooltip = new bootstrap.Tooltip(button, 
+              { trigger: "manual", 
+                customClass: "code-copy-button-tooltip",
+                offset: [0, -8]});
+            tooltip.show();    
+          }
+          setTimeout(function() {
+            if (tooltip) {
+              tooltip.hide();
+              button.removeAttribute("data-bs-title");
+              button.removeAttribute("data-bs-toggle");
+              button.removeAttribute("data-bs-placement");
+            }
+            button.setAttribute("title", currentTitle);
+            button.classList.remove('code-copy-button-checked');
+          }, 1000);
+          // clear code selection
+          e.clearSelection();
+        }
+        const getTextToCopy = function(trigger) {
+            const codeEl = trigger.previousElementSibling.cloneNode(true);
+            for (const childEl of codeEl.children) {
+              if (isCodeAnnotation(childEl)) {
+                childEl.remove();
+              }
+            }
+            return codeEl.innerText;
+        }
+        const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+          text: getTextToCopy
+        });
+        clipboard.on('success', onCopySuccess);
+        if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+          const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+            text: getTextToCopy,
+            container: window.document.getElementById('quarto-embedded-source-code-modal')
+          });
+          clipboardModal.on('success', onCopySuccess);
+        }
+          var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+          var mailtoRegex = new RegExp(/^mailto:/);
+            var filterRegex = new RegExp('/' + window.location.host + '/');
+          var isInternal = (href) => {
+              return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+          }
+          // Inspect non-navigation links and adorn them if external
+         var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+          for (var i=0; i<links.length; i++) {
+            const link = links[i];
+            if (!isInternal(link.href)) {
+              // undo the damage that might have been done by quarto-nav.js in the case of
+              // links that we want to consider external
+              if (link.dataset.originalHref !== undefined) {
+                link.href = link.dataset.originalHref;
+              }
+            }
+          }
+        function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+          const config = {
+            allowHTML: true,
+            maxWidth: 500,
+            delay: 100,
+            arrow: false,
+            appendTo: function(el) {
+                return el.closest('section.slide') || el.parentElement;
+            },
+            interactive: true,
+            interactiveBorder: 10,
+            theme: 'light-border',
+            placement: 'bottom-start',
+          };
+          if (contentFn) {
+            config.content = contentFn;
+          }
+          if (onTriggerFn) {
+            config.onTrigger = onTriggerFn;
+          }
+          if (onUntriggerFn) {
+            config.onUntrigger = onUntriggerFn;
+          }
+            config['offset'] = [0,0];
+            config['maxWidth'] = 700;
+          window.tippy(el, config); 
+        }
+        const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+        for (var i=0; i<noterefs.length; i++) {
+          const ref = noterefs[i];
+          tippyHover(ref, function() {
+            // use id or data attribute instead here
+            let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+            try { href = new URL(href).hash; } catch {}
+            const id = href.replace(/^#\/?/, "");
+            const note = window.document.getElementById(id);
+            if (note) {
+              return note.innerHTML;
+            } else {
+              return "";
+            }
+          });
+        }
+        const findCites = (el) => {
+          const parentEl = el.parentElement;
+          if (parentEl) {
+            const cites = parentEl.dataset.cites;
+            if (cites) {
+              return {
+                el,
+                cites: cites.split(' ')
+              };
+            } else {
+              return findCites(el.parentElement)
+            }
+          } else {
+            return undefined;
+          }
+        };
+        var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+        for (var i=0; i<bibliorefs.length; i++) {
+          const ref = bibliorefs[i];
+          const citeInfo = findCites(ref);
+          if (citeInfo) {
+            tippyHover(citeInfo.el, function() {
+              var popup = window.document.createElement('div');
+              citeInfo.cites.forEach(function(cite) {
+                var citeDiv = window.document.createElement('div');
+                citeDiv.classList.add('hanging-indent');
+                citeDiv.classList.add('csl-entry');
+                var biblioDiv = window.document.getElementById('ref-' + cite);
+                if (biblioDiv) {
+                  citeDiv.innerHTML = biblioDiv.innerHTML;
+                }
+                popup.appendChild(citeDiv);
+              });
+              return popup.innerHTML;
+            });
+          }
+        }
+      });
+      </script>
+    
+
+</body></html>

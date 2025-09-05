@@ -1,0 +1,332 @@
+---
+title: "R Variables"
+author: "DRS Training"
+---
+
+# Doing Maths in R
+R can just be used directly as a calculator but mathematical manipulations come up all the time as parts of R scripts. You can use the R console as a place to test commands and as a calculator.
+
+Examples in this document are largely drawn from 
+
+<https://swcarpentry.github.io/r-novice-gapminder/>
+<https://swcarpentry.github.io/r-novice-inflammation/>
+Which may be useful resources to expand your Knowledge of R 
+
+# Task 1
+
+ Try in the Console
+```{r}
+#| echo: true
+1 + 100
+```
+
+
+The number in square brackets [1] is the index number of the output element at the start of the output line
+
+# Task 2:
+
+ This output may be clearer with a more complex example
+```{r}
+#| echo: true
+2 * (1:100)
+```
+
+This is an example of R vectorization which we will revisit later.
+
+---
+
+When using R as a calculator, the order of operations is standard.
+From highest to lowest precedence:
+* Parentheses: (, )
+* Exponents: ^ or **
+* Multiply: *
+* Divide: /
+* Add: +
+* Subtract: -
+
+# Task 3:
+
+ Try:
+```{r}
+#| echo: true
+3 + 5 * 2
+```
+
+and 
+
+```{r}
+#| echo: true
+(3 + 5) * 2
+```
+
+---
+
+Really small or large numbers get a scientific notation:
+```{r}
+#| echo: true
+2/10000
+```
+
+( shorthand for 2 * 10^(-4) )
+
+# Mathmatical functions
+
+R has many built in mathematical functions. To call a function, we can type its name, followed by open and closing parentheses. Functions take arguments as inputs, anything we type inside the parentheses of a function is considered an argument. 
+Trigonometry and Logarithm functions are good examples:
+(Ignore the # comments)
+
+```{r}
+#| echo: true
+log(1) # natural logarithm
+log10(10) # base-10 logarithm
+sin(1) # trigonometry function
+```
+
+---
+
+Don’t worry about trying to remember every function in R. You can look them up on Google, or if you can remember the start of the function’s name, use the tab completion in RStudio.
+
+
+# Incomplete commands and Ctrl-C
+If you enter a command on the command line and get the plus symbol `+` in response, R considers the entered command incomplete and is stuck until you provide more information.
+
+# Task 4
+ Try an incompete command
+
+```{r}
+#| echo: true
+18 * 2
+```
+
+  
+Try competing the calculation or alternatively use Ctrl C
+
+**NOTE**
+If you enter a command that is incorrect or incomplete and R gets 'stuck' in a way that you can't resolve use Ctrl C or Esc to 'escape' the situation. (Ctrl C may be more generally applicable if you are using R outside of Rstudio)
+
+# Comparing Things ###
+Comparing numbers/variables to get a TRUE or FALSE response is a key element of programming languages
+
+```{r}
+#| echo: true
+1 == 1  # equality (note two equals signs, read as "is equal to") 
+```
+
+---
+
+```{r}
+#| echo: true
+1 != 2  # inequality (read as "is not equal to")
+```
+
+---
+
+```{r}
+#| echo: true
+1 >= -9 # greater than or equal to
+```
+
+# NOTE/WARNING
+You should never use == to compare two numbers unless they are **integers** (a data type which can specifically represent only whole numbers.) Force numbers to integer status with `as.integer()` ).
+Computers may only represent decimal numbers with a certain degree of precision, so two numbers which look the same when printed out by R, may actually have different underlying representations and therefore be different by a small margin of error (and therefore not exactly equal).
+The `all.equal()` function can be used.
+
+# Variables in R
+Before you can do anything to process data with R the  data needs to be assigned to different variables.
+We can think of a variable as a container with a name, such as `x`, `current_temp`, or `subject_id` that contains one or more values. We can create a new variable and assign a value to it using `<-` 
+e.g:
+```{r}
+#| echo: true
+weight_kg <- 55
+```
+
+---
+
+Technically you could use an `=` to assign values to a variable but in R there is a strong convention that the `=` sign is used to assign values to function parameters.
+
+---
+
+Once a variable is created, we can use the variable name to refer to the value it was assigned. The variable name now acts as a tag. Whenever R reads that tag (weight_kg), it substitutes the value (55).
+
+---
+
+Entering a variable at the command prompt or running it in Rstudio returns the variable content
+
+```{r}
+#| echo: true
+weight_kg
+```
+
+
+---
+
+Once a variable is in memory R can act on it e.g:
+
+```{r}
+#| echo: true
+2.2 * weight_kg 
+```
+
+---
+
+A variable  can be updated by changing its value
+
+```{r}
+#| echo: true
+weight_kg <- 57.5
+2.2 * weight_kg
+```
+
+check the Environment tab in Rstudio
+
+---
+
+New variables can be created using the values of old variables
+
+```{r}
+#| echo: true
+weight_lb <- 2.2 * weight_kg
+print(weight_lb)
+```
+
+# Main R data types
+* numeric – (3, 6.7, 121) Decimals or Integers (defaults to double)
+* double - (123.321. 6.6) Decimals
+* integer – (2L, 42L) where 'L' declares this as an integer/real number
+* logical – (TRUE,FALSE)
+* character – ('a', "B", 'c is third', 'Hello',  '666')
+
+## More info on R data types
+
+<https://www.r-bloggers.com/2023/09/understanding-data-types-in-r/>
+
+# Factors
+Factors are used to work with categorical variables, variables that have a fixed and known set of possible values. Generally vectors of character variables are converted or treated as factors for certain types of statistical manipulations. Factors are not used much in the R Tidyverse but are necessary or created by default for some older R libraries / functions and they can cause some confusion if your data has been transformed to a factor unintentionally.
+ 
+# Vectors 
+A vector in R describes a set of values in a certain order of the same data type (numeric, character etc).
+Vectors are generally created using the `c()` construct 
+
+```{r}
+#| echo: true
+a <- 1:5
+b <- c(1,2,3,4,5)
+c <- c('1','2','3','4','5')
+animals <- c("mouse", "rat", "dog", "cat", 'ape')
+```
+
+try the commands `typeof()` and `str()` on one of the variables
+
+## Subsetting vectors
+
+If we want to extract one or several values from a vector, we must provide one or several indices in square brackets. For instance:
+
+ Try:
+```{r}
+#| echo: true
+animals[2]
+animals[c(3, 2)]
+animals[2:4]
+```
+
+## Subsetting logical vectors
+
+Alternatively another common way of sub-setting is by using a logical vector. TRUE will select the element with the same index, while FALSE will not
+
+```{r}
+#| echo: true
+animals[c(TRUE,FALSE,TRUE, FALSE,TRUE)]
+```
+
+Generally the conditional vector id generated by other functions or tests
+
+# Lists
+
+A list is a vector but with heterogeneous data elements. A list in R is created with the use of the list() function. Lists can be very important / complex nested data objects in R
+
+```{r}
+#| echo: true
+stuff <- list('a', 1L, 3.14, c(LETTERS[3:9]))
+```
+
+check the Environment tab in Rstudio for the list structure
+
+Lists are a special type of vector and can be subsetted in very similar ways
+
+# Matrix
+
+Matrices are two-dimensional, homogeneous data structures 
+
+i.e. they are tables of data of the same type most frequently numeric. 
+
+They are created using the matrix() function
+
+
+## Matrix parameters:
+
+* data – values you want to enter
+* nrow – no. of rows
+* ncol – no. of columns
+* byrow – logical clue, if ‘true’ value will be assigned by rows
+* dimnames – names of rows and columns
+
+## Matrix example
+
+```{r}
+#| echo: true
+mx = matrix(
+  c(1, 2, 3, 4, 5, 6, 7, 8, 9), 
+  nrow = 3,
+  ncol = 3,
+  byrow = TRUE 
+)
+```
+
+N.b. Rows and columns can be named
+
+## Other matrix examples
+
+```{r}
+#| echo: true
+rownames(mx) = c("a", "b", "c")
+colnames(mx) = c("c", "d", "e")
+```
+
+## Subsetting a Matrix
+
+Elements of a matrix can be referenced by specifying the index along each dimension (e.g. 'row' and "column") in single square brackets.
+
+ For Example:
+
+```{r}
+#| echo: true
+mx[2,3]
+mx[2,]
+mx[,3]
+```
+
+Omitting the column coordinate gives you the whole row referenced
+Omitting the row coordinate gives you the whole column referenced
+ 
+ **Matrices are often imported in several ways from stored datafiles.**
+
+# Dataframe
+
+Dataframes are a bit like matrices but can contain different datatypes. One column can be character, then another can be numeric and a third logical. However, each column has to contain the same kind of data. They can be thought of as the data equivalent of a type of spreadsheet.
+
+Dataframes come in several variants, the main one used in the tidyverse is called the **tibble**
+<https://tibble.tidyverse.org/>
+We will be exploring dataframes in detail in a later section
+
+# Variable Naming Conventions
+Variable names can contain letters, numbers, underscores and periods but no spaces. They must start with a letter or a period followed by a letter (**they cannot start with a number nor an underscore**). Variables beginning with a period are hidden variables. 
+
+## Naming Conventions
+Over time different conventions for long variable names have arisen. 
+
+These include:
+* periods.between.words (old style R)
+* underscores_between_words (recommended)
+* camelCaseToSeparateWords (ugly but used in several languages)
+There are several R naming convention/style guides on the internet including
+<https://style.tidyverse.org/syntax.html>

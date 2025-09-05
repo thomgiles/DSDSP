@@ -110,6 +110,8 @@ The course follows a modular structure—you don’t have to do all of it—and 
 
 ---
 
+::: callout-task
+
 #### Task 1: Digital Skills Reflection
 
 ::: panel-tabset
@@ -126,6 +128,8 @@ Post your response on the shared board.
 - Read through what others have shared.
 - Discuss trends and common goals in the group
 - Are there recurring skills people want to develop?
+:::
+
 :::
 
 ---
@@ -199,6 +203,10 @@ Post your response on the shared board.
 
 ---
 
+::: callout-task
+
+:::
+
 #### Task 2: Match Research Tasks to Tools
 
 ::: panel-tabset
@@ -225,6 +233,7 @@ In groups, suggest the most appropriate digital tool or system for each of the f
 - **Microsoft Teams + SharePoint** is best for long-term group file access and collaboration  
 
 
+:::
 :::
 
 ---
@@ -279,6 +288,8 @@ In groups, suggest the most appropriate digital tool or system for each of the f
 
 ---
 
+::: callout-task 
+
 #### Task 3: Research Identity Self-Audit
 
 ::: panel-tabset
@@ -298,6 +309,7 @@ Visit [Orcid](https://orcid.org/), Log in / sign up
 - You can actually link your RIS and ORCID profiles but for that you need to be registered to use worktribe. It is recomended that you [request access](https://nottingham-research.worktribe.com/login.jx)
 - Once registered and logged in, you can link your ORCID and RIS profiles. For more infomation please refer to the [RIS training materials](http://moodle.nottingham.ac.uk/course/view.php?id=47898) to go away and read
 
+:::
 :::
 
 ---
@@ -335,6 +347,8 @@ Effective research is not just about tools—it’s also about safeguarding your
 
 ---
 
+::: callout-task
+
 #### Task 4: Digital Security Self-Audit (10 min)
 
 ::: panel-tabset
@@ -355,6 +369,7 @@ Reflect on your current digital setup. How secure is your research environment?
 ##### Follow-up  
 - Identify one action to improve your security in the coming week  
 - Reflect on what was easy/hard to assess, and what barriers exist for better practice  
+:::
 :::
 
 ---
