@@ -4,6 +4,12 @@ $theme: "lumen" !default;
 /* Prevent horizontal scrollbar from bleeds */
 html, body { overflow-x: hidden; }
 
+main#quarto-document-content {
+    margin-top: -15px;
+}
+#quarto-content>* {
+    padding-top: 0px;
+}
 /* Typography */
 $font-family-sans-serif: "Roboto", "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $font-family-monospace: "Fira Mono", Fira, monospace !default;

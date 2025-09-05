@@ -12,7 +12,7 @@ about:
       href: https://twitter.com
     - icon: github
       text: GitHub
-      href: https://github.com
+      href: https://dev.azure.com/UniversityOfNottingham/DRS/_git/Data%20Science%20and%20Digital%20Skills
 format:
   html:
     theme:
@@ -25,13 +25,14 @@ format:
 ---
 
 :::{#hero-heading}
-The **Data Science & Digital Skills Programme (DS&DSP)** is a one-year, in-person training initiative that equips researchers with the essential digital competencies for modern, reproducible, and data-intensive research. 
-:::
+*Modern research projects routinely involve code, 
+large data sets and complex computational workflows.  
 
+However, many researchers have limited exposure to software engineering, 
+digital infrastructure or best practices for managing data.  
 
-::: {.callout-quote}
-*"Modern research projects routinely involve code, large data sets and complex computational workflows.  
-Yet many researchers have limited exposure to software engineering, digital infrastructure or best practices for managing data.  The DS&DSP addresses this gap by providing a structured training pathway aligned with open science and research integrity principles."*
+The DS&DSP addresses this gap by providing a structured training pathway 
+aligned with open science and research integrity principles.* 
 :::
 
 ::: {.two-col-grid}
