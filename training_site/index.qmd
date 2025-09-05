@@ -98,6 +98,7 @@ The DS&DSP is structured to support learners
 ::: {.item}
 
 #### Training tiers
+#### Training tiers
 
 ::: callout-EDS
 ##### Foundation 
@@ -143,6 +144,7 @@ Domain‑specific training (*year 2–3+; tailored*).  Short intensive modules 
 
 ::: {.item}
 #### Delivery
+#### Delivery
 
 Initial delivery is targeted to BBSRC DTP students (2025 cohort), but the programme will be opened to other doctoral and early‑career researchers in subsequent years.  A continuous improvement process ensures that content is updated in response to participant feedback and advances in digital research methods. 
 
@@ -150,9 +152,12 @@ Sessions are delivered primarily in person to foster discussion and collaboratio
 
 Progression through the tiers ensures that participants build confidence gradually.  Assessment is formative: each tier culminates in a small project or portfolio review rather than a high‑stakes examination.  Feedback is provided by instructors and peers.
 
+Progression through the tiers ensures that participants build confidence gradually.  Assessment is formative: each tier culminates in a small project or portfolio review rather than a high‑stakes examination.  Feedback is provided by instructors and peers.
+
 All materials are released under permissive licences via GitHub, enabling reuse and adaptation by the wider research community.
 :::
 :::::
+
 
 
 
