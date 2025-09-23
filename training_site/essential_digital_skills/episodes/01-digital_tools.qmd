@@ -4,6 +4,8 @@ teaching: 40
 exercises: 40
 ---
 
+# Essential Digital Skills Episode 1: Digital Tools
+
 # Module Overview
 
 - **Module:** EDS-M1 -  Digital Tools 

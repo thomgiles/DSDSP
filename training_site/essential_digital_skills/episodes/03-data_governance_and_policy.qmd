@@ -4,6 +4,8 @@ teaching: 50
 exercises: 20
 ---
 
+# Essential Digital Skills Episode 3: Data Govenernance and policy
+
 # Module Overview
 
 - **Module:** DSDS-M3 – Data Governance & Policy  
