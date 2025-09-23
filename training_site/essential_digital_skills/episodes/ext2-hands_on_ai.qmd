@@ -64,10 +64,7 @@ Open ChatGPT and formulate a prompt such as:
 - What uncertainties remain about the policy?  
 - Adjust your prompt to clarify ambiguous points and note how the response changes.  
 :::
-
 :::
-
----
 
 # Group Research with ChatGPT
 
@@ -79,6 +76,8 @@ Split into small groups. Each group will investigate one of the following specif
 - **Academic society – Political Studies Review / SAGE Publications** 
 - **Research funder – Cancer Research UK** 
 - **National guidelines – UKRI generative AI policy** 
+
+---
 
 - Develop 2–3 prompts to ask ChatGPT about the policy (e.g. “What does *Nature*’s policy say about the use of generative AI in submitted manuscripts?”).  
 - For each prompt, record the exact wording, the date/time and the AI’s response [UoN guidance](https://www.nottingham.ac.uk/studyingeffectively/studying/ai.aspx).  
@@ -104,8 +103,6 @@ Each group will need to:
 
 :::
 :::
-
----
 
 # Critique and Validation
 
@@ -141,7 +138,6 @@ For at least two points made by ChatGPT, locate the corresponding statements (or
 :::
 :::
 
----
 
 # Prompt Framing and Role Effects
 
@@ -164,10 +160,8 @@ Using the same policy question from Task 1, re-ask ChatGPT with at least three d
 - Discuss how the role framing affected the apparent authority and confidence of the AI.  
 - Consider the risks of over-interpreting stylistic differences as differences in accuracy.  
 :::
-
 :::
 
----
 
 # Further Information
 
@@ -184,7 +178,7 @@ Using the same policy question from Task 1, re-ask ChatGPT with at least three d
 
 ::: callout-hints
 
-## 🔦 Hints
+##   Hints
 - **Publisher policies on AI**: [Nature editorial](https://www.nature.com/articles/d41586-023-00191-1)  
 - **International guidelines**: [European Commission living guidelines](https://www.vr.se/english/just-now/news/news-archive/2024-04-09-new-guidelines-for-using-ai-in-europe.html)  
 - **Institutional resources**: [UoN guidance](https://www.nottingham.ac.uk/studyingeffectively/studying/ai.aspx)  

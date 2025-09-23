@@ -4,6 +4,12 @@ $theme: "lumen" !default;
 /* Prevent horizontal scrollbar from bleeds */
 html, body { overflow-x: hidden; }
 
+main#quarto-document-content {
+    margin-top: -15px;
+}
+#quarto-content>* {
+    padding-top: 0px;
+}
 /* Typography */
 $font-family-sans-serif: "Roboto", "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $font-family-monospace: "Fira Mono", Fira, monospace !default;
@@ -11,6 +17,7 @@ $headings-font-family: "Roboto", "Helvetica", Arial, sans-serif !default;
 
 /* Palette */
 $teal:  #37B4B0;
+$blue2 :#66C3DA; 
 $blue:  #009BC1;
 $slate: #405162;
 $ink:   #102A43;
@@ -35,6 +42,29 @@ $code-block-bg: #FDFBF9 !default;
 
 /*-- scss:rules --*/
 
+.quarto-about-jolla.column-page {
+  /* fixed background */
+  background: url("assets/dsdsp_abstract_cropped.png") center / cover no-repeat fixed;
+  margin-top: 0px;
+  /* force full width */
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  min-height: 40vh; /* adjust as needed */
+  color: $white;
+  padding: 20px;
+
+  @supports (width: 100svw) {
+    width: 100svw;
+    margin-left: calc(-50svw + 50%);
+  }
+}
+
+.quarto-title{
+  text-align: center;
+  font-size: 40px;
+  font-weight: bold;
+  color: $white;
+}
 /* Hero */
 .hero-container {
   position: relative;
@@ -46,7 +76,11 @@ $code-block-bg: #FDFBF9 !default;
   background: radial-gradient(circle at 20% 20%, #0e1a2b, #003b5e 50%, #4e2a84);
 }
 
+div#hero-heading {
+    text-align: center;
+}
 .hero-text {
+  text-align: center;
   background-color: rgba(14, 26, 43, 0.7);
   padding: 2rem 3rem;
   border-radius: 0.5rem;
@@ -132,31 +166,6 @@ h5 {
     border-color: $teal;
     border: 1px solid $slate;
     border-bottom: none;
-  }
-}
-
-/* Title block */
-#title-block-header { margin: 0 !important; }
-
-.quarto-title {
-  padding: 200px;
-  color: $white;
-  text-align: center;
-  font-size: 50px;
-  font-family: $headings-font-family;
-  font-weight: bold;
-
-  /* fixed background */
-  background: url("assets/dsdsp_abstract_cropped.png") center / cover no-repeat fixed;
-
-  /* force full width */
-  width: 100vw;
-  margin-left: calc(-50vw + 50%);
-  min-height: 40vh; /* adjust as needed */
-
-  @supports (width: 100svw) {
-    width: 100svw;
-    margin-left: calc(-50svw + 50%);
   }
 }
 
@@ -330,11 +339,62 @@ h5 {
 .callout-EDS{
 
   text-align: center; 
+  padding: 10px;
   background-color: $blue;
    /* force full width */
   width: 100%;
   color: $white;
+  border: black 1px solid;  
+  border-radius: 5px;
 }
+
+.callout-EDS h5{
+  background-color: darken($blue, 12%);
+  padding: 0.3em;
+  margin: -10px -10px 10px -10px;
+  border-radius: 5px 5px 0 0;
+  color: $white;
+}
+
+.callout-MDS{
+
+  text-align: center; 
+  padding: 10px;
+  background-color: $blue2;
+   /* force full width */
+  width: 100%;
+  color: $white;
+    border: black 1px solid;  
+  border-radius: 5px;
+}
+.callout-MDS h5{
+  background-color: darken($blue2, 12%);
+  padding: 0.3em;
+  margin: -10px -10px 10px -10px;
+  border-radius: 5px 5px 0 0;
+  color: $white;
+} 
+
+.callout-DSS{
+
+  text-align: center; 
+  padding: 10px;
+  background-color: $teal;
+   /* force full width */
+  width: 100%;
+  color: $white;
+  border: black 1px solid;  
+  border-radius: 5px;
+}
+
+.callout-DSS h5{
+  background-color: darken($teal, 12%);
+  padding: 0.3em;
+  margin: -10px -10px 10px -10px;
+  border-radius: 5px 5px 0 0;
+  color: $white;
+}
+
 
 /* Horizontal rule */
 hr { border: 0; border-top: 1px solid $white; }

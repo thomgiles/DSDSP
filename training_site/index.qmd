@@ -1,6 +1,18 @@
 ---
 title: "Data Science & Digital Skills Programme"
 subtitle: "Building core competencies for modern, reproducible research"
+
+about:
+  id: hero-heading
+  template: jolla
+  image: assets/Logo_white_500.png
+  links:
+    - icon: twitter
+      text: Twitter
+      href: https://twitter.com
+    - icon: github
+      text: GitHub
+      href: https://dev.azure.com/UniversityOfNottingham/DRS/_git/Data%20Science%20and%20Digital%20Skills
 format:
   html:
     theme:
@@ -12,12 +24,16 @@ format:
     sidebar: false
 ---
 
-::: {.callout-quote}
-*"Modern research projects routinely involve code, large data sets and complex computational workflows.  
-Yet many researchers have limited exposure to software engineering, digital infrastructure or best practices for managing data.  The DS&DSP addresses this gap by providing a structured training pathway aligned with open science and research integrity principles."*
+:::{#hero-heading}
+*Modern research projects routinely involve code, 
+large data sets and complex computational workflows.  
+
+However, many researchers have limited exposure to software engineering, 
+digital infrastructure or best practices for managing data.  
+
+The DS&DSP addresses this gap by providing a structured training pathway 
+aligned with open science and research integrity principles.* 
 :::
-
-
 
 ::: {.two-col-grid}
 ::: {.item}
@@ -48,6 +64,7 @@ The Data Science & Digital Skills Programme (DS&DSP) is a one-year, in-person tr
 **Structured progression**  
 <br>
 The programme is organised into foundation, intermediate and advanced tiers, allowing participants to build their skills incrementally and revisit concepts as needed.
+
 :::
 
 ::: {.item}
@@ -55,6 +72,7 @@ The programme is organised into foundation, intermediate and advanced tiers, all
 **Hands-on learning**  
 <br>
 Each session combines didactic lectures and collaborative exercises such as scenario-based tasks to reinforce understanding through practice.
+
 :::
 
 ::: {.item}
@@ -62,6 +80,7 @@ Each session combines didactic lectures and collaborative exercises such as scen
 **Open science focus**  
 <br>
 Modules emphasise FAIR (findable, accessible, interoperable and reusable) data principles, reproducible workflows and responsible data governance.
+
 :::
 
 ::: {.item}
@@ -69,6 +88,7 @@ Modules emphasise FAIR (findable, accessible, interoperable and reusable) data p
 **Discipline-agnostic**  
 <br>
 Although developed for BBSRC doctoral researchers, the methods and tools apply across research domains, and later tiers offer optional domain-specific modules.
+
 :::
 
 ::: {.item}
@@ -76,40 +96,64 @@ Although developed for BBSRC doctoral researchers, the methods and tools apply a
 **Portfolio-building**  
 <br>
 Participants develop a digital portfolio of skills, improve their competencies and gain tools that they can be reused in their own research.
+
 :::
 :::
 :::
 
 ---
 
-::: {.two-col-grid}
-::: {.item}
 ### Structure
 
-The DS&DSP is structured to support learners:
+The DS&DSP is structured to support learners
+
+[label](https://dev.azure.com/UniversityOfNottingham/DRS/_library)
+
+::: {.two-col-grid}
+::: {.item}
+
+#### Training tiers
+#### Training tiers
 
 ::: callout-EDS
-- **Foundation** – Essential Digital Skills (*year 1; mandatory*).  Four half‑day sessions introduce the core tools, policies and principles required for computational research.
+##### Foundation 
+Essential Digital Skills (*Oct - Jan; mandatory*).  Four half‑day sessions introduce the core tools, policies and principles required for computational research.
 :::
 
-- **Intermediate** – Methods for Data Science (*year 2+; optional*).  Follow up workshops run over one or two academic terms.  Participants choose theoretical and/or applied streams.
-- **Advanced** – Domain‑specific training (*year 2–3+; tailored*).  Short intensive modules (1-2 days) are scheduled throughout the year based on demand and availability of instructors.
+<br>
 
-Progression through the tiers ensures that participants build confidence gradually.  Assessment is formative: each tier culminates in a small project or portfolio review rather than a high‑stakes examination.  Feedback is provided by instructors and peers.
+::: callout-MDS
+##### Intermediate
+ Methods for Data Science (*Feb - Sep; optional*).  Follow up workshops run over one or two academic terms.  Participants choose theoretical and/or applied streams.
+:::
+
+<br>
+
+::: callout-DSS
+##### Advanced
+Domain‑specific training (*year 2–3+; tailored*).  Short intensive modules (1-2 days) are scheduled throughout the year based on demand and availability of instructors.
+
+
 :::
 
 ::: {.item}
-### Delivery
+#### Delivery
+#### Delivery
 
 Initial delivery is targeted to BBSRC DTP students (2025 cohort), but the programme will be opened to other doctoral and early‑career researchers in subsequent years.  A continuous improvement process ensures that content is updated in response to participant feedback and advances in digital research methods. 
 
 Sessions are delivered primarily in person to foster discussion and collaboration.  Some lectures and code demonstrations are recorded to support revision and remote participation. Participants work in small cohorts, promoting peer learning and networking.  Cohorts are cross‑disciplinary to encourage exchange of ideas. 
 
+Progression through the tiers ensures that participants build confidence gradually.  Assessment is formative: each tier culminates in a small project or portfolio review rather than a high‑stakes examination.  Feedback is provided by instructors and peers.
+
+Progression through the tiers ensures that participants build confidence gradually.  Assessment is formative: each tier culminates in a small project or portfolio review rather than a high‑stakes examination.  Feedback is provided by instructors and peers.
+
 All materials are released under permissive licences via GitHub, enabling reuse and adaptation by the wider research community.
 :::
 :::::
 
-## Training tiers
+
+
 
 ### Overview
 
