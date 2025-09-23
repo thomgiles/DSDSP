@@ -4,6 +4,8 @@ teaching: 40
 exercises: 40
 ---
 
+# Essential Digital Skills Episode 2: Digital Delivery
+
 # Module Overview
 
 - **Module:** DSDS-M? – Digital Delivery  

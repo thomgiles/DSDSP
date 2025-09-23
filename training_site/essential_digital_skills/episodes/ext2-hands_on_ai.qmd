@@ -3,6 +3,7 @@ title: Hands‑on with AI for Research
 teaching: 20
 exercises: 100
 ---
+# Essential Digital Skills Extension 2: Hands on with AI
 
 # Module Overview
 
