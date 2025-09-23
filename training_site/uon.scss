@@ -59,6 +59,27 @@ $code-block-bg: #FDFBF9 !default;
   }
 }
 
+h1.title{
+  background-color: $ink;
+  text-align: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: $white;
+  padding: 40px;
+  border: 1px solid black;
+  border-radius: 5px;
+
+    /* force full width */
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  min-height: 20px; /* adjust as needed */
+
+  @supports (width: 100svw) {
+    width: 100svw;
+    margin-left: calc(-50svw + 50%);
+  }
+}
+
 .quarto-title{
   text-align: center;
   font-size: 40px;
