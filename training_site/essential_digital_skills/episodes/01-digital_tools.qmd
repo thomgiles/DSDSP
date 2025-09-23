@@ -1,4 +1,3 @@
-
 ---
 title: Digital Tools
 teaching: 40
@@ -16,7 +15,7 @@ exercises: 40
 
 ::: callout-outcomes
 
-## Learning Outcomes
+## 💡 Learning Outcomes
 
 - Navigate core UoN digital ecosystem
 - Apply digital best practices in collaboration & file organisation
@@ -28,7 +27,7 @@ exercises: 40
 
 ::: callout-questions
 
-## Questions
+## ❓ Questions
 
 1. What basic data tools I need to do research at UoN?
 2. How to I maintain a consistent online researcher identity?
@@ -129,7 +128,6 @@ Post your response on the shared board.
 - Discuss trends and common goals in the group
 - Are there recurring skills people want to develop?
 :::
-
 :::
 
 ---
@@ -205,8 +203,6 @@ Post your response on the shared board.
 
 ::: callout-task
 
-:::
-
 #### Task 2: Match Research Tasks to Tools
 
 ::: panel-tabset
@@ -231,8 +227,6 @@ In groups, suggest the most appropriate digital tool or system for each of the f
 - **RIS (Worktribe)** is used for grant applications and research output tracking  
 - **UniCore** handles finance, procurement, HR and expenses  
 - **Microsoft Teams + SharePoint** is best for long-term group file access and collaboration  
-
-
 :::
 :::
 
@@ -308,7 +302,6 @@ Visit [Orcid](https://orcid.org/), Log in / sign up
 
 - You can actually link your RIS and ORCID profiles but for that you need to be registered to use worktribe. It is recomended that you [request access](https://nottingham-research.worktribe.com/login.jx)
 - Once registered and logged in, you can link your ORCID and RIS profiles. For more infomation please refer to the [RIS training materials](http://moodle.nottingham.ac.uk/course/view.php?id=47898) to go away and read
-
 :::
 :::
 
@@ -344,6 +337,22 @@ Effective research is not just about tools—it’s also about safeguarding your
 ## Secure Remote Access
 
 - Use **VPN** when accessing sensitive data or UoN systems from public networks—a secure tunnel between your device and the university network  
+
+---
+
+### Data Backup Strategy
+
+- **3-2-1 Rule:** 3 copies, 2 different media, 1 off-site
+- **Automated Backups:** OneDrive/SharePoint versioning
+- **Critical Data:** Identify and prioritize essential research data
+- **Recovery Testing:** Regular verification of backup integrity
+
+### Cybersecurity Best Practices
+
+- Keep software and systems updated
+- Be cautious with email attachments and links
+- Use secured networks for sensitive data
+- Report suspicious activity promptly
 
 ---
 
@@ -392,7 +401,7 @@ Reflect on your current digital setup. How secure is your research environment?
 
 ::: callout-keypoints
 
-## keypoints
+## 📚 keypoints
 
 - UoN currently uses Microsoft 365 tools support collaborative writing, file sharing, and communication
 - UniCore manages research-related administration  and RIS manages the research lifecycle.
@@ -404,9 +413,10 @@ Reflect on your current digital setup. How secure is your research environment?
 
 ::: callout-hints
 
-## hints
+## 🔦 hints
 
 - Store shared project files in Microsoft Teams rather than OneDrive to ensure long-term access for collaborators.
 - Use version history in OneDrive/SharePoint instead of manually renaming file versions.
 - Link your ORCID iD to your RIS profile to automate tracking of publications and outputs.
 - Practice “security by default”
+:::

@@ -117,14 +117,14 @@ The DS&DSP is structured to support learners
 
 ::: callout-EDS
 ##### Foundation 
-Essential Digital Skills (*year 1; mandatory*).  Four half‑day sessions introduce the core tools, policies and principles required for computational research.
+Essential Digital Skills (*Oct - Jan; mandatory*).  Four half‑day sessions introduce the core tools, policies and principles required for computational research.
 :::
 
 <br>
 
 ::: callout-MDS
 ##### Intermediate
- Methods for Data Science (*year 2+; optional*).  Follow up workshops run over one or two academic terms.  Participants choose theoretical and/or applied streams.
+ Methods for Data Science (*Feb - Sep; optional*).  Follow up workshops run over one or two academic terms.  Participants choose theoretical and/or applied streams.
 :::
 
 <br>
@@ -132,21 +132,7 @@ Essential Digital Skills (*year 1; mandatory*).  Four half‑day sessions intro
 ::: callout-DSS
 ##### Advanced
 Domain‑specific training (*year 2–3+; tailored*).  Short intensive modules (1-2 days) are scheduled throughout the year based on demand and availability of instructors.
-:::
 
-<br>
-
-::: callout-MDS
-##### Intermediate
- Methods for Data Science (*year 2+; optional*).  Follow up workshops run over one or two academic terms.  Participants choose theoretical and/or applied streams.
-:::
-
-<br>
-
-::: callout-DSS
-##### Advanced
-Domain‑specific training (*year 2–3+; tailored*).  Short intensive modules (1-2 days) are scheduled throughout the year based on demand and availability of instructors.
-:::
 
 :::
 
