@@ -1,7 +1,6 @@
 ---
 title: "For Loops"
 author: "DRS Training"
-output: html_document
 ---
 
 # R For Loops

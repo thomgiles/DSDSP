@@ -10,7 +10,12 @@ format:
     page-layout: full
     sidebar: false
 ---
-## Contact
+
+::: callout-title
+
+# Contact Us
+
+:::
 
 **Programme lead:** Dr Thomas Giles  
 📧 <tom.giles@nottingham.ac.uk>

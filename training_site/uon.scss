@@ -4,6 +4,15 @@ $theme: "lumen" !default;
 /* Prevent horizontal scrollbar from bleeds */
 html, body { overflow-x: hidden; }
 
+/* Import Inter Variable from Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+
+/* Apply globally */
+body {
+  font-family: "Circular Book", Circular, monospace;
+  line-height: 1.65;
+}
+
 main#quarto-document-content {
     margin-top: -15px;
 }
@@ -11,9 +20,9 @@ main#quarto-document-content {
     padding-top: 0px;
 }
 /* Typography */
-$font-family-sans-serif: "Roboto", "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
-$font-family-monospace: "Fira Mono", Fira, monospace !default;
-$headings-font-family: "Roboto", "Helvetica", Arial, sans-serif !default;
+$font-family-sans-serif: "Circular Book", Helvetica, Arial, sans-serif !default;
+$font-family-monospace: "Circular Book", Circular, monospace !default;
+$headings-font-family: 'Circular Bold', Helvetica, Arial, sans-serif;
 
 /* Palette */
 $teal:  #37B4B0;
@@ -22,25 +31,107 @@ $blue:  #009BC1;
 $slate: #405162;
 $ink:   #102A43;
 $white: #ffffff;
+$grey: #B6B6B61F;
+
 
 /* Bootstrap variable overrides */
 $body-bg:    #fff !default;
 $body-color: #434341 !default;
 $link-color: $teal !default;
 
-$navbar-bg:  #efefef !default;
+$navbar-bg:  white !default;
 $navbar-fg:  $ink !default;
 
 $sidebar-bg: #efefef !default;
 $sidebar-fg: $ink !default;
 
-$footer-bg:  $ink !default;
-$footer-fg:  $white !default;
+$footer-bg:  $grey !default;
+$footer-fg:  $ink !default;
 
 $code-block-bg: #FDFBF9 !default;
 
 
 /*-- scss:rules --*/
+
+  /* Navbar */
+.navbar {
+    /* background-color: #efefef; */
+    padding: 0px;
+    margin-bottom: 50px;
+    margin-left: -20px;
+    margin-top: 0px;
+    font-style: normal;
+    font: Inter Variable; 
+    font-size: 15.1474px;
+    font-family: Inter, sans-serif;
+    font-weight: 600;
+    
+}
+
+nav.navbar.navbar-expand-lg {
+    padding-bottom: 20px;
+}
+
+nav.quarto-secondary-nav {
+    display: none;
+}
+
+li.nav-item.dropdown {
+    margin-right: 10px;
+}
+
+a.navbar-brand.navbar-brand-logo {
+    padding: 0px;
+    margin: 0px;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: flex-start; /* Aligns items to the left */
+}
+
+.nav-items {
+  list-style: none; /* Removes bullet points */
+  display: flex; /* Ensures flexbox properties are inherited by list items */
+}
+
+div#navbarCollapse {
+    padding-bottom: 20px;
+}
+
+.navbar .navbar-container>.navbar-brand-container {
+    padding: 0px;
+    margin-left: -8px !important;
+    margin-top: -21px !important;
+}
+
+.navbar-nav {
+  padding-top: 58px;
+  margin-left: 60px !important;
+  margin-right: auto !important;
+}
+
+
+.navbar-logo {
+    max-height: 93px;
+    width: auto;
+    padding-right: 10px;
+}
+
+  /* Footer */
+.nav-footer {
+    font-size: 1.15em;  
+    font-weight: 340;
+    text-align: center;
+}
+
+.footer h3 {
+    color: $ink;
+}
+
+.nav-footer-left, .nav-footer-right {
+    text-align: center;
+}
 
 .quarto-about-jolla.column-page {
   /* fixed background */
@@ -111,31 +202,39 @@ div#hero-heading {
 }
 
 /* Headings */
-h1, h2, h3, h4, h5, h6 { font-family: $headings-font-family; }
+h1, h2, h3, h4, h5, h6 { 
+  font-family: $headings-font-family; 
+  line-height: 1.2cm;
+}
 
 h1 {
   border: none;
   font-size: 2.1875rem; /* 35px */
+  font-weight: 500;
 }
 
 h2 {
   border: none;
-  font-size: 1.5625rem; /* 25px */
+  font-size: 1.35rem; /* 25px */
+  font-weight: 500;
 }
 
 h3 {
   font-size: 1.25rem;   /* 20px */
   color: $teal;
+  font-weight: 500;
 }
 
 h4 {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   color: $blue;
+  font-weight: 500;
 }
 
 h5 {
-  font-size: 1.25rem;
+  font-size: 1.15rem;
   color: $white;
+  font-weight: 500;
 }
 
 /* Tabs */
@@ -311,8 +410,7 @@ h5 {
 .callout-questions  { @include callout($blue,  $slate, #007799,           "h2"); }
 .callout-keypoints  { @include callout($blue,  $slate, #007799,           "h2"); }
 .callout-hints      { @include callout($teal,  $slate, darken($teal, 12%),  "h2"); }
-.callout-task       { @include callout($slate, $slate, #2b3641,           "h4"); }
-.callout-quote  
+.callout-task       { @include callout($slate, $slate, #2b3641,           "h4"); }  
 
 .callout-hints a { color: $white; }
 .callout-task .blockquote { color: $white; }
@@ -392,6 +490,16 @@ h5 {
   padding: 0.3em;
   margin: -10px -10px 10px -10px;
   border-radius: 5px 5px 0 0;
+  color: $white;
+}
+
+.callout-title{
+
+  text-align: left; 
+  padding: 10px;
+  background-color: $slate;
+   /* force full width */
+  width: 100%;
   color: $white;
 }
 

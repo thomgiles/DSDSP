@@ -1,10 +1,15 @@
 ---
 title: Digital Tools
+title-block: none
 teaching: 40
 exercises: 40
 ---
 
+::: callout-title
+
 # Essential Digital Skills Episode 1: Digital Tools
+
+:::
 
 # Module Overview
 
@@ -36,8 +41,6 @@ exercises: 40
 3. What digital tools may I need to support my research aims?  
 :::
 
----
-
 ## Structure & Agenda
 
 1. Introduction to DS&DSP (~10+10 min)  
@@ -47,13 +50,9 @@ exercises: 40
 
 > 🔧 4 Activities spaced every 10 minutes.
 
----
-
 # Introduction to DS&DSP
 
 ![](fig/office365.png){fig-align="center" width=500px}
-
----
 
 ## What is DS&DSP?
 
@@ -67,8 +66,6 @@ The Digital Skills & Digital Scholarship Programme aims to equips researchers wi
 - Improve reproducibility & efficiency  
 - Enable data-driven methods  
 - Increase research visibility and impact  
-
----
 
 ## Course Structure
 
@@ -103,8 +100,6 @@ There are three training tiers, each progressively developing digital skills fro
 | Advanced Computing   | —           | 1 day    |      |
 | ML and AI            | —           | 1 day    |      |
 
----
-
 ## How DS&DSP will be Delivered
 
 The course follows a modular structure—you don’t have to do all of it—and includes hands-on activities to make learning enjoyable, with blended delivery combining slides, demonstrations, exercises, and workshops. 
@@ -132,13 +127,9 @@ Post your response on the shared board.
 :::
 :::
 
----
-
 # Institutional Systems for Digital Research
 
 ![](fig/sharepoint.png){fig-align="center" width=500px}
-
----
 
 ## Microsoft 365: 
 
@@ -158,8 +149,6 @@ Post your response on the shared board.
 - Enable autosave in Word/Excel  
 - Use version history over file renaming  
 - Plan clear folder structures  
-
----
 
 ## UoN Tools: UniCore & RIS
 
@@ -189,8 +178,6 @@ Post your response on the shared board.
   - Research outputs & REF  
   - Impact recording & compliance  
   - Links with repository and ORCID  
-
----
 
 ## When to Use What
 
@@ -232,13 +219,9 @@ In groups, suggest the most appropriate digital tool or system for each of the f
 :::
 :::
 
----
-
 # Research Identity & Profiles
 
 ![](fig/orchid.png){fig-align="center" width=500px}
-
----
 
 ## Why Identity Matters
 
@@ -273,8 +256,6 @@ In groups, suggest the most appropriate digital tool or system for each of the f
 - **Google Scholar:** broad coverage, h-index  
 - **ResearchGate / Academia.edu:** optional, social layer  
 
----
-
 ## Profile Management Tips
 
 - Set ORCID to public  
@@ -307,13 +288,9 @@ Visit [Orcid](https://orcid.org/), Log in / sign up
 :::
 :::
 
----
-
 # Digital Security & Good Practice
 
 Effective research is not just about tools—it’s also about safeguarding your data, tools, and identity from digital risks. This section outlines basic practices every researcher at UoN should adopt to protect their work and comply with institutional policy.
-
----
 
 ## Passwords & Access Management
 
@@ -321,20 +298,14 @@ Effective research is not just about tools—it’s also about safeguarding your
 - Use a **password manager** instead of reusing or writing passwords down 
 - Never share passwords or respond to requests for them via email or chat  
 
----
-
 ## Multi-Factor Authentication (MFA)
 
 - MFA is required for accessing UoN digital systems; strongly recommended to enable **phone sign-in** with Microsoft Authenticator for security and convenience 
-
----
 
 ## Device & Data Protection
 
 - Always store files on **UoN-approved platforms**: OneDrive, SharePoint, Teams—not on local or personal folders :contentReference[oaicite:5]{index=5}  
 - Ensure **encryption** is enabled on university or personal devices; UoN devices come pre-encrypted, but personal devices need manual setup  
-
----
 
 ## Secure Remote Access
 
@@ -383,11 +354,7 @@ Reflect on your current digital setup. How secure is your research environment?
 :::
 :::
 
----
-
 # Further Information
-
----
 
 ## UoN Training Resources
 

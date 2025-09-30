@@ -1,10 +1,14 @@
 ---
 title: Data Governance & Policy
-teaching: 50
-exercises: 20
+title-block: none
+teaching: 40
+exercises: 40
 ---
 
+::: callout-title
+
 # Essential Digital Skills Episode 3: Data Govenernance and policy
+:::
 
 # Module Overview
 
@@ -15,7 +19,7 @@ exercises: 20
 
 ::: callout-outcomes
 
-## Learning Outcomes
+## 💡 Learning Outcomes
 
 - Understand the principles of GDPR and lawful handling of personal/sensitive data  
 - Recognise University of Nottingham policies on research ethics and research data management  
@@ -23,9 +27,9 @@ exercises: 20
 - Identify key compliance frameworks and shared responsibilities in research projects  
 :::
 
-<br>
+---
 
-::: callout-questions
+::: ❓ callout-questions
 
 ## Questions
 
@@ -35,14 +39,13 @@ exercises: 20
 4. How do institutional and funder policies intersect to shape digital compliance?  
 :::
 
+
 ## Structure & Agenda
 
 1. Data Protection and Legal Frameworks (~12 min)  
 2. Research Ethics and Institutional Conduct (~12 min)  
 3. Data Classification and Information Security (~12 min)  
 4. Policy and Digital Compliance Landscape (~14 min)  
-
----
 
 # Data Protection and Legal Frameworks
 
@@ -65,6 +68,10 @@ Data protection is a central pillar of digital research practice. Understanding 
 - Exemptions for research (e.g. purpose/storage limitation) apply only with safeguards  
 - Safeguards: data minimisation, pseudonymisation, secure storage, restricted access  
 - High-risk processing requires **Data Protection Impact Assessment (DPIA)**  
+
+---
+
+::: callout-task
 
 #### Task 1: Scenario Ranking (10 min)
 
@@ -100,8 +107,8 @@ Rank fictional data collection scenarios from **lowest** to **highest** risk.
 - Identify lawful basis and Article 9 condition.  
 - Note safeguards (minimisation, pseudonymisation, encryption, retention controls).  
 :::
+:::
 
----
 
 # Research Ethics and Institutional Conduct
 
@@ -124,6 +131,10 @@ Ethical review ensures that research is conducted with **integrity, transparency
 - Prepare Participant Information Sheets and Consent Forms  
 - Submit protocols and Data Management Plans  
 - Maintain records and comply with conditions set by REC  
+
+---
+
+::: callout-task
 
 #### Task 2: Ethics Mapping (10 min)
 
@@ -168,8 +179,7 @@ Determine if your project requires ethics review and identify the appropriate ro
 - List risks and mitigations; confirm whether a **DPIA** is required.  
 - Identify approvals and responsible parties; outline record-keeping.  
 :::
-
----
+:::
 
 # Data Classification and Information Security
 
@@ -187,6 +197,10 @@ Different datasets carry different risks. **Classification** ensures appropriate
 - Match classification to dataset content  
 - Choose storage (OneDrive, SharePoint, research drives, secure clusters) accordingly  
 - Control sharing with permissions and audit logging  
+
+---
+
+::: callout-task
 
 #### Task 3: Classification Exercise (10 min)
 
@@ -222,8 +236,7 @@ Classify each dataset and propose secure storage and access.
 - Justify classification and storage decisions.  
 - Map controls to UoN-approved storage and access practices.  
 :::
-
----
+:::
 
 # Policy and Digital Compliance Landscape
 
@@ -246,6 +259,9 @@ Research operates in a complex environment of **institutional, national, and fun
 - Breach reporting pathways: notify IT Security / DPO promptly  
 - International work may trigger export controls, due diligence, additional approvals  
 
+---
+
+::: callout-task
 #### Task 4: Policy Matching (10 min)
 
 ::: panel-tabset
@@ -292,8 +308,7 @@ Match scenarios to relevant UoN or national policy.
 - Identify required agreements and role allocations.  
 - Confirm international transfer safeguards (IDTA/SCCs).  
 :::
-
----
+:::
 
 # Further Information
 
@@ -304,10 +319,11 @@ Match scenarios to relevant UoN or national policy.
 - [Information Security and Classification Guidance](https://www.nottingham.ac.uk/it-services/security)  
 - Annual Data Protection and Information Security Awareness (mandatory)  
 
+---
 
 ::: callout-keypoints
 
-## Keypoints
+## 📚 Keypoints
 
 - GDPR requires lawful basis and safeguards for personal/special category data  
 - UoN ethics approval processes ensure integrity and accountability  
@@ -315,11 +331,11 @@ Match scenarios to relevant UoN or national policy.
 - Compliance involves institutional, team, and individual responsibility  
 :::
 
-<br>
+---
 
 ::: callout-hints
 
-## Hints
+## 🔦 Hints
 
 - When in doubt, consult the **Research Ethics & Integrity** team or the **Data Protection Officer**  
 - Build compliance tasks into project planning from the outset  

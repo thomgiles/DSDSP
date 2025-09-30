@@ -28,13 +28,30 @@ website:
     content: "**Alert** - This site is currently under construction"
     type: primary
     position: below-navbar
+    
 
   page-footer:
     left: |
-      ![Logo image](/training_site/assets/UoN_dark_logo.png)
+      <h3>Location</h3>
+      University of Nottingham  
+      University Park  
+      Nottingham, NG7 2RD  
+      United Kingdom
+    center: |
+      <h3>Quick links</h3>
+      [Submit an enquiry](#)  
+      [Capabilities](#)  
+      [About us](#)  
+      [Jobs](#)  
+      [Privacy policy](#)
+      
+    right: |
+     <h3>Get in touch</h3>
+     <a href="mailto:digitalresearch@nottingham.ac.uk">digitalresearch@nottingham.ac.uk</a>
   
   navbar:
-    title: "DSDS Programme"
+    title: ""
+    logo: assets/UoN_logo.png
     collapse: true
     background: "#0e1a2b"
     foreground: "#ffffff"
@@ -62,25 +79,25 @@ website:
           - text: "02 Numpy"
             href: methods_for_data_science/applied_python/episodes/02-numpy.qmd
           - text: "03 Matplotlib"
-            href: methods_for_data_science/applied_python/episodes/03-matplotlib.md
+            href: methods_for_data_science/applied_python/episodes/03-matplotlib.qmd
           - text: "04 Lists"
-            href: methods_for_data_science/applied_python/episodes/04-lists.md
+            href: methods_for_data_science/applied_python/episodes/04-lists.qmd
           - text: "05 Loops"
-            href: methods_for_data_science/applied_python/episodes/05-loop.md
+            href: methods_for_data_science/applied_python/episodes/05-loop.qmd
           - text: "06 Files"
-            href: methods_for_data_science/applied_python/episodes/06-files.md
+            href: methods_for_data_science/applied_python/episodes/06-files.qmd
           - text: "07 Conditionals"
-            href: methods_for_data_science/applied_python/episodes/07-cond.md
+            href: methods_for_data_science/applied_python/episodes/07-cond.qmd
           - text: "08 Functions"
-            href: methods_for_data_science/applied_python/episodes/08-func.md
+            href: methods_for_data_science/applied_python/episodes/08-func.qmd
           - text: "09 Errors"
-            href: methods_for_data_science/applied_python/episodes/09-errors.md
+            href: methods_for_data_science/applied_python/episodes/09-errors.qmd
           - text: "10 Defensive Programming"
-            href: methods_for_data_science/applied_python/episodes/10-defensive.md
+            href: methods_for_data_science/applied_python/episodes/10-defensive.qmd
           - text: "11 Debugging"
-            href: methods_for_data_science/applied_python/episodes/11-debugging.md
+            href: methods_for_data_science/applied_python/episodes/11-debugging.qmd
           - text: "12 Command Line"
-            href: methods_for_data_science/applied_python/episodes/12-cmdline.md
+            href: methods_for_data_science/applied_python/episodes/12-cmdline.qmd
 
       - text: "Applied Data Science (R)"
         menu:

@@ -1,10 +1,15 @@
 ---
-title: Digital Delivery
+title: "Digital Delivery"
+title-block: none
 teaching: 40
 exercises: 40
 ---
 
+::: callout-title
+
 # Essential Digital Skills Episode 2: Digital Delivery
+
+:::
 
 # Module Overview
 
@@ -17,7 +22,7 @@ exercises: 40
 
 ::: callout-outcomes
 
-## Learning Outcomes
+## 💡 Learning Outcomes
 
 - Understand how Agile values and principles apply to the delivery of research projects  
 - Recognise roles and responsibilities in research teams and how they map to Agile/Scrum roles  
@@ -29,14 +34,12 @@ exercises: 40
 
 ::: callout-questions
 
-## Questions
+## ❓ Questions
 
 1. How can Agile values and principles be adapted for research projects?  
 2. How do research team roles map to Agile/Scrum roles?  
 3. What practices enable collaborative and iterative delivery of research outputs?  
 :::
-
----
 
 ## Structure & Agenda
 
@@ -51,8 +54,6 @@ exercises: 40
 
 Agile thinking encourages researchers to view their projects not as fixed, linear processes but as evolving explorations. Instead of assuming that research questions, data availability, or methods are stable from the start, Agile practices invite continuous reflection and adjustment. This mindset helps avoid wasted effort on over-specified methods or outdated research designs. 
 
----
-
 ## Adopting an Agile mindset means
 
 - Treating **research questions as hypotheses** that can be refined through iteration.  
@@ -66,8 +67,6 @@ Agile thinking encourages researchers to view their projects not as fixed, linea
 - From ‘step-by-step’ research → continuous discovery & innovation  
 - Hypotheses as "user stories"  
 - Value early validation over polished outputs  
-
----
 
 ## Agile Manifesto (adapted for research)
 
@@ -84,9 +83,12 @@ Agile thinking encourages researchers to view their projects not as fixed, linea
 
 ---
 
+::: callout-task
+
 #### Task 1: Discussion Prompt
 
 ::: panel-tabset
+
 ##### Question
 *How could working in smaller research cycles help us avoid dead ends or irrelevant outputs?*
 
@@ -94,14 +96,12 @@ Agile thinking encourages researchers to view their projects not as fixed, linea
 - Consider how smaller cycles can reduce wasted time.  
 - Share examples from your own projects.  
 :::
-
+:::
 
 
 # Roles and Responsibilities in Research & Agile Teams
 
 ![](fig/agile_roles.png){fig-align="center" width=500px}
-
----
 
 ## Traditional Research Roles
 
@@ -112,8 +112,6 @@ Agile thinking encourages researchers to view their projects not as fixed, linea
 - Project Coordinator / Manager  
 
 These roles often have clearly defined responsibilities, but collaboration between them can be fragmented. Agile encourages reframing these roles as complementary and iterative rather than siloed.
-
----
 
 ## Agile/Scrum Roles
 
@@ -141,11 +139,12 @@ In Agile, responsibilities are distributed. The Product Owner defines vision, bu
 - **Flexibility:** Roles are not job titles; they represent responsibilities that may rotate.  
 - **Team autonomy:** Development Team members decide how best to achieve sprint goals together.  
 
----
+::: callout-task
 
 #### Task 2: Reflection Prompt
 
 ::: panel-tabset
+
 ##### Question
 *Where do you see yourself fitting in an Agile team based on your current role?*
 
@@ -153,13 +152,11 @@ In Agile, responsibilities are distributed. The Product Owner defines vision, bu
 - Share with a partner how your role responsibilities align with Agile.  
 - Consider whether your role might shift in a more collaborative setting.  
 :::
-
+:::
 
 # Sprint-Based Delivery and Coordination
 
 ![](fig/research_sprint.png){fig-align="center" width=500px}
-
----
 
 ## Key Concepts
 
@@ -167,8 +164,6 @@ In Agile, responsibilities are distributed. The Product Owner defines vision, bu
 - Regular stand-ups to share progress and blockers  
 - Sprint review/demo to show insights or findings  
 - Retrospective to improve team working  
-
----
 
 ## Research Adaptation
 
@@ -179,9 +174,12 @@ In Agile, responsibilities are distributed. The Product Owner defines vision, bu
 
 ---
 
+::: callout-task
+
 #### Task 3: Exercise
 
 ::: panel-tabset
+
 ##### Question
 *Design a 1-week research sprint for investigating a data quality issue. What are your key tasks? What would you deliver?*
 
@@ -189,14 +187,12 @@ In Agile, responsibilities are distributed. The Product Owner defines vision, bu
 - Outline 2–3 specific tasks.  
 - Decide what constitutes a successful sprint outcome.  
 :::
-
+:::
 
 
 # Shared Ownership and Research Culture
 
 ![](fig/research_culture.png){fig-align="center" width=500px}
-
----
 
 ## Agile Principles That Support Research Culture
 
@@ -207,8 +203,6 @@ In Agile, responsibilities are distributed. The Product Owner defines vision, bu
 
 Agile culture in research emphasises shared accountability and mutual support. This means that success is attributed to the team, not individuals, and challenges are tackled collectively. Creating an environment of psychological safety is central: researchers should feel able to admit mistakes, share early findings, and challenge assumptions without fear.
 
----
-
 ## Application to Research Teams
 
 - **Co-develop research questions** so that the team feels invested in both the problem and the solution.  
@@ -216,8 +210,6 @@ Agile culture in research emphasises shared accountability and mutual support. T
 - **Rotate ownership** of demos, sprint updates, or reporting duties to distribute responsibility and visibility.  
 - **Encourage open critique** by establishing ground rules for constructive feedback and regular reflection sessions.  
 - **Celebrate team learning** (not just results) by acknowledging experiments that generated useful insights, even if inconclusive.  
-
----
 
 ## Strategies for Fostering Shared Ownership
 
@@ -228,9 +220,12 @@ Agile culture in research emphasises shared accountability and mutual support. T
 
 ---
 
+::: callout-task
+
 #### Task 4: Sprint Planning Simulation
 
 ::: panel-tabset
+
 ##### Question
 
 In pairs or small groups, pick a small research goal (e.g., *Analyse user engagement on a platform*).
@@ -245,22 +240,20 @@ In pairs or small groups, pick a small research goal (e.g., *Analyse user engage
 
 Discuss how this changed how you’d approach the work vs. a linear plan.
 :::
-
+:::
 
 # Further Information
-
----
 
 ## UoN Training Resources
 
 - [UoN Researcher Academy Training Catalogue](https://www.nottingham.ac.uk/researcher-academy/training)  
-- Agile workshops and DSDS modules (internal links if available)  
+- Agile workshops and DSDS modules
 
 ---
 
 ::: callout-keypoints
 
-## Keypoints
+## 📚 Keypoints
 
 - Agile supports adaptability, collaboration, and iterative delivery in research  
 - Research roles can map directly to Agile/Scrum roles  
@@ -272,7 +265,7 @@ Discuss how this changed how you’d approach the work vs. a linear plan.
 
 ::: callout-hints
 
-## Hints
+## 🔦 Hints
 
 - Agile is not just for coders — it enables responsive, collaborative research.  
 - You don’t have to follow Scrum perfectly; start small (e.g., daily syncs, 1-week sprints).  

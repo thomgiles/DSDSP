@@ -3,7 +3,12 @@ format:
     toc: true
     number-sections: false
     page-layout: article
-
+    filters:
+      - dynamic-code-output
+      - pyodide
+      - webr
+    title-block-style: none
+      
   revealjs:
     theme:
       - black
@@ -18,6 +23,16 @@ format:
     preview-links: auto
     navigation-mode: linear
     footer: "Data Science and Digital Skills"
+    filters:
+      - dynamic-code-output
+      - pyodide
+      - webr
+    title-block-style: none
 
   pdf:
     output-ext: pdf
+
+  commonmark:
+    output-ext: digital-notebook.md
+
+

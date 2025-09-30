@@ -2,6 +2,7 @@
 title: Python Fundamentals
 teaching: 20
 exercises: 10
+  
 ---
 
 ::: callout-note
@@ -41,6 +42,7 @@ This is a note that you can only see in presenter view
 Any Python interpreter can be used as a calculator:
 
 ```{python}
+#| eval: false
 #| echo: true
 3 + 5 * 4
 ```
@@ -52,6 +54,7 @@ This is great but not very interesting.
 To do anything useful with data, we need to assign its value to a *variable*. In Python, we can [assign](../learners/reference.md#assign) a value to a [variable](../learners/reference.md#variable), using the equals sign `=`. For example, we can track the weight of a patient who weighs 60 kilograms by assigning the value `60` to a variable `weight_kg`:
 
 ```{python}
+#| eval: false
 #| echo: true
 weight_kg = 60
 print(weight_kg)
@@ -87,6 +90,7 @@ In the example above, variable `weight_kg` has an integer value of `60`.
 If we want to more precisely track the weight of our patient, we can use a floating point value by executing:
 
 ```{python}
+#| eval: false
 #| echo: true
 weight_kg = 60.3
 print(weight_kg)
@@ -97,6 +101,7 @@ print(weight_kg)
 To create a string, we add single or double quotes around some text. To identify and track a patient throughout our study, we can assign each person a unique identifier by storing it in a string:
 
 ```{python}
+#| eval: false
 #| echo: true
 patient_id = '001'
 print(patient_id)
@@ -107,6 +112,7 @@ print(patient_id)
 Once we have data stored with variable names, we can make use of it in calculations. We may want to store our patient's weight in pounds as well as kilograms:
 
 ```{python}
+#| eval: false
 #| echo: true
 weight_lb = 2.2 * weight_kg
 print(weight_lb)
@@ -115,6 +121,7 @@ print(weight_lb)
 We might decide to add a prefix to our patient identifier:
 
 ```{python}
+#| eval: false
 #| echo: true
 patient_id = 'inflam_' + patient_id
 print(patient_id)
@@ -125,6 +132,7 @@ print(patient_id)
 To carry out common tasks with data and variables in Python, the language provides us with several built-in [functions](../learners/reference.md#function). To display information to the screen, we use the `print` function:
 
 ```{python}
+#| eval: false
 #| echo: true
 print(weight_lb)
 print(patient_id)
@@ -139,6 +147,7 @@ When we want to make use of a function, referred to as calling the function, we 
 We can display multiple things at once using only one `print` call:
 
 ```{python}
+#| eval: false
 #| echo: true
 print(patient_id, 'weight in kilograms:', weight_kg)
 ```
@@ -148,6 +157,7 @@ print(patient_id, 'weight in kilograms:', weight_kg)
 We can also call a function inside of another [function call](../learners/reference.md#function-call). For example, Python has a built-in function called `type` that tells you a value's data type:
 
 ```{python}
+#| eval: false
 #| echo: true
 print(type(60.3))
 print(type(patient_id))
@@ -158,6 +168,7 @@ print(type(patient_id))
 Moreover, we can do arithmetic with variables right inside the `print` function:
 
 ```{python}
+#| eval: false
 #| echo: true
 print('weight in pounds:', 2.2 * weight_kg)
 ```
@@ -165,6 +176,7 @@ print('weight in pounds:', 2.2 * weight_kg)
 Note: The above command, however, did not change the value of `weight_kg`:
 
 ```{python}
+#| eval: false
 #| echo: true
 print(weight_kg)
 ```
@@ -174,6 +186,7 @@ print(weight_kg)
 To change the value of the `weight_kg` variable, we have to **assign** `weight_kg` a new value using the equals `=` sign:
 
 ```{python}
+#| eval: false
 #| echo: true
 weight_kg = 65.0
 print('weight in kilograms is now:', weight_kg)
@@ -186,6 +199,7 @@ Use the built-in function `help` to get help for a function. Every built-in func
 ## Help Example
 
 ```{python}
+#| eval: false
 #| echo: true
 help(print)
 ```
@@ -229,6 +243,7 @@ A variable in Python is analogous to a sticky note with a name written on it: as
 Using this analogy, we can investigate how assigning a value to one variable does **not** change values of other, seemingly related, variables. For example, let's store the subject's weight in pounds in its own variable:
 
 ```{python}
+#| eval: false
 #| echo: true
 # There are 2.2 pounds per kilogram
 weight_lb = 2.2 * weight_kg
@@ -250,6 +265,7 @@ Similar to above, the expression `2.2 * weight_kg` is evaluated to `143.0`, and 
 Let's now change `weight_kg`:
 
 ```{python}
+#| eval: false
 #| echo: true
 weight_kg = 100.0
 print('weight in kilograms is now:', weight_kg, 'and weight in pounds is still:', weight_lb)
@@ -267,6 +283,7 @@ Since `weight_lb` doesn't "remember" where its value comes from, it is not updat
 What values do the variables `mass` and `age` have after each of the following statements? Test your answer by executing the lines.
 
 ```{python}
+#| eval: false
 #| echo: true
 mass = 47.5
 age = 122
@@ -277,6 +294,7 @@ age = age - 20
 ## Solution
 
 ```{python}
+#| eval: false
 #| echo: true
 mass = 47.5
 print(mass)
@@ -287,6 +305,7 @@ print(mass)
 age = age - 20
 print(age)
 ```
+
 :::
 
 # Task 3: Sorting Out References
@@ -297,6 +316,7 @@ print(age)
 Python allows you to assign multiple values to multiple variables in one line by separating the variables and values with commas. What does the following program print out?
 
 ```{python}
+#| eval: false
 #| echo: true
 first, second = 'Grace', 'Hopper'
 third, fourth = second, first
@@ -306,9 +326,11 @@ third, fourth = second, first
 ## Solution
 
 ```{python}
+#| eval: false
 #| echo: true
 print(third, fourth)
 ```
+
 :::
 
 # Task 4: Seeing Data Types
@@ -319,6 +341,7 @@ print(third, fourth)
 What are the data types of the following variables?
 
 ```{python}
+#| eval: false
 #| echo: true
 planet = 'Earth'
 apples = 5
@@ -328,11 +351,13 @@ distance = 10.5
 ## Solution
 
 ```{python}
+#| eval: false
 #| echo: true
 print(type(planet))
 print(type(apples))
 print(type(distance))
 ```
+
 :::
 
 # keypoints

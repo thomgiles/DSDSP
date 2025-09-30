@@ -3,6 +3,7 @@ format:
     toc: true
     number-sections: false
     page-layout: article
+    title-block-style: none
 
   revealjs:
     theme:
@@ -17,6 +18,9 @@ format:
     controls-layout: bottom-right
     preview-links: auto
     footer: "Data Science and Digital Skills"
+    title-block-style: none
 
   pdf:
     output-ext: pdf
+    title-block-style: none
+
