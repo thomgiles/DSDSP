@@ -1,15 +1,9 @@
 ---
 title: "Digital Delivery"
-title-block: none
-teaching: 40
-exercises: 40
+metadata:
+  teaching: 40
+  exercises: 40
 ---
-
-::: callout-title
-
-# Essential Digital Skills Episode 2: Digital Delivery
-
-:::
 
 # Module Overview
 
@@ -72,8 +66,6 @@ Agile thinking encourages researchers to view their projects not as fixed, linea
 
 ![](fig/agile-manifesto.png){fig-align="center" width=500px} 
 
----
-
 ### Examples in Research
 
 - Running short cycles of data collection and preliminary analysis instead of waiting until the end of a project.  
@@ -121,8 +113,6 @@ These roles often have clearly defined responsibilities, but collaboration betwe
 
 In Agile, responsibilities are distributed. The Product Owner defines vision, but delivery is team-driven. The Scrum Master supports process and wellbeing. The Development Team collectively delivers value, with shared accountability.
 
----
-
 ### How the roles align
 
 | Research Role | Agile Role       | Responsibility                                      |
@@ -131,13 +121,13 @@ In Agile, responsibilities are distributed. The Product Owner defines vision, bu
 | Coordinator   | Scrum Master     | Facilitate, track progress, resolve issues          |
 | Analysts/SMEs | Development Team | Deliver outputs, refine understanding, share skills |
 
----
-
 ### Practical Considerations
 
 - **Overlap:** One person may wear multiple hats in small teams (e.g., a PI may also act as Scrum Master).  
 - **Flexibility:** Roles are not job titles; they represent responsibilities that may rotate.  
 - **Team autonomy:** Development Team members decide how best to achieve sprint goals together.  
+
+---
 
 ::: callout-task
 
@@ -188,7 +178,6 @@ In Agile, responsibilities are distributed. The Product Owner defines vision, bu
 - Decide what constitutes a successful sprint outcome.  
 :::
 :::
-
 
 # Shared Ownership and Research Culture
 

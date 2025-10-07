@@ -1,14 +1,9 @@
 ---
 title: Data Governance & Policy
-title-block: none
-teaching: 40
-exercises: 40
+metadata:
+  teaching: 40
+  exercises: 40
 ---
-
-::: callout-title
-
-# Essential Digital Skills Episode 3: Data Govenernance and policy
-:::
 
 # Module Overview
 
@@ -29,9 +24,9 @@ exercises: 40
 
 ---
 
-::: ❓ callout-questions
+::: callout-questions
 
-## Questions
+## ❓ Questions
 
 1. What are researchers’ responsibilities under GDPR and UK data protection law?  
 2. When does a project require research ethics approval at UoN?  

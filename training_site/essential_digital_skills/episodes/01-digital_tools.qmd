@@ -1,15 +1,9 @@
 ---
 title: Digital Tools
-title-block: none
-teaching: 40
-exercises: 40
+metadata:
+  teaching: 40
+  exercises: 40
 ---
-
-::: callout-title
-
-# Essential Digital Skills Episode 1: Digital Tools
-
-:::
 
 # Module Overview
 
@@ -18,7 +12,7 @@ exercises: 40
 - **Audience:** Early Career Researchers (PhD, Postdoc)  
 - **Duration:** ~40 minutes directed teaching (+4 exercises)  
 
----
+<br>
 
 ::: callout-outcomes
 
@@ -30,7 +24,7 @@ exercises: 40
 - Identify essential practices for secure research
 :::
 
----
+<br>
 
 ::: callout-questions
 
@@ -58,8 +52,6 @@ exercises: 40
 
 The Digital Skills & Digital Scholarship Programme aims to equips researchers with foundational digital competencies, focusing on core themes such as digital collaboration, data management, coding and reproducibility.
 
----
-
 ### Why Digital Skills Matter
 
 - Essential for effective, collaborative research  
@@ -71,8 +63,6 @@ The Digital Skills & Digital Scholarship Programme aims to equips researchers wi
 
 
 There are three training tiers, each progressively developing digital skills from foundational competencies to applied and specialist practice.
-
----
 
 ### Esential Digital Skills
 
@@ -96,9 +86,9 @@ There are three training tiers, each progressively developing digital skills fro
 
 | Course               | Description | Duration | Note |
 |----------------------|-------------|----------|------|
-| Bioinformatics       | —           | 1 day    |      |
-| Advanced Computing   | —           | 1 day    |      |
-| ML and AI            | —           | 1 day    |      |
+| ???       | —           | 1 day    |      |
+| ???   | —           | 1 day    |      |
+| ???            | —           | 1 day    |      |
 
 ## How DS&DSP will be Delivered
 
@@ -113,17 +103,19 @@ The course follows a modular structure—you don’t have to do all of it—and 
 ::: panel-tabset
 ##### Question
 
-Lets start by reflecting on your current digital research skills.
+Let’s start by reflecting on your current digital research skills.  
 
-❓ What’s one digital skill or tool you want to develop this year?
+❓ *What’s digital skills or tool you want to develop this year?*  
 
-Post your response on the shared board. 
+Type 4-5 or more skills or tools below (comma-separated), then hit submit to see the **Wordcloud**.
+
 
 ##### Follow-up
 
-- Read through what others have shared.
-- Discuss trends and common goals in the group
-- Are there recurring skills people want to develop?
+- Read through what others have shared.  
+- Discuss recurring goals and patterns in the plenary.  
+- Identify shared learning priorities.
+
 :::
 :::
 
@@ -133,15 +125,11 @@ Post your response on the shared board.
 
 ## Microsoft 365: 
 
----
-
 ### Core Tools
 
 - **Word & Excel:** writing, data capture  
 - **OneDrive:** personal cloud, autosave  
-- **Teams:** shared spaces, chat, files, meetings  
-
----
+- **Teams:** shared spaces, chat, files, meetings 
 
 ### File Collaboration Best Practices
 
@@ -157,8 +145,6 @@ Post your response on the shared board.
 | UniCore  | HR, finance, procurement          |
 | RIS      | Research lifecycle & outputs mgmt |
 
----
-
 ### UniCore Quick Facts
 
 - Oracle-based UoN system  
@@ -167,8 +153,6 @@ Post your response on the shared board.
   - Expense claims  
   - Leave, sickness, HR tasks  
 - Secure login via MFA  
-
----
 
 ### RIS (Research Information System)
 
@@ -197,7 +181,7 @@ Post your response on the shared board.
 ::: panel-tabset
 ##### Activity
 
-In groups, suggest the most appropriate digital tool or system for each of the following:
+In groups of 4-5, suggest the most appropriate digital tool or system for each of the following:
 
 1. Co-write a manuscript  
 2. Submit a funding bid  
@@ -206,7 +190,7 @@ In groups, suggest the most appropriate digital tool or system for each of the f
 
 ##### Reflection
 
-- Share your answers with the group  
+- Share your answers with the plenary  
 - Reflect on whether you've used any of these systems before  
 - Identify any gaps in your familiarity that you want to address  
 
@@ -230,8 +214,6 @@ In groups, suggest the most appropriate digital tool or system for each of the f
 - Link your outputs across systems  
 - Enable collaboration & networking  
 
----
-
 ### ORCID – Persistent Identifier
 
 - 16-digit free researcher ID  
@@ -239,16 +221,12 @@ In groups, suggest the most appropriate digital tool or system for each of the f
 - Automated updates  
 - Lifetime use across institutions  
 
----
-
 ### RIS Profile (UoN)
 
 - Connects with ORCID  
 - Shows grants, outputs, impact  
 - Syncs to public staff page  
 - Use for REF and reporting  
-
----
 
 ### Other Profiles
 
@@ -292,26 +270,24 @@ Visit [Orcid](https://orcid.org/), Log in / sign up
 
 Effective research is not just about tools—it’s also about safeguarding your data, tools, and identity from digital risks. This section outlines basic practices every researcher at UoN should adopt to protect their work and comply with institutional policy.
 
-## Passwords & Access Management
+### Passwords & Access Management
 
 - UoN recommends: at least **12 characters**, mixing upper/lowercase, numbers, and symbols; use **unique passwords** for university systems 
 - Use a **password manager** instead of reusing or writing passwords down 
 - Never share passwords or respond to requests for them via email or chat  
 
-## Multi-Factor Authentication (MFA)
+### Multi-Factor Authentication (MFA)
 
 - MFA is required for accessing UoN digital systems; strongly recommended to enable **phone sign-in** with Microsoft Authenticator for security and convenience 
 
-## Device & Data Protection
+### Device & Data Protection
 
 - Always store files on **UoN-approved platforms**: OneDrive, SharePoint, Teams—not on local or personal folders :contentReference[oaicite:5]{index=5}  
 - Ensure **encryption** is enabled on university or personal devices; UoN devices come pre-encrypted, but personal devices need manual setup  
 
-## Secure Remote Access
+### Secure Remote Access
 
 - Use **VPN** when accessing sensitive data or UoN systems from public networks—a secure tunnel between your device and the university network  
-
----
 
 ### Data Backup Strategy
 

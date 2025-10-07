@@ -1,14 +1,9 @@
 ---
 title: Responsible Use of AI in Research
-title-block: none
-teaching: 70
-exercises: 50
+metadata:
+  teaching: 70
+  exercises: 50
 ---
-
-::: callout-title
-
-# Essential Digital Skills Extension 1: Responsible use of AI in research
-:::
 
 # Module Overview
 

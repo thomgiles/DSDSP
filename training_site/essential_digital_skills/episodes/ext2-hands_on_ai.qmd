@@ -1,14 +1,10 @@
 ---
 
 title: Hands‑on with AI for Research
-title-block: none
-teaching: 20
-exercises: 100
+metadata:
+  teaching: 20
+  exercises: 100
 ---
-
-::: callout-title
-# Essential Digital Skills Extension 2: Hands on with AI
-:::
 
 # Module Overview
 

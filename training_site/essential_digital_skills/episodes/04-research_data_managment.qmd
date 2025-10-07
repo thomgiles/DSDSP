@@ -1,14 +1,10 @@
 ---
 title: Data Governance & Policy
-title-block: none
-teaching: 40
-exercises: 40
+metadata:
+  teaching: 40
+  exercises: 40
 ---
 
-::: callout-title
-
-# Essential Digital Skills Episode 4: Data Governance & Policy
-:::
 # stuff {background="#43464B"}
 
 stuff about stuff

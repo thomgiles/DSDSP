@@ -1,0 +1,132 @@
+---
+title: MODULE TITLE
+title-block-style: none
+teaching: 40        # minutes of teaching
+exercises: 40       # minutes of exercises
+filters:
+  - dynamic-code-output
+  - pyodide
+  - webr
+execute: 
+  eval: false 
+---
+
+::: callout-title
+# MODULE MAIN TITLE (e.g., Essential Digital Skills Episode 1)
+:::
+
+# Module Overview
+
+- **Module:** CODE - Module Title  
+- **Course:** COURSE NAME  
+- **Audience:** Target audience (e.g., PhD, Postdoc)  
+- **Duration:** ~X minutes directed teaching (+Y exercises)  
+
+---
+
+::: callout-outcomes
+## 💡 Learning Outcomes
+
+- Outcome 1 (what learners will be able to do)  
+- Outcome 2  
+- Outcome 3  
+:::
+
+---
+
+::: callout-questions
+## ❓ Questions
+
+1. Key question learners should consider  
+2. Another guiding question  
+3. A further discussion/reflection question  
+:::
+
+## Structure & Agenda
+
+1. Topic 1 (~time)  
+2. Topic 2 (~time)  
+3. Topic 3 (~time)  
+4. Topic 4 (~time)  
+
+> 🔧 Activities spaced throughout the session  
+
+---
+
+# Section Heading (Topic 1)
+
+![](fig/example.png){fig-align="center" width=500px}
+
+## Subheading (e.g., Concept Intro)
+
+Brief explanation text goes here.
+
+---
+
+### Another Subheading (e.g., Why this matters)
+
+- Key point 1  
+- Key point 2  
+- Key point 3  
+
+---
+
+### Example Table
+
+| Column A   | Column B   | Column C   |
+|------------|------------|------------|
+| Item 1     | Detail     | Note       |
+| Item 2     | Detail     | Note       |
+
+---
+
+::: callout-task
+#### Task N: Title of Task (e.g., Reflection / Hands-on Activity)
+
+::: panel-tabset
+##### Question
+❓ Guiding task question here.  
+
+##### Follow-up
+- Step 1 / discussion point  
+- Step 2  
+- Step 3  
+
+##### Answers (optional)
+Provide expected answer(s) or hints here.  
+:::
+:::
+
+---
+
+# Section Heading (Topic 2)
+
+## Subheading
+
+Explanatory text, diagrams, or code snippets.  
+
+```{r}
+# Example R code
+
+# Create a simple numeric vector
+numbers <- c(1, 2, 3, 4, 5)
+
+# Compute the sum
+total <- sum(numbers)
+
+# Print the result
+print(paste("The sum is:", total))
+```
+
+```{python}
+# Example Python code
+
+# Create a simple list of numbers
+numbers = [1, 2, 3, 4, 5]
+
+# Compute the sum
+total = sum(numbers)
+
+# Print the result
+print("The sum is:", total)
+```
