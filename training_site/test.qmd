@@ -1,0 +1,43 @@
+---
+title: MODULE TITLE
+title-block-style: none
+teaching: 40        # minutes of teaching
+exercises: 40       # minutes of exercises
+filters:
+  - dynamic-code-output
+  - pyodide
+  - webr
+execute: 
+  eval: false 
+---
+
+
+
+Some stuff
+
+
+
+::: callout-task
+
+#### Task 2: Q/A
+
+::: panel-tabset
+##### Question
+
+  <iframe src="http://127.0.0.1:7087/?embed=true&type=wordcloud&title=Digital+Tools&question=What+data+tools+do+you+use%3F"
+          width="100%" height="600" frameborder="0"></iframe>
+
+##### Follow-up
+
+- Read through what others have shared.  
+- Discuss recurring goals and patterns in the group.  
+- Identify shared learning priorities.
+
+:::
+:::
+<iframe src="http://127.0.0.1:7087/?embed=true&type=dropdown&title=Research+Tasks&choices=Teams,Word,SharePoint,RIS,UniCore,OneDrive&question=Which+tools+support+this+task%3F"
+          width="100%" height="600" frameborder="0"></iframe>
+
+
+<iframe src="http://127.0.0.1:7087/?embed=true&type=slider&title=Digital+Security&question=How+secure+is+your+research+environment%3F"
+          width="100%" height="600" frameborder="0"></iframe>

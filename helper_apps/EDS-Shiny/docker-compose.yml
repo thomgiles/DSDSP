@@ -1,0 +1,18 @@
+version: "3.9"
+
+services:
+  edsm1-shiny:
+    build:
+      context: .               # directory containing Dockerfile and app.R
+      dockerfile: Dockerfile
+    container_name: edsm1-shiny
+    image: edsm1-shiny:latest
+    ports:
+      - "3838:3838"
+    restart: unless-stopped
+    environment:
+      - SHINY_LOG_LEVEL=INFO
+    volumes:
+      # Optional: persist app logs and data (if you later modify the app)
+      - ./data:/srv/shiny-server/edsm1/data
+      - ./logs:/var/log/shiny-server
