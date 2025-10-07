@@ -37,7 +37,7 @@
           mkdir -p ~/.R/library
           export R_LIBS_USER=$HOME/.R/library
           echo 'R_LIBS_USER="~/.R/library"' >> ~/.Renviron
-          Rscript -e 'install.packages(c("renv","rmarkdown", "gapminder", "tidyverse", "readxl", "openxlsx", "gridExtra", "ggExtra", "knitr"))'
+          Rscript -e 'install.packages(c("renv","rmarkdown", "reticulate", "gapminder", "tidyverse", "readxl", "openxlsx", "gridExtra", "ggExtra", "knitr"))'
         workingDirectory: training_site
         displayName: 'Restore R environment'
 
