@@ -23,16 +23,12 @@ format:
     controls-layout: bottom-right
     preview-links: auto
     navigation-mode: linear
+    footer: "Data Science and Digital Skills"
     filters:
       - dynamic-code-output
       - pyodide
       - webr
     title-block-style: none
-    include-before-body:
-      - ../../reveal-header.html
-    include-after-body:
-      - ../../rjs-footer.js
-
 
   pdf:
     output-ext: pdf

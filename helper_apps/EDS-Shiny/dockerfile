@@ -1,0 +1,60 @@
+# =========================================================
+# Dockerfile for EDS-M1 Shiny App
+# Base: Rocker Shiny (includes R + Shiny Server)
+# =========================================================
+
+FROM rocker/shiny:4.4.1
+
+# ---------------------------------------------------------
+# System dependencies for R packages
+# ---------------------------------------------------------
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    libcurl4-openssl-dev \
+    libssl-dev \
+    libxml2-dev \
+    libfontconfig1-dev \
+    libfreetype6-dev \
+    libpng-dev \
+    libtiff5-dev \
+    libjpeg-dev \
+    libharfbuzz-dev \
+    libfribidi-dev \
+    libgit2-dev \
+    libglpk40 \
+    libv8-dev \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# ---------------------------------------------------------
+# Set R environment variables
+# ---------------------------------------------------------
+ENV R_UNZIPCMD=/usr/bin/unzip \
+    R_ZIPCMD=/usr/bin/zip \
+    R_BZIPCMD=/bin/bzip2 \
+    R_GZIPCMD=/bin/gzip \
+    R_PKG_REPOS="https://cloud.r-project.org/"
+
+# ---------------------------------------------------------
+# Install required R packages
+# ---------------------------------------------------------
+RUN R -e "install.packages(c( \
+    'shiny', 'shinydashboard', 'shinyWidgets', \
+    'plotly', 'wordcloud2', 'dplyr', 'tidyr' \
+  ), repos = 'https://cloud.r-project.org/', dependencies = TRUE)"
+
+# ---------------------------------------------------------
+# Copy app into Shiny Server directory
+# ---------------------------------------------------------
+WORKDIR /srv/shiny-server/edsm1
+COPY . /srv/shiny-server/edsm1
+
+# ---------------------------------------------------------
+# Set permissions (run as non-root shiny user)
+# ---------------------------------------------------------
+RUN chown -R shiny:shiny /srv/shiny-server
+
+# ---------------------------------------------------------
+# Expose port and start Shiny Server
+# ---------------------------------------------------------
+EXPOSE 3838
+CMD ["/usr/bin/shiny-server"]

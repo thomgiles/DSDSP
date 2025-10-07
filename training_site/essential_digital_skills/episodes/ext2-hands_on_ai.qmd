@@ -1,9 +1,10 @@
 ---
+
 title: Hands‑on with AI for Research
-teaching: 20
-exercises: 100
+metadata:
+  teaching: 20
+  exercises: 100
 ---
-# Essential Digital Skills Extension 2: Hands on with AI
 
 # Module Overview
 
@@ -139,7 +140,6 @@ For at least two points made by ChatGPT, locate the corresponding statements (or
 :::
 :::
 
-
 # Prompt Framing and Role Effects
 
 ## Role Prompting
@@ -163,7 +163,6 @@ Using the same policy question from Task 1, re-ask ChatGPT with at least three d
 :::
 :::
 
-
 # Further Information
 
 ::: callout-keypoints
@@ -175,7 +174,7 @@ Using the same policy question from Task 1, re-ask ChatGPT with at least three d
 - Ethical use requires verification, transparency and acknowledgement of limitations.  
 :::
 
-<br>
+---
 
 ::: callout-hints
 
