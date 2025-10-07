@@ -5,6 +5,334 @@ metadata:
   exercises: 40
 ---
 
-# stuff {background="#43464B"}
 
-stuff about stuff
+# Module Overview
+
+- **Module:** EDS-M4 – Research Data Management  
+- **Course:** Essential Digital Skills (EDS)  
+- **Audience:** Early Career Researchers (PhD, Postdoc)  
+- **Duration:** ~40 minutes directed teaching (+40 minutes exercises)  
+
+::: callout-outcomes
+
+## 💡 Learning Outcomes
+
+- Define roles and responsibilities for managing research data at the University of Nottingham (UoN)  
+- Produce a concise Data Management Plan (DMP) that covers storage, documentation, sharing, retention and preservation  
+- Apply robust naming conventions, folder structures, metadata, and version control for collaborative, auditable workflows  
+- Select appropriate institutional storage and archiving solutions (e.g. OneDrive, SharePoint/Teams, shared drives, CPS secure storage)  
+- Assess and improve dataset reusability in line with the **FAIR** principles (Findable, Accessible, Interoperable, Reusable)  
+:::
+
+## ❓ Questions
+
+1. Who is accountable for **long‑term preservation** decisions?  
+2. What are the **essential sections** of a useful DMP?  
+3. How would you design a **collaborative folder tree** and file‑naming scheme?  
+4. Which actions would most improve the **FAIRness** of a dataset?  
+
+## Structure & Agenda
+
+1. RDM at UoN (~10 min)  
+2. Data Management Plans (~10 min)  
+3. Data Structuring, Metadata and Archiving (~10 min)  
+4. Reusable Data in Practice (~10 min)  
+
+---
+
+# RDM at UoN
+
+## Roles and Responsibilities
+
+- **Principal Investigator (PI):** ultimate accountability for project‑level RDM, including retention/preservation decisions and compliance with policies/funders.  
+- **Researchers:** day‑to‑day organisation, secure handling, documentation and quality control; implement the DMP.  
+- **Project team:** shared responsibility for access controls, versioning, documentation, and timely archiving.  
+- **Support services:** Libraries (RDM advisory), IT Services (storage/backup, collaboration platforms), Information Security (classification/controls), Research Ethics & Integrity, and Contracts/IP.  
+
+## Code of Practice on RDM — Expectations
+
+- Plan data **before** collection using a DMP; review at milestones.  
+- Store data in **approved platforms**, apply **classification** and least‑privilege access.  
+- Maintain **documentation/metadata** sufficient for audit and reuse.  
+- Agree **retention/preservation** periods and select an appropriate archive.  
+- Enable **responsible sharing** where possible; record justifications when not.  
+
+## Storage & Access (institutional options)
+
+- **OneDrive** (individual workspace, version history)  
+- **SharePoint/Teams** (project collaboration, permissions, versioning)  
+- **Shared drives / research storage** (group‑managed storage)  
+- **CPS secure storage** for confidential/sensitive data with enhanced controls  
+- Apply **3‑2‑1 backups** and encryption for sensitive data; record access decisions in the DMP.  
+
+---
+
+::: callout-task
+
+#### Task 1: RDM Roles Quiz (10 min)
+
+::: panel-tabset
+##### Question
+Match responsibilities to roles (PI, Researcher, Team, Library, IT, InfoSec).
+
+##### Exercise
+
+<details>
+<summary><strong>Template</strong></summary>
+
+| Responsibility | PI | Researcher | Team | Library | IT | InfoSec |
+|---|---|---|---|---|---|---|
+| Select retention/preservation strategy |  |  |  |  |  |  |
+| Maintain day‑to‑day documentation |  |  |  |  |  |  |
+| Provision storage and backups |  |  |  |  |  |  |
+| Advise on metadata/citation and archiving |  |  |  |  |  |  |
+| Enforce classification and access controls |  |  |  |  |  |  |
+| Approve DMP and ensure compliance |  |  |  |  |  |  |
+
+</details>
+
+##### Follow‑up
+- Which responsibilities are **shared**?  
+- What would you escalate and to whom?  
+:::
+:::
+
+---
+
+# Data Management Plans
+
+## What is a DMP?
+A short, living document describing **what** data will be created, **how** it will be managed during the project, and **what** will happen at project end (sharing, retention, preservation).
+
+## Why it matters
+- Enables compliance and ethical conduct; clarifies budget and responsibilities.  
+- Reduces risk (loss, misinterpretation) and supports reproducibility.  
+- Aligns expectations within collaborative teams and with funders.  
+
+## Funder expectations & UoN template
+- Address: data types/volume, formats/standards, documentation/metadata, storage/backup, access/security, legal/ethical issues, sharing/licensing, retention/preservation, roles/costs.  
+- Use the institutional DMP template and update at key milestones.  
+
+---
+
+::: callout-task
+
+#### Task 2: DMP Scenario Challenge (10 min)
+
+::: panel-tabset
+##### Question
+Complete a mini‑DMP for the scenario.
+
+##### Exercise
+
+<details>
+<summary><strong>Scenario</strong></summary>
+
+A mixed‑methods project collects:  
+- Semi‑structured **interviews** (audio, transcripts) with NHS staff  
+- A **survey** (pseudonymised) on workflows  
+- **Derived datasets** and analysis scripts (R/Python)  
+Data will be analysed by a **multi‑institution** team; some materials are sensitive.
+
+</details>
+
+<details>
+<summary><strong>Mini‑template</strong></summary>
+
+- **Data & formats:**  
+- **Documentation & metadata:**  
+- **Storage, backup & access controls:**  
+- **Legal/ethical considerations:**  
+- **Sharing & licensing:**  
+- **Retention & long‑term preservation:**  
+- **Roles & responsibilities (incl. costs):**  
+
+</details>
+
+##### Follow‑up
+- Identify **risks** and **mitigations** (e.g. pseudonymisation, consent language, DP agreements).  
+- Specify **where** you would archive which outputs and **under what licence**.  
+:::
+:::
+
+---
+
+# Data Structuring, Metadata and Archiving
+
+## Naming Conventions
+Use stable, sortable, and meaningful names. Recommended pattern:
+
+```
+YYYYMMDD_project-feature_description_vNN.ext
+```
+
+**Examples**
+```
+20250112_survey_raw_responses_v01.csv
+20250115_audio_int01_redacted_v02.wav
+20250120_analysis_regression_results_v03.parquet
+```
+
+## Folder Structure (example)
+
+```
+project-name/
+  00-admin/
+  01-data/
+    raw/
+    interim/
+    processed/
+  02-analysis/
+    scripts/
+    notebooks/
+    results/
+  03-docs/
+    README.md
+    CODEBOOK.md
+    CHANGES.md
+  04-outputs/
+  99-archive/
+```
+
+## Documentation & Metadata
+- **README** (project overview, structure, how to reproduce)  
+- **CODEBOOK/DATA DICTIONARY** (variables, types, units, missingness, provenance)  
+- **CHANGES/RELEASE NOTES** (version history)  
+- Use community standards where available; otherwise apply consistent field names and encodings (UTF‑8, ISO dates).  
+
+## Storage, Versioning & Archiving
+- Use **approved storage** (OneDrive, SharePoint, shared drives, CPS).  
+- Prefer **text‑based** and **open** formats for tabular data; record transforms from raw → processed.  
+- Apply **version control** (e.g. Git) for code and small text assets; record **dataset releases**.  
+- Plan **archival deposit** (dataset + documentation) and record DOIs/PIDs in outputs.  
+
+---
+
+::: callout-task
+
+#### Task 3: Folder Design (10 min)
+
+::: panel-tabset
+##### Question
+Sketch a folder tree and naming scheme for a collaborative project.
+
+##### Exercise
+
+<details>
+<summary><strong>Template</strong></summary>
+
+```
+project-name/
+  00-admin/
+  01-data/ raw/ interim/ processed/
+  02-analysis/ scripts/ notebooks/ results/
+  03-docs/ README.md CODEBOOK.md CHANGES.md
+  04-outputs/
+  99-archive/
+```
+
+- File pattern: `YYYYMMDD_project-feature_description_vNN.ext`  
+- Add at least **three** concrete filenames for your project.  
+
+</details>
+
+<details>
+<summary><strong>Considerations</strong></summary>
+
+- Access controls by folder; sensitive assets segregated  
+- Clear boundary between **raw** and **processed**  
+- Reproducible pipeline from raw → processed → outputs  
+- Versioning for releases; archive snapshots to long‑term storage  
+
+</details>
+
+##### Follow‑up
+- Where would you store each folder? Who has access?  
+- What will be archived at project end?  
+:::
+:::
+
+---
+
+# Reusable Data in Practice
+
+## FAIR Principles (summary)
+- **Findable:** PIDs, indexed metadata, rich keywords  
+- **Accessible:** clear access conditions; persistent landing page  
+- **Interoperable:** open formats, controlled vocabularies/ontologies  
+- **Reusable:** licences, provenance, quality, and sufficient documentation  
+
+## Persistent Identifiers & Licensing
+- **DOIs** for datasets/releases; **ORCID iDs** for contributors.  
+- Choose licences that match constraints (e.g. **CC BY**, **CC BY‑NC**, **ODC‑BY**). Record third‑party restrictions.  
+
+## Repositories & End‑of‑Project
+- Prefer **institutional** or **domain** repositories; ensure metadata completeness and retention policies.  
+- Archive sensitive data appropriately (e.g. controlled‑access), publish **descriptive metadata** and documentation where data cannot be open.  
+
+---
+
+::: callout-task
+
+#### Task 4: FAIRness Audit (10 min)
+
+::: panel-tabset
+##### Question
+Assess a small example dataset (or description) for FAIRness and list improvements.
+
+##### Exercise
+
+<details>
+<summary><strong>Checklist</strong></summary>
+
+- [ ] PID (DOI) or stable citation provided  
+- [ ] Machine‑readable metadata and README/CODEBOOK  
+- [ ] Open, documented formats; vocabularies/units defined  
+- [ ] Licence declared; reuse conditions clear  
+- [ ] Provenance and processing steps recorded  
+- [ ] Access method and contact/owner identified  
+- [ ] Linkage to related outputs (software, publications)  
+
+</details>
+
+##### Follow‑up
+- Prioritise **three** concrete actions to improve FAIRness.  
+:::
+:::
+
+---
+
+# Further Information
+
+## UoN Training Resources
+
+- Research Data Management (Standalone) — complementary training  
+- Code of Practice on Research Data Management  
+- Code of Research Conduct and Research Ethics (for context)  
+- Annual Information Security Awareness (mandatory)  
+
+---
+
+::: callout-keypoints
+
+## 📚 Keypoints
+
+- Plan early with a **DMP** and review it as the project evolves  
+- Use **approved storage**, clear **folder structures**, and meaningful **names**  
+- Maintain **documentation** and **metadata** sufficient for reuse and audit  
+- Decide **retention/preservation** routes before project end and record them  
+- Aim for **FAIR** data; publish as openly as possible, with justified restrictions  
+:::
+
+---
+
+::: callout-hints
+
+## 🔦 Hints
+
+- Keep DMPs short, specific, and **actionable**; assign named owners  
+- Treat the **README** and **CODEBOOK** as living documents  
+- Separate **raw** from **processed**; automate transformations where possible  
+- Prefer **open formats** and controlled vocabularies; record units and codes  
+- If data cannot be shared, publish **metadata** and access conditions  
+:::
