@@ -12,7 +12,7 @@ metadata:
 - **Audience:** Early Career Researchers (PhD, Postdoc)  
 - **Duration:** ~40 minutes directed teaching (+4 exercises)  
 
-<br>
+---
 
 ::: callout-outcomes
 
@@ -24,7 +24,7 @@ metadata:
 - Identify essential practices for secure research
 :::
 
-<br>
+---
 
 ::: callout-questions
 
@@ -60,7 +60,6 @@ The Digital Skills & Digital Scholarship Programme aims to equips researchers wi
 - Increase research visibility and impact  
 
 ## Course Structure
-
 
 There are three training tiers, each progressively developing digital skills from foundational competencies to applied and specialist practice.
 
@@ -270,33 +269,33 @@ Visit [Orcid](https://orcid.org/), Log in / sign up
 
 Effective research is not just about tools—it’s also about safeguarding your data, tools, and identity from digital risks. This section outlines basic practices every researcher at UoN should adopt to protect their work and comply with institutional policy.
 
-### Passwords & Access Management
+## Passwords & Access Management
 
 - UoN recommends: at least **12 characters**, mixing upper/lowercase, numbers, and symbols; use **unique passwords** for university systems 
 - Use a **password manager** instead of reusing or writing passwords down 
 - Never share passwords or respond to requests for them via email or chat  
 
-### Multi-Factor Authentication (MFA)
+## Multi-Factor Authentication (MFA)
 
 - MFA is required for accessing UoN digital systems; strongly recommended to enable **phone sign-in** with Microsoft Authenticator for security and convenience 
 
-### Device & Data Protection
+## Device & Data Protection
 
 - Always store files on **UoN-approved platforms**: OneDrive, SharePoint, Teams—not on local or personal folders :contentReference[oaicite:5]{index=5}  
 - Ensure **encryption** is enabled on university or personal devices; UoN devices come pre-encrypted, but personal devices need manual setup  
 
-### Secure Remote Access
+## Secure Remote Access
 
 - Use **VPN** when accessing sensitive data or UoN systems from public networks—a secure tunnel between your device and the university network  
 
-### Data Backup Strategy
+## Data Backup Strategy
 
 - **3-2-1 Rule:** 3 copies, 2 different media, 1 off-site
 - **Automated Backups:** OneDrive/SharePoint versioning
 - **Critical Data:** Identify and prioritize essential research data
 - **Recovery Testing:** Regular verification of backup integrity
 
-### Cybersecurity Best Practices
+## Cybersecurity Best Practices
 
 - Keep software and systems updated
 - Be cautious with email attachments and links
@@ -341,7 +340,7 @@ Reflect on your current digital setup. How secure is your research environment?
 - RIS: Worktribe User Guidance 
 - UniCore Training Materials
 - UoN Information Security: Protect Your Data & Devices
- 
+
 ---
 
 ::: callout-keypoints

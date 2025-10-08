@@ -301,19 +301,22 @@ h5 { font-size: 1.15rem; font-weight: 500; color: $white; }
 @mixin callout($bg, $border, $head-bg, $head-sel) {
   padding: 10px;
   color: $white;
+  margin: 20px;
   background-color: $bg;
   border: 1px solid $border;
   border-radius: 5px;
   #{$head-sel} {
     background-color: $head-bg;
     padding: 0.3em;
+    margin-top: 0px;
+    margin-bottom: 0px;
     margin: -10px -10px 10px -10px;
     border-radius: 5px 5px 0 0;
     color: $white;
   }
 }
 .callout-outcomes   { @include callout($teal,  $slate, darken($teal, 12%), "h2"); }
-.callout-questions,
+.callout-questions  { @include callout($teal,  $slate, darken($blue, 12%), "h2"); }
 .callout-keypoints  { @include callout($blue,  $slate, darken($blue, 12%), "h2"); }
 .callout-hints      { @include callout($teal,  $slate, darken($teal, 12%), "h2"); }
 .callout-task       { @include callout($slate, $slate, darken($slate, 12%), "h4"); }
@@ -334,6 +337,7 @@ h5 { font-size: 1.15rem; font-weight: 500; color: $white; }
     margin-left: calc(-50svw + 50%);
   }
 }
+
 .callout-EDS,
 .callout-MDS,
 .callout-DSS {
@@ -366,23 +370,36 @@ h5 { font-size: 1.15rem; font-weight: 500; color: $white; }
   width: 100%;
 }
 
+#quarto-content section:first-of-type h2:first-of-type {
+    margin-top: -10px;
+}
+
 /* ===========================
    Reveal Slides
    =========================== */
 :root {
-  --gh: 100px;   /* header height */
-  --gf: 60px;    /* footer height */
+  --gh: 80px;   /* header height */
+  --gf: 40px;    /* footer height */
 }
 
 @media (max-width: 640px) {
   :root {
-    --gh: 48px;
-    --gf: 48px;
+    --gh: 50px;
+    --gf: 30px;
   }
 }
 
 .reveal .slide-logo { 
   max-height: 1.5em !important; 
+}
+
+.reveal .slide:not(.center) {
+    height: auto !important;
+    overflow-y: auto; 
+}
+
+.reveal .progress {
+    margin-bottom: 20px;
 }
 
 .reveal .footer {
@@ -393,15 +410,19 @@ h5 { font-size: 1.15rem; font-weight: 500; color: $white; }
   left: 0; right: 0;
   width: 100%;
   text-align: center;
-  font-size: 12px !important;
+  font: 500 14px "Circular Bold", Helvetica, Arial, sans-serif !important;
   z-index: 900;
-  padding: 10px 16px, 10px 16px;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  padding-left: 0px;
+  padding-right: 0px;
   color: $white;
   min-height: var(--gf);
 }
 
 .reveal .footer a {
     color: $white;
+    padding: 10px;
 }
 
 /* Persistent header */
@@ -431,8 +452,8 @@ h5 { font-size: 1.15rem; font-weight: 500; color: $white; }
 .gh-sep { margin: 0 8px; opacity: .75; }
 
 .reveal .slides { 
-  padding-top: calc(var(--gh) + 12px) !important; 
-  padding-bottom: calc(var(--gf) + 12px) !important;
+  padding-top: calc(var(--gh) + 20px) !important; 
+  padding-bottom: calc(var(--gf) + 20px) !important;
 }
 
 .reveal .controls { 
