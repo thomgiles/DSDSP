@@ -316,7 +316,7 @@ h5 { font-size: 1.15rem; font-weight: 500; color: $white; }
   }
 }
 .callout-outcomes   { @include callout($teal,  $slate, darken($teal, 12%), "h2"); }
-.callout-questions  { @include callout($teal,  $slate, darken($blue, 12%), "h2"); }
+.callout-questions  { @include callout($blue,  $slate, darken($blue, 12%), "h2"); }
 .callout-keypoints  { @include callout($blue,  $slate, darken($blue, 12%), "h2"); }
 .callout-hints      { @include callout($teal,  $slate, darken($teal, 12%), "h2"); }
 .callout-task       { @include callout($slate, $slate, darken($slate, 12%), "h4"); }
@@ -452,9 +452,25 @@ h5 { font-size: 1.15rem; font-weight: 500; color: $white; }
 .gh-sep { margin: 0 8px; opacity: .75; }
 
 .reveal .slides { 
-  padding-top: calc(var(--gh) + 20px) !important; 
-  padding-bottom: calc(var(--gf) + 20px) !important;
+  padding-top: calc(var(--gh) + 100px) !important; 
+  padding-bottom: calc(var(--gf) + 50px) !important;
 }
+
+.reveal.smaller .slides{
+  text-align: center;
+  font-size: smaller;
+}
+
+.reveal blockquote {
+    box-shadow: none;
+    text-align: left;
+}
+
+.reveal .callout-task {
+    text-align: left;
+}
+
+
 
 .reveal .controls { 
   top: calc(var(--gh) + 8px); 
@@ -467,6 +483,18 @@ h5 { font-size: 1.15rem; font-weight: 500; color: $white; }
 
 .reveal .controls .controls-arrow {
   margin-bottom: calc(var(--gf) - 8px);
+}
+
+
+
+.reveal ol, .reveal dl, .reveal ul {
+    width: 80% !important;
+    background: $grey;
+    padding-left: 50px;
+    padding-right: 20px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-radius: 20px;
 }
 
 /* Optional: hide header/footer in print/PDF */
@@ -548,4 +576,17 @@ hr { border: 0; border-top: 1px solid $white; }
 /* Hide breadcrumbs entirely */
 .quarto-page-breadcrumbs {
   display: none !important;
+}
+
+.table {
+    border: 1px solid  $ink;
+}
+
+tr.header {
+    background: $teal;
+    color: $white;
+}
+
+tr.even {
+    background: $grey;
 }
