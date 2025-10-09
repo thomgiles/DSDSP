@@ -32,13 +32,8 @@ format:
       - ../../reveal-header.html
     include-after-body:
       - ../../rjs-footer.js
-
-
   pdf:
     output-ext: pdf
 
   commonmark:
     output-ext: digital-notebook.md
-      
-execute: 
-  eval: false 

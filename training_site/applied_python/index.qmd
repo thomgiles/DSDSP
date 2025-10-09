@@ -1,14 +1,6 @@
 ---
 title: "Applied Python"
 subtitle: "Adapted from the Python Novice Inflamaition software carpentry course"
-format:
-  html:
-    theme: 
-        - default
-        - ../../uon.scss 
-    toc: true
-    number-sections: false
-    page-layout: article
 ---
 
 ### Scenario: A Miracle Arthritis Inflammation Cure
