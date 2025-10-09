@@ -1,17 +1,46 @@
 ---
-title: Digital Tools
+title: Digital Delivery
+subtitle: Agile processes for research
 metadata:
   teaching: 40
   exercises: 40
----
+  module: DSDS-M? – Digital Delivery  
+  course: Data Science and Digital Skills (DSDS)  
+  audience: Early Career Researchers (PhD, Postdoc)  
 
-## Module Overview
+format:
+  html:
+    toc: true
+    number-sections: false
+    page-layout: article
+    filters:
+      - dynamic-code-output
+      - pyodide
+      - webr
+    title-block-style: none
 
-- **Module:** EDS-M1 -  Digital Tools 
-- **Course:** Essential Digital Skills (EDS)
-- **Audience:** Early Career Researchers (PhD, Postdoc)  
-- **Duration:** ~40 minutes directed teaching (+4 exercises)  
-
+  revealjs:
+    theme:
+      - black
+      - uon.scss
+    output-ext: revealjs.html
+    slide-number: true
+    smaller: true
+    scrollable: true
+    chalkboard: true
+    controls: true
+    controls-layout: bottom-right
+    preview-links: auto
+    navigation-mode: linear
+    filters:
+      - dynamic-code-output
+      - pyodide
+      - webr
+    title-block-style: none
+    include-before-body:
+      - reveal-header.html
+    include-after-body:
+      - rjs-footer.js
 ---
 
 ::: callout-outcomes
@@ -49,66 +78,55 @@ metadata:
 ![](fig/office365.png){fig-align="center" width=500px}
 
 ## What is DS?
-
-The **Digital Skills** programme equips researchers with the competencies required for modern, data-driven scholarship. it focuses on four interconnected themes:
+The **Digital Skills** programme equips researchers with the digital competencies required for modern, data-driven scholarship.  
+It focuses on four interconnected themes: **digital collaboration**, **data management**, **coding**, and **reproducibility**.
 
 ```{mermaid}
 flowchart LR
-    A["Digital Collaboration"]:::a --> B["Data Management"]:::b
-    B --> C["Coding"]:::c --> D["Reproducibility"]:::d --> A
+    A["Digital Collaboration"]:::a
+    B["Data Management"]:::b
+    C["Coding"]:::c
+    D["Reproducibility"]:::d
+    A --> B --> C --> D --> A
     classDef a fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
     classDef b fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px
     classDef c fill:#FFF3E0,stroke:#EF6C00,stroke-width:1px
     classDef d fill:#F3E5F5,stroke:#6A1B9A,stroke-width:1px
 ```
 
-> 💡 *Digital collaboration, data management, coding, and reproducibility form the foundation of digital research practice.*
+The programme is not simply about tools
 
-
-## Beyond Tools
-
-The programme is not simply about tools:
+---
 
 It is about **connecting researchers** with the people who work with data, including **data stewards**, **software engineers**, and **information specialists**. These collaborations enable better use of data, improve the quality of research outputs, and support a more open and reproducible research culture.
-
-> 🤝 *Digital skills grow through collaboration between researchers and data professionals.*
 
 ---
 
 ## Connecting Researchers and Data Professionals
 
+Modern research depends on effective communication between disciplinary experts and data professionals.  
 
-Modern research relies on shared understanding between disciplinary experts and technical specialists.
+---
 
-| **Benefit** | **Description** |
-|--------------|-----------------|
-| **Quality** | Consistent data standards and metadata practices |
-| **Reproducibility** | Shared methods and transparent workflows |
-| **Efficiency** | Collaborative problem-solving across domains |
-| **Insight** | Combining technical and disciplinary perspectives |
+The DS&DSP aims to **bridge these communities**, creating a shared understanding of data, workflows, and digital practices.
 
-> 💬 *Bridging communities builds stronger, more reproducible research.*
+- Collaboration improves **data quality** and **metadata consistency**
+- Shared practice strengthens **reproducibility** and **transparency**
+- Interdisciplinary teamwork enhances **efficiency** and **innovation**
+- Working together helps researchers **translate complex data into insight**
 
+> 💬 *Modern research is not just about individual expertise—it’s about connecting expertise.*
+
+---
 
 ## Why Digital Skills Matter
 
-Digital skills enable collaboration and efficiency across the research lifecycle.
+- Digital skills underpin every stage of the research lifecycle—from data collection to dissemination  
+- Collaborative digital practices improve reproducibility and research efficiency  
+- Data fluency enables meaningful engagement with data scientists and technical specialists  
+- Strong digital identities and open practices increase research visibility and impact  
 
-```{mermaid}
-flowchart TB
-    A["Data Collection"] --> B["Analysis"] --> C["Collaboration"] --> D["Publication & Sharing"]
-    D --> A
-    style A fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
-    style B fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px
-    style C fill:#FFF3E0,stroke:#EF6C00,stroke-width:1px
-    style D fill:#F3E5F5,stroke:#6A1B9A,stroke-width:1px
-```
-
-> 🔁 *Digital literacy underpins the entire cycle of modern research.*
-
-## Addressing Common Challenges
-
-This course is about addressing the following challanges at a unversity level. 
+---
 
 | Challenge | Digital Skills Response |
 |------------|-------------------------|
@@ -117,27 +135,21 @@ This course is about addressing the following challanges at a unversity level.
 | Limited collaboration | Integrated communication and documentation tools |
 | Poor reproducibility | Use of open standards, coding literacy, and transparent sharing |
 
-> ⚙️ *Digital skills convert research challenges into structured improvements.*
-
 ## Collaboration Leads to Better Research
 
 Collaboration is at the heart of the DS&DSP. By connecting researchers, data professionals, and support specialists, the programme builds a **community of digital practice** that strengthens the quality, openness, and impact of research across disciplines.
 
 > “Collaboration is not an add-on—it is the mechanism through which good research becomes great research.”
 
-## Course Structure
+## Digital Skills: Course Structure
 
-The programme offers **three tiers of learning**, from foundational to applied and specialist skills.
+There are three training tiers, each progressively developing digital skills from foundational competencies to applied and specialist practice. 
 
-| **Level** | **Focus** | **Example Modules** |
-|------------|------------|---------------------|
-| **Foundation** | Core digital research competencies | Essential Digital Skills |
-| **Intermediate** | Theory and collaboration in data science | Python, R, Software Engineering |
-| **Advanced** | Applied analysis and discipline-specific practice | Bioinformatics, HPC, ML/AI |
+---
 
-> 🧩 *Each tier builds practical capability and supports research independence.*
+The programme follows a modular structure: you don’t have to do all of it! 
 
-### Esential Digital Skills
+course modules includes some lectures, but also hands-on workshops. 
 
 | Course                             | Description                                                                 | Duration       | Note |
 |------------------------------------|-----------------------------------------------------------------------------|----------------|------|
@@ -145,7 +157,11 @@ The programme offers **three tiers of learning**, from foundational to applied a
 | Methods for Data Science – Theoretical    | Introduces coding, software, and collaboration practices needed for sustainable research. | 4× half days   |      |
 | Methods for Data Science – Applied Python | Provides practical experience in data analysis and interpretation using Python. | 2 days         | Introductory and intermediate |
 | Methods for Data Science – Applied R      | Provides practical experience in data analysis and interpretation using R.     | 2 days         | Introductory and intermediate |
-| Advanced       | —           | 1 day    |      |
+| Course               | Description | Duration | Note |
+|----------------------|-------------|----------|------|
+| ???       | —           | 1 day    |      |
+| ???   | —           | 1 day    |      |
+| ???            | —           | 1 day    |      |
 
 ---
 
@@ -153,9 +169,22 @@ The programme offers **three tiers of learning**, from foundational to applied a
 
 #### Task 1: Digital Skills Reflection
 
+::: panel-tabset
+##### Question
+
 Let’s start by reflecting on your current digital research skills.  
 
 ❓ *What’s digital skills or tool you want to develop this year?*  
+
+Type 4-5 or more skills or tools below (comma-separated), then hit submit to see the **Wordcloud**.
+
+
+##### Follow-up
+
+- Read through what others have shared.  
+- Discuss recurring goals and patterns in the plenary.  
+- Identify shared learning priorities.
+
 :::
 :::
 
