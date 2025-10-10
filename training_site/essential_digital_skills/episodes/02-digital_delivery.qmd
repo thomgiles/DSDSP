@@ -49,9 +49,12 @@ The traditional research process is often framed as **linear**: define a questio
 
 ```{mermaid}
 flowchart LR
-    A[Define Research Question] --> B[Collect Data]
-    B --> C[Analyse Results]
-    C --> D[Publish Findings]
+    A[Define Research Question] 
+    B[Collect Data]
+    C[Analyse Results]
+    D[Publish Findings]
+
+    A --> B --> C --> D
     
     style A fill:#f5f5f5,stroke:#333,stroke-width:1px
     style B fill:#e0f7fa,stroke:#333,stroke-width:1px
@@ -350,7 +353,7 @@ Regular, structured meetings keep research teams aligned and adaptive.
 They replace long, infrequent check-ins with short, purposeful interactions.
 
 | **Meeting Type** | **Purpose** | **Typical Timing** |
-|------------------|-------------|--------------------|
+|------------------|------------------|---------------|
 | **Sprint Planning** | Define objectives, assign tasks, and clarify expectations | Start of each sprint |
 | **Stand-Up** | Share progress, identify blockers, coordinate efforts | 10–15 min each day |
 | **Sprint Review** | Present outcomes, gather feedback, refine next steps | End of sprint |

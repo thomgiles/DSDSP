@@ -1,0 +1,37 @@
+su: ignoring --preserve-environment, it's mutually exclusive with --login
+
+Attaching package: ‘shinydashboard’
+
+The following object is masked from ‘package:graphics’:
+
+    box
+
+Loading required package: ggplot2
+
+Attaching package: ‘plotly’
+
+The following object is masked from ‘package:ggplot2’:
+
+    last_plot
+
+The following object is masked from ‘package:stats’:
+
+    filter
+
+The following object is masked from ‘package:graphics’:
+
+    layout
+
+
+Attaching package: ‘dplyr’
+
+The following objects are masked from ‘package:stats’:
+
+    filter, lag
+
+The following objects are masked from ‘package:base’:
+
+    intersect, setdiff, setequal, union
+
+
+Listening on http://127.0.0.1:45521
