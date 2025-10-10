@@ -467,6 +467,8 @@ flowchart TB
 
 #### Task 3: Research Identity Self-Audit
 
+::: panel-tabset
+
 #####  Task
 
 ❓ Do you have a ORCID research identity? 
