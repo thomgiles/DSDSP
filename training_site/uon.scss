@@ -10,14 +10,15 @@ $font-family-monospace:    "Circular Book", Circular, monospace !default;
 $headings-font-family:     "Circular Bold", Helvetica, Arial, sans-serif;
 
 /* Colours */
-$teal:   #37B4B0;
-$blue2:  #66C3DA;
-$blue:   #009BC1;
+$teal:   #0d2c2b;
+$blue2:  #0c2126;
+$blue:   #16333b;
 $slate:  #405162;
 $ink:    #10263b;
 $white:  #ffffff;
 $grey:   #B6B6B61F;
 $beige:  #faf6ef;
+
 /* Bootstrap overrides */
 $body-bg:        $white !default;
 $body-color:     $ink !default;
@@ -462,8 +463,10 @@ h5 { font-size: 1.15rem; font-weight: 500; color: $white; }
 }
 
 .reveal blockquote {
+    background-color: $ink !important;
     box-shadow: none;
     text-align: left;
+    color: $white;
 }
 
 .reveal .callout-task {
