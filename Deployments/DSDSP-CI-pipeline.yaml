@@ -18,7 +18,7 @@
       vmImage: ubuntu-latest
     variables:
       - group:  Azure-Static-Web-Apps-nice-rock-0193cc903-variable-group
-
+    
     steps:
       - checkout: self
         submodules: true
@@ -64,7 +64,7 @@
 
       - script: |
           export R_LIBS_USER=$HOME/.R/library
-          quarto render . --to html --output-dir _site --no-cache
+          quarto render . --verbose --no-cache
           echo "list contents"
           pwd
           ls -al

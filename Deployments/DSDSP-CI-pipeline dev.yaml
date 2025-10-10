@@ -64,7 +64,7 @@
 
       - script: |
           export R_LIBS_USER=$HOME/.R/library
-          quarto render . --to html --output-dir _site --no-cache
+          quarto render . --verbose --no-cache
           echo "list contents"
           pwd
           ls -al
@@ -75,7 +75,7 @@
 
       - task: AzureStaticWebApp@0
         inputs:
-          azure_static_web_apps_api_token: $(AZURE_STATIC_WEB_APPS_API_TOKEN_NICE_ROCK_0193CC903)
+          azure_static_web_apps_api_token: $(AZURE_STATIC_WEB_APPS_API_TOKEN_VICTORIOUS_MOSS_01EB84103)
           app_location: "training_site"
           output_location: "_site"
           api_location: ""
