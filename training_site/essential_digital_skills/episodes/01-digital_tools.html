@@ -1,0 +1,2391 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="quarto-1.7.32" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+
+
+<title>Digital Tools</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+<!-- htmldependencies:E3FAD763 -->
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+<script type="text/javascript" charset="UTF-8">
+document.addEventListener('DOMContentLoaded', function () {
+cookieconsent.run({
+  "notice_banner_type":"headline",
+  "consent_type":"express",
+  "palette":"dark",
+  "language":"en",
+  "page_load_consent_levels":["strictly-necessary"],
+  "notice_banner_reject_button_hide":false,
+  "preferences_center_close_button_hide":false,
+  "website_name":""
+  ,
+"language":"en"
+  });
+});
+</script> 
+  
+<script  src="../../site_libs/quarto-diagram/mermaid.min.js"></script>
+<script  src="../../site_libs/quarto-diagram/mermaid-init.js"></script>
+<link  href="../../site_libs/quarto-diagram/mermaid.css" rel="stylesheet" />
+
+
+</head>
+
+<body>
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="/index.html" class="navbar-brand navbar-brand-logo">
+    <img src="/assets/UoN_logo.png" alt="" class="navbar-logo" />
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+  aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation"
+  onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="/index.html"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-essential-digital-skills" role="link" data-bs-toggle="dropdown" aria-expanded="false" >
+ <span class="menu-text">Essential Digital Skills</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-essential-digital-skills">    
+        <li>
+    <a class="dropdown-item" href="/essential_digital_skills/episodes/01-digital_tools.html">
+ <span class="dropdown-text">Digital Tools</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="/essential_digital_skills/episodes/02-digital_delivery.html">
+ <span class="dropdown-text">Digital Delivery</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="/essential_digital_skills/episodes/03-data_governance_and_policy.html">
+ <span class="dropdown-text">Data Governance and Policy</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="/essential_digital_skills/episodes/04-research_data_managment.html">
+ <span class="dropdown-text">Research Data Management</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="/essential_digital_skills/episodes/ext1-responsible_ai.html">
+ <span class="dropdown-text">Responsible AI</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="/essential_digital_skills/episodes/ext2-hands_on_ai.html">
+ <span class="dropdown-text">Hands-on AI</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-applied-data-science-(python" role="link" data-bs-toggle="dropdown" aria-expanded="false" >
+ <span class="menu-text">Applied Data Science (Python)</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-applied-data-science-(python">    
+        <li>
+    <a class="dropdown-item" href="/applied_python/episodes/01-intro.html">
+ <span class="dropdown-text">01 Intro</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="/applied_python/episodes/02-numpy.html">
+ <span class="dropdown-text">02 Numpy</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="/applied_python/episodes/03-matplotlib.html">
+ <span class="dropdown-text">03 Matplotlib</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="/applied_python/episodes/04-lists.html">
+ <span class="dropdown-text">04 Lists</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="/applied_python/episodes/05-loop.html">
+ <span class="dropdown-text">05 Loops</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="/applied_python/episodes/06-files.html">
+ <span class="dropdown-text">06 Files</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="/applied_python/episodes/07-cond.html">
+ <span class="dropdown-text">07 Conditionals</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="/applied_python/episodes/08-func.html">
+ <span class="dropdown-text">08 Functions</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="/applied_python/episodes/09-errors.html">
+ <span class="dropdown-text">09 Errors</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="/applied_python/episodes/10-defensive.html">
+ <span class="dropdown-text">10 Defensive Programming</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="/applied_python/episodes/11-debugging.html">
+ <span class="dropdown-text">11 Debugging</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="/applied_python/episodes/12-cmdline.html">
+ <span class="dropdown-text">12 Command Line</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-applied-data-science-(r" role="link" data-bs-toggle="dropdown" aria-expanded="false" >
+ <span class="menu-text">Applied Data Science (R)</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-applied-data-science-(r">    
+        <li>
+    <a class="dropdown-item" href="/applied_R/episodes/01-Rstudio_intro.html">
+ <span class="dropdown-text">01 RStudio Intro</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="/applied_R/episodes/02-R_variables_intro.html">
+ <span class="dropdown-text">02 R Variables</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="/applied_R/episodes/03-R_functions.html">
+ <span class="dropdown-text">03 R Functions</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="/applied_R/episodes/04-for_loops.html">
+ <span class="dropdown-text">04 For Loops</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="/applied_R/episodes/05-the_tidyverse.html">
+ <span class="dropdown-text">05 The Tidyverse</span></a>
+  </li>  
+    </ul>
+  </li>
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn"
+      data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" 
+      aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation"
+      onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <h1 class="quarto-secondary-nav-title no-breadcrumbs"></h1>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" role="link"
+        aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation"
+        onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+  <div id="quarto-announcement" data-announcement-id="bce56eb0bac3c7a5c7957504a2e591c9" class="alert alert-primary hidden"><i class="bi bi-info-circle quarto-announcement-icon"></i><div class="quarto-announcement-content">**Alert** - This site is currently under construction</div><i class="bi bi-x-lg quarto-announcement-action"></i></div>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1"  role="navigation" aria-expanded="true">
+ <span class="menu-text">Learning modules</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="/essential_digital_skills/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Essential Digital Skills</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="/essential_digital_skills/episodes/01-digital_tools.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Digital Tools</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="/essential_digital_skills/episodes/02-digital_delivery.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Digital Delivery</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="/essential_digital_skills/episodes/03-data_governance_and_policy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Governance & Policy</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="/essential_digital_skills/episodes/04-research_data_managment.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Data Governance & Policy</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="/essential_digital_skills/episodes/ext1-responsible_ai.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Responsible Use of AI in Research</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="/essential_digital_skills/episodes/ext2-hands_on_ai.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">exercises: 100</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Methods for Data Science</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth2 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="/applied_python/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Applied Data Sciences (Python)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth3 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5"  role="navigation" aria-expanded="false">
+ <span class="menu-text">Episodes</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-5" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-5" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="/applied_python/episodes/01-intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Python Fundamentals</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="/applied_python/episodes/02-numpy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Analyzing Patient Data</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+ <span class="menu-text">applied_python/episodes/03-matplotlib.md</span>
+  </li>
+          <li class="sidebar-item">
+ <span class="menu-text">applied_python/episodes/04-lists.md</span>
+  </li>
+          <li class="sidebar-item">
+ <span class="menu-text">applied_python/episodes/05-loop.md</span>
+  </li>
+          <li class="sidebar-item">
+ <span class="menu-text">applied_python/episodes/06-files.md</span>
+  </li>
+          <li class="sidebar-item">
+ <span class="menu-text">applied_python/episodes/07-cond.md</span>
+  </li>
+          <li class="sidebar-item">
+ <span class="menu-text">applied_python/episodes/08-func.md</span>
+  </li>
+          <li class="sidebar-item">
+ <span class="menu-text">applied_python/episodes/09-errors.md</span>
+  </li>
+          <li class="sidebar-item">
+ <span class="menu-text">applied_python/episodes/10-defensive.md</span>
+  </li>
+          <li class="sidebar-item">
+ <span class="menu-text">applied_python/episodes/11-debugging.md</span>
+  </li>
+          <li class="sidebar-item">
+ <span class="menu-text">applied_python/episodes/12-cmdline.md</span>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6"  role="navigation" aria-expanded="false">
+ <span class="menu-text">Learners</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-6" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-6" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="/applied_python/learners/setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Setup</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="/applied_python/learners/discuss.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Discussion</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="/applied_python/learners/reference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Glossary</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7"  role="navigation" aria-expanded="false">
+ <span class="menu-text">Instructors</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-7" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-7" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="/applied_python/instructors/additional_material.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Additional material</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="/applied_python/instructors/extra_exercises.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Additional Exercises</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="/applied_python/instructors/instructor-notes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instructor Notes</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8"  role="navigation" aria-expanded="false">
+ <span class="menu-text">Community & Metadata</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-8" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-8" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="/applied_python/CONTRIBUTING.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Contributing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="/applied_python/CODE_OF_CONDUCT.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Contributor Code of Conduct</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="/applied_python/LICENSE.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Licenses</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="/applied_python/AUTHORS.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Authors</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="/applied_python/profiles/learner-profiles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Learner Profiles</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a href="/applied_R/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Applied Data Sciences (R)</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-9" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-9" class="collapse list-unstyled sidebar-section depth3 show">  
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10"  role="navigation" aria-expanded="false">
+ <span class="menu-text">Episodes</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-10" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-10" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="/applied_R/episodes/01-Rstudio_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction to Rstudio</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="/applied_R/episodes/02-R_variables_intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">R Variables</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="/applied_R/episodes/03-R_functions.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Functions in R</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="/applied_R/episodes/04-for_loops.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">For Loops</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="/applied_R/episodes/05-the_tidyverse.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Tidyverse and ggplot2 Analysis with Gapminder Dataset</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11"  role="navigation" aria-expanded="false">
+ <span class="menu-text">Learners</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-11" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-11" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="/applied_R/learners/setup.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Setup</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="/applied_R/learners/discuss.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Discussion</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="/applied_R/learners/reference.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Basic Operation</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12"  role="navigation" aria-expanded="false">
+ <span class="menu-text">Instructors</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-12" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-12" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="/applied_R/instructors/instructor-notes.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Instructor Notes</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+          <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13"  role="navigation" aria-expanded="false">
+ <span class="menu-text">Community & Metadata</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-13" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-13" class="collapse list-unstyled sidebar-section depth4 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="/applied_R/CONTRIBUTING.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Contributing</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="/applied_R/CODE_OF_CONDUCT.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Contributor Code of Conduct</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="/applied_R/LICENSE.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Licenses</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="/applied_R/profiles/learner-profiles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Learner profiles</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" ></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <div id="quarto-toc-target"></div>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header">
+<h1 class="title">Digital Tools</h1>
+
+</header>
+
+<nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#module-overview" id="toc-module-overview">Module Overview</a></li>
+  <li><a href="#learning-outcomes" id="toc-learning-outcomes">💡 Learning Outcomes</a></li>
+  <li><a href="#questions" id="toc-questions">❓ Questions</a></li>
+  <li><a href="#structure-agenda" id="toc-structure-agenda">Structure &amp; Agenda</a></li>
+  <li><a href="#introduction-to-the-digital-skills-programme" id="toc-introduction-to-the-digital-skills-programme">Introduction to the Digital Skills Programme</a>
+  <ul>
+  <li><a href="#what-is-ds" id="toc-what-is-ds">What is DS?</a></li>
+  <li><a href="#beyond-tools" id="toc-beyond-tools">Beyond Tools</a></li>
+  <li><a href="#connecting-researchers-and-data-professionals" id="toc-connecting-researchers-and-data-professionals">Connecting Researchers and Data Professionals</a></li>
+  <li><a href="#why-digital-skills-matter" id="toc-why-digital-skills-matter">Why Digital Skills Matter</a></li>
+  <li><a href="#addressing-common-challenges" id="toc-addressing-common-challenges">Addressing Common Challenges</a></li>
+  <li><a href="#collaboration-leads-to-better-research" id="toc-collaboration-leads-to-better-research">Collaboration Leads to Better Research</a></li>
+  <li><a href="#programme-structure" id="toc-programme-structure">Programme Structure</a>
+  <ul>
+  <li><a href="#courses" id="toc-courses">Courses</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#institutional-systems-for-digital-research" id="toc-institutional-systems-for-digital-research">Institutional Systems for Digital Research</a>
+  <ul>
+  <li><a href="#why-institutional-systems-matter" id="toc-why-institutional-systems-matter">Why Institutional Systems Matter</a></li>
+  <li><a href="#uons-digital-ecosystem" id="toc-uons-digital-ecosystem">UoN’s Digital Ecosystem</a></li>
+  <li><a href="#microsoft-365-a-platform-for-collaboration" id="toc-microsoft-365-a-platform-for-collaboration">Microsoft 365: A Platform for Collaboration</a></li>
+  <li><a href="#collaboration-in-practice" id="toc-collaboration-in-practice">Collaboration in Practice</a></li>
+  <li><a href="#file-collaboration-best-practice" id="toc-file-collaboration-best-practice">File Collaboration Best Practice</a></li>
+  <li><a href="#unicore-and-ris-institutional-systems" id="toc-unicore-and-ris-institutional-systems">UniCore and RIS: Institutional Systems</a></li>
+  <li><a href="#unicore-overview" id="toc-unicore-overview">UniCore Overview</a></li>
+  <li><a href="#ris-research-information-system" id="toc-ris-research-information-system">RIS (Research Information System)</a></li>
+  <li><a href="#integrated-research-systems" id="toc-integrated-research-systems">Integrated Research Systems</a></li>
+  <li><a href="#system-use-in-context" id="toc-system-use-in-context">System Use in Context</a></li>
+  <li><a href="#the-broader-vision-connected-research" id="toc-the-broader-vision-connected-research">The Broader Vision: Connected Research</a></li>
+  </ul></li>
+  <li><a href="#research-identity-profiles" id="toc-research-identity-profiles">Research Identity &amp; Profiles</a>
+  <ul>
+  <li><a href="#why-research-identity-matters" id="toc-why-research-identity-matters">Why Research Identity Matters</a></li>
+  <li><a href="#the-importance-of-consistency" id="toc-the-importance-of-consistency">The Importance of Consistency</a></li>
+  <li><a href="#orcid-a-persistent-digital-identifier" id="toc-orcid-a-persistent-digital-identifier">ORCID: A Persistent Digital Identifier</a></li>
+  <li><a href="#why-orcid-is-essential" id="toc-why-orcid-is-essential">Why ORCID is Essential</a></li>
+  <li><a href="#ris-research-information-system-at-uon" id="toc-ris-research-information-system-at-uon">RIS (Research Information System) at UoN</a></li>
+  <li><a href="#orcidris-integration" id="toc-orcidris-integration">ORCID–RIS Integration</a></li>
+  <li><a href="#scholarly-profiles-across-systems" id="toc-scholarly-profiles-across-systems">Scholarly Profiles Across Systems</a></li>
+  <li><a href="#managing-your-research-profiles" id="toc-managing-your-research-profiles">Managing Your Research Profiles</a></li>
+  <li><a href="#research-identity-as-collaboration-infrastructure" id="toc-research-identity-as-collaboration-infrastructure">Research Identity as Collaboration Infrastructure</a></li>
+  <li><a href="#the-broader-impact-of-a-connected-identity" id="toc-the-broader-impact-of-a-connected-identity">The Broader Impact of a Connected Identity</a></li>
+  </ul></li>
+  <li><a href="#digital-security-good-practice" id="toc-digital-security-good-practice">Digital Security &amp; Good Practice</a>
+  <ul>
+  <li><a href="#why-digital-security-matters" id="toc-why-digital-security-matters">Why Digital Security Matters</a></li>
+  <li><a href="#passwords-access-management" id="toc-passwords-access-management">Passwords &amp; Access Management</a></li>
+  <li><a href="#multi-factor-authentication-mfa" id="toc-multi-factor-authentication-mfa">Multi-Factor Authentication (MFA)</a></li>
+  <li><a href="#device-data-protection" id="toc-device-data-protection">Device &amp; Data Protection</a></li>
+  <li><a href="#secure-remote-access" id="toc-secure-remote-access">Secure Remote Access</a></li>
+  <li><a href="#data-backup-strategy" id="toc-data-backup-strategy">Data Backup Strategy</a></li>
+  <li><a href="#cybersecurity-best-practices" id="toc-cybersecurity-best-practices">Cybersecurity Best Practices</a></li>
+  <li><a href="#building-a-culture-of-digital-responsibility" id="toc-building-a-culture-of-digital-responsibility">Building a Culture of Digital Responsibility</a></li>
+  </ul></li>
+  <li><a href="#further-information" id="toc-further-information">Further Information</a>
+  <ul>
+  <li><a href="#uon-training-resources" id="toc-uon-training-resources">UoN Training Resources</a></li>
+  <li><a href="#keypoints" id="toc-keypoints">📚 keypoints</a></li>
+  <li><a href="#hints" id="toc-hints">🔦 hints</a></li>
+  </ul></li>
+  </ul>
+</nav>
+<!-- Hidden by default -->
+<p><img id="wf-image" src="fig/wfVxu0.jpg" alt="Workflow" style="display:none; max-width:100%;"></p>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const params = new URLSearchParams(window.location.search);
+  const isContrib = params.get("contribute") === "true";
+  if (isContrib) {
+    document.getElementById("wf-image").style.display = "block";
+  }
+});
+</script>
+<section id="module-overview" class="level2">
+<h2>Module Overview</h2>
+<ul>
+<li><strong>Module:</strong> EDS-M1 - Digital Tools</li>
+<li><strong>Course:</strong> Essential Digital Skills (EDS)</li>
+<li><strong>Audience:</strong> Early Career Researchers (PhD, Postdoc)<br />
+</li>
+<li><strong>Duration:</strong> ~40 minutes directed teaching (+4 exercises)</li>
+</ul>
+<hr />
+</section>
+<section id="learning-outcomes" class="level2 callout-outcomes">
+<h2>💡 Learning Outcomes</h2>
+<ul>
+<li>Navigate core UoN digital ecosystem</li>
+<li>Apply digital best practices in collaboration &amp; file organisation</li>
+<li>Manage your research identity</li>
+<li>Identify essential practices for secure research</li>
+</ul>
+</section>
+<hr />
+<section id="questions" class="level2 callout-questions">
+<h2>❓ Questions</h2>
+<ol type="1">
+<li>What basic data tools I need to do research at UoN?</li>
+<li>How to I maintain a consistent online researcher identity?</li>
+<li>What digital tools may I need to support my research aims?<br />
+</li>
+</ol>
+</section>
+<section id="structure-agenda" class="level2">
+<h2>Structure &amp; Agenda</h2>
+<ol type="1">
+<li>Introduction to the Digital Skills Programme (~10+10 min)<br />
+</li>
+<li>Institutional Systems for Digital Research (~10+10 min)<br />
+</li>
+<li>Research Identity and Profiles (~10+10 min)<br />
+</li>
+<li>Digital Security &amp; Good Practice (~10+10min)</li>
+</ol>
+<blockquote>
+<p>🔧 4 Activities spaced every 10 minutes.</p>
+</blockquote>
+</section>
+<section id="introduction-to-the-digital-skills-programme" class="level1">
+<h1>Introduction to the Digital Skills Programme</h1>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img src="fig/office365.png" class="img-fluid quarto-figure quarto-figure-center" width="500" /></p>
+</figure>
+</div>
+<section id="what-is-ds" class="level2">
+<h2>What is DS?</h2>
+<p>The <strong>Digital Skills</strong> programme equips researchers with the competencies required for modern, data-driven scholarship. it focuses on four interconnected themes:</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p><figure class=''></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+    A[&quot;Digital Collaboration&quot;]:::a --&gt; B[&quot;Data Management&quot;]:::b
+    B --&gt; C[&quot;Coding&quot;]:::c --&gt; D[&quot;Reproducibility&quot;]:::d --&gt; A
+    classDef a fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
+    classDef b fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px
+    classDef c fill:#FFF3E0,stroke:#EF6C00,stroke-width:1px
+    classDef d fill:#F3E5F5,stroke:#6A1B9A,stroke-width:1px
+</pre>
+</div>
+<p></figure></p>
+</div>
+</div>
+</div>
+<blockquote>
+<p>💡 <em>Digital collaboration, data management, coding, and reproducibility form the foundation of digital research practice.</em></p>
+</blockquote>
+</section>
+<section id="beyond-tools" class="level2">
+<h2>Beyond Tools</h2>
+<p>The programme is not simply about tools:</p>
+<p>It is about <strong>connecting researchers</strong> with the people who work with data, including <strong>data stewards</strong>, <strong>software engineers</strong>, and <strong>information specialists</strong>. These collaborations enable better use of data, improve the quality of research outputs, and support a more open and reproducible research culture.</p>
+<blockquote>
+<p>🤝 <em>Digital skills grow through collaboration between researchers and data professionals.</em></p>
+</blockquote>
+<hr />
+</section>
+<section id="connecting-researchers-and-data-professionals" class="level2">
+<h2>Connecting Researchers and Data Professionals</h2>
+<p>Modern research relies on shared understanding between disciplinary experts and technical specialists.</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th><strong>Benefit</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Quality</strong></td>
+<td>Consistent data standards and metadata practices</td>
+</tr>
+<tr class="even">
+<td><strong>Reproducibility</strong></td>
+<td>Shared methods and transparent workflows</td>
+</tr>
+<tr class="odd">
+<td><strong>Efficiency</strong></td>
+<td>Collaborative problem-solving across domains</td>
+</tr>
+<tr class="even">
+<td><strong>Insight</strong></td>
+<td>Combining technical and disciplinary perspectives</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>💬 <em>Bridging communities builds stronger, more reproducible research.</em></p>
+</blockquote>
+</section>
+<section id="why-digital-skills-matter" class="level2">
+<h2>Why Digital Skills Matter</h2>
+<p>Digital skills enable collaboration and efficiency across the research lifecycle.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p><figure class=''></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TB
+    A[&quot;Data Collection&quot;] --&gt; B[&quot;Analysis&quot;] --&gt; C[&quot;Collaboration&quot;] --&gt; D[&quot;Publication &amp; Sharing&quot;]
+    D --&gt; A
+    style A fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
+    style B fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px
+    style C fill:#FFF3E0,stroke:#EF6C00,stroke-width:1px
+    style D fill:#F3E5F5,stroke:#6A1B9A,stroke-width:1px
+</pre>
+</div>
+<p></figure></p>
+</div>
+</div>
+</div>
+<blockquote>
+<p>🔁 <em>Digital literacy underpins the entire cycle of modern research.</em></p>
+</blockquote>
+</section>
+<section id="addressing-common-challenges" class="level2">
+<h2>Addressing Common Challenges</h2>
+<p>This course is about addressing the following challanges at a unversity level.</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 32%" />
+<col style="width: 67%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Challenge</th>
+<th>Digital Skills Response</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Disconnected research silos</td>
+<td>Shared tools and workflows (Teams, GitHub, RIS)</td>
+</tr>
+<tr class="even">
+<td>Data mismanagement</td>
+<td>Version control, structured storage, FAIR principles</td>
+</tr>
+<tr class="odd">
+<td>Limited collaboration</td>
+<td>Integrated communication and documentation tools</td>
+</tr>
+<tr class="even">
+<td>Poor reproducibility</td>
+<td>Use of open standards, coding literacy, and transparent sharing</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>⚙️ <em>Digital skills convert research challenges into structured improvements.</em></p>
+</blockquote>
+</section>
+<section id="collaboration-leads-to-better-research" class="level2">
+<h2>Collaboration Leads to Better Research</h2>
+<p>Collaboration is at the heart of the DS&amp;DSP. By connecting researchers, data professionals, and support specialists, the programme builds a <strong>community of digital practice</strong> that strengthens the quality, openness, and impact of research across disciplines.</p>
+<blockquote>
+<p>“Collaboration is not an add-on—it is the mechanism through which good research becomes great research.”</p>
+</blockquote>
+</section>
+<section id="programme-structure" class="level2">
+<h2>Programme Structure</h2>
+<p>The programme offers <strong>three tiers of learning</strong>, from foundational to applied and specialist skills.</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 26%" />
+<col style="width: 46%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Level</strong></th>
+<th><strong>Focus</strong></th>
+<th><strong>Example Modules</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Foundation</strong></td>
+<td>Core digital research competencies</td>
+<td>Essential Digital Skills</td>
+</tr>
+<tr class="even">
+<td><strong>Intermediate</strong></td>
+<td>Theory and collaboration in data science</td>
+<td>Python, R, Software Engineering</td>
+</tr>
+<tr class="odd">
+<td><strong>Advanced</strong></td>
+<td>Applied analysis and discipline-specific practice</td>
+<td>Bioinformatics, HPC, ML/AI</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>🧩 <em>Each tier builds practical capability and supports research independence.</em></p>
+</blockquote>
+<section id="courses" class="level3">
+<h3>Courses</h3>
+<table class="caption-top" style="width:100%;">
+<colgroup>
+<col style="width: 26%" />
+<col style="width: 57%" />
+<col style="width: 11%" />
+<col style="width: 4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>Course</th>
+<th>Description</th>
+<th>Duration</th>
+<th>Note</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Essential Digital Skills – Foundation</td>
+<td>Introduces the tools, practices, and principles needed to participate confidently in digital research.</td>
+<td>4× half days</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>Methods for Data Science – Theoretical</td>
+<td>Introduces coding, software, and collaboration practices needed for sustainable research.</td>
+<td>4× half days</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>Methods for Data Science – Applied Python</td>
+<td>Provides practical experience in data analysis and interpretation using Python.</td>
+<td>2 days</td>
+<td>Introductory and intermediate</td>
+</tr>
+<tr class="even">
+<td>Methods for Data Science – Applied R</td>
+<td>Provides practical experience in data analysis and interpretation using R.</td>
+<td>2 days</td>
+<td>Introductory and intermediate</td>
+</tr>
+<tr class="odd">
+<td>Advanced</td>
+<td>—</td>
+<td>1 day?</td>
+<td>AI? ML? Bioinformatics?</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<section id="task-1-digital-skills-reflection" class="level4 callout-task">
+<h4>Task 1: Digital Skills Reflection</h4>
+<p>Let’s start by reflecting on your current digital research skills.</p>
+<p>❓ <em>What’s digital skills or tool you want to develop this year?</em></p>
+<div id="frame-q1">
+
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const params = new URLSearchParams(window.location.search);
+  const base = "https://ds-shiny-helper.azurewebsites.net/edsm1/?embed=true";
+  const isContrib = params.get("contribute") === "true";
+
+  const src = isContrib
+    ? `${base}&contribute=true#shiny-tab-q1_input`
+    : `${base}#shiny-tab-q1_results`;
+
+  document.getElementById("frame-q1").innerHTML =
+    `<iframe src="${src}" width="100%" height="500" frameborder="0"
+             style="border:none;" title="Q1"></iframe>`;
+});
+</script>
+</section>
+</section>
+</section>
+</section>
+<section id="institutional-systems-for-digital-research" class="level1">
+<h1>Institutional Systems for Digital Research</h1>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img src="fig/sharepoint.png" class="img-fluid quarto-figure quarto-figure-center" width="500" /></p>
+</figure>
+</div>
+<section id="why-institutional-systems-matter" class="level2">
+<h2>Why Institutional Systems Matter</h2>
+<p>Digital research depends on <strong>connected systems</strong> that enable collaboration, safeguard data, and streamline research workflows.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p><figure class=''></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TB
+    A[&quot;Researchers&quot;]:::a --&gt; B[&quot;Institutional Systems&quot;]:::b --&gt; C[&quot;Collaborative Outputs&quot;]:::c
+    C --&gt; A
+    classDef a fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
+    classDef b fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px
+    classDef c fill:#FFF3E0,stroke:#EF6C00,stroke-width:1px
+</pre>
+</div>
+<p></figure></p>
+</div>
+</div>
+</div>
+<blockquote>
+<p>🧩 <em>Institutional systems form the backbone of a connected research ecosystem.</em></p>
+</blockquote>
+</section>
+<section id="uons-digital-ecosystem" class="level2">
+<h2>UoN’s Digital Ecosystem</h2>
+<p>At the University of Nottingham, research operates within a <strong>digitally integrated environment</strong> that connects people, data, and administration.</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th><strong>System</strong></th>
+<th><strong>Primary Role</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Microsoft 365</strong></td>
+<td>Collaboration and communication</td>
+</tr>
+<tr class="even">
+<td><strong>SharePoint</strong></td>
+<td>Long-term data and document sharing</td>
+</tr>
+<tr class="odd">
+<td><strong>UniCore</strong></td>
+<td>Finance, HR, and procurement</td>
+</tr>
+<tr class="even">
+<td><strong>RIS (Worktribe)</strong></td>
+<td>Research lifecycle, funding, outputs</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>🏛️ <em>Together these platforms enable secure, collaborative, and transparent research practice.</em></p>
+</blockquote>
+</section>
+<section id="microsoft-365-a-platform-for-collaboration" class="level2">
+<h2>Microsoft 365: A Platform for Collaboration</h2>
+<p>Microsoft 365 supports daily research activity—from communication to data management—within a single, integrated workspace.</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th><strong>Tool</strong></th>
+<th><strong>Function</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Word &amp; Excel</strong></td>
+<td>Writing, data capture, and co-editing</td>
+</tr>
+<tr class="even">
+<td><strong>OneDrive</strong></td>
+<td>Personal cloud storage with versioning</td>
+</tr>
+<tr class="odd">
+<td><strong>Teams</strong></td>
+<td>Communication, meetings, shared workspaces</td>
+</tr>
+<tr class="even">
+<td><strong>SharePoint</strong></td>
+<td>Institutional document repositories</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>💬 <em>Microsoft 365 is the shared workspace for modern research collaboration.</em></p>
+</blockquote>
+</section>
+<section id="collaboration-in-practice" class="level2">
+<h2>Collaboration in Practice</h2>
+<p>Microsoft 365 enables seamless teamwork across roles and locations.</p>
+<ul>
+<li>Co-edit documents with real-time version tracking<br />
+</li>
+<li>Use Teams for context-based discussion and meetings<br />
+</li>
+<li>Store project materials in structured SharePoint libraries<br />
+</li>
+<li>Sync files through OneDrive for offline access</li>
+</ul>
+<blockquote>
+<p>🔁 <em>Integrated tools make collaborative research smooth, secure, and efficient.</em></p>
+</blockquote>
+</section>
+<section id="file-collaboration-best-practice" class="level2">
+<h2>File Collaboration Best Practice</h2>
+<ul>
+<li>Use <strong>Teams or SharePoint</strong> for shared project files<br />
+</li>
+<li>Enable <strong>autosave and version history</strong> in Word or Excel<br />
+</li>
+<li>Maintain <strong>logical folder structures</strong> by project phase<br />
+</li>
+<li>Apply <strong>permissions and access control</strong> with care</li>
+</ul>
+<blockquote>
+<p>🧠 <em>Good file management is the foundation of digital reproducibility.</em></p>
+</blockquote>
+</section>
+<section id="unicore-and-ris-institutional-systems" class="level2">
+<h2>UniCore and RIS: Institutional Systems</h2>
+<p>UniCore and RIS link the operational and administrative sides of research.</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>System</strong></th>
+<th><strong>Purpose</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>UniCore</strong></td>
+<td>Finance, HR, procurement, and resource management</td>
+</tr>
+<tr class="even">
+<td><strong>RIS (Worktribe)</strong></td>
+<td>Project proposals, outputs, and compliance tracking</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>🗂️ <em>These systems ensure research activity is visible, auditable, and supported.</em></p>
+</blockquote>
+</section>
+<section id="unicore-overview" class="level2">
+<h2>UniCore Overview</h2>
+<p><strong>UniCore</strong> is UoN’s enterprise system for managing finance, HR, and procurement.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p><figure class=''></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TB
+    P[&quot;Purchasing&quot;]:::a --&gt; E[&quot;Expenses&quot;]:::b --&gt; H[&quot;HR &amp; Leave Management&quot;]:::c --&gt; R[&quot;Research Operations&quot;]:::d
+    R --&gt; P
+    classDef a fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
+    classDef b fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px
+    classDef c fill:#FFF3E0,stroke:#EF6C00,stroke-width:1px
+    classDef d fill:#F3E5F5,stroke:#6A1B9A,stroke-width:1px
+</pre>
+</div>
+<p></figure></p>
+</div>
+</div>
+</div>
+<blockquote>
+<p>🧭 <em>UniCore underpins the financial and operational side of research.</em></p>
+</blockquote>
+</section>
+<section id="ris-research-information-system" class="level2">
+<h2>RIS (Research Information System)</h2>
+<p><strong>RIS (Worktribe)</strong> records, tracks, and reports the full research lifecycle.</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th><strong>Feature</strong></th>
+<th><strong>Purpose</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Grant Management</strong></td>
+<td>Develop and cost funding proposals</td>
+</tr>
+<tr class="even">
+<td><strong>Outputs Tracking</strong></td>
+<td>Record publications and datasets</td>
+</tr>
+<tr class="odd">
+<td><strong>Impact Recording</strong></td>
+<td>Capture engagement and REF evidence</td>
+</tr>
+<tr class="even">
+<td><strong>ORCID Integration</strong></td>
+<td>Synchronise researcher identity and outputs</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>📚 <em>RIS ensures research activity is captured and connected institutionally.</em></p>
+</blockquote>
+</section>
+<section id="integrated-research-systems" class="level2">
+<h2>Integrated Research Systems</h2>
+<p>The strength of UoN’s infrastructure lies in <strong>interoperability</strong> — connecting research activity, collaboration, and administration.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p><figure class=''></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+    M[&quot;Microsoft 365&quot;]:::a --&gt; S[&quot;SharePoint&quot;]:::b --&gt; R[&quot;RIS (Worktribe)&quot;]:::c --&gt; U[&quot;UniCore&quot;]:::d --&gt; M
+    classDef a fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
+    classDef b fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px
+    classDef c fill:#FFF3E0,stroke:#EF6C00,stroke-width:1px
+    classDef d fill:#F3E5F5,stroke:#6A1B9A,stroke-width:1px
+</pre>
+</div>
+<p></figure></p>
+</div>
+</div>
+</div>
+<blockquote>
+<p>🔗 <em>Connectivity between systems ensures seamless movement from idea to output.</em></p>
+</blockquote>
+</section>
+<section id="system-use-in-context" class="level2">
+<h2>System Use in Context</h2>
+<table class="caption-top">
+<colgroup>
+<col style="width: 27%" />
+<col style="width: 33%" />
+<col style="width: 38%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Research Task</strong></th>
+<th><strong>Recommended System</strong></th>
+<th><strong>Collaboration Benefit</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Co-author a paper</td>
+<td>OneDrive / Word</td>
+<td>Real-time editing and version control</td>
+</tr>
+<tr class="even">
+<td>Submit a funding bid</td>
+<td>RIS</td>
+<td>Shared proposal development and audit trail</td>
+</tr>
+<tr class="odd">
+<td>Claim expenses</td>
+<td>UniCore</td>
+<td>Secure and traceable reimbursement</td>
+</tr>
+<tr class="even">
+<td>Share datasets</td>
+<td>SharePoint / Teams</td>
+<td>Controlled access and persistence</td>
+</tr>
+<tr class="odd">
+<td>Record outputs</td>
+<td>RIS + ORCID</td>
+<td>Automatic institutional linking</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>⚙️ <em>Each platform serves a distinct role in the research ecosystem.</em></p>
+</blockquote>
+</section>
+<section id="the-broader-vision-connected-research" class="level2">
+<h2>The Broader Vision: Connected Research</h2>
+<p>By using institutional systems effectively teams build <strong>trust and accountability</strong>, data remains <strong>secure, reusable, and open</strong> and researchers can spend more time working on <strong>innovation and discovery</strong></p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p><figure class=''></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TB
+    A[&quot;Transparency&quot;]:::a --&gt; B[&quot;Trust&quot;]:::b --&gt; C[&quot;Collaboration&quot;]:::c --&gt; D[&quot;Impact&quot;]:::d
+    D --&gt; A
+    classDef a fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
+    classDef b fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px
+    classDef c fill:#FFF3E0,stroke:#EF6C00,stroke-width:1px
+    classDef d fill:#F3E5F5,stroke:#6A1B9A,stroke-width:1px
+</pre>
+</div>
+<p></figure></p>
+</div>
+</div>
+</div>
+<blockquote>
+<p>🌍 <em>Digital infrastructure is the connective tissue of modern research.</em></p>
+</blockquote>
+<hr />
+<section id="task-2-match-research-tasks-to-tools" class="level4 callout-task">
+<h4>Task 2: Match Research Tasks to Tools</h4>
+<div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-1-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-1" role="tab" aria-controls="tabset-1-1" aria-selected="true">Activity</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-2" role="tab" aria-controls="tabset-1-2" aria-selected="false">Cohort Answers</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-3" role="tab" aria-controls="tabset-1-3" aria-selected="false">Reflection</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-1-4-tab" data-bs-toggle="tab" data-bs-target="#tabset-1-4" role="tab" aria-controls="tabset-1-4" aria-selected="false">Answers</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-1-1-tab">
+<p>In groups of 4-5, discuss and list the digital tools you would use for each of the following:</p>
+<ol type="1">
+<li>Co-write a manuscript<br />
+</li>
+<li>Submit a funding bid<br />
+</li>
+<li>Order equipment<br />
+</li>
+<li>Share large datasets with your team</li>
+</ol>
+</div>
+<div id="tabset-1-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-2-tab">
+<div id="frame-q2">
+
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const params = new URLSearchParams(window.location.search);
+  const base = "https://ds-shiny-helper.azurewebsites.net/edsm1/?embed=true";
+  const isContrib = params.get("contribute") === "true";
+
+  const src = isContrib
+    ? `${base}&contribute=true#shiny-tab-q2_input`
+    : `${base}#shiny-tab-q2_results`;
+
+  document.getElementById("frame-q1").innerHTML =
+    `<iframe src="${src}" width="100%" height="500" frameborder="0"
+             style="border:none;" title="Q1"></iframe>`;
+});
+</script>
+</div>
+<div id="tabset-1-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-3-tab">
+<ul>
+<li>Share your answers with the plenary<br />
+</li>
+<li>Reflect on whether you’ve used any of these systems before<br />
+</li>
+<li>Identify any gaps in your familiarity that you want to address</li>
+</ul>
+</div>
+<div id="tabset-1-4" class="tab-pane" role="tabpanel" aria-labelledby="tabset-1-4-tab">
+<ul>
+<li><strong>Microsoft Word -&gt; Sharepoint + Teams</strong> are ideal for collaborative document editing<br />
+</li>
+<li><strong>RIS (Worktribe)</strong> is used for grant applications and research output tracking<br />
+</li>
+<li><strong>UniCore</strong> handles finance, procurement, HR and expenses<br />
+</li>
+<li><strong>Microsoft Teams + SharePoint</strong> is best for long-term group file access and collaboration<br />
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="research-identity-profiles" class="level1">
+<h1>Research Identity &amp; Profiles</h1>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img src="fig/orchid.png" class="img-fluid quarto-figure quarto-figure-center" width="500" /></p>
+</figure>
+</div>
+<section id="why-research-identity-matters" class="level2">
+<h2>Why Research Identity Matters</h2>
+<p>Your <strong>research identity</strong> defines how your work is discovered, attributed, and connected across the digital research ecosystem.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p><figure class=''></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TB
+    P[&quot;Publications&quot;]:::a --&gt; O[&quot;ORCID iD&quot;]:::b --&gt; R[&quot;Repositories &amp; Funders&quot;]:::c --&gt; I[&quot;Institutional Systems (RIS, HR)&quot;]:::d
+    I --&gt; P
+    classDef a fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
+    classDef b fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px
+    classDef c fill:#FFF3E0,stroke:#EF6C00,stroke-width:1px
+    classDef d fill:#F3E5F5,stroke:#6A1B9A,stroke-width:1px
+</pre>
+</div>
+<p></figure></p>
+</div>
+</div>
+</div>
+<blockquote>
+<p>🧩 <em>A coherent digital identity ensures your contributions are visible, citable, and connected.</em></p>
+</blockquote>
+</section>
+<section id="the-importance-of-consistency" class="level2">
+<h2>The Importance of Consistency</h2>
+<p>A consistent identity links your outputs, affiliations, and roles automatically across systems.<br />
+This guarantees proper attribution and supports efficient collaboration.</p>
+<ul>
+<li>Ensures <strong>discoverability</strong> across publishers and repositories<br />
+</li>
+<li>Prevents <strong>duplication or misattribution</strong> of outputs<br />
+</li>
+<li>Facilitates <strong>integration</strong> with institutional systems like RIS</li>
+</ul>
+<blockquote>
+<p>💡 <em>A consistent research identity builds long-term recognition and credibility.</em></p>
+</blockquote>
+</section>
+<section id="orcid-a-persistent-digital-identifier" class="level2">
+<h2>ORCID: A Persistent Digital Identifier</h2>
+<p><strong>ORCID (Open Researcher and Contributor ID)</strong> is the global standard for uniquely identifying researchers across institutions and disciplines.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p><figure class=''></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+    A[&quot;Researcher&quot;]:::a --&gt; B[&quot;ORCID iD&quot;]:::b --&gt; C[&quot;Funders&quot;]:::c
+    B --&gt; D[&quot;Publishers&quot;]:::d
+    B --&gt; E[&quot;Repositories &amp; RIS&quot;]:::e
+    classDef a fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
+    classDef b fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px
+    classDef c fill:#FFF3E0,stroke:#EF6C00,stroke-width:1px
+    classDef d fill:#F3E5F5,stroke:#6A1B9A,stroke-width:1px
+    classDef e fill:#E1F5FE,stroke:#0277BD,stroke-width:1px
+</pre>
+</div>
+<p></figure></p>
+</div>
+</div>
+</div>
+<blockquote>
+<p>🧠 <em>Your ORCID iD is your digital fingerprint across the global research ecosystem.</em></p>
+</blockquote>
+</section>
+<section id="why-orcid-is-essential" class="level2">
+<h2>Why ORCID is Essential</h2>
+<ul>
+<li><strong>Universal interoperability:</strong> used by funders, publishers, and institutions<br />
+</li>
+<li><strong>Automatic updates:</strong> Crossref and DataCite can sync new outputs<br />
+</li>
+<li><strong>Portability:</strong> your iD remains active throughout your career</li>
+</ul>
+<blockquote>
+<p>🔗 <em>ORCID connects your research identity beyond institutional boundaries.</em></p>
+</blockquote>
+</section>
+<section id="ris-research-information-system-at-uon" class="level2">
+<h2>RIS (Research Information System) at UoN</h2>
+<p>At UoN, <strong>RIS (Worktribe)</strong> complements your ORCID profile by linking research activity to institutional records.</p>
+<table class="caption-top">
+<thead>
+<tr class="header">
+<th><strong>Feature</strong></th>
+<th><strong>Function</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Grant Management</strong></td>
+<td>Tracks proposals, approvals, and costings</td>
+</tr>
+<tr class="even">
+<td><strong>Outputs Dashboard</strong></td>
+<td>Records publications, datasets, and impacts</td>
+</tr>
+<tr class="odd">
+<td><strong>Compliance</strong></td>
+<td>Supports REF and Open Access requirements</td>
+</tr>
+<tr class="even">
+<td><strong>Integration</strong></td>
+<td>Syncs with ORCID and external repositories</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>🏛️ <em>RIS ensures your institutional identity mirrors your global research presence.</em></p>
+</blockquote>
+</section>
+<section id="orcidris-integration" class="level2">
+<h2>ORCID–RIS Integration</h2>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p><figure class=''></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+    O[&quot;ORCID iD&quot;]:::a --&gt; R[&quot;RIS (Worktribe)&quot;]:::b --&gt; P[&quot;Public Staff Page&quot;]:::c
+    R --&gt; F[&quot;Funders &amp; Repositories&quot;]:::d
+    classDef a fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
+    classDef b fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px
+    classDef c fill:#FFF3E0,stroke:#EF6C00,stroke-width:1px
+    classDef d fill:#F3E5F5,stroke:#6A1B9A,stroke-width:1px
+</pre>
+</div>
+<p></figure></p>
+</div>
+</div>
+</div>
+<blockquote>
+<p>💬 <em>Connecting ORCID to RIS automates data flow and strengthens institutional visibility.</em></p>
+</blockquote>
+</section>
+<section id="scholarly-profiles-across-systems" class="level2">
+<h2>Scholarly Profiles Across Systems</h2>
+<p>Different platforms amplify your professional presence.<br />
+When synchronised with ORCID, they create a distributed network of your scholarly identity.</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 38%" />
+<col style="width: 33%" />
+<col style="width: 28%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Platform</strong></th>
+<th><strong>Purpose</strong></th>
+<th><strong>Notes</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Scopus Author ID</strong></td>
+<td>Tracks citations, co-authorship, and affiliations</td>
+<td>Merge duplicates for accuracy</td>
+</tr>
+<tr class="even">
+<td><strong>Google Scholar</strong></td>
+<td>Monitors visibility and citation trends</td>
+<td>Manual curation may be required</td>
+</tr>
+<tr class="odd">
+<td><strong>ResearchGate / Academia.edu</strong></td>
+<td>Social exchange platforms</td>
+<td>Use responsibly; metrics are non-standard</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>⚠️ <em>Prioritise verified systems like ORCID, Scopus, and RIS for credible visibility.</em></p>
+</blockquote>
+</section>
+<section id="managing-your-research-profiles" class="level2">
+<h2>Managing Your Research Profiles</h2>
+<ul>
+<li>Make your <strong>ORCID profile public</strong> for discoverability<br />
+</li>
+<li><strong>Merge duplicate Scopus IDs</strong> to ensure accuracy<br />
+</li>
+<li><strong>Link ORCID to RIS</strong> for automatic synchronisation<br />
+</li>
+<li>Use consistent <strong>name and affiliation formats</strong><br />
+</li>
+<li>Avoid unverified or <strong>proprietary metrics</strong><br />
+</li>
+<li><strong>Audit profiles regularly</strong> for correctness</li>
+</ul>
+<blockquote>
+<p>🧭 <em>Managing your identity actively ensures your research remains visible and verifiable.</em></p>
+</blockquote>
+</section>
+<section id="research-identity-as-collaboration-infrastructure" class="level2">
+<h2>Research Identity as Collaboration Infrastructure</h2>
+<p>A connected identity supports collaboration, attribution, and trust across teams.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p><figure class=''></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TB
+    A[&quot;Accurate Profiles&quot;]:::a --&gt; B[&quot;Discoverable Expertise&quot;]:::b --&gt; C[&quot;Collaborative Opportunities&quot;]:::c --&gt; D[&quot;Trusted Attribution&quot;]:::d
+    D --&gt; A
+    classDef a fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
+    classDef b fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px
+    classDef c fill:#FFF3E0,stroke:#EF6C00,stroke-width:1px
+    classDef d fill:#F3E5F5,stroke:#6A1B9A,stroke-width:1px
+</pre>
+</div>
+<p></figure></p>
+</div>
+</div>
+</div>
+<blockquote>
+<p>🤝 <em>A well-managed identity connects people, data, and recognition across research networks.</em></p>
+</blockquote>
+</section>
+<section id="the-broader-impact-of-a-connected-identity" class="level2">
+<h2>The Broader Impact of a Connected Identity</h2>
+<ul>
+<li>Enhances <strong>interdisciplinary visibility</strong><br />
+</li>
+<li>Simplifies <strong>authorship and data attribution</strong><br />
+</li>
+<li>Strengthens <strong>institutional reporting</strong> and compliance<br />
+</li>
+<li>Promotes <strong>open, transparent research collaboration</strong></li>
+</ul>
+<blockquote>
+<p>🌍 <em>A connected identity enables connected research.</em></p>
+</blockquote>
+<hr />
+<section id="task-3-research-identity-self-audit" class="level4 callout-task">
+<h4>Task 3: Research Identity Self-Audit</h4>
+<div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-2-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-1" role="tab" aria-controls="tabset-2-1" aria-selected="true">Activity part 1</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-2" role="tab" aria-controls="tabset-2-2" aria-selected="false">Activity part 2</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-2-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-2-3" role="tab" aria-controls="tabset-2-3" aria-selected="false">Further Infomation</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-2-1-tab">
+<p>❓ Do you have a ORCID research identity?</p>
+<p>Visit <a href="https://orcid.org/">Orcid</a>, Log in / sign up</p>
+</div>
+<div id="tabset-2-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-2-tab">
+<p>❓ Is your ORCID iD is populated with your name, affiliation etc? if not make sure that is complete. - Set your ORCID ID to public (if appropriate)</p>
+</div>
+<div id="tabset-2-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-2-3-tab">
+<ul>
+<li>You can actually link your RIS and ORCID profiles but for that you need to be registered to use worktribe. It is recomended that you <a href="https://nottingham-research.worktribe.com/login.jx">request access</a></li>
+<li>Once registered and logged in, you can link your ORCID and RIS profiles. For more infomation please refer to the <a href="http://moodle.nottingham.ac.uk/course/view.php?id=47898">RIS training materials</a> to go away and read</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="digital-security-good-practice" class="level1">
+<h1>Digital Security &amp; Good Practice</h1>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img src="fig/security.png" class="img-fluid quarto-figure quarto-figure-center" width="500" /></p>
+</figure>
+</div>
+<section id="why-digital-security-matters" class="level2">
+<h2>Why Digital Security Matters</h2>
+<p>Effective digital research requires vigilance, responsibility, and sound data stewardship.<br />
+Security protects not only your research, but also your collaborators and institution.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p><figure class=''></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart TB
+    A[&quot;Trust &amp; Compliance&quot;]:::a --&gt; B[&quot;Data Integrity&quot;]:::b --&gt; C[&quot;Confidentiality&quot;]:::c --&gt; D[&quot;Continuity&quot;]:::d --&gt; E[&quot;Collaboration Resilience&quot;]:::e --&gt; A
+    classDef a fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
+    classDef b fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px
+    classDef c fill:#FFF3E0,stroke:#EF6C00,stroke-width:1px
+    classDef d fill:#F3E5F5,stroke:#6A1B9A,stroke-width:1px
+    classDef e fill:#E1F5FE,stroke:#0277BD,stroke-width:1px
+</pre>
+</div>
+<p></figure></p>
+</div>
+</div>
+</div>
+<blockquote>
+<p>🔒 <em>Digital security is a collective responsibility—protecting data protects discovery.</em></p>
+</blockquote>
+</section>
+<section id="passwords-access-management" class="level2">
+<h2>Passwords &amp; Access Management</h2>
+<p>Passwords remain the first line of defence against unauthorised access.<br />
+Weak or reused passwords are still the most common research vulnerability.</p>
+<ul>
+<li>Use <strong>at least 12 characters</strong> with a mix of cases, numbers, and symbols<br />
+</li>
+<li>Create <strong>unique passwords</strong> for each system<br />
+</li>
+<li>Never share credentials via email or chat<br />
+</li>
+<li>Regularly <strong>review access permissions</strong> for shared platforms</li>
+</ul>
+<blockquote>
+<p>🧠 <em>Strong passwords are simple, low-cost defences against complex risks.</em></p>
+</blockquote>
+</section>
+<section id="multi-factor-authentication-mfa" class="level2">
+<h2>Multi-Factor Authentication (MFA)</h2>
+<p><strong>MFA</strong> adds a crucial verification step beyond a password.<br />
+Even if your password is compromised, MFA prevents most unauthorised logins.</p>
+<div class="cell" data-layout-align="default">
+<div class="cell-output-display">
+<div>
+<p><figure class=''></p>
+<div>
+<pre class="mermaid mermaid-js">flowchart LR
+    U[&quot;User Login&quot;]:::a --&gt; P[&quot;Password&quot;]:::b --&gt; V[&quot;Second Factor (App / SMS / Key)&quot;]:::c --&gt; A[&quot;Access Granted&quot;]:::d
+    classDef a fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
+    classDef b fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px
+    classDef c fill:#FFF3E0,stroke:#EF6C00,stroke-width:1px
+    classDef d fill:#F3E5F5,stroke:#6A1B9A,stroke-width:1px
+</pre>
+</div>
+<p></figure></p>
+</div>
+</div>
+</div>
+<blockquote>
+<p>🔐 <em>Think of MFA as the seatbelt of your digital life—simple, unobtrusive, and essential.</em></p>
+</blockquote>
+</section>
+<section id="device-data-protection" class="level2">
+<h2>Device &amp; Data Protection</h2>
+<p>Devices are gateways to institutional data.<br />
+Protecting them is vital for maintaining research integrity and trust.</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 50%" />
+<col style="width: 50%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Action</strong></th>
+<th><strong>Purpose</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Store files on OneDrive or SharePoint</td>
+<td>Secure cloud storage with version control</td>
+</tr>
+<tr class="even">
+<td>Avoid local or personal cloud drives</td>
+<td>Prevent data loss and compliance breaches</td>
+</tr>
+<tr class="odd">
+<td>Enable screen locks and encryption</td>
+<td>Protect devices if lost or stolen</td>
+</tr>
+<tr class="even">
+<td>Use separate user profiles on shared machines</td>
+<td>Maintain privacy and accountability</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>⚙️ <em>Encryption safeguards your work even when devices are compromised.</em></p>
+</blockquote>
+</section>
+<section id="secure-remote-access" class="level2">
+<h2>Secure Remote Access</h2>
+<p>Remote work expands flexibility but increases risk.<br />
+Safe access protects your data wherever you work.</p>
+<ul>
+<li>Always connect through the <strong>UoN VPN</strong> when off campus<br />
+</li>
+<li>Avoid public Wi-Fi without VPN protection<br />
+</li>
+<li>Keep <strong>software and systems updated</strong> before connecting<br />
+</li>
+<li>Define <strong>secure sharing protocols</strong> for collaborators</li>
+</ul>
+<blockquote>
+<p>🌍 <em>A VPN keeps your connection secure—your data stays private, even on public networks.</em></p>
+</blockquote>
+</section>
+<section id="data-backup-strategy" class="level2">
+<h2>Data Backup Strategy</h2>
+<p>Backups prevent irreversible data loss from accidents, failures, or attacks.<br />
+Follow the <strong>3-2-1 Rule</strong> to ensure resilience.</p>
+<table class="caption-top">
+<colgroup>
+<col style="width: 39%" />
+<col style="width: 60%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>Rule</strong></th>
+<th><strong>Description</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>3 Copies</strong></td>
+<td>Maintain three versions of your data</td>
+</tr>
+<tr class="even">
+<td><strong>2 Media Types</strong></td>
+<td>Store on two different media (e.g., cloud and drive)</td>
+</tr>
+<tr class="odd">
+<td><strong>1 Offsite</strong></td>
+<td>Keep one copy offsite or in the cloud</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>💾 <em>A backup untested is not a backup—it’s a hypothesis.</em></p>
+</blockquote>
+</section>
+<section id="cybersecurity-best-practices" class="level2">
+<h2>Cybersecurity Best Practices</h2>
+<p>Cybersecurity requires daily habits, not one-off actions.</p>
+<ul>
+<li><strong>Verify sender identity</strong> before opening attachments or links<br />
+</li>
+<li><strong>Avoid personal email</strong> for research communication<br />
+</li>
+<li><strong>Report incidents</strong> immediately to UoN IT Security<br />
+</li>
+<li>Ensure <strong>GDPR compliance</strong> for international collaborations</li>
+</ul>
+<blockquote>
+<p>🧩 <em>Cybersecurity is continuous awareness—prevention through habit.</em></p>
+</blockquote>
+</section>
+<section id="building-a-culture-of-digital-responsibility" class="level2">
+<h2>Building a Culture of Digital Responsibility</h2>
+<p>Security is cultural as much as technical.<br />
+A trustworthy digital environment depends on shared awareness and accountability.</p>
+<ul>
+<li>Apply strong passwords and MFA as standard<br />
+</li>
+<li>Use secure institutional storage and VPNs<br />
+</li>
+<li>Implement regular backups and data audits<br />
+</li>
+<li>Communicate and report risks openly</li>
+</ul>
+<blockquote>
+<p>🛡️ <em>Security and good practice underpin research credibility—protecting data protects discovery.</em></p>
+</blockquote>
+<hr />
+<section id="task-4-digital-security-self-audit-10-min" class="level4 callout-task">
+<h4>Task 4: Digital Security Self-Audit (10 min)</h4>
+<div class="panel-tabset">
+<ul class="nav nav-tabs" role="tablist"><li class="nav-item" role="presentation"><a class="nav-link active" id="tabset-3-1-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-1" role="tab" aria-controls="tabset-3-1" aria-selected="true">Question</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-2-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-2" role="tab" aria-controls="tabset-3-2" aria-selected="false">Exercise</a></li><li class="nav-item" role="presentation"><a class="nav-link" id="tabset-3-3-tab" data-bs-toggle="tab" data-bs-target="#tabset-3-3" role="tab" aria-controls="tabset-3-3" aria-selected="false">Follow-up</a></li></ul>
+<div class="tab-content">
+<div id="tabset-3-1" class="tab-pane active" role="tabpanel" aria-labelledby="tabset-3-1-tab">
+<p>Reflect on your current digital setup. How secure is your research environment?</p>
+</div>
+<div id="tabset-3-2" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-2-tab">
+<div id="frame-q4">
+
+</div>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const params = new URLSearchParams(window.location.search);
+  const base = "https://ds-shiny-helper.azurewebsites.net/edsm1/?embed=true";
+  const isContrib = params.get("contribute") === "true";
+
+  const src = isContrib
+    ? `${base}&contribute=true#shiny-tab-q4_input`
+    : `${base}#shiny-tab-q4_results`;
+
+  document.getElementById("frame-q1").innerHTML =
+    `<iframe src="${src}" width="100%" height="500" frameborder="0"
+             style="border:none;" title="Q1"></iframe>`;
+});
+</script>
+</div>
+<div id="tabset-3-3" class="tab-pane" role="tabpanel" aria-labelledby="tabset-3-3-tab">
+<ul>
+<li>Identify one action to improve your security in the coming week<br />
+</li>
+<li>Reflect on what was easy/hard to assess, and what barriers exist for better practice<br />
+</li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+</section>
+</section>
+<section id="further-information" class="level1">
+<h1>Further Information</h1>
+<section id="uon-training-resources" class="level2">
+<h2>UoN Training Resources</h2>
+<ul>
+<li>Microsoft 365 Training Resources</li>
+<li>Excel 2016: Basic–Advanced (Online)</li>
+<li>Staff session: Managing your online and RIS research profiles</li>
+<li>Digital Accessibility: The Core Nottingham Accessible Practices</li>
+<li>RIS: Worktribe User Guidance</li>
+<li>UniCore Training Materials</li>
+<li>UoN Information Security: Protect Your Data &amp; Devices</li>
+</ul>
+<hr />
+</section>
+<section id="keypoints" class="level2 callout-keypoints">
+<h2>📚 keypoints</h2>
+<ul>
+<li>UoN currently uses Microsoft 365 tools support collaborative writing, file sharing, and communication</li>
+<li>UniCore manages research-related administration and RIS manages the research lifecycle.</li>
+<li>A well-maintained research identity increases visibility and attribution of your work.</li>
+<li>Store research data in encrypted, university-backed platforms and ensure your account details are protected</li>
+</ul>
+</section>
+<hr />
+<section id="hints" class="level2 callout-hints">
+<h2>🔦 hints</h2>
+<ul>
+<li>Store shared project files in Microsoft Teams rather than OneDrive to ensure long-term access for collaborators.</li>
+<li>Use version history in OneDrive/SharePoint instead of manually renaming file versions.</li>
+<li>Link your ORCID iD to your RIS profile to automate tracking of publications and outputs.</li>
+<li>Practice “security by default”</li>
+</ul>
+</section>
+<div id="quarto-navigation-envelope" class="hidden">
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyLXRpdGxl">Digital Tools</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXItdGl0bGU=">Digital Tools</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uZXh0">Digital Delivery</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1wcmV2">Essential Digital Skills</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOnF1YXJ0by1zaWRlYmFyLXNlY3Rpb24tMQ==">Learning modules</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOnF1YXJ0by1zaWRlYmFyLXNlY3Rpb24tMg==">Essential Digital Skills</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9lc3NlbnRpYWxfZGlnaXRhbF9za2lsbHMvZXBpc29kZXMvMDEtZGlnaXRhbF90b29scy5odG1sRGlnaXRhbC1Ub29scw==">Digital Tools</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9lc3NlbnRpYWxfZGlnaXRhbF9za2lsbHMvZXBpc29kZXMvMDItZGlnaXRhbF9kZWxpdmVyeS5odG1sRGlnaXRhbC1EZWxpdmVyeQ==">Digital Delivery</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9lc3NlbnRpYWxfZGlnaXRhbF9za2lsbHMvZXBpc29kZXMvMDMtZGF0YV9nb3Zlcm5hbmNlX2FuZF9wb2xpY3kuaHRtbERhdGEtR292ZXJuYW5jZS0mLVBvbGljeQ==">Data Governance &amp; Policy</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9lc3NlbnRpYWxfZGlnaXRhbF9za2lsbHMvZXBpc29kZXMvMDQtcmVzZWFyY2hfZGF0YV9tYW5hZ21lbnQuaHRtbERhdGEtR292ZXJuYW5jZS0mLVBvbGljeQ==">Data Governance &amp; Policy</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9lc3NlbnRpYWxfZGlnaXRhbF9za2lsbHMvZXBpc29kZXMvZXh0MS1yZXNwb25zaWJsZV9haS5odG1sUmVzcG9uc2libGUtVXNlLW9mLUFJLWluLVJlc2VhcmNo">Responsible Use of AI in Research</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9lc3NlbnRpYWxfZGlnaXRhbF9za2lsbHMvZXBpc29kZXMvZXh0Mi1oYW5kc19vbl9haS5odG1sZXhlcmNpc2VzOi0xMDA=">exercises: 100</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOnF1YXJ0by1zaWRlYmFyLXNlY3Rpb24tMw==">Methods for Data Science</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOnF1YXJ0by1zaWRlYmFyLXNlY3Rpb24tNA==">Applied Data Sciences (Python)</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOnF1YXJ0by1zaWRlYmFyLXNlY3Rpb24tNQ==">Episodes</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9hcHBsaWVkX3B5dGhvbi9lcGlzb2Rlcy8wMS1pbnRyby5odG1sUHl0aG9uLUZ1bmRhbWVudGFscw==">Python Fundamentals</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9hcHBsaWVkX3B5dGhvbi9lcGlzb2Rlcy8wMi1udW1weS5odG1sQW5hbHl6aW5nLVBhdGllbnQtRGF0YQ==">Analyzing Patient Data</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOnVuZGVmaW5lZGFwcGxpZWRfcHl0aG9uL2VwaXNvZGVzLzAzLW1hdHBsb3RsaWIubWQ=">applied_python/episodes/03-matplotlib.md</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOnVuZGVmaW5lZGFwcGxpZWRfcHl0aG9uL2VwaXNvZGVzLzA0LWxpc3RzLm1k">applied_python/episodes/04-lists.md</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOnVuZGVmaW5lZGFwcGxpZWRfcHl0aG9uL2VwaXNvZGVzLzA1LWxvb3AubWQ=">applied_python/episodes/05-loop.md</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOnVuZGVmaW5lZGFwcGxpZWRfcHl0aG9uL2VwaXNvZGVzLzA2LWZpbGVzLm1k">applied_python/episodes/06-files.md</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOnVuZGVmaW5lZGFwcGxpZWRfcHl0aG9uL2VwaXNvZGVzLzA3LWNvbmQubWQ=">applied_python/episodes/07-cond.md</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOnVuZGVmaW5lZGFwcGxpZWRfcHl0aG9uL2VwaXNvZGVzLzA4LWZ1bmMubWQ=">applied_python/episodes/08-func.md</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOnVuZGVmaW5lZGFwcGxpZWRfcHl0aG9uL2VwaXNvZGVzLzA5LWVycm9ycy5tZA==">applied_python/episodes/09-errors.md</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOnVuZGVmaW5lZGFwcGxpZWRfcHl0aG9uL2VwaXNvZGVzLzEwLWRlZmVuc2l2ZS5tZA==">applied_python/episodes/10-defensive.md</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOnVuZGVmaW5lZGFwcGxpZWRfcHl0aG9uL2VwaXNvZGVzLzExLWRlYnVnZ2luZy5tZA==">applied_python/episodes/11-debugging.md</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOnVuZGVmaW5lZGFwcGxpZWRfcHl0aG9uL2VwaXNvZGVzLzEyLWNtZGxpbmUubWQ=">applied_python/episodes/12-cmdline.md</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOnF1YXJ0by1zaWRlYmFyLXNlY3Rpb24tNg==">Learners</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9hcHBsaWVkX3B5dGhvbi9sZWFybmVycy9zZXR1cC5odG1sU2V0dXA=">Setup</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9hcHBsaWVkX3B5dGhvbi9sZWFybmVycy9kaXNjdXNzLmh0bWxEaXNjdXNzaW9u">Discussion</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9hcHBsaWVkX3B5dGhvbi9sZWFybmVycy9yZWZlcmVuY2UuaHRtbEdsb3NzYXJ5">Glossary</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOnF1YXJ0by1zaWRlYmFyLXNlY3Rpb24tNw==">Instructors</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9hcHBsaWVkX3B5dGhvbi9pbnN0cnVjdG9ycy9hZGRpdGlvbmFsX21hdGVyaWFsLmh0bWxBZGRpdGlvbmFsLW1hdGVyaWFs">Additional material</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9hcHBsaWVkX3B5dGhvbi9pbnN0cnVjdG9ycy9leHRyYV9leGVyY2lzZXMuaHRtbEFkZGl0aW9uYWwtRXhlcmNpc2Vz">Additional Exercises</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9hcHBsaWVkX3B5dGhvbi9pbnN0cnVjdG9ycy9pbnN0cnVjdG9yLW5vdGVzLmh0bWxJbnN0cnVjdG9yLU5vdGVz">Instructor Notes</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOnF1YXJ0by1zaWRlYmFyLXNlY3Rpb24tOA==">Community &amp; Metadata</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9hcHBsaWVkX3B5dGhvbi9DT05UUklCVVRJTkcuaHRtbENvbnRyaWJ1dGluZw==">Contributing</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9hcHBsaWVkX3B5dGhvbi9DT0RFX09GX0NPTkRVQ1QuaHRtbENvbnRyaWJ1dG9yLUNvZGUtb2YtQ29uZHVjdA==">Contributor Code of Conduct</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9hcHBsaWVkX3B5dGhvbi9MSUNFTlNFLmh0bWxMaWNlbnNlcw==">Licenses</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9hcHBsaWVkX3B5dGhvbi9BVVRIT1JTLmh0bWxBdXRob3Jz">Authors</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9hcHBsaWVkX3B5dGhvbi9wcm9maWxlcy9sZWFybmVyLXByb2ZpbGVzLmh0bWxMZWFybmVyLVByb2ZpbGVz">Learner Profiles</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOnF1YXJ0by1zaWRlYmFyLXNlY3Rpb24tOQ==">Applied Data Sciences (R)</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOnF1YXJ0by1zaWRlYmFyLXNlY3Rpb24tMTA=">Episodes</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9hcHBsaWVkX1IvZXBpc29kZXMvMDEtUnN0dWRpb19pbnRyby5odG1sSW50cm9kdWN0aW9uLXRvLVJzdHVkaW8=">Introduction to Rstudio</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9hcHBsaWVkX1IvZXBpc29kZXMvMDItUl92YXJpYWJsZXNfaW50cm8uaHRtbFItVmFyaWFibGVz">R Variables</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9hcHBsaWVkX1IvZXBpc29kZXMvMDMtUl9mdW5jdGlvbnMuaHRtbEZ1bmN0aW9ucy1pbi1S">Functions in R</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9hcHBsaWVkX1IvZXBpc29kZXMvMDQtZm9yX2xvb3BzLmh0bWxGb3ItTG9vcHM=">For Loops</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9hcHBsaWVkX1IvZXBpc29kZXMvMDUtdGhlX3RpZHl2ZXJzZS5odG1sVGlkeXZlcnNlLWFuZC1nZ3Bsb3QyLUFuYWx5c2lzLXdpdGgtR2FwbWluZGVyLURhdGFzZXQ=">Tidyverse and ggplot2 Analysis with Gapminder Dataset</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOnF1YXJ0by1zaWRlYmFyLXNlY3Rpb24tMTE=">Learners</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9hcHBsaWVkX1IvbGVhcm5lcnMvc2V0dXAuaHRtbFNldHVw">Setup</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9hcHBsaWVkX1IvbGVhcm5lcnMvZGlzY3Vzcy5odG1sRGlzY3Vzc2lvbg==">Discussion</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9hcHBsaWVkX1IvbGVhcm5lcnMvcmVmZXJlbmNlLmh0bWxCYXNpYy1PcGVyYXRpb24=">Basic Operation</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOnF1YXJ0by1zaWRlYmFyLXNlY3Rpb24tMTI=">Instructors</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9hcHBsaWVkX1IvaW5zdHJ1Y3RvcnMvaW5zdHJ1Y3Rvci1ub3Rlcy5odG1sSW5zdHJ1Y3Rvci1Ob3Rlcw==">Instructor Notes</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOnF1YXJ0by1zaWRlYmFyLXNlY3Rpb24tMTM=">Community &amp; Metadata</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9hcHBsaWVkX1IvQ09OVFJJQlVUSU5HLmh0bWxDb250cmlidXRpbmc=">Contributing</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9hcHBsaWVkX1IvQ09ERV9PRl9DT05EVUNULmh0bWxDb250cmlidXRvci1Db2RlLW9mLUNvbmR1Y3Q=">Contributor Code of Conduct</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9hcHBsaWVkX1IvTElDRU5TRS5odG1sTGljZW5zZXM=">Licenses</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1zaWRlYmFyOi9hcHBsaWVkX1IvcHJvZmlsZXMvbGVhcm5lci1wcm9maWxlcy5odG1sTGVhcm5lci1wcm9maWxlcw==">Learner profiles</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6SG9tZQ==">Home</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2luZGV4Lmh0bWw=">/index.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6RXNzZW50aWFsIERpZ2l0YWwgU2tpbGxz">Essential Digital Skills</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6RGlnaXRhbCBUb29scw==">Digital Tools</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2Vzc2VudGlhbF9kaWdpdGFsX3NraWxscy9lcGlzb2Rlcy8wMS1kaWdpdGFsX3Rvb2xzLmh0bWw=">/essential_digital_skills/episodes/01-digital_tools.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6RGlnaXRhbCBEZWxpdmVyeQ==">Digital Delivery</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2Vzc2VudGlhbF9kaWdpdGFsX3NraWxscy9lcGlzb2Rlcy8wMi1kaWdpdGFsX2RlbGl2ZXJ5Lmh0bWw=">/essential_digital_skills/episodes/02-digital_delivery.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6RGF0YSBHb3Zlcm5hbmNlIGFuZCBQb2xpY3k=">Data Governance and Policy</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2Vzc2VudGlhbF9kaWdpdGFsX3NraWxscy9lcGlzb2Rlcy8wMy1kYXRhX2dvdmVybmFuY2VfYW5kX3BvbGljeS5odG1s">/essential_digital_skills/episodes/03-data_governance_and_policy.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6UmVzZWFyY2ggRGF0YSBNYW5hZ2VtZW50">Research Data Management</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2Vzc2VudGlhbF9kaWdpdGFsX3NraWxscy9lcGlzb2Rlcy8wNC1yZXNlYXJjaF9kYXRhX21hbmFnbWVudC5odG1s">/essential_digital_skills/episodes/04-research_data_managment.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6UmVzcG9uc2libGUgQUk=">Responsible AI</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2Vzc2VudGlhbF9kaWdpdGFsX3NraWxscy9lcGlzb2Rlcy9leHQxLXJlc3BvbnNpYmxlX2FpLmh0bWw=">/essential_digital_skills/episodes/ext1-responsible_ai.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6SGFuZHMtb24gQUk=">Hands-on AI</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2Vzc2VudGlhbF9kaWdpdGFsX3NraWxscy9lcGlzb2Rlcy9leHQyLWhhbmRzX29uX2FpLmh0bWw=">/essential_digital_skills/episodes/ext2-hands_on_ai.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6QXBwbGllZCBEYXRhIFNjaWVuY2UgKFB5dGhvbik=">Applied Data Science (Python)</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6MDEgSW50cm8=">01 Intro</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2FwcGxpZWRfcHl0aG9uL2VwaXNvZGVzLzAxLWludHJvLmh0bWw=">/applied_python/episodes/01-intro.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6MDIgTnVtcHk=">02 Numpy</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2FwcGxpZWRfcHl0aG9uL2VwaXNvZGVzLzAyLW51bXB5Lmh0bWw=">/applied_python/episodes/02-numpy.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6MDMgTWF0cGxvdGxpYg==">03 Matplotlib</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2FwcGxpZWRfcHl0aG9uL2VwaXNvZGVzLzAzLW1hdHBsb3RsaWIuaHRtbA==">/applied_python/episodes/03-matplotlib.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6MDQgTGlzdHM=">04 Lists</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2FwcGxpZWRfcHl0aG9uL2VwaXNvZGVzLzA0LWxpc3RzLmh0bWw=">/applied_python/episodes/04-lists.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6MDUgTG9vcHM=">05 Loops</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2FwcGxpZWRfcHl0aG9uL2VwaXNvZGVzLzA1LWxvb3AuaHRtbA==">/applied_python/episodes/05-loop.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6MDYgRmlsZXM=">06 Files</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2FwcGxpZWRfcHl0aG9uL2VwaXNvZGVzLzA2LWZpbGVzLmh0bWw=">/applied_python/episodes/06-files.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6MDcgQ29uZGl0aW9uYWxz">07 Conditionals</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2FwcGxpZWRfcHl0aG9uL2VwaXNvZGVzLzA3LWNvbmQuaHRtbA==">/applied_python/episodes/07-cond.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6MDggRnVuY3Rpb25z">08 Functions</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2FwcGxpZWRfcHl0aG9uL2VwaXNvZGVzLzA4LWZ1bmMuaHRtbA==">/applied_python/episodes/08-func.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6MDkgRXJyb3Jz">09 Errors</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2FwcGxpZWRfcHl0aG9uL2VwaXNvZGVzLzA5LWVycm9ycy5odG1s">/applied_python/episodes/09-errors.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6MTAgRGVmZW5zaXZlIFByb2dyYW1taW5n">10 Defensive Programming</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2FwcGxpZWRfcHl0aG9uL2VwaXNvZGVzLzEwLWRlZmVuc2l2ZS5odG1s">/applied_python/episodes/10-defensive.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6MTEgRGVidWdnaW5n">11 Debugging</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2FwcGxpZWRfcHl0aG9uL2VwaXNvZGVzLzExLWRlYnVnZ2luZy5odG1s">/applied_python/episodes/11-debugging.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6MTIgQ29tbWFuZCBMaW5l">12 Command Line</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2FwcGxpZWRfcHl0aG9uL2VwaXNvZGVzLzEyLWNtZGxpbmUuaHRtbA==">/applied_python/episodes/12-cmdline.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6QXBwbGllZCBEYXRhIFNjaWVuY2UgKFIp">Applied Data Science (R)</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6MDEgUlN0dWRpbyBJbnRybw==">01 RStudio Intro</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2FwcGxpZWRfUi9lcGlzb2Rlcy8wMS1Sc3R1ZGlvX2ludHJvLmh0bWw=">/applied_R/episodes/01-Rstudio_intro.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6MDIgUiBWYXJpYWJsZXM=">02 R Variables</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2FwcGxpZWRfUi9lcGlzb2Rlcy8wMi1SX3ZhcmlhYmxlc19pbnRyby5odG1s">/applied_R/episodes/02-R_variables_intro.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6MDMgUiBGdW5jdGlvbnM=">03 R Functions</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2FwcGxpZWRfUi9lcGlzb2Rlcy8wMy1SX2Z1bmN0aW9ucy5odG1s">/applied_R/episodes/03-R_functions.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6MDQgRm9yIExvb3Bz">04 For Loops</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2FwcGxpZWRfUi9lcGlzb2Rlcy8wNC1mb3JfbG9vcHMuaHRtbA==">/applied_R/episodes/04-for_loops.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6MDUgVGhlIFRpZHl2ZXJzZQ==">05 The Tidyverse</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWludC1uYXZiYXI6L2FwcGxpZWRfUi9lcGlzb2Rlcy8wNS10aGVfdGlkeXZlcnNlLmh0bWw=">/applied_R/episodes/05-the_tidyverse.html</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWJyZWFkY3J1bWJzLUxlYXJuaW5nLW1vZHVsZXM=">Learning modules</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWJyZWFkY3J1bWJzLUVzc2VudGlhbC1EaWdpdGFsLVNraWxscw==">Essential Digital Skills</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLWJyZWFkY3J1bWJzLURpZ2l0YWwtVG9vbHM=">Digital Tools</span></p>
+<div class="hidden quarto-markdown-envelope-contents" data-render-id="Zm9vdGVyLWxlZnQ=">
+<h3>
+Location
+</h3>
+<p>University of Nottingham<br />
+University Park<br />
+Nottingham, NG7 2RD<br />
+United Kingdom</p>
+</div>
+<div class="hidden quarto-markdown-envelope-contents" data-render-id="Zm9vdGVyLWNlbnRlcg==">
+<h3>
+Quick links
+</h3>
+<p><a href="#">Submit an enquiry</a><br />
+<a href="#">Capabilities</a><br />
+<a href="#">About us</a><br />
+<a href="#">Jobs</a><br />
+<a href="#">Privacy policy</a></p>
+</div>
+<div class="hidden quarto-markdown-envelope-contents" data-render-id="Zm9vdGVyLXJpZ2h0">
+<h3>
+Get in touch
+</h3>
+<p><a href="mailto:digitalresearch@nottingham.ac.uk">digitalresearch@nottingham.ac.uk</a></p>
+</div>
+<div class="hidden quarto-markdown-envelope-contents" data-render-id="YW5ub3VuY2VtZW50">
+<p><strong>Alert</strong> - This site is currently under construction</p>
+</div>
+</div>
+<div id="quarto-meta-markdown" class="hidden">
+<p><span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLW1ldGF0aXRsZQ==">Digital Tools</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLXR3aXR0ZXJjYXJkdGl0bGU=">Digital Tools</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLW9nY2FyZHRpdGxl">Digital Tools</span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLXR3aXR0ZXJjYXJkZGVzYw=="></span> <span class="hidden quarto-markdown-envelope-contents" data-render-id="cXVhcnRvLW9nY2FyZGRkZXNj"></span></p>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id = "quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+      <div class='footer-contents'><h3>Location</h3>
+University of Nottingham  
+University Park  
+Nottingham, NG7 2RD  
+United Kingdom
+</div>  
+    </div>   
+    <div class="nav-footer-center">
+      <div class='footer-contents'><h3>Quick links</h3>
+[Submit an enquiry](#)  
+[Capabilities](#)  
+[About us](#)  
+[Jobs](#)  
+[Privacy policy](#)
+</div>  
+    </div>
+    <div class="nav-footer-right">
+      <div class='footer-contents'><h3>Get in touch</h3>
+<a href="mailto:digitalresearch@nottingham.ac.uk">digitalresearch@nottingham.ac.uk</a>
+</div>  
+    </div>
+  </div>
+</footer>
+
+</body>
+
+</html>

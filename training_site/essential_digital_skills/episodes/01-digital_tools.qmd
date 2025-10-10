@@ -196,140 +196,148 @@ document.addEventListener("DOMContentLoaded", function() {
 
 ## Why Institutional Systems Matter
 
-Digital research is inherently collaborative. Modern scholarship relies not only on individual skill but also on the ability to connect people, data, and systems across institutional and disciplinary boundaries.  
+Digital research depends on **connected systems** that enable collaboration, safeguard data, and streamline research workflows.
 
----
+```{mermaid}
+flowchart TB
+    A["Researchers"]:::a --> B["Institutional Systems"]:::b --> C["Collaborative Outputs"]:::c
+    C --> A
+    classDef a fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
+    classDef b fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px
+    classDef c fill:#FFF3E0,stroke:#EF6C00,stroke-width:1px
+```
 
-At the University of Nottingham (UoN), researchers operate within a digital ecosystem designed to **enable collaboration, safeguard data, and streamline research workflows**.  
+> 🧩 *Institutional systems form the backbone of a connected research ecosystem.*
 
----
+## UoN’s Digital Ecosystem
 
-Institutional systems such as **Microsoft 365**, **UniCore**, and the **Research Information System (RIS)** form the backbone of this ecosystem. Together, they support communication, data sharing, project administration, and the formal recording of research outputs and impact.
+At the University of Nottingham, research operates within a **digitally integrated environment** that connects people, data, and administration.
 
----
+| **System** | **Primary Role** |
+|-------------|------------------|
+| **Microsoft 365** | Collaboration and communication |
+| **SharePoint** | Long-term data and document sharing |
+| **UniCore** | Finance, HR, and procurement |
+| **RIS (Worktribe)** | Research lifecycle, funding, outputs |
 
-These platforms are more than administrative tools—they are **enablers of collaborative, transparent, and efficient digital research**.
+> 🏛️ *Together these platforms enable secure, collaborative, and transparent research practice.*
 
----
+## Microsoft 365: A Platform for Collaboration
 
-## Microsoft 365: A Collaboration Platform for Research
+Microsoft 365 supports daily research activity—from communication to data management—within a single, integrated workspace.
 
-The Microsoft 365 suite provides an integrated environment for communication, writing, data management, and project coordination.  
-Its tools are foundational to digital collaboration at UoN and support nearly every aspect of day-to-day research activity.
+| **Tool** | **Function** |
+|-----------|---------------|
+| **Word & Excel** | Writing, data capture, and co-editing |
+| **OneDrive** | Personal cloud storage with versioning |
+| **Teams** | Communication, meetings, shared workspaces |
+| **SharePoint** | Institutional document repositories |
 
----
-
-### Core Tools
-
-- **Word & Excel:** writing, data capture, and collaborative editing  
-- **OneDrive:** secure personal cloud storage with autosave and version control  
-- **Teams:** shared digital workspaces for communication, meetings, and group file management  
-- **SharePoint:** institutional platform for structured, long-term file sharing and documentation  
-
----
+> 💬 *Microsoft 365 is the shared workspace for modern research collaboration.*
 
 ## Collaboration in Practice
 
-Microsoft 365 enables **seamless real-time collaboration** between researchers, administrators, and external partners:
+Microsoft 365 enables seamless teamwork across roles and locations.
 
-- Multiple users can co-edit the same file simultaneously with full **version tracking**.  
-- Integrated **chat and meeting tools** in Teams facilitate contextual discussion—reducing reliance on fragmented email threads.  
-- Shared **document libraries** on SharePoint ensure continuity and access control for ongoing research projects.  
-- **OneDrive synchronisation** allows researchers to work offline, with changes automatically updated across devices when reconnected.  
+- Co-edit documents with real-time version tracking  
+- Use Teams for context-based discussion and meetings  
+- Store project materials in structured SharePoint libraries  
+- Sync files through OneDrive for offline access  
 
----
+> 🔁 *Integrated tools make collaborative research smooth, secure, and efficient.*
 
-### File Collaboration Best Practices
+## File Collaboration Best Practice
 
-- Use **Teams or SharePoint** for group projects rather than emailing attachments.  
-- **Enable autosave** in Word and Excel to prevent data loss.  
-- Use **version history** to restore previous document states—avoid renaming files manually.  
-- Plan clear, logical **folder structures** reflecting project phases or work packages.  
-- Apply **access permissions** carefully, ensuring collaborators have appropriate visibility and editing rights.
+- Use **Teams or SharePoint** for shared project files  
+- Enable **autosave and version history** in Word or Excel  
+- Maintain **logical folder structures** by project phase  
+- Apply **permissions and access control** with care  
 
----
+> 🧠 *Good file management is the foundation of digital reproducibility.*
 
-> 💡 *Good digital housekeeping supports not only collaboration, but also compliance, reproducibility, and research continuity.*
+## UniCore and RIS: Institutional Systems
 
----
+UniCore and RIS link the operational and administrative sides of research.
 
-## UoN Tools: UniCore & RIS
+| **System** | **Purpose** |
+|-------------|-------------|
+| **UniCore** | Finance, HR, procurement, and resource management |
+| **RIS (Worktribe)** | Project proposals, outputs, and compliance tracking |
 
-| Tool     | Purpose                                     |
-|----------|---------------------------------------------|
-| **UniCore**  | Finance, HR, and procurement management     |
-| **RIS**      | Research lifecycle, funding, and outputs management |
+> 🗂️ *These systems ensure research activity is visible, auditable, and supported.*
 
-These platforms connect the practical and administrative sides of research, ensuring transparency, traceability, and efficiency across departments and projects.
+## UniCore Overview
 
----
+**UniCore** is UoN’s enterprise system for managing finance, HR, and procurement.
 
-### UniCore Quick Facts
+```{mermaid}
+flowchart TB
+    P["Purchasing"]:::a --> E["Expenses"]:::b --> H["HR & Leave Management"]:::c --> R["Research Operations"]:::d
+    R --> P
+    classDef a fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
+    classDef b fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px
+    classDef c fill:#FFF3E0,stroke:#EF6C00,stroke-width:1px
+    classDef d fill:#F3E5F5,stroke:#6A1B9A,stroke-width:1px
+```
 
-**UniCore** is UoN’s enterprise resource system (Oracle-based) for managing financial and HR operations.
+> 🧭 *UniCore underpins the financial and operational side of research.*
 
----
+## RIS (Research Information System)
 
-It is used for:
+**RIS (Worktribe)** records, tracks, and reports the full research lifecycle.
 
-- Equipment purchases and procurement  
-- Expense claims and travel reimbursement  
-- Leave management and sickness reporting  
-- HR administration and employment records  
+| **Feature** | **Purpose** |
+|--------------|-------------|
+| **Grant Management** | Develop and cost funding proposals |
+| **Outputs Tracking** | Record publications and datasets |
+| **Impact Recording** | Capture engagement and REF evidence |
+| **ORCID Integration** | Synchronise researcher identity and outputs |
 
-> 🧭 *Think of UniCore as the infrastructure that supports the financial and operational side of your research.*
+> 📚 *RIS ensures research activity is captured and connected institutionally.*
 
----
+## Integrated Research Systems
 
-### RIS (Research Information System)
+The strength of UoN’s infrastructure lies in **interoperability** — connecting research activity, collaboration, and administration.
 
-**RIS** (based on Worktribe) is the system through which research projects are proposed, recorded, and tracked across their lifecycle.  
-It is the **single authoritative source** for research-related activity at UoN and underpins compliance, reporting, and REF submission.
+```{mermaid}
+flowchart LR
+    M["Microsoft 365"]:::a --> S["SharePoint"]:::b --> R["RIS (Worktribe)"]:::c --> U["UniCore"]:::d --> M
+    classDef a fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
+    classDef b fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px
+    classDef c fill:#FFF3E0,stroke:#EF6C00,stroke-width:1px
+    classDef d fill:#F3E5F5,stroke:#6A1B9A,stroke-width:1px
+```
 
----
+> 🔗 *Connectivity between systems ensures seamless movement from idea to output.*
 
-RIS is used for:
+## System Use in Context
 
-- Grant applications and costings  
-- Research outputs and publication tracking  
-- Impact recording and open access compliance  
-- Repository integration and ORCID synchronisation  
+| **Research Task** | **Recommended System** | **Collaboration Benefit** |
+|--------------------|------------------------|----------------------------|
+| Co-author a paper | OneDrive / Word | Real-time editing and version control |
+| Submit a funding bid | RIS | Shared proposal development and audit trail |
+| Claim expenses | UniCore | Secure and traceable reimbursement |
+| Share datasets | SharePoint / Teams | Controlled access and persistence |
+| Record outputs | RIS + ORCID | Automatic institutional linking |
 
----
+> ⚙️ *Each platform serves a distinct role in the research ecosystem.*
 
-RIS is central to managing the *institutional memory* of research: it ensures that outputs, collaborations, and impact are captured systematically and linked to individuals, funders, and departments.
 
----
+## The Broader Vision: Connected Research
 
-## Integrating Systems for Research Excellence
+By using institutional systems effectively teams build **trust and accountability**, data remains **secure, reusable, and open** and researchers can spend more time working on **innovation and discovery**
 
-The power of these systems lies in their **interoperability**.  
-RIS, SharePoint, and Microsoft 365 together form a digital infrastructure that connects research administration with active collaboration and dissemination.
+```{mermaid}
+flowchart TB
+    A["Transparency"]:::a --> B["Trust"]:::b --> C["Collaboration"]:::c --> D["Impact"]:::d
+    D --> A
+    classDef a fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
+    classDef b fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px
+    classDef c fill:#FFF3E0,stroke:#EF6C00,stroke-width:1px
+    classDef d fill:#F3E5F5,stroke:#6A1B9A,stroke-width:1px
+```
 
----
-
-| Research Task | Recommended System | Collaboration Benefit |
-|----------------|-------------------|------------------------|
-| Co-author a paper | OneDrive / Word | Real-time editing, version control |
-| Submit a funding bid | RIS | Shared proposal development and compliance |
-| Claim travel expenses | UniCore | Secure and traceable process |
-| Share project datasets | Teams / SharePoint | Controlled access and long-term storage |
-| Manage project milestones | Teams | Integrated communication and documentation |
-| Record outputs and impact | RIS + ORCID | Automatic linking across systems |
-
----
-
-## The Broader Vision: Connected Digital Research
-
-By using institutional systems effectively:
-
-- Teams build **trust and accountability** through transparent processes.  
-- Data is **managed and shared responsibly**, in line with open research principles.  
-- Projects become **more resilient**, as institutional systems ensure continuity even when personnel change.  
-- Researchers can focus on **innovation and discovery**, not file management or administration.
-
-> “Digital collaboration is the infrastructure of modern research.  
-> Tools like Teams, SharePoint, and RIS aren’t just platforms—they are the connective tissue that holds interdisciplinary research together.”
+> 🌍 *Digital infrastructure is the connective tissue of modern research.*
 
 ---
 
@@ -387,109 +395,134 @@ document.addEventListener("DOMContentLoaded", function() {
 
 ## Why Research Identity Matters
 
-In an increasingly digital and collaborative research environment, your **research identity** is the foundation of your professional visibility, credibility, and impact. 
+Your **research identity** defines how your work is discovered, attributed, and connected across the digital research ecosystem.
 
----
+```{mermaid}
+flowchart TB
+    P["Publications"]:::a --> O["ORCID iD"]:::b --> R["Repositories & Funders"]:::c --> I["Institutional Systems (RIS, HR)"]:::d
+    I --> P
+    classDef a fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
+    classDef b fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px
+    classDef c fill:#FFF3E0,stroke:#EF6C00,stroke-width:1px
+    classDef d fill:#F3E5F5,stroke:#6A1B9A,stroke-width:1px
+```
 
-Establishing and maintaining a coherent digital identity ensures that your work is **discoverable**, **attributed correctly**, and **linked** across the research ecosystem—from institutional systems to international repositories.
+> 🧩 *A coherent digital identity ensures your contributions are visible, citable, and connected.*
 
----
+## The Importance of Consistency
 
-A consistent identity allows your publications, data, and contributions to be recognised automatically across journals, funders, and digital infrastructure. It also makes collaboration more efficient by helping others to find, verify, and engage with your work.
+A consistent identity links your outputs, affiliations, and roles automatically across systems.  
+This guarantees proper attribution and supports efficient collaboration.
 
-> 🧩 *A strong research identity connects your professional presence across platforms and ensures lasting recognition of your contributions.*
+- Ensures **discoverability** across publishers and repositories  
+- Prevents **duplication or misattribution** of outputs  
+- Facilitates **integration** with institutional systems like RIS  
 
----
+> 💡 *A consistent research identity builds long-term recognition and credibility.*
 
-## ORCID – A Persistent Digital Identifier
+## ORCID: A Persistent Digital Identifier
 
-**ORCID (Open Researcher and Contributor ID)** is the international standard for uniquely identifying researchers.  
-It provides a **persistent, 16-digit identifier** that travels with you across your career, regardless of changes in institution, discipline, or name.
+**ORCID (Open Researcher and Contributor ID)** is the global standard for uniquely identifying researchers across institutions and disciplines.
 
----
+```{mermaid}
+flowchart LR
+    A["Researcher"]:::a --> B["ORCID iD"]:::b --> C["Funders"]:::c
+    B --> D["Publishers"]:::d
+    B --> E["Repositories & RIS"]:::e
+    classDef a fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
+    classDef b fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px
+    classDef c fill:#FFF3E0,stroke:#EF6C00,stroke-width:1px
+    classDef d fill:#F3E5F5,stroke:#6A1B9A,stroke-width:1px
+    classDef e fill:#E1F5FE,stroke:#0277BD,stroke-width:1px
+```
 
-### Why ORCID is Essential
+> 🧠 *Your ORCID iD is your digital fingerprint across the global research ecosystem.*
 
-- **Universal interoperability:** recognised by funders, publishers, and research systems worldwide  
-- **Automatic updates:** publications and outputs can be added automatically via Crossref and DataCite  
-- **Long-term portability:** remains active even after you move institutions or change roles  
+## Why ORCID is Essential
 
----
+- **Universal interoperability:** used by funders, publishers, and institutions  
+- **Automatic updates:** Crossref and DataCite can sync new outputs  
+- **Portability:** your iD remains active throughout your career  
 
-Creating and maintaining an ORCID profile is a foundational step in managing your scholarly identity. It serves as a **hub** linking your outputs, affiliations, and professional activities.
+> 🔗 *ORCID connects your research identity beyond institutional boundaries.*
 
-> 💡 *ORCID is not just a profile—it’s your digital fingerprint in the research ecosystem.*
+## RIS (Research Information System) at UoN
 
----
+At UoN, **RIS (Worktribe)** complements your ORCID profile by linking research activity to institutional records.
 
-## RIS Profile (University of Nottingham)
+| **Feature** | **Function** |
+|--------------|--------------|
+| **Grant Management** | Tracks proposals, approvals, and costings |
+| **Outputs Dashboard** | Records publications, datasets, and impacts |
+| **Compliance** | Supports REF and Open Access requirements |
+| **Integration** | Syncs with ORCID and external repositories |
 
-At UoN, your **Research Information System (RIS)** profile extends the institutional representation of your research identity.  
+> 🏛️ *RIS ensures your institutional identity mirrors your global research presence.*
 
-RIS connects your outputs, projects, and impact activities with your ORCID iD to build a complete institutional record.
+## ORCID–RIS Integration
 
----
+```{mermaid}
+flowchart LR
+    O["ORCID iD"]:::a --> R["RIS (Worktribe)"]:::b --> P["Public Staff Page"]:::c
+    R --> F["Funders & Repositories"]:::d
+    classDef a fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
+    classDef b fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px
+    classDef c fill:#FFF3E0,stroke:#EF6C00,stroke-width:1px
+    classDef d fill:#F3E5F5,stroke:#6A1B9A,stroke-width:1px
+```
 
-### Key Functions of RIS
-
-- Displays **grants, outputs, and impact** in a central dashboard  
-- Feeds information to your **public staff page** on the UoN website  
-- Supports **REF reporting** and compliance requirements  
-- Ensures consistent linking between institutional and external systems (e.g., funders, publishers, repositories)
-
-
-## Other Profiles and Scholarly Platforms
-
-Maintaining additional scholarly profiles enhances visibility across different discovery and citation systems.  
-
-Each platform serves a slightly different purpose, and when synchronised with ORCID, they collectively form a **distributed network of your professional presence**.
-
----
-
-| Platform | Purpose | Notes |
-|-----------|----------|-------|
-| **Scopus Author ID** | Tracks citation metrics, co-authorship, and affiliations | Automatically generated; may require merging duplicates |
-| **Google Scholar** | Provides broad citation coverage and h-index | Useful for monitoring visibility; manual curation often required |
-| **ResearchGate / Academia.edu** | Offer social networking layers for research exchange | Optional; use responsibly and avoid reliance on non-standard metrics |
+> 💬 *Connecting ORCID to RIS automates data flow and strengthens institutional visibility.*
 
 
-> ⚠️ N.b. Always prioritise **validated platforms** (e.g., ORCID, Scopus, RIS) over social research sites that rely on proprietary or unverifiable metrics.
+## Scholarly Profiles Across Systems
 
----
+Different platforms amplify your professional presence.  
+When synchronised with ORCID, they create a distributed network of your scholarly identity.
 
-### Profile Management Tips
+| **Platform** | **Purpose** | **Notes** |
+|---------------|-------------|-----------|
+| **Scopus Author ID** | Tracks citations, co-authorship, and affiliations | Merge duplicates for accuracy |
+| **Google Scholar** | Monitors visibility and citation trends | Manual curation may be required |
+| **ResearchGate / Academia.edu** | Social exchange platforms | Use responsibly; metrics are non-standard |
 
-- **Set your ORCID profile to public** to maximise discoverability  
-- **Merge duplicate Scopus IDs** to ensure accurate citation counts  
-- **Link your ORCID iD with RIS** for automatic synchronisation of outputs  
-- **Use consistent naming and affiliation formats** across all systems  
-- **Avoid fabricated metrics** (e.g., RG Score) that lack transparency or scholarly validity  
-- **Regularly audit** your profiles to ensure accuracy and consistency  
+> ⚠️ *Prioritise verified systems like ORCID, Scopus, and RIS for credible visibility.*
 
----
 
-> 🌐 *Your digital identity is a living record of your research career. Managing it carefully ensures that your contributions are visible, citable, and connected across the scholarly network.*
+## Managing Your Research Profiles
 
----
+- Make your **ORCID profile public** for discoverability  
+- **Merge duplicate Scopus IDs** to ensure accuracy  
+- **Link ORCID to RIS** for automatic synchronisation  
+- Use consistent **name and affiliation formats**  
+- Avoid unverified or **proprietary metrics**  
+- **Audit profiles regularly** for correctness  
 
-## The Collaborative Dimension of Research Identity
+> 🧭 *Managing your identity actively ensures your research remains visible and verifiable.*
 
-A well-managed research identity does more than showcase your individual achievements—it **enables collaboration**.  
+## Research Identity as Collaboration Infrastructure
 
----
+A connected identity supports collaboration, attribution, and trust across teams.
 
-When researchers maintain accurate and connected profiles, others can:
+```{mermaid}
+flowchart TB
+    A["Accurate Profiles"]:::a --> B["Discoverable Expertise"]:::b --> C["Collaborative Opportunities"]:::c --> D["Trusted Attribution"]:::d
+    D --> A
+    classDef a fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
+    classDef b fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px
+    classDef c fill:#FFF3E0,stroke:#EF6C00,stroke-width:1px
+    classDef d fill:#F3E5F5,stroke:#6A1B9A,stroke-width:1px
+```
 
-- Identify relevant expertise for interdisciplinary projects  
-- Attribute data and software contributions correctly  
-- Track shared publications and outputs through persistent links  
-- Reduce duplication and confusion in collaborative outputs  
+> 🤝 *A well-managed identity connects people, data, and recognition across research networks.*
 
----
+## The Broader Impact of a Connected Identity
 
-In this sense, research identity is not only about self-presentation—it is an **infrastructure for collaboration, attribution, and trust** in the digital research ecosystem.
+- Enhances **interdisciplinary visibility**  
+- Simplifies **authorship and data attribution**  
+- Strengthens **institutional reporting** and compliance  
+- Promotes **open, transparent research collaboration**  
 
-> “A connected identity enables connected research.”
+> 🌍 *A connected identity enables connected research.*
 
 ---
 
@@ -518,117 +551,115 @@ Visit [Orcid](https://orcid.org/), Log in / sign up
 
 # Digital Security & Good Practice
 
-Effective research in the digital age requires more than technical competence, it demands **vigilance, responsibility, and sound data stewardship**.  
+![](fig/security.png){fig-align="center" width=500px}
 
-Digital security and good practice are not peripheral concerns; they are fundamental to protecting your research, collaborators, and institutional reputation.
+## Why Digital Security Matters
 
----
+Effective digital research requires vigilance, responsibility, and sound data stewardship.  
+Security protects not only your research, but also your collaborators and institution.
 
-Researchers handle sensitive data, intellectual property, and personal information. 
+```{mermaid}
+flowchart TB
+    A["Trust & Compliance"]:::a --> B["Data Integrity"]:::b --> C["Confidentiality"]:::c --> D["Continuity"]:::d --> E["Collaboration Resilience"]:::e --> A
+    classDef a fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
+    classDef b fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px
+    classDef c fill:#FFF3E0,stroke:#EF6C00,stroke-width:1px
+    classDef d fill:#F3E5F5,stroke:#6A1B9A,stroke-width:1px
+    classDef e fill:#E1F5FE,stroke:#0277BD,stroke-width:1px
+```
 
-As such, maintaining **digital security hygiene** is a shared professional obligation.  
-
----
-
-## Why Digital Security Matters in Research
-
-- **Trust and compliance:** Funders, journals, and institutions require that research data be handled securely.  
-- **Data integrity:** Protects against corruption, tampering, or unauthorised modification of research outputs.  
-- **Confidentiality:** Prevents exposure of sensitive or identifiable information.  
-- **Continuity:** Reduces the risk of data loss or research disruption caused by cyber incidents.  
-- **Collaboration resilience:** Ensures that data shared across teams and institutions remains secure.
-
-> 🔒 *Digital security is a collective responsibility—every researcher contributes to the safety and integrity of the wider research ecosystem.*
-
----
+> 🔒 *Digital security is a collective responsibility—protecting data protects discovery.*
 
 ## Passwords & Access Management
 
-Strong passwords are the first line of defence against unauthorised access. Weak or reused passwords remain one of the most common vulnerabilities in academic environments.
+Passwords remain the first line of defence against unauthorised access.  
+Weak or reused passwords are still the most common research vulnerability.
 
----
+- Use **at least 12 characters** with a mix of cases, numbers, and symbols  
+- Create **unique passwords** for each system  
+- Never share credentials via email or chat  
+- Regularly **review access permissions** for shared platforms  
 
-- Use passwords of **at least 12 characters**, combining uppercase, lowercase, numbers, and symbols.  
-- Create **unique passwords** for every institutional and external system you use.    
-- Never share passwords or respond to credential requests via email, chat, or phone.  
-- Regularly **review account permissions**—especially for collaborative tools—to ensure only current team members retain access.  
-
----
+> 🧠 *Strong passwords are simple, low-cost defences against complex risks.*
 
 ## Multi-Factor Authentication (MFA)
 
-**MFA** adds a critical layer of protection by requiring an additional verification step beyond a password.  
+**MFA** adds a crucial verification step beyond a password.  
+Even if your password is compromised, MFA prevents most unauthorised logins.
 
-It significantly reduces the risk of account compromise, even if your password is stolen.
+```{mermaid}
+flowchart LR
+    U["User Login"]:::a --> P["Password"]:::b --> V["Second Factor (App / SMS / Key)"]:::c --> A["Access Granted"]:::d
+    classDef a fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
+    classDef b fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px
+    classDef c fill:#FFF3E0,stroke:#EF6C00,stroke-width:1px
+    classDef d fill:#F3E5F5,stroke:#6A1B9A,stroke-width:1px
+```
 
-> 🔐 *Think of MFA as the seatbelt of your digital life—simple, unobtrusive, and potentially life-saving.*
-
----
+> 🔐 *Think of MFA as the seatbelt of your digital life—simple, unobtrusive, and essential.*
 
 ## Device & Data Protection
 
-Your devices are gateways to your research data. Protecting them is essential for maintaining data integrity and institutional trust.
+Devices are gateways to institutional data.  
+Protecting them is vital for maintaining research integrity and trust.
 
-- Always store files on **UoN-approved cloud platforms** (OneDrive, SharePoint, Teams).  
-- Avoid saving sensitive or active project files on **local drives** or **personal cloud services**.   
-- Apply **automatic screen locks** and require a password or PIN for login.  
-- When sharing devices temporarily (e.g. in labs or shared offices), use **separate user profiles** to maintain privacy and security.  
+| **Action** | **Purpose** |
+|-------------|-------------|
+| Store files on OneDrive or SharePoint | Secure cloud storage with version control |
+| Avoid local or personal cloud drives | Prevent data loss and compliance breaches |
+| Enable screen locks and encryption | Protect devices if lost or stolen |
+| Use separate user profiles on shared machines | Maintain privacy and accountability |
 
-> ⚙️ *Encryption protects your data even if the device is lost or stolen.*
+> ⚙️ *Encryption safeguards your work even when devices are compromised.*
 
----
 
 ## Secure Remote Access
 
-Remote work is now a standard part of research, but it introduces new security risks.  
+Remote work expands flexibility but increases risk.  
+Safe access protects your data wherever you work.
 
-- Use the **UoN VPN** when accessing institutional systems or sensitive datasets from outside the university network.  
-- Avoid connecting through public Wi-Fi without a VPN—especially in airports, cafés, or hotels.  
-- Keep your **operating system and software updated** before connecting remotely.  
-- When working with collaborators in other institutions, clarify and document secure data access and sharing procedures.  
+- Always connect through the **UoN VPN** when off campus  
+- Avoid public Wi-Fi without VPN protection  
+- Keep **software and systems updated** before connecting  
+- Define **secure sharing protocols** for collaborators  
 
-> 🌍 *A VPN creates a secure tunnel between your device and the university network, maintaining confidentiality and integrity of transmitted data.*
-
----
+> 🌍 *A VPN keeps your connection secure—your data stays private, even on public networks.*
 
 ## Data Backup Strategy
 
-Data loss can occur from accidental deletion, hardware failure, or ransomware.  
-Implementing a structured backup policy is essential for ensuring continuity and recoverability.
+Backups prevent irreversible data loss from accidents, failures, or attacks.  
+Follow the **3-2-1 Rule** to ensure resilience.
 
-- Follow the **3-2-1 Rule:**  
-  - Keep **3 copies** of your data  
-  - Store them on **2 different media types** (e.g., cloud + local external drive)  
-  - Maintain **1 off-site or cloud-based backup**  
-- Use **automated backups** (OneDrive and SharePoint offer versioning and recovery).  
-- Document backup locations and frequencies as part of your project’s data management plan (DMP).  
+| **Rule** | **Description** |
+|-----------|-----------------|
+| **3 Copies** | Maintain three versions of your data |
+| **2 Media Types** | Store on two different media (e.g., cloud and drive) |
+| **1 Offsite** | Keep one copy offsite or in the cloud |
 
-> 💾 *A backup you have never tested is not a backup—it’s a hypothesis.*
-
----
+> 💾 *A backup untested is not a backup—it’s a hypothesis.*
 
 ## Cybersecurity Best Practices
 
-Cybersecurity is not static—it requires constant awareness and proactive management.  
+Cybersecurity requires daily habits, not one-off actions.
 
-Every researcher should adopt the following baseline practices:
+- **Verify sender identity** before opening attachments or links  
+- **Avoid personal email** for research communication  
+- **Report incidents** immediately to UoN IT Security  
+- Ensure **GDPR compliance** for international collaborations  
 
-- **Verify sender identity** before opening attachments or clicking links.  
-- **Avoid using personal email** for research-related communication or data exchange.  
-- Report suspicious emails, data breaches, or security concerns **immediately** to UoN IT Security.  
-- When collaborating internationally, ensure that shared data and platforms comply with relevant data protection laws (e.g. GDPR).  
+> 🧩 *Cybersecurity is continuous awareness—prevention through habit.*
 
-> 🧩 *Cybersecurity is a daily habit, not a one-off task.*
+## Building a Culture of Digital Responsibility
 
-## Towards a Culture of Digital Responsibility
+Security is cultural as much as technical.  
+A trustworthy digital environment depends on shared awareness and accountability.
 
-Digital security is not only technical—it is cultural.  
-A secure digital environment is built on **awareness, communication, and accountability**.  
+- Apply strong passwords and MFA as standard  
+- Use secure institutional storage and VPNs  
+- Implement regular backups and data audits  
+- Communicate and report risks openly  
 
-By embedding these principles into daily workflows—strong passwords, MFA, secure storage, regular backups, and responsible sharing—you contribute to a **culture of trusted, reproducible, and secure research**.
-
-> “Security and good practice underpin the credibility of research. Protecting data protects discovery.”
-
+> 🛡️ *Security and good practice underpin research credibility—protecting data protects discovery.*
 
 ---
 
