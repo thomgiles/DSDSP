@@ -64,17 +64,17 @@ This R Markdown document demonstrates data manipulation and visualization using 
 
 # Installing and Loading Packages
 
-First, we load the necessary packages using renv.
+First, we load the necessary packages
 
-```{r}
-pkgs <- c(
-  "rmarkdown", "gapminder", "tidyverse", "readxl", 
-  "openxlsx", "gridExtra", "ggExtra", "knitr", "renv"
-)
-
-invisible(lapply(pkgs, function(pkg) {
-  suppressMessages(require(pkg, character.only = TRUE))
-}))
+```{r} 
+library("rmarkdown")
+library("gapminder")
+library("tidyverse")
+library("openxlsx")
+library("gridExtra")
+library("ggExtra")
+library("knitr")
+library("tidyverse")
 ```
 
 # Exploring the Gapminder Dataset

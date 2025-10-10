@@ -10,14 +10,14 @@ $font-family-monospace:    "Circular Book", Circular, monospace !default;
 $headings-font-family:     "Circular Bold", Helvetica, Arial, sans-serif;
 
 /* Colours */
-$teal:   #0d2c2b;
-$blue2:  #0c2126;
-$blue:   #16333b;
+$teal:   #298582;
+$blue2:  #009bc1;
+$blue:   #006781;
 $slate:  #405162;
 $ink:    #10263b;
 $white:  #ffffff;
 $grey:   #B6B6B61F;
-$beige:  #faf6ef;
+$beige:  #ebdcc1;
 
 /* Bootstrap overrides */
 $body-bg:        $white !default;
@@ -522,8 +522,11 @@ h5 { font-size: 1.15rem; font-weight: 500; color: $white; }
 }
 .qpyodide-console-area, .qwebr-console-area {
   padding: 10px;
+  color: $ink;
   border: solid 1px;
   border-radius: 0 0 10px 10px;
+  background: $grey;
+  text-align: left;
 }
 .qpyodide-editor-toolbar, .qwebr-editor-toolbar {
   padding: 10px;
@@ -532,9 +535,6 @@ h5 { font-size: 1.15rem; font-weight: 500; color: $white; }
   border: solid 1px;
 }
 
-.qpyodide-console-area, .qwebr-console-area {
-    background: $grey;
-}
 
 .qpyodide-editor, .qwebr-editor {
     border: none !important;
@@ -592,4 +592,8 @@ tr.header {
 
 tr.even {
     background: $grey;
+}
+
+.blockquote {
+    color: $ink;
 }

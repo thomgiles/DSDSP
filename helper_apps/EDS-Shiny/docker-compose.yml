@@ -4,7 +4,7 @@ services:
   edsm1-shiny:
     build:
       context: .               # directory containing Dockerfile and app.R
-      dockerfile: Dockerfile
+      dockerfile: dockerfile
     container_name: edsm1-shiny
     image: edsm1-shiny:latest
     ports:

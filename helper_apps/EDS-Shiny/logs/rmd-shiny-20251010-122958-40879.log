@@ -1,0 +1,22 @@
+su: ignoring --preserve-environment, it's mutually exclusive with --login
+
+Listening on http://127.0.0.1:40879
+
+Warning in attr(x, "match.length") : 'xfun::attr()' is deprecated.
+Use 'xfun::attr2()' instead.
+See help("Deprecated")
+
+
+processing file: index.Rmd
+Warning in attr(x, "match.length") : 'xfun::attr()' is deprecated.
+Use 'xfun::attr2()' instead.
+See help("Deprecated")
+Warning in attr(x, "knit_meta") : 'xfun::attr()' is deprecated.
+Use 'xfun::attr2()' instead.
+See help("Deprecated")
+output file: /tmp/RtmpOZSXrG/file192fb71ebb/index.knit.md
+
+
+Output created: /tmp/RtmpOZSXrG/file192fb71ebb/index.html
+Terminated
+

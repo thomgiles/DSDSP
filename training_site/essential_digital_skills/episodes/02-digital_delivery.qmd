@@ -353,7 +353,7 @@ Regular, structured meetings keep research teams aligned and adaptive.
 They replace long, infrequent check-ins with short, purposeful interactions.
 
 | **Meeting Type** | **Purpose** | **Typical Timing** |
-|------------------|-------------|--------------------|
+|------------------|------------------|---------------|
 | **Sprint Planning** | Define objectives, assign tasks, and clarify expectations | Start of each sprint |
 | **Stand-Up** | Share progress, identify blockers, coordinate efforts | 10–15 min each day |
 | **Sprint Review** | Present outcomes, gather feedback, refine next steps | End of sprint |
