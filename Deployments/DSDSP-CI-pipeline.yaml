@@ -13,6 +13,7 @@
   jobs:
   - job: build_and_deploy_job
     displayName: Build and Deploy Job
+    timeoutInMinutes: 120
     pool:
       vmImage: ubuntu-latest
     variables:
@@ -35,6 +36,15 @@
 
       - script: |
           mkdir -p ~/.R/library
+        displayName: 'Prepare R library directory'
+
+      - task: Cache@2
+        inputs:
+          key: 'R-packages | "$(Agent.OS)" | training_site'
+          path: ~/.R/library
+        displayName: 'Cache R packages'
+
+      - script: |
           export R_LIBS_USER=$HOME/.R/library
           echo 'R_LIBS_USER="~/.R/library"' >> ~/.Renviron
           Rscript -e 'install.packages(c("renv","rmarkdown", "reticulate", "gapminder", "tidyverse", "readxl", "openxlsx", "gridExtra", "ggExtra", "knitr"))'
@@ -63,7 +73,7 @@
 
       - script: |
           export R_LIBS_USER=$HOME/.R/library
-          quarto render .
+          quarto render . --verbose --no-cache
           echo "list contents"
           pwd
           ls -al

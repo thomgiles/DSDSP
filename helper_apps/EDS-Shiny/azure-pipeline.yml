@@ -1,67 +1,23 @@
-# =========================================================
-# Azure DevOps Pipeline for EDS-M1 Shiny App
-# =========================================================
-# Builds Docker image and pushes to Azure Container Registry (ACR)
+# Azure Pipelines for building and pushing EDS-Shiny Dash app image
 
 trigger:
-  branches:
-    include:
-      - main
-      - master
+- azure-pipelines
+
+pool:
+  vmImage: ubuntu-latest
 
 variables:
-  # ⚙️ Set your registry details here
-  imageName: edsm1-shiny
-  dockerfilePath: Dockerfile
-  containerRegistry: <YOUR-ACR-NAME>.azurecr.io  # e.g. myregistry.azurecr.io
+  imageName: 'eds-shiny-dashapp'
 
-stages:
-- stage: BuildAndPush
-  displayName: Build and Push Docker Image
-  jobs:
-  - job: Build
-    displayName: Build and Push
-    pool:
-      vmImage: 'ubuntu-latest'
-
-    steps:
-    # -----------------------------------------------------
-    # 1. Checkout source
-    # -----------------------------------------------------
-    - task: Checkout@1
-      displayName: Checkout code
-      inputs:
-        clean: true
-
-    # -----------------------------------------------------
-    # 2. Azure Container Registry login
-    # -----------------------------------------------------
-    # Create a service connection in Azure DevOps to your ACR:
-    # Project Settings → Service Connections → New → Docker Registry → Azure Container Registry
-    # Name it e.g. `acr-service-connection`
-    - task: Docker@2
-      displayName: Login to ACR
-      inputs:
-        command: login
-        containerRegistry: acr-service-connection
-
-    # -----------------------------------------------------
-    # 3. Build and push Docker image
-    # -----------------------------------------------------
-    - task: Docker@2
-      displayName: Build and Push Image to ACR
-      inputs:
-        command: buildAndPush
-        containerRegistry: acr-service-connection
-        repository: $(imageName)
-        dockerfile: $(dockerfilePath)
-        tags: |
-          latest
-          $(Build.BuildId)
-
-    # -----------------------------------------------------
-    # 4. Output summary
-    # -----------------------------------------------------
-    - script: |
-        echo "✅ Image successfully pushed to $(containerRegistry)/$(imageName):latest"
-      displayName: Output summary
+steps:
+- task: Docker@2
+  displayName: Build and push EDS-Shiny Docker image
+  inputs:
+    containerRegistry: 'DRSLinuxContainerRegistry-Docker'
+    repository: '$(imageName)'
+    command: 'buildAndPush'
+    Dockerfile: './helper_apps/EDS-Shiny/dockerfile'
+    buildContext: './helper_apps/EDS-Shiny'
+    tags: |
+      $(Build.BuildId)
+      latest
