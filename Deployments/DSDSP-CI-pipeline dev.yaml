@@ -36,17 +36,20 @@
 
       - script: |
           mkdir -p ~/.R/library
-          export R_LIBS_USER=$HOME/.R/library
-          echo 'R_LIBS_USER="~/.R/library"' >> ~/.Renviron
-          Rscript -e 'install.packages(c("renv","rmarkdown", "reticulate", "gapminder", "tidyverse", "readxl", "openxlsx", "gridExtra", "ggExtra", "knitr"))'
-        workingDirectory: training_site
-        displayName: 'Restore R environment'
+        displayName: 'Prepare R library directory'
 
       - task: Cache@2
         inputs:
           key: 'R-packages | "$(Agent.OS)" | training_site'
           path: ~/.R/library
-        displayName: 'Cashe R packages'
+        displayName: 'Cache R packages'
+
+      - script: |
+          export R_LIBS_USER=$HOME/.R/library
+          echo 'R_LIBS_USER="~/.R/library"' >> ~/.Renviron
+          Rscript -e 'install.packages(c("renv","rmarkdown", "reticulate", "gapminder", "tidyverse", "readxl", "openxlsx", "gridExtra", "ggExtra", "knitr"))'
+        workingDirectory: training_site
+        displayName: 'Restore R environment'
 
       - task: UsePythonVersion@0
         inputs:

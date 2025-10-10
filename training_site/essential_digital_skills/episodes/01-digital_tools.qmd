@@ -125,7 +125,7 @@ Collaboration is at the heart of the DS&DSP. By connecting researchers, data pro
 
 > “Collaboration is not an add-on—it is the mechanism through which good research becomes great research.”
 
-## Course Structure
+## Programme Structure
 
 The programme offers **three tiers of learning**, from foundational to applied and specialist skills.
 
@@ -137,7 +137,7 @@ The programme offers **three tiers of learning**, from foundational to applied a
 
 > 🧩 *Each tier builds practical capability and supports research independence.*
 
-### Esential Digital Skills
+### Courses
 
 | Course                             | Description                                                                 | Duration       | Note |
 |------------------------------------|-----------------------------------------------------------------------------|----------------|------|
@@ -145,7 +145,7 @@ The programme offers **three tiers of learning**, from foundational to applied a
 | Methods for Data Science – Theoretical    | Introduces coding, software, and collaboration practices needed for sustainable research. | 4× half days   |      |
 | Methods for Data Science – Applied Python | Provides practical experience in data analysis and interpretation using Python. | 2 days         | Introductory and intermediate |
 | Methods for Data Science – Applied R      | Provides practical experience in data analysis and interpretation using R.     | 2 days         | Introductory and intermediate |
-| Advanced       | —           | 1 day    |      |
+| Advanced       | —           | 1 day?    |  AI? ML? Bioinformatics?    |
 
 ---
 
