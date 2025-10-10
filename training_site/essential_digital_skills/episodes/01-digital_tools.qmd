@@ -18,16 +18,6 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 
-
-## Module Overview
-
-- **Module:** EDS-M1 -  Digital Tools 
-- **Course:** Essential Digital Skills (EDS)
-- **Audience:** Early Career Researchers (PhD, Postdoc)  
-- **Duration:** ~40 minutes directed teaching (+4 exercises)  
-
----
-
 ::: callout-outcomes
 
 ## 💡 Learning Outcomes
@@ -37,8 +27,6 @@ document.addEventListener("DOMContentLoaded", function() {
 - Manage your research identity
 - Identify essential practices for secure research
 :::
-
----
 
 ::: callout-questions
 
@@ -78,7 +66,6 @@ flowchart LR
 
 > 💡 *Digital collaboration, data management, coding, and reproducibility form the foundation of digital research practice.*
 
-
 ## Beyond Tools
 
 The programme is not simply about tools:
@@ -89,20 +76,22 @@ It is about **connecting researchers** with the people who work with data, inclu
 
 ---
 
-## Connecting Researchers and Data Professionals
+## Bridging Communities
 
+Modern research depends on shared understanding between disciplinary experts and technical specialists.
 
-Modern research relies on shared understanding between disciplinary experts and technical specialists.
+## Bridging Communities
 
-| **Benefit** | **Description** |
-|--------------|-----------------|
-| **Quality** | Consistent data standards and metadata practices |
-| **Reproducibility** | Shared methods and transparent workflows |
-| **Efficiency** | Collaborative problem-solving across domains |
-| **Insight** | Combining technical and disciplinary perspectives |
+Modern research depends on shared understanding between disciplinary experts and technical specialists.
 
-> 💬 *Bridging communities builds stronger, more reproducible research.*
+| **Focus Area** | **Collaborative Benefit** | **Description** |
+|----------------|----------------------------|-----------------|
+| 🧩 **Quality** | Shared data standards | Ensures consistency in data structure, documentation, and metadata practices |
+| 🔁 **Reproducibility** | Common workflows | Encourages transparent, reusable, and verifiable research methods |
+| ⚙️ **Efficiency** | Cross-domain collaboration | Combines complementary expertise for faster problem-solving |
+| 💡 **Insight** | Interdisciplinary innovation | Integrates technical and disciplinary perspectives to generate new knowledge |
 
+> 💬 *Collaboration between experts and specialists strengthens quality, transparency, and innovation in research.*
 
 ## Why Digital Skills Matter
 
@@ -151,7 +140,7 @@ The programme offers **three tiers of learning**, from foundational to applied a
 
 > 🧩 *Each tier builds practical capability and supports research independence.*
 
-### Courses
+## Courses
 
 | Course                             | Description                                                                 | Duration       | Note |
 |------------------------------------|-----------------------------------------------------------------------------|----------------|------|
@@ -171,7 +160,7 @@ Let’s start by reflecting on your current digital research skills.
 
 ❓ *What’s digital skills or tool you want to develop this year?* 
 
-<div id="frame-q1"></div>
+<div id="frame-q1"></div> 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
   const params = new URLSearchParams(window.location.search);
@@ -368,7 +357,7 @@ document.addEventListener("DOMContentLoaded", function() {
     ? `${base}&contribute=true#shiny-tab-q2_input`
     : `${base}#shiny-tab-q2_results`;
 
-  document.getElementById("frame-q1").innerHTML =
+  document.getElementById("frame-q2").innerHTML =
     `<iframe src="${src}" width="100%" height="500" frameborder="0"
              style="border:none;" title="Q1"></iframe>`;
 });
@@ -551,8 +540,6 @@ Visit [Orcid](https://orcid.org/), Log in / sign up
 
 # Digital Security & Good Practice
 
-![](fig/security.png){fig-align="center" width=500px}
-
 ## Why Digital Security Matters
 
 Effective digital research requires vigilance, responsibility, and sound data stewardship.  
@@ -683,7 +670,7 @@ document.addEventListener("DOMContentLoaded", function() {
     ? `${base}&contribute=true#shiny-tab-q4_input`
     : `${base}#shiny-tab-q4_results`;
 
-  document.getElementById("frame-q1").innerHTML =
+  document.getElementById("frame-q4").innerHTML =
     `<iframe src="${src}" width="100%" height="500" frameborder="0"
              style="border:none;" title="Q1"></iframe>`;
 });
