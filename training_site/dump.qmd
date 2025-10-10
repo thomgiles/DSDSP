@@ -47,627 +47,494 @@ format:
 
 ## 💡 Learning Outcomes
 
-- Navigate core UoN digital ecosystem
-- Apply digital best practices in collaboration & file organisation
-- Manage your research identity
-- Identify essential practices for secure research
+- Understand how Agile values and principles apply to the delivery of
+  research projects  
+- Recognise roles and responsibilities in research teams and how they
+  map to Agile/Scrum roles  
+- Plan and deliver research or digital outputs in iterative sprints  
+- Embrace shared ownership and collaborative research culture  
 :::
-
----
 
 ::: callout-questions
 
 ## ❓ Questions
 
-1. What basic data tools I need to do research at UoN?
-2. How to I maintain a consistent online researcher identity?
-3. What digital tools may I need to support my research aims?  
+1.  How can Agile values and principles be adapted for research
+    projects?  
+2.  How do research team roles map to Agile/Scrum roles?  
+3.  What practices enable collaborative and iterative delivery of
+    research outputs?  
 :::
 
 ## Structure & Agenda
 
-1. Introduction to the Digital Skills Programme (~10+10 min)  
-2. Institutional Systems for Digital Research (~10+10 min)  
-3. Research Identity and Profiles (~10+10 min)  
-4. Digital Security & Good Practice (~10+10min)  
+1. Agile for Research (~20 min)  
 
-> 🔧 4 Activities spaced every 10 minutes.
+2. Scrum for research (~20 min)
+  
+3. Sprint-Based Delivery and Coordination (~20 min)  
 
-# Introduction to the Digital Skills Programme
+4. Shared Ownership & Culture (~20 min)
 
-![](fig/office365.png){fig-align="center" width=500px}
+# Agile for Research
 
-## What is DS?
-The **Digital Skills** programme equips researchers with the digital competencies required for modern, data-driven scholarship.  
-It focuses on four interconnected themes: **digital collaboration**, **data management**, **coding**, and **reproducibility**.
+## Traditional research process
+
+The traditional research process is often framed as **linear**: define a question, collect data, analyse, publish.  
 
 ```{mermaid}
 flowchart LR
-    A["Digital Collaboration"]:::a
-    B["Data Management"]:::b
-    C["Coding"]:::c
-    D["Reproducibility"]:::d
+    A[Define Research Question] --> B[Collect Data]
+    B --> C[Analyse Results]
+    C --> D[Publish Findings]
+    
+    style A fill:#f5f5f5,stroke:#333,stroke-width:1px
+    style B fill:#e0f7fa,stroke:#333,stroke-width:1px
+    style C fill:#e8f5e9,stroke:#333,stroke-width:1px
+    style D fill:#fff3e0,stroke:#333,stroke-width:1px
+``` 
+
+> ⚠️ While this approach offers structure, it can limit flexibility when new information, technologies, or constraints emerge.  
+
+## What is Agile?
+
+Agile is an **iterative and adaptive approach** to delivering work that emphasises:
+
+- **Collaboration** 
+- **Flexibility**
+- **Learning** 
+- **Transparency**
+- **continuous feedback**
+
+> 💡 *Agile means treating knowledge creation as a continuous experiment: learning, testing, and adapting as you go.*
+
+## Iterative cycles
+
+Instead of completing a research project in one linear sequence, Agile breaks work into **small, manageable cycles**, each delivering value, gathering feedback, and refining direction.
+
+```{mermaid}
+flowchart TB
+    %% Main concept nodes (A–D)
+    A["<b>Iterative Hypotheses</b>"]
+    B["<b>Rapid Prototyping</b>"]
+    C["<b>Feedback Loops</b>"]
+    D["<b>Learn from Failure</b>"]
+
+    %% Descriptive subnodes (wrapped)
+    A1["Treat questions as evolving ideas"]
+    B1["Test early to assess feasibility"]
+    C1["Engage stakeholders early and often"]
+    D1["View negative results as valuable insights"]
+
+    %% Flow connections
     A --> B --> C --> D --> A
-    classDef a fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
-    classDef b fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px
-    classDef c fill:#FFF3E0,stroke:#EF6C00,stroke-width:1px
-    classDef d fill:#F3E5F5,stroke:#6A1B9A,stroke-width:1px
+
+    %% Link descriptions below each main node
+    A --> A1
+    B --> B1
+    C --> C1
+    D --> D1
+
+    %% Styling for main nodes
+    style A fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
+    style B fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px
+    style C fill:#FFF3E0,stroke:#EF6C00,stroke-width:1px
+    style D fill:#F3E5F5,stroke:#6A1B9A,stroke-width:1px
+
+    %% Styling for descriptive nodes
+    classDef desc fill:#FFFFFF,stroke:#999,stroke-dasharray:3 3,width:340px;
+    class A1,B1,C1,D1 desc;
+
 ```
 
-The programme is not simply about tools
+## Agile Values: 
 
----
+Applying Agile values to research means prioritising:
 
-It is about **connecting researchers** with the people who work with data, including **data stewards**, **software engineers**, and **information specialists**. These collaborations enable better use of data, improve the quality of research outputs, and support a more open and reproducible research culture.
+- **Individuals and collaboration** over rigid project documentation  
+- **Working analyses and prototypes** over perfect but unused plans  
+- **Stakeholder interaction** over isolated investigation  
+- **Adapting to change** over following an inflexible proposal  
 
----
+> ❌ This does **not** reject structure or planning, it rebalances priorities to emphasise responsiveness, communication, and continuous improvement.
 
-## Connecting Researchers and Data Professionals
+## Examples of applying Agile practise to research
 
-Modern research depends on effective communication between disciplinary experts and data professionals.  
+1. **Data Collection:** Instead of collecting all data at once, researchers run **short cycles** of data gathering and preliminary analysis.  
+2. **Experimentation:** Develop early **proof-of-concept experiments** to test methodology and identify bottlenecks before committing.
+3. **Reporting:** Share **partial results or visualisations** with supervisors or collaborators to verify relevance, detect errors, and improve clarity, long before formal publication.
+4. **Direction:** If early results indicate an unexpected trend or limitation, **pivot** research focus. Adjust hypotheses the or analytic methods in response to data.
 
----
 
-The DS&DSP aims to **bridge these communities**, creating a shared understanding of data, workflows, and digital practices.
+> 🧩 *Small, visible, and frequent, keeps projects flexible, auditable, and aligned.*
 
-- Collaboration improves **data quality** and **metadata consistency**
-- Shared practice strengthens **reproducibility** and **transparency**
-- Interdisciplinary teamwork enhances **efficiency** and **innovation**
-- Working together helps researchers **translate complex data into insight**
+## Agile Tools for Researchers
 
-> 💬 *Modern research is not just about individual expertise—it’s about connecting expertise.*
+Below are some tools that can be helpful when adopting Agile practices: 
 
----
+| **Purpose** | Tool / Platform | Agile Benefit |
+|--------------|------------------|----------------|
+| **Task management and planning** | Planner / Trello / Jira | Supports structured iteration and tracking |
+| **Visual planning and workflow mapping** | Miro / Lucidchart | Encourages shared understanding and adaptability |
+| **Reproducible analysis documentation** | Jupyter / R Markdown / Quarto | Facilitates iterative improvement and peer review |
+| **Version control, collaboration, code transparency** | Git / GitHub / GitLab | Enables review, and iteration |
 
-## Why Digital Skills Matter
+## Towards an Agile Research Culture
 
-- Digital skills underpin every stage of the research lifecycle—from data collection to dissemination  
-- Collaborative digital practices improve reproducibility and research efficiency  
-- Data fluency enables meaningful engagement with data scientists and technical specialists  
-- Strong digital identities and open practices increase research visibility and impact  
+Adopting agile principles in research shifts the focus from rigid adherence to initial plans toward **responsive adaptation**, enabling research to thrive in dynamic, interdisciplinary environments.
 
----
+- Teams become **more resilient** to change and uncertainty.  
+- Outputs are **more reproducible**, as methods evolve transparently.  
+- Collaboration improves through shared visibility and iterative refinement.  
+- Research becomes **more impactful**, as feedback informs direction in real time.
 
-| Challenge | Digital Skills Response |
-|------------|-------------------------|
-| Disconnected research silos | Shared tools and workflows (Teams, GitHub, RIS) |
-| Data mismanagement | Version control, structured storage, FAIR principles |
-| Limited collaboration | Integrated communication and documentation tools |
-| Poor reproducibility | Use of open standards, coding literacy, and transparent sharing |
 
-## Collaboration Leads to Better Research
-
-Collaboration is at the heart of the DS&DSP. By connecting researchers, data professionals, and support specialists, the programme builds a **community of digital practice** that strengthens the quality, openness, and impact of research across disciplines.
-
-> “Collaboration is not an add-on—it is the mechanism through which good research becomes great research.”
-
-## Digital Skills: Course Structure
-
-There are three training tiers, each progressively developing digital skills from foundational competencies to applied and specialist practice. 
-
----
-
-The programme follows a modular structure: you don’t have to do all of it! 
-
-course modules includes some lectures, but also hands-on workshops. 
-
-| Course                             | Description                                                                 | Duration       | Note |
-|------------------------------------|-----------------------------------------------------------------------------|----------------|------|
-| Essential Digital Skills – Foundation | Introduces the tools, practices, and principles needed to participate confidently in digital research. | 4× half days   |      |
-| Methods for Data Science – Theoretical    | Introduces coding, software, and collaboration practices needed for sustainable research. | 4× half days   |      |
-| Methods for Data Science – Applied Python | Provides practical experience in data analysis and interpretation using Python. | 2 days         | Introductory and intermediate |
-| Methods for Data Science – Applied R      | Provides practical experience in data analysis and interpretation using R.     | 2 days         | Introductory and intermediate |
-| Course               | Description | Duration | Note |
-|----------------------|-------------|----------|------|
-| ???       | —           | 1 day    |      |
-| ???   | —           | 1 day    |      |
-| ???            | —           | 1 day    |      |
+> ⭐ Agile research is not about speed: It’s about responsiveness. The ability to learn, adapt, and collaborate faster than the world changes.
 
 ---
 
 ::: callout-task
 
-#### Task 1: Digital Skills Reflection
+#### Task 1: Discover — Why Work Iteratively?
 
-::: panel-tabset
-##### Question
+- **Form groups of 5–6 people.**
+- Discuss the pros and cons of *short, iterative research cycles* compared to long, linear projects.  
+- Identify **five ways** iterative approaches can help avoid dead ends, reduce wasted effort, or prevent irrelevant outputs.  
+- Capture your main ideas on a shared board or notes.
 
-Let’s start by reflecting on your current digital research skills.  
-
-❓ *What’s digital skills or tool you want to develop this year?*  
-
-Type 4-5 or more skills or tools below (comma-separated), then hit submit to see the **Wordcloud**.
-
-
-##### Follow-up
-
-- Read through what others have shared.  
-- Discuss recurring goals and patterns in the plenary.  
-- Identify shared learning priorities.
+**Follow-up:**  
+Share one key insight with the plenary — explain *why* it helps prevent wasted research effort.
 
 :::
-:::
 
-# Institutional Systems for Digital Research
+# Scrum for research
 
-![](fig/sharepoint.png){fig-align="center" width=500px}
+## Traditional Research Roles
 
-## Why Institutional Systems Matter
+Research teams often rely on **fixed hierarchies** that define expertise and control but can limit adaptability.
 
-Digital research is inherently collaborative. Modern scholarship relies not only on individual skill but also on the ability to connect people, data, and systems across institutional and disciplinary boundaries.  
+```{mermaid}
+graph TD
+    PI["<b>Principal Investigator (PI)</b><br>Leads the research project"]:::lead
+    PR["<b>Postdoctoral Researchers</b><br>Conduct analyses"]:::exec
+    AN["<b>Analysts</b><br>Develop methods"]:::exec
+    PM["<b>Project Managers</b><br>Coordinate timelines and deliverables"]:::coord
+    SE["<b>Subject Experts</b><br>Provide domain knowledge and advice"]:::advice
 
----
+    PI --- PR
+    PI --- AN
+    PI --- PM
+    SE --- AN
+    PM --- AN
+    SE --- PR
+    PM --- PR
 
-At the University of Nottingham (UoN), researchers operate within a digital ecosystem designed to **enable collaboration, safeguard data, and streamline research workflows**.  
+    classDef lead fill:#E8F5E9,stroke:#2E7D32,stroke-width:2px;
+    classDef exec fill:#E3F2FD,stroke:#1565C0,stroke-width:1px;
+    classDef coord fill:#FFF3E0,stroke:#EF6C00,stroke-width:1px;
+    classDef advice fill:#F3E5F5,stroke:#6A1B9A,stroke-width:1px;
+```
 
----
+> 🧭 Clear but rigid structures can create **silos**, reduce communication, and limit shared ownership.
 
-Institutional systems such as **Microsoft 365**, **UniCore**, and the **Research Information System (RIS)** form the backbone of this ecosystem. Together, they support communication, data sharing, project administration, and the formal recording of research outputs and impact.
+## Scrum for Research Collaboration
 
----
+Scrum offers a **lightweight framework**, with defined roles for coordinating complex, evolving projects.
 
-These platforms are more than administrative tools—they are **enablers of collaborative, transparent, and efficient digital research**.
+| **Scrum Role** | **Research Analogue** | **Key Function** |
+|----------------|------------------------|------------------|
+| **Product Owner** | Principal Investigator or Research Lead | Defines vision and priorities; aligns with goals and impact |
+| **Scrum Master** | Research Facilitator or Coordinator | Supports process flow, removes blockers, maintains focus |
+| **Development Team** | Postdocs, Analysts, Data Scientists, SMEs | Conducts research, analyses data, co-creates deliverables |
 
----
+> 💡 Scrum supports flexibility while maintaining structure and clarity.
 
-## Microsoft 365: A Collaboration Platform for Research
+## The Scrum Role Loop
 
-The Microsoft 365 suite provides an integrated environment for communication, writing, data management, and project coordination.  
-Its tools are foundational to digital collaboration at UoN and support nearly every aspect of day-to-day research activity.
+Scrum roles form a **feedback system** where leadership, facilitation, and delivery operate iteratively.
 
----
+```{mermaid}
+flowchart LR
+    PO["<b>Product Owner</b><br>Sets research vision and priorities"]:::lead
+    SM["<b>Scrum Master</b><br>Facilitates process <br> and removes blockers"]:::coord
+    DEV["<b>Development Team</b><br>Executes analyses <br> and refines outputs"]:::exec
 
-### Core Tools
+    PO --> SM
+    SM --> DEV
+    DEV --> PO
 
-- **Word & Excel:** writing, data capture, and collaborative editing  
-- **OneDrive:** secure personal cloud storage with autosave and version control  
-- **Teams:** shared digital workspaces for communication, meetings, and group file management  
-- **SharePoint:** institutional platform for structured, long-term file sharing and documentation  
+    style PO fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px
+    style SM fill:#FFF3E0,stroke:#EF6C00,stroke-width:1px
+    style DEV fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
+```
 
----
+> 🔁 Each role reinforces the others, creating a **cycle of adaptation and feedback**.
 
-## Collaboration in Practice
+## Core Principles
 
-Microsoft 365 enables **seamless real-time collaboration** between researchers, administrators, and external partners:
+Scrum principles emphasise **iteration**, **communication**, and **shared accountability**.
 
-- Multiple users can co-edit the same file simultaneously with full **version tracking**.  
-- Integrated **chat and meeting tools** in Teams facilitate contextual discussion—reducing reliance on fragmented email threads.  
-- Shared **document libraries** on SharePoint ensure continuity and access control for ongoing research projects.  
-- **OneDrive synchronisation** allows researchers to work offline, with changes automatically updated across devices when reconnected.  
+| Agile Principle | Research Translation | 
+|-----------------|----------------------| 
+| Collaboration over control | Encourage open discussion and co-creation | 
+| Iteration over perfection | Deliver incremental results and refine | 
+| Communication over documentation | Focus on clarity and alignment | 
+| Shared ownership | Collective accountability for success |
 
----
+> ⚙️ Agility grows through clarity, transparency, and trust.
 
-### File Collaboration Best Practices
+## Scalability
 
-- Use **Teams or SharePoint** for group projects rather than emailing attachments.  
-- **Enable autosave** in Word and Excel to prevent data loss.  
-- Use **version history** to restore previous document states—avoid renaming files manually.  
-- Plan clear, logical **folder structures** reflecting project phases or work packages.  
-- Apply **access permissions** carefully, ensuring collaborators have appropriate visibility and editing rights.
+Scrum roles scale with project size and complexity, evolving as teams grow and responsibilities diversify.
 
----
+- Small teams: A PI often combines leadership and coordination, acting as both Product Owner and Scrum Master.
+- Growing teams: Dedicated facilitators emerge to manage process flow, freeing the PI to focus on research vision and priorities.
+- Large, distributed teams: Roles become more specialised—Scrum Masters coordinate across sub-teams, and multiple Product Owners align local goals with overarching research objectives.
 
-> 💡 *Good digital housekeeping supports not only collaboration, but also compliance, reproducibility, and research continuity.*
-
----
-
-## UoN Tools: UniCore & RIS
-
-| Tool     | Purpose                                     |
-|----------|---------------------------------------------|
-| **UniCore**  | Finance, HR, and procurement management     |
-| **RIS**      | Research lifecycle, funding, and outputs management |
-
-These platforms connect the practical and administrative sides of research, ensuring transparency, traceability, and efficiency across departments and projects.
-
----
-
-### UniCore Quick Facts
-
-**UniCore** is UoN’s enterprise resource system (Oracle-based) for managing financial and HR operations.
-
----
-
-It is used for:
-
-- Equipment purchases and procurement  
-- Expense claims and travel reimbursement  
-- Leave management and sickness reporting  
-- HR administration and employment records  
-
-> 🧭 *Think of UniCore as the infrastructure that supports the financial and operational side of your research.*
-
----
-
-### RIS (Research Information System)
-
-**RIS** (based on Worktribe) is the system through which research projects are proposed, recorded, and tracked across their lifecycle.  
-It is the **single authoritative source** for research-related activity at UoN and underpins compliance, reporting, and REF submission.
-
----
-
-RIS is used for:
-
-- Grant applications and costings  
-- Research outputs and publication tracking  
-- Impact recording and open access compliance  
-- Repository integration and ORCID synchronisation  
-
----
-
-RIS is central to managing the *institutional memory* of research: it ensures that outputs, collaborations, and impact are captured systematically and linked to individuals, funders, and departments.
-
----
-
-## Integrating Systems for Research Excellence
-
-The power of these systems lies in their **interoperability**.  
-RIS, SharePoint, and Microsoft 365 together form a digital infrastructure that connects research administration with active collaboration and dissemination.
-
----
-
-| Research Task | Recommended System | Collaboration Benefit |
-|----------------|-------------------|------------------------|
-| Co-author a paper | OneDrive / Word | Real-time editing, version control |
-| Submit a funding bid | RIS | Shared proposal development and compliance |
-| Claim travel expenses | UniCore | Secure and traceable process |
-| Share project datasets | Teams / SharePoint | Controlled access and long-term storage |
-| Manage project milestones | Teams | Integrated communication and documentation |
-| Record outputs and impact | RIS + ORCID | Automatic linking across systems |
-
----
-
-## The Broader Vision: Connected Digital Research
-
-By using institutional systems effectively:
-
-- Teams build **trust and accountability** through transparent processes.  
-- Data is **managed and shared responsibly**, in line with open research principles.  
-- Projects become **more resilient**, as institutional systems ensure continuity even when personnel change.  
-- Researchers can focus on **innovation and discovery**, not file management or administration.
-
-> “Digital collaboration is the infrastructure of modern research.  
-> Tools like Teams, SharePoint, and RIS aren’t just platforms—they are the connective tissue that holds interdisciplinary research together.”
-
----
-
-::: callout-task
-
-#### Task 2: Match Research Tasks to Tools
-
-::: panel-tabset
-##### Activity
-
-In groups of 4-5, discuss and list the digital tools you would use for each of the following:
-
-1. Co-write a manuscript  
-2. Submit a funding bid  
-3. Order equipment  
-4. Share large datasets with your team  
-
-##### Reflection
-
-- Share your answers with the plenary  
-- Reflect on whether you've used any of these systems before  
-- Identify any gaps in your familiarity that you want to address  
-
-##### Answers
-
-- **Microsoft Word -> Sharepoint + Teams** are ideal for collaborative document editing  
-- **RIS (Worktribe)** is used for grant applications and research output tracking  
-- **UniCore** handles finance, procurement, HR and expenses  
-- **Microsoft Teams + SharePoint** is best for long-term group file access and collaboration  
-:::
-:::
-
-# Research Identity & Profiles
-
-![](fig/orchid.png){fig-align="center" width=500px}
-
-## Why Research Identity Matters
-
-In an increasingly digital and collaborative research environment, your **research identity** is the foundation of your professional visibility, credibility, and impact. 
-
----
-
-Establishing and maintaining a coherent digital identity ensures that your work is **discoverable**, **attributed correctly**, and **linked** across the research ecosystem—from institutional systems to international repositories.
-
----
-
-A consistent identity allows your publications, data, and contributions to be recognised automatically across journals, funders, and digital infrastructure. It also makes collaboration more efficient by helping others to find, verify, and engage with your work.
-
-> 🧩 *A strong research identity connects your professional presence across platforms and ensures lasting recognition of your contributions.*
-
----
-
-## ORCID – A Persistent Digital Identifier
-
-**ORCID (Open Researcher and Contributor ID)** is the international standard for uniquely identifying researchers.  
-It provides a **persistent, 16-digit identifier** that travels with you across your career, regardless of changes in institution, discipline, or name.
-
----
-
-### Why ORCID is Essential
-
-- **Universal interoperability:** recognised by funders, publishers, and research systems worldwide  
-- **Automatic updates:** publications and outputs can be added automatically via Crossref and DataCite  
-- **Long-term portability:** remains active even after you move institutions or change roles  
-
----
-
-Creating and maintaining an ORCID profile is a foundational step in managing your scholarly identity. It serves as a **hub** linking your outputs, affiliations, and professional activities.
-
-> 💡 *ORCID is not just a profile—it’s your digital fingerprint in the research ecosystem.*
-
----
-
-## RIS Profile (University of Nottingham)
-
-At UoN, your **Research Information System (RIS)** profile extends the institutional representation of your research identity.  
-
-RIS connects your outputs, projects, and impact activities with your ORCID iD to build a complete institutional record.
-
----
-
-### Key Functions of RIS
-
-- Displays **grants, outputs, and impact** in a central dashboard  
-- Feeds information to your **public staff page** on the UoN website  
-- Supports **REF reporting** and compliance requirements  
-- Ensures consistent linking between institutional and external systems (e.g., funders, publishers, repositories)
-
-
-## Other Profiles and Scholarly Platforms
-
-Maintaining additional scholarly profiles enhances visibility across different discovery and citation systems.  
-
-Each platform serves a slightly different purpose, and when synchronised with ORCID, they collectively form a **distributed network of your professional presence**.
-
----
-
-| Platform | Purpose | Notes |
-|-----------|----------|-------|
-| **Scopus Author ID** | Tracks citation metrics, co-authorship, and affiliations | Automatically generated; may require merging duplicates |
-| **Google Scholar** | Provides broad citation coverage and h-index | Useful for monitoring visibility; manual curation often required |
-| **ResearchGate / Academia.edu** | Offer social networking layers for research exchange | Optional; use responsibly and avoid reliance on non-standard metrics |
-
-
-> ⚠️ N.b. Always prioritise **validated platforms** (e.g., ORCID, Scopus, RIS) over social research sites that rely on proprietary or unverifiable metrics.
-
----
-
-### Profile Management Tips
-
-- **Set your ORCID profile to public** to maximise discoverability  
-- **Merge duplicate Scopus IDs** to ensure accurate citation counts  
-- **Link your ORCID iD with RIS** for automatic synchronisation of outputs  
-- **Use consistent naming and affiliation formats** across all systems  
-- **Avoid fabricated metrics** (e.g., RG Score) that lack transparency or scholarly validity  
-- **Regularly audit** your profiles to ensure accuracy and consistency  
-
----
-
-> 🌐 *Your digital identity is a living record of your research career. Managing it carefully ensures that your contributions are visible, citable, and connected across the scholarly network.*
-
----
-
-## The Collaborative Dimension of Research Identity
-
-A well-managed research identity does more than showcase your individual achievements—it **enables collaboration**.  
-
----
-
-When researchers maintain accurate and connected profiles, others can:
-
-- Identify relevant expertise for interdisciplinary projects  
-- Attribute data and software contributions correctly  
-- Track shared publications and outputs through persistent links  
-- Reduce duplication and confusion in collaborative outputs  
-
----
-
-In this sense, research identity is not only about self-presentation—it is an **infrastructure for collaboration, attribution, and trust** in the digital research ecosystem.
-
-> “A connected identity enables connected research.”
-
----
-
-::: callout-task 
-
-#### Task 3: Research Identity Self-Audit
-
-::: panel-tabset
-##### Activity part 1
-
-❓ Do you have a ORCID research identity? 
-
-Visit [Orcid](https://orcid.org/), Log in / sign up
-
-##### Activity part 2
-
-❓ Is your ORCID iD is populated with your name, affiliation etc? if not make sure that is complete. 
-- Set your ORCID ID to public (if appropriate)  
-
-#####  Further Infomation
-
-- You can actually link your RIS and ORCID profiles but for that you need to be registered to use worktribe. It is recomended that you [request access](https://nottingham-research.worktribe.com/login.jx)
-- Once registered and logged in, you can link your ORCID and RIS profiles. For more infomation please refer to the [RIS training materials](http://moodle.nottingham.ac.uk/course/view.php?id=47898) to go away and read
-:::
-:::
-
-# Digital Security & Good Practice
-
-Effective research in the digital age requires more than technical competence, it demands **vigilance, responsibility, and sound data stewardship**.  
-
-Digital security and good practice are not peripheral concerns; they are fundamental to protecting your research, collaborators, and institutional reputation.
-
----
-
-Researchers handle sensitive data, intellectual property, and personal information. 
-
-As such, maintaining **digital security hygiene** is a shared professional obligation.  
-
----
-
-## Why Digital Security Matters in Research
-
-- **Trust and compliance:** Funders, journals, and institutions require that research data be handled securely.  
-- **Data integrity:** Protects against corruption, tampering, or unauthorised modification of research outputs.  
-- **Confidentiality:** Prevents exposure of sensitive or identifiable information.  
-- **Continuity:** Reduces the risk of data loss or research disruption caused by cyber incidents.  
-- **Collaboration resilience:** Ensures that data shared across teams and institutions remains secure.
-
-> 🔒 *Digital security is a collective responsibility—every researcher contributes to the safety and integrity of the wider research ecosystem.*
-
----
-
-## Passwords & Access Management
-
-Strong passwords are the first line of defence against unauthorised access. Weak or reused passwords remain one of the most common vulnerabilities in academic environments.
-
----
-
-- Use passwords of **at least 12 characters**, combining uppercase, lowercase, numbers, and symbols.  
-- Create **unique passwords** for every institutional and external system you use.    
-- Never share passwords or respond to credential requests via email, chat, or phone.  
-- Regularly **review account permissions**—especially for collaborative tools—to ensure only current team members retain access.  
-
----
-
-## Multi-Factor Authentication (MFA)
-
-**MFA** adds a critical layer of protection by requiring an additional verification step beyond a password.  
-
-It significantly reduces the risk of account compromise, even if your password is stolen.
-
-> 🔐 *Think of MFA as the seatbelt of your digital life—simple, unobtrusive, and potentially life-saving.*
-
----
-
-## Device & Data Protection
-
-Your devices are gateways to your research data. Protecting them is essential for maintaining data integrity and institutional trust.
-
-- Always store files on **UoN-approved cloud platforms** (OneDrive, SharePoint, Teams).  
-- Avoid saving sensitive or active project files on **local drives** or **personal cloud services**.   
-- Apply **automatic screen locks** and require a password or PIN for login.  
-- When sharing devices temporarily (e.g. in labs or shared offices), use **separate user profiles** to maintain privacy and security.  
-
-> ⚙️ *Encryption protects your data even if the device is lost or stolen.*
-
----
-
-## Secure Remote Access
-
-Remote work is now a standard part of research, but it introduces new security risks.  
-
-- Use the **UoN VPN** when accessing institutional systems or sensitive datasets from outside the university network.  
-- Avoid connecting through public Wi-Fi without a VPN—especially in airports, cafés, or hotels.  
-- Keep your **operating system and software updated** before connecting remotely.  
-- When working with collaborators in other institutions, clarify and document secure data access and sharing procedures.  
-
-> 🌍 *A VPN creates a secure tunnel between your device and the university network, maintaining confidentiality and integrity of transmitted data.*
-
----
-
-## Data Backup Strategy
-
-Data loss can occur from accidental deletion, hardware failure, or ransomware.  
-Implementing a structured backup policy is essential for ensuring continuity and recoverability.
-
-- Follow the **3-2-1 Rule:**  
-  - Keep **3 copies** of your data  
-  - Store them on **2 different media types** (e.g., cloud + local external drive)  
-  - Maintain **1 off-site or cloud-based backup**  
-- Use **automated backups** (OneDrive and SharePoint offer versioning and recovery).  
-- Document backup locations and frequencies as part of your project’s data management plan (DMP).  
-
-> 💾 *A backup you have never tested is not a backup—it’s a hypothesis.*
-
----
-
-## Cybersecurity Best Practices
-
-Cybersecurity is not static—it requires constant awareness and proactive management.  
-
-Every researcher should adopt the following baseline practices:
-
-- **Verify sender identity** before opening attachments or clicking links.  
-- **Avoid using personal email** for research-related communication or data exchange.  
-- Report suspicious emails, data breaches, or security concerns **immediately** to UoN IT Security.  
-- When collaborating internationally, ensure that shared data and platforms comply with relevant data protection laws (e.g. GDPR).  
-
-> 🧩 *Cybersecurity is a daily habit, not a one-off task.*
-
-## Towards a Culture of Digital Responsibility
-
-Digital security is not only technical—it is cultural.  
-A secure digital environment is built on **awareness, communication, and accountability**.  
-
-By embedding these principles into daily workflows—strong passwords, MFA, secure storage, regular backups, and responsible sharing—you contribute to a **culture of trusted, reproducible, and secure research**.
-
-> “Security and good practice underpin the credibility of research. Protecting data protects discovery.”
+> 🧩 As research teams expand, Scrum roles shift from multitasking to coordinated specialisation, scaling process without losing agility.
 
 
 ---
 
 ::: callout-task
 
-#### Task 4: Digital Security Self-Audit (10 min)
+#### Task 2: Map — Roles in Agile Research Teams
+ 
+- Within your group, map each other to one or more of the following: **Product Owner**, **Scrum Master**, **Development Team**.  
+- Discuss how responsibilities might shift in a more collaborative, cross-functional setting.  
+- Sketch your team as a simple diagram or list showing feedback and communication flow.
 
-::: panel-tabset
-##### Question  
-Reflect on your current digital setup. How secure is your research environment?
+**Follow-up:**  
+Nominate one speaker to summarise how **collaboration** or **decision-making** would change under this model.
 
-##### Exercise  
-<details>
-<summary><strong>Checklist</strong></summary>
-
-- [ ] Passwords meet length and uniqueness guidelines  
-- [ ] MFA is enabled (preferably with phone sign-in)  
-- [ ] Files are stored in university-approved platforms  
-- [ ] Device encryption is active  
-- [ ] VPN used when working off-campus or with sensitive information  
-</details>
-
-##### Follow-up  
-- Identify one action to improve your security in the coming week  
-- Reflect on what was easy/hard to assess, and what barriers exist for better practice  
 :::
+
+
+# Sprint-Based Delivery and Coordination
+
+<img src="fig/research_sprint.png" data-fig-align="center" width="500" />
+
+## Sprint-Based Research
+
+The **short, structured cycles** of focused work in Agile are called **sprints**
+
+Each sprint provides visibility, adaptability, and shared accountability.
+
+> ⏱️ *Sprints make progress visible, feedback actionable, and research more responsive.*
+
+## Why Use Sprints?
+
+Sprints Encourages steady, measurable progress:
+
+- Surfaces challenges early through short feedback loops  
+- Builds collaboration and collective ownership  
+- Maintains focus through clear, time-boxed goals  
+- Turns uncertainty into structured learning  
+
+> 🧩 *The sprint cycle transforms uncertainty from risk into discovery.*
+
+## The Sprint Cycle
+
+There are four key components of the standard sprint cycle:
+
+```{mermaid}
+flowchart LR
+    P["<b>Planning</b>"]:::plan --> 
+    E["<b>Execution</b>"]:::exec --> 
+    R["<b>Review</b>"]:::review --> 
+    RET["<b>Retrospective</b>"]:::retro --> 
+    P
+
+    classDef plan fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
+    classDef exec fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px
+    classDef review fill:#FFF3E0,stroke:#EF6C00,stroke-width:1px
+    classDef retro fill:#F3E5F5,stroke:#6A1B9A,stroke-width:1px
+```
+
+> 🔄 *Each cycle delivers both outputs and learning.*
+
+## Anatomy of a Sprint
+
+So what do these processes / stages mean? 
+
+| **Stage** | **Description** | **Example** |
+|------------|-----------------|--------------|
+| **Planning** | Define objectives and select tasks | Choose analyses or datasets to test |
+| **Execution** | Work toward defined outputs | Run experiments or prototype models |
+| **Review** | Share outcomes and collect feedback | Discuss early results / interpretations |
+| **Retrospective** | Reflect and refine processes | Identify improvements for the next sprint |
+
+> 💬 *Reflection and feedback drive iteration.*
+
+## Example: A Two-Week Research Sprint
+
+Sprints can be any length—ranging from a few days to several weeks—depending on the scope and pace of the project.  
+A two-week sprint provides a balanced rhythm for focus, collaboration, and review.  
+Each phase combines delivery, reflection, and adaptation.
+
+| **Week** | **Focus** | **Outputs** |
+|-----------|------------|-------------|
+| **Week 1** | Define objectives, explore materials or data, and plan methods | Clear goals, early insights, initial setup |
+| **Week 2** | Conduct work, review outcomes, and reflect on process | Draft findings, refined workflow, lessons learned |
+
+> 📈 *The aim is to maintain momentum while creating space for discovery, adjustment, and shared reflection.*
+
+## Meetings in Research Sprints
+
+Regular, structured meetings keep research teams aligned and adaptive.  
+They replace long, infrequent check-ins with short, purposeful interactions.
+
+| **Meeting Type** | **Purpose** | **Typical Timing** |
+|------------------|-------------|--------------------|
+| **Sprint Planning** | Define objectives, assign tasks, and clarify expectations | Start of each sprint |
+| **Stand-Up** | Share progress, identify blockers, coordinate efforts | 10–15 min each day |
+| **Sprint Review** | Present outcomes, gather feedback, refine next steps | End of sprint |
+| **Retrospective** | Reflect on process and teamwork, identify improvements | After review |
+
+> 💬 *Short, focused meetings create rhythm, accountability, and continuous learning across the research cycle.*
+
+## Embedding Sprint Thinking
+
+Sprints are more than a workflow — they’re a mindset for how research evolves, learns, and collaborates.
+
+- Build research plans that can **adapt as insight grows**  
+- Treat **feedback as learning**, not correction  
+- Keep **progress visible** through small, cumulative outputs  
+- Make **collaboration continuous**, not episodic  
+- Focus on **process as a shared responsibility**
+
+> “Sprints don’t just accelerate research, they make learning intentional, progress visible, and collaboration sustainable.”
+
+---
+
+::: callout-task
+
+#### Task 3: Apply — Design a Two-Week Research Sprint
+
+- Choose a small, realistic project (e.g. pilot study, data validation, literature mapping).  
+- Define your **sprint goal** — what should be achieved in two weeks?  
+- Break the work into **3–5 tasks**.  
+- Identify your **expected outputs** (data, plots, notes, draft methods).  
+- Decide how you’ll measure success at the end of the sprint.
+
+**Follow-up:**  
+Compare your sprint to a traditional plan.  
+What new opportunities or risks does the iterative approach create?
+
+:::
+
+# Shared Ownership and Research Culture
+
+<img src="fig/research_culture.png" data-fig-align="center" width="500" />
+
+## Agile Principles That Shape Research Culture
+
+Agile is more than a method — it’s a **mindset** that shapes how research teams collaborate, learn, and adapt.  
+In environments defined by uncertainty, Agile principles build **resilience, transparency, and trust**.
+
+```{mermaid}
+flowchart LR
+    A["<b>Shared Accountability</b>"]:::a --> B["<b>Psychological Safety</b>"]:::b --> C["<b>Continuous Learning</b>"]:::c
+    A --> C
+    classDef a fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
+    classDef b fill:#FFF3E0,stroke:#EF6C00,stroke-width:1px
+    classDef c fill:#F3E5F5,stroke:#6A1B9A,stroke-width:1px
+```
+
+> 🌱 *An Agile research culture values collaboration over competition and progress over rigid certainty.*
+
+## Team Over Individual Heroes
+
+Research often celebrates individual brilliance, but real progress is **collective**.
+
+- Agile research replaces individual ownership and rigid leadership with **shared responsibility, team visibility, and collaborative progress**.  
+- Success becomes a **collective achievement**, built through rotating facilitation and mutual support.  
+
+> 🤝 *Research thrives when recognition, responsibility, and learning are shared across the team.*
+
+## Continuous Feedback Loops
+
+Feedback is the heartbeat of Agile research: a mechanism for alignment, reflection, and improvement.
+
+- Integrate feedback in every sprint: planning, review, retrospective  
+- Use concise visual summaries for faster response  
+- Treat feedback as dialogue — not evaluation  
+
+> 🔁 *Feedback in Agile research is not correction; it’s calibration.*
+
+## Embedding Agile Practice in Daily Research
+
+Agile only works when principles translate into **daily behaviour** and **shared process**.
+
+- **Co-develop research questions** — shared ownership starts at design.  
+- **Share findings early** — use sprint reviews or informal demos.  
+- **Rotate visibility** — let everyone present or report progress.  
+- **Encourage open critique** — focus on process, not blame.  
+- **Celebrate learning** — value discovery, not just outcomes.
+
+> 🧠 *Teams that learn together perform together.*
+
+## Building a Sustainable Agile Research Culture
+
+A thriving Agile research culture grows through **intentional practice** — reflection, communication, and inclusivity.
+
+| **Principle** | **Description** |
+|----------------|-----------------|
+| **Open Dialogue** | Embed reflection and discussion into daily collaboration. |
+| **Collective Recognition** | Celebrate progress as a shared achievement, not an individual milestone. |
+| **Visible Progress** | Share updates and feedback transparently across the team. |
+| **Empathy & Curiosity** | Value learning, adaptability, and mutual understanding. |
+
+> “Agility in research isn’t about working faster — it’s about working *together*, learning continuously, and building something that lasts.”
+
+---
+
+::: callout-task
+
+#### Task 4: Integrate — Sprint Simulation and Reflection
+
+- Use your sprint plan from Task 3.  
+- Assign provisional roles (**Product Owner**, **Scrum Master**, **Team**).  
+- Walk through a condensed cycle: *Planning → Execution → Review → Retrospective*.  
+- Discuss how blockers or feedback would be managed in real time.  
+- Note one improvement you’d make to strengthen collaboration or communication.
+
+**Follow-up:**  
+Reflect together:  
+How did the sprint structure affect ownership, adaptability, and shared learning?
+
 :::
 
 # Further Information
 
 ## UoN Training Resources
 
-- Microsoft 365 Training Resources
-- Excel 2016: Basic–Advanced (Online)
-- Staff session: Managing your online and RIS research profiles
-- Digital Accessibility: The Core Nottingham Accessible Practices
-- RIS: Worktribe User Guidance 
-- UniCore Training Materials
-- UoN Information Security: Protect Your Data & Devices
+- [UoN Researcher Academy Training
+  Catalogue](https://uniofnottm.sharepoint.com/sites/ResearcherAcademyTrainingHub/SitePages/Home.aspx)  
 
----
 
 ::: callout-keypoints
 
-## 📚 keypoints
+## 📚 Keypoints
 
-- UoN currently uses Microsoft 365 tools support collaborative writing, file sharing, and communication
-- UniCore manages research-related administration  and RIS manages the research lifecycle.
-- A well-maintained research identity increases visibility and attribution of your work.
-- Store research data in encrypted, university-backed platforms and ensure your account details are protected
+- Agile supports adaptability, collaboration, and iterative delivery in
+  research  
+- Research roles can map directly to Agile/Scrum roles  
+- Small cycles reduce wasted effort and encourage early feedback  
+- Shared ownership strengthens research culture  
+
 :::
-
----
 
 ::: callout-hints
 
-## 🔦 hints
+## 🔦 Hints
 
-- Store shared project files in Microsoft Teams rather than OneDrive to ensure long-term access for collaborators.
-- Use version history in OneDrive/SharePoint instead of manually renaming file versions.
-- Link your ORCID iD to your RIS profile to automate tracking of publications and outputs.
-- Practice “security by default”
+- Agile is not just for coders — it enables responsive, collaborative
+  research.  
+- You don’t have to follow Scrum perfectly; start small (e.g., daily
+  syncs, 1-week sprints).  
+- The minimum Scrum framework is regular feedback and planning sessions
+  with PIs.  
+- Embrace shared ownership: delivery is everyone’s responsibility.  
+
 :::

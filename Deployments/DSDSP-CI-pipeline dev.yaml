@@ -13,6 +13,7 @@
   jobs:
   - job: build_and_deploy_job
     displayName: Build and Deploy Job
+    timeoutInMinutes: 120
     pool:
       vmImage: ubuntu-latest
     variables:
@@ -41,6 +42,12 @@
         workingDirectory: training_site
         displayName: 'Restore R environment'
 
+      - task: Cache@2
+        inputs:
+          key: 'R-packages | "$(Agent.OS)" | training_site'
+          path: ~/.R/library
+        displayName: 'Cashe R packages'
+
       - task: UsePythonVersion@0
         inputs:
           versionSpec: '3.11'
@@ -63,7 +70,7 @@
 
       - script: |
           export R_LIBS_USER=$HOME/.R/library
-          quarto render .
+          quarto render . --verbose --no-cache
           echo "list contents"
           pwd
           ls -al
