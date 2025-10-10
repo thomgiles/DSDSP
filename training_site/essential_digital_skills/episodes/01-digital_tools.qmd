@@ -46,87 +46,47 @@ document.addEventListener("DOMContentLoaded", function() {
 
 > 🔧 4 Activities spaced every 10 minutes.
 
-# Introduction to the Digital Skills Programme
+  # Introduction to the Digital Skills Programme
 
-![](fig/office365.png){fig-align="center" width=500px}
+  ![](fig/office365.png){fig-align="center" width=300px}
 
-## What is DS?
+  ## What is the Digital Skills programme
 
-The **Digital Skills** programme equips researchers with the competencies required for modern, data-driven scholarship. it focuses on four interconnected themes:
+  The **Digital Skills** programme equips researchers with the competencies required for modern, data-driven scholarship. 
 
-```{mermaid}
-flowchart LR
-    A["Digital Collaboration"]:::a --> B["Data Management"]:::b
-    B --> C["Coding"]:::c --> D["Reproducibility"]:::d --> A
-    classDef a fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
-    classDef b fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px
-    classDef c fill:#FFF3E0,stroke:#EF6C00,stroke-width:1px
-    classDef d fill:#F3E5F5,stroke:#6A1B9A,stroke-width:1px
-```
+  The programme is not about tools....
 
-> 💡 *Digital collaboration, data management, coding, and reproducibility form the foundation of digital research practice.*
+  It is also about **connecting researchers** with the people who work with data, including **data stewards**, **software engineers**, and **information specialists**. 
 
-## Beyond Tools
+  ## Bridging Communities
 
-The programme is not simply about tools:
+  This programme aims to bridge the gap between disciplinary experts and technical specialists. 
 
-It is about **connecting researchers** with the people who work with data, including **data stewards**, **software engineers**, and **information specialists**. These collaborations enable better use of data, improve the quality of research outputs, and support a more open and reproducible research culture.
+    ```{mermaid}
+  flowchart TB
+      A["Data Collection"] --> B["Analysis"] --> C["Collaboration"] --> D["Publication & Sharing"]
+      D --> A
+      style A fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
+      style B fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px
+      style C fill:#FFF3E0,stroke:#EF6C00,stroke-width:1px
+      style D fill:#F3E5F5,stroke:#6A1B9A,stroke-width:1px
+  ```
 
-> 🤝 *Digital skills grow through collaboration between researchers and data professionals.*
+  > 💬 *Collaboration at every stage of the research process improves the quality of  outputs and supports a more open, reproducible culture.*
 
----
+  ## Building Better Research Habits
 
-## Bridging Communities
+The Digital Skills programme aims to supports researchers in developing practical habits that improve their ability to conduct research.
 
-Modern research depends on shared understanding between disciplinary experts and technical specialists.
+| **Focus Area** | **Good Practice** | **Research Benefit** |
+|----------------|-------------------|----------------------|
+| 🧩 **Collaboration** | Use shared digital workspaces and clear communication channels | Stronger teamwork and project continuity |
+| 💾 **Data Management** | Keep data well-organised and documented throughout the project | Easier access, reuse, and long-term preservation |
+| ⚙️ **Workflow Clarity** | Record methods, code, and decisions as you work | Improves transparency and reproducibility |
+| 🌍 **Open Practice** | Share findings and materials early and responsibly | Increases visibility, impact, and trust |
 
-## Bridging Communities
+> ⚙️ *Good digital practice builds resilient, connected, and credible research.*
 
-Modern research depends on shared understanding between disciplinary experts and technical specialists.
-
-| **Focus Area** | **Collaborative Benefit** | **Description** |
-|----------------|----------------------------|-----------------|
-| 🧩 **Quality** | Shared data standards | Ensures consistency in data structure, documentation, and metadata practices |
-| 🔁 **Reproducibility** | Common workflows | Encourages transparent, reusable, and verifiable research methods |
-| ⚙️ **Efficiency** | Cross-domain collaboration | Combines complementary expertise for faster problem-solving |
-| 💡 **Insight** | Interdisciplinary innovation | Integrates technical and disciplinary perspectives to generate new knowledge |
-
-> 💬 *Collaboration between experts and specialists strengthens quality, transparency, and innovation in research.*
-
-## Why Digital Skills Matter
-
-Digital skills enable collaboration and efficiency across the research lifecycle.
-
-```{mermaid}
-flowchart TB
-    A["Data Collection"] --> B["Analysis"] --> C["Collaboration"] --> D["Publication & Sharing"]
-    D --> A
-    style A fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
-    style B fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px
-    style C fill:#FFF3E0,stroke:#EF6C00,stroke-width:1px
-    style D fill:#F3E5F5,stroke:#6A1B9A,stroke-width:1px
-```
-
-> 🔁 *Digital literacy underpins the entire cycle of modern research.*
-
-## Addressing Common Challenges
-
-This course is about addressing the following challanges at a unversity level. 
-
-| Challenge | Digital Skills Response |
-|------------|-------------------------|
-| Disconnected research silos | Shared tools and workflows (Teams, GitHub, RIS) |
-| Data mismanagement | Version control, structured storage, FAIR principles |
-| Limited collaboration | Integrated communication and documentation tools |
-| Poor reproducibility | Use of open standards, coding literacy, and transparent sharing |
-
-> ⚙️ *Digital skills convert research challenges into structured improvements.*
-
-## Collaboration Leads to Better Research
-
-Collaboration is at the heart of the DS&DSP. By connecting researchers, data professionals, and support specialists, the programme builds a **community of digital practice** that strengthens the quality, openness, and impact of research across disciplines.
-
-> “Collaboration is not an add-on—it is the mechanism through which good research becomes great research.”
 
 ## Programme Structure
 
@@ -269,7 +229,7 @@ flowchart TB
     classDef d fill:#F3E5F5,stroke:#6A1B9A,stroke-width:1px
 ```
 
-> 🧭 *UniCore underpins the financial and operational side of research.*
+> 🧭 *UniCore underpins the financial and operational side of research at the university.*
 
 ## RIS (Research Information System)
 
@@ -286,7 +246,7 @@ flowchart TB
 
 ## Integrated Research Systems
 
-The strength of UoN’s infrastructure lies in **interoperability** — connecting research activity, collaboration, and administration.
+The strength of UoN’s infrastructure lies in **interoperability**, connecting research activity, collaboration, and administration.
 
 ```{mermaid}
 flowchart LR
@@ -337,14 +297,7 @@ flowchart TB
 ::: panel-tabset
 ##### Activity
 
-In groups of 4-5, discuss and list the digital tools you would use for each of the following:
-
-1. Co-write a manuscript  
-2. Submit a funding bid  
-3. Order equipment  
-4. Share large datasets with your team  
-
-##### Cohort Answers
+List the digital tools you would use for each of the following:
 
 <div id="frame-q2"></div>
 <script>
@@ -359,15 +312,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
   document.getElementById("frame-q2").innerHTML =
     `<iframe src="${src}" width="100%" height="500" frameborder="0"
-             style="border:none;" title="Q1"></iframe>`;
+             style="border:none;" title="Q2"></iframe>`;
 });
 </script>
-
-##### Reflection
-
-- Share your answers with the plenary  
-- Reflect on whether you've used any of these systems before  
-- Identify any gaps in your familiarity that you want to address  
 
 ##### Answers
 
@@ -400,12 +347,11 @@ flowchart TB
 
 ## The Importance of Consistency
 
-A consistent identity links your outputs, affiliations, and roles automatically across systems.  
-This guarantees proper attribution and supports efficient collaboration.
+A consistent identity links your outputs, affiliations, and roles automatically across systems. This approach:
 
+- Guarantees **proper attribution** and supports efficient collaboration.
 - Ensures **discoverability** across publishers and repositories  
 - Prevents **duplication or misattribution** of outputs  
-- Facilitates **integration** with institutional systems like RIS  
 
 > 💡 *A consistent research identity builds long-term recognition and credibility.*
 
@@ -417,7 +363,7 @@ This guarantees proper attribution and supports efficient collaboration.
 flowchart LR
     A["Researcher"]:::a --> B["ORCID iD"]:::b --> C["Funders"]:::c
     B --> D["Publishers"]:::d
-    B --> E["Repositories & RIS"]:::e
+    B --> E["Repositories"]:::e
     classDef a fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
     classDef b fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px
     classDef c fill:#FFF3E0,stroke:#EF6C00,stroke-width:1px
@@ -474,10 +420,12 @@ When synchronised with ORCID, they create a distributed network of your scholarl
 | **Google Scholar** | Monitors visibility and citation trends | Manual curation may be required |
 | **ResearchGate / Academia.edu** | Social exchange platforms | Use responsibly; metrics are non-standard |
 
-> ⚠️ *Prioritise verified systems like ORCID, Scopus, and RIS for credible visibility.*
+> ⚠️ *Prioritise signing up to verified systems like ORCID, Scopus, and RIS for credible visibility.*
 
 
 ## Managing Your Research Profiles
+
+It is recomended that you:
 
 - Make your **ORCID profile public** for discoverability  
 - **Merge duplicate Scopus IDs** to ensure accuracy  
@@ -519,19 +467,16 @@ flowchart TB
 
 #### Task 3: Research Identity Self-Audit
 
-::: panel-tabset
-##### Activity part 1
+#####  Task
 
 ❓ Do you have a ORCID research identity? 
 
 Visit [Orcid](https://orcid.org/), Log in / sign up
 
-##### Activity part 2
-
 ❓ Is your ORCID iD is populated with your name, affiliation etc? if not make sure that is complete. 
 - Set your ORCID ID to public (if appropriate)  
 
-#####  Further Infomation
+#####  Note
 
 - You can actually link your RIS and ORCID profiles but for that you need to be registered to use worktribe. It is recomended that you [request access](https://nottingham-research.worktribe.com/login.jx)
 - Once registered and logged in, you can link your ORCID and RIS profiles. For more infomation please refer to the [RIS training materials](http://moodle.nottingham.ac.uk/course/view.php?id=47898) to go away and read
@@ -542,8 +487,7 @@ Visit [Orcid](https://orcid.org/), Log in / sign up
 
 ## Why Digital Security Matters
 
-Effective digital research requires vigilance, responsibility, and sound data stewardship.  
-Security protects not only your research, but also your collaborators and institution.
+Effective digital research requires vigilance, responsibility, and sound data stewardship to protect not only research, but also collaborators and institutions.
 
 ```{mermaid}
 flowchart TB
@@ -555,7 +499,7 @@ flowchart TB
     classDef e fill:#E1F5FE,stroke:#0277BD,stroke-width:1px
 ```
 
-> 🔒 *Digital security is a collective responsibility—protecting data protects discovery.*
+> 🔒 *Digital security is a collective responsibility: protecting data protects discovery.*
 
 ## Passwords & Access Management
 
@@ -655,9 +599,6 @@ A trustworthy digital environment depends on shared awareness and accountability
 #### Task 4: Digital Security Self-Audit (10 min)
 
 ::: panel-tabset
-##### Question  
-Reflect on your current digital setup. How secure is your research environment?
-
 ##### Exercise  
 <div id="frame-q4"></div>
 <script>
@@ -672,7 +613,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   document.getElementById("frame-q4").innerHTML =
     `<iframe src="${src}" width="100%" height="500" frameborder="0"
-             style="border:none;" title="Q1"></iframe>`;
+             style="border:none;" title="Q4"></iframe>`;
 });
 </script>
 
