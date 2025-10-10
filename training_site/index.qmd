@@ -119,6 +119,8 @@ Participants develop a digital portfolio of skills, improve their competencies a
 
 ::: {.beige}
 
+<br>
+
 ## By the end of the course, participents should be able to:
 
 ::: {.five-col-grid}
