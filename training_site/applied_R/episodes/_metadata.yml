@@ -29,12 +29,6 @@ format:
       - pyodide
       - webr
     title-block-style: none
-
-  pdf:
-    output-ext: pdf
-
-  commonmark:
-    output-ext: digital-notebook.md
       
 execute: 
   eval: false 
