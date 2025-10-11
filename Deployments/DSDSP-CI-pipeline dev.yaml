@@ -81,7 +81,7 @@ jobs:
 
         # --- Install TinyTeX (fallback LaTeX toolchain)
         quarto install tinytex
-        
+
       displayName: 'Install Quarto CLI and PDF dependencies'
 
 
@@ -103,7 +103,7 @@ jobs:
         export PATH=$PATH:$HOME/.TinyTeX/bin/x86_64-linux
 
         # Optional: reduce parallelism to avoid timeouts
-        quarto render . --no-cache --execute-num-threads 1 --log-level debug
+        quarto render . --no-cache --log-level debug
 
         echo "Render complete. Listing output:"
         ls -al _site || echo "_site not found"
