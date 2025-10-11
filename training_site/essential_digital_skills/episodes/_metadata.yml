@@ -33,3 +33,5 @@ format:
     include-after-body:
       - ../../rjs-footer.js
 
+  commonmark:
+    output-ext: digital-notebook.md
