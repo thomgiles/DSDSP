@@ -37,6 +37,12 @@ document.addEventListener("DOMContentLoaded", function() {
 3. What digital tools may I need to support my research aims?  
 :::
 
+
+
+# Introduction to the Digital Skills Programme
+
+![](fig/office365.png){fig-align="center" max-height=50%}
+
 ## Structure & Agenda
 
 1. Introduction to the Digital Skills Programme (~10+10 min)  
@@ -46,35 +52,31 @@ document.addEventListener("DOMContentLoaded", function() {
 
 > 🔧 4 Activities spaced every 10 minutes.
 
-  # Introduction to the Digital Skills Programme
+## What is the Digital Skills programme
 
-  ![](fig/office365.png){fig-align="center" width=300px}
+The **Digital Skills** programme equips researchers with the competencies required for modern, data-driven scholarship. 
 
-  ## What is the Digital Skills programme
+The programme is not about tools....
 
-  The **Digital Skills** programme equips researchers with the competencies required for modern, data-driven scholarship. 
+It is also about **connecting researchers** with the people who work with data, including **data stewards**, **software engineers**, and **information specialists**. 
 
-  The programme is not about tools....
+## Bridging Communities
 
-  It is also about **connecting researchers** with the people who work with data, including **data stewards**, **software engineers**, and **information specialists**. 
+This programme aims to bridge the gap between disciplinary experts and technical specialists. 
 
-  ## Bridging Communities
+  ```{mermaid}
+flowchart TB
+    A["Data Collection"] --> B["Analysis"] --> C["Collaboration"] --> D["Publication & Sharing"]
+    D --> A
+    style A fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
+    style B fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px
+    style C fill:#FFF3E0,stroke:#EF6C00,stroke-width:1px
+    style D fill:#F3E5F5,stroke:#6A1B9A,stroke-width:1px
+```
 
-  This programme aims to bridge the gap between disciplinary experts and technical specialists. 
+> 💬 *Collaboration at every stage of the research process improves the quality of  outputs and supports a more open, reproducible culture.*
 
-    ```{mermaid}
-  flowchart TB
-      A["Data Collection"] --> B["Analysis"] --> C["Collaboration"] --> D["Publication & Sharing"]
-      D --> A
-      style A fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
-      style B fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px
-      style C fill:#FFF3E0,stroke:#EF6C00,stroke-width:1px
-      style D fill:#F3E5F5,stroke:#6A1B9A,stroke-width:1px
-  ```
-
-  > 💬 *Collaboration at every stage of the research process improves the quality of  outputs and supports a more open, reproducible culture.*
-
-  ## Building Better Research Habits
+## Building Better Research Habits
 
 The Digital Skills programme aims to supports researchers in developing practical habits that improve their ability to conduct research.
 
