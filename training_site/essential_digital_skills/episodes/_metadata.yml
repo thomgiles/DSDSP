@@ -33,17 +33,18 @@ format:
     include-after-body:
       - ../../rjs-footer.js
   pdf:
-    filters: [ ]
+    pdf-engine: tectonic
+    output-ext: pdf
+    filters: []
     execute:
       enabled: false
     mermaid:
       enabled: false
-    output-ext: pdf
 
   commonmark:
-    filters: [ ]
+    output-ext: digital-notebook.md
+    filters: []
     execute:
       enabled: false
     mermaid:
       enabled: false
-    output-ext: digital-notebook.md
