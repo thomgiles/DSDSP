@@ -8,6 +8,7 @@ format:
       - pyodide
       - webr
     title-block-style: none
+  
 
   revealjs:
     theme:
@@ -28,6 +29,9 @@ format:
       - pyodide
       - webr
     title-block-style: none
+    
+  commonmark:
+    output-ext: digital-notebook.md
       
 execute: 
   eval: false 
