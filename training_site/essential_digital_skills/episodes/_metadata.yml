@@ -33,4 +33,17 @@ format:
     include-after-body:
       - ../../rjs-footer.js
   pdf:
+    filters: [ ]
+    execute:
+      enabled: false
+    mermaid:
+      enabled: false
     output-ext: pdf
+
+  commonmark:
+    filters: [ ]
+    execute:
+      enabled: false
+    mermaid:
+      enabled: false
+    output-ext: digital-notebook.md
