@@ -66,23 +66,27 @@ jobs:
           fonts-dejavu \
           ghostscript \
           pandoc \
-          tectonic \
-          chromium-browser
+          chromium-browser \
+          curl
 
+        # --- Install tectonic manually (since not in Ubuntu 24.04 repos)
+        curl -sSL https://github.com/tectonic-typesetting/tectonic/releases/latest/download/tectonic-x86_64-unknown-linux-gnu.deb -o tectonic.deb
+        sudo dpkg -i tectonic.deb || sudo apt-get -f install -y
+
+        # --- Install Quarto
         curl -sSLO https://quarto.org/download/latest/quarto-linux-amd64.deb
         sudo dpkg -i quarto-linux-amd64.deb
 
         quarto --version
 
-        # Install TinyTeX (for LaTeX-based engines)
+        # --- Install TinyTeX (fallback LaTeX toolchain)
         quarto install tinytex --force
-
-        # Cache LaTeX packages (prevents long cold-starts)
         quarto install tool tinytex-latex-recommended
 
         which pdflatex || which tectonic
         pandoc --version
       displayName: 'Install Quarto CLI and PDF dependencies'
+
 
     # ---- Environment prep for Quarto render ------------------------------
     - script: |
