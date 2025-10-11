@@ -80,7 +80,7 @@ jobs:
         quarto --version
 
         # --- Install TinyTeX (fallback LaTeX toolchain)
-        quarto install tinytex --force
+        quarto install tinytex
         quarto install tool tinytex-latex-recommended
 
         which pdflatex || which tectonic
