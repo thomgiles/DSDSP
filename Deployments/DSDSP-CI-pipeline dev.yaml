@@ -81,7 +81,6 @@ jobs:
 
         # --- Install TinyTeX (fallback LaTeX toolchain)
         quarto install tinytex
-        quarto install tool tinytex-latex-recommended
 
         which pdflatex || which tectonic
         pandoc --version
