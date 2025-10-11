@@ -81,9 +81,7 @@ jobs:
 
         # --- Install TinyTeX (fallback LaTeX toolchain)
         quarto install tinytex
-
-        which pdflatex || which tectonic
-        pandoc --version
+        
       displayName: 'Install Quarto CLI and PDF dependencies'
 
 
