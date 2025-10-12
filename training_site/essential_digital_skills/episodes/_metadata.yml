@@ -41,10 +41,4 @@ format:
     mermaid:
       enabled: false
 
-  commonmark:
-    output-ext: digital-notebook.md
-    filters: []
-    execute:
-      enabled: false
-    mermaid:
-      enabled: false
+
