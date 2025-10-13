@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 ## ❓ Questions
 
-1. What are the basic tools do I need to conduct research at UoN?
+1. What are the basic tools I need to conduct research at UoN?
 2. How do I maintain a consistent online researcher identity?
 3. What best practices should I undertake to ensure my research is secure?  
 :::
@@ -477,7 +477,7 @@ flowchart TB
 
 Visit [Orcid](https://orcid.org/), Log in / sign up
 
-❓ Is your ORCID iD is populated with your name, affiliation etc? if not make sure that is complete. 
+❓ Is your ORCID ID populated with your name, affiliation etc? If not make sure that is complete. 
 - Set your ORCID ID to public (if appropriate)  
 
 #####  Note
