@@ -32,9 +32,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
 ## ❓ Questions
 
-1. What basic data tools I need to do research at UoN?
-2. How to I maintain a consistent online researcher identity?
-3. What digital tools may I need to support my research aims?  
+1. What are the basic tools do I need to conduct research at UoN?
+2. How do I maintain a consistent online researcher identity?
+3. What best practices should I undertake to ensure my research is secure?  
 :::
 
 
@@ -118,9 +118,9 @@ The programme offers **three tiers of learning**, from foundational to applied a
 
 #### Task 1: Digital Skills Reflection
 
-Let’s start by reflecting on your current digital research skills.  
+Let’s start by reflecting on your current skills.  
 
-❓ *What’s digital skills or tool you want to develop this year?* 
+❓ *Which digital skills (or tools) do you want to learn more about this year?* 
 
 <div id="frame-q1"></div> 
 <script>
@@ -323,7 +323,7 @@ document.addEventListener("DOMContentLoaded", function() {
 - **Microsoft Word -> Sharepoint + Teams** are ideal for collaborative document editing  
 - **RIS (Worktribe)** is used for grant applications and research output tracking  
 - **UniCore** handles finance, procurement, HR and expenses  
-- **Microsoft Teams + SharePoint** is best for long-term group file access and collaboration  
+- **Microsoft Teams + SharePoint** are best for group file access and collaboration  
 :::
 :::
 
@@ -482,8 +482,8 @@ Visit [Orcid](https://orcid.org/), Log in / sign up
 
 #####  Note
 
-- You can actually link your RIS and ORCID profiles but for that you need to be registered to use worktribe. It is recomended that you [request access](https://nottingham-research.worktribe.com/login.jx)
-- Once registered and logged in, you can link your ORCID and RIS profiles. For more infomation please refer to the [RIS training materials](http://moodle.nottingham.ac.uk/course/view.php?id=47898) to go away and read
+- You can actually link your RIS and ORCID profiles, but for that you need to be registered to use worktribe. It is recomended that you [request access](https://nottingham-research.worktribe.com/login.jx)
+- Once registered you will be able to link your ORCID and RIS profiles. For more infomation please refer to the [RIS training materials](http://moodle.nottingham.ac.uk/course/view.php?id=47898).
 :::
 :::
 
@@ -622,8 +622,8 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 
 ##### Follow-up  
-- Identify one action to improve your security in the coming week  
-- Reflect on what was easy/hard to assess, and what barriers exist for better practice  
+- Identify one way in which you can improve your digital security in the coming week  
+- Reflect on what was easy/hard to assess, and which barriers exist for better practice  
 :::
 :::
 
