@@ -13,7 +13,7 @@
   jobs:
   - job: build_and_deploy_job
     displayName: Build and Deploy Job
-    timeoutInMinutes: 180
+    timeoutInMinutes: 240
     pool:
       vmImage: ubuntu-latest
     variables:
@@ -29,6 +29,7 @@
           libxml2-dev libcurl4-openssl-dev libssl-dev \
           libfontconfig1-dev libfreetype6-dev \
           libharfbuzz-dev libfribidi-dev libpng-dev \
+          chromium-browser fonts-noto-cjk \
           libtiff5-dev libjpeg-dev libgl1-mesa-dev libgmp-dev pandoc
           sudo apt-get install -y --no-install-recommends r-base
           R --version
