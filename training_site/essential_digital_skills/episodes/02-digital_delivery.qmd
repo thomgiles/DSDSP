@@ -163,7 +163,7 @@ Adopting agile principles in research shifts the focus from rigid adherence to i
 
 ::: callout-task
 
-#### Task 1: Discover — Why Work Iteratively?
+#### Task 1: Why Work Iteratively?
 
 - **Form groups of 5–6 people.**
 - Discuss the pros and cons of *short, iterative research cycles* compared to long, linear projects.  
@@ -171,7 +171,7 @@ Adopting agile principles in research shifts the focus from rigid adherence to i
 - Capture your main ideas on a shared board or notes.
 
 **Follow-up:**  
-Share one key insight with the plenary — explain *why* it helps prevent wasted research effort.
+Share one key insight with the plenary, explain *why* it helps prevent wasted research effort.
 
 :::
 
@@ -182,25 +182,41 @@ Share one key insight with the plenary — explain *why* it helps prevent wasted
 Research teams often rely on **fixed hierarchies** that define expertise and control but can limit adaptability.
 
 ```{mermaid}
-graph TD
-    PI["<b>Principal Investigator (PI)</b><br>Leads the research project"]:::lead
-    PR["<b>Postdoctoral Researchers</b><br>Conduct analyses"]:::exec
-    AN["<b>Analysts</b><br>Develop methods"]:::exec
-    PM["<b>Project Managers</b><br>Coordinate timelines and deliverables"]:::coord
-    SE["<b>Subject Experts</b><br>Provide domain knowledge and advice"]:::advice
+flowchart TB
+    %% Main role nodes (A–E)
+    A["<b>Principal Investigator (PI)</b>"]
+    B["<b>Postdoctoral Researchers</b>"]
+    C["<b>Analysts</b>"]
+    D["<b>Project Managers</b>"]
+    E["<b>Subject Experts</b>"]
 
-    PI --- PR
-    PI --- AN
-    PI --- PM
-    SE --- AN
-    PM --- AN
-    SE --- PR
-    PM --- PR
+    %% Descriptive subnodes
+    A1["Leads the research project"]
+    B1["Conduct analyses and interpret findings"]
+    C1["Develop and refine analytical methods"]
+    D1["Coordinate timelines and deliverables"]
+    E1["Provide domain knowledge and contextual advice"]
 
-    classDef lead fill:#E8F5E9,stroke:#2E7D32,stroke-width:2px;
-    classDef exec fill:#E3F2FD,stroke:#1565C0,stroke-width:1px;
-    classDef coord fill:#FFF3E0,stroke:#EF6C00,stroke-width:1px;
-    classDef advice fill:#F3E5F5,stroke:#6A1B9A,stroke-width:1px;
+    %% Flow connections (illustrating collaboration cycle)
+    A --> B --> C --> D --> E --> A
+
+    %% Descriptive links
+    A --> A1
+    B --> B1
+    C --> C1
+    D --> D1
+    E --> E1
+
+    %% Styling for main nodes
+    style A fill:#E8F5E9,stroke:#2E7D32,stroke-width:2px
+    style B fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
+    style C fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
+    style D fill:#FFF3E0,stroke:#EF6C00,stroke-width:1px
+    style E fill:#F3E5F5,stroke:#6A1B9A,stroke-width:1px
+
+    %% Styling for descriptive nodes
+    classDef desc fill:#FFFFFF,stroke:#999,stroke-dasharray:3 3,width:340px;
+    class A1,B1,C1,D1,E1 desc;
 ```
 
 > 🧭 Clear but rigid structures can create **silos**, reduce communication, and limit shared ownership.
@@ -222,18 +238,33 @@ Scrum offers a **lightweight framework**, with defined roles for coordinating co
 Scrum roles form a **feedback system** where leadership, facilitation, and delivery operate iteratively.
 
 ```{mermaid}
-flowchart LR
-    PO["<b>Product Owner</b><br>Sets research vision and priorities"]:::lead
-    SM["<b>Scrum Master</b><br>Facilitates process <br> and removes blockers"]:::coord
-    DEV["<b>Development Team</b><br>Executes analyses <br> and refines outputs"]:::exec
+flowchart TB
+    %% Main role nodes (A–C)
+    A["<b>Product Owner</b>"]
+    B["<b>Scrum Master</b>"]
+    C["<b>Development Team</b>"]
 
-    PO --> SM
-    SM --> DEV
-    DEV --> PO
+    %% Descriptive subnodes
+    A1["Sets research vision and priorities"]
+    B1["Facilitates agile processes and removes blockers"]
+    C1["Executes analyses and refines outputs iteratively"]
 
-    style PO fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px
-    style SM fill:#FFF3E0,stroke:#EF6C00,stroke-width:1px
-    style DEV fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
+    %% Flow connections (cyclic collaboration)
+    A --> B --> C --> A
+
+    %% Descriptive links
+    A --> A1
+    B --> B1
+    C --> C1
+
+    %% Styling for main nodes
+    style A fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px
+    style B fill:#FFF3E0,stroke:#EF6C00,stroke-width:1px
+    style C fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
+
+    %% Styling for descriptive nodes
+    classDef desc fill:#FFFFFF,stroke:#999,stroke-dasharray:3 3,width:340px;
+    class A1,B1,C1 desc;
 ```
 
 > 🔁 Each role reinforces the others, creating a **cycle of adaptation and feedback**.
@@ -266,7 +297,7 @@ Scrum roles scale with project size and complexity, evolving as teams grow and r
 
 ::: callout-task
 
-#### Task 2: Map — Roles in Agile Research Teams
+#### Task 2: Roles in Agile Research Teams
  
 - Within your group, map each other to one or more of the following: **Product Owner**, **Scrum Master**, **Development Team**.  
 - Discuss how responsibilities might shift in a more collaborative, cross-functional setting.  
@@ -363,7 +394,7 @@ They replace long, infrequent check-ins with short, purposeful interactions.
 
 ## Embedding Sprint Thinking
 
-Sprints are more than a workflow — they’re a mindset for how research evolves, learns, and collaborates.
+Sprints are more than a workflow, they’re a mindset for how research evolves, learns, and collaborates.
 
 - Build research plans that can **adapt as insight grows**  
 - Treat **feedback as learning**, not correction  
@@ -377,10 +408,10 @@ Sprints are more than a workflow — they’re a mindset for how research evolve
 
 ::: callout-task
 
-#### Task 3: Apply — Design a Two-Week Research Sprint
+#### Task 3: Design a Two-Week Research Sprint
 
 - Choose a small, realistic project (e.g. pilot study, data validation, literature mapping).  
-- Define your **sprint goal** — what should be achieved in two weeks?  
+- Define your **sprint goal**, what should be achieved in two weeks?  
 - Break the work into **3–5 tasks**.  
 - Identify your **expected outputs** (data, plots, notes, draft methods).  
 - Decide how you’ll measure success at the end of the sprint.
@@ -397,7 +428,7 @@ What new opportunities or risks does the iterative approach create?
 
 ## Agile Principles That Shape Research Culture
 
-Agile is more than a method — it’s a **mindset** that shapes how research teams collaborate, learn, and adapt.  
+Agile is more than a method, it’s a **mindset** that shapes how research teams collaborate, learn, and adapt.  
 In environments defined by uncertainty, Agile principles build **resilience, transparency, and trust**.
 
 ```{mermaid}
@@ -426,7 +457,7 @@ Feedback is the heartbeat of Agile research: a mechanism for alignment, reflecti
 
 - Integrate feedback in every sprint: planning, review, retrospective  
 - Use concise visual summaries for faster response  
-- Treat feedback as dialogue — not evaluation  
+- Treat feedback as dialogue rather than evaluation  
 
 > 🔁 *Feedback in Agile research is not correction; it’s calibration.*
 
@@ -434,17 +465,17 @@ Feedback is the heartbeat of Agile research: a mechanism for alignment, reflecti
 
 Agile only works when principles translate into **daily behaviour** and **shared process**.
 
-- **Co-develop research questions** — shared ownership starts at design.  
-- **Share findings early** — use sprint reviews or informal demos.  
-- **Rotate visibility** — let everyone present or report progress.  
-- **Encourage open critique** — focus on process, not blame.  
-- **Celebrate learning** — value discovery, not just outcomes.
+- **Co-develop research questions**: shared ownership starts at design.  
+- **Share findings early**: use sprint reviews or informal demos.  
+- **Rotate visibility**: let everyone present or report progress.  
+- **Encourage open critique**: focus on process, not blame.  
+- **Celebrate learning**: value discovery, not just outcomes.
 
 > 🧠 *Teams that learn together perform together.*
 
 ## Building a Sustainable Agile Research Culture
 
-A thriving Agile research culture grows through **intentional practice** — reflection, communication, and inclusivity.
+A thriving Agile research culture grows through **intentional practice**, reflection, communication, and inclusivity.
 
 | **Principle** | **Description** |
 |----------------|-----------------|
@@ -453,13 +484,13 @@ A thriving Agile research culture grows through **intentional practice** — ref
 | **Visible Progress** | Share updates and feedback transparently across the team. |
 | **Empathy & Curiosity** | Value learning, adaptability, and mutual understanding. |
 
-> “Agility in research isn’t about working faster — it’s about working *together*, learning continuously, and building something that lasts.”
+> “Agility in research isn’t about working faster, it’s about working *together*, learning continuously, and building something that lasts.”
 
 ---
 
 ::: callout-task
 
-#### Task 4: Integrate — Sprint Simulation and Reflection
+#### Task 4: Sprint Simulation and Reflection
 
 - Use your sprint plan from Task 3.  
 - Assign provisional roles (**Product Owner**, **Scrum Master**, **Team**).  
@@ -497,7 +528,7 @@ How did the sprint structure affect ownership, adaptability, and shared learning
 
 ## 🔦 Hints
 
-- Agile is not just for coders — it enables responsive, collaborative
+- Agile is not just for coders, it enables responsive, collaborative
   research.  
 - You don’t have to follow Scrum perfectly; start small (e.g., daily
   syncs, 1-week sprints).  
