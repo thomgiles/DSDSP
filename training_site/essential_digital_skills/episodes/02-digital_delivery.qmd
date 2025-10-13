@@ -215,7 +215,7 @@ flowchart TB
     style E fill:#F3E5F5,stroke:#6A1B9A,stroke-width:1px
 
     %% Styling for descriptive nodes
-    classDef desc fill:#FFFFFF,stroke:#999,stroke-dasharray:3 3,width:340px;
+    classDef desc fill:#FFFFFF,stroke:#999,stroke-dasharray:3 3,width:300px;
     class A1,B1,C1,D1,E1 desc;
 ```
 
@@ -263,7 +263,7 @@ flowchart TB
     style C fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
 
     %% Styling for descriptive nodes
-    classDef desc fill:#FFFFFF,stroke:#999,stroke-dasharray:3 3,width:340px;
+    classDef desc fill:#FFFFFF,stroke:#999,stroke-dasharray:3 3,width:300px;
     class A1,B1,C1 desc;
 ```
 
@@ -511,13 +511,12 @@ How did the sprint structure affect ownership, adaptability, and shared learning
 - [UoN Researcher Academy Training
   Catalogue](https://uniofnottm.sharepoint.com/sites/ResearcherAcademyTrainingHub/SitePages/Home.aspx)  
 
-
 ::: callout-keypoints
 
 ## 📚 Keypoints
 
-- Agile supports adaptability, collaboration, and iterative delivery in
-  research  
+- Agile can support adaptability, collaboration, and iterative delivery in
+  research
 - Research roles can map directly to Agile/Scrum roles  
 - Small cycles reduce wasted effort and encourage early feedback  
 - Shared ownership strengthens research culture  
@@ -535,5 +534,14 @@ How did the sprint structure affect ownership, adaptability, and shared learning
 - The minimum Scrum framework is regular feedback and planning sessions
   with PIs.  
 - Embrace shared ownership: delivery is everyone’s responsibility.  
+
+:::
+
+
+::: {.content-visible when-format="revealjs"}
+
+## Feedback
+
+![](fig/feedback.png){fig-align="center" width=400px}
 
 :::
