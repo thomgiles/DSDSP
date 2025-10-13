@@ -143,7 +143,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 # Institutional Systems for Digital Research
 
-![](fig/sharepoint.png){fig-align="center" width=500px}
+![](fig/sharepoint.png){fig-align="center" width=400px}
 
 ## Why Institutional Systems Matter
 
@@ -329,7 +329,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
 # Research Identity & Profiles
 
-![](fig/orchid.png){fig-align="center" width=500px}
+![](fig/orchid.png){fig-align="center" width=400px}
 
 ## Why Research Identity Matters
 
@@ -661,4 +661,12 @@ document.addEventListener("DOMContentLoaded", function() {
 - Use version history in OneDrive/SharePoint instead of manually renaming file versions.
 - Link your ORCID iD to your RIS profile to automate tracking of publications and outputs.
 - Practice “security by default”
+:::
+
+::: {.content-visible when-format="revealjs"}
+
+## Feedback
+
+![](fig/feedback.png){fig-align="center" width=400px}
+
 :::

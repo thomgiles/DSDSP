@@ -538,3 +538,12 @@ How did the sprint structure affect ownership, adaptability, and shared learning
 - Embrace shared ownership: delivery is everyone’s responsibility.  
 
 :::
+
+
+::: {.content-visible when-format="revealjs"}
+
+## Feedback
+
+![](fig/feedback.png){fig-align="center" width=400px}
+
+:::
