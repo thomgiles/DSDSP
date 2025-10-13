@@ -5,6 +5,8 @@ metadata:
   exercises: 40
 ---
 
+::: {.content-visible when-format="revealjs"}
+
 <!-- Hidden by default -->
 <img id="wf-image" src="fig/wfVxu0.jpg" alt="Workflow" style="display:none; max-width:100%;">
 
@@ -17,6 +19,8 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 });
 </script>
+
+:::
 
 ::: callout-outcomes
 
