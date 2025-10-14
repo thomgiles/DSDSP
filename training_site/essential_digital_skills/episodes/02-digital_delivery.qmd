@@ -8,6 +8,13 @@ metadata:
   audience: Early Career Researchers (PhD, Postdoc)  
 ---
 
+::: {.content-visible when-format="revealjs"}
+
+<!-- Hidden by default -->
+![](fig/contribute-digital-delivery-qr.jpg){fig-align="center" width=400px}
+
+:::
+
 ::: callout-outcomes
 
 ## 💡 Learning Outcomes
