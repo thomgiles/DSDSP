@@ -1,13 +1,9 @@
 ---
-
 title: Research Data Management
 metadata:
-teaching: 40
-exercises: 40
-module: EDS-M4 – Research Data Management
-course: Essential Digital Skills (EDS)
-audience: Early Career Researchers (PhD, Postdoc)
--------------------------------------------------
+  teaching: 40
+  exercises: 40
+---
 
 ::: {.content-visible when-format="revealjs"}
 ![](fig/research-data-management-qr.jpg){fig-align="center" width=400px}
@@ -22,7 +18,7 @@ audience: Early Career Researchers (PhD, Postdoc)
 * Apply robust naming conventions, folder structures, metadata, and version control for collaborative, auditable workflows.
 * Select appropriate institutional storage and archiving solutions (e.g., OneDrive, SharePoint/Teams, shared drives, TRE secure storage).
 * Assess and improve dataset reusability in line with **FAIR** principles (Findable, Accessible, Interoperable, Reusable).
-  :::
+:::
 
 ::: callout-questions
 
@@ -32,7 +28,7 @@ audience: Early Career Researchers (PhD, Postdoc)
 2. What are the **essential sections** of a Data Management Plan (DMP)?
 3. How would you design a **collaborative folder structure** and file-naming scheme?
 4. Which actions most improve the **FAIRness** of a dataset?
-   :::
+:::
 
 ## Structure & Agenda
 
@@ -45,7 +41,7 @@ audience: Early Career Researchers (PhD, Postdoc)
 
 # RDM at UoN
 
-Research Data Management (RDM) ensures that data are **organised, secure, documented, and preserved** to support research integrity, reproducibility, and reuse. Effective RDM is a shared responsibility across project roles and services.
+Research Data Management (RDM) ensures that data are **organised, secure, documented, and preserved** to support research integrity, reproducibility, and reuse. Effective RDM is a shared responsibility across project roles and institutional services.
 
 ## Roles and Responsibilities
 
@@ -58,6 +54,7 @@ Research Data Management (RDM) ensures that data are **organised, secure, docume
 | **IT Services**                 | Provides secure storage, backup, and collaboration platforms.                                                              |
 | **Information Security**        | Defines classification tiers and enforces access controls.                                                                 |
 
+# Roles 
 ```{mermaid}
 flowchart LR
     PI[Principal Investigator] -->|Oversees DMP & Preservation| T[Project Team]
@@ -65,13 +62,6 @@ flowchart LR
     R -->|Coordinates Support| L[Library]
     L -->|Advises on Metadata| IT[IT Services]
     IT -->|Ensures Security| IS[Information Security]
-
-    style PI fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
-    style T fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px
-    style R fill:#FFF3E0,stroke:#EF6C00,stroke-width:1px
-    style L fill:#F3E5F5,stroke:#6A1B9A,stroke-width:1px
-    style IT fill:#E0F7FA,stroke:#00838F,stroke-width:1px
-    style IS fill:#F0F4C3,stroke:#9E9D24,stroke-width:1px
 ```
 
 > 🧭 *Good RDM depends on collaboration and accountability across roles.*
@@ -84,14 +74,26 @@ flowchart LR
 * Agree **retention and preservation** periods and identify archives.
 * Enable **responsible sharing**; record reasons for restrictions.
 
+## Data Lifecycle Model
+
+```{mermaid}
+flowchart LR
+    A[Plan & Design] --> B[Collect]
+    B --> C[Process & Analyse]
+    C --> D[Store & Share]
+    D --> E[Preserve & Reuse]
+```
+
+> 🔁 *RDM supports every stage of the data lifecycle, not just archiving.*
+
 ## Institutional Storage Options
 
-| **Platform**                         | **Purpose**                 | **Notes**                                 |
-| ------------------------------------ | --------------------------- | ----------------------------------------- |
-| **OneDrive**                         | Individual work area        | Automatic versioning and sync             |
-| **SharePoint / Teams**               | Collaborative workspace     | Fine-grained permissions, version control |
+| **Platform**             | **Purpose**                 | **Notes**                                 |
+| ------------------------ | --------------------------- | ----------------------------------------- |
+| **OneDrive**             | Individual work area        | Automatic versioning and sync             |
+| **SharePoint / Teams**   | Collaborative workspace     | Fine-grained permissions, version control |
 | **CPS Research Storage** | Group-managed access        | Backed-up, scalable                       |
-| **TRE Secure Storage**               | Sensitive/confidential data | Encryption, limited access, audit logs    |
+| **TRE Secure Storage**   | Sensitive/confidential data | Encryption, limited access, audit logs    |
 
 > 🔐 *Choose storage based on sensitivity, access needs, and classification level.*
 
@@ -99,37 +101,21 @@ flowchart LR
 
 ::: callout-task
 
-#### Task 1: RDM Roles Quiz (10 min)
+#### Task 1: Group RDM Roles Map (10 min)
 
-::: panel-tabset
+Identify and map shared responsibilities in research data management.
 
-##### Question
+1. In small groups, discuss each listed role and responsibility.
+2. Identify overlaps and shared tasks across teams.
+3. Decide how escalation and accountability should work.
+4. Report back with one example of a shared or ambiguous responsibility.
 
-Match responsibilities to roles (PI, Researcher, Team, Library, IT, InfoSec).
-
-##### Exercise
-
-| Responsibility                             | PI | Researcher | Team | Library | IT | InfoSec |
-| ------------------------------------------ | -- | ---------- | ---- | ------- | -- | ------- |
-| Select retention/preservation strategy     |    |            |      |         |    |         |
-| Maintain documentation                     |    |            |      |         |    |         |
-| Provision storage/backups                  |    |            |      |         |    |         |
-| Advise on metadata and archiving           |    |            |      |         |    |         |
-| Enforce classification and access controls |    |            |      |         |    |         |
-| Approve and review DMP                     |    |            |      |         |    |         |
-
-##### Follow-up
-
-* Which responsibilities are **shared**?
-* What issues would you **escalate** and to whom?
-  :::
-  :::
-
----
+**Reflection:** Where are the biggest coordination gaps in your projects?
+:::
 
 # Data Management Plans
 
-A **Data Management Plan (DMP)** is a living document that outlines what data will be produced, how they will be handled, and what will happen to them after project completion.
+A **Data Management Plan (DMP)** describes how data are created, managed, and preserved. It clarifies accountability, ensures transparency, and supports compliance with institutional and funder requirements.
 
 ## Why DMPs Matter
 
@@ -140,11 +126,11 @@ A **Data Management Plan (DMP)** is a living document that outlines what data wi
 | Improve reproducibility | Ensures transparency and documentation      |
 | Manage risk             | Prevents loss, breaches, and misuse         |
 
-> 🗂️ *A DMP is not a formality—it is the blueprint for responsible research data management.*
+> 🗂️ *A DMP is both a planning tool and a compliance artefact.*
 
-## Funder Expectations & Institutional Template
+## Funder Expectations and UoN Template
 
-Most funders (UKRI, Wellcome, Horizon Europe) require a DMP at proposal or project start. UoN’s DMP template includes:
+Funders such as UKRI, Wellcome, and Horizon Europe mandate DMPs at proposal stage. The UoN template aligns with these standards and includes:
 
 1. Data description and anticipated volume.
 2. Formats and standards.
@@ -152,70 +138,60 @@ Most funders (UKRI, Wellcome, Horizon Europe) require a DMP at proposal or proje
 4. Storage, backup, and security.
 5. Legal, ethical, and IP considerations.
 6. Sharing, reuse, and licensing.
-7. Retention and preservation strategy.
+7. Retention and preservation.
 8. Roles, responsibilities, and costs.
+
+## Integrating DMPs with Ethics and Governance
+
+DMPs complement ethical review and governance processes:
+
+* Ethics applications often reference DMP storage and retention.
+* DPIAs may draw on DMP risk and safeguard sections.
+* Data sharing statements in publications should reflect the final DMP.
+
+> 🔄 *DMPs should evolve as the project and data context change.*
 
 ---
 
 ::: callout-task
 
-#### Task 2: DMP Scenario Challenge (10 min)
+#### Task 2: Group DMP Scenario (10 min)
 
-::: panel-tabset
+**Objective:** Draft key DMP elements for a shared research scenario.
 
-##### Question
+**Steps:**
 
-Complete a mini-DMP for the following scenario.
+1. Agree on main datasets and their formats.
+2. Decide on documentation and storage approaches.
+3. Identify legal/ethical issues and sharing routes.
+4. Record 3–4 key actions to include in a DMP summary.
 
-##### Scenario
-
-A mixed-methods project collects:
-
-* Semi-structured **interviews** (audio and transcripts) with NHS staff.
-* A **survey** (pseudonymised) on workflows.
-* **Derived datasets** and **analysis scripts** (R/Python).
-  The team spans multiple institutions and handles sensitive data.
-
-##### Mini-DMP Template
-
-* **Data & Formats:**
-* **Documentation & Metadata:**
-* **Storage & Access Controls:**
-* **Legal/Ethical Considerations:**
-* **Sharing & Licensing:**
-* **Retention & Preservation:**
-* **Roles & Responsibilities:**
-
-##### Follow-up
-
-* Identify **risks** and **mitigations** (pseudonymisation, encryption, DP agreements).
-* Specify **archival location** and **licensing** for outputs.
-  :::
-  :::
+**Reflection:** Which part of a DMP is most likely to need revision over time?
+:::
 
 ---
 
 # Data Structuring, Metadata, and Archiving
 
-Good RDM depends on structured, consistent organisation. Logical file structures and descriptive metadata improve collaboration and prevent loss.
+Effective RDM relies on consistent organisation and clear documentation. Structured data and metadata support collaboration, transparency, and long-term preservation.
 
-## Naming Conventions
+## File Naming and Structure
 
-Recommended pattern:
+Use stable, descriptive, and version-controlled names:
 
 ```
 YYYYMMDD_project-feature_description_vNN.ext
 ```
 
-**Examples**
+**Example**
 
 ```
-20250112_survey_raw_responses_v01.csv
+20250112_survey_raw_v01.csv
 20250115_audio_int01_redacted_v02.wav
-20250120_analysis_regression_results_v03.parquet
+20250120_analysis_results_v03.parquet
 ```
 
-> 🗃️ *Names should sort chronologically, describe content clearly, and indicate versioning.*
+> 🗃️ *Meaningful naming prevents confusion and simplifies version tracking.*
 
 ## Folder Structure Example
 
@@ -244,137 +220,97 @@ flowchart TB
     B --> C[Processed]
     C --> D[Outputs]
     D --> E[Archive]
-
-    style A fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
-    style B fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px
-    style C fill:#FFF3E0,stroke:#EF6C00,stroke-width:1px
-    style D fill:#F3E5F5,stroke:#6A1B9A,stroke-width:1px
-    style E fill:#F0F4C3,stroke:#9E9D24,stroke-width:1px
 ```
 
-## Metadata and Documentation
+## Metadata and Documentation Essentials
 
 | **Document**        | **Purpose**                                  |
 | ------------------- | -------------------------------------------- |
 | **README.md**       | Overview of project and data organisation    |
 | **CODEBOOK.md**     | Defines variables, units, and coding schemes |
-| **CHANGES.md**      | Records version history and transformations  |
+| **CHANGES.md**      | Tracks version history                       |
 | **DATA DICTIONARY** | Lists fields, formats, provenance            |
 
-> 🧩 *Metadata connects data to context and enables reuse.*
+> 🧩 *Metadata describes context, structure, and provenance for reuse.*
 
-## Storage, Versioning, and Archiving
+## Metadata Standards Overview
 
-* Use **approved institutional storage** (OneDrive, Teams, CPS, TRE).
-* Maintain clear separation between **raw** and **processed** data.
-* Apply **version control** for scripts and datasets.
-* Archive **final datasets** with documentation and assign a DOI.
+* **Dublin Core:** Generic metadata standard.
+* **DataCite:** For citation and repository submission.
+* **ISA-Tab / MIAME:** For biomedical and omics data.
+* **JSON-LD / Schema.org:** For machine-readable web metadata.
+
+> 🌐 *Select standards appropriate to your discipline and repository.*
 
 ---
 
 ::: callout-task
 
-#### Task 3: Folder Design (10 min)
+#### Task 3: Group Folder Design (10 min)
 
-::: panel-tabset
+**Objective:** Co-design a reproducible folder and naming structure.
 
-##### Question
+**Steps:**
 
-Design a folder tree and naming convention for a collaborative project.
+1. Sketch a shared folder structure for your team.
+2. Define naming conventions for files.
+3. Decide who has access to each folder.
+4. Identify which folders are archived or shared externally.
 
-##### Exercise
+**Reflection:** What practices most improve long-term findability and reuse?
+:::
 
-Create a structure based on:
-
-```
-project-name/
-  00-admin/
-  01-data/ raw/ interim/ processed/
-  02-analysis/ scripts/ notebooks/ results/
-  03-docs/ README.md CODEBOOK.md CHANGES.md
-  04-outputs/
-  99-archive/
-```
-
-Add **three example filenames** using the pattern `YYYYMMDD_project-feature_description_vNN.ext`.
-
-##### Follow-up
-
-* Assign storage locations for each folder.
-* Define access permissions.
-* Identify which folders will be archived.
-  :::
-  :::
-
----
 
 # Reusable Data in Practice
 
-Reusability underpins the **FAIR** principles—Findable, Accessible, Interoperable, and Reusable. Data that follow these principles enhance transparency and long-term value.
+Reusable data align with the **FAIR** principles: Findable, Accessible, Interoperable, and Reusable. They promote transparency and maximise research value.
 
-## FAIR Principles Overview
+## FAIR Principles Summary
 
-| **Principle**     | **Key Features**                                      | **Example Practice**          |
-| ----------------- | ----------------------------------------------------- | ----------------------------- |
-| **Findable**      | Persistent identifiers (DOI, ORCID), indexed metadata | Dataset DOIs, ORCID iDs       |
-| **Accessible**    | Stable links, access conditions                       | Repository landing pages      |
-| **Interoperable** | Open formats, standard vocabularies                   | CSV + JSON + ontology mapping |
-| **Reusable**      | Clear licences, provenance, documentation             | CC BY licence + CODEBOOK.md   |
+| **Principle**     | **Features**                                  | **Practice Example**          |
+| ----------------- | --------------------------------------------- | ----------------------------- |
+| **Findable**      | Persistent IDs, indexed metadata              | Dataset DOIs, ORCID iDs       |
+| **Accessible**    | Clear access conditions, stable landing pages | Repository with metadata only |
+| **Interoperable** | Open formats, controlled vocabularies         | CSV + ontology alignment      |
+| **Reusable**      | Licences, provenance, documentation           | CC BY licence + CODEBOOK.md   |
 
 ```{mermaid}
 flowchart LR
     A[Findable] --> B[Accessible] --> C[Interoperable] --> D[Reusable] --> A
-
-    style A fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
-    style B fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px
-    style C fill:#FFF3E0,stroke:#EF6C00,stroke-width:1px
-    style D fill:#F3E5F5,stroke:#6A1B9A,stroke-width:1px
 ```
 
-## Persistent Identifiers and Licensing
+## Implementing FAIR at Project Level
 
-* Use **DOIs** for datasets and **ORCID iDs** for contributors.
-* Select licences suited to context (e.g., **CC BY**, **CC BY-NC**, **ODC-BY**).
-* Record and communicate third-party restrictions clearly.
+* Assign persistent IDs and maintain metadata.
+* Use community-recognised ontologies for interoperability.
+* Provide detailed documentation for reuse.
+* Record provenance in README or metadata fields.
 
-## Repositories and Archiving
+## Common Barriers to FAIRness
 
-* Prefer **institutional or domain repositories**.
-* Provide **complete metadata** even where data cannot be open.
-* Archive sensitive data under **controlled access**; publish descriptive metadata.
-* Maintain **persistent links** between datasets, code, and publications.
-
-> 🔁 *FAIR data enhance reproducibility and reduce duplication across research domains.*
+* Proprietary formats without documentation.
+* Missing variable definitions.
+* Restricted data without published metadata.
+* No persistent links between outputs and code.
 
 ---
 
 ::: callout-task
 
-#### Task 4: FAIRness Audit (10 min)
+#### Task 4: Group FAIRness Audit (10 min)
 
-::: panel-tabset
+**Objective:** Evaluate a dataset’s FAIRness and identify improvements.
 
-##### Question
+**Steps:**
 
-Assess a dataset for FAIRness and propose improvements.
+1. Assess dataset metadata, access, and format.
+2. Identify 2–3 gaps in FAIR compliance.
+3. Propose one improvement for each principle.
+4. Summarise results for group discussion.
 
-##### Checklist
+**Reflection:** Which FAIR element is hardest to achieve in practice and why?
+:::
 
-* [ ] PID (DOI) or stable citation
-* [ ] Machine-readable metadata
-* [ ] Open, documented formats
-* [ ] Declared licence
-* [ ] Provenance and processing steps
-* [ ] Access method and responsible contact
-* [ ] Links to related outputs (e.g., code, publications)
-
-##### Follow-up
-
-* Suggest **three concrete actions** to improve FAIRness.
-  :::
-  :::
-
----
 
 # Further Information
 
@@ -394,7 +330,7 @@ Assess a dataset for FAIRness and propose improvements.
 * Maintain documentation and metadata to support reuse.
 * Decide retention and preservation routes before project end.
 * Aim for FAIR data; share as openly as possible with justified restrictions.
-  :::
+:::
 
 ::: callout-hints
 
@@ -405,4 +341,4 @@ Assess a dataset for FAIRness and propose improvements.
 * Separate raw and processed data.
 * Prefer open formats and controlled vocabularies.
 * Publish metadata even when data cannot be shared.
-  :::
+:::

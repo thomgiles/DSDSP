@@ -1,16 +1,14 @@
 ---
-
 title: Digital Delivery
 metadata:
-teaching: 40
-exercises: 40
-module: DSDS-M? – Digital Delivery
-course: Data Science and Digital Skills (DSDS)
-audience: Early Career Researchers (PhD, Postdoc)
--------------------------------------------------
+  teaching: 40
+  exercises: 40
+---
 
-::: {.content-visible when-format="revealjs"}
+:::{.content-visible when-format="revealjs"}
+
 ![](fig/contribute-digital-delivery-qr.jpg){fig-align="center" width=400px}
+
 :::
 
 ::: callout-outcomes
@@ -21,7 +19,8 @@ audience: Early Career Researchers (PhD, Postdoc)
 * Apply structured planning, coordination, and automation in digital projects
 * Explore Agile thinking and sprint-based delivery as adaptive methods for research
 * Recognise how shared ownership and feedback loops strengthen research culture
-  :::
+
+:::
 
 ::: callout-questions
 
@@ -30,7 +29,8 @@ audience: Early Career Researchers (PhD, Postdoc)
 1. How can digital tools and workflows improve coordination and reproducibility?
 2. What defines effective digital project delivery in research?
 3. How can iterative, collaborative methods increase research adaptability?
-   :::
+
+:::
 
 ## Structure & Agenda
 
@@ -117,9 +117,9 @@ flowchart TB
 
 ::: callout-task
 
-#### Task 1: Principles of Digital Delivery (10m)
+#### Task 1: Principles of Digital Delivery (5m)
 
-* In small groups, discuss examples of how digital tools (e.g. Git, Quarto, Teams) improve visibility, reproducibility, or coordination in your work.
+* In small groups, discuss examples of how you could use digital tools improve visibility, reproducibility, or coordination in your work.
 * Identify **three principles** that most strongly influence successful digital delivery in research.
 * Consider how these principles could be built into your next project plan.
 
@@ -193,16 +193,15 @@ Quantitative and qualitative metrics provide complementary perspectives.
 
 #### Task 2: Planning and Coordination
 
-* Choose a current project and map its main components (e.g. data, code, documentation).
-* Identify where **coordination gaps** or inefficiencies occur.
-* Propose how a digital delivery practice—such as version control, automation, or shared dashboards—could close one gap.
-* Discuss what new behaviours or tools this would require.
+* Think ahead to your own PhD project and outline what its main components might be, for example, data collection, analysis code, documentation, and outputs.
+* Consider where coordination challenges could arise as the project develops (e.g. versioning confusion, collaboration with supervisors, managing multiple datasets).
+* Record which digital delivery practice do you think could most help you stay organised and transparent from the start.
 
-<iframe style="width:100%;max-width:300px;height:300px;" src="https://stopwatch-app.com/widget/timer?theme=light&color=indigo&hrs=0&min=10&sec=0" frameborder="0"></iframe>
+<iframe style="width:100%;max-width:300px;height:300px;" src="https://stopwatch-app.com/widget/timer?theme=light&color=indigo&hrs=0&min=8&sec=0" frameborder="0"></iframe>
+:::
 
 **Follow-up:**
-How could improved coordination change accountability or decision-making within your project?
-:::
+Discuss your answers with the pleanry...
 
 ---
 
@@ -269,7 +268,7 @@ flowchart LR
 
 #### Task 3: Design a Two-Week Research Sprint
 
-* Select a small-scale research activity (data validation, exploratory analysis, literature synthesis).
+* Take the next 4 weeks of you PhD as an example....
 * Define your **sprint goal** and **specific deliverables**.
 * Break the work into **3–5 discrete tasks**.
 * Identify **success indicators** and review mechanisms.
@@ -277,7 +276,7 @@ flowchart LR
 <iframe style="width:100%;max-width:300px;height:300px;" src="https://stopwatch-app.com/widget/timer?theme=light&color=indigo&hrs=0&min=10&sec=0" frameborder="0"></iframe>
 
 **Follow-up:**
-Compare your sprint to a conventional workflow. What risks or opportunities does iteration introduce?
+Pleanary discussion; What goals have you set and how are they measurable? 
 :::
 
 ---
@@ -331,18 +330,15 @@ Constructive feedback turns collaboration into continuous calibration.
 
 #### Task 4: Sprint Simulation and Reflection
 
-* Using your sprint from Task 3, assign roles (**Lead**, **Facilitator**, **Team**).
-* Walk through a condensed cycle: *Planning → Execution → Review → Retrospective.*
-* Discuss how blockers, communication, or feedback would be handled.
-* Note one improvement to strengthen collaboration or shared learning.
+* Using your personal sprint tasks from Task 3
+* Expand them to include the meetings with your supervisor requried for a condensed cycle: i.e. *Planning → Execution → Review → Retrospective.*
 
 <iframe style="width:100%;max-width:300px;height:300px;" src="https://stopwatch-app.com/widget/timer?theme=light&color=indigo&hrs=0&min=10&sec=0" frameborder="0"></iframe>
 
 **Follow-up:**
-How did the sprint structure influence ownership and adaptability within your team?
-:::
+* Pleanary discussion on how blockers, communication, or feedback could be handled.
 
----
+:::
 
 # Further Information
 
@@ -356,7 +352,8 @@ How did the sprint structure influence ownership and adaptability within your te
 * Structured coordination ensures clarity while supporting change.
 * Agile sprints introduce iterative reflection and feedback loops.
 * Shared ownership fosters sustainable, high-performing research teams.
-  :::
+
+:::
 
 ::: callout-hints
 
@@ -365,4 +362,4 @@ How did the sprint structure influence ownership and adaptability within your te
 * Start small: use short sprints, visible boards, and regular check-ins.
 * Prioritise clarity and collaboration over strict adherence to frameworks.
 * Reflect frequently and celebrate progress to build resilience.
-  :::
+:::
