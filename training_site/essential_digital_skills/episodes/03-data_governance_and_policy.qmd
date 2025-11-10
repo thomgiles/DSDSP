@@ -1,13 +1,9 @@
 ---
-
 title: Data Governance & Policy
 metadata:
-teaching: 40
-exercises: 40
-module: DSDS-M3 – Data Governance & Policy
-course: Data Science and Digital Skills (DSDS)
-audience: Early Career Researchers (PhD, Postdoc)
--------------------------------------------------
+  teaching: 40
+  exercises: 40
+---
 
 ::: {.content-visible when-format="revealjs"}
 ![](fig/data-governance-policy-qr.jpg){fig-align="center" width=400px}
@@ -21,7 +17,7 @@ audience: Early Career Researchers (PhD, Postdoc)
 * Recognise University of Nottingham policies on research ethics and data management
 * Apply data classification and information security tiers to research datasets
 * Identify key compliance frameworks and shared responsibilities in research projects
-  :::
+:::
 
 ::: callout-questions
 
@@ -31,7 +27,7 @@ audience: Early Career Researchers (PhD, Postdoc)
 2. When does a project require research ethics approval at UoN?
 3. How should datasets be classified to align with institutional information security policy?
 4. How do institutional and funder policies intersect to shape digital compliance?
-   :::
+:::
 
 ## Structure & Agenda
 
@@ -45,6 +41,19 @@ audience: Early Career Researchers (PhD, Postdoc)
 # Data Protection and Legal Frameworks
 
 Data protection forms the legal foundation for ethical and compliant research practice. Understanding the regulatory environment enables researchers to manage risk, protect participants, and maintain trust. The UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018 govern all processing of personal and special category data in research.
+
+## Understanding Personal Data
+
+Personal data means *any information relating to an identified or identifiable person*. This includes not only names and contact details but also identifiers such as location, IP address, or images.
+
+**Examples in research:**
+
+* Interview recordings and transcripts
+* Survey responses including demographics
+* Pseudonymised datasets linked via participant IDs
+* Lab results associated with patient identifiers
+
+> 🧠 *If someone can be identified directly or indirectly, the data are personal.*
 
 ## The GDPR Framework
 
@@ -74,6 +83,16 @@ Article 6 UK GDPR provides six lawful bases. Universities typically rely on:
 
 Consent alone is not a universal lawful basis for research. It complements but does not replace robust safeguards and transparency.
 
+## Rights of Data Subjects
+
+* Right to be informed
+* Right of access and rectification
+* Right to restrict processing
+* Right to erasure (limited for research)
+* Right to data portability and objection
+
+> 🧩 *Research exemptions exist but require proportionality and documentation.*
+
 ## Special Category Data
 
 ```{mermaid}
@@ -82,12 +101,6 @@ flowchart LR
     B --> C[Health, Genetic, Biometric]
     B --> D[Race, Religion, Political Opinion]
     B --> E[Sexual Orientation]
-
-    style A fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
-    style B fill:#FFF3E0,stroke:#EF6C00,stroke-width:1px
-    style C fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px
-    style D fill:#F3E5F5,stroke:#6A1B9A,stroke-width:1px
-    style E fill:#F0F4C3,stroke:#9E9D24,stroke-width:1px
 ```
 
 Special category data (Article 9) require **both** a lawful basis (Art 6) and a specific **Article 9 condition**—commonly *scientific research with appropriate safeguards*.
@@ -104,23 +117,22 @@ Safeguards must ensure that personal data are used responsibly:
 
 > 🔐 *Good governance transforms legal compliance into ethical research practice.*
 
+## Roles and Responsibilities
+
+| **Role**                          | **Responsibility**                                        |
+| --------------------------------- | --------------------------------------------------------- |
+| **Data Controller**               | Determines purposes and means of processing (often UoN)   |
+| **Processor**                     | Processes data on behalf of controller (e.g., cloud host) |
+| **Joint Controllers**             | Shared decision-making between partners                   |
+| **Data Protection Officer (DPO)** | Oversees compliance, provides advice                      |
+
 ---
 
 ::: callout-task
 
 #### Task 1: Group Scenario Ranking (15 min)
 
-**Objective:** Rank fictional data collection scenarios from *lowest* to *highest* risk through collaborative discussion.
-
-**Group setup:** 3–5 people per group
-**Roles:** Facilitator, Recorder, Reporter
-
-**Steps:**
-
-1. Each group discusses the four scenarios provided.
-2. As a team, agree on the order of risk and record the rationale for each.
-3. Identify shared themes and disagreements.
-4. Report one key insight to the full group.
+**Objective:** Rank fictional data collection scenarios from *lowest* to *highest* risk through collaborative discussion...
 
 **Scenarios:**
 
@@ -129,10 +141,9 @@ Safeguards must ensure that personal data are used responsibly:
 * **C. Clinical dataset link** – pseudonymised NHS records with demographics.
 * **D. Refugee interviews** – discussing trauma, religion, and immigration status.
 
-**Plenary reflection:** Which safeguards most reduce perceived risk? How do perspectives differ across groups?
+**Plenary reflection:** Which safeguards most reduce perceived risk?
 :::
 
----
 
 # Research Ethics and Institutional Conduct
 
@@ -166,12 +177,20 @@ flowchart LR
     F -->|High| H[NHS or Specialist REC]
 ```
 
-## Researcher Responsibilities
+## Common Ethical Issues
 
-* Prepare **Participant Information Sheets** and **Consent Forms**
-* Submit **protocols and Data Management Plans (DMPs)**
-* Maintain ethics records for the duration of the project
-* Report amendments and manage withdrawal requests appropriately
+* Use of vulnerable populations (children, patients)
+* Power dynamics in interviews
+* Cultural and linguistic sensitivity
+* Secondary use of existing data
+* Data storage, retention, and destruction
+
+## Building Ethics into Design
+
+* Embed ethical reflection from project inception
+* Draft consent materials in accessible language
+* Include withdrawal procedures and feedback mechanisms
+* Consider participant burden and researcher wellbeing
 
 ---
 
@@ -180,10 +199,6 @@ flowchart LR
 #### Task 2: Group Ethics Mapping (15 min)
 
 **Objective:** Collaboratively decide whether projects require ethical review and map the correct route.
-
-**Group setup:** 3–5 people per group
-**Roles:** Facilitator, Note-taker, Policy-checker, Spokesperson
-
 **Steps:**
 
 1. Choose or create a project scenario (real or provided).
@@ -194,7 +209,6 @@ flowchart LR
 **Plenary reflection:** Which factors most strongly affect whether review is needed? Where do grey areas appear?
 :::
 
----
 
 # Data Classification and Information Security
 
@@ -216,7 +230,18 @@ flowchart LR
 | **Confidential**        | Sensitive but manageable risk       | Interview transcripts, research drafts | Research drives                  |
 | **Highly Confidential** | High-risk personal or security data | Clinical data, restricted partnerships | Secure servers, encrypted access |
 
-> 🔒 *Classification ensures security controls match data sensitivity.*
+## Protecting Research Data
+
+* Apply classification labels consistently
+* Use multifactor authentication for restricted systems
+* Encrypt sensitive data in transit and at rest
+* Record and review data access permissions regularly
+
+## Managing Security Incidents
+
+* Report suspected breaches immediately to IT Security or DPO
+* Document actions taken and lessons learned
+* Implement follow-up audits if needed
 
 ---
 
@@ -225,16 +250,6 @@ flowchart LR
 #### Task 3: Group Data Classification (15 min)
 
 **Objective:** Work collaboratively to classify datasets and assign secure storage and access controls.
-
-**Group setup:** 4–6 participants
-**Roles:** Coordinator, Risk assessor, Recorder, Reporter
-
-**Steps:**
-
-1. Discuss each dataset scenario.
-2. Agree on its classification level, storage location, and access controls.
-3. Identify any disagreements and negotiate a final consensus.
-4. Record the rationale for one case to share in plenary.
 
 **Scenarios:**
 
@@ -246,7 +261,6 @@ flowchart LR
 **Plenary reflection:** How do teams balance openness and risk? Which criteria most influenced decisions?
 :::
 
----
 
 # Policy and Digital Compliance Landscape
 
@@ -268,7 +282,7 @@ Data governance operates across multiple levels—**institutional, national, and
 | **Data Protection Act 2018**           | Legal controller obligations       | Research exemptions with safeguards |
 | **Export Controls**                    | Sharing restrictions               | Sensitive collaborations            |
 
-## Integrating Compliance in Research
+## Implementing Compliance in Projects
 
 ```{mermaid}
 flowchart LR
@@ -278,7 +292,24 @@ flowchart LR
     D --> A
 ```
 
-> 🌍 *Compliance works best when shared and embedded across teams.*
+## Shared Responsibility Matrix
+
+| **Actor**         | **Responsibility**                   |
+| ----------------- | ------------------------------------ |
+| **Researcher**    | Follow ethical and legal guidelines  |
+| **PI**            | Ensure compliance and oversight      |
+| **Faculty / REC** | Review and approve projects          |
+| **DPO / Legal**   | Provide advice, investigate breaches |
+| **Funders**       | Define standards and expectations    |
+
+## Embedding Compliance in Teams
+
+* Schedule compliance check-ins during project meetings
+* Store key documents (DMP, REC approvals) in shared folders
+* Ensure all collaborators understand relevant obligations
+* Keep version-controlled audit trails
+
+> 🌍 *Compliance works best when embedded in daily workflows, not treated as an afterthought.*
 
 ---
 
@@ -287,16 +318,6 @@ flowchart LR
 #### Task 4: Group Policy Mapping (15 min)
 
 **Objective:** Match research scenarios to policies and identify shared responsibilities.
-
-**Group setup:** 4–6 people
-**Roles:** Facilitator, Policy navigator, Scribe, Presenter
-
-**Steps:**
-
-1. Divide the provided scenarios among groups.
-2. For each, agree which UoN or national policy applies and what agreements are needed.
-3. Map roles (Controller/Processor/Joint) and responsibilities.
-4. Present findings back to plenary in one key slide or discussion point.
 
 **Scenarios:**
 
@@ -307,8 +328,6 @@ flowchart LR
 
 **Plenary reflection:** Which policies overlapped most often? How can shared understanding improve compliance culture?
 :::
-
----
 
 # Further Information
 
@@ -327,7 +346,7 @@ flowchart LR
 * Ethical review ensures responsible and transparent research.
 * Data classification determines secure storage and access.
 * Compliance integrates institutional, funder, and legal responsibilities.
-  :::
+:::
 
 ::: callout-hints
 
@@ -337,4 +356,4 @@ flowchart LR
 * Incorporate compliance into project design, not post-hoc review.
 * Keep records in DMPs and ethics applications.
 * International collaboration may trigger Trusted Research checks.
-  :::
+:::
