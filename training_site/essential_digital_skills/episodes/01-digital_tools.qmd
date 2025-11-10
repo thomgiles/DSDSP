@@ -70,20 +70,6 @@ flowchart TB
 
 > 💬 *Collaboration at every stage of the research process improves the quality of  outputs and supports a more open, reproducible culture.*
 
-## Building Better Research Habits
-
-The Digital Skills programme aims to supports researchers in developing practical habits that improve their ability to conduct research.
-
-| **Focus Area** | **Good Practice** | **Research Benefit** |
-|----------------|-------------------|----------------------|
-| 🧩 **Collaboration** | Use shared digital workspaces and clear communication channels | Stronger teamwork and project continuity |
-| 💾 **Data Management** | Keep data well-organised and documented throughout the project | Easier access, reuse, and long-term preservation |
-| ⚙️ **Workflow Clarity** | Record methods, code, and decisions as you work | Improves transparency and reproducibility |
-| 🌍 **Open Practice** | Share findings and materials early and responsibly | Increases visibility, impact, and trust |
-
-> ⚙️ *Good digital practice builds resilient, connected, and credible research.*
-
-
 ## Programme Structure
 
 The programme offers **three tiers of learning**, from foundational to applied and specialist skills.
@@ -180,17 +166,6 @@ Microsoft 365 supports daily research activity—from communication to data mana
 
 > 💬 *Microsoft 365 is the shared workspace for modern research collaboration.*
 
-## Collaboration in Practice
-
-Microsoft 365 enables seamless teamwork across roles and locations.
-
-- Co-edit documents with real-time version tracking  
-- Use Teams for context-based discussion and meetings  
-- Store project materials in structured SharePoint libraries  
-- Sync files through OneDrive for offline access  
-
-> 🔁 *Integrated tools make collaborative research smooth, secure, and efficient.*
-
 ## File Collaboration Best Practice
 
 - Use **Teams or SharePoint** for shared project files  
@@ -240,20 +215,6 @@ flowchart TB
 
 > 📚 *RIS ensures research activity is captured and connected institutionally.*
 
-## Integrated Research Systems
-
-The strength of UoN’s infrastructure lies in **interoperability**, connecting research activity, collaboration, and administration.
-
-```{mermaid}
-flowchart LR
-    M["Microsoft 365"]:::a --> S["SharePoint"]:::b --> R["RIS (Worktribe)"]:::c --> U["UniCore"]:::d --> M
-    classDef a fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
-    classDef b fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px
-    classDef c fill:#FFF3E0,stroke:#EF6C00,stroke-width:1px
-    classDef d fill:#F3E5F5,stroke:#6A1B9A,stroke-width:1px
-```
-
-> 🔗 *Connectivity between systems ensures seamless movement from idea to output.*
 
 ## System Use in Context
 
@@ -348,6 +309,8 @@ A consistent identity links your outputs, affiliations, and roles automatically 
 - Guarantees **proper attribution** and supports efficient collaboration.
 - Ensures **discoverability** across publishers and repositories  
 - Prevents **duplication or misattribution** of outputs  
+- **Universal interoperability:** used by funders, publishers, and institutions  
+- **Portability:** your iD remains active throughout your career  
 
 > 💡 *A consistent research identity builds long-term recognition and credibility.*
 
@@ -369,13 +332,6 @@ flowchart LR
 
 > 🧠 *Your ORCID iD is your digital fingerprint across the global research ecosystem.*
 
-## Why ORCID is Essential
-
-- **Universal interoperability:** used by funders, publishers, and institutions  
-- **Automatic updates:** Crossref and DataCite can sync new outputs  
-- **Portability:** your iD remains active throughout your career  
-
-> 🔗 *ORCID connects your research identity beyond institutional boundaries.*
 
 ## RIS (Research Information System) at UoN
 
@@ -390,74 +346,18 @@ At UoN, **RIS (Worktribe)** complements your ORCID profile by linking research a
 
 > 🏛️ *RIS ensures your institutional identity mirrors your global research presence.*
 
-## ORCID–RIS Integration
-
-```{mermaid}
-flowchart LR
-    O["ORCID iD"]:::a --> R["RIS (Worktribe)"]:::b --> P["Public Staff Page"]:::c
-    R --> F["Funders & Repositories"]:::d
-    classDef a fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
-    classDef b fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px
-    classDef c fill:#FFF3E0,stroke:#EF6C00,stroke-width:1px
-    classDef d fill:#F3E5F5,stroke:#6A1B9A,stroke-width:1px
-```
-
-> 💬 *Connecting ORCID to RIS automates data flow and strengthens institutional visibility.*
-
-
-## Scholarly Profiles Across Systems
-
-Different platforms amplify your professional presence.  
-When synchronised with ORCID, they create a distributed network of your scholarly identity.
-
-| **Platform** | **Purpose** | **Notes** |
-|---------------|-------------|-----------|
-| **Scopus Author ID** | Tracks citations, co-authorship, and affiliations | Merge duplicates for accuracy |
-| **Google Scholar** | Monitors visibility and citation trends | Manual curation may be required |
-| **ResearchGate / Academia.edu** | Social exchange platforms | Use responsibly; metrics are non-standard |
-
-> ⚠️ *Prioritise signing up to verified systems like ORCID, Scopus, and RIS for credible visibility.*
-
-
 ## Managing Your Research Profiles
 
 It is recomended that you:
 
 - Make your **ORCID profile public** for discoverability  
-- **Merge duplicate Scopus IDs** to ensure accuracy  
-- **Link ORCID to RIS** for automatic synchronisation  
+- **Merge duplicate Scopus IDs** to ensure accuracy  =
 - Use consistent **name and affiliation formats**  
 - Avoid unverified or **proprietary metrics**  
 - **Audit profiles regularly** for correctness  
 
 > 🧭 *Managing your identity actively ensures your research remains visible and verifiable.*
 
-## Research Identity as Collaboration Infrastructure
-
-A connected identity supports collaboration, attribution, and trust across teams.
-
-```{mermaid}
-flowchart TB
-    A["Accurate Profiles"]:::a --> B["Discoverable Expertise"]:::b --> C["Collaborative Opportunities"]:::c --> D["Trusted Attribution"]:::d
-    D --> A
-    classDef a fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
-    classDef b fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px
-    classDef c fill:#FFF3E0,stroke:#EF6C00,stroke-width:1px
-    classDef d fill:#F3E5F5,stroke:#6A1B9A,stroke-width:1px
-```
-
-> 🤝 *A well-managed identity connects people, data, and recognition across research networks.*
-
-## The Broader Impact of a Connected Identity
-
-- Enhances **interdisciplinary visibility**  
-- Simplifies **authorship and data attribution**  
-- Strengthens **institutional reporting** and compliance  
-- Promotes **open, transparent research collaboration**  
-
-> 🌍 *A connected identity enables connected research.*
-
----
 
 ::: callout-task 
 
@@ -577,18 +477,6 @@ Cybersecurity requires daily habits, not one-off actions.
 - Ensure **GDPR compliance** for international collaborations  
 
 > 🧩 *Cybersecurity is continuous awareness—prevention through habit.*
-
-## Building a Culture of Digital Responsibility
-
-Security is cultural as much as technical.  
-A trustworthy digital environment depends on shared awareness and accountability.
-
-- Apply strong passwords and MFA as standard  
-- Use secure institutional storage and VPNs  
-- Implement regular backups and data audits  
-- Communicate and report risks openly  
-
-> 🛡️ *Security and good practice underpin research credibility—protecting data protects discovery.*
 
 ---
 
