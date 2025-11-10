@@ -1,318 +1,321 @@
 ---
+
 title: Data Governance & Policy
 metadata:
-  teaching: 40
-  exercises: 40
----
+teaching: 40
+exercises: 40
+module: DSDS-M3 – Data Governance & Policy
+course: Data Science and Digital Skills (DSDS)
+audience: Early Career Researchers (PhD, Postdoc)
+-------------------------------------------------
 
-# Module Overview
-
-- **Module:** DSDS-M3 – Data Governance & Policy  
-- **Course:** Data Science and Digital Skills (DSDS)  
-- **Audience:** Early Career Researchers (PhD, Postdoc)  
-- **Duration:** ~50 minutes directed teaching (+20 minutes exercises)  
+::: {.content-visible when-format="revealjs"}
+![](fig/data-governance-policy-qr.jpg){fig-align="center" width=400px}
+:::
 
 ::: callout-outcomes
 
 ## 💡 Learning Outcomes
 
-- Understand the principles of GDPR and lawful handling of personal/sensitive data  
-- Recognise University of Nottingham policies on research ethics and research data management  
-- Apply data classification and information security tiers to research datasets  
-- Identify key compliance frameworks and shared responsibilities in research projects  
-:::
-
----
+* Understand the principles of GDPR and lawful handling of personal/sensitive data
+* Recognise University of Nottingham policies on research ethics and data management
+* Apply data classification and information security tiers to research datasets
+* Identify key compliance frameworks and shared responsibilities in research projects
+  :::
 
 ::: callout-questions
 
 ## ❓ Questions
 
-1. What are researchers’ responsibilities under GDPR and UK data protection law?  
-2. When does a project require research ethics approval at UoN?  
-3. How should datasets be classified to align with institutional information security policy?  
-4. How do institutional and funder policies intersect to shape digital compliance?  
-:::
-
+1. What are researchers’ responsibilities under GDPR and UK data protection law?
+2. When does a project require research ethics approval at UoN?
+3. How should datasets be classified to align with institutional information security policy?
+4. How do institutional and funder policies intersect to shape digital compliance?
+   :::
 
 ## Structure & Agenda
 
-1. Data Protection and Legal Frameworks (~12 min)  
-2. Research Ethics and Institutional Conduct (~12 min)  
-3. Data Classification and Information Security (~12 min)  
-4. Policy and Digital Compliance Landscape (~14 min)  
+1. Data Protection and Legal Frameworks (~15 min)
+2. Research Ethics and Institutional Conduct (~15 min)
+3. Data Classification and Information Security (~15 min)
+4. Policy and Digital Compliance Landscape (~15 min)
+
+---
 
 # Data Protection and Legal Frameworks
 
-Data protection is a central pillar of digital research practice. Understanding the **legal environment** helps researchers plan responsibly, protect participants, and avoid compliance breaches. UK GDPR and the Data Protection Act 2018 apply whenever personal or special category data are collected, processed, or shared.
+Data protection forms the legal foundation for ethical and compliant research practice. Understanding the regulatory environment enables researchers to manage risk, protect participants, and maintain trust. The UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018 govern all processing of personal and special category data in research.
+
+## The GDPR Framework
+
+```{mermaid}
+flowchart TB
+    A[Data Subject] -->|Provides data| B[Researcher / Controller]
+    B -->|Processes| C[Processor / Collaborator]
+    C -->|Stores & Transfers| D[Data Storage / Cloud]
+    D -->|Access| E[Data Subject]
+
+    style A fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
+    style B fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px
+    style C fill:#FFF3E0,stroke:#EF6C00,stroke-width:1px
+    style D fill:#F3E5F5,stroke:#6A1B9A,stroke-width:1px
+    style E fill:#F0F4C3,stroke:#9E9D24,stroke-width:1px
+```
+
+> ⚖️ *Every processing activity must have a lawful basis and respect data subject rights.*
 
 ## Lawful Basis for Research
 
-- Six lawful bases under Article 6 UK GDPR  
-- Universities often rely on **public task** or **legitimate interests**  
-- Consent may be used but must be **freely given, specific, informed, unambiguous**  
+Article 6 UK GDPR provides six lawful bases. Universities typically rely on:
+
+* **Public Task** – performing a task in the public interest, including research
+* **Legitimate Interests** – only where impact on individuals is minimal
+* **Consent** – valid only when *freely given, specific, informed, and unambiguous*
+
+Consent alone is not a universal lawful basis for research. It complements but does not replace robust safeguards and transparency.
 
 ## Special Category Data
 
-- Defined in Article 9 (e.g. health, ethnicity, political opinions)  
-- Requires both a **lawful basis** (Art 6) and an **Article 9 condition**  
-- Common research condition: *scientific research purposes with safeguards*  
+```{mermaid}
+flowchart LR
+    A[Personal Data] --> B[Special Category Data]
+    B --> C[Health, Genetic, Biometric]
+    B --> D[Race, Religion, Political Opinion]
+    B --> E[Sexual Orientation]
 
-## Research Provisions and Safeguards
+    style A fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
+    style B fill:#FFF3E0,stroke:#EF6C00,stroke-width:1px
+    style C fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px
+    style D fill:#F3E5F5,stroke:#6A1B9A,stroke-width:1px
+    style E fill:#F0F4C3,stroke:#9E9D24,stroke-width:1px
+```
 
-- Exemptions for research (e.g. purpose/storage limitation) apply only with safeguards  
-- Safeguards: data minimisation, pseudonymisation, secure storage, restricted access  
-- High-risk processing requires **Data Protection Impact Assessment (DPIA)**  
+Special category data (Article 9) require **both** a lawful basis (Art 6) and a specific **Article 9 condition**—commonly *scientific research with appropriate safeguards*.
+
+## Research Safeguards
+
+Safeguards must ensure that personal data are used responsibly:
+
+* **Data minimisation** – collect only what is necessary
+* **Pseudonymisation / anonymisation** – protect identity
+* **Restricted access** – use least privilege principle
+* **Retention limits** – define storage duration in DMP
+* **DPIA** – conduct where processing poses high risk to individuals
+
+> 🔐 *Good governance transforms legal compliance into ethical research practice.*
 
 ---
 
 ::: callout-task
 
-#### Task 1: Scenario Ranking (10 min)
+#### Task 1: Group Scenario Ranking (15 min)
 
-::: panel-tabset
-##### Question
-Rank fictional data collection scenarios from **lowest** to **highest** risk.
+**Objective:** Rank fictional data collection scenarios from *lowest* to *highest* risk through collaborative discussion.
 
-##### Exercise
+**Group setup:** 3–5 people per group
+**Roles:** Facilitator, Recorder, Reporter
 
-<details>
-<summary><strong>Template</strong></summary>
+**Steps:**
 
-| Scenario | Personal data? | Special category? | Lawful basis (Art 6) | Art 9 condition (if any) | DPIA needed? | Safeguards | Classification | Decision & rationale |
-|---|---|---|---|---|---|---|---|---|
-| A |  |  |  |  |  |  |  |  |
-| B |  |  |  |  |  |  |  |  |
-| C |  |  |  |  |  |  |  |  |
-| D |  |  |  |  |  |  |  |  |
+1. Each group discusses the four scenarios provided.
+2. As a team, agree on the order of risk and record the rationale for each.
+3. Identify shared themes and disagreements.
+4. Report one key insight to the full group.
 
-</details>
+**Scenarios:**
 
-<details>
-<summary><strong>Scenarios</strong></summary>
+* **A. Public social media corpus** – analysing MPs’ tweets for sentiment.
+* **B. Staff wellbeing survey** – anonymised but includes health data.
+* **C. Clinical dataset link** – pseudonymised NHS records with demographics.
+* **D. Refugee interviews** – discussing trauma, religion, and immigration status.
 
-- **A. Public social media corpus**: Downloading MPs’ tweets for sentiment analysis.  
-- **B. Staff wellbeing survey**: Anonymous design, includes health/ethnicity questions with explicit consent.  
-- **C. Clinical dataset link**: Pseudonymised NHS lab results linked with demographics under a sharing agreement.  
-- **D. Refugee interviews**: Immigration, religion, trauma discussed in interviews with interpreters.  
-
-</details>
-
-##### Follow-up
-- Identify lawful basis and Article 9 condition.  
-- Note safeguards (minimisation, pseudonymisation, encryption, retention controls).  
-:::
+**Plenary reflection:** Which safeguards most reduce perceived risk? How do perspectives differ across groups?
 :::
 
+---
 
 # Research Ethics and Institutional Conduct
 
-Ethical review ensures that research is conducted with **integrity, transparency, and respect for participants**. UoN’s **Code of Research Conduct and Research Ethics** sets out mandatory standards and risk-based review routes.
+Ethical review ensures that research is conducted with **integrity, transparency, and respect**. At the University of Nottingham, ethical standards are guided by the **Code of Research Conduct and Research Ethics**.
 
-## Ethics Principles
+## Core Ethical Principles
 
-- Respect for autonomy, dignity, rights, and safety  
-- Responsibility to avoid harm and manage risk  
-- Integrity and transparency in design and reporting  
+| **Principle**      | **Meaning**                                            |
+| ------------------ | ------------------------------------------------------ |
+| **Respect**        | Uphold autonomy, dignity, and rights of participants   |
+| **Integrity**      | Ensure honesty and transparency in all research stages |
+| **Responsibility** | Prevent harm and manage potential risks                |
+| **Accountability** | Maintain records and be answerable for decisions       |
+
+> 🧭 *Ethical practice is both a regulatory requirement and a marker of research quality.*
 
 ## Review Processes at UoN
 
-- Ethics review required where projects involve human participants, personal data, vulnerable groups, or safety risks  
-- Proportionate approach: low vs high-risk projects  
-- Possible routes: **School/Faculty REC** or **NHS REC**  
+* **Ethics approval** required for any study involving humans, personal data, or safety risks
+* **Proportionate review** based on level of risk: School/Faculty REC or NHS REC
+* Some low-risk activities may be registered but not reviewed if fully anonymised
+
+```{mermaid}
+flowchart LR
+    A[Research Idea] --> B[Ethics Self-Assessment]
+    B --> C{Human Data or Participants?}
+    C -->|No| D[Record Only]
+    C -->|Yes| E[Ethics Application]
+    E --> F{Low or High Risk?}
+    F -->|Low| G[School/Faculty REC]
+    F -->|High| H[NHS or Specialist REC]
+```
 
 ## Researcher Responsibilities
 
-- Prepare Participant Information Sheets and Consent Forms  
-- Submit protocols and Data Management Plans  
-- Maintain records and comply with conditions set by REC  
+* Prepare **Participant Information Sheets** and **Consent Forms**
+* Submit **protocols and Data Management Plans (DMPs)**
+* Maintain ethics records for the duration of the project
+* Report amendments and manage withdrawal requests appropriately
 
 ---
 
 ::: callout-task
 
-#### Task 2: Ethics Mapping (10 min)
+#### Task 2: Group Ethics Mapping (15 min)
 
-::: panel-tabset
-##### Question
-Determine if your project requires ethics review and identify the appropriate route.
+**Objective:** Collaboratively decide whether projects require ethical review and map the correct route.
 
-##### Exercise
+**Group setup:** 3–5 people per group
+**Roles:** Facilitator, Note-taker, Policy-checker, Spokesperson
 
-<details>
-<summary><strong>Template</strong></summary>
+**Steps:**
 
-| Element | Notes |
-|---|---|
-| Title & summary |  |
-| Participants & recruitment |  |
-| Personal data involved? |  |
-| Special category data? |  |
-| Vulnerable groups? |  |
-| Risk factors |  |
-| Ethics route (School/Faculty REC, NHS REC) |  |
-| Required documents |  |
-| Data protection artefacts |  |
-| External approvals |  |
-| International transfers / TR&I due diligence |  |
-| Storage & access |  |
-| Retention & disposal |  |
+1. Choose or create a project scenario (real or provided).
+2. Identify ethical issues, risks, and required documentation.
+3. As a group, agree on the review pathway (School REC, NHS REC, etc.).
+4. Prepare one slide or short verbal summary to present.
 
-</details>
-
-<details>
-<summary><strong>Scenarios (use your own or adopt hypotheticals)</strong></summary>
-
-- **Low-risk survey** with adults on study habits (no sensitive topics).  
-- **Interviews** exploring experiences of ill health (special category data).  
-- **Fieldwork** in a setting involving vulnerable groups.  
-- **Secondary use** of existing clinical dataset under data sharing agreement.  
-
-</details>
-
-##### Follow-up
-- List risks and mitigations; confirm whether a **DPIA** is required.  
-- Identify approvals and responsible parties; outline record-keeping.  
+**Plenary reflection:** Which factors most strongly affect whether review is needed? Where do grey areas appear?
 :::
-:::
+
+---
 
 # Data Classification and Information Security
 
-Different datasets carry different risks. **Classification** ensures appropriate handling, secure storage, and restricted access based on sensitivity. UoN has four levels: Public, Internal, Confidential, Highly Confidential.
+Research data must be handled according to sensitivity and risk. UoN’s **Information Classification Framework** defines four tiers: Public, Internal, Confidential, and Highly Confidential.
 
-## Information Categories
+## Information Classification Model
 
-- **Public** – intended for release without restriction  
-- **Internal** – limited to University community  
-- **Confidential** – sensitive, requires access controls and monitoring  
-- **Highly Confidential** – highly sensitive, strictly controlled  
+```{mermaid}
+flowchart LR
+    A[Public] --> B[Internal]
+    B --> C[Confidential]
+    C --> D[Highly Confidential]
+```
 
-## Applying the Framework
+| **Level**               | **Description**                     | **Examples**                           | **Storage Guidance**             |
+| ----------------------- | ----------------------------------- | -------------------------------------- | -------------------------------- |
+| **Public**              | Freely shareable data               | Published results, open datasets       | Repositories, websites           |
+| **Internal**            | Limited to UoN community            | Teaching materials                     | SharePoint, OneDrive             |
+| **Confidential**        | Sensitive but manageable risk       | Interview transcripts, research drafts | Research drives                  |
+| **Highly Confidential** | High-risk personal or security data | Clinical data, restricted partnerships | Secure servers, encrypted access |
 
-- Match classification to dataset content  
-- Choose storage (OneDrive, SharePoint, research drives, secure clusters) accordingly  
-- Control sharing with permissions and audit logging  
+> 🔒 *Classification ensures security controls match data sensitivity.*
 
 ---
 
 ::: callout-task
 
-#### Task 3: Classification Exercise (10 min)
+#### Task 3: Group Data Classification (15 min)
 
-::: panel-tabset
-##### Question
-Classify each dataset and propose secure storage and access.
+**Objective:** Work collaboratively to classify datasets and assign secure storage and access controls.
 
-##### Exercise
+**Group setup:** 4–6 participants
+**Roles:** Coordinator, Risk assessor, Recorder, Reporter
 
-<details>
-<summary><strong>Template</strong></summary>
+**Steps:**
 
-| Dataset | Classification | Storage | Access controls | Sharing method | Additional controls |
-|---|---|---|---|---|---|
-| 1 |  |  |  |  |  |
-| 2 |  |  |  |  |  |
-| 3 |  |  |  |  |  |
-| 4 |  |  |  |  |  |
+1. Discuss each dataset scenario.
+2. Agree on its classification level, storage location, and access controls.
+3. Identify any disagreements and negotiate a final consensus.
+4. Record the rationale for one case to share in plenary.
 
-</details>
+**Scenarios:**
 
-<details>
-<summary><strong>Scenarios</strong></summary>
+1. Anonymised student survey on study habits.
+2. Pseudonymised interviews about workplace health.
+3. Physiological sensor data with GPS locations.
+4. Aggregate dataset for open publication.
 
-1. **Anonymised survey data** on study habits.  
-2. **Pseudonymised interviews** on workplace health experiences.  
-3. **Physiological sensor data** with geolocation and timestamps.  
-4. **Aggregate dataset** intended for open publication.  
-
-</details>
-
-##### Follow-up
-- Justify classification and storage decisions.  
-- Map controls to UoN-approved storage and access practices.  
+**Plenary reflection:** How do teams balance openness and risk? Which criteria most influenced decisions?
 :::
-:::
+
+---
 
 # Policy and Digital Compliance Landscape
 
-Research operates in a complex environment of **institutional, national, and funder policies**. Awareness of this landscape ensures compliance and protects both researchers and participants.
+Data governance operates across multiple levels—**institutional, national, and funder**—each setting standards for responsible research and compliance.
 
 ## Institutional Policies
 
-- **Code of Practice on Research Data Management** – requires DMPs, governs retention, sharing, repository use  
-- **Trusted Research (UoN)** – due diligence for international collaborations and sensitive partnerships  
+* **Code of Research Conduct and Research Ethics** – defines ethical standards and oversight.
+* **Code of Practice on Research Data Management** – mandates DMPs, retention, and repository use.
+* **Information Security Policy** – classification, storage, and access control.
+* **Trusted Research (UoN)** – due diligence for international collaboration.
 
-## National and Funder Expectations
+## National & Funder Frameworks
 
-- **UKRI Trusted Research & Innovation** – secure global partnerships, protect IP and people  
-- **UKRI Open Research Data** policy – encourages sharing with proportionate safeguards  
-- Data Protection reforms – stay updated via DPO and Research Integrity  
+| **Framework**                          | **Focus**                          | **Examples**                        |
+| -------------------------------------- | ---------------------------------- | ----------------------------------- |
+| **UKRI Trusted Research & Innovation** | Secure international collaboration | Partnership risk assessments        |
+| **UKRI Open Research Data Policy**     | Sharing with safeguards            | FAIR data principles                |
+| **Data Protection Act 2018**           | Legal controller obligations       | Research exemptions with safeguards |
+| **Export Controls**                    | Sharing restrictions               | Sensitive collaborations            |
 
-## Compliance in Practice
+## Integrating Compliance in Research
 
-- Requires collaboration between PIs, project teams, and support units  
-- Breach reporting pathways: notify IT Security / DPO promptly  
-- International work may trigger export controls, due diligence, additional approvals  
+```{mermaid}
+flowchart LR
+    A[Institutional Policy] --> B[Funder Requirements]
+    B --> C[Project-Level Implementation]
+    C --> D[Monitoring & Review]
+    D --> A
+```
+
+> 🌍 *Compliance works best when shared and embedded across teams.*
 
 ---
 
 ::: callout-task
-#### Task 4: Policy Matching (10 min)
 
-::: panel-tabset
-##### Question
-Match scenarios to relevant UoN or national policy.
+#### Task 4: Group Policy Mapping (15 min)
 
-##### Exercise
+**Objective:** Match research scenarios to policies and identify shared responsibilities.
 
-<details>
-<summary><strong>Template</strong></summary>
+**Group setup:** 4–6 people
+**Roles:** Facilitator, Policy navigator, Scribe, Presenter
 
-| Scenario | Policy / guidance | Agreements | Roles (Controller/Processor/Joint) | Notes |
-|---|---|---|---|---|
-| A |  |  |  |  |
-| B |  |  |  |  |
-| C |  |  |  |  |
-| D |  |  |  |  |
+**Steps:**
 
-</details>
+1. Divide the provided scenarios among groups.
+2. For each, agree which UoN or national policy applies and what agreements are needed.
+3. Map roles (Controller/Processor/Joint) and responsibilities.
+4. Present findings back to plenary in one key slide or discussion point.
 
-<details>
-<summary><strong>Policy Menu</strong></summary>
+**Scenarios:**
 
-- UoN Code of Research Conduct and Research Ethics  
-- UoN Code of Practice on Research Data Management  
-- UoN Information Classification & Security Guidance  
-- GDPR & Data Protection Act 2018  
-- UKRI Trusted Research & Innovation  
-- Contracts & IP (Data sharing, processing agreements, international transfers)  
+* **A. Exporting data** to a collaborator abroad.
+* **B. Hosting special category data** for a clinical study.
+* **C. Publishing derived dataset** and analysis code openly.
+* **D. Outsourcing transcription** of sensitive interviews.
 
-</details>
-
-<details>
-<summary><strong>Scenarios</strong></summary>
-
-- **A. Export to collaborator abroad** using a cloud platform.  
-- **B. Hosting special category data** for multi-site analysis with external clinicians.  
-- **C. Publishing derived dataset** and code openly.  
-- **D. Outsourcing transcription** of sensitive interviews to a vendor.  
-
-</details>
-
-##### Follow-up
-- Identify required agreements and role allocations.  
-- Confirm international transfer safeguards (IDTA/SCCs).  
+**Plenary reflection:** Which policies overlapped most often? How can shared understanding improve compliance culture?
 :::
-:::
+
+---
 
 # Further Information
 
-## UoN Training Resources
-
-- [Code of Research Conduct and Research Ethics](https://www.nottingham.ac.uk/research/ethics-and-integrity/code-of-research-conduct-and-research-ethics.aspx)  
-- [Code of Practice on Research Data Management](https://www.nottingham.ac.uk/library/research/research-data-management/code-of-practice.aspx)  
-- [Information Security and Classification Guidance](https://www.nottingham.ac.uk/it-services/security)  
-- Annual Data Protection and Information Security Awareness (mandatory)  
+* [UoN Code of Research Conduct and Research Ethics](https://www.nottingham.ac.uk/research/ethics-and-integrity/code-of-research-conduct-and-research-ethics.aspx)
+* [Code of Practice on Research Data Management](https://www.nottingham.ac.uk/library/research/research-data-management/code-of-practice.aspx)
+* [Information Security and Classification Guidance](https://www.nottingham.ac.uk/it-services/security)
+* Annual **Data Protection and Information Security Awareness** training (mandatory).
 
 ---
 
@@ -320,20 +323,18 @@ Match scenarios to relevant UoN or national policy.
 
 ## 📚 Keypoints
 
-- GDPR requires lawful basis and safeguards for personal/special category data  
-- UoN ethics approval processes ensure integrity and accountability  
-- Data must be classified and secured according to institutional policy  
-- Compliance involves institutional, team, and individual responsibility  
-:::
-
----
+* GDPR defines lawful bases and safeguards for personal data.
+* Ethical review ensures responsible and transparent research.
+* Data classification determines secure storage and access.
+* Compliance integrates institutional, funder, and legal responsibilities.
+  :::
 
 ::: callout-hints
 
 ## 🔦 Hints
 
-- When in doubt, consult the **Research Ethics & Integrity** team or the **Data Protection Officer**  
-- Build compliance tasks into project planning from the outset  
-- Record decisions in your Data Management Plan  
-- International collaboration may trigger Trusted Research checks  
-:::
+* Consult the **Research Ethics & Integrity** team or **Data Protection Officer** early.
+* Incorporate compliance into project design, not post-hoc review.
+* Keep records in DMPs and ethics applications.
+* International collaboration may trigger Trusted Research checks.
+  :::
