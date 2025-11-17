@@ -57,11 +57,29 @@ Research Data Management (RDM) ensures that data are **organised, secure, docume
 # Roles 
 ```{mermaid}
 flowchart LR
-    PI[Principal Investigator] -->|Oversees DMP & Preservation| T[Project Team]
-    T -->|Implements Standards| R[Researchers]
-    R -->|Coordinates Support| L[Library]
-    L -->|Advises on Metadata| IT[IT Services]
-    IT -->|Ensures Security| IS[Information Security]
+    PI[Principal Investigator]
+    T[Project Team]
+    R[Researchers]
+    L[Library (RDM Support)]
+    IT[IT Services]
+    IS[Information Security]
+
+    A[DMP & Preservation Oversight]
+    B[Apply RDM Standards]
+    C[Liaise for Metadata & Archiving]
+    D[Metadata & Documentation Advice]
+    E[Secure Storage & Access Controls]
+
+    %% Role-to-Responsibility Mapping
+    PI --> A
+    T --> B
+    R --> C
+    L --> D
+    IT --> E
+    E --> IS
+
+    %% Responsibility Flow
+    A --> B --> C --> D --> E
 ```
 
 > 🧭 *Good RDM depends on collaboration and accountability across roles.*
@@ -199,34 +217,13 @@ YYYYMMDD_project-feature_description_vNN.ext
 ## Folder Structure Example
 
 ```{mermaid}
-flowchart TB
+flowchart LR
     A[Raw Data] --> B[Interim]
     B --> C[Processed]
     C --> D[Outputs]
     D --> E[Archive]
 ```
 
-## What this looks like in practice
- 
-
-```
-project-name/
-  00-admin/
-  01-data/
-    raw/
-    interim/
-    processed/
-  02-analysis/
-    scripts/
-    notebooks/
-    results/
-  03-docs/
-    README.md
-    CODEBOOK.md
-    CHANGES.md
-  04-outputs/
-  99-archive/
-```
 
 ## Metadata and Documentation Essentials
 
