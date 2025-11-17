@@ -8,7 +8,7 @@ metadata:
 ::: {.content-visible when-format="revealjs"}
 ![](fig/data-governance-policy-qr.jpg){fig-align="center" width=400px}
 :::
-
+ 
 ::: callout-outcomes
 
 ## 💡 Learning Outcomes
