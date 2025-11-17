@@ -103,14 +103,17 @@ flowchart LR
 
 #### Task 1: Group RDM Roles Map (10 min)
 
-Identify and map shared responsibilities in research data management.
+**Objective:** Identify how roles and responsibilities would operate for the research project described on your scenario card.
 
-1. In small groups, discuss each listed role and responsibility.
-2. Identify overlaps and shared tasks across teams.
-3. Decide how escalation and accountability should work.
-4. Report back with one example of a shared or ambiguous responsibility.
+**Instructions:**
 
-**Reflection:** Where are the biggest coordination gaps in your projects?
+1. Analyse your scenario card and list all activities that generate, handle, store, or transfer data.  
+2. Assign each activity to the appropriate role (PI, researchers, project team, IT Services, Information Security).  
+3. Identify areas where responsibilities overlap, where escalation is likely, or where accountability may be unclear.  
+4. Summarise one shared responsibility and one ambiguity your group identified.
+
+**Reflection:** Which RDM responsibilities are most often misunderstood or overlooked within real projects?
+
 :::
 
 # Data Management Plans
@@ -157,16 +160,18 @@ DMPs complement ethical review and governance processes:
 
 #### Task 2: Group DMP Scenario (10 min)
 
-**Objective:** Draft key DMP elements for a shared research scenario.
+**Objective:** Draft the core elements of a Data Management Plan tailored to the scenario on your card.
 
-**Steps:**
+**Instructions:**
 
-1. Agree on main datasets and their formats.
-2. Decide on documentation and storage approaches.
-3. Identify legal/ethical issues and sharing routes.
-4. Record 3–4 key actions to include in a DMP summary.
+1. Identify the main datasets (raw, processed, derived) implied by your scenario.  
+2. Specify formats, documentation needs, and storage platforms suitable for the data.  
+3. Identify legal, ethical, or IP constraints that must be addressed within the DMP.  
+4. Outline expected sharing routes, access conditions, and retention/preservation decisions.  
+5. Capture 3–4 essential commitments that would appear in a concise DMP summary.
 
-**Reflection:** Which part of a DMP is most likely to need revision over time?
+**Reflection:** Which components of your draft DMP are most likely to require revision as the project evolves?
+
 :::
 
 # Data Structuring, Metadata, and Archiving
@@ -249,16 +254,17 @@ project-name/
 
 #### Task 3: Group Folder Design (10 min)
 
-**Objective:** Co-design a reproducible folder and naming structure.
+**Objective:** Develop a folder structure and metadata approach appropriate for the research scenario on your card.
 
-**Steps:**
+**Instructions:**
 
-1. Sketch a shared folder structure for your team.
-2. Define naming conventions for files.
-3. Decide who has access to each folder.
-4. Identify which folders are archived or shared externally.
+1. Propose a folder structure that separates raw, interim, and processed data, plus scripts, documentation, and outputs.  
+2. Define file-naming conventions suitable for the data types in your scenario.  
+3. Identify which components require the most detailed metadata (e.g., sensor logs, transcripts, genomic data).  
+4. Decide what documentation (README, codebook, data dictionary, CHANGES log) is necessary to support reproducibility and collaboration.  
+5. Indicate which folders or files require restricted access.
 
-**Reflection:** What practices most improve long-term findability and reuse?
+**Reflection:** Which metadata elements most strongly influence long-term reusability?
 :::
 
 
@@ -300,16 +306,16 @@ flowchart LR
 
 #### Task 4: Group FAIRness Audit (10 min)
 
-**Objective:** Evaluate a dataset’s FAIRness and identify improvements.
+**Objective:** Evaluate how data from your scenario card could meet the FAIR principles and identify improvements.
 
-**Steps:**
+**Instructions:**
 
-1. Assess dataset metadata, access, and format.
-2. Identify 2–3 gaps in FAIR compliance.
-3. Propose one improvement for each principle.
-4. Summarise results for group discussion.
+1. Assess how Findable, Accessible, Interoperable, and Reusable the scenario’s datasets would be if shared.  
+2. Identify concrete gaps (e.g., missing metadata, proprietary formats, unclear access conditions, limited provenance).  
+3. Propose one improvement for each FAIR principle that is realistically achievable for the scenario.  
+4. Note any elements that cannot be made fully FAIR and explain why (e.g., confidentiality, legal restrictions).
 
-**Reflection:** Which FAIR element is hardest to achieve in practice and why?
+**Reflection:** Which FAIR principle presents the greatest challenge in your scenario and what constrains it?
 :::
 
 # Further Information
