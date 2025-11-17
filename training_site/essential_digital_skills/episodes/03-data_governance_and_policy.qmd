@@ -40,6 +40,8 @@ metadata:
 
 # Data Protection and Legal Frameworks
 
+## Why is Data Protection important?
+
 Data protection forms the legal foundation for ethical and compliant research practice. Understanding the regulatory environment enables researchers to manage risk, protect participants, and maintain trust. 
 
 
@@ -168,7 +170,9 @@ Safeguards must ensure that personal data are used responsibly:
 :::
 
 
-# Research Ethics and Institutional Conduct
+# Institutional Conduct
+
+## Ethics
 
 Ethical review ensures that research is conducted with **integrity, transparency, and respect**. At the University of Nottingham, ethical standards are guided by the **Code of Research Conduct and Research Ethics**.
 
