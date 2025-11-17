@@ -149,6 +149,8 @@ flowchart LR
 3. Identify areas where responsibilities overlap, where escalation is likely, or where accountability may be unclear.  
 4. Summarise one shared responsibility and one ambiguity your group identified.
 
+<iframe style="width:100%;max-width:300px;height:300px;" src="https://stopwatch-app.com/widget/timer?theme=light&color=indigo&hrs=0&min=10&sec=0" frameborder="0"></iframe>
+
 **Reflection:** Which RDM responsibilities are most often misunderstood or overlooked within real projects?
 
 :::
@@ -222,6 +224,8 @@ DMPs complement ethical review and governance processes:
 3. Identify legal, ethical, or IP constraints that must be addressed within the DMP.  
 4. Outline expected sharing routes, access conditions, and retention/preservation decisions.  
 5. Capture 3–4 essential commitments that would appear in a concise DMP summary.
+
+<iframe style="width:100%;max-width:300px;height:300px;" src="https://stopwatch-app.com/widget/timer?theme=light&color=indigo&hrs=0&min=10&sec=0" frameborder="0"></iframe>
 
 **Reflection:** Which components of your draft DMP are most likely to require revision as the project evolves?
 
@@ -298,11 +302,12 @@ YYYYMMDD_project-feature_description_vNN.ext
 
 **Instructions:**
 
-1. Propose a folder structure that separates raw, interim, and processed data, plus scripts, documentation, and outputs.  
-2. Define file-naming conventions suitable for the data types in your scenario.  
-3. Identify which components require the most detailed metadata (e.g., sensor logs, transcripts, genomic data).  
-4. Decide what documentation (README, codebook, data dictionary, CHANGES log) is necessary to support reproducibility and collaboration.  
-5. Indicate which folders or files require restricted access.
+1. Define file-naming conventions suitable for the data types in your scenario.  
+2. Identify which components require the most detailed metadata (e.g., sensor logs, transcripts, genomic data).  
+3. Decide what documentation (README, codebook, data dictionary, CHANGES log) is necessary to support reproducibility and collaboration.  
+4. Indicate which folders or files require restricted access.
+
+<iframe style="width:100%;max-width:300px;height:300px;" src="https://stopwatch-app.com/widget/timer?theme=light&color=indigo&hrs=0&min=10&sec=0" frameborder="0"></iframe>
 
 **Reflection:** Which metadata elements most strongly influence long-term reusability?
 :::
@@ -376,10 +381,12 @@ flowchart LR
 
 **Instructions:**
 
-1. Assess how Findable, Accessible, Interoperable, and Reusable the scenario’s datasets would be if shared.  
+1. Assess how Findable, Accessible, Interoperable, and Reusable the scenario’s datasets would be.  
 2. Identify concrete gaps (e.g., missing metadata, proprietary formats, unclear access conditions, limited provenance).  
-3. Propose one improvement for each FAIR principle that is realistically achievable for the scenario.  
+3. Propose one improvement that is realistically achievable for the scenario.  
 4. Note any elements that cannot be made fully FAIR and explain why (e.g., confidentiality, legal restrictions).
+
+<iframe style="width:100%;max-width:300px;height:300px;" src="https://stopwatch-app.com/widget/timer?theme=light&color=indigo&hrs=0&min=10&sec=0" frameborder="0"></iframe>
 
 **Reflection:** Which FAIR principle presents the greatest challenge in your scenario and what constrains it?
 :::

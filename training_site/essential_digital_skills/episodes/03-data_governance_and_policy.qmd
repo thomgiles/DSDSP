@@ -99,24 +99,12 @@ flowchart LR
 
 Article 6 UK GDPR provides **six** lawful bases for processing personal data. Research typically relies on two of them, but all are listed for completeness.
 
-1. **Consent**  
-   Freely given, specific, informed, and unambiguous.  
-   *Used in research only when genuinely optional and without imbalance of power.*
-2. **Contract**  
-   Necessary to perform a contract with the data subject.  
-   *Rarely applicable to research.*
-3. **Legal Obligation**  
-   Required to comply with law.  
-   *Not normally relevant to research activities.*
-4. **Vital Interests**  
-   Protecting someone’s life.  
-   *Applies mainly to medical emergencies, not planned research.*
-5. **Public Task** **(commonly used for research)**  
-   Necessary for performing a task in the public interest or in the exercise of official authority.  
-   *Most UK universities rely on this basis for research, reflecting their statutory functions.*
-6. **Legitimate Interests** **(sometimes used for research)**  
-   Permitted where processing is necessary and impact on individuals is minimal, and where interests are balanced.  
-   *Used selectively when Public Task does not apply.*
+1. **Consent** Freely given, specific, informed, and unambiguous. *Used in research only when genuinely optional and without imbalance of power.*
+2. **Contract** Necessary to perform a contract with the data subject. *Rarely applicable to research.*
+3. **Legal Obligation** Required to comply with law. *Not normally relevant to research activities.*
+4. **Vital Interests** Protecting someone’s life. *Applies mainly to medical emergencies, not planned research.*
+5. **Public Task** **(commonly used for research)** Necessary for performing a task in the public interest or in the exercise of official authority. *Most UK universities rely on this basis for research, reflecting their statutory functions.*
+6. **Legitimate Interests** **(sometimes used for research)** Permitted where processing is necessary and impact on individuals is minimal, and where interests are balanced. *Used selectively when Public Task does not apply.*
 
 ---
 
@@ -186,7 +174,9 @@ Safeguards must ensure that personal data are used responsibly:
 3. Rank the elements of your scenario from lowest → highest risk and justify the ordering.
 4. Suggest safeguards that would reduce the highest-ranked risks.
 
-**Plenary reflection:** Which characteristics consistently elevate risk across scenarios?
+<iframe style="width:100%;max-width:300px;height:300px;" src="https://stopwatch-app.com/widget/timer?theme=light&color=indigo&hrs=0&min=10&sec=0" frameborder="0"></iframe>
+
+**Plenary reflection:** Which characteristics in your scenario elevate risk?
 :::
 
 
@@ -253,6 +243,8 @@ flowchart LR
 3. Identify core documentation needed (consent materials, information sheets, risk assessments).
 4. Agree on key ethical considerations the research team must address before data collection.
 
+<iframe style="width:100%;max-width:300px;height:300px;" src="https://stopwatch-app.com/widget/timer?theme=light&color=indigo&hrs=0&min=10&sec=0" frameborder="0"></iframe>
+
 **Plenary reflection:** Which factors most strongly affect whether review is needed? Where do grey areas appear?
 :::
 
@@ -282,13 +274,12 @@ flowchart LR
 ## Protecting Research Data
 
 * Apply classification labels consistently
-* Use multifactor authentication for restricted systems
 * Encrypt sensitive data in transit and at rest
 * Record and review data access permissions regularly
 
 ## Managing Security Incidents
 
-* Report suspected breaches immediately to IT Security or DPO
+* Report suspected breaches immediately to Digital Technology services and the data protection officer
 * Document actions taken and lessons learned
 * Implement follow-up audits if needed
 
@@ -298,7 +289,7 @@ flowchart LR
 
 #### Task 3: Group Data Classification (15 min)
 
-**Objective:** Determine the ethical review requirements for the project described on your scenario card.
+**Objective:** Determine the information security requirements for the project described on your scenario card.
 
 **Instructions:**
 
@@ -308,7 +299,9 @@ flowchart LR
 4. Define access control needs (minimum access, MFA, encryption, role-based permissions).
 5. Identify any components that require additional safeguards (e.g., separate linkage files, encryption in transit).
 
-**Plenary reflection:** How do teams balance openness and risk? Which criteria most influenced decisions?
+<iframe style="width:100%;max-width:300px;height:300px;" src="https://stopwatch-app.com/widget/timer?theme=light&color=indigo&hrs=0&min=10&sec=0" frameborder="0"></iframe>
+
+**Plenary reflection:** How do teams balance openness and risk? Which criteria most influenced your decisions?
 :::
 
 
@@ -377,6 +370,8 @@ flowchart LR
 2. Match your scenario to applicable policies (e.g., RDM Code, Information Security Policy, Code of Research Conduct, Trusted Research, UKRI requirements).
 3. Identify which team members hold responsibility for compliance actions (Researcher, PI, Faculty REC, DPO, IT Security, external partners).
 4. Summarise key compliance actions required before the project can proceed (e.g., DPIA, DMP, agreements, export controls checks).
+
+<iframe style="width:100%;max-width:300px;height:300px;" src="https://stopwatch-app.com/widget/timer?theme=light&color=indigo&hrs=0&min=10&sec=0" frameborder="0"></iframe>
 
 **Plenary reflection:** Which policy areas overlap most frequently across scenarios?
 :::
