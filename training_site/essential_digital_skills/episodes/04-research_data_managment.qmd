@@ -169,8 +169,6 @@ DMPs complement ethical review and governance processes:
 **Reflection:** Which part of a DMP is most likely to need revision over time?
 :::
 
----
-
 # Data Structuring, Metadata, and Archiving
 
 Effective RDM relies on consistent organisation and clear documentation. Structured data and metadata support collaboration, transparency, and long-term preservation.
@@ -195,6 +193,17 @@ YYYYMMDD_project-feature_description_vNN.ext
 
 ## Folder Structure Example
 
+```{mermaid}
+flowchart TB
+    A[Raw Data] --> B[Interim]
+    B --> C[Processed]
+    C --> D[Outputs]
+    D --> E[Archive]
+```
+
+## What this looks like in practice
+ 
+
 ```
 project-name/
   00-admin/
@@ -212,14 +221,6 @@ project-name/
     CHANGES.md
   04-outputs/
   99-archive/
-```
-
-```{mermaid}
-flowchart TB
-    A[Raw Data] --> B[Interim]
-    B --> C[Processed]
-    C --> D[Outputs]
-    D --> E[Archive]
 ```
 
 ## Metadata and Documentation Essentials
@@ -311,15 +312,12 @@ flowchart LR
 **Reflection:** Which FAIR element is hardest to achieve in practice and why?
 :::
 
-
 # Further Information
 
 * Research Data Management (Standalone) — complementary training
 * [Code of Practice on Research Data Management](https://www.nottingham.ac.uk/library/research/research-data-management/index.aspx)
 * [Code of Research Conduct and Research Ethics](https://www.nottingham.ac.uk/research/ethics-and-integrity/)
 * Annual **Information Security Awareness** training (mandatory).
-
----
 
 ::: callout-keypoints
 
