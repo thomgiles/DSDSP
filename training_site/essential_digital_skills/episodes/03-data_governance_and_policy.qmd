@@ -40,7 +40,10 @@ metadata:
 
 # Data Protection and Legal Frameworks
 
-Data protection forms the legal foundation for ethical and compliant research practice. Understanding the regulatory environment enables researchers to manage risk, protect participants, and maintain trust. The UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018 govern all processing of personal and special category data in research.
+Data protection forms the legal foundation for ethical and compliant research practice. Understanding the regulatory environment enables researchers to manage risk, protect participants, and maintain trust. 
+
+
+> ⚖️ The UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018 govern all processing of personal and special category data in research.
 
 ## Understanding Personal Data
 
@@ -152,16 +155,16 @@ Safeguards must ensure that personal data are used responsibly:
 
 #### Task 1: Group Scenario Ranking (15 min)
 
-**Objective:** Rank fictional data collection scenarios from *lowest* to *highest* risk through collaborative discussion...
+**Objective:** Using the scenario card assigned to your group, identify the main data protection risks and rank the specific components of your scenario from lowest to highest risk.
 
-**Scenarios:**
+**Instructions:**
 
-* **A. Public social media corpus** – analysing MPs’ tweets for sentiment.
-* **B. Staff wellbeing survey** – anonymised but includes health data.
-* **C. Clinical dataset link** – pseudonymised NHS records with demographics.
-* **D. Refugee interviews** – discussing trauma, religion, and immigration status.
+1. Examine the data types, processing steps, and partnerships described on your scenario card.
+2. Identify risk drivers (e.g., identifiability, sensitivity, continuous monitoring, third-party processing, cross-border flows).
+3. Rank the elements of your scenario from lowest → highest risk and justify the ordering.
+4. Suggest safeguards that would reduce the highest-ranked risks.
 
-**Plenary reflection:** Which safeguards most reduce perceived risk?
+**Plenary reflection:** Which characteristics consistently elevate risk across scenarios?
 :::
 
 
@@ -218,13 +221,13 @@ flowchart LR
 
 #### Task 2: Group Ethics Mapping (15 min)
 
-**Objective:** Collaboratively decide whether projects require ethical review and map the correct route.
+**Objective:** Classify all data types in your scenario card using UoN’s Information Classification Framework and assign appropriate storage and access controls.
 **Steps:**
 
-1. Choose or create a project scenario (real or provided).
-2. Identify ethical issues, risks, and required documentation.
-3. As a group, agree on the review pathway (School REC, NHS REC, etc.).
-4. Prepare one slide or short verbal summary to present.
+1. Identify ethical issues inherent in your scenario (e.g., vulnerability, distress, clinical linkage, geolocation, minors).
+2. Decide whether the project requires ethical review and specify the likely route: School/Faculty REC? Specialist REC (i.e. NHS)
+3. Identify core documentation needed (consent materials, information sheets, risk assessments).
+4. Agree on key ethical considerations the research team must address before data collection.
 
 **Plenary reflection:** Which factors most strongly affect whether review is needed? Where do grey areas appear?
 :::
@@ -269,14 +272,15 @@ flowchart LR
 
 #### Task 3: Group Data Classification (15 min)
 
-**Objective:** Work collaboratively to classify datasets and assign secure storage and access controls.
+**Objective:** Determine the ethical review requirements for the project described on your scenario card.
 
-**Scenarios:**
+**Instructions:**
 
-1. Anonymised student survey on study habits.
-2. Pseudonymised interviews about workplace health.
-3. Physiological sensor data with GPS locations.
-4. Aggregate dataset for open publication.
+1. List all data types present in the scenario (raw, processed, derived).
+2. Classify each as Public, Internal, Confidential, or Highly Confidential.
+3. Identify suitable storage locations (e.g., research drives, secure servers, encrypted environments).
+4. Define access control needs (minimum access, MFA, encryption, role-based permissions).
+5. Identify any components that require additional safeguards (e.g., separate linkage files, encryption in transit).
 
 **Plenary reflection:** How do teams balance openness and risk? Which criteria most influenced decisions?
 :::
@@ -337,16 +341,16 @@ flowchart LR
 
 #### Task 4: Group Policy Mapping (15 min)
 
-**Objective:** Match research scenarios to policies and identify shared responsibilities.
+**Objective:** Map your scenario card to relevant institutional, funder, and legal policies, and identify responsibilities across the project team.
 
-**Scenarios:**
+**Instructions:**
 
-* **A. Exporting data** to a collaborator abroad.
-* **B. Hosting special category data** for a clinical study.
-* **C. Publishing derived dataset** and analysis code openly.
-* **D. Outsourcing transcription** of sensitive interviews.
+1. Review the scenario for elements such as third-party processing, international data flows, clinical data, special category data, open publication, or high-risk technology use.
+2. Match your scenario to applicable policies (e.g., RDM Code, Information Security Policy, Code of Research Conduct, Trusted Research, UKRI requirements).
+3. Identify which team members hold responsibility for compliance actions (Researcher, PI, Faculty REC, DPO, IT Security, external partners).
+4. Summarise key compliance actions required before the project can proceed (e.g., DPIA, DMP, agreements, export controls checks).
 
-**Plenary reflection:** Which policies overlapped most often? How can shared understanding improve compliance culture?
+**Plenary reflection:** Which policy areas overlap most frequently across scenarios?
 :::
 
 # Further Information
