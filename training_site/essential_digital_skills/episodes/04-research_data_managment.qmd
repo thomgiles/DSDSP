@@ -41,6 +41,8 @@ metadata:
 
 # RDM at UoN
 
+## Why is RDM important
+
 Research Data Management (RDM) ensures that data are **organised, secure, documented, and preserved** to support research integrity, reproducibility, and reuse. Effective RDM is a shared responsibility across project roles and institutional services.
 
 ## Risk Management
@@ -64,6 +66,8 @@ Research Data Management (RDM) ensures that data are **organised, secure, docume
 | **Information Security**        | Defines classification tiers and enforces access controls.                                                                 |
 
 # Roles 
+
+# RDM roles
 ```{mermaid}
 flowchart LR
     PI[Principal Investigator]
@@ -151,6 +155,8 @@ flowchart LR
 
 # Data Management Plans
 
+## What is a data managment plan
+
 A **Data Management Plan (DMP)** describes how data are created, managed, and preserved. It clarifies accountability, ensures transparency, and supports compliance with institutional and funder requirements.
 
 ## Why DMPs Matter
@@ -222,6 +228,8 @@ DMPs complement ethical review and governance processes:
 :::
 
 # Data Structuring, Metadata, and Archiving
+
+## Be organised
 
 Effective RDM relies on consistent organisation and clear documentation. Structured data and metadata support collaboration, transparency, and long-term preservation.
 
@@ -302,9 +310,16 @@ YYYYMMDD_project-feature_description_vNN.ext
 
 # Reusable Data in Practice
 
-## FAIR
+## What is FAIR
 
-Reusable data align with the **FAIR** principles: Findable, Accessible, Interoperable, and Reusable. They promote transparency and maximise research value.
+Reusable data align with the **FAIR** principles: 
+
+1. Findable
+2. Accessible
+3. Interoperable
+4. Reusable. 
+
+These are designed to promote transparency and maximise research value.
 
 ## What does FAIR mean for data?
 

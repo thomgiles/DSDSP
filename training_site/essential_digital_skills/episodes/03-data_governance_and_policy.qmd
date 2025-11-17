@@ -95,15 +95,35 @@ flowchart LR
 
 > ⚖️ *Every processing activity must have a lawful basis and respect data subject rights.*
 
-## Lawful Basis for Research
+## Lawful Basis for Research (UK GDPR Article 6)
 
-Article 6 UK GDPR provides six lawful bases. Universities typically rely on:
+Article 6 UK GDPR provides **six** lawful bases for processing personal data. Research typically relies on two of them, but all are listed for completeness.
 
-* **Public Task** – performing a task in the public interest, including research
-* **Legitimate Interests** – only where impact on individuals is minimal
-* **Consent** – valid only when *freely given, specific, informed, and unambiguous*
+1. **Consent**  
+   Freely given, specific, informed, and unambiguous.  
+   *Used in research only when genuinely optional and without imbalance of power.*
+2. **Contract**  
+   Necessary to perform a contract with the data subject.  
+   *Rarely applicable to research.*
+3. **Legal Obligation**  
+   Required to comply with law.  
+   *Not normally relevant to research activities.*
+4. **Vital Interests**  
+   Protecting someone’s life.  
+   *Applies mainly to medical emergencies, not planned research.*
+5. **Public Task** **(commonly used for research)**  
+   Necessary for performing a task in the public interest or in the exercise of official authority.  
+   *Most UK universities rely on this basis for research, reflecting their statutory functions.*
+6. **Legitimate Interests** **(sometimes used for research)**  
+   Permitted where processing is necessary and impact on individuals is minimal, and where interests are balanced.  
+   *Used selectively when Public Task does not apply.*
 
-Consent alone is not a universal lawful basis for research. It complements but does not replace robust safeguards and transparency.
+---
+
+## Consent
+
+**Consent is not a universal lawful basis for research.**  
+It complements ethical approval and transparency but does not replace institutional safeguards, accountability, or appropriate governance.
 
 ## Rights of Data Subjects
 
@@ -239,6 +259,8 @@ flowchart LR
 
 # Data Classification and Information Security
 
+## Handeling research data
+
 Research data must be handled according to sensitivity and risk. UoN’s **Information Classification Framework** defines four tiers: Public, Internal, Confidential, and Highly Confidential.
 
 ## Information Classification Model
@@ -292,6 +314,8 @@ flowchart LR
 
 # Policy and Digital Compliance Landscape
 
+## Teired levels
+ 
 Data governance operates across multiple levels—**institutional, national, and funder**—each setting standards for responsible research and compliance.
 
 ## Institutional Policies
