@@ -43,6 +43,15 @@ metadata:
 
 Research Data Management (RDM) ensures that data are **organised, secure, documented, and preserved** to support research integrity, reproducibility, and reuse. Effective RDM is a shared responsibility across project roles and institutional services.
 
+## Risk Management
+
+* Data risks arise through inadequate documentation, inappropriate storage, weak access controls, and unclear retention decisions.  
+* Mitigation involves:  
+  - Early identification of sensitive data categories.  
+  - Use of approved platforms with defined roles and permissions.  
+  - Periodic review of storage locations and data flows.  
+* Well-specified RDM reduces the likelihood of loss, breach, or unresolvable provenance gaps.
+
 ## Roles and Responsibilities
 
 | **Role**                        | **Key Responsibilities**                                                                                                   |
@@ -51,7 +60,7 @@ Research Data Management (RDM) ensures that data are **organised, secure, docume
 | **Researchers**                 | Day-to-day organisation, secure handling, documentation, and quality control. Implement the DMP.                           |
 | **Project Team**                | Shared responsibility for access, version control, and documentation.                                                      |
 | **Library (RDM Support)**       | Advises on metadata, citation, archiving, and FAIR compliance.                                                             |
-| **IT Services**                 | Provides secure storage, backup, and collaboration platforms.                                                              |
+| **Digital Technology Services**                 | Provides secure storage, backup, and collaboration platforms.                                                              |
 | **Information Security**        | Defines classification tiers and enforces access controls.                                                                 |
 
 # Roles 
@@ -60,8 +69,8 @@ flowchart LR
     PI[Principal Investigator]
     T[Project Team]
     R[Researchers]
-    L[Library (RDM Support)]
-    IT[IT Services]
+    L[Library - RDM Support]
+    IT[Digital Technology Services]
     IS[Information Security]
 
     A[DMP & Preservation Oversight]
@@ -103,6 +112,12 @@ flowchart LR
 ```
 
 > 🔁 *RDM supports every stage of the data lifecycle, not just archiving.*
+
+## Costs and Resourcing
+
+* RDM activities involve effort (documentation, metadata, validation) and may incur storage or software costs.  
+* Planning should begin at proposal stage, especially when projects generate large or long-lived datasets.  
+* PIs are responsible for ensuring appropriate resources throughout the project and into the preservation phase.
 
 ## Institutional Storage Options
 
@@ -162,6 +177,20 @@ Funders such as UKRI, Wellcome, and Horizon Europe mandate DMPs at proposal stag
 7. Retention and preservation.
 8. Roles, responsibilities, and costs.
 
+## Characteristics of a High-Quality DMP
+
+* Provides clear, specific solutions tailored to each dataset.  
+* Demonstrates alignment with funder policy, ethical requirements, and institutional practice.  
+* Internally consistent across storage, access control, documentation, and retention.  
+* Identifies decision points that require scheduled review.
+
+## Common Weaknesses in DMPs
+
+* Overstated openness without assessing legal or ethical constraints.  
+* Vague commitments regarding documentation and metadata.  
+* Missing retention timelines or unclear archival locations.  
+* No explicit assignment of responsibilities, particularly during staff changes.
+
 ## Integrating DMPs with Ethics and Governance
 
 DMPs complement ethical review and governance processes:
@@ -214,16 +243,13 @@ YYYYMMDD_project-feature_description_vNN.ext
 
 > 🗃️ *Meaningful naming prevents confusion and simplifies version tracking.*
 
-## Folder Structure Example
+## Data Structuring, Metadata, and Archiving — Version Control Beyond Filenames
 
-```{mermaid}
-flowchart LR
-    A[Raw Data] --> B[Interim]
-    B --> C[Processed]
-    C --> D[Outputs]
-    D --> E[Archive]
-```
-
+* Filenames support version tracking but should be complemented by:  
+  - Git repositories for code, text, and small structured datasets.  
+  - Structured changelogs recording rationale and context.  
+  - Automated provenance capture where possible.  
+* Version control supports reproducibility and prevents silent overwrites.
 
 ## Metadata and Documentation Essentials
 
@@ -244,6 +270,15 @@ flowchart LR
 * **JSON-LD / Schema.org:** For machine-readable web metadata.
 
 > 🌐 *Select standards appropriate to your discipline and repository.*
+
+## Preparing Data for Archival Deposit
+
+* Preparation requires:  
+  - Conversion to open, stable formats.  
+  - Integrity and completeness checks.  
+  - Removal or segregation of sensitive data when justified.  
+* Archival metadata must specify provenance, methods, quality assessments, and licensing.
+
 
 ---
 
@@ -267,9 +302,11 @@ flowchart LR
 
 # Reusable Data in Practice
 
+## FAIR
+
 Reusable data align with the **FAIR** principles: Findable, Accessible, Interoperable, and Reusable. They promote transparency and maximise research value.
 
-## FAIR Principles Summary
+## What does FAIR mean for data?
 
 | **Principle**     | **Features**                                  | **Practice Example**          |
 | ----------------- | --------------------------------------------- | ----------------------------- |
@@ -282,6 +319,15 @@ Reusable data align with the **FAIR** principles: Findable, Accessible, Interope
 flowchart LR
     A[Findable] --> B[Accessible] --> C[Interoperable] --> D[Reusable] --> A
 ```
+
+## Evaluating FAIR Reuse Potential
+
+* Assess reuse value by examining:  
+  - Completeness of metadata and provenance.  
+  - Transparency of processing steps.  
+  - Clarity of variable definitions and methodological notes.  
+  - Sustainability of formats and identifiers.  
+* Well-documented datasets retain scientific value beyond project closure.
 
 ## Implementing FAIR at Project Level
 
@@ -296,6 +342,14 @@ flowchart LR
 * Missing variable definitions.
 * Restricted data without published metadata.
 * No persistent links between outputs and code.
+
+## Licensing and Reuse Conditions
+
+* Reuse depends on clear legal and licensing statements.  
+* Permissive licences (e.g., CC BY) maximise impact for non-sensitive data.  
+* Constrained datasets may require controlled-access repositories with published metadata.  
+* Explicit terms guide secondary use and reduce uncertainty.
+
 
 ---
 
