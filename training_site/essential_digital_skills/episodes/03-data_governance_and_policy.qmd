@@ -42,7 +42,7 @@ metadata:
 
 ## Why is Data Protection important?
 
-Data protection forms the legal foundation for ethical and compliant research practice. Understanding the regulatory environment enables researchers to manage risk, protect participants, and maintain trust. 
+Data protection forms the legal foundation for ethical and compliant research practice. Understanding the regulatory environment enables researchers to manage risk, protect participants and maintain trust. 
 
 
 > ⚖️ The UK General Data Protection Regulation (UK GDPR) and the Data Protection Act 2018 govern all processing of personal and special category data in research.
@@ -58,7 +58,7 @@ Personal data means *any information relating to an identified or identifiable p
 * Pseudonymised datasets linked via participant IDs
 * Lab results associated with patient identifiers
 
-> 🧠 *If someone can be identified directly or indirectly, the data are personal.*
+> 🧠 *If someone can be identified directly or indirectly, the data should be considered personal.*
 
 ## The GDPR Framework
 
@@ -99,14 +99,14 @@ flowchart LR
 
 Article 6 UK GDPR provides **six** lawful bases for processing personal data. Research typically relies on two of them, but all are listed for completeness.
 
-1. **Consent** Freely given, specific, informed, and unambiguous. *Used in research only when genuinely optional and without imbalance of power.*
+1. **Consent** Freely given, specific, informed and unambiguous. *Used in research only when genuinely optional and without imbalance of power.*
 2. **Contract** Necessary to perform a contract with the data subject. *Rarely applicable to research.*
 3. **Legal Obligation** Required to comply with law. *Not normally relevant to research activities.*
 4. **Vital Interests** Protecting someone’s life. *Applies mainly to medical emergencies, not planned research.*
-5. **Public Task** **(commonly used for research)** Necessary for performing a task in the public interest or in the exercise of official authority. *Most UK universities rely on this basis for research, reflecting their statutory functions.*
-6. **Legitimate Interests** **(sometimes used for research)** Permitted where processing is necessary and impact on individuals is minimal, and where interests are balanced. *Used selectively when Public Task does not apply.*
+5. **Public Task** Necessary for performing a task in the public interest or in the exercise of official authority. *Most UK universities rely on this for research.*
+6. **Legitimate Interests** Permitted where processing is necessary and impact on individuals is minimal and where interests are balanced. *Used selectively when Public Task does not apply.*
 
----
+--- 
 
 ## Consent
 
@@ -165,16 +165,41 @@ Safeguards must ensure that personal data are used responsibly:
 
 #### Task 1: Group Scenario Ranking (15 min)
 
+:::: {.columns}
+
+::: {.column width="70%"}
+
 **Objective:** Using the scenario card assigned to your group, identify the main data protection risks and rank the specific components of your scenario from lowest to highest risk.
 
 **Instructions:**
 
-1. Examine the data types, processing steps, and partnerships described on your scenario card.
+1. Examine the data types, processing steps and partnerships described on your scenario card.
 2. Identify risk drivers (e.g., identifiability, sensitivity, continuous monitoring, third-party processing, cross-border flows).
 3. Rank the elements of your scenario from lowest → highest risk and justify the ordering.
 4. Suggest safeguards that would reduce the highest-ranked risks.
 
+
+**Plenary reflection:** Which characteristics in your scenario elevate risk?
+
+:::
+
+::: {.column width="30%"}
+
 <iframe style="width:100%;max-width:300px;height:300px;" src="https://stopwatch-app.com/widget/timer?theme=light&color=indigo&hrs=0&min=10&sec=0" frameborder="0"></iframe>
+
+:::
+
+::::
+
+**Objective:** Using the scenario card assigned to your group, identify the main data protection risks and rank the specific components of your scenario from lowest to highest risk.
+
+**Instructions:**
+
+1. Examine the data types, processing steps and partnerships described on your scenario card.
+2. Identify risk drivers (e.g., identifiability, sensitivity, continuous monitoring, third-party processing, cross-border flows).
+3. Rank the elements of your scenario from lowest → highest risk and justify the ordering.
+4. Suggest safeguards that would reduce the highest-ranked risks.
+
 
 **Plenary reflection:** Which characteristics in your scenario elevate risk?
 :::
@@ -184,13 +209,13 @@ Safeguards must ensure that personal data are used responsibly:
 
 ## Ethics
 
-Ethical review ensures that research is conducted with **integrity, transparency, and respect**. At the University of Nottingham, ethical standards are guided by the **Code of Research Conduct and Research Ethics**.
+Ethical review ensures that research is conducted with **integrity, transparency and respect**. At the University of Nottingham, ethical standards are guided by the **Code of Research Conduct and Research Ethics**.
 
 ## Core Ethical Principles
 
 | **Principle**      | **Meaning**                                            |
 | ------------------ | ------------------------------------------------------ |
-| **Respect**        | Uphold autonomy, dignity, and rights of participants   |
+| **Respect**        | Uphold autonomy, dignity and rights of participants   |
 | **Integrity**      | Ensure honesty and transparency in all research stages |
 | **Responsibility** | Prevent harm and manage potential risks                |
 | **Accountability** | Maintain records and be answerable for decisions       |
@@ -220,7 +245,7 @@ flowchart LR
 * Power dynamics in interviews
 * Cultural and linguistic sensitivity
 * Secondary use of existing data
-* Data storage, retention, and destruction
+* Data storage, retention and destruction
 
 ## Building Ethics into Design
 
@@ -253,7 +278,7 @@ flowchart LR
 
 ## Handeling research data
 
-Research data must be handled according to sensitivity and risk. UoN’s **Information Classification Framework** defines four tiers: Public, Internal, Confidential, and Highly Confidential.
+Research data must be handled according to sensitivity and risk. UoN’s **Information Classification Framework** defines four tiers: Public, Internal, Confidential and Highly Confidential.
 
 ## Information Classification Model
 
@@ -309,14 +334,14 @@ flowchart LR
 
 ## Teired levels
  
-Data governance operates across multiple levels—**institutional, national, and funder**—each setting standards for responsible research and compliance.
+Data governance operates across multiple levels: **institutional, national and funder** each setting standards for responsible research and compliance.
 
 ## Institutional Policies
 
-* **Code of Research Conduct and Research Ethics** – defines ethical standards and oversight.
-* **Code of Practice on Research Data Management** – mandates DMPs, retention, and repository use.
-* **Information Security Policy** – classification, storage, and access control.
-* **Trusted Research (UoN)** – due diligence for international collaboration.
+* **Code of Research Conduct and Research Ethics:** defines ethical standards and oversight.
+* **Code of Practice on Research Data Management:** mandates DMPs, retention and repository use.
+* **Information Security Policy:** classification, storage and access control.
+* **Trusted Research (UoN)** due diligence for international collaboration.
 
 ## National & Funder Frameworks
 
@@ -362,7 +387,7 @@ flowchart LR
 
 #### Task 4: Group Policy Mapping (15 min)
 
-**Objective:** Map your scenario card to relevant institutional, funder, and legal policies, and identify responsibilities across the project team.
+**Objective:** Map your scenario card to relevant institutional, funder and legal policies and identify responsibilities across the project team.
 
 **Instructions:**
 
@@ -392,7 +417,7 @@ flowchart LR
 * GDPR defines lawful bases and safeguards for personal data.
 * Ethical review ensures responsible and transparent research.
 * Data classification determines secure storage and access.
-* Compliance integrates institutional, funder, and legal responsibilities.
+* Compliance integrates institutional, funder and legal responsibilities.
 :::
 
 ::: callout-hints
