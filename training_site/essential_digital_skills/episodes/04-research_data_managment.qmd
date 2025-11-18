@@ -14,9 +14,9 @@ metadata:
 ## 💡 Learning Outcomes
 
 * Define roles and responsibilities for managing research data at the University of Nottingham (UoN).
-* Produce a concise Data Management Plan (DMP) covering storage, documentation, sharing, retention, and preservation.
-* Apply robust naming conventions, folder structures, metadata, and version control for collaborative, auditable workflows.
-* Select appropriate institutional storage and archiving solutions (e.g., OneDrive, SharePoint/Teams, shared drives, TRE secure storage).
+* Produce a concise Data Management Plan (DMP) covering storage, documentation, sharing, retention and preservation.
+* Generate robust metadata for collaborative, auditable workflows.
+* Select appropriate institutional storage and archiving solutions for different data types.
 * Assess and improve dataset reusability in line with **FAIR** principles (Findable, Accessible, Interoperable, Reusable).
 :::
 
@@ -34,7 +34,7 @@ metadata:
 
 1. RDM at UoN (~15 min)
 2. Data Management Plans (~15 min)
-3. Data Structuring, Metadata, and Archiving (~15 min)
+3. Data Structuring, Metadata and Archiving (~15 min)
 4. Reusable Data in Practice (~15 min)
 
 ---
@@ -43,11 +43,11 @@ metadata:
 
 ## Why is RDM important
 
-Research Data Management (RDM) ensures that data are **organised, secure, documented, and preserved** to support research integrity, reproducibility, and reuse. Effective RDM is a shared responsibility across project roles and institutional services.
+Research Data Management (RDM) ensures that data are **organised, secure, documented and preserved** to support research integrity, reproducibility and reuse. Effective RDM is a shared responsibility across project roles and institutional services.
 
 ## Risk Management
 
-* Data risks arise through inadequate documentation, inappropriate storage, weak access controls, and unclear retention decisions.  
+* Data risks arise through inadequate documentation, inappropriate storage, weak access controls and unclear retention decisions.  
 * Mitigation involves:  
   - Early identification of sensitive data categories.  
   - Use of approved platforms with defined roles and permissions.  
@@ -58,11 +58,11 @@ Research Data Management (RDM) ensures that data are **organised, secure, docume
 
 | **Role**                        | **Key Responsibilities**                                                                                                   |
 | ------------------------------- | -------------------------------------------------------------------------------------------------------------------------- |
-| **Principal Investigator (PI)** | Accountable for project-level RDM, retention, and preservation. Ensures compliance with funder and institutional policies. |
-| **Researchers**                 | Day-to-day organisation, secure handling, documentation, and quality control. Implement the DMP.                           |
-| **Project Team**                | Shared responsibility for access, version control, and documentation.                                                      |
-| **Library (RDM Support)**       | Advises on metadata, citation, archiving, and FAIR compliance.                                                             |
-| **Digital Technology Services**                 | Provides secure storage, backup, and collaboration platforms.                                                              |
+| **Principal Investigator (PI)** | Accountable for project-level RDM, retention and preservation. Ensures compliance with funder and institutional policies. |
+| **Researchers**                 | Day-to-day organisation, secure handling, documentation and quality control. Implement the DMP.                           |
+| **Project Team**                | Shared responsibility for access, version control and documentation.                                                      |
+| **Library (RDM Support)**       | Advises on metadata, citation, archiving and FAIR compliance.                                                             |
+| **Digital Technology Services**                 | Provides secure storage, backup and collaboration platforms.                                                              |
 | **Information Security**        | Defines classification tiers and enforces access controls.                                                                 |
 
 # Roles 
@@ -132,7 +132,7 @@ flowchart LR
 | **CPS Research Storage** | Group-managed access        | Backed-up, scalable                       |
 | **TRE Secure Storage**   | Sensitive/confidential data | Encryption, limited access, audit logs    |
 
-> 🔐 *Choose storage based on sensitivity, access needs, and classification level.*
+> 🔐 *Choose storage based on sensitivity, access needs and classification level.*
 
 ---
 
@@ -159,7 +159,7 @@ flowchart LR
 
 ## What is a data managment plan
 
-A **Data Management Plan (DMP)** describes how data are created, managed, and preserved. It clarifies accountability, ensures transparency, and supports compliance with institutional and funder requirements.
+A **Data Management Plan (DMP)** describes how data are created, managed and preserved. It clarifies accountability, ensures transparency and supports compliance with institutional and funder requirements.
 
 ## Why DMPs Matter
 
@@ -168,28 +168,28 @@ A **Data Management Plan (DMP)** describes how data are created, managed, and pr
 | Clarify expectations    | Reduces confusion and duplication           |
 | Ensure compliance       | Meets funder and institutional requirements |
 | Improve reproducibility | Ensures transparency and documentation      |
-| Manage risk             | Prevents loss, breaches, and misuse         |
+| Manage risk             | Prevents loss, breaches and misuse         |
 
 > 🗂️ *A DMP is both a planning tool and a compliance artefact.*
 
 ## Funder Expectations and UoN Template
 
-Funders such as UKRI, Wellcome, and Horizon Europe mandate DMPs at proposal stage. The UoN template aligns with these standards and includes:
+Funders such as UKRI, Wellcome and Horizon Europe mandate DMPs at proposal stage. The UoN template aligns with these standards and includes:
 
 1. Data description and anticipated volume.
 2. Formats and standards.
 3. Documentation and metadata approach.
-4. Storage, backup, and security.
-5. Legal, ethical, and IP considerations.
-6. Sharing, reuse, and licensing.
+4. Storage, backup and security.
+5. Legal, ethical and IP considerations.
+6. Sharing, reuse and licensing.
 7. Retention and preservation.
-8. Roles, responsibilities, and costs.
+8. Roles, responsibilities and costs.
 
 ## Characteristics of a High-Quality DMP
 
 * Provides clear, specific solutions tailored to each dataset.  
-* Demonstrates alignment with funder policy, ethical requirements, and institutional practice.  
-* Internally consistent across storage, access control, documentation, and retention.  
+* Demonstrates alignment with funder policy, ethical requirements and institutional practice.  
+* Internally consistent across storage, access control, documentation and retention.  
 * Identifies decision points that require scheduled review.
 
 ## Common Weaknesses in DMPs
@@ -220,9 +220,9 @@ DMPs complement ethical review and governance processes:
 **Instructions:**
 
 1. Identify the main datasets (raw, processed, derived) implied by your scenario.  
-2. Specify formats, documentation needs, and storage platforms suitable for the data.  
+2. Specify formats, documentation needs and storage platforms suitable for the data.  
 3. Identify legal, ethical, or IP constraints that must be addressed within the DMP.  
-4. Outline expected sharing routes, access conditions, and retention/preservation decisions.  
+4. Outline expected sharing routes, access conditions and retention/preservation decisions.  
 5. Capture 3–4 essential commitments that would appear in a concise DMP summary.
 
 <iframe style="width:100%;max-width:300px;height:300px;" src="https://stopwatch-app.com/widget/timer?theme=light&color=indigo&hrs=0&min=10&sec=0" frameborder="0"></iframe>
@@ -231,15 +231,15 @@ DMPs complement ethical review and governance processes:
 
 :::
 
-# Data Structuring, Metadata, and Archiving
+# Data Structuring, Metadata and Archiving
 
 ## Be organised
 
-Effective RDM relies on consistent organisation and clear documentation. Structured data and metadata support collaboration, transparency, and long-term preservation.
+Effective RDM relies on consistent organisation and clear documentation. Structured data and metadata support collaboration, transparency and long-term preservation.
 
 ## File Naming and Structure
 
-Use stable, descriptive, and version-controlled names:
+Use stable, descriptive and version-controlled names:
 
 ```
 YYYYMMDD_project-feature_description_vNN.ext
@@ -255,10 +255,10 @@ YYYYMMDD_project-feature_description_vNN.ext
 
 > 🗃️ *Meaningful naming prevents confusion and simplifies version tracking.*
 
-## Data Structuring, Metadata, and Archiving — Version Control Beyond Filenames
+## Data Structuring, Metadata and Archiving — Version Control Beyond Filenames
 
 * Filenames support version tracking but should be complemented by:  
-  - Git repositories for code, text, and small structured datasets.  
+  - Git repositories for code, text and small structured datasets.  
   - Structured changelogs recording rationale and context.  
   - Automated provenance capture where possible.  
 * Version control supports reproducibility and prevents silent overwrites.
@@ -268,11 +268,11 @@ YYYYMMDD_project-feature_description_vNN.ext
 | **Document**        | **Purpose**                                  |
 | ------------------- | -------------------------------------------- |
 | **README.md**       | Overview of project and data organisation    |
-| **CODEBOOK.md**     | Defines variables, units, and coding schemes |
+| **CODEBOOK.md**     | Defines variables, units and coding schemes |
 | **CHANGES.md**      | Tracks version history                       |
 | **DATA DICTIONARY** | Lists fields, formats, provenance            |
 
-> 🧩 *Metadata describes context, structure, and provenance for reuse.*
+> 🧩 *Metadata describes context, structure and provenance for reuse.*
 
 ## Metadata Standards Overview
 
@@ -289,7 +289,7 @@ YYYYMMDD_project-feature_description_vNN.ext
   - Conversion to open, stable formats.  
   - Integrity and completeness checks.  
   - Removal or segregation of sensitive data when justified.  
-* Archival metadata must specify provenance, methods, quality assessments, and licensing.
+* Archival metadata must specify provenance, methods, quality assessments and licensing.
 
 
 ---
@@ -381,7 +381,7 @@ flowchart LR
 
 **Instructions:**
 
-1. Assess how Findable, Accessible, Interoperable, and Reusable the scenario’s datasets would be.  
+1. Assess how Findable, Accessible, Interoperable and Reusable the scenario’s datasets would be.  
 2. Identify concrete gaps (e.g., missing metadata, proprietary formats, unclear access conditions, limited provenance).  
 3. Propose one improvement that is realistically achievable for the scenario.  
 4. Note any elements that cannot be made fully FAIR and explain why (e.g., confidentiality, legal restrictions).
@@ -403,7 +403,7 @@ flowchart LR
 ## 📚 Keypoints
 
 * Plan early using a DMP and review at milestones.
-* Use approved storage, structured folders, and meaningful names.
+* Use approved storage, structured folders and meaningful names.
 * Maintain documentation and metadata to support reuse.
 * Decide retention and preservation routes before project end.
 * Aim for FAIR data; share as openly as possible with justified restrictions.
@@ -413,7 +413,7 @@ flowchart LR
 
 ## 🔦 Hints
 
-* Keep DMPs short, specific, and actionable.
+* Keep DMPs short, specific and actionable.
 * Treat README and CODEBOOK as living documents.
 * Separate raw and processed data.
 * Prefer open formats and controlled vocabularies.
