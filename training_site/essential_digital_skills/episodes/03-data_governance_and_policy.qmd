@@ -5,10 +5,6 @@ metadata:
   exercises: 40
 ---
 
-::: {.content-visible when-format="revealjs"}
-![](fig/data-governance-policy-qr.jpg){fig-align="center" width=400px}
-:::
-
 ::: callout-outcomes
 
 ## 💡 Learning Outcomes
@@ -39,6 +35,8 @@ metadata:
 ---
 
 # Data Protection and Legal Frameworks
+
+![](fig/data_protection.jpeg){fig-align="center" width=400px}
 
 ## Why is Data Protection important?
 
@@ -99,12 +97,12 @@ flowchart LR
 
 Article 6 UK GDPR provides **six** lawful bases for processing personal data. Research typically relies on two of them, but all are listed for completeness.
 
-1. **Consent** Freely given, specific, informed and unambiguous. *Used in research only when genuinely optional and without imbalance of power.*
+1. **Consent** Freely given, specific, informed and unambiguous. *Used in research only when genuinely optional*
 2. **Contract** Necessary to perform a contract with the data subject. *Rarely applicable to research.*
 3. **Legal Obligation** Required to comply with law. *Not normally relevant to research activities.*
 4. **Vital Interests** Protecting someone’s life. *Applies mainly to medical emergencies, not planned research.*
-5. **Public Task** Necessary for performing a task in the public interest or in the exercise of official authority. *Most UK universities rely on this for research.*
-6. **Legitimate Interests** Permitted where processing is necessary and impact on individuals is minimal and where interests are balanced. *Used selectively when Public Task does not apply.*
+5. **Public Task** Necessary for performing a task in the public interest. *Most UK universities rely on this for research.*
+6. **Legitimate Interests** Permitted where processing is necessary and impact is minimal. *Used when Public Task does not apply.*
 
 --- 
 
@@ -165,10 +163,6 @@ Safeguards must ensure that personal data are used responsibly:
 
 #### Task 1: Group Scenario Ranking (15 min)
 
-:::: {.columns}
-
-::: {.column width="70%"}
-
 **Objective:** Using the scenario card assigned to your group, identify the main data protection risks and rank the specific components of your scenario from lowest to highest risk.
 
 **Instructions:**
@@ -177,35 +171,14 @@ Safeguards must ensure that personal data are used responsibly:
 2. Identify risk drivers (e.g., identifiability, sensitivity, continuous monitoring, third-party processing, cross-border flows).
 3. Rank the elements of your scenario from lowest → highest risk and justify the ordering.
 4. Suggest safeguards that would reduce the highest-ranked risks.
-
-
-**Plenary reflection:** Which characteristics in your scenario elevate risk?
-
-:::
-
-::: {.column width="30%"}
-
-<iframe style="width:100%;max-width:300px;height:300px;" src="https://stopwatch-app.com/widget/timer?theme=light&color=indigo&hrs=0&min=10&sec=0" frameborder="0"></iframe>
-
-:::
-
-::::
-
-**Objective:** Using the scenario card assigned to your group, identify the main data protection risks and rank the specific components of your scenario from lowest to highest risk.
-
-**Instructions:**
-
-1. Examine the data types, processing steps and partnerships described on your scenario card.
-2. Identify risk drivers (e.g., identifiability, sensitivity, continuous monitoring, third-party processing, cross-border flows).
-3. Rank the elements of your scenario from lowest → highest risk and justify the ordering.
-4. Suggest safeguards that would reduce the highest-ranked risks.
-
 
 **Plenary reflection:** Which characteristics in your scenario elevate risk?
 :::
 
 
 # Institutional Conduct
+
+![](fig/institutional_conduct.jpeg){fig-align="center" width=400px}
 
 ## Ethics
 
@@ -268,13 +241,13 @@ flowchart LR
 3. Identify core documentation needed (consent materials, information sheets, risk assessments).
 4. Agree on key ethical considerations the research team must address before data collection.
 
-<iframe style="width:100%;max-width:300px;height:300px;" src="https://stopwatch-app.com/widget/timer?theme=light&color=indigo&hrs=0&min=10&sec=0" frameborder="0"></iframe>
-
 **Plenary reflection:** Which factors most strongly affect whether review is needed? Where do grey areas appear?
 :::
 
 
 # Data Classification and Information Security
+
+![](fig/data_clasification.jpeg){fig-align="center" width=400px}
 
 ## Handeling research data
 
@@ -324,13 +297,13 @@ flowchart LR
 4. Define access control needs (minimum access, MFA, encryption, role-based permissions).
 5. Identify any components that require additional safeguards (e.g., separate linkage files, encryption in transit).
 
-<iframe style="width:100%;max-width:300px;height:300px;" src="https://stopwatch-app.com/widget/timer?theme=light&color=indigo&hrs=0&min=10&sec=0" frameborder="0"></iframe>
-
 **Plenary reflection:** How do teams balance openness and risk? Which criteria most influenced your decisions?
 :::
 
 
 # Policy and Digital Compliance Landscape
+
+![](fig/Digital-Compliance.jpeg){fig-align="center" width=400px}
 
 ## Teired levels
  
@@ -395,8 +368,6 @@ flowchart LR
 2. Match your scenario to applicable policies (e.g., RDM Code, Information Security Policy, Code of Research Conduct, Trusted Research, UKRI requirements).
 3. Identify which team members hold responsibility for compliance actions (Researcher, PI, Faculty REC, DPO, IT Security, external partners).
 4. Summarise key compliance actions required before the project can proceed (e.g., DPIA, DMP, agreements, export controls checks).
-
-<iframe style="width:100%;max-width:300px;height:300px;" src="https://stopwatch-app.com/widget/timer?theme=light&color=indigo&hrs=0&min=10&sec=0" frameborder="0"></iframe>
 
 **Plenary reflection:** Which policy areas overlap most frequently across scenarios?
 :::
