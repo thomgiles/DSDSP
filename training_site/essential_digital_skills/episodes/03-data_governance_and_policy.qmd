@@ -335,6 +335,31 @@ flowchart LR
     D --> A
 ```
 
+## Essential Compliance Documents
+
+Modern research governance relies on a set of **standard documents** that ensure transparency, accountability and risk-aware data management throughout the project lifecycle.
+
+## Key Documents
+
+| **Document** | **Purpose** | **When Required** |
+|--------------|-------------|--------------------|
+| **DPIA – Data Protection Impact Assessment** | Identifies and mitigates high-risk processing (e.g., special category data, monitoring, novel tech). | Mandatory for *any* high-risk activity under UK GDPR; often required for clinical, AI-enabled or large-scale personal data studies. |
+| **DAR – Data Access Request / Data Access Review** | Records, evaluates and approves requests to access sensitive or controlled datasets; ensures proportionality and security. | When researchers need access to restricted, confidential or external datasets. |
+| **DMP – Data Management Plan** | Specifies how data will be collected, stored, secured, shared, preserved and disposed of. | Required by UoN, UKRI and most funders; drafted at proposal stage and updated throughout the project. |
+| **Data Sharing / Collaboration Agreements** (DSA / DCA) | Define roles (controller/processor), safeguards and transfer conditions. | When sharing data with external partners, processors or internationally. |
+| **Participant Information & Consent Materials** | Provide transparency and ensure voluntary, informed participation. | Required whenever collecting personal data directly from participants. |
+| **Risk Assessments** (Information Security, Fieldwork, Technical) | Document digital, physical and technical risks and their controls. | Required for projects involving sensitive data, fieldwork or specialised systems. |
+
+## Why These Documents Matter
+
+* Support **accountability** and demonstrable compliance  
+* Protect **privacy**, **security**, and **ethical integrity**  
+* Provide a clear audit trail  
+* Enable effective collaboration with Ethics, DPO, IT Security, and external partners
+
+> 🗂️ *Good documentation is the backbone of trustworthy research and strong data governance.*
+
+
 ## Shared Responsibility Matrix
 
 | **Actor**         | **Responsibility**                   |
