@@ -5,10 +5,6 @@ metadata:
   exercises: 40
 ---
 
-::: {.content-visible when-format="revealjs"}
-![](fig/research-data-management-qr.jpg){fig-align="center" width=400px}
-:::
-
 ::: callout-outcomes
 
 ## 💡 Learning Outcomes
@@ -41,6 +37,8 @@ metadata:
 
 # RDM at UoN
 
+![](fig/data_managment.png){fig-align="center" width=400px}   
+
 ## Why is RDM important
 
 Research Data Management (RDM) ensures that data are **organised, secure, documented and preserved** to support research integrity, reproducibility and reuse. Effective RDM is a shared responsibility across project roles and institutional services.
@@ -65,9 +63,7 @@ Research Data Management (RDM) ensures that data are **organised, secure, docume
 | **Digital Technology Services**                 | Provides secure storage, backup and collaboration platforms.                                                              |
 | **Information Security**        | Defines classification tiers and enforces access controls.                                                                 |
 
-# Roles 
-
-# RDM roles
+## RDM roles
 ```{mermaid}
 flowchart LR
     PI[Principal Investigator]
@@ -149,13 +145,13 @@ flowchart LR
 3. Identify areas where responsibilities overlap, where escalation is likely, or where accountability may be unclear.  
 4. Summarise one shared responsibility and one ambiguity your group identified.
 
-<iframe style="width:100%;max-width:300px;height:300px;" src="https://stopwatch-app.com/widget/timer?theme=light&color=indigo&hrs=0&min=10&sec=0" frameborder="0"></iframe>
-
 **Reflection:** Which RDM responsibilities are most often misunderstood or overlooked within real projects?
 
 :::
 
 # Data Management Plans
+
+![](fig/dmp.png){fig-align="center" width=400px}
 
 ## What is a data managment plan
 
@@ -225,13 +221,13 @@ DMPs complement ethical review and governance processes:
 4. Outline expected sharing routes, access conditions and retention/preservation decisions.  
 5. Capture 3–4 essential commitments that would appear in a concise DMP summary.
 
-<iframe style="width:100%;max-width:300px;height:300px;" src="https://stopwatch-app.com/widget/timer?theme=light&color=indigo&hrs=0&min=10&sec=0" frameborder="0"></iframe>
-
 **Reflection:** Which components of your draft DMP are most likely to require revision as the project evolves?
 
 :::
 
 # Data Structuring, Metadata and Archiving
+
+![](fig/metadata.png){fig-align="center" width=400px}
 
 ## Be organised
 
@@ -307,13 +303,13 @@ YYYYMMDD_project-feature_description_vNN.ext
 3. Decide what documentation (README, codebook, data dictionary, CHANGES log) is necessary to support reproducibility and collaboration.  
 4. Indicate which folders or files require restricted access.
 
-<iframe style="width:100%;max-width:300px;height:300px;" src="https://stopwatch-app.com/widget/timer?theme=light&color=indigo&hrs=0&min=10&sec=0" frameborder="0"></iframe>
-
 **Reflection:** Which metadata elements most strongly influence long-term reusability?
 :::
 
 
 # Reusable Data in Practice
+
+![](fig/FAIR.jpg){fig-align="center" width=400px}
 
 ## What is FAIR
 
@@ -385,8 +381,6 @@ flowchart LR
 2. Identify concrete gaps (e.g., missing metadata, proprietary formats, unclear access conditions, limited provenance).  
 3. Propose one improvement that is realistically achievable for the scenario.  
 4. Note any elements that cannot be made fully FAIR and explain why (e.g., confidentiality, legal restrictions).
-
-<iframe style="width:100%;max-width:300px;height:300px;" src="https://stopwatch-app.com/widget/timer?theme=light&color=indigo&hrs=0&min=10&sec=0" frameborder="0"></iframe>
 
 **Reflection:** Which FAIR principle presents the greatest challenge in your scenario and what constrains it?
 :::
