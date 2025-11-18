@@ -121,7 +121,7 @@ It complements ethical approval and transparency but does not replace institutio
 
 > 🧩 *Research exemptions exist but require proportionality and documentation.*
 
-## Special Category Data
+## Special Category Data (UK GDPR Article 9)
 
 ```{mermaid}
 flowchart LR
@@ -134,7 +134,7 @@ flowchart LR
     A --> B --> C --> D --> E
 ```
 
-Special category data (Article 9) require **both** a lawful basis (Art 6) and a specific **Article 9 condition**—commonly *scientific research with appropriate safeguards*.
+Special category data (Article 9) require **both** a lawful basis (Art 6) and a specific **Article 9 condition**commonly *scientific research with appropriate safeguards*.
 
 ## Research Safeguards
 

@@ -5,6 +5,7 @@ metadata:
   exercises: 40
 ---
 
+
 ::: callout-outcomes
 
 ## 💡 Learning Outcomes
@@ -93,7 +94,7 @@ flowchart LR
 
 > 🧭 *Good RDM depends on collaboration and accountability across roles.*
 
-## Code of Practice on RDM — Expectations
+## Code of Practice on RDM: Expectations
 
 * Plan data **before** collection using a DMP; review regularly.
 * Store in **approved platforms** and apply **data classification** and access controls.
@@ -251,7 +252,7 @@ YYYYMMDD_project-feature_description_vNN.ext
 
 > 🗃️ *Meaningful naming prevents confusion and simplifies version tracking.*
 
-## Data Structuring, Metadata and Archiving — Version Control Beyond Filenames
+## Data Structuring, Metadata and Archiving: Version Control Beyond Filenames
 
 * Filenames support version tracking but should be complemented by:  
   - Git repositories for code, text and small structured datasets.  
@@ -387,7 +388,7 @@ flowchart LR
 
 # Further Information
 
-* Research Data Management (Standalone) — complementary training
+* Research Data Management (Standalone): complementary training
 * [Code of Practice on Research Data Management](https://www.nottingham.ac.uk/library/research/research-data-management/index.aspx)
 * [Code of Research Conduct and Research Ethics](https://www.nottingham.ac.uk/research/ethics-and-integrity/)
 * Annual **Information Security Awareness** training (mandatory).
