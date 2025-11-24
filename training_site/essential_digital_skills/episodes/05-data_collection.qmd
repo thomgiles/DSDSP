@@ -1,0 +1,314 @@
+---
+title: "M5 – Collecting the Right Data"
+format:
+  html:
+    toc: true
+    theme: cosmo
+---
+
+![](fig/image1.png){fig-align="center" width=400px}
+![](fig/image2.png){fig-align="center" width=400px}
+![](fig/image3.png){fig-align="center" width=400px}
+
+# Introduction
+
+Understanding *where* data comes from, *how* it is collected, and *why* certain choices matter is fundamental to good research practice.  
+This module introduces the principles and practicalities of collecting high-quality, ethical, and relevant data to support effective analysis.
+
+# Learning Outcomes
+
+::: callout-note
+By the end of this module, you will be able to:
+
+- distinguish between primary and secondary data sources  
+- plan data collection in line with a clear analytical purpose  
+- select appropriate formats and tools for structured data capture  
+- identify sources of bias and assess fairness in datasets  
+- relate these principles to equivalent workflows in Python  
+:::
+
+# Key Terms
+
+::: callout-tip
+**Primary data** — data collected first-hand for your research purpose  
+**Secondary data** — pre-existing data collected by others  
+**Bias** — systematic error that distorts representation  
+**Relevance** — the degree to which data addresses the research question  
+**Completeness** — presence or absence of required variables  
+**Consistency** — uniform formats, coding and measurement standards  
+:::
+
+# 1. What Is Data and Why Does It Matter?
+
+Data refers to raw facts, observations, or measurements describing phenomena in the world.  
+From these, we derive *information*, *insights*, and *evidence*.
+
+::: callout-example
+**Data enables:**
+
+- identifying patterns  
+- supporting evidence-based decisions  
+- optimising processes  
+- predicting future trends  
+- driving innovation in research and practice  
+:::
+
+---
+
+# 2. Sources of Data
+
+## 2.1 Primary Data
+
+Data that **you** collect directly.
+
+::: callout-example
+**Examples**
+
+- Surveying classmates about favourite snacks  
+- Measuring heights in a room  
+- Counting steps using your phone  
+- Observing activity at a campus gate  
+:::
+
+**Strengths:** high control, tailored, customisable  
+**Limitations:** slower, resource-intensive
+
+## 2.2 Secondary Data
+
+Data collected by someone else, usually for a different purpose.
+
+::: callout-example
+**Examples**
+
+- National statistics portals  
+- Open weather datasets  
+- Published research data  
+- University demographic reports  
+:::
+
+**Strengths:** fast, low cost, broad coverage  
+**Limitations:** relevance constraints; fixed variables
+
+## 2.3 Comparison
+
+| Feature     | Primary Data                 | Secondary Data               |
+|-------------|------------------------------|-------------------------------|
+| Control     | High                          | Low                           |
+| Cost        | Higher                         | Lower                         |
+| Speed       | Slow                          | Fast                          |
+| Relevance   | Tailored                      | Variable                      |
+| Richness    | Flexible                      | Fixed                         |
+
+---
+
+# Activity: Data Hunt
+
+::: callout-activity
+**Task 1 — Collect primary data**
+
+Gather from 3 peers:
+- Name  
+- Height  
+- Favourite snack  
+
+**Task 2 — Compare to secondary data**
+
+Use the provided dataset containing:
+- Gender, Age, Home Country  
+- Steps Walked (yesterday)  
+- Library Usage (per week)  
+- Commute Time + Transport Method  
+- IMD Score  
+- Hours Slept  
+- Student Status  
+- Club/Society Participation  
+
+**Task 3 — Reflect**
+How does your primary data differ in completeness, relevance, and consistency?
+:::
+
+---
+
+# 3. Planning for Good Data
+
+## 3.1 Why Planning Matters
+
+Good data demonstrates:
+
+- **Relevance** — aligned with the research question  
+- **Accuracy** — faithfully measured  
+- **Completeness** — minimal gaps  
+- **Consistency** — uniform formats and coding  
+
+::: callout-warning
+Collecting unnecessary or inconsistent variables leads to poor-quality insights and higher cleaning burden.
+:::
+
+## 3.2 From Vague Ideas to Measurable Questions
+
+**Vague idea:**  
+“Improve campus transport.”
+
+**Analysis purpose:**  
+Examine how student demographics relate to commute burden.
+
+**Measurable questions:**
+
+- What % of students cycle to campus?  
+- Do PG students have longer commute times than UG students?
+
+::: callout-tip
+Measurable questions tell you *which variables are needed* and *how to structure the data*.
+:::
+
+---
+
+# Activity: Question Shuffle
+
+::: callout-activity
+**Instructions**
+
+1. Choose a project idea  
+   - *Improve student wellbeing*  
+   - *Optimise campus resources*  
+2. Identify:  
+   - analysis purpose  
+   - refined research question  
+3. Select variables from the list:  
+   *Name, Gender, Age, Favourite Snack, Height, Home Country, Steps Walked, Library Usage, Commute Time, Transport Method, Hours Slept, Student Status, Club Participation, Healthy Meals Frequency, Postcode, IMD Score.*
+:::
+
+### Example Solutions
+
+#### Student Wellbeing
+- **Purpose:** link sleep to social engagement  
+- **Question:** Do club-active students sleep more on average?  
+- **Variables:** Hours Slept; Club Participation  
+
+#### Resource Equity
+- **Purpose:** assess usage by deprivation  
+- **Question:** Do students from low IMD areas visit the library less often?  
+- **Variables:** IMD Score; Library Usage  
+
+---
+
+# 4. Tools and Data Formats
+
+## 4.1 Data Formats
+
+- **Numeric:** age, height  
+- **Text:** name, home country  
+- **Categorical:** snack type, transport method  
+- **Dates/times:** survey timestamps, durations  
+
+::: callout-example
+**Example**
+
+Age → numeric → supports mean, min, max  
+Favourite Snack → categorical → supports mode, frequency  
+:::
+
+## 4.2 Tools for Data Capture
+
+| Tool / Platform          | Best For                       | Notes                                |
+|--------------------------|--------------------------------|--------------------------------------|
+| Excel / Google Sheets    | numeric, text, categorical     | Good for small datasets              |
+| Google Forms             | surveys, structured input      | Automatic collection, export to CSV |
+| Phone Sensors / Apps     | time-series data               | Automated timestamps, high fidelity |
+
+---
+
+# Activity: Sorting Game
+
+::: callout-activity
+Categorise data cards into:
+
+- **Primary data** (you created it)  
+- **Secondary data** (already existed)  
+- **Ambiguous cases** (depends on context)
+:::
+
+**Primary examples:**  
+Surveys you collected; height measurements; observed traffic.
+
+**Secondary examples:**  
+Government statistics; downloaded weather data; published research.
+
+**Ambiguous:**  
+A friend's snack preference; a classmate’s dataset; Fitbit challenge uploads.
+
+---
+
+# 5. Trust, Bias, and Fairness
+
+## 5.1 Common Bias Types
+
+| Bias Type        | Example                                | Effect                        |
+|------------------|-----------------------------------------|-------------------------------|
+| Sampling bias    | Only surveying morning students         | Misrepresents population      |
+| Measurement bias | Using an uncalibrated scale             | Inaccurate estimates          |
+| Selection bias   | Surveying only volunteers               | Inflated engagement measures  |
+| Confirmation bias| Leading questions in satisfaction surveys| Skewed responses             |
+
+## 5.2 Principles for Fair Data
+
+::: callout-note
+- Include diverse groups  
+- Use clear, neutral questions  
+- Document data collection procedures  
+- Reflect on missingness and under-representation  
+:::
+
+---
+
+# Activity: Biased Sampling Game
+
+::: callout-activity
+Each group receives coloured counters representing a student population:
+
+- Pink = female  
+- Blue = male  
+
+**Tasks**
+- Estimate % female  
+- Compute average age of females  
+- Compare with known full-population statistics  
+:::
+
+::: callout-discussion
+**Discussion prompts**
+
+- How does sampling error distort estimates?  
+- Which biases can be reduced, which are unavoidable?  
+- How can we report uncertainty transparently?  
+:::
+
+---
+
+# Summary
+
+::: callout-note
+**Key Takeaways**
+
+- Know your data source — it affects trust and interpretability.  
+- Good questions drive efficient, relevant data collection.  
+- Tools and formats shape data quality and analytical ease.  
+- Bias is unavoidable but manageable with planning.  
+- Ethical, transparent data collection strengthens research validity.  
+:::
+
+# Python Link
+
+::: callout-tip
+**Primary & Secondary Data**  
+Use `pandas` to import CSV, Excel, JSON, or API data.
+
+**Planning for Good Data**  
+Filtering, selecting and restructuring DataFrames.
+
+**Tools & Formats**  
+Reading/writing CSV, JSON, XLSX.
+
+**Trust & Fairness**  
+Identifying missingness, imbalance and bias using summary statistics.  
+:::
