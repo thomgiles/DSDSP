@@ -1,5 +1,4 @@
 ---
-
 title: Hands‑on with AI for Research
 metadata:
   teaching: 20
@@ -111,9 +110,6 @@ Groups present initial findings and discuss prompt strategies and observed weakn
 :::
 :::
 
-:::
-:::
-
 # Critique and Validation
 
 ## Comparing AI Outputs to Official Documents
@@ -124,6 +120,7 @@ The these are the official policy documents:
 - **Academic society – Political Studies Review / SAGE Publications** – see [SAGE AI Policy: Ethical Use of Generative AI in Research and Scholarly Publishing](https://psr.brunel.ac.uk/2024/10/04/the-ethical-use-of-generative-ai-in-publishing-and-research/) 
 - **Research funder – Cancer Research UK (joint funder statement)** – see [Joint Approach to Generative AI in Funding Applications (Cancer Research UK)](https://news.cancerresearchuk.org/2023/09/19/joint-approach-to-generative-ai-in-funding-applications/) 
 - **National guidelines – UKRI generative AI policy** – see [UKRI Generative AI in Application and Assessment Policy (Sept 2024; updated Dec 2024)](https://www.ukri.org/publications/generative-artificial-intelligence-in-application-and-assessment-policy/)
+- **Independent body – COPE generative AI policy** - see [COPE Authorship and AI tools policy](https://publicationethics.org/guidance/cope-position/authorship-and-ai-tools)
 
 ---
 
