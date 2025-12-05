@@ -17,26 +17,28 @@ metadata:
 ## 💡 Learning Outcomes
 - Practise designing effective prompts for policy‑oriented research questions and document the results.  
 - Critically assess and validate AI‑generated summaries against authoritative policy documents and identify inaccuracies or omissions. 
-- Explore how role prompting influences ChatGPT responses and appreciate the limitations of AI advice.  
+- Explore how role prompting influences Copilot responses and appreciate the limitations of AI advice.  
 - Reflect on responsible AI use through group exercises and develop plans for integrating AI into your research practice
+- Learn how to use agents for repeated tasks
 :::
 
 <br>
 
 ::: callout-questions
 ## ❓ Questions 
-1. How can you leverage ChatGPT to explore policy‑related questions effectively?  
+1. How can you leverage Copilot to explore policy‑related questions effectively?  
 2. How do you verify and critique AI outputs against official sources?  
-3. How does the tone and content of ChatGPT’s response change when you specify different roles?  
+3. How does the tone and content of Copilot’s response change when you specify different roles?  
 4. How will you integrate AI responsibly into your research workflow after this workshop?  
 :::
 
 ## Structure & Agenda
 
-1. **Orientation and Prompting** – 5 minutes introduction followed by a 10 minute prompt practice.  
-2. **Group Research with ChatGPT** – 5 minutes orientation followed by a 15 minute small‑group task and 15 minute plenary.  
-3. **Critique and Validation** – 5 minutes setup followed by a 15 minute group critique and 15 minute plenary.  
-4. **Prompt Framing and Role Effects** – 5 minutes introduction followed by a 15 minute role‑prompting experiment and 15 minute plenary.  
+1. **Orientation and Prompting** – 5 minutes introduction followed by a 5 minute prompt practice.  
+2. **Group Research with Copilot** – 5 minutes orientation followed by a 15 minute small‑group task and 10 minute plenary.  
+3. **Critique and Validation** – 5 minutes setup followed by a 15 minute group critique and 10 minute plenary.  
+4. **Prompt Framing and Role Effects** – 5 minutes introduction followed by a 10 minute role‑prompting experiment and 5 minute plenary.  
+5. **Using Agents for Repeated Tasks** – 5 minutes introduction followed by a 15 minute role‑prompting experiment and 10 minute plenary.  
 
 > 🔧 The emphasis is on practical exercises; short teaching segments introduce each activity.
 
@@ -48,6 +50,12 @@ metadata:
 
 This workshop builds on the principles introduced in the lecture. Responsible AI use requires transparency, verification, documentation, equity and continuous monitoring.  Participants will practise constructing clear and specific prompts and learn to record prompts and outputs for transparency.  Remember not to include confidential or proprietary information in prompts.
 
+## Group Formation
+
+Participants should form upto **five groups**
+
+> Groups will remain fixed throughout the workshop.
+
 ---
 
 ::: callout-task
@@ -55,35 +63,32 @@ This workshop builds on the principles introduced in the lecture. Responsible AI
 #### Task 1: Prompt practice
 
 ::: panel-tabset
-##### Question
-Open ChatGPT and formulate a prompt such as:
+##### Open Copilot:
 
-> *“Summarise Elsevier’s policy on the use of generative AI tools in preparing manuscripts. List any disclosure requirements, and note whether AI can be credited as an author.”*
+[https://m365.cloud.microsoft/chat/](https://m365.cloud.microsoft/chat/)
+
+Formulate a prompt such as:
+
+> *“Summarise the UoN policy on the use of generative AI tools”*
 
 ##### Follow‑up
 - Was your prompt specific enough?  
-- Did ChatGPT cite sources or mention limitations?  
+- Did Copilot cite sources or mention limitations?  
 - What uncertainties remain about the policy?  
-- Adjust your prompt to clarify ambiguous points and note how the response changes.  
 :::
 :::
 
-# Group Research with ChatGPT
+# Group Research with Copilot
 
 ## Assigned Policy Domains
 
-Split into small groups. Each group will investigate one of the following specific topics:
+Each group will be tasked with investigates one AI policy area:
 
-- **Journal publisher – Nature / Springer Nature** 
-- **Academic society – Political Studies Review / SAGE Publications** 
-- **Research funder – Cancer Research UK** 
-- **National guidelines – UKRI generative AI policy** 
-
----
-
-- Develop 2–3 prompts to ask ChatGPT about the policy (e.g. “What does *Nature*’s policy say about the use of generative AI in submitted manuscripts?”).  
-- For each prompt, record the exact wording, the date/time and the AI’s response [UoN guidance](https://www.nottingham.ac.uk/studyingeffectively/studying/ai.aspx).  
-- Note whether the response includes citations, acknowledges limitations or fabricates information.  
+1. **Publisher – Nature / Springer Nature**  
+2. **Academic Society – PSR / SAGE Publications**  
+3. **Research Funder – Cancer Research UK**  
+4. **National Guidelines – UKRI**  
+5. **Professional Body – COPE**  
 
 ---
 
@@ -92,16 +97,19 @@ Split into small groups. Each group will investigate one of the following specif
 #### Task 2: Small-group work
 
 ::: panel-tabset
-##### Exercise
-Work collaboratively for 15 minutes using ChatGPT to gather information about your assigned policy. Capture the responses in a shared document or whiteboard. Consider using different wording or levels of specificity in your prompts.
+##### Exercise (15 min)
+Using Copilot, collect information about your assigned policy area. Document the outputs in a shared sheet or board.
 
-Each group will need to:
+Groups should prepare to:
+- share the prompts used  
+- summarise Copilot’s interpretation of the policy  
+- identify gaps, hallucinations or incorrect claims  
+- evaluate Copilot’s cited sources (if any)  
 
-- Presents the prompts used and concise summary of the policy based on ChatGPT’s output.  
-- Identify Uncertainties, gaps or hallucinations.  
-- Check whether sources were cited and how reliable they appear to be.    
-
-##### Plenary (15 min)
+##### Plenary (10 min)
+Groups present initial findings and discuss prompt strategies and observed weaknesses in AI responses.
+:::
+:::
 
 :::
 :::
@@ -125,18 +133,17 @@ The these are the official policy documents:
 
 ::: panel-tabset
 ##### Exercise (15 min)
-In your groups, compare ChatGPT’s summaries with these authoritative texts. Note that AI tools cannot be credited as authors and must be acknowledged in the methods or acknowledgements sections [Nature editorial](https://www.nature.com/articles/d41586-023-00191-1).
+Compare Copilot’s claims with the actual policy text. For at least two AI-generated statements, verify:
 
-##### Hint
+- whether they appear in the official document  
+- whether Copilot added, omitted or distorted information  
 
-For at least two points made by ChatGPT, locate the corresponding statements (or absence thereof) in the official documents. Note any discrepancies, omissions or additions. Consider why the AI may have misrepresented or omitted information (e.g. outdated training data, biased sources or ambiguous prompts).
+> **Hint** Note possible reasons for inaccuracies: outdated training data, vague prompts, or ambiguous policy language.
 
-##### Discussion (15 min)
-
-- How accurate were the AI outputs?  
-- What patterns of error or bias did you observe?  
-- How can you verify AI-generated information efficiently in your own work?  
-- What safeguards will you adopt when using AI to support research tasks?  
+##### Discussion (10 min)
+- How accurate were Copilot’s outputs overall?  
+- What patterns of error or bias emerged?  
+- What verification processes should researchers apply?  
 :::
 :::
 
@@ -144,7 +151,7 @@ For at least two points made by ChatGPT, locate the corresponding statements (or
 
 ## Role Prompting
 
-The tone and content of ChatGPT’s output can vary depending on the role specified. Asking ChatGPT to answer “as a researcher”, “as a policy adviser” or “as a science journalist” can change the depth, formality and focus of the response. Prompt engineering strategies emphasise that the quality of outputs depends on the clarity and context provided.
+The tone and content of Copilot’s output can vary depending on the role specified. Asking Copilot to answer “as a researcher”, “as a policy adviser” or “as a science journalist” can change the depth, formality and focus of the response. Prompt engineering strategies emphasise that the quality of outputs depends on the clarity and context provided.
 
 ---
 
@@ -153,13 +160,52 @@ The tone and content of ChatGPT’s output can vary depending on the role specif
 #### Task 4: Role effects experiment
 
 ::: panel-tabset
-##### Exercise (15 min)
-Using the same policy question from Task 1, re-ask ChatGPT with at least three different role instructions (e.g. “You are a research policy adviser”, “You are a PhD student”, “You are a science journalist”). Record each response and note differences in style, depth and factual content.
+##### Exercise (10 min)
+Re-ask the same policy question used in Task 1 with **three different role instructions**.  
 
-##### Plenary (15 min)
-- Compare role-based responses across groups.  
-- Discuss how the role framing affected the apparent authority and confidence of the AI.  
-- Consider the risks of over-interpreting stylistic differences as differences in accuracy.  
+1. policy adviser
+2. researcher
+3. journalist
+
+> Record differences in tone, structure and certainty.
+
+##### Plenary (5 min)
+- Compare outputs across groups  
+- Discuss how role prompting affected perceived authority  
+- Reflect on risks of mistaking stylistic confidence for accuracy  
+:::
+:::
+
+# Using Agents for Repeatable Tasks
+
+## Automating Policy Lookup with AI Agents
+
+Agents allow you to automate multi-step workflows—such as reviewing AI policies—so that the same procedure can be repeated with minimal prompting.  
+Once an agent is configured with clear instructions (e.g. how to retrieve, summarise and check policy information), you only need to supply the *topic* (e.g. “Nature”, “Cancer Research UK”, “SAGE Publications”) and the agent will run the full process.
+
+---
+
+::: callout-task
+
+#### Task 5: Build an agent to automate AI-policy review
+
+::: panel-tabset
+##### Exercise (15 min)
+Create an AI agent configured to:
+
+- accept a **single input**: the name of the organisation (e.g. *Nature*, *UKRI*, *COPE*)  
+- retrieve and summarise the organisation’s generative-AI policy  
+- identify disclosure and authorship rules  
+- flag uncertainties or possible hallucinations  
+- present information in a consistent structure  
+
+Test it on at least **three** organisations.  
+Note where it succeeds, where it struggles and where human oversight is required.
+
+##### Plenary (10 min)
+- Compare agent designs  
+- Discuss benefits of automation vs. risks (e.g. propagating errors)  
+- Reflect on where agents can fit into research workflows responsibly  
 :::
 :::
 
