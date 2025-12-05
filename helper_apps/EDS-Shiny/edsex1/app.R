@@ -5,10 +5,8 @@
 
 # ---- Package Setup ----
 setup_app_environment <- function() {
-  pkgs <- c(
-    "shiny", "shinydashboard", "shinyWidgets",
-    "plotly", "wordcloud2", "dplyr", "tidyr"
-  )
+  pkgs <- c("shiny", "shinydashboard", "shinyWidgets",
+            "plotly", "wordcloud2", "dplyr", "tidyr")
   for (p in pkgs) {
     if (!requireNamespace(p, quietly = TRUE)) {
       install.packages(p, dependencies = TRUE)
@@ -29,6 +27,7 @@ responses <- reactiveValues(
 # =========================================================
 ui <- dashboardPage(
   dashboardHeader(title = "EDS-EXT1: AI Feedback App", titleWidth = 300),
+
   dashboardSidebar(
     sidebarMenu(
       id = "tabs",
@@ -38,87 +37,96 @@ ui <- dashboardPage(
       menuItem("Confidence Poll (Results)", tabName = "q2_results", icon = icon("chart-bar"))
     )
   ),
+
   dashboardBody(
     tags$head(
-      # --- White background + embed mode styling ---
       tags$style(HTML("
         .content-wrapper { background-color: white !important; }
         body.embedded-mode .content-wrapper { margin-left:0!important; padding:0!important; }
         body.embedded-mode .main-header, body.embedded-mode .main-sidebar { display:none!important; }
       ")),
-      # --- JS: enable ?embed=true and hash navigation ---
+
+      # --- WORKING HASH NAVIGATION (same logic as EDS-M1) ---
       tags$script(HTML("
         $(document).ready(function() {
+
           const params = new URLSearchParams(window.location.search);
           const hash = window.location.hash;
+
           if (params.get('embed') === 'true') {
             $('body').addClass('embedded-mode');
             $('.main-header').hide();
             $('.main-sidebar').hide();
             $('.content-wrapper').css({'margin-left':'0','padding':'0'});
           }
+
           if (hash.startsWith('#shiny-tab-')) {
             const tabName = hash.replace('#shiny-tab-', '');
             const tryActivate = () => {
               const $tabLink = $('a[data-value=\"' + tabName + '\"]');
               if ($tabLink.length) $tabLink.tab('show');
-              else setTimeout(tryActivate, 200);
+              else setTimeout(tryActivate, 150);
             };
             tryActivate();
           }
         });
       "))
     ),
+
+    # Important: Bootstrap-friendly wrapper for each tabItem
     tabItems(
-      # =====================================================
-      # Q1: AI Tools Wordcloud
+
       tabItem(
         tabName = "q1_input",
-        fluidPage(
-          titlePanel("Which AI tools have you used?"),
-          h5("Enter tools or applications you've used as a comma-separated list (e.g., ChatGPT, GitHub Copilot, Claude)."),
-          textAreaInput("q1_text", "Your AI tools:",
-            width = "100%", rows = 3,
-            placeholder = "e.g. ChatGPT, GitHub Copilot, Claude, Gemini"
-          ),
-          actionBttn("q1_submit", "Submit", color = "success", style = "fill")
-        )
-      ),
-      tabItem(
-        tabName = "q1_results",
-        fluidPage(
-          titlePanel("AI Tools Used"),
-          h4("Live Wordcloud (refreshes every 10 seconds)"),
-          wordcloud2Output("q1_wordcloud", height = "500px")
+        div(role = "tabpanel",
+            fluidPage(
+              titlePanel("Which AI tools have you used?"),
+              h5("Enter tools as a comma-separated list."),
+              textAreaInput("q1_text", "Your AI tools:",
+                            width = "100%", rows = 3,
+                            placeholder = "e.g. ChatGPT, GitHub Copilot, Claude"),
+              actionBttn("q1_submit", "Submit", color = "success", style = "fill")
+            )
         )
       ),
 
-      # =====================================================
-      # Q2: Confidence Poll
       tabItem(
-        tabName = "q2_input",
-        fluidPage(
-          titlePanel("How confident are you about using AI responsibly in your research?"),
-          h5("Select your confidence level:"),
-          prettyRadioButtons("q2_confidence", "Confidence Level:",
-            choices = c(
-              "Very confident" = "Very confident",
-              "Somewhat confident" = "Somewhat confident",
-              "Neutral" = "Neutral",
-              "Unsure" = "Unsure"
-            ),
-            animation = "jelly",
-            status = "success"
-          ),
-          actionBttn("q2_submit", "Submit", color = "success", style = "fill")
+        tabName = "q1_results",
+        div(role = "tabpanel",
+            fluidPage(
+              titlePanel("AI Tools Used"),
+              h4("Live Wordcloud (refreshes every 10 seconds)"),
+              wordcloud2Output("q1_wordcloud", height = "500px")
+            )
         )
       ),
+
+      tabItem(
+        tabName = "q2_input",
+        div(role = "tabpanel",
+            fluidPage(
+              titlePanel("How confident are you about using AI responsibly?"),
+              prettyRadioButtons("q2_confidence", "Confidence Level:",
+                                 choices = c(
+                                   "Very confident" = "Very confident",
+                                   "Somewhat confident" = "Somewhat confident",
+                                   "Neutral" = "Neutral",
+                                   "Unsure" = "Unsure"
+                                 ),
+                                 animation = "jelly", status = "success"),
+              actionBttn("q2_submit", "Submit", color = "success", style = "fill")
+            )
+        )
+      ),
+
       tabItem(
         tabName = "q2_results",
-        fluidPage(
-          titlePanel("Confidence Poll Results"),
-          h4("Live Results (refreshes every 10 seconds)"),
-          plotlyOutput("q2_plot", height = "500px")
+        div(role = "tabpanel",
+            fluidPage(
+              titlePanel("Confidence Poll Results"),
+              h4("Live Results (refreshes every 10 seconds)"),
+              plotlyOutput("q2_plot", height = "500px")
+            )
         )
       )
     )
@@ -129,13 +137,13 @@ ui <- dashboardPage(
 # SERVER
 # =========================================================
 server <- function(input, output, session) {
+
   autoInvalidate <- reactiveTimer(10000)
 
-  # ---- Q1: AI Tools Wordcloud ----
   observeEvent(input$q1_submit, {
     txt <- trimws(input$q1_text)
     if (nzchar(txt)) {
-      entries <- unlist(strsplit(txt, "\\s*,\\s*")) # comma-separated phrases
+      entries <- unlist(strsplit(txt, "\\s*,\\s*"))
       responses$q1 <- rbind(responses$q1, data.frame(Response = entries))
     }
     updateTextAreaInput(session, "q1_text", value = "")
@@ -144,14 +152,11 @@ server <- function(input, output, session) {
 
   output$q1_wordcloud <- renderWordcloud2({
     autoInvalidate()
-    if (nrow(responses$q1) == 0) {
-      return(NULL)
-    }
+    if (nrow(responses$q1) == 0) return(NULL)
     df <- as.data.frame(table(responses$q1$Response))
     wordcloud2(df, color = "random-light", backgroundColor = "white")
   })
 
-  # ---- Q2: Confidence Poll ----
   observeEvent(input$q2_submit, {
     if (length(input$q2_confidence) > 0) {
       responses$q2 <- rbind(
@@ -164,28 +169,21 @@ server <- function(input, output, session) {
 
   output$q2_plot <- renderPlotly({
     autoInvalidate()
-    if (nrow(responses$q2) == 0) {
-      return(NULL)
-    }
+    if (nrow(responses$q2) == 0) return(NULL)
     df <- as.data.frame(table(responses$q2$Confidence))
     colnames(df) <- c("Confidence", "Count")
-    
-    # Order confidence levels
     df$Confidence <- factor(df$Confidence,
-      levels = c("Very confident", "Somewhat confident", "Neutral", "Unsure")
-    )
+                            levels = c("Very confident", "Somewhat confident",
+                                       "Neutral", "Unsure"))
     df <- df[order(df$Confidence), ]
-    
     plot_ly(df, x = ~Confidence, y = ~Count, type = "bar",
-      marker = list(color = c("darkgreen", "lightgreen", "orange", "lightcoral"))
-    ) %>%
-      layout(
-        template = "plotly_white",
-        yaxis = list(title = "Number of Responses"),
-        xaxis = list(title = "Confidence Level"),
-        showlegend = FALSE
-      )
+            marker = list(color = c("darkgreen","lightgreen","orange","lightcoral"))) %>%
+      layout(template = "plotly_white",
+             yaxis = list(title = "Number of Responses"),
+             xaxis = list(title = "Confidence Level"),
+             showlegend = FALSE)
   })
+
 }
 
 # ---- Launch ----
