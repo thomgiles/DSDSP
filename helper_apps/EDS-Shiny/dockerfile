@@ -43,10 +43,10 @@ RUN R -e "install.packages(c( \
   ), repos = 'https://cloud.r-project.org/', dependencies = TRUE)"
 
 # ---------------------------------------------------------
-# Copy app into Shiny Server directory
+# Copy apps into Shiny Server directory
 # ---------------------------------------------------------
-WORKDIR /srv/shiny-server/edsm1
-COPY . /srv/shiny-server/edsm1
+COPY edsm1 /srv/shiny-server/edsm1
+COPY edsex1 /srv/shiny-server/edsex1
 
 # ---------------------------------------------------------
 # Set permissions (run as non-root shiny user)

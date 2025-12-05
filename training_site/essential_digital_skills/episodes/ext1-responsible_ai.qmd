@@ -5,6 +5,13 @@ metadata:
   exercises: 50
 ---
 
+::: {.content-visible when-format="revealjs"}
+
+<!-- Hidden by default -->
+![](fig/contribute-digital-tools-qr.png){fig-align="center" width=400px}
+
+:::
+
 # Module Overview
 
 - **Module:** EDS‑EXT1 – Responsible Use of AI in Research 
@@ -16,11 +23,11 @@ metadata:
 
 ::: callout-outcomes
 ## 💡 Learning Outcomes
-- Recognise how AI and generative AI are defined and how they are applied in research, including literature search, data analysis and coding assistance [UoN guidance](https://www.nottingham.ac.uk/studyingeffectively/studying/ai.aspx).
-- Identify opportunities and risks associated with using AI in research, such as efficiency, creativity, bias, hallucinations, copyright and reproducibility [TechTarget article](https://www.techtarget.com/searchenterpriseai/tip/Generative-AI-ethics-8-biggest-concerns).
-- Apply ethical principles—transparency, accountability, fairness, privacy and human oversight—when integrating AI into your workflow [AzureMentor blog](https://azurementor.wordpress.com/2024/03/08/the-6-microsoft-responsible-ai-principles-explained/).
-- Interpret institutional and publisher policies on AI authorship, disclosure and data security [Nature editorial](https://www.nature.com/articles/d41586-023-00191-1) [UoN guidance](https://www.nottingham.ac.uk/studyingeffectively/studying/ai.aspx).
-- Incorporate data security and governance considerations when using AI tools and anticipate future directions for responsible AI use [EU guidelines](https://www.vr.se/english/just-now/news/news-archive/2024-04-09-new-guidelines-for-using-ai-in-europe.html).
+- Recognise how AI and generative AI are defined and how they are applied in research, including literature search, data analysis and coding assistance.
+- Identify opportunities and risks associated with using AI in research, such as efficiency, creativity, bias, hallucinations, copyright and reproducibility.
+- Apply ethical principles—transparency, accountability, fairness, privacy and human oversight—when integrating AI into your workflow.
+- Interpret institutional on AI authorship, disclosure and data security  [UoN guidance](https://www.nottingham.ac.uk/studyingeffectively/studying/ai.aspx).
+- Incorporate data security and governance considerations when using AI tools and anticipate future directions for responsible AI use.
 :::
 
 ---
@@ -33,35 +40,193 @@ metadata:
 4. How can frameworks and policies help govern the responsible use of AI?
 :::
 
-
 ## Structure & Agenda
 
-1. **Foundations and Context** – 15 minutes teaching followed by a 10 minute poll.  
-2. **Opportunities and Risks** – 15 minutes teaching followed by a 10 minute case demonstration and critique.  
+1. **Foundations and Context** – 25 minutes teaching followed by a 5 minute poll.  
+2. **Opportunities and Risks** – 20 minutes teaching followed by a 10 minute case demonstration and critique.  
 3. **Ethics, Governance and Good Practice** – 20 minutes teaching followed by a 10 minute prompt activity and a 10 minute live Q&A.  
-4. **AI, Data Security and Future Directions** – 20 minutes teaching followed by a 10 minute confidence poll.  
+4. **AI, Data Security and Future Directions** – 20 minutes teaching followed by a 5 minute confidence poll.  
 
 > 🔧 Four activities provide opportunities for reflection, critique and discussion.
 
----
-
 # Foundations and Context
 
-![](fig/responsible_ai.png){fig-align="center" width=500px}
+![](fig/responsible_ai.png){fig-align="center" width="500px"}
 
----
+## A Brief Origin Story: The Beginnings of AI (~1950)
 
-## Basic concepts
+Artificial Intelligence (AI) emerged in the 1950s as mathematicians, logicians and early computer scientists explored whether machines could replicate human thought. Early pioneers such as Alan Turing argued that intelligence might be understood through behaviour rather than internal processes, leading to the famous question: *Can machines think?*
 
-Artificial intelligence describes systems that mimic aspects of human intelligence such as learning, reasoning and language.  Generative AI tools use large language models to generate text, code or images by predicting the most likely next token, but they do not possess general intelligence [UoN guidance](https://www.nottingham.ac.uk/studyingeffectively/studying/ai.aspx).  Predictive models use statistical patterns to make forecasts or classifications.
+## Expansion of Rule-Based AI (1960–1970)
 
----
+The first wave of AI was dominated by **symbolic reasoning**, inspired by logic and mathematics. Researchers believed that if human reasoning could be decomposed into rules, then computers could simply apply those rules faster and more consistently than people.
 
-## Current applications
+**Growth of structured knowledge systems**  
+Large rule sets, semantic networks and frames were developed to represent expert knowledge.  
 
-Researchers use AI for literature search, summarising research papers, coding assistance, data analysis, image processing and translation.  These tools accelerate repetitive tasks and enable exploration of large datasets [UoN guidance](https://www.nottingham.ac.uk/studyingeffectively/studying/ai.aspx).  
+Expert systems gained prominence as attempts to encode specialist reasoning directly.
 
----
+> 🧠 Early AI viewed thinking as rule-following, not pattern-learning.
+
+## The first AI Winter (Late 1970–1980)
+
+**Why rule-based AI failed**  
+
+Expert systems attempted to encode human expertise manually. Thousands of rules were written to diagnose diseases, recommend actions or classify objects. But maintaining these vast rule sets became impossible, contradictions appeared, exceptions multiplied and performance deteriorated as the systems grew.
+
+As systems expanded, contradictions and exceptions increased. Maintaining consistency became impossible. Research into neural networks also stalled after early mathematical criticism, contributing to declining funding.
+
+> 🧠 This period of stagnation marked a shift towards data-driven approaches.
+
+## The Emergence of Machine Learning (1980–1995)
+
+in the 80s ML emerged when researchers realised that instead of telling computers *how* to solve problems, they could let them *learn* from examples. The failure of rule-based systems to scale made data-driven methods increasingly attractive.
+
+**Three conditions enabled this transition:**
+1. **Data was being generated at scale** in science, finance, and the internet.  
+2. **Statistical methods improved** (e.g., Bayesian modelling, maximum likelihood).  
+3. **Computers became fast enough** to fit models to real datasets.
+
+ML became the dominant paradigm because it could adapt to messy, uncertain, real-world problems.
+
+## Core Machine Learning Approaches
+
+ ML is based on three main approaches:
+
+| Approach | What It Does | Typical Use Cases | Examples |
+|---------|---------------|-------------------|-----------|
+| **Supervised Learning** | Learns from labelled examples to predict outcomes | classification, regression | regression, random forests, SVMs |
+| **Unsupervised Learning** | Finds structure in unlabelled data | clustering, dimensionality reduction | k-means, PCA, topic modelling |
+| **Reinforcement Learning** | Learns actions through trial-and-error with rewards | control, optimisation, agents | Q-learning, policy gradients |
+
+## Statistical AI → Deep Learning (1995–2010)
+
+- In the mid 90s, research shifted toward data-driven methods, with probabilistic graphical models and support vector machines (smvs) becoming standard in scientific and industrial settings.  
+
+- A landmark moment came in 1997 when IBM’s *Deep Blue* defeated Garry Kasparov, demonstrating the power of specialised computation and statistical optimisation. 
+
+- As computing power increased, neural networks began to outperform traditional methods. 
+- This shift enabled major breakthroughs in computer vision, speech recognition and natural language processing.
+
+> 🧠 Deep learning transformed AI performance across multiple domains by learning rich features automatically.
+
+## Deep learning → Natural Language Processing (NLP) (2000s–2016)
+
+In the early 2000s Natural Language Processing (NLP) emerged as a field of AI that focuses on understanding and generating human language. It focused on tasks such as translation, sentiment analysis, summarisation and question answering.
+
+```mermaid
+graph TD
+
+    subgraph RNN["Recurrent Neural Network"]
+        RNN_Idea["Sequential processing with hidden state"]
+        RNN_Strength["Captures short-term structure"]
+        RNN_Limit["Weak long-range memory"]
+    end
+
+    subgraph LSTM["Long Short-Term Memory Network"]
+        LSTM_Idea["Gated memory cells"]
+        LSTM_Strength["Retains long-term dependencies"]
+        LSTM_Limit["Heavy to train"]
+    end
+
+    subgraph GRU["Gated Recurrent Unit"]
+        GRU_Idea["Simplified LSTM"]
+        GRU_Strength["Efficient, strong performance"]
+        GRU_Limit["Still sequential"]
+    end
+
+    subgraph CNN["Convolutional Neural Network (for text)"]
+        CNN_Idea["Local n-gram detection"]
+        CNN_Strength["Parallel, fast"]
+        CNN_Limit["Limited global context"]
+    end
+
+    %% Define styles
+    classDef idea fill=#cce5ff,stroke=#004085,stroke-width=1px;
+    classDef strength fill=#d4edda,stroke=#155724,stroke-width=1px;
+    classDef limit fill=#f8d7da,stroke=#721c24,stroke-width=1px;
+
+    %% Apply styles
+    class RNN_Idea,LSTM_Idea,GRU_Idea,CNN_Idea idea;
+    class RNN_Strength,LSTM_Strength,GRU_Strength,CNN_Strength strength;
+    class RNN_Limit,LSTM_Limit,GRU_Limit,CNN_Limit limit;
+```
+
+> Language is challenging because meaning depends on context and relationships across sentences. Early deep learning models attempted to address this.
+
+## A field ready for change (2014-2016)
+
+By the mid 2010s, sequence models had limitations:
+
+- They were slow because they processed text step by step
+- They had difficulty capturing long-range relationships
+- They were hard to scale to large datasets
+
+> 🔁 Researchers needed models that could look at text blocks all at once.
+
+## Transformers: a breakthrough architecture (2017-2020)
+
+Transformers introduced self-attention, letting models compare all words in a text block simultaneously. 
+
+```mermaid
+flowchart LR
+    A[Input] --> B[Embeddings plus Positional Encoding]
+    B --> C[Multi-head Self-Attention]
+    C --> D[Feed-forward Layers]
+    D --> E[Transformer Blocks]
+    E --> F[Output]
+```
+
+> 🚀 This unlocked large-scale training and dramatically improved performance across language, vision and multimodal tasks.
+
+## The cogs behind Generative AI
+
+ Transformers are capible of reasoning and generalisation by predicting predicting the next most likely token based on previous context.
+
+```mermaid
+sequenceDiagram
+    participant U as Prompt
+    participant M as LLM
+    U->>M: Provide prompt
+    M->>M: Compute attention
+    M->>U: Output token
+    loop Generation
+        M->>M: Update context
+        M->>U: Emit next token
+    end
+```
+> ✨ Given a large enough training set, this allows them to generate responses the appear thougtful. 
+
+## Transformers →  Foundation Models (2020)
+
+**Scaling laws reshape AI research**  
+Transformers trained through self-supervision on large datasets have emerged as the most common general-purpose models capable of adaptation across diverse tasks.
+
+| Property | Description |
+|---------|-------------|
+| Scale | Trained on trillions of tokens |
+| Generality | Perform across domains |
+| Transferability | Effective adaptation with small datasets |
+
+> 🧠 What we think of as AI now are essentially just large scale transformer models based on text.
+
+## From scale to generality (2020-present)
+
+**Foundation models**
+
+- **2020**: GPT‑3 — first large‑scale autoregressive model with broad capabilities  
+- **2021**: PaLM — scaling laws validated, multilingual and reasoning improvements  
+- **2022**: BLOOM — open‑source multilingual foundation model  
+- **2023**: GPT‑4, Claude, Gemini — multimodal, alignment, safety focus  
+- **2024–2025**: Mixture‑of‑Experts, retrieval‑augmented, domain‑specialised LLMs  
+
+> 🚀 Foundation models shifted AI from task‑specific systems to general‑purpose platforms
+
+## Summary
+
+AI began with rules but moved toward learning. Deep learning enabled rich representations, and sequence models advanced language processing. Transformers removed key bottlenecks, allowing the creation of foundation models and LLMs.
+
+> 🌐 Modern generative AI is the result of many incremental breakthroughs.
 
 ::: callout-task
 
@@ -71,6 +236,24 @@ Researchers use AI for literature search, summarising research papers, coding as
 ##### Question
 Which AI tools (if any) have you used so far in your research workflow?  Select one or more options in the poll provided.  If you have not yet used any AI tools, indicate “None” and reflect on where AI might help.
 
+##### Wordcloud
+<div id="frame-q1"></div> 
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const params = new URLSearchParams(window.location.search);
+  const base = "https://ds-shiny-helper.azurewebsites.net/edsex1/?embed=true";
+  const isContrib = params.get("contribute") === "true";
+
+  const src = isContrib
+    ? `${base}&contribute=true#shiny-tab-q1_input`
+    : `${base}#shiny-tab-q1_results`;
+
+  document.getElementById("frame-q1").innerHTML =
+    `<iframe src="${src}" width="100%" height="500" frameborder="0"
+             style="border:none;" title="Q1"></iframe>`;
+});
+</script>
+
 ##### Follow‑up
 - After voting, discuss your responses in pairs or small groups.  
 - Identify one specific task where AI could support your research.  
@@ -78,15 +261,169 @@ Which AI tools (if any) have you used so far in your research workflow?  Select 
 :::
 :::
 
-# Opportunities and Risks
+## Opportunities and Risks
 
-## Opportunities
-Generative AI can accelerate scientific discovery by summarising literature, generating hypotheses, drafting code, assisting with data visualisation and enabling creative exploration of ideas.  Automating tedious tasks can increase productivity and free researchers to focus on critical thinking.
+## Opportunities: how generative AI can support research
 
-## Risks and challenges
-AI outputs can be factually incorrect (hallucinations), plagiarise sources, perpetuate bias, infringe copyright or erode critical skills.  Unauthorised sharing of confidential data with AI tools may violate data protection rules [TechTarget article](https://www.techtarget.com/searchenterpriseai/tip/Generative-AI-ethics-8-biggest-concerns).  Always verify outputs against trusted sources and document AI contributions.  
+Generative AI offers researchers new ways to accelerate analysis, explore ideas and reduce cognitive load across the research lifecycle.
 
----
+```mermaid
+flowchart TD
+    A["🔍 Accelerate Literature Review"] 
+    B["💡 Explore Ideas & Hypotheses"] 
+    C["📊 Streamline Data Analysis"] 
+    D["✍️ Assist Writing & Visualisation"] 
+    E["🚀 Enhance Dissemination & Communication"]
+
+    A --> B --> C --> D --> E
+```
+
+## Research Question & Literature Review
+Starting a project begins with understanding what has already been explored. AI tools can scan thousands of papers, summarise findings, and highlight gaps in knowledge. They can also map citations to show how ideas connect across disciplines.
+
+| Tool | What it offers |
+|------|----------------|
+| Semantic search | Surfaces relevant papers quickly |
+| Summarisation | Condenses long articles into key points |
+| Citation mapping | Reveals clusters and gaps in the literature |
+
+> 🔎 AI accelerates discovery, but researchers must judge relevance and quality.
+
+## Idea Exploration & Hypothesis Drafting
+Once the landscape is clear, researchers move to generating ideas. AI can suggest related concepts, simulate scenarios, and reframe ideas into testable hypotheses. It acts as a creative partner, widening the space of possibilities.
+
+- Concept expansion surfaces overlooked variables  
+- Cross‑disciplinary analogies inspire new approaches  
+- Hypothesis refinement turns broad ideas into testable statements  
+
+> 💡 AI sparks creativity, but researchers decide which hypotheses are worth pursuing.
+
+## Data Analysis & Coding Assistance
+Data analysis is often time‑consuming. AI assistants reduce friction by generating boilerplate code, spotting errors, and suggesting statistical methods or visualisations. 
+
+AI can:
+- Generate scripts for cleaning and merging datasets  
+- Detect bugs and inconsistencies in code  
+- Recommend statistical tests  
+- Prototype visualisations for exploratory analysis  
+
+> ⚙️ AI accelerates routine coding, while researchers ensure methodological rigour.
+
+## Writing & Visualisation
+Communicating results requires clarity and precision. AI tools can draft sections, polish language, and generate visual summaries. They help create abstracts, captions, and even graphical abstracts, allowing researchers to focus on interpretation.
+
+| Output | AI Support |
+|--------|------------|
+| Abstracts | Drafting structure and flow |
+| Language | Polishing clarity and grammar |
+| Figures | Captions and graphical abstracts |
+| Slides | Auto‑generated from paper content |
+
+> ✍️ AI reduces friction in communication, but the researcher’s voice remains central.
+
+## Research Output & Dissemination
+The final stage is sharing findings. AI can adapt outputs for different audiences, from journal formatting to lay summaries and policy briefs. It helps amplify reach and accessibility without replacing researcher responsibility.
+
+Examples include:
+- Formatting preprints into journal templates  
+- Creating lay summaries for non‑specialist audiences  
+- Generating social media snippets for outreach  
+- Drafting policy briefs or dashboards for decision‑makers  
+
+> 🚀 AI amplifies impact, while researchers safeguard accuracy and credibility.
+
+
+## Risks and challenges: what researchers need to watch for
+
+AI introduces new vulnerabilities into research workflows where accuracy and integrity are essential:
+
+| Risk | Description | Implications for Research |
+|------|-------------|---------------------------|
+| Incorrect information | AI may hallucinate or fabricate facts | Misinterpretation, false leads |
+| Bias | Models inherit bias from training data | Distorted or unfair outcomes |
+| Copyright issues | Generated text may echo sources | Plagiarism or licensing violations |
+| Data protection | Risks when inputting sensitive information | Potential legal or ethical breaches |
+| Skill erosion | Over-reliance weakens critical thinking | Reduced analytical capacity |
+| Accountability | Researchers remain responsible | Need for verification and documentation |
+
+## Where risks tend to arise
+
+```mermaid
+flowchart LR
+    A[Data Input] --> B{Confidential?}
+    B -->|Yes| C[Risk: Data Protection]
+    B -->|No| D[Proceed]
+
+    D --> E[AI Output]
+    E --> F{Accurate?}
+    F -->|No| G[Risk: Hallucination or Bias]
+    F -->|Yes| H[Use with Verification]
+
+    H --> I[Research Output]
+```
+
+> 🔐 Researchers should treat AI as a tool that requires oversight, not as an authoritative source.
+
+## Hallucinations and incorrect information
+Generative models can produce outputs that sound fluent and convincing, yet contain factual errors or invented details. This risk is especially high when dealing with technical or niche topics where the model may lack reliable grounding.
+
+- Statements may appear authoritative but be fabricated  
+- Incorrect references or statistics can slip into summaries  
+- Overconfidence in AI outputs can mislead interpretation  
+
+> ⚠️ All AI‑generated claims must be verified against trusted sources before inclusion in research.
+
+## Bias and harmful assumptions
+Because models are trained on historical data, they inevitably absorb uneven representation and social biases. These can surface in analyses, summaries, or even in the framing of questions.
+
+| Source of bias | Example impact |
+|----------------|----------------|
+| Gender imbalance | Skewed assumptions in social science outputs |
+| Cultural dominance | Underrepresentation of minority perspectives |
+| Historical stereotypes | Reinforcement of outdated or harmful narratives |
+
+> 🧩 Researchers must actively identify and mitigate bias to ensure fair and balanced outputs.
+
+## Copyright and originality concerns
+Generated text may unintentionally echo or replicate wording from training data. This raises questions about originality and intellectual property, particularly in academic contexts where citation and authorship are critical.
+
+Paragraph example:  
+AI‑generated drafts can resemble existing publications without clear attribution. To maintain integrity, researchers should apply transparent authorship practices, cite sources properly, and disclose AI involvement in writing.
+
+> 📖 Proper citation and clear authorship are essential to avoid plagiarism and protect originality.
+
+## Data protection and confidentiality
+Submitting sensitive or unpublished information to external AI tools can expose researchers to institutional or legal risks. Confidential datasets, draft manuscripts, or proprietary results should not be processed without approval.
+
+- Risk of breaching data protection laws  
+- Exposure of unpublished findings to third parties  
+- Institutional policies may prohibit external AI use  
+
+> 🔐 Treat unpublished research data as confidential unless explicitly approved for AI processing.
+
+## Erosion of critical skills
+Over‑reliance on AI for interpretation, coding, or summarisation can gradually reduce researcher expertise. Skills such as critical reasoning, methodological design, and precise writing may weaken if delegated too often.
+
+Paragraph example:  
+AI should be viewed as a supplement, not a substitute. Researchers must continue to practice core skills to maintain independence and ensure that AI outputs are critically evaluated.
+
+> 🧠 AI should support, not replace, the development and application of critical research skills.
+
+## Accountability and documentation
+Researchers remain accountable for all outputs, regardless of AI involvement. Good practice includes verifying results, documenting AI contributions, and maintaining audit trails that show how tools were used.
+
+- Verification of AI‑generated content  
+- Clear documentation of methods and sources  
+- Audit trails for transparency and reproducibility  
+
+> 📑 Accountability rests with the researcher; AI is a tool, not a shield from responsibility.
+
+## A balanced perspective
+
+Generative AI can accelerate research and stimulate new thinking when used responsibly. However, careless use can introduce errors, bias and ethical risks. Responsible integration requires caution, transparency and preservation of core analytical skills.
+
+> 🧭 The goal is not to avoid AI, but to use it responsibly within research practice.
+
 
 ::: callout-task
 
@@ -109,17 +446,74 @@ In small groups, spend 10 minutes critiquing the AI summary:
 :::
 :::
 
-# Ethics, Governance and Good Practice
 
-## Ethical principles
+## Ethics, Governance and Good Practice
 
-Responsible AI use rests on principles including accountability, inclusiveness, reliability & safety, fairness, transparency and privacy & security [AzureMentor blog](https://azurementor.wordpress.com/2024/03/08/the-6-microsoft-responsible-ai-principles-explained/).  Researchers must identify and mitigate bias, be transparent about AI use, engage affected communities and safeguard personal data.  
+The opportunities and risks of generative AI lead naturally to a broader question: how can researchers use these tools responsibly? Academic research depends on accuracy, integrity and respect for participants and data. Generative AI does not remove these responsibilities; it changes how they must be upheld.
 
-Publishers and institutions emphasise that AI tools cannot be credited as authors.  Any AI assistance must be acknowledged in the methods or acknowledgements section [Nature editorial](https://www.nature.com/articles/d41586-023-00191-1).  Universities warn that submitting AI‑generated content as your own constitutes misconduct; you must verify and cite AI-generated material [UoN guidance](https://www.nottingham.ac.uk/studyingeffectively/studying/ai.aspx).  
+## Why ethics matters in AI-supported research
 
-## Policies and expectations
+Generative AI influences how researchers read, write, analyse and interpret information. Because these systems produce fluent and confident output, errors can spread quickly if unchecked.
 
-International guidelines recommend avoiding AI tools in peer review, being vigilant about integrity, confidentiality and intellectual property, monitoring AI use in organisations and encouraging transparency in grant applications [Swedish Research Council news](https://www.vr.se/english/just-now/news/news-archive/2024-04-09-new-guidelines-for-using-ai-in-europe.html).  Many funding bodies and journals are developing policies; check current guidelines relevant to your discipline and institution.  
+> ⚖️ Ethical AI in research protects people, data and scientific credibility.
+
+Key reasons ethics matters include responsibility, trustworthiness, fairness and compliance with institutional and legal requirements.
+
+## Core Ethical Principles for Using AI in Research
+
+| Principle | What It Means | Why It Matters |
+|----------|----------------|----------------|
+| **Transparency** | Clearly state how and why AI was used; document prompts, versions and settings. | 🔍 Supports reproducibility and builds trust. |
+| **Accountability** | Researchers remain responsible for accuracy, originality and ethical compliance. | Ensures AI does not replace critical oversight. |
+| **Fairness and Bias Awareness** | Models may inherit or amplify bias; outputs must be examined critically. | 🧭 Prevents distorted or inequitable research outcomes. |
+| **Privacy and Data Protection** | Do not enter sensitive or unpublished data into external AI tools. | 🔐 Protects participants, institutions and legal compliance. |
+
+## Governance: policies and frameworks
+
+**Institutional policies** - Universities provide guidance on acceptable uses of AI, data protection rules and disclosure requirements. Researchers should follow local expectations.
+
+**Regulatory frameworks** - Large projects, especially in health or social science, may be affected by legislation such as GDPR or emerging AI-specific regulations.
+
+**Publisher and funder expectations** - Journals and funders increasingly require:
+
+- clear statements describing AI use  
+- confirmation that authors remain responsible for content  
+- proof that citations and claims were manually verified  
+
+## Good Practice for Researchers
+
+| Principle | Summary | What Researchers Should Do |
+|----------|---------|----------------------------|
+| **1. Use AI for support, not substitution** | AI should enhance efficiency, not replace intellectual contributions. | Use AI for drafting structure, brainstorming or prototyping. Avoid delegating methodological decisions or accepting outputs without checking. |
+| **2. Verify everything** | AI outputs may be incorrect or fabricated. | Check all claims against trusted sources, especially numerical results, statistical reasoning, literature summaries and citations. |
+| **3. Maintain human oversight in analytical workflows** | AI-generated code and analyses require careful review. | Inspect intermediate outputs, validate assumptions, check data types and ensure outputs reflect the underlying evidence. |
+| **4. Keep audit trails** | Documentation supports reproducibility and transparency. | Record tools, versions, prompts and validation steps. Note where AI influence begins and ends. |
+| **5. Respect intellectual property** | AI may reproduce or echo training data. | Ensure originality, paraphrase appropriately and apply proper citation and academic judgement. |
+| **6. Communicate transparently** | Openness about AI use maintains trust and integrity. | Disclose how AI was used in manuscripts, theses, presentations and collaborative projects. |
+
+## Where ethical risks arise in research workflows
+
+```mermaid
+flowchart LR
+    A[Input Data] --> B{Sensitive or Unpublished?}
+    B -->|Yes| C[Do Not Submit to External AI]
+    B -->|No| D[Proceed with Caution]
+
+    D --> E[AI Processing]
+    E --> F{Verified by Researcher?}
+    F -->|No| G[Risk: Incorrect or Biased Output]
+    F -->|Yes| H[Validated Output]
+
+    H --> I[Incorporate into Research Workflow]
+```
+
+## A forward-looking ethical mindset
+
+Generative AI is evolving rapidly. Responsible use requires ongoing attention to transparency, verification and respect for data. A helpful guiding question is:
+
+**Does using AI improve the rigour, clarity or integrity of the research? If not, it should not be used.**
+
+> 🧭 Responsible AI strengthens scientific credibility and public trust.
 
 ---
 
@@ -128,27 +522,138 @@ International guidelines recommend avoiding AI tools in peer review, being vigil
 #### Prompt: Declaring AI use & Q&A
 
 ::: panel-tabset
-##### Prompt activity (10 min)
-Reflect individually on the question: “In which parts of your research workflow would you feel comfortable declaring AI use?”  In pairs, discuss tasks where disclosure is mandatory (e.g. writing, peer review) and tasks where AI should be avoided.
+##### Exercise (15 min)
 
-##### Exercise (10 min)
-Create a table listing stages of the research lifecycle (e.g. literature review, data analysis, writing, peer review).  For each stage, decide whether AI could be used and record ethical considerations (bias, consent, data privacy, authorship) and any relevant policies.  
+Reflect individually on the question: “In which parts of your research workflow would you feel comfortable declaring AI use?”  In groups, discuss tasks where disclosure is mandatory (e.g. writing, peer review) and tasks where AI should be avoided.
+
+Create a summary listing stages of the research lifecycle (e.g. literature review, data analysis, writing, peer review).  For each stage, decide whether AI could be used and record ethical considerations (bias, consent, data privacy, authorship) and any relevant policies.  
 
 ##### Live Q&A (10 min)
 Reconvene for a live Q&A.  Bring your examples and concerns for discussion.  The facilitator will address common misconceptions and challenges, drawing on institutional guidance and publisher policies.  
 :::
 :::
 
-# AI, Data Security and Future Directions
+
+## AI, Data Security and Future Directions
+
+Generative AI introduces important considerations for how research data is handled, stored and protected. As AI becomes more integrated into research workflows, understanding data security and anticipating future developments is essential.
 
 ## Data security and confidentiality
 
-Do not share sensitive or confidential data with AI tools because inputs may be stored and reused for model training.  Follow institutional policies by using approved tools and anonymising or pseudonymising data [TechTarget article](https://www.techtarget.com/searchenterpriseai/tip/Generative-AI-ethics-8-biggest-concerns).  Check whether your university offers secure AI tools; avoid uploading personal information to public platforms.
+The most immediate risk associated with AI tools is how they treat sensitive, identifiable or unpublished information. Many commercial AI platforms store user inputs and may reuse them for model improvement unless configured otherwise.
+
+> 🔐 Once data is submitted to a public AI tool, researchers may lose control of how it is stored or used.
+
+Examples of sensitive data include personal or clinical information, proprietary datasets, unpublished manuscripts, reviewer comments and identifiable qualitative data.
+
+## Why external AI tools pose risks
+
+Commercial systems often:
+
+- retain prompts or metadata  
+- store data in other jurisdictions  
+- provide limited transparency on retention policies  
+- combine user input with training data pipelines  
+
+This creates legal, ethical and reputational risks.
+
+## How to protect research data when using AI
+
+## Follow institutional policies
+
+Universities provide guidance on approved tools, data protection rules, anonymisation requirements and GDPR-compliant workflows. Researchers should stay aligned with these policies.
+
+## Use secure or institution-provided tools
+
+Some institutions offer privacy-preserving AI environments, such as:
+
+- locally hosted models  
+- restricted-access cloud systems with no retention  
+- secure HPC-integrated tools  
+
+These allow safe experimentation while keeping data under institutional control.
+
+## Avoid uploading confidential data to public tools
+
+Unless a platform explicitly guarantees no storage, no training and full isolation, assume that uploaded information is retained.
+
+> 🛡️ A simple rule: if you cannot email the data externally, do not upload it to an AI platform.
+
+## Summary table: safeguarding research data
+
+| Area | Risk | Recommended Approach |
+|------|------|----------------------|
+| Confidential data | Loss of control or reuse in training | Use secure internal tools; anonymise or pseudonymise |
+| Commercial platforms | Unknown retention policies | Avoid uploading sensitive information |
+| Regulation | GDPR and ethics requirements | Follow institutional guidance |
+| Reproducibility | Lack of documentation | Maintain audit trails of AI use |
+
+## Understanding where data risks occur
+
+```mermaid
+flowchart TD
+    A[Research Data] --> B{Contains Sensitive Information?}
+    B -->|Yes| C[Do Not Use Public AI Tools]
+    C --> D[Use Secure Institutional Platform]
+
+    B -->|No| E[Proceed with Caution]
+    E --> F[Review Tool Policies]
+    F --> G{No Retention?}
+    G -->|Yes| H[Use Tool]
+    G -->|No| I[Consider Safer Alternative]
+```
+
+> 🔍 Understanding how tools handle data helps avoid unintentional breaches.
 
 ## Future outlook
 
-AI capabilities continue to evolve.  Researchers, funders and institutions are updating guidelines and legislation (e.g. EU AI Act).  Maintaining AI literacy and monitoring policy developments are essential.  Responsible AI use will increasingly be expected as a core research skill [Swedish Research Council news](https://www.vr.se/english/just-now/news/news-archive/2024-04-09-new-guidelines-for-using-ai-in-europe.html).
+AI capabilities continue to evolve rapidly, and research environments, funders and policymakers are responding in kind.
 
+## Growing regulatory frameworks
+
+Examples include:
+
+- EU AI Act  
+- strengthened GDPR interpretations  
+- funder policies on AI use in writing, data analysis and reporting  
+- sector-specific rules for health or social research  
+
+These frameworks are designed to protect individuals and ensure ethical, transparent use of AI.
+
+## Evolving institutional guidance
+
+Universities are developing policies on:
+
+- approved tools and infrastructure  
+- disclosure requirements  
+- acceptable use in assessment and authorship  
+- skills training for staff and students  
+
+This guidance will mature as AI becomes more embedded in research practice.
+
+## Responsible AI as a core research skill
+
+Researchers will increasingly need to understand:
+
+- how models are trained  
+- where risks such as bias or hallucinations arise  
+- how to protect sensitive data  
+- how to integrate AI without lowering research standards  
+
+> 🎓 Responsible AI use is becoming as essential as statistical literacy or good data management.
+
+## Looking ahead: preparing for the future of AI in research
+
+The role of AI in academia will expand. Researchers should aim to:
+
+- stay updated on policies and regulations  
+- adapt workflows as institutional AI infrastructure grows  
+- participate in training on responsible AI use  
+- contribute to governance discussions  
+
+Generative AI offers powerful opportunities, but only when used with careful judgement and clear ethical awareness.
+
+> 🧭 The future of AI in research will be shaped by how responsibly it is used today.
 ---
 
 ::: callout-task
@@ -159,6 +664,24 @@ AI capabilities continue to evolve.  Researchers, funders and institutions are u
 ##### Question
 “How confident are you now about using AI responsibly in your research?” Choose from options such as very confident, somewhat confident, neutral or unsure.
 
+##### Wordcloud
+<div id="frame-q2"></div> 
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const params = new URLSearchParams(window.location.search);
+  const base = "https://ds-shiny-helper.azurewebsites.net/edsex1/?embed=true";
+  const isContrib = params.get("contribute") === "true";
+
+  const src = isContrib
+    ? `${base}&contribute=true#shiny-tab-q2_input`
+    : `${base}#shiny-tab-q2_results`;
+
+  document.getElementById("frame-q1").innerHTML =
+    `<iframe src="${src}" width="100%" height="500" frameborder="0"
+             style="border:none;" title="Q2"></iframe>`;
+});
+</script>
+
 ##### Reflection
 - Compare your confidence now to your initial response.  
 - Identify one skill or knowledge gap you plan to address over the next few months.  
@@ -166,11 +689,11 @@ AI capabilities continue to evolve.  Researchers, funders and institutions are u
 :::
 :::
 
-
-
 # Further Information
 
 ::: callout-keypoints
+
+## 🔦 Key points
 
 AI supports research via literature search, coding, analysis and translation, but outputs may be biased, incorrect or insecure.
 
@@ -187,7 +710,8 @@ Use secure, approved tools; avoid sensitive data sharing; follow institutional, 
 
 ::: callout-hints
 
-##   Hints
+## 📚 Additional Reading
+
 - **University guidance on AI:** [UoN guidance](https://www.nottingham.ac.uk/studyingeffectively/studying/ai.aspx) summarises definitions, permitted uses and academic integrity expectations.  
 - **Publisher policies:** [Nature editorial](https://www.nature.com/articles/d41586-023-00191-1) explains why LLMs cannot be credited as authors and when to document AI use.  
 - **Living guidelines:** The European Research Area’s living guidelines on generative AI provide best‑practice recommendations [Swedish Research Council news](https://www.vr.se/english/just-now/news/news-archive/2024-04-09-new-guidelines-for-using-ai-in-europe.html).  

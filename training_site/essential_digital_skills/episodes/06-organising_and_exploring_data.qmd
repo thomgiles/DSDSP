@@ -1,0 +1,340 @@
+---
+title: "M6 – Organising and Exploring Data"
+format:
+  html:
+    toc: true
+    theme: cosmo
+---
+
+# M6: Organising and Exploring Data
+
+::: callout-outcomes
+
+💡 **Learning Outcomes**
+
+By the end of this module, learners will be able to:
+
+- Recognise why raw data needs cleaning and organisation before analysis.
+- Apply basic techniques to tidy, structure, and validate datasets.
+- Explore data to identify common features, patterns, and relationships.
+- Move from descriptive observations to forming hypotheses and simple predictions.
+:::
+
+::: callout-questions
+
+❓ **Key Questions**
+
+- Why is real-world data often messy or inconsistent?
+- How can cleaning and organising data improve accuracy?
+- What can we learn through basic data exploration and summary?
+- How do insights and hypotheses support later prediction and analysis?
+:::
+
+# Structure & Agenda
+
+1. **Organising Messy Data (~20 min)**  
+2. **Exploring Data (~20 min)**  
+3. **Finding Patterns (~20 min)**  
+4. **Predicting Outcomes (~20 min)**  
+
+# Submodule 1: Organising Messy Data
+
+## What is “Messy Data”?
+
+Data rarely arrives clean. Messy data is any dataset that violates the rules required for analysis.
+
+💬 It may include missing values, inconsistent labels, extra spaces, or mixed types.
+
+### Example Messy Dataset
+
+```
+Name    Age   Snack     Height   Home Country
+Sarah   21    Chips     1.63m    UK
+sarah   21    crisps    1.63     United Kingdom
+NA             Cookies  1.7      UK
+```
+
+🕵️ Think of this stage as being a *data detective* — scanning the scene, not solving the case yet.
+
+### Problems Noticed
+
+| Problem               | Example                | Impact on Analysis                       |
+|----------------------|------------------------|-------------------------------------------|
+| Inconsistent Entries | Sarah vs. sarah        | Impossible to count unique names          |
+| Mixed Types/Formats  | 1.63m vs 163 vs 5'4"   | Blocks averages                           |
+| Missing Values       | NA or blanks           | Misleading averages and errors            |
+| Synonyms/Variations  | Chips vs. crisps       | Hides true popularity                     |
+
+⚠️ If data is inconsistent, your results can be misleading or invalid.
+
+## Why Organising Matters
+
+Organising data helps you:
+
+- Ensure accuracy and consistency  
+- Remove duplicates  
+- Handle missing values  
+- Format data for analysis  
+
+🧩 **Clean data = reliable analysis**
+
+## The Four Pillars of Data Tidy-Up
+
+1. **Standardisation**  
+   Convert inconsistent formats → e.g., '22 yrs', 'Twenty-Four' → 22, 24  
+
+2. **Validation**  
+   Check values make sense → e.g., 'Age: 200'  
+
+3. **Deduplication**  
+   Remove duplicates → e.g., repeated “Alex C.”  
+
+4. **Transformation**  
+   Convert data types → e.g., height text → numeric  
+
+❌ Clean data isn’t perfect — just **ready for reliable calculation**.
+
+## Categorical vs Numerical Data
+
+| Type        | Description                           | Examples                | Operations Allowed      |
+|-------------|----------------------------------------|-------------------------|--------------------------|
+| Categorical | Qualities, groups, names               | Gender, Country, Snack | Counting, grouping       |
+| Numerical   | Quantities that can be measured        | Age, Steps, Commute    | Mean, median, sum        |
+
+⚙️ Mixed numerical values must be converted before calculating averages.
+
+::: callout-task
+
+#### Activity: The Data Detective Game
+
+Dataset:
+
+**Setup**
+
+- Present dataset  
+- Identify errors (missing values, inconsistencies, duplicates)  
+
+*#Questions*#
+
+1. **Unique Students**  
+   - Remove duplicates  
+   - Answer: **9**  
+
+2. **Most Frequent Home Country**  
+   - Standardise country names  
+   - Answer: **United States (3 occurrences)**  
+
+3. **Average Age of Chips Lovers**  
+   - Standardise chips/crisps  
+   - Convert ages  
+   - Answer: **21.5**
+
+:::
+
+---
+
+# Submodule 2: Exploring Data
+
+## What Does It Mean to Explore Data?
+
+Exploration is the first look at a dataset:
+
+- What variables exist?  
+- What types are they?  
+- What common values appear?  
+
+💡 Exploration helps catch cleaning mistakes and shapes further questions.
+
+## Basic Exploration Techniques
+
+| Technique | Tells You         | Example Question               |
+|----------|-------------------|--------------------------------|
+| Mean     | Typical value     | Average height?                |
+| Median   | Middle value      | Median commute time?           |
+| Mode     | Most frequent     | Most common snack?             |
+| Min/Max  | Range             | Youngest and oldest?           |
+
+📈 These require clean data.
+
+## Visualising Distributions
+
+- **Symmetry**
+- **Skew**
+- **Outliers**
+
+A simple bar chart quickly shows common categories (e.g., transport type).
+
+## The Importance of the Median
+
+| Statistic | Meaning                      | Best Use Case                        |
+|----------|------------------------------|--------------------------------------|
+| Mean     | Average                      | Symmetric data (e.g., height)        |
+| Median   | Middle value                 | Skewed data (e.g., commute time)     |
+
+💬 Median often better represents “typical” experience.
+
+::: callout-task
+
+#### Summary Game
+
+Dataset: *{insert link}*
+
+| Statistic | Question                               | Answer         |
+|----------|------------------------------------------|----------------|
+| Mode     | Most common transport method             | Bus            |
+| Mean     | Average hours slept                      | 6.44           |
+| Min/Max  | Min/max age                              | 19 / 25        |
+:::
+
+---
+
+# Submodule 3: Finding Patterns
+
+## From Observation to Patterns
+
+Example:
+
+- Observation: average steps = 7,000  
+- Pattern: walkers average 10,000 vs bus users 4,500  
+
+💡 Patterns show **correlations**, not **causation**.
+
+## Common Pattern Techniques
+
+| Technique        | Example                        | Shows                       |
+|------------------|--------------------------------|-----------------------------|
+| Frequency counts | Most common snack              | Popularity                  |
+| Group comparison | Average age by snack type      | Demographic patterns        |
+| Cross-tabulation | Snack by home country          | Relationships               |
+| Sorting/filtering| Top 3 snacks                   | Quick insights              |
+
+## Why Patterns Matter
+
+Help you:
+
+- Form hypotheses  
+- Understand relationships  
+- Decide what to analyse next  
+
+## Building Hypotheses
+
+Example table:
+
+| Snack  | Avg Age | Avg Steps |
+|--------|---------|-----------|
+| Crisps | 20.1    | 4,000     |
+| Cookies| 21.3    | 5,500     |
+| Fruit  | 23.2    | 7,000     |
+
+Examples:
+
+- Fruit eaters may walk more  
+- Snack choice not strongly age-related  
+
+::: callout-task
+
+#### Quick Insights Race
+
+Dataset: *{insert link}*
+
+Find **3 facts in 5 minutes**.
+
+Example insights:
+
+1. Chips/Crisps most popular  
+2. 22.22% have ≥ 1 hr commute  
+3. 22.22% don’t use library  
+:::
+
+---
+
+# Submodule 4: Predicting Outcomes
+
+## What Does Prediction Mean?
+
+Prediction = using patterns to estimate unknown values.
+
+🧠 Predictions rely on similarity: past behaviour → future expectation.
+
+## Hypothesis → Prediction
+
+Example:
+
+- Hypothesis: age affects snack preference  
+- Prediction: 25+ choose savoury snacks  
+
+## Simple Predictive Thinking
+
+1. Identify question  
+2. Choose variables  
+3. Examine patterns  
+4. Apply pattern to new situation  
+
+Prediction is informed guessing.
+
+## Forms of Prediction
+
+| Approach           | Example                    | Concept               |
+|--------------------|----------------------------|------------------------|
+| Rule-based         | Age > 20 → savoury         | Heuristics             |
+| Trend extrapolation| Snack preference over time | Trend extension        |
+| Probabilistic      | 60% chance chips           | Likelihood             |
+
+📌 Weather forecasts are predictions.
+
+## Uncertainty Matters
+
+- Predictions ≠ guarantees  
+- High probability ≠ certainty  
+- Aim to be *less wrong*  
+
+
+::: callout-task
+# Prediction Game
+
+Groups predict **Estimated Daily Energy Level (High/Low)**.
+
+### Steps
+
+1. Form hypothesis  
+2. Select variables  
+3. Define rule  
+4. Calculate % Low Energy  
+
+Benchmark model:
+
+```
+Low Energy if (Hours Slept ≤6.0) OR (Steps < 5000)
+```
+
+Result: **6 / 10 students** = **60% Low Energy**
+:::
+
+---
+
+::: callout-keypoints
+
+## 📚 Keypoints
+
+Key takeaways:
+
+- Organising data ensures accuracy  
+- Exploration builds understanding  
+- Patterns inspire hypotheses  
+- Predictions extend insights  
+- Uncertainty is inherent  
+:::
+
+::: callout-hints
+
+## 🔦 Hints
+
+Additional learning:
+
+| Submodule               | Python Connection                                   | Why It Matters                               |
+|------------------------|------------------------------------------------------|----------------------------------------------|
+| Organising Messy Data | pandas cleaning tools                                 | Foundation of real analysis                  |
+| Exploring Data         | .describe(), .info(), .value_counts()                |快速 understanding                            |
+| Finding Patterns       | groupby, pivot_table, clustering                     | Reveals relationships                        |
+| Predicting Outcomes    | simple models, sklearn basics                        | Intro to ML thinking                          |
+:::
