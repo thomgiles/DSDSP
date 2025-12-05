@@ -228,6 +228,8 @@ AI began with rules but moved toward learning. Deep learning enabled rich repres
 
 > 🌐 Modern generative AI is the result of many incremental breakthroughs.
 
+---
+
 ::: callout-task
 
 #### Poll: Which AI tools have you used?
@@ -261,7 +263,7 @@ document.addEventListener("DOMContentLoaded", function() {
 :::
 :::
 
-## Opportunities and Risks
+# Opportunities and Risks
 
 ## Opportunities: how generative AI can support research
 
@@ -424,6 +426,7 @@ Generative AI can accelerate research and stimulate new thinking when used respo
 
 > 🧭 The goal is not to avoid AI, but to use it responsibly within research practice.
 
+---
 
 ::: callout-task
 
@@ -534,7 +537,7 @@ Reconvene for a live Q&A.  Bring your examples and concerns for discussion.  The
 :::
 
 
-## AI, Data Security and Future Directions
+# Data Security and Future Directions
 
 Generative AI introduces important considerations for how research data is handled, stored and protected. As AI becomes more integrated into research workflows, understanding data security and anticipating future developments is essential.
 
@@ -654,6 +657,7 @@ The role of AI in academia will expand. Researchers should aim to:
 Generative AI offers powerful opportunities, but only when used with careful judgement and clear ethical awareness.
 
 > 🧭 The future of AI in research will be shaped by how responsibly it is used today.
+
 ---
 
 ::: callout-task
@@ -706,7 +710,6 @@ Ethical use requires transparency, accountability, fairness, privacy, and disclo
 Use secure, approved tools; avoid sensitive data sharing; follow institutional, funder and publisher policies.
 
 :::
-
 
 ::: callout-hints
 
