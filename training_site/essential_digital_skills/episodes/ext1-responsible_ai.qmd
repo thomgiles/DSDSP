@@ -656,6 +656,13 @@ Generative AI offers powerful opportunities, but only when used with careful jud
 ##### Question
 “How confident are you now about using AI responsibly in your research?” Choose from options such as very confident, somewhat confident, neutral or unsure.
 
+::: {.content-visible when-format="revealjs"}
+
+<!-- Hidden by default -->
+![](fig/EXT1-Q2-qr_code.png){fig-align="center" width=400px}
+
+:::
+
 ##### Poll
 <div id="frame-q2"></div> 
 <script>
