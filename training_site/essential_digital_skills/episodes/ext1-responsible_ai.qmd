@@ -5,19 +5,12 @@ metadata:
   exercises: 50
 ---
 
-::: {.content-visible when-format="revealjs"}
-
-<!-- Hidden by default -->
-![](fig/contribute-digital-tools-qr.png){fig-align="center" width=400px}
-
-:::
-
 # Module Overview
 
 - **Module:** EDS‑EXT1 – Responsible Use of AI in Research 
 - **Course:** Essential Digital Skills – AI for Research Extension
 - **Audience:** Early Career Researchers (PhD, Postdoc)
-- **Duration:** ~70 minutes directed teaching (+50 minutes exercises)  
+- **Duration:** ~80 minutes directed teaching (+40 minutes exercises)  
 
 ---
 
@@ -114,42 +107,13 @@ ML became the dominant paradigm because it could adapt to messy, uncertain, real
 
 In the early 2000s Natural Language Processing (NLP) emerged as a field of AI that focuses on understanding and generating human language. It focused on tasks such as translation, sentiment analysis, summarisation and question answering.
 
-```mermaid
+
+```{mermaid}
 graph TD
-
-    subgraph RNN["Recurrent Neural Network"]
-        RNN_Idea["Sequential processing with hidden state"]
-        RNN_Strength["Captures short-term structure"]
-        RNN_Limit["Weak long-range memory"]
-    end
-
-    subgraph LSTM["Long Short-Term Memory Network"]
-        LSTM_Idea["Gated memory cells"]
-        LSTM_Strength["Retains long-term dependencies"]
-        LSTM_Limit["Heavy to train"]
-    end
-
-    subgraph GRU["Gated Recurrent Unit"]
-        GRU_Idea["Simplified LSTM"]
-        GRU_Strength["Efficient, strong performance"]
-        GRU_Limit["Still sequential"]
-    end
-
-    subgraph CNN["Convolutional Neural Network (for text)"]
-        CNN_Idea["Local n-gram detection"]
-        CNN_Strength["Parallel, fast"]
-        CNN_Limit["Limited global context"]
-    end
-
-    %% Define styles
-    classDef idea fill=#cce5ff,stroke=#004085,stroke-width=1px;
-    classDef strength fill=#d4edda,stroke=#155724,stroke-width=1px;
-    classDef limit fill=#f8d7da,stroke=#721c24,stroke-width=1px;
-
-    %% Apply styles
-    class RNN_Idea,LSTM_Idea,GRU_Idea,CNN_Idea idea;
-    class RNN_Strength,LSTM_Strength,GRU_Strength,CNN_Strength strength;
-    class RNN_Limit,LSTM_Limit,GRU_Limit,CNN_Limit limit;
+    RNN["RNN: Sequential, short-term memory"] --> A["Weak long-range memory"]
+    LSTM["LSTM: Gated cells, long-term memory"] --> B["Heavy to train"]
+    GRU["GRU: Simplified LSTM, efficient"] --> C["Still sequential"]
+    CNN["CNN: Detects local patterns, fast"] --> D["Limited global context"]
 ```
 
 > Language is challenging because meaning depends on context and relationships across sentences. Early deep learning models attempted to address this.
@@ -168,7 +132,7 @@ By the mid 2010s, sequence models had limitations:
 
 Transformers introduced self-attention, letting models compare all words in a text block simultaneously. 
 
-```mermaid
+```{mermaid}
 flowchart LR
     A[Input] --> B[Embeddings plus Positional Encoding]
     B --> C[Multi-head Self-Attention]
@@ -183,7 +147,7 @@ flowchart LR
 
  Transformers are capible of reasoning and generalisation by predicting predicting the next most likely token based on previous context.
 
-```mermaid
+```{mermaid}
 sequenceDiagram
     participant U as Prompt
     participant M as LLM
@@ -238,6 +202,14 @@ AI began with rules but moved toward learning. Deep learning enabled rich repres
 ##### Question
 Which AI tools (if any) have you used so far in your research workflow?  Select one or more options in the poll provided.  If you have not yet used any AI tools, indicate “None” and reflect on where AI might help.
 
+
+::: {.content-visible when-format="revealjs"}
+
+<!-- Hidden by default -->
+![](fig/EXT1-Q1-qr_code.png){fig-align="center" width=400px}
+
+:::
+
 ##### Wordcloud
 <div id="frame-q1"></div> 
 <script>
@@ -269,13 +241,13 @@ document.addEventListener("DOMContentLoaded", function() {
 
 Generative AI offers researchers new ways to accelerate analysis, explore ideas and reduce cognitive load across the research lifecycle.
 
-```mermaid
-flowchart TD
-    A["🔍 Accelerate Literature Review"] 
-    B["💡 Explore Ideas & Hypotheses"] 
-    C["📊 Streamline Data Analysis"] 
-    D["✍️ Assist Writing & Visualisation"] 
-    E["🚀 Enhance Dissemination & Communication"]
+```{mermaid}
+flowchart LR
+    A["Accelerate Literature Review"] 
+    B["Explore Ideas & Hypotheses"] 
+    C["Streamline Data Analysis"] 
+    D["Assist Writing & Visualisation"] 
+    E["Enhance Dissemination & Communication"]
 
     A --> B --> C --> D --> E
 ```
@@ -350,7 +322,7 @@ AI introduces new vulnerabilities into research workflows where accuracy and int
 
 ## Where risks tend to arise
 
-```mermaid
+```{mermaid}
 flowchart LR
     A[Data Input] --> B{Confidential?}
     B -->|Yes| C[Risk: Data Protection]
@@ -389,7 +361,8 @@ Because models are trained on historical data, they inevitably absorb uneven rep
 ## Copyright and originality concerns
 Generated text may unintentionally echo or replicate wording from training data. This raises questions about originality and intellectual property, particularly in academic contexts where citation and authorship are critical.
 
-Paragraph example:  
+**Paragraph example:**
+
 AI‑generated drafts can resemble existing publications without clear attribution. To maintain integrity, researchers should apply transparent authorship practices, cite sources properly, and disclose AI involvement in writing.
 
 > 📖 Proper citation and clear authorship are essential to avoid plagiarism and protect originality.
@@ -426,6 +399,7 @@ Generative AI can accelerate research and stimulate new thinking when used respo
 
 > 🧭 The goal is not to avoid AI, but to use it responsibly within research practice.
 
+
 ---
 
 ::: callout-task
@@ -433,6 +407,7 @@ Generative AI can accelerate research and stimulate new thinking when used respo
 #### Case demonstration: AI‑assisted literature summary
 
 ::: panel-tabset
+
 ##### Demonstration & critique
 The facilitator will use an AI tool to generate a summary of a recent research paper.  Observe how the AI condenses the literature and note strengths and weaknesses.
 
@@ -450,7 +425,9 @@ In small groups, spend 10 minutes critiquing the AI summary:
 :::
 
 
-## Ethics, Governance and Good Practice
+# Ethics, Governance and Good Practice
+
+## Premise
 
 The opportunities and risks of generative AI lead naturally to a broader question: how can researchers use these tools responsibly? Academic research depends on accuracy, integrity and respect for participants and data. Generative AI does not remove these responsibilities; it changes how they must be upheld.
 
@@ -485,29 +462,36 @@ Key reasons ethics matters include responsibility, trustworthiness, fairness and
 
 ## Good Practice for Researchers
 
-| Principle | Summary | What Researchers Should Do |
-|----------|---------|----------------------------|
-| **1. Use AI for support, not substitution** | AI should enhance efficiency, not replace intellectual contributions. | Use AI for drafting structure, brainstorming or prototyping. Avoid delegating methodological decisions or accepting outputs without checking. |
-| **2. Verify everything** | AI outputs may be incorrect or fabricated. | Check all claims against trusted sources, especially numerical results, statistical reasoning, literature summaries and citations. |
-| **3. Maintain human oversight in analytical workflows** | AI-generated code and analyses require careful review. | Inspect intermediate outputs, validate assumptions, check data types and ensure outputs reflect the underlying evidence. |
-| **4. Keep audit trails** | Documentation supports reproducibility and transparency. | Record tools, versions, prompts and validation steps. Note where AI influence begins and ends. |
-| **5. Respect intellectual property** | AI may reproduce or echo training data. | Ensure originality, paraphrase appropriately and apply proper citation and academic judgement. |
-| **6. Communicate transparently** | Openness about AI use maintains trust and integrity. | Disclose how AI was used in manuscripts, theses, presentations and collaborative projects. |
+
+| Principle | What to Do |
+|-----------|------------|
+| **1. AI as aid, not replacement** | Use AI for drafts/ideas, not decisions. Always review outputs. |
+| **2. Verify everything** | Cross-check claims, numbers, stats, citations with trusted sources. |
+| **3. Keep human oversight** | Review AI code/analysis, validate assumptions and data integrity. |
+| **4. Document use** | Record tools, versions, prompts, and validation steps for transparency. |
+| **5. Respect IP** | Ensure originality, paraphrase, and cite correctly. |
+| **6. Be transparent** | Disclose AI use in papers, theses, and presentations. |
+
 
 ## Where ethical risks arise in research workflows
 
-```mermaid
+```{mermaid}
 flowchart LR
-    A[Input Data] --> B{Sensitive or Unpublished?}
-    B -->|Yes| C[Do Not Submit to External AI]
+    A[Research Input Data] --> B{Sensitive or<br/>Unpublished?}
+
+    B -->|Yes| C[Do NOT use External AI<br/>• Use institutional tools<br/>• Apply anonymisation]
     B -->|No| D[Proceed with Caution]
 
-    D --> E[AI Processing]
-    E --> F{Verified by Researcher?}
-    F -->|No| G[Risk: Incorrect or Biased Output]
-    F -->|Yes| H[Validated Output]
+    D --> E[AI Processing Step]
 
-    H --> I[Incorporate into Research Workflow]
+    E --> F{Output Verified<br/>by Researcher?}
+
+    F -->|No| G[Ethical Risk Detected<br/>• Hallucination<br/>• Bias<br/>• Mis-citation<br/>• IP issues]
+    G --> H[Apply Governance Controls<br/>• Cross-check sources<br/>• Document corrections<br/>• Re-evaluate prompt]
+
+    F -->|Yes| I[Validated Output]
+
+    I --> J[Integrate into Research Workflow<br/>• Cite AI use<br/>• Maintain audit trail<br/>• Ensure reproducibility]
 ```
 
 ## A forward-looking ethical mindset
@@ -525,6 +509,7 @@ Generative AI is evolving rapidly. Responsible use requires ongoing attention to
 #### Prompt: Declaring AI use & Q&A
 
 ::: panel-tabset
+
 ##### Exercise (15 min)
 
 Reflect individually on the question: “In which parts of your research workflow would you feel comfortable declaring AI use?”  In groups, discuss tasks where disclosure is mandatory (e.g. writing, peer review) and tasks where AI should be avoided.
@@ -535,7 +520,6 @@ Create a summary listing stages of the research lifecycle (e.g. literature revie
 Reconvene for a live Q&A.  Bring your examples and concerns for discussion.  The facilitator will address common misconceptions and challenges, drawing on institutional guidance and publisher policies.  
 :::
 :::
-
 
 # Data Security and Future Directions
 
@@ -593,8 +577,8 @@ Unless a platform explicitly guarantees no storage, no training and full isolati
 
 ## Understanding where data risks occur
 
-```mermaid
-flowchart TD
+```{mermaid}
+flowchart LR
     A[Research Data] --> B{Contains Sensitive Information?}
     B -->|Yes| C[Do Not Use Public AI Tools]
     C --> D[Use Secure Institutional Platform]
@@ -623,16 +607,20 @@ Examples include:
 
 These frameworks are designed to protect individuals and ensure ethical, transparent use of AI.
 
-## Evolving institutional guidance
 
-Universities are developing policies on:
 
-- approved tools and infrastructure  
-- disclosure requirements  
-- acceptable use in assessment and authorship  
-- skills training for staff and students  
+## Evolving Institutional Guidance (UoN)
 
-This guidance will mature as AI becomes more embedded in research practice.
+UoN provides the following guidence on use of AI, this will continue to evolve as AI becomes more embedded in teaching and research.
+
+| Area | Current Guidance |
+|------|-------------------|
+| **Approved tools** | Use only permitted AI platforms (e.g., Microsoft Copilot via UoN login). |
+| **Disclosure** | Always acknowledge AI use in assessments and research outputs. |
+| **Acceptable use** | AI is prohibited in assessments unless explicitly allowed; false authorship = misconduct. |
+| **Skills training** | Staff and students encouraged to complete UoN AI training (Moodle module, SharePoint resources). |
+
+> *If you are not from UoN your universities policies may be different!*
 
 ## Responsible AI as a core research skill
 
@@ -668,7 +656,14 @@ Generative AI offers powerful opportunities, but only when used with careful jud
 ##### Question
 “How confident are you now about using AI responsibly in your research?” Choose from options such as very confident, somewhat confident, neutral or unsure.
 
-##### Wordcloud
+::: {.content-visible when-format="revealjs"}
+
+<!-- Hidden by default -->
+![](fig/EXT1-Q2-qr_code.png){fig-align="center" width=400px}
+
+:::
+
+##### Poll
 <div id="frame-q2"></div> 
 <script>
 document.addEventListener("DOMContentLoaded", function() {
@@ -680,7 +675,7 @@ document.addEventListener("DOMContentLoaded", function() {
     ? `${base}&contribute=true#shiny-tab-q2_input`
     : `${base}#shiny-tab-q2_results`;
 
-  document.getElementById("frame-q1").innerHTML =
+  document.getElementById("frame-q2").innerHTML =
     `<iframe src="${src}" width="100%" height="500" frameborder="0"
              style="border:none;" title="Q2"></iframe>`;
 });

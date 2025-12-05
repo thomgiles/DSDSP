@@ -60,12 +60,9 @@ ui <- dashboardPage(
           if (hash.startsWith('#shiny-tab-')) {
             const tabName = hash.replace('#shiny-tab-', '');
             const tryActivate = () => {
-              const tab = $('#' + tabName);
-              if (tab.length > 0) {
-                Shiny.setInputValue('tabs', tabName, {priority: 'event'});
-              } else {
-                setTimeout(tryActivate, 100);
-              }
+              const $tabLink = $('a[data-value=\"' + tabName + '\"]');
+              if ($tabLink.length) $tabLink.tab('show');
+              else setTimeout(tryActivate, 200);
             };
             tryActivate();
           }

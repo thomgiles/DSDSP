@@ -1,5 +1,4 @@
 ---
-
 title: Hands‑on with AI for Research
 metadata:
   teaching: 20
