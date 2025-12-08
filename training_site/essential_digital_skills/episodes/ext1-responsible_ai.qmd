@@ -720,7 +720,7 @@ Generative AI offers powerful opportunities, but only when used with careful jud
 ::: {.content-visible when-format="revealjs"}
 
 <!-- Hidden by default -->
-![](fig/EXT1-Q2-qr_code.png){fig-align="center" width=400px}
+![](fig/EXT1-Q2_qr_code.png){fig-align="center" width=400px}
 
 :::
 
