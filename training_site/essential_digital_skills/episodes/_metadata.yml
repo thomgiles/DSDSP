@@ -8,8 +8,8 @@ format:
       - pyodide
       - webr
     title-block-style: none
+    allow-html: true
   
-
   revealjs:
     theme:
       - black
@@ -32,5 +32,6 @@ format:
       - ../../reveal-header.html
     include-after-body:
       - ../../rjs-footer.js
+    allow-html: true
 
 

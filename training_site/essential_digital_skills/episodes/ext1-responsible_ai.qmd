@@ -18,8 +18,8 @@ metadata:
 ## 💡 Learning Outcomes
 - Recognise how AI and generative AI are defined and how they are applied in research, including literature search, data analysis and coding assistance.
 - Identify opportunities and risks associated with using AI in research, such as efficiency, creativity, bias, hallucinations, copyright and reproducibility.
-- Apply ethical principles—transparency, accountability, fairness, privacy and human oversight—when integrating AI into your workflow.
-- Interpret institutional on AI authorship, disclosure and data security  [UoN guidance](https://www.nottingham.ac.uk/studyingeffectively/studying/ai.aspx).
+- Apply ethical principles; transparency, accountability, fairness, privacy and human oversight, when integrating AI into your workflow.
+- Interpret institutional on AI authorship, disclosure and data security.
 - Incorporate data security and governance considerations when using AI tools and anticipate future directions for responsible AI use.
 :::
 
@@ -218,7 +218,6 @@ Which AI tools (if any) have you used so far in your research workflow?  Select 
 
 ##### Wordcloud
 
-```{html}
 <iframe
   src="https://ds-shiny-helper.azurewebsites.net/edsex1/?embed=true#shiny-tab-q1_results"
   width="100%"
@@ -227,7 +226,6 @@ Which AI tools (if any) have you used so far in your research workflow?  Select 
   style="border:none;"
   title="Q1">
 </iframe>
-```
 
 ##### Follow‑up
 - After voting, discuss your responses in pairs or small groups.  
@@ -720,7 +718,7 @@ Generative AI offers powerful opportunities, but only when used with careful jud
 :::
 
 ##### Results
-```{html}
+
 <iframe
   src="https://ds-shiny-helper.azurewebsites.net/edsex1/?embed=true#shiny-tab-q2_results"
   width="100%"
@@ -729,7 +727,6 @@ Generative AI offers powerful opportunities, but only when used with careful jud
   style="border:none;"
   title="Q2">
 </iframe>
-```
 
 ##### Reflection
 - Compare your confidence now to your initial response.  
