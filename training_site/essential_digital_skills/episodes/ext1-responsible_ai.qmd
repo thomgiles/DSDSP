@@ -217,22 +217,17 @@ Which AI tools (if any) have you used so far in your research workflow?  Select 
 :::
 
 ##### Wordcloud
-<div id="frame-q1"></div> 
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  const params = new URLSearchParams(window.location.search);
-  const base = "https://ds-shiny-helper.azurewebsites.net/edsex1/?embed=true";
-  const isContrib = params.get("contribute") === "true";
 
-  const src = isContrib
-    ? `${base}&contribute=true#shiny-tab-q1_input`
-    : `${base}#shiny-tab-q1_results`;
-
-  document.getElementById("frame-q1").innerHTML =
-    `<iframe src="${src}" width="100%" height="500" frameborder="0"
-             style="border:none;" title="Q1"></iframe>`;
-});
-</script>
+```{html}
+<iframe
+  src="https://ds-shiny-helper.azurewebsites.net/edsex1/?embed=true#shiny-tab-q1_results"
+  width="100%"
+  height="500"
+  frameborder="0"
+  style="border:none;"
+  title="Q1">
+</iframe>
+```
 
 ##### Follow‑up
 - After voting, discuss your responses in pairs or small groups.  
@@ -724,23 +719,17 @@ Generative AI offers powerful opportunities, but only when used with careful jud
 
 :::
 
-##### Poll
-<div id="frame-q2"></div> 
-<script>
-document.addEventListener("DOMContentLoaded", function() {
-  const params = new URLSearchParams(window.location.search);
-  const base = "https://ds-shiny-helper.azurewebsites.net/edsex1/?embed=true";
-  const isContrib = params.get("contribute") === "true";
-
-  const src = isContrib
-    ? `${base}&contribute=true#shiny-tab-q2_input`
-    : `${base}#shiny-tab-q2_results`;
-
-  document.getElementById("frame-q2").innerHTML =
-    `<iframe src="${src}" width="100%" height="500" frameborder="0"
-             style="border:none;" title="Q2"></iframe>`;
-});
-</script>
+##### Results
+```{html}
+<iframe
+  src="https://ds-shiny-helper.azurewebsites.net/edsex1/?embed=true#shiny-tab-q2_results"
+  width="100%"
+  height="500"
+  frameborder="0"
+  style="border:none;"
+  title="Q2">
+</iframe>
+```
 
 ##### Reflection
 - Compare your confidence now to your initial response.  
