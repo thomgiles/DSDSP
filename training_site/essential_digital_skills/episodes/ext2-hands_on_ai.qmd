@@ -122,6 +122,7 @@ The these are the official policy documents:
 - **National guidelines – UKRI generative AI policy** – see [UKRI Generative AI in Application and Assessment Policy (Sept 2024; updated Dec 2024)](https://www.ukri.org/publications/generative-artificial-intelligence-in-application-and-assessment-policy/)
 - **Independent body – COPE generative AI policy** - see [COPE Authorship and AI tools policy](https://publicationethics.org/guidance/cope-position/authorship-and-ai-tools)
 
+
 ---
 
 ::: callout-task
