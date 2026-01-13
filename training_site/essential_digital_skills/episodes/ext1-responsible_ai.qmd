@@ -214,13 +214,10 @@ Transformers trained through self-supervision on very large large datasets have 
 
 - **2020**: **GPT-3** (~175B parameters)  
   First truly large-scale autoregressive model demonstrating broad, task-agnostic capabilities.
-
 - **2021**: **PaLM** (~540B parameters)  
   Empirical validation of scaling laws, with notable gains in multilingual performance and reasoning.
-
 - **2023**: **GPT-4**, **Claude**, **Gemini** (parameter counts undisclosed but likely Trillion-scale)  
   Shift toward multimodality, alignment, safety, and system-level optimisation rather than raw scale alone.
-
 - **2024–2025**: **Mixture-of-Experts and hybrid systems**  
   Trillion-scale *effective* capacity via sparse activation, retrieval-augmented generation, and domain-specialised models.
 
@@ -323,6 +320,7 @@ AI often reduces effort at one step while relocating risk elsewhere.
 ## Plausibility is not validity
 
 AI outputs are optimised for *plausible continuation*, not truth.  
+
 In research, the key failure mode is **credible-sounding error**.
 
 **Watch for**
@@ -346,6 +344,7 @@ A useful mental model: treat AI summaries as **hypothesis generators**, not as e
 ## Methodological suggestions: why they are high risk
 
 Methodological advice is particularly vulnerable because:
+
 - many analytic choices are “reasonable” but not appropriate
 - assumptions are often implicit (distribution, independence, leakage, multiple testing)
 - the model may not observe your data-generating process
@@ -418,6 +417,7 @@ flowchart LR
 University guidance explicitly treats unpermitted or unacknowledged AI assistance as **false authorship**, regardless of intent.
 
 This includes AI contribution to:
+
 - text and argumentation
 - code and analysis outputs
 - images, figures, or other generated artefacts
@@ -425,6 +425,7 @@ This includes AI contribution to:
 ## Permission is contextual, not assumed
 
 AI acceptability varies by:
+
 - assessment instructions
 - discipline norms
 - collaboration agreements
@@ -435,6 +436,7 @@ AI acceptability varies by:
 ## Accountability: what must remain human
 
 The researcher must be able to:
+
 1. justify key assumptions
 2. reproduce results
 3. defend claims against evidence
@@ -456,6 +458,7 @@ Traceability aligns with established research integrity practices.
 ## Contribution boundaries: editing vs substantive generation
 
 A recurring problem is distinguishing:
+
 - *language editing* (clarity, structure)  
 from
 - *substantive contribution* (ideas, methods, claims, interpretation)
@@ -486,6 +489,7 @@ Research-relevant risks often arise from normal workflow choices:
 ## Governance as risk control (not tool bans)
 
 Effective governance focuses on **risk concentration points**, for example:
+
 - methodological choices
 - interpretation of results
 - citation and evidence claims
@@ -568,6 +572,7 @@ In research settings, “data” includes more than datasets:
 ## De-identification is not a guarantee
 
 Even where identifiers are removed, risk can persist via:
+
 - rare combinations of attributes
 - contextual clues in free text
 - small-n tables
@@ -578,6 +583,7 @@ The practical implication: “anonymised” is not the same as “safe to share�
 ## AI systems as unregulated collaborators
 
 A useful governance analogy is to treat external AI systems like collaborators without:
+
 - contracts
 - ethics approvals
 - data sharing agreements
@@ -588,6 +594,7 @@ That framing helps clarify why **minimum disclosure** matters.
 ## Jurisdiction, retention, and uncertainty
 
 Key uncertainties that matter for research governance include:
+
 1. where prompts are processed and stored
 2. how long data is retained
 3. whether data is used for service improvement
@@ -631,13 +638,13 @@ Say you have an unpublished results table for interpretation.
 
 AI supports research via literature search, coding, analysis and translation, but outputs may be biased, incorrect or insecure.
 
-Key opportunities: efficiency, creativity, hypothesis generation and reduced repetitive workload.
+- Key opportunities: efficiency, creativity, hypothesis generation and reduced repetitive workload.
 
-Main risks: hallucinations, bias, plagiarism, copyright/IP issues, data breaches and loss of critical skills.
+- Main risks: hallucinations, bias, plagiarism, copyright/IP issues, data breaches and loss of critical skills.
 
-Ethical use requires transparency, accountability, fairness, privacy, and disclosure—AI is never an author.
+- Ethical use requires transparency, accountability, fairness, privacy, and disclosure—AI is never an author.
 
-Use secure, approved tools; avoid sensitive data sharing; follow institutional, funder and publisher policies.
+> Use secure, approved tools; avoid sensitive data sharing; follow institutional, funder and publisher policies.
 :::
 
 ::: callout-hints
