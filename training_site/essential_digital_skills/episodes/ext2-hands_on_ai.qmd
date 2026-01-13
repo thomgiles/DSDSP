@@ -2,7 +2,7 @@
 title: Hands‑on with AI for Research
 metadata:
   teaching: 20
-  exercises: 100
+  exercises: 40
 ---
 
 # Module Overview
@@ -10,7 +10,7 @@ metadata:
 - **Module:** EDS‑EXT2 – Hands‑on with AI for Research  
 - **Course:** Essential Digital Skills – AI for Research Extension  
 - **Audience:** Early Career Researchers (PhD, Postdoc)  
-- **Duration:** ~20 minutes directed teaching (+100 minutes practical exercises)  
+- **Duration:** ~20 minutes directed teaching (+50 minutes practical exercises)  
 
 ::: callout-outcomes
 ## 💡 Learning Outcomes
@@ -34,10 +34,11 @@ metadata:
 ## Structure & Agenda
 
 1. **Orientation and Prompting** – 5 minutes introduction followed by a 5 minute prompt practice.  
-2. **Group Research with Copilot** – 5 minutes orientation followed by a 15 minute small‑group task and 10 minute plenary.  
-3. **Critique and Validation** – 5 minutes setup followed by a 15 minute group critique and 10 minute plenary.  
-4. **Prompt Framing and Role Effects** – 5 minutes introduction followed by a 10 minute role‑prompting experiment and 5 minute plenary.  
-5. **Using Agents for Repeated Tasks** – 5 minutes introduction followed by a 15 minute role‑prompting experiment and 10 minute plenary.  
+2. **Group Research with Copilot** – 5 minute small‑group task and 5 minute plenary.  
+3. **Critique and Validation** – 5 minute group critique and 5 minute plenary.  
+4. **Prompt Framing and Role Effects** – 5 minute role‑prompting experiment and 5 minute plenary.  
+5. **Using Agents for Repeated Tasks** – 5 minute role‑prompting experiment and 5 minute plenary.  
+6. **Going Further with AI** - 5 minute role‑prompting experiment and 5 minute plenary.  
 
 > 🔧 The emphasis is on practical exercises; short teaching segments introduce each activity.
 
@@ -51,7 +52,7 @@ This workshop builds on the principles introduced in the lecture. Responsible AI
 
 ## Group Formation
 
-Participants should form upto **five groups**
+Participants should form upto **around five groups**
 
 > Groups will remain fixed throughout the workshop.
 
@@ -96,7 +97,7 @@ Each group will be tasked with investigates one AI policy area:
 #### Task 2: Small-group work
 
 ::: panel-tabset
-##### Exercise (15 min)
+##### Exercise (5 min)
 Using Copilot, collect information about your assigned policy area. Document the outputs in a shared sheet or board.
 
 Groups should prepare to:
@@ -105,7 +106,7 @@ Groups should prepare to:
 - identify gaps, hallucinations or incorrect claims  
 - evaluate Copilot’s cited sources (if any)  
 
-##### Plenary (10 min)
+##### Plenary (5 min)
 Groups present initial findings and discuss prompt strategies and observed weaknesses in AI responses.
 :::
 :::
@@ -117,7 +118,7 @@ Groups present initial findings and discuss prompt strategies and observed weakn
 The these are the official policy documents:
 
 - **Journal publisher – Nature / Springer Nature** – see [Springer Nature Editorial Policies – Artificial Intelligence](https://www.nature.com/nature-portfolio/editorial-policies/ai)  
-- **Academic society – Political Studies Review / SAGE Publications** – see [SAGE AI Policy: Ethical Use of Generative AI in Research and Scholarly Publishing](https://psr.brunel.ac.uk/2024/10/04/the-ethical-use-of-generative-ai-in-publishing-and-research/) 
+- **Academic society – Political Studies Review / SAGE Publications** – see [SAGE AI Policy: Ethical Use of Generative AI in Research and Scholarly Publishing](https://psr.brunel.ac.uk/2024/5/04/the-ethical-use-of-generative-ai-in-publishing-and-research/) 
 - **Research funder – Cancer Research UK (joint funder statement)** – see [Joint Approach to Generative AI in Funding Applications (Cancer Research UK)](https://news.cancerresearchuk.org/2023/09/19/joint-approach-to-generative-ai-in-funding-applications/) 
 - **National guidelines – UKRI generative AI policy** – see [UKRI Generative AI in Application and Assessment Policy (Sept 2024; updated Dec 2024)](https://www.ukri.org/publications/generative-artificial-intelligence-in-application-and-assessment-policy/)
 - **Independent body – COPE generative AI policy** - see [COPE Authorship and AI tools policy](https://publicationethics.org/guidance/cope-position/authorship-and-ai-tools)
@@ -130,7 +131,7 @@ The these are the official policy documents:
 #### Task 3: Group critique
 
 ::: panel-tabset
-##### Exercise (15 min)
+##### Exercise (5 min)
 Compare Copilot’s claims with the actual policy text. For at least two AI-generated statements, verify:
 
 - whether they appear in the official document  
@@ -138,7 +139,7 @@ Compare Copilot’s claims with the actual policy text. For at least two AI-gene
 
 > **Hint** Note possible reasons for inaccuracies: outdated training data, vague prompts, or ambiguous policy language.
 
-##### Discussion (10 min)
+##### Discussion (5 min)
 - How accurate were Copilot’s outputs overall?  
 - What patterns of error or bias emerged?  
 - What verification processes should researchers apply?  
@@ -158,7 +159,7 @@ The tone and content of Copilot’s output can vary depending on the role specif
 #### Task 4: Role effects experiment
 
 ::: panel-tabset
-##### Exercise (10 min)
+##### Exercise (5 min)
 Re-ask the same policy question used in Task 1 with **three different role instructions**.  
 
 1. policy adviser
@@ -188,7 +189,7 @@ Once an agent is configured with clear instructions (e.g. how to retrieve, summa
 #### Task 5: Build an agent to automate AI-policy review
 
 ::: panel-tabset
-##### Exercise (15 min)
+##### Exercise (5 min)
 Create an AI agent configured to:
 
 - accept a **single input**: the name of the organisation (e.g. *Nature*, *UKRI*, *COPE*)  
@@ -200,10 +201,42 @@ Create an AI agent configured to:
 Test it on at least **three** organisations.  
 Note where it succeeds, where it struggles and where human oversight is required.
 
-##### Plenary (10 min)
-- Compare agent designs  
+##### Plenary (5 min)
 - Discuss benefits of automation vs. risks (e.g. propagating errors)  
 - Reflect on where agents can fit into research workflows responsibly  
+:::
+:::
+
+# Going Further with AI
+
+## LLMs can write their own AI Agents
+
+Create a new agent, but this time use copilot to create the agent prompt instead of writing it yourself. be detailed and specific.
+
+---
+
+::: callout-task
+
+#### Task 5: Build an agent with a LLM
+
+::: panel-tabset
+##### Exercise (5 min)
+Create another agent, this time using AI to write the prompt. 
+
+The AI agent sould be configured to:
+
+- accept a **single input**: the name of the organisation (e.g. *Nature*, *UKRI*, *COPE*)  
+- retrieve and summarise the organisation’s generative-AI policy  
+- identify disclosure and authorship rules  
+- flag uncertainties or possible hallucinations  
+- present information in a consistent structure  
+
+Test it on at least **three** organisations.  
+Note where it succeeds, where it struggles and where human oversight is required.
+
+##### Plenary (5 min)
+- Compare agent designs  
+- Which was better? the one you wrote or the one self written by AI? 
 :::
 :::
 
@@ -223,7 +256,7 @@ Note where it succeeds, where it struggles and where human oversight is required
 ::: callout-hints
 
 ##   Hints
-- **Publisher policies on AI**: [Nature editorial](https://www.nature.com/articles/d41586-023-00191-1)  
+- **Publisher policies on AI**: [Nature editorial](https://www.nature.com/articles/d4586-023-00191-1)  
 - **International guidelines**: [European Commission living guidelines](https://www.vr.se/english/just-now/news/news-archive/2024-04-09-new-guidelines-for-using-ai-in-europe.html)  
 - **Institutional resources**: [UoN guidance](https://www.nottingham.ac.uk/studyingeffectively/studying/ai.aspx)  
 - **Prompt engineering resources**: explore official guides and examples of effective prompts.  

@@ -61,6 +61,14 @@ Personal data means *any information relating to an identified or identifiable p
 ## The GDPR Framework
 
 ```{mermaid}
+%%{init: {
+  "theme": "default",
+  "themeVariables": {
+    "fontSize": "20px",
+    "nodePadding": 25,
+    "fontFamily": "Arial, Helvetica, sans-serif"
+  }
+}}%%
 flowchart LR
     A[Data Subject]
     A1[Provides Data]
@@ -124,6 +132,14 @@ It complements ethical approval and transparency but does not replace institutio
 ## Special Category Data (UK GDPR Article 9)
 
 ```{mermaid}
+%%{init: {
+  "theme": "default",
+  "themeVariables": {
+    "fontSize": "20px",
+    "nodePadding": 25,
+    "fontFamily": "Arial, Helvetica, sans-serif"
+  }
+}}%%
 flowchart LR
     A[Personal Data]
     B[Special Category Data]
@@ -202,6 +218,14 @@ Ethical review ensures that research is conducted with **integrity, transparency
 * Some low-risk activities may be registered but not reviewed if fully anonymised
 
 ```{mermaid}
+%%{init: {
+  "theme": "default",
+  "themeVariables": {
+    "fontSize": "20px",
+    "nodePadding": 25,
+    "fontFamily": "Arial, Helvetica, sans-serif"
+  }
+}}%%
 flowchart LR
     A[Research Idea] --> B[Ethics Self-Assessment]
     B --> C{Human Data or Participants?}
@@ -256,6 +280,14 @@ Research data must be handled according to sensitivity and risk. UoN’s **Infor
 ## Information Classification Model
 
 ```{mermaid}
+%%{init: {
+  "theme": "default",
+  "themeVariables": {
+    "fontSize": "20px",
+    "nodePadding": 25,
+    "fontFamily": "Arial, Helvetica, sans-serif"
+  }
+}}%%
 flowchart LR
     A[Public] --> B[Internal]
     B --> C[Confidential]
@@ -328,6 +360,14 @@ Data governance operates across multiple levels: **institutional, national and f
 ## Implementing Compliance in Projects
 
 ```{mermaid}
+%%{init: {
+  "theme": "default",
+  "themeVariables": {
+    "fontSize": "20px",
+    "nodePadding": 25,
+    "fontFamily": "Arial, Helvetica, sans-serif"
+  }
+}}%%
 flowchart LR
     A[Institutional Policy] --> B[Funder Requirements]
     B --> C[Project-Level Implementation]
