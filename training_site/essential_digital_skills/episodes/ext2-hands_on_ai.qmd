@@ -5,6 +5,13 @@ metadata:
   exercises: 40
 ---
 
+::: {.content-visible when-format="revealjs"}
+
+<!-- Hidden by default -->
+![](fig/HOAI_qr.png){fig-align="center" width=400px}
+
+:::
+
 # Module Overview
 
 - **Module:** EDS‑EXT2 – Hands‑on with AI for Research  
