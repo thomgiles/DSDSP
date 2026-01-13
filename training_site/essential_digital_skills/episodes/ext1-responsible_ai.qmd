@@ -5,14 +5,19 @@ metadata:
   exercises: 20
 ---
 
+::: {.content-visible when-format="revealjs"}
+
+<!-- Hidden by default -->
+![](fig/RUAI_qr.png){fig-align="center" width=400px}
+
+:::
+
 # Module Overview
 
 - **Module:** EDS‑EXT1 – Responsible Use of AI in Research 
 - **Course:** Essential Digital Skills – AI for Research Extension
 - **Audience:** Early Career Researchers (PhD, Postdoc)
 - **Duration:** ~40 minutes directed teaching (+20 minutes exercises)  
-
----
 
 ::: callout-outcomes
 ## 💡 Learning Outcomes
@@ -22,8 +27,6 @@ metadata:
 - Interpret institutional on AI authorship, disclosure and data security.
 - Incorporate data security and governance considerations when using AI tools and anticipate future directions for responsible AI use.
 :::
-
----
 
 ::: callout-questions
 ## ❓ Questions 
@@ -94,11 +97,12 @@ Human expertise had to be encoded manually, often as **thousands of explicit rul
 in the 80s ML emerged when researchers realised that instead of telling computers *how* to solve problems, they could let them *learn* from examples. 
 
 **Three conditions enabled this transition:**
-1. **Data was being generated at scale** in science, finance, and the internet.  
-2. **Statistical methods improved** (e.g., Bayesian modelling, maximum likelihood).  
-3. **Computers became fast enough** to fit models to real datasets.
 
-ML became the dominant paradigm because it could adapt to messy, uncertain, real-world problems.
+- **Data was being generated at scale** in science, finance, and the internet.  
+- **Statistical methods improved** (e.g., Bayesian modelling, maximum likelihood).
+- **Computers became fast enough** to fit models to real datasets.
+
+> ML became the dominant paradigm because it could adapt to messy, uncertain, real-world problems.
 
 ## Core Machine Learning Approaches
 
@@ -122,33 +126,35 @@ ML became the dominant paradigm because it could adapt to messy, uncertain, real
 
 In the early 2000s Natural Language Processing (NLP) emerged as a field of AI that focuses on understanding and generating human language. It focused on tasks such as translation, sentiment analysis, summarisation and question answering.
 
-
 ```{mermaid}
 %%{init: {
   "theme": "default",
   "themeVariables": {
     "fontSize": "20px",
-    "nodePadding": 25,
+    "nodePadding": 30,
     "fontFamily": "Arial, Helvetica, sans-serif"
   }
 }}%%
-graph TB
-    RNN["RNN: Sequential, short-term memory"]
-    A["Weak long-range memory"]
+graph LR
+    D["Input data"]
+    I["Input layer"]
+    H["Hidden layer"]
+    H1["Hidden layer"]
+    H2["Hidden layer"]
 
-    LSTM["LSTM: Gated cells, long-term memory"]
-    B["Heavy to train"]
+    O["Output layer"]
+    R["Output data"]
 
-    GRU["GRU: Simplified LSTM, efficient"]
-    C["Still sequential"]
-
-    CNN["CNN: Detects local patterns, fast"]
-    D["Limited global context"]
-
-    RNN --> A
-    LSTM --> B
-    GRU --> C
-    CNN --> D
+    I -->|Feed forward| O
+    O -->|back-propagation| I
+    D --> I
+    I --> H
+    H --> O
+    I --> H1
+    H1 --> O
+    I --> H2
+    H2 --> O
+    O --> R
 ```
 
 > Language is challenging because meaning depends on context and relationships across sentences. 
@@ -169,9 +175,7 @@ Transformers introduced something called self-attention, this essentially allowe
 
 > 🚀 This unlocked large-scale training and dramatically improved performance across language, vision and multimodal tasks.
 
-## The cogs behind Generative AI
-
-By predicting the most likely next token from prior context, transformers learn statistical patterns that can be reused across tasks, enabling flexible inference beyond simple memorisation.
+## Example
 
 ```{mermaid}
 %%{init: {
@@ -193,6 +197,11 @@ sequenceDiagram
         M->>U: Emit next token
     end
 ```
+
+## The cogs behind Generative AI
+
+By predicting the most likely next token from prior context, transformers learn statistical patterns that can be reused across tasks, enabling flexible inference beyond simple memorisation.
+
 > ✨ Given a large enough training set, this allows them to generate responses the appear thougtful. 
 
 ## Transformers →  Foundation Models (2020)
@@ -241,9 +250,9 @@ Big shift now is on optimisation as running large models is expensive!
 #### Poll: Which AI tools have you used?
 
 ::: panel-tabset
+
 ##### Question
 Which AI tools (if any) have you used so far in your research workflow?  Select one or more options in the poll provided.  If you have not yet used any AI tools, indicate “None” and reflect on where AI might help.
-
 
 ::: {.content-visible when-format="revealjs"}
 
@@ -361,10 +370,6 @@ Methodological advice is particularly vulnerable because:
 
 Responsible AI use in research requires **rebalancing**:
 
-- faster generation → stronger verification
-- more options → clearer decision criteria
-- easier drafting → stricter claim–evidence mapping
-
 ```{mermaid}
 %%{init: {"theme":"default","themeVariables":{"fontSize":"20px","nodePadding":22}}}%%
 flowchart LR
@@ -384,6 +389,10 @@ flowchart LR
   style G stroke-width:3px
 ```
 
+> 🌐 You need more robust evidence to use it! 
+
+---
+
 ::: callout-task
 
 #### Task: risk relocation audit (5 minutes)
@@ -394,7 +403,6 @@ Plenary Discussion:
 2. State how AI could reduce effort at that stage (1 sentence).  
 3. Identify **one relocated risk** and **one safeguard** you would require.  
 :::
-
 
 # Ethics, Governance and Academic Integrity
 
@@ -470,13 +478,14 @@ from
 
 ```{mermaid}
 %%{init: {"theme":"default","themeVariables":{"fontSize":"20px","nodePadding":18}}}%%
-flowchart LR
-  A["Surface editing\n(grammar, clarity)"]
-  B["Structural shaping\n(outline, framing)"]
-  C["Substantive contribution\n(ideas, claims, methods)"]
-  D["Credentialed output\n(assessment/publication)"]
+flowchart TB
+  A[Surface editing] --> A1[grammar, clarity]
+  B[Structural shaping] --> B1[outline, framing]
+  C[Substantive contribution] --> C1[ideas, claims, methods]
+  D[Credentialed output] --> D1[assessment/publication]
 
-  A --> B --> C --> D
+  style A stroke-width:3px
+  style B stroke-width:3px
   style C stroke-width:3px
   style D stroke-width:3px
 ```
@@ -503,23 +512,15 @@ A governance approach is successful when it changes behaviour at those points.
 ## What good disclosure achieves
 
 Disclosure is not a punishment; it enables:
+
 - clearer attribution of intellectual work
 - defensible scholarship
 - auditability and reproducibility
 - trust within teams and with audiences
 
-```{mermaid}
-%%{init: {"theme":"default","themeVariables":{"fontSize":"20px","nodePadding":22}}}%%
-flowchart TB
-  A["Key research claim"]
-  B{"Was AI involved?"}
+> You make a claim? Was AI involved? If Yes, Disclose it! 
 
-  A --> B
-
-  B -- "No" --> C["Proceed as standard"]
-  B -- "Yes" --> D["Describe AI influence"]
-
-```
+---
 
 ::: callout-task
 
@@ -531,8 +532,6 @@ The Following Methods paragraph was produced with AI assistance:
 
 1. What would count as substantive contribution in this artefact?
 2. What would need to be disclosed if AI materially contributed?
-
-
 :::
 
 # Data Security and the Research Threat
@@ -622,11 +621,13 @@ flowchart LR
   style E stroke-width:3px
 ```
 
-
 ## Summary: the research-standard bar does not change
 
 AI changes *how* risks manifest, not the standards of integrity expected in research.  
-The requirement remains: accountable claims, auditable methods, and protected data.
+
+> The requirement remains: accountable claims, auditable methods, and protected data.
+
+---
 
 ::: callout-task
 
@@ -653,7 +654,6 @@ Main risks: hallucinations, bias, plagiarism, copyright/IP issues, data breaches
 Ethical use requires transparency, accountability, fairness, privacy, and disclosure—AI is never an author.
 
 Use secure, approved tools; avoid sensitive data sharing; follow institutional, funder and publisher policies.
-
 :::
 
 ::: callout-hints
