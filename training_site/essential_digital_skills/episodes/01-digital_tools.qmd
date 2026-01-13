@@ -59,6 +59,14 @@ It is also about **connecting researchers** with the people who work with data, 
 This programme aims to bridge the gap between disciplinary experts and technical specialists. 
 
   ```{mermaid}
+%%{init: {
+  "theme": "default",
+  "themeVariables": {
+    "fontSize": "20px",
+    "nodePadding": 25,
+    "fontFamily": "Arial, Helvetica, sans-serif"
+  }
+}}%%
 flowchart TB
     A["Data Collection"] --> B["Analysis"] --> C["Collaboration"] --> D["Publication & Sharing"]
     D --> A
@@ -130,6 +138,14 @@ document.addEventListener("DOMContentLoaded", function() {
 Digital research depends on **connected systems** that enable collaboration, safeguard data, and streamline research workflows.
 
 ```{mermaid}
+%%{init: {
+  "theme": "default",
+  "themeVariables": {
+    "fontSize": "20px",
+    "nodePadding": 25,
+    "fontFamily": "Arial, Helvetica, sans-serif"
+  }
+}}%%
 flowchart TB
     A["Researchers"]:::a --> B["Institutional Systems"]:::b --> C["Collaborative Outputs"]:::c
     C --> A
@@ -191,6 +207,14 @@ UniCore and RIS link the operational and administrative sides of research.
 **UniCore** is UoN’s enterprise system for managing finance, HR, and procurement.
 
 ```{mermaid}
+%%{init: {
+  "theme": "default",
+  "themeVariables": {
+    "fontSize": "20px",
+    "nodePadding": 25,
+    "fontFamily": "Arial, Helvetica, sans-serif"
+  }
+}}%%
 flowchart TB
     P["Purchasing"]:::a --> E["Expenses"]:::b --> H["HR & Leave Management"]:::c --> R["Research Operations"]:::d
     R --> P
@@ -234,6 +258,14 @@ flowchart TB
 By using institutional systems effectively teams build **trust and accountability**, data remains **secure, reusable, and open** and researchers can spend more time working on **innovation and discovery**
 
 ```{mermaid}
+%%{init: {
+  "theme": "default",
+  "themeVariables": {
+    "fontSize": "20px",
+    "nodePadding": 25,
+    "fontFamily": "Arial, Helvetica, sans-serif"
+  }
+}}%%
 flowchart TB
     A["Transparency"]:::a --> B["Trust"]:::b --> C["Collaboration"]:::c --> D["Impact"]:::d
     D --> A
@@ -291,6 +323,14 @@ document.addEventListener("DOMContentLoaded", function() {
 Your **research identity** defines how your work is discovered, attributed, and connected across the digital research ecosystem.
 
 ```{mermaid}
+%%{init: {
+  "theme": "default",
+  "themeVariables": {
+    "fontSize": "20px",
+    "nodePadding": 25,
+    "fontFamily": "Arial, Helvetica, sans-serif"
+  }
+}}%%
 flowchart TB
     P["Publications"]:::a --> O["ORCID iD"]:::b --> R["Repositories & Funders"]:::c --> I["Institutional Systems (RIS, HR)"]:::d
     I --> P
@@ -319,6 +359,14 @@ A consistent identity links your outputs, affiliations, and roles automatically 
 **ORCID (Open Researcher and Contributor ID)** is the global standard for uniquely identifying researchers across institutions and disciplines.
 
 ```{mermaid}
+%%{init: {
+  "theme": "default",
+  "themeVariables": {
+    "fontSize": "20px",
+    "nodePadding": 25,
+    "fontFamily": "Arial, Helvetica, sans-serif"
+  }
+}}%%
 flowchart LR
     A["Researcher"]:::a --> B["ORCID iD"]:::b --> C["Funders"]:::c
     B --> D["Publishers"]:::d
@@ -388,6 +436,14 @@ Visit [Orcid](https://orcid.org/), Log in / sign up
 Effective digital research requires vigilance, responsibility, and sound data stewardship to protect not only research, but also collaborators and institutions.
 
 ```{mermaid}
+%%{init: {
+  "theme": "default",
+  "themeVariables": {
+    "fontSize": "20px",
+    "nodePadding": 25,
+    "fontFamily": "Arial, Helvetica, sans-serif"
+  }
+}}%%
 flowchart TB
     A["Trust & Compliance"]:::a --> B["Data Integrity"]:::b --> C["Confidentiality"]:::c --> D["Continuity"]:::d --> E["Collaboration Resilience"]:::e --> A
     classDef a fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
@@ -417,6 +473,14 @@ Weak or reused passwords are still the most common research vulnerability.
 Even if your password is compromised, MFA prevents most unauthorised logins.
 
 ```{mermaid}
+%%{init: {
+  "theme": "default",
+  "themeVariables": {
+    "fontSize": "20px",
+    "nodePadding": 25,
+    "fontFamily": "Arial, Helvetica, sans-serif"
+  }
+}}%%
 flowchart LR
     U["User Login"]:::a --> P["Password"]:::b --> V["Second Factor (App / SMS / Key)"]:::c --> A["Access Granted"]:::d
     classDef a fill:#E3F2FD,stroke:#1565C0,stroke-width:1px

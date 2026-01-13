@@ -40,32 +40,29 @@ ui <- dashboardPage(
 
   dashboardBody(
     tags$head(
+      # --- White background + embed mode styling ---
       tags$style(HTML("
         .content-wrapper { background-color: white !important; }
         body.embedded-mode .content-wrapper { margin-left:0!important; padding:0!important; }
         body.embedded-mode .main-header, body.embedded-mode .main-sidebar { display:none!important; }
       ")),
-
-      # --- WORKING HASH NAVIGATION (same logic as EDS-M1) ---
+      # --- JS: enable ?embed=true and hash navigation ---
       tags$script(HTML("
         $(document).ready(function() {
-
           const params = new URLSearchParams(window.location.search);
           const hash = window.location.hash;
-
           if (params.get('embed') === 'true') {
             $('body').addClass('embedded-mode');
             $('.main-header').hide();
             $('.main-sidebar').hide();
             $('.content-wrapper').css({'margin-left':'0','padding':'0'});
           }
-
           if (hash.startsWith('#shiny-tab-')) {
             const tabName = hash.replace('#shiny-tab-', '');
             const tryActivate = () => {
               const $tabLink = $('a[data-value=\"' + tabName + '\"]');
               if ($tabLink.length) $tabLink.tab('show');
-              else setTimeout(tryActivate, 150);
+              else setTimeout(tryActivate, 200);
             };
             tryActivate();
           }
