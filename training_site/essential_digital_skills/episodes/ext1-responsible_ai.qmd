@@ -219,8 +219,6 @@ Transformers trained through self-supervision on very large large datasets have 
 
 ## From Scale to Generality (2020–present)
 
-### Foundation models
-
 - **2020**: **GPT-3** (~175B parameters)  
   First truly large-scale autoregressive model demonstrating broad, task-agnostic capabilities.
 
@@ -366,30 +364,23 @@ Methodological advice is particularly vulnerable because:
 | Validation | inappropriate splits | inflated performance |
 | Reporting | missing limitations | overclaiming |
 
-## What "responsible" looks like
+## What “responsible” looks like
 
-Responsible AI use in research requires **rebalancing**:
+Responsible use of artificial intelligence in research requires **rebalancing speed with rigour**.
 
-```{mermaid}
-%%{init: {"theme":"default","themeVariables":{"fontSize":"20px","nodePadding":22}}}%%
-flowchart LR
-  A["AI-enabled speed"]
-  B["Faster generation"]
-  C["More options"]
-  D["Easier drafting"]
+**Artificial intelligence enables speed**
 
-  E["Stronger verification"]
-  F["Clearer decision criteria"]
-  G["Stricter claim–evidence mapping"]
+- Faster text and code generation  
+- Rapid exploration of alternatives  
+- Easier drafting and prototyping  
 
-  A --> B --> C --> D
-  E --> F --> G
+**Responsibility requires control**
 
-  style D stroke-width:3px
-  style G stroke-width:3px
-```
+- Stronger verification of outputs  
+- Clear decision criteria  
+- Explicit claim–evidence mapping  
 
-> 🌐 You need more robust evidence to use it! 
+> 🌐 As automation increases, the burden of evidence and verification increases with it.
 
 ---
 
