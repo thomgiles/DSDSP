@@ -39,8 +39,6 @@ metadata:
 3. Agile Thinking and Sprint-Based Delivery (~15 min)
 4. Shared Ownership & Research Culture (~15 min)
 
----
-
 # Digital Delivery Principles
 
 Digital delivery applies concepts from software engineering and modern project management to research. It provides a **structured yet flexible framework** for coordinating work, ensuring reproducibility, and maintaining visibility across teams and tools.
