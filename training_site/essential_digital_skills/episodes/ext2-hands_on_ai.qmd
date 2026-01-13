@@ -12,13 +12,6 @@ metadata:
 
 :::
 
-# Module Overview
-
-- **Module:** EDS‑EXT2 – Hands‑on with AI for Research  
-- **Course:** Essential Digital Skills – AI for Research Extension  
-- **Audience:** Early Career Researchers (PhD, Postdoc)  
-- **Duration:** ~20 minutes directed teaching (+50 minutes practical exercises)  
-
 ::: callout-outcomes
 ## 💡 Learning Outcomes
 - Practise designing effective prompts for policy‑oriented research questions and document the results.  

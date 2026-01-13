@@ -12,13 +12,6 @@ metadata:
 
 :::
 
-# Module Overview
-
-- **Module:** EDS‑EXT1 – Responsible Use of AI in Research 
-- **Course:** Essential Digital Skills – AI for Research Extension
-- **Audience:** Early Career Researchers (PhD, Postdoc)
-- **Duration:** ~40 minutes directed teaching (+20 minutes exercises)  
-
 ::: callout-outcomes
 ## 💡 Learning Outcomes
 - Recognise how AI and generative AI are defined and how they are applied in research, including literature search, data analysis and coding assistance.
