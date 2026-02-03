@@ -1,5 +1,5 @@
 ---
-title: Responsible Use of AI in Research
+title: Responsible Use of AI in Research (How AI impacts research)
 metadata:
   teaching: 40  
   exercises: 20
@@ -13,7 +13,9 @@ metadata:
 :::
 
 ::: callout-outcomes
+
 ## 💡 Learning Outcomes
+
 - Recognise how AI and generative AI are defined and how they are applied in research, including literature search, data analysis and coding assistance.
 - Identify opportunities and risks associated with using AI in research, such as efficiency, creativity, bias, hallucinations, copyright and reproducibility.
 - Apply ethical principles; transparency, accountability, fairness, privacy and human oversight, when integrating AI into your workflow.
@@ -22,7 +24,9 @@ metadata:
 :::
 
 ::: callout-questions
+
 ## ❓ Questions 
+
 1. What opportunities can AI offer for research?
 2. What are the main risks and challenges in using AI for research?
 3. Which ethical principles should guide your use of AI in research?
@@ -37,6 +41,10 @@ metadata:
 4. **AI, Data Security and Future Directions** – 10 minutes teaching followed by a 5 minute confidence poll.  
 
 > 🔧 Four activities provide opportunities for reflection, critique and discussion.
+
+# Note
+
+AI was used (but not harmed) in the generation of these training materials! 
 
 # Foundations and Context
 
@@ -120,14 +128,7 @@ in the 80s ML emerged when researchers realised that instead of telling computer
 In the early 2000s Natural Language Processing (NLP) emerged as a field of AI that focuses on understanding and generating human language. It focused on tasks such as translation, sentiment analysis, summarisation and question answering.
 
 ```{mermaid}
-%%{init: {
-  "theme": "default",
-  "themeVariables": {
-    "fontSize": "20px",
-    "nodePadding": 30,
-    "fontFamily": "Arial, Helvetica, sans-serif"
-  }
-}}%%
+
 graph LR
     D["Input data"]
     I["Input layer"]
@@ -171,14 +172,7 @@ Transformers introduced something called self-attention, this essentially allowe
 ## Example
 
 ```{mermaid}
-%%{init: {
-  "theme": "default",
-  "themeVariables": {
-    "fontSize": "20px",
-    "nodePadding": 25,
-    "fontFamily": "Arial, Helvetica, sans-serif"
-  }
-}}%%
+
 sequenceDiagram
     participant U as Prompt
     participant M as LLM
@@ -240,7 +234,7 @@ Big shift now is on optimisation as running large models is expensive!
 ::: panel-tabset
 
 ##### Question
-Which AI tools (if any) have you used so far in your research workflow?  Select one or more options in the poll provided.  If you have not yet used any AI tools, indicate “None” and reflect on where AI might help.
+Which AI tools (if any) have you used so far in your research workflow?  Select one or more options in the poll provided.  If you have not yet used any AI tools, indicate “None”.
 
 ::: {.content-visible when-format="revealjs"}
 
@@ -262,117 +256,70 @@ Which AI tools (if any) have you used so far in your research workflow?  Select 
 :::
 :::
 
-# Opportunities and Risks
+# 1. Opportunities
 
 ![](fig/AI2.jpg){fig-align="center" width="400px"}
 
-## AI represents structural change in research
+## AI as a structural shift in research practice
 
-Generative AI changes research primarily by **compressing intellectual labour** (drafting, synthesis, translation, code scaffolding).  
+Generative AI represents a structural change in research by **compressing intellectual labour** associated with drafting, synthesis, translation, and technical scaffolding.  
 
-The core impact is not automation of expertise, but a redistribution of effort from **production** to **evaluation**.
+Rather than replacing expertise, it reallocates researcher effort from **production** to **evaluation, verification, and judgement**.
 
-## The research lifecycle becomes “short-circuited”
+> The key transformation is therefore epistemic rather than technical: researchers are increasingly positioned as *editors of reasoning* rather than sole producers of intermediate artefacts.
 
-AI can pull multiple stages closer together, reducing natural pauses for critique.
+## Compression of the research lifecycle
+
+AI-enabled workflows can collapse traditionally sequential stages of research, reducing temporal distance between ideation, analysis, and dissemination.
 
 ```{mermaid}
-%%{init: {"theme":"default","themeVariables":{"fontSize":"20px","nodePadding":22}}}%%
+
 graph LR
   A["Question framing"] --> B["Evidence synthesis"]
   B --> C["Analysis & modelling"]
   C --> D["Dissemination"]
   A -. "AI-assisted shortcuts" .-> C
   B -. "AI-assisted drafting" .-> D
+
 ```
 
-## Where opportunities genuinely arise
+> This compression increases throughput but reduces natural pauses for critical reflection, peer discussion, and methodological reconsideration. Opportunities therefore emerge only when deliberate checkpoints are reintroduced.
 
-Opportunities in research are primarily about **capacity expansion**.
+## Where genuine opportunities arise
 
-- Faster orientation in unfamiliar literature
-- Broader exploration of analytical alternatives
-- Reduced time spent on technical boilerplate
-- Improved accessibility of communication (clarity, structure)
+Opportunities from AI in research are best understood as **capacity multipliers**
 
-> These gains are valuable only when the researcher retains ownership of assumptions and conclusions.
+Common high‑value gains include:
 
-## Where risks intensify
+- rapid orientation in unfamiliar or interdisciplinary literatures  
+- broader exploration of methodological or analytical alternatives  
+- reduced time spent on repetitive technical boilerplate (e.g. code scaffolds, formatting)  
+- improved accessibility and clarity of written communication  
+- faster iteration during early exploratory phases  
 
-AI tends to amplify risks that already exist in research practice:
+> These benefits are particularly significant in environments characterised by limited time, high cognitive load, or interdisciplinary translation.
 
-1. **Framing risk** (definitions, assumptions, scope)
-2. **Evidence risk** (omissions, mis-citation, overconfident synthesis)
-3. **Method risk** (plausible-but-inappropriate analytic choices)
-4. **Reporting risk** (polished language masking uncertainty)
+## Expansion of exploratory space
 
-## Risk relocation: what changes when work gets faster?
+AI can increase the *breadth* of exploration by lowering the cost of asking “what if?” questions, it can:
 
-AI often reduces effort at one step while relocating risk elsewhere.
+- Recomend alternative methods
+- Perform sensitivity analyses  
+- Reframe research questions  
+- Offer alternative explanatory narratives  
 
-| Where effort drops | Where risk relocates | Why it matters |
-|---|---|---|
-| Drafting text | Claim checking | Fluency can mask weak evidence |
-| Coding scaffolds | Validation | Small bugs can contaminate results |
-| Literature summaries | Coverage bias | Missing dissenting evidence changes conclusions |
-| “Quick interpretations” | Overstatement | Uncertainty gets compressed away |
+> This can improve robustness *if* exploration is paired with explicit selection criteria and validation.
 
-## Plausibility is not validity
+## Accessibility and inclusion
 
-AI outputs are optimised for *plausible continuation*, not truth.  
+When used carefully, AI can also support:
 
-In research, the key failure mode is **credible-sounding error**.
+- clearer expression for non‑native speakers  
+- improved readability for diverse audiences  
+- translation across disciplinary vocabularies  
+- structured drafting for early‑career researchers  
 
-**Watch for**
-
-- Confident claims without primary evidence  
-- Citations that do not support the stated claim  
-- “One-size-fits-all” methods recommendations  
-
-
-## Evidence synthesis: what can go wrong
-
-Common research-relevant failure modes include:
-
-- selective inclusion of supportive studies
-- invented or misattributed references
-- conflation of correlation with causation
-- loss of context (population, setting, measurement)
-
-A useful mental model: treat AI summaries as **hypothesis generators**, not as evidence.
-
-## Methodological suggestions: why they are high risk
-
-Methodological advice is particularly vulnerable because:
-
-- many analytic choices are “reasonable” but not appropriate
-- assumptions are often implicit (distribution, independence, leakage, multiple testing)
-- the model may not observe your data-generating process
-
-| Area | Typical failure | Consequence |
-|---|---|---|
-| Preprocessing | leakage / incorrect normalisation | biased estimates |
-| Modelling | wrong objective / assumptions | invalid inference |
-| Validation | inappropriate splits | inflated performance |
-| Reporting | missing limitations | overclaiming |
-
-## What “responsible” looks like
-
-Responsible use of artificial intelligence in research requires **rebalancing speed with rigour**.
-
-**Artificial intelligence enables speed**
-
-- Faster text and code generation  
-- Rapid exploration of alternatives  
-- Easier drafting and prototyping  
-
-**Responsibility requires control**
-
-- Stronger verification of outputs  
-- Clear decision criteria  
-- Explicit claim–evidence mapping  
-
-> 🌐 As automation increases, the burden of evidence and verification increases with it.
+> These gains offer both social and pedagogical impact, not merely technical.
 
 ---
 
@@ -380,24 +327,47 @@ Responsible use of artificial intelligence in research requires **rebalancing sp
 
 #### Task: risk relocation audit (5 minutes)
 
-Plenary Discussion:
+**Plenary Discussion:**
 
-1. For each research stage (framing, synthesis, analysis, interpretation, dissemination).  
-2. State how AI could reduce effort at that stage (1 sentence).  
-3. Identify **one relocated risk** and **one safeguard** you would require.  
+For each research stages State how AI could reduce effort at that stage. Can you also identify potential **risks** of the approach? 
+
+  - Hypothesis generation 
+  - analysis and interpretation
+  - dissemination.  
+
 :::
 
 # Ethics, Governance and Academic Integrity
 
 ![](fig/AI3.jpg){fig-align="center" width="400px"}
 
+## The condition for opportunity: retained ownership
+
+AI‑enabled capacity is valuable only when the researcher retains ownership of:
+
+- assumptions  
+- analytical choices  
+- interpretation  
+- uncertainty  
+
+> Where ownership is ceded, opportunity are rapidly converted into risks. 
+
+## Capacity gain requires explicit control mechanisms
+
+Effective use of AI in research therefore requires intentionally designed safeguards:
+
+- Define the research question and assumptions before using AI
+- treat AI outputs as hypotheses, not evidence
+- verify all claims against primary sources
+- map key claims directly to results
+
+> Opportunity only scales with *control*. Speed without control does not create research value.
+
 ## Why governance is now a research necessity
 
-Generative AI makes it easier for substantive contributions to be produced rapidly and invisibly.  
-This strains established norms around **authorship, contribution, provenance, and accountability**.
+Generative AI makes it easier for substantive contributions to be produced rapidly and invisibly: 
 
 ```{mermaid}
-%%{init: {"theme":"default","themeVariables":{"fontSize":"20px","nodePadding":22}}}%%
 
 flowchart LR
   A["AI-assisted contribution"] 
@@ -412,15 +382,19 @@ flowchart LR
   B --> C2 --> D
 ```
 
+> This strains established norms around **authorship, contribution, provenance, and accountability**.
+
 ## False authorship: the institutional framing
 
-University guidance explicitly treats unpermitted or unacknowledged AI assistance as **false authorship**, regardless of intent.
+Most universities, including the University of Nottingham, explicitly treats unpermitted or unacknowledged AI assistance as **false authorship**, regardless of intent.
 
 This includes AI contribution to:
 
 - text and argumentation
 - code and analysis outputs
 - images, figures, or other generated artefacts
+
+> It is your responsibility to disclose the use of AI in reasearch.  
 
 ## Permission is contextual, not assumed
 
@@ -442,7 +416,7 @@ The researcher must be able to:
 3. defend claims against evidence
 4. describe limitations and uncertainty
 
-AI can assist drafts, but cannot carry responsibility.
+> AI can assist, but as a tool, cannot carry responsibility for the quality of research.
 
 ## Transparency and traceability as research norms
 
@@ -457,14 +431,10 @@ Traceability aligns with established research integrity practices.
 
 ## Contribution boundaries: editing vs substantive generation
 
-A recurring problem is distinguishing:
-
-- *language editing* (clarity, structure)  
-from
-- *substantive contribution* (ideas, methods, claims, interpretation)
+A recurring problem is distinguishing *language editing* (clarity, structure) from *substantive contribution* (ideas, methods, claims, interpretation)
 
 ```{mermaid}
-%%{init: {"theme":"default","themeVariables":{"fontSize":"20px","nodePadding":18}}}%%
+
 flowchart TB
   A[Surface editing] --> A1[grammar, clarity]
   B[Structural shaping] --> B1[outline, framing]
@@ -481,21 +451,11 @@ flowchart TB
 
 Research-relevant risks often arise from normal workflow choices:
 
-- accepting a polished paragraph without mapping claims to results
-- adopting analytic code without validation
-- using a summary that narrows a literature prematurely
-- failing to disclose material AI contribution where required
+- Accepting a polished paragraph without mapping claims to results
+- Adopting analytic code without validation
+- Using a summary that narrows the literature space prematurely
 
-## Governance as risk control (not tool bans)
-
-Effective governance focuses on **risk concentration points**, for example:
-
-- methodological choices
-- interpretation of results
-- citation and evidence claims
-- handling sensitive or unpublished material
-
-A governance approach is successful when it changes behaviour at those points.
+> Failing to disclose material AI contribution where required may seem minor, but can have significant ethical and governance implication. 
 
 ## What good disclosure achieves
 
@@ -506,7 +466,7 @@ Disclosure is not a punishment; it enables:
 - auditability and reproducibility
 - trust within teams and with audiences
 
-> You make a claim? Was AI involved? If Yes, Disclose it! 
+> You make a claim? Was AI involved? If Yes, keep an audit of how its involved and disclose it! 
 
 ---
 
@@ -514,25 +474,26 @@ Disclosure is not a punishment; it enables:
 
 #### Task: Worked example for direct critique (AI-assisted, method-agnostic, 5-minute discussion)
 
-The Following Methods paragraph was produced with AI assistance:
+The Following Method was produced using AI:
 
-***“Data will be analysed using an automated approach to identify the most informative variables and generate a streamlined analysis. Variables meeting a predefined relevance threshold will be retained, while cases showing minimal contribution will be excluded. Analytical stability will be checked using repeated internal comparisons, and the top 25 highest-ranked results will be taken forward for interpretation and reporting.”***
+***“Data will be analysed using to identify informative variables. Variables meeting a predefined relevance threshold will be retained. Cases showing minimal contribution will be excluded and the the top 25 highest-ranked variables will be taken forward for interpretation and reporting.”***
 
-1. What would count as substantive contribution in this artefact?
+1. What would count as substantive contributions in this artefact?
 2. What would need to be disclosed if AI materially contributed?
 :::
+
 
 # Data Security and the Research Threat
 
 ![](fig/AI4.jpeg){fig-align="center" width="400px"}
 
-## Why AI changes research data risk
+## Why AI materially changes research data risk
 
-Many AI tools operate outside institutional infrastructure.  
-This turns routine academic actions (summarising notes, refining code, drafting interpretation) into potential **boundary-crossing events**.
+Many AI tools operate outside institutional infrastructure and governance controls.  
+This transforms routine academic actions (summarising notes, refining code, drafting interpretation) into potential **boundary-crossing events** that may bypass established safeguards.
 
 ```{mermaid}
-%%{init: {"theme":"default","themeVariables":{"fontSize":"20px","nodePadding":22}}}%%
+
 flowchart TB
   B["Routine academic task"]
   C["External AI service"]
@@ -549,85 +510,114 @@ flowchart TB
   style D stroke-width:3px
 ```
 
-## What “data” means in AI-mediated work
+> The dominant risk is not malicious intent but **loss of visibility and control** once material leaves institutional systems.
 
-In research settings, “data” includes more than datasets:
+## What “data” means in AI-mediated research
 
-- unpublished results and intermediate tables
-- qualitative notes and transcripts
-- grant drafts and collaboration documents
-- code containing credentials or endpoints
-- metadata that can reveal sensitive context
+In AI-assisted workflows, “data” includes any material that encodes research context, insight, or trajectory, not only formal datasets:
+
+- unpublished results, figures, and intermediate tables  
+- qualitative notes, transcripts, annotations, and field diaries  
+- grant drafts, reviewer responses, and collaboration documents  
+- code containing credentials, endpoints, or infrastructure details  
+- metadata that reveals study design, populations, or timing  
+
+> Much of this material is *informally handled* but *formally sensitive*.
 
 ## High-risk material: common categories
 
 | Category | Examples | Why high risk |
 |---|---|---|
-| Personal / sensitive | clinical, genetic, geolocation | legal/ethical obligations |
-| Qualitative text | interviews, field notes | re-identification risk |
-| Unpublished work | manuscripts, results tables | premature disclosure |
+| Personal / sensitive | clinical, genetic, geolocation | legal and ethical obligations |
+| Qualitative text | interviews, free text, notes | re-identification risk |
+| Unpublished work | manuscripts, result tables | premature disclosure |
 | IP / commercial | methods, pipelines, agreements | loss of competitive advantage |
 | Security material | tokens, keys, internal URLs | direct compromise |
 
-## De-identification is not a guarantee
+> Risk frequently arises from **aggregation**, not single items.
 
-Even where identifiers are removed, risk can persist via:
+## De-identification is not a sufficient safeguard
 
-- rare combinations of attributes
-- contextual clues in free text
-- small-n tables
-- linkage with external knowledge
+Removing explicit identifiers does not eliminate disclosure risk.  
+Residual risk persists through rare attribute combinations, contextual cues in narrative text, small-n summaries, or linkage with external information.
 
-The practical implication: “anonymised” is not the same as “safe to share”.
+> The practical implication is operational rather than theoretical:  
+*“Anonymised” does not mean “safe to upload.”*
 
 ## AI systems as unregulated collaborators
 
-A useful governance analogy is to treat external AI systems like collaborators without:
+A useful governance analogy is to treat external AI services as collaborators who have:
 
-- contracts
-- ethics approvals
-- data sharing agreements
-- enforceable deletion guarantees
+- no contract  
+- no ethics approval  
+- no data-sharing agreement  
+- no enforceable deletion or confidentiality guarantees  
 
-That framing helps clarify why **minimum disclosure** matters.
+> This framing clarifies why **minimum necessary disclosure** is a defensible default.
 
-## Jurisdiction, retention, and uncertainty
+## Jurisdiction, retention, and opacity
 
-Key uncertainties that matter for research governance include:
+From a research governance perspective, unresolved questions include:
 
-1. where prompts are processed and stored
-2. how long data is retained
-3. whether data is used for service improvement
-4. whether third parties are involved (plugins, telemetry)
+1. where prompts and uploads are processed and stored  
+2. how long material is retained  
+3. whether content is reused for model improvement  
+4. whether third parties (plugins, analytics, telemetry) have access  
 
-## Risk is behavioural as well as technical
+> Uncertainty itself constitutes a risk factor when handling sensitive research material.
 
-Convenience can normalise risky practice.  
-The research culture risk is “quiet drift” from cautious handling to routine uploading.
+## Behavioural drift as a security threat
+
+Risk is not only technical; it is behavioural.  
+Convenience can normalise incremental risk-taking without explicit decision points.
 
 ```{mermaid}
-%%{init: {"theme":"default","themeVariables":{"fontSize":"20px","nodePadding":22}}}%%
+
 flowchart LR
-    A["Normal research task"] --> B["Convenient AI use"]--> D["Less deliberate checking"] --> E["Increased risk"]
+    A["Normal research task"] --> B["Convenient AI use"] --> C["Reduced deliberation"] --> D["Normalised exposure"] --> E["Elevated risk"]
   style E stroke-width:3px
 ```
 
-## Summary: the research-standard bar does not change
+> This form of “quiet drift” is harder to detect than discrete policy violations.
 
-AI changes *how* risks manifest, not the standards of integrity expected in research.  
+## Practical implication for researchers
 
-> The requirement remains: accountable claims, auditable methods, and protected data.
+A simple operational test:
+
+> *Would I be permitted to email this material to an external collaborator without a formal agreement?*
+
+If not, it should not be shared with an external AI service. Check with your organisation directly if there are local / secure versions of these tools avalible for you to use. 
 
 ---
 
 ::: callout-task
 
-#### Task: scenario-based threat modelling (5 minutes)
+#### Poll: Which AI tools have you used?
 
-Say you have an unpublished results table for interpretation.  
+::: panel-tabset
 
-1. What is the primary risks you need to check before you us an AI tool?  
-2. What institutional principle applies?  
+##### Question
+
+How confident are you about using AI responsibly?
+
+::: {.content-visible when-format="revealjs"}
+
+<!-- Hidden by default -->
+![](fig/EXT1-Q2_qr_code.png){fig-align="center" width=400px}
+
+:::
+
+##### Wordcloud
+
+<iframe
+  src="https://ds-shiny-helper.azurewebsites.net/edsex1/?embed=true#shiny-tab-q2_results"
+  width="100%"
+  height="500"
+  frameborder="0"
+  style="border:none;"
+  title="Q2">
+</iframe> 
+:::
 :::
 
 # Further Information
