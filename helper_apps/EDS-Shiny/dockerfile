@@ -47,6 +47,7 @@ RUN R -e "install.packages(c( \
 # ---------------------------------------------------------
 COPY edsm1 /srv/shiny-server/edsm1
 COPY edsex1 /srv/shiny-server/edsex1
+COPY edsm7 /srv/shiny-server/edsm7
 
 # ---------------------------------------------------------
 # Set permissions (run as non-root shiny user)

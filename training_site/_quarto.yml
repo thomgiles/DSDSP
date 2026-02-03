@@ -2,6 +2,8 @@ project:
   type: website
   output-dir: _site
 
+mermaid-format: png
+
 execute:
   freeze: auto
 
@@ -68,10 +70,12 @@ website:
             href: essential_digital_skills/episodes/03-data_governance_and_policy.qmd
           - text: "Research Data Management"
             href: essential_digital_skills/episodes/04-research_data_managment.qmd
-          - text: "Data Collection"
-            href: essential_digital_skills/episodes/05-data_collection.qmd
+          - text: "Collecting the Right Data"
+            href: essential_digital_skills/episodes/05-collecting_the_right_data.qmd
           - text: "Organising and Exploring Data"
             href: essential_digital_skills/episodes/06-organising_and_exploring_data.qmd
+          - text: "Making Sense of Data"
+            href: essential_digital_skills/episodes/07-making_sense_of_data.qmd
           - text: "Responsible AI"
             href: essential_digital_skills/episodes/ext1-responsible_ai.qmd
           - text: "Hands-on AI"
@@ -134,8 +138,9 @@ website:
               - essential_digital_skills/episodes/02-digital_delivery.qmd
               - essential_digital_skills/episodes/03-data_governance_and_policy.qmd
               - essential_digital_skills/episodes/04-research_data_managment.qmd
-              - essential_digital_skills/episodes/05-data_collection.qmd
+              - essential_digital_skills/episodes/05-collecting_the_right_data.qmd
               - essential_digital_skills/episodes/06-organising_and_exploring_data.qmd
+              - essential_digital_skills/episodes/07-making_sense_of_data.qmd
               - essential_digital_skills/episodes/ext1-responsible_ai.qmd
               - essential_digital_skills/episodes/ext2-hands_on_ai.qmd
 
