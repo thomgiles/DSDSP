@@ -66,14 +66,6 @@ Research Data Management (RDM) ensures that data are **organised, secure, docume
 
 ## RDM roles
 ```{mermaid}
-%%{init: {
-  "theme": "default",
-  "themeVariables": {
-    "fontSize": "20px",
-    "nodePadding": 25,
-    "fontFamily": "Arial, Helvetica, sans-serif"
-  }
-}}%%
 flowchart LR
     PI[Principal Investigator]
     T[Project Team]
@@ -113,14 +105,6 @@ flowchart LR
 ## Data Lifecycle Model
 
 ```{mermaid}
-%%{init: {
-  "theme": "default",
-  "themeVariables": {
-    "fontSize": "20px",
-    "nodePadding": 25,
-    "fontFamily": "Arial, Helvetica, sans-serif"
-  }
-}}%%
 flowchart LR
     A[Plan & Design] --> B[Collect]
     B --> C[Process & Analyse]
@@ -169,6 +153,7 @@ flowchart LR
 # Data Management Plans
 
 ![](fig/dmp.png){fig-align="center" width=400px}
+
 
 ## What is a data managment plan
 
@@ -349,14 +334,6 @@ These are designed to promote transparency and maximise research value.
 | **Reusable**      | Licences, provenance, documentation           | CC BY licence + CODEBOOK.md   |
 
 ```{mermaid}
-%%{init: {
-  "theme": "default",
-  "themeVariables": {
-    "fontSize": "20px",
-    "nodePadding": 25,
-    "fontFamily": "Arial, Helvetica, sans-serif"
-  }
-}}%%
 flowchart LR
     A[Findable] --> B[Accessible] --> C[Interoperable] --> D[Reusable] --> A
 ```

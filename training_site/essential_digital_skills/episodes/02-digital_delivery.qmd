@@ -50,14 +50,6 @@ Research today rarely occurs in isolation: projects depend on complex workflows,
 The traditional research pipeline—design, collect, analyse, publish—provides clarity but lacks adaptability. Digital delivery reimagines this as a **cyclical model** in which research evolves through continuous refinement, validation, and dissemination.
 
 ```{mermaid}
-%%{init: {
-  "theme": "default",
-  "themeVariables": {
-    "fontSize": "20px",
-    "nodePadding": 25,
-    "fontFamily": "Arial, Helvetica, sans-serif"
-  }
-}}%%
 flowchart LR
     A[Design & Plan] --> B[Develop & Implement]
     B --> C[Test & Validate]
@@ -111,14 +103,6 @@ Adopting digital delivery means:
 * Valuing **communication and visibility** as much as results
 
 ```{mermaid}
-%%{init: {
-  "theme": "default",
-  "themeVariables": {
-    "fontSize": "20px",
-    "nodePadding": 25,
-    "fontFamily": "Arial, Helvetica, sans-serif"
-  }
-}}%%
 flowchart TB
     A[Plan] --> B[Build] --> C[Share] --> D[Learn] --> A
     style A fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
@@ -165,14 +149,6 @@ Digital delivery depends on thoughtful planning and structured coordination, par
 Digital projects often involve researchers, analysts, data stewards, and technical leads. Coordination is achieved through **shared visibility** and **mutual accountability**, not through micromanagement.
 
 ```{mermaid}
-%%{init: {
-  "theme": "default",
-  "themeVariables": {
-    "fontSize": "20px",
-    "nodePadding": 25,
-    "fontFamily": "Arial, Helvetica, sans-serif"
-  }
-}}%%
 flowchart TB
     PI[Principal Investigator] --> PM[Project Coordinator]
     PM --> DS[Data Scientist]
@@ -249,14 +225,6 @@ Agile is not about speed but **responsiveness**—learning quickly from each cyc
 A **sprint** is a short, focused cycle (often 1–2 weeks) in which the team commits to delivering a defined output. Each sprint closes with reflection and planning for the next.
 
 ```{mermaid}
-%%{init: {
-  "theme": "default",
-  "themeVariables": {
-    "fontSize": "20px",
-    "nodePadding": 25,
-    "fontFamily": "Arial, Helvetica, sans-serif"
-  }
-}}%%
 flowchart LR
     P[Planning]:::plan --> E[Execution]:::exec --> R[Review]:::rev --> RE[Retrospective]:::retro --> P
     classDef plan fill:#E3F2FD,stroke:#1565C0;
@@ -320,14 +288,6 @@ Agile and digital delivery both depend on collective ownership. A sustainable re
 Research excellence relies not only on technical skill but also on **collaboration and reflection**. Agile encourages distributed leadership and mutual support.
 
 ```{mermaid}
-%%{init: {
-  "theme": "default",
-  "themeVariables": {
-    "fontSize": "20px",
-    "nodePadding": 25,
-    "fontFamily": "Arial, Helvetica, sans-serif"
-  }
-}}%%
 flowchart LR
     A[Shared Accountability] --> B[Psychological Safety]
     B --> C[Continuous Learning]
