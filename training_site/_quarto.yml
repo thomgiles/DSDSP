@@ -2,8 +2,6 @@ project:
   type: website
   output-dir: _site
 
-mermaid-format: png
-
 execute:
   freeze: auto
 
