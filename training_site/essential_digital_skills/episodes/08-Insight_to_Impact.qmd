@@ -21,7 +21,6 @@ By the end of this module, learners will be able to:
 -	Clearly distinguish between insight and impact.
 -	Use feedback as structured input for improvement.
 -	Adapt insights for different audiences without changing the truth.
-
 :::
 
 ::: callout-questions
@@ -32,7 +31,6 @@ By the end of this module, learners will be able to:
 -	What makes an insight useful versus just interesting?
 -	Why is feedback not a failure signal but a data source?
 -	Why can the same insight sound completely different depending on the audience?
-
 :::
 
 ## Structure & Agenda
@@ -105,7 +103,6 @@ If you understand research as a loop:
 -	You see progress as cumulative.
 
 > 💯 This mindset is what separates analysis from innovation.
-
 
 ## A Simple, Realistic Scenario
 
@@ -216,7 +213,6 @@ You can have:
 
 > 🌱 Over 70% of data science projects in organisations fail to create impact — not because the analysis is wrong, but because no decision was ever attached to the insight.
 
-
 ## High Impact vs Low Impact Actions
 
 | Action Type    | Example                         | Impact Level |
@@ -289,7 +285,6 @@ In research, feedback helps you in the following ways:
 
 > 📝 Unlike surveys or historical data, feedback comes from real-world interaction with your solution.
 
-
 ## Blindspot — What You Didn’t See Coming
 
 A blindspot is feedback that reveals a factor you didn’t account for at all.
@@ -301,7 +296,6 @@ Blindspot feedback is useful because it:
 -	Improves the next research question
 
 > 🧐 Most failed products didn’t fail because the insight was wrong — they failed because the team never listened to early feedback signals.
-
 
 ## Blindspot Example
 
@@ -387,7 +381,6 @@ Extensions signal:
 -	There is potential for scale or reuse
 
 > 🚀 Extensions are often the earliest signs of high-impact research.
-
 
 --- 
 
@@ -535,8 +528,6 @@ Compare:
 
 🔹 **Overall Message:** Data work is not finished when the analysis is complete —
 it is finished only when it changes a decision, improves a system, or informs the next question.
-
-
 
 :::
 

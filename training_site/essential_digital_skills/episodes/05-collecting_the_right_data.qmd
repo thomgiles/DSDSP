@@ -47,13 +47,13 @@ Avoiding bias and ensuring fair representation.
 
 # Data Sources
 
-## Welcome to the Era of Data
+##� Welcome to the Era of Data
 
 - Everything around you generates data — your phone, your commute, your spending, your sleep, your university’s systems.
 
 - Understanding where this data comes from (and how good it is) is the starting point of analysis.
 
-> 🧠 Your brain processes 11 million bits of data per second
+> �  Your brain processes 11 million bits of data per second
 
 ## Digital Data Trace
 
@@ -102,8 +102,6 @@ Example: University demographic report or publicly available dataset of students
 
 > 💯 Unlike secondary data, which relates to the past, primary data captures information as it happens
 
-
-
 ## Comparison of Data Sources
 
 | Feature     | Primary Data                 | Secondary Data               |
@@ -115,8 +113,6 @@ Example: University demographic report or publicly available dataset of students
 | Richness    | Flexible                      | Fixed                         |
 
 > ✅ Primary data can provide unique conclusions and original insights that may not be available elsewhere
-
-
 
 ---
 
@@ -135,14 +131,11 @@ Downloaded dataset (link):
 
 :::
 
-
 # Planning for Good Data
 
 ## Why Planning Matters
 
 You’ve got a dataset — but do you know why you’re collecting it?
-
-Good data is:
 
 ```{mermaid}
 mindmap
@@ -179,7 +172,6 @@ timeline
 ```
 
 > 📌 Identifying the right questions is not enough, you need to look at the data available to you!
-
 
 ## Importance of Choosing the Right Variables
 
@@ -238,7 +230,7 @@ Debrief Discussion:
 
 > 💎 Choosing the right tool depends on your data type and scale.
 
-## Why Tools Matter
+## Why Tools Matter
 
 Tools help:
 
@@ -247,7 +239,6 @@ Tools help:
 -	Scale data collection (small vs. large datasets)
 
 > 🌱 Around 80% to 90% of the data in the world is unstructured
-
 
 ## Tool Comparison
 
@@ -300,7 +291,6 @@ Debrief:
 | Confirmation bias| Leading questions in satisfaction surveys| Skewed responses             |
 
 > 🎭 This occurs when you only look at the data that "survived" a process, ignoring the failures.
-
 
 ## Principles for Fair Data
 
