@@ -248,10 +248,10 @@ When interpreting a visual:
 
 flowchart LR
     A[Effective Visual Design]
-    B[Keep it simple: Clarity over decoration]
-    C[Use consistent colours: One hue = one category]
-    D[Label everything: Never assume context]
-    E[Start scales at zero: Unless statistically justified]
+    B[Keep it simple]-->B1[Clarity over decoration]
+    C[Use consistent colours]-->C1[One hue = one category]
+    D[Label everything]-->D1[Never assume context]
+    E[Start scales at zero]-->E1[Unless statistically justified]
 
     A --> B
     A --> C
@@ -502,7 +502,7 @@ Present your action plans!
 *	Context transforms numbers into meaning.
 *	Turning insights into decisions is the ultimate goal of data work.
 
-> 🔹 Overall Message: Making sense of data isn’t just analysis — it’s interpretation, communication, and action.
+🔹 Overall Message: Making sense of data isn’t just analysis — it’s interpretation, communication, and action.
 
 :::
 
@@ -510,7 +510,7 @@ Present your action plans!
 
 ## 🔦 Hints
 
-> 📚 Try turning your M6 analysis into visuals — see how patterns come alive.
+📚 Try turning your M6 analysis into visuals — see how patterns come alive.
 
 :::
 
