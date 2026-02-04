@@ -22,7 +22,6 @@ By the end of this module, learners will be able to:
 -	Recognise how context affects the meaning of data and prevents false conclusions.
 -	Apply insights to make informed, data-driven decisions.
 -	Communicate findings clearly and responsibly to guide real-world action.
-
 :::
 
 ::: callout-questions
@@ -33,8 +32,6 @@ By the end of this module, learners will be able to:
 -	How do design choices influence how we interpret charts?
 -	How does context change what data really means?
 -	How can we turn data insights into better decisions?
-
-
 :::
 
 ## Structure & Agenda
@@ -43,7 +40,6 @@ By the end of this module, learners will be able to:
 2.	**Making Sense of Visuals** (~20 min) Reading and critiquing charts effectively
 3.	**Context is Key** (~20 min) Understanding how meaning changes with context
 4.	**Insight to Action** (~20 min) Turning understanding into decisions
-
 
 # Visualisations for Insights
 
@@ -57,7 +53,6 @@ Patterns that hide in tables jump out in a chart.
 
 > 💬 Think of a chart as a map — it helps you find direction in a sea of information.
 
-
 ## Example: Tables vs. Charts
 
 ![](fig/07-image2.png){fig-align="center" width=400px}
@@ -65,7 +60,6 @@ Patterns that hide in tables jump out in a chart.
 In a chart, you instantly see: Chips dominate. Cookies are next. Fruit lags behind.
 
 > 🎨 The brain processes shapes faster than numbers.
-
 
 ## Single Variable Stories (Comparison & Change)
 
@@ -131,7 +125,6 @@ In a chart, you instantly see: Chips dominate. Cookies are next. Fruit lags behi
 
 >📊 Visuals turn raw responses into visible stories.
 
-
 ---
 
 ::: callout-task
@@ -178,7 +171,6 @@ Ask:
 
 > 🔹 Different visuals don’t just change how data looks — they change how data feels.
 
-
 ## Can you make sense of this graph?
 
 ![](fig/07-image3.png){fig-align="center" width=400px}
@@ -211,7 +203,6 @@ Good visuals show the truth clearly.
 
 > ⚠️ Poor visuals manipulate perception
 
-
 ## Example: Misleading Visuals
 
 ![](fig/07-image4.png){fig-align="center" width=400px}
@@ -228,7 +219,6 @@ Good visuals show the truth clearly.
 | Missing Labels    | Unclear categories             | Data loses meaning             |
 
 > 💡 Visuals are powerful — and with that power comes the responsibility to design them honestly.
-
 
 ## Asking the Right Questions
 
@@ -323,7 +313,6 @@ Once we have identified what our problem is, we move onto defining the other det
 | How     | Method of data collection       | Tracking data                                               | Assesses bias—determines whether the collection method influenced the results. |
 | Why     | Research question or purpose    | Measuring student well-being vs. university performance     | Anchors interpretation—ensures conclusions align with the original intent.     |
 
-
 > 💬 Data without context is like a quote without the full paragraph.
 
 ## Context Anchors Interpretation
@@ -339,7 +328,6 @@ Before you conclude, always ask:
 --- 
 
 ::: callout-task
-
 
 #### Quick Insights Race
 
@@ -403,7 +391,6 @@ Team B's average of 8 is far more impressive given the competition.
    -	The Number (8) told you the result.
    -	The Context (Scores & Opponents) told you the meaning and risk.
    -	Never trust an average without seeing the range (Context 1) and the conditions (Context 2).
-
 :::
 :::
 
@@ -413,14 +400,12 @@ Team B's average of 8 is far more impressive given the competition.
 
 Data is only useful when it drives decisions.
 
- 
 ![](fig/07-image6.png){fig-align="center" width=400px}
 
 This is a cycle of continuous improvement!
 
 > 🔁 Turning numbers into action closes the data loop.
 
- 
 ## Making Data Actionable
 
 Good insights are:
@@ -446,7 +431,6 @@ How you present results affects whether they are used.
 -	**Link to outcomes:** Show how insight affects goals.
 
 > 📦 Use data to move from Observation → Decision → Measurable Outcome.
-
 
 ## Judging Action Quality
 

@@ -79,7 +79,7 @@ Data rarely arrives clean. Messy data is any dataset that violates the rules req
 | Missing Values       | NA or blanks           | Misleading averages and errors            |
 | Synonyms/Variations  | Chips vs. crisps       | Hides true popularity                     |
 
-⚠️ If data is inconsistent, your results can be misleading or invalid. Data analysis is built on trust.
+� ️ If data is inconsistent, your results can be misleading or invalid. Data analysis is built on trust.
 
 ## Why Organising Matters
 
@@ -108,7 +108,6 @@ Cleaning data often involves addressing four main categories of issues.
 	Action: Converting Height from text ('5 ft 10 in') to a numerical value (177.8).
 
 > ❌ Clean data isn't perfect data; it's data ready for reliable calculation.
-
 
 ## Categorical Vs. Numerical Data
 
@@ -184,7 +183,6 @@ Descriptive statistics are best understood when visualized. A distribution shows
 
 > ⭐ A simple bar chart of the Campus Transport Method instantly shows you the mode and the distribution of travel options.
 
-
 ## The Importance of the Median
 
 While the mean is often used, the median is crucial when your data might have outliers.
@@ -229,7 +227,6 @@ The power of data lies in spotting patterns—trends, clusters, or relationships
 
 > 💡 Patterns show correlations, not necessarily causation—that’s key. 
 
-
 ## Common Pattern Techniques
 
 We look for patterns by combining variables, shifting analysis from a single column to the relationship between two or more.
@@ -249,7 +246,7 @@ Patterns help you:
 -	Identify emerging relationships.
 -	Form hypotheses for deeper testing later.
 
-> 🧠 Example: “If taller people walk more, maybe height relates to physical activity.”
+> �  Example: “If taller people walk more, maybe height relates to physical activity.”
 
 
 ## Building Hypotheses
@@ -310,10 +307,10 @@ Prediction = using what you know to estimate something unknown.
 
 Even simple predictions rely on recognising past patterns.
 
-> 🧠 Predictions are based on the idea that similar situations will likely lead to similar results.
-
+> �  Predictions are based on the idea that similar situations will likely lead to similar results.
 
 ## Hypothesis to Prediction
+
 We can use the hypotheses from our insights to predict what could happen next!
 
 Prediction is not just to describe what we’ve seen, but to anticipate what might come next based on what we’ve learned.
@@ -365,7 +362,7 @@ Example:
 
 ## Uncertainty Matters
 
-Prediction ≠ certainty.
+Prediction �  certainty.
 
 Predictions guide decision-making but should always include uncertainty.
 
