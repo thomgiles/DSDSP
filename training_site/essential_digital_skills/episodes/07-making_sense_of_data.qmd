@@ -502,7 +502,7 @@ Present your action plans!
 *	Context transforms numbers into meaning.
 *	Turning insights into decisions is the ultimate goal of data work.
 
-> 🔹 Overall Message: Making sense of data isn’t just analysis — it’s interpretation, communication, and action.
+🔹 Overall Message: Making sense of data isn’t just analysis — it’s interpretation, communication, and action.
 
 :::
 
@@ -510,7 +510,7 @@ Present your action plans!
 
 ## 🔦 Hints
 
-> 📚 Try turning your M6 analysis into visuals — see how patterns come alive.
+📚 Try turning your M6 analysis into visuals — see how patterns come alive.
 
 :::
 
