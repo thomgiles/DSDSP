@@ -50,11 +50,21 @@ ui <- dashboardPage(
       tags$script(HTML("
         $(document).ready(function() {
           const params = new URLSearchParams(window.location.search);
+          const hash = window.location.hash;
           if (params.get('embed') === 'true') {
             $('body').addClass('embedded-mode');
             $('.main-header').hide();
             $('.main-sidebar').hide();
             $('.content-wrapper').css({'margin-left':'0','padding':'0'});
+          }
+          if (hash.startsWith('#shiny-tab-')) {
+            const tabName = hash.replace('#shiny-tab-', '');
+            const tryActivate = () => {
+              const $tabLink = $('a[data-value=\"' + tabName + '\"]');
+              if ($tabLink.length) $tabLink.tab('show');
+              else setTimeout(tryActivate, 200);
+            };
+            tryActivate();
           }
         });
       "))
@@ -77,8 +87,7 @@ ui <- dashboardPage(
             h6("Enter your favourite snack (one word or short phrase)."),
             textInput("q1_text", "Snack:",
               placeholder = "e.g., chocolate, fruit, nuts"
-            ),
-            actionBttn("q1_submit", "Submit", color = "success", style = "fill", size = "sm")
+            )
           ),
           
           # Q2: Travel mode (Bar Chart)
@@ -98,8 +107,7 @@ ui <- dashboardPage(
               ),
               animation = "jelly",
               status = "success"
-            ),
-            actionBttn("q2_submit", "Submit", color = "success", style = "fill", size = "sm")
+            )
           ),
           
           # Q3: Study hours (Pie Chart)
@@ -118,8 +126,7 @@ ui <- dashboardPage(
               ),
               animation = "jelly",
               status = "success"
-            ),
-            actionBttn("q3_submit", "Submit", color = "success", style = "fill", size = "sm")
+            )
           ),
           
           # Q4: Productivity time (Bar Chart - Truncated Axis)
@@ -138,8 +145,12 @@ ui <- dashboardPage(
               ),
               animation = "jelly",
               status = "success"
-            ),
-            actionBttn("q4_submit", "Submit", color = "success", style = "fill", size = "sm")
+            )
+          ),
+          
+          # Single Submit Button for All Questions
+          div(style = "text-align: center; margin-top: 20px;",
+            actionBttn("submit_all", "Submit All Responses", color = "success", style = "fill", size = "lg")
           )
         )
       ),
@@ -221,13 +232,40 @@ ui <- dashboardPage(
 server <- function(input, output, session) {
   autoInvalidate <- reactiveTimer(10000)
 
-  # ---- Q1: Snack Wordcloud ----
-  observeEvent(input$q1_submit, {
+  # ---- Single Submit Button: Collect All Responses ----
+  observeEvent(input$submit_all, {
+    # Q1: Snack
     txt <- trimws(input$q1_text)
     if (nzchar(txt)) {
       responses$q1 <- rbind(responses$q1, data.frame(Response = txt))
     }
     updateTextInput(session, "q1_text", value = "")
+    
+    # Q2: Travel Mode
+    if (length(input$q2_travel) > 0) {
+      responses$q2 <- rbind(
+        responses$q2,
+        data.frame(Response = input$q2_travel)
+      )
+    }
+    
+    # Q3: Study Hours
+    if (length(input$q3_hours) > 0) {
+      responses$q3 <- rbind(
+        responses$q3,
+        data.frame(Response = input$q3_hours)
+      )
+    }
+    
+    # Q4: Productivity Time
+    if (length(input$q4_time) > 0) {
+      responses$q4 <- rbind(
+        responses$q4,
+        data.frame(Response = input$q4_time)
+      )
+    }
+    
+    # Redirect to results tab
     updateTabItems(session, "tabs", "results")
   })
 
@@ -238,16 +276,6 @@ server <- function(input, output, session) {
     }
     df <- as.data.frame(table(responses$q1$Response))
     wordcloud2(df, color = "random-light", backgroundColor = "white")
-  })
-
-  # ---- Q2: Travel Mode Bar Chart ----
-  observeEvent(input$q2_submit, {
-    if (length(input$q2_travel) > 0) {
-      responses$q2 <- rbind(
-        responses$q2,
-        data.frame(Response = input$q2_travel)
-      )
-    }
   })
 
   output$q2_bar <- renderPlotly({
@@ -269,16 +297,6 @@ server <- function(input, output, session) {
       )
   })
 
-  # ---- Q3: Study Hours Pie Chart ----
-  observeEvent(input$q3_submit, {
-    if (length(input$q3_hours) > 0) {
-      responses$q3 <- rbind(
-        responses$q3,
-        data.frame(Response = input$q3_hours)
-      )
-    }
-  })
-
   output$q3_pie <- renderPlotly({
     autoInvalidate()
     if (nrow(responses$q3) == 0) {
@@ -298,16 +316,6 @@ server <- function(input, output, session) {
         template = "plotly_white",
         showlegend = TRUE
       )
-  })
-
-  # ---- Q4: Productivity Time - Truncated Axis (Misleading) ----
-  observeEvent(input$q4_submit, {
-    if (length(input$q4_time) > 0) {
-      responses$q4 <- rbind(
-        responses$q4,
-        data.frame(Response = input$q4_time)
-      )
-    }
   })
 
   output$q4_bar_truncated <- renderPlotly({
