@@ -75,7 +75,7 @@ website:
           - text: "Making Sense of Data"
             href: essential_digital_skills/episodes/07-making_sense_of_data.qmd
           - text: "Insight to Impact"
-            href: essential_digital_skills/episodes/insight_to_impact.qmd
+            href: essential_digital_skills/episodes/08-insight_to_impact.qmd
           - text: "Responsible AI"
             href: essential_digital_skills/episodes/ext1-responsible_ai.qmd
           - text: "Hands-on AI"
@@ -141,7 +141,7 @@ website:
               - essential_digital_skills/episodes/05-collecting_the_right_data.qmd
               - essential_digital_skills/episodes/06-organising_and_exploring_data.qmd
               - essential_digital_skills/episodes/07-making_sense_of_data.qmd
-              - essential_digital_skills/episodes/insight_to_impact.qmd
+              - essential_digital_skills/episodes/08-insight_to_impact.qmd
               - essential_digital_skills/episodes/ext1-responsible_ai.qmd
               - essential_digital_skills/episodes/ext2-hands_on_ai.qmd
 
