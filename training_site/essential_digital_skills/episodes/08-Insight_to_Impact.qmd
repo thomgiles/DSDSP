@@ -200,7 +200,7 @@ You can have:
 -	A beautifully designed chart
 - …and still achieve zero impact.
 
-❗ Insight without action is like diagnosis without treatment.
+> ❗ Insight without action is like diagnosis without treatment.
 
 ## Concrete Comparison
 
@@ -463,7 +463,7 @@ A journalist asks:
 
 > 🐾 Same data. Different audience. Different story.
 
-##� Tailoring the Message
+## Tailoring the Message
 
 | Audience                     | Focus On                              | Tone & Format                                      |
 |------------------------------|----------------------------------------|----------------------------------------------------|

@@ -488,7 +488,15 @@ h5 { font-size: 1.15rem; font-weight: 500; color: $white; }
   margin-bottom: calc(var(--gf) - 8px);
 }
 
+.reveal .slide ul li > *:last-child, .reveal .slide ol li > *:last-child {
+    color: $white;
+    background-color: #006781;
+}
 
+.panel-tabset [role=tab][aria-selected=true] {
+        background-color: #298582 !important;
+        border: 1px solid #298582 !important;
+}
 
 .reveal ol, .reveal dl, .reveal ul {
     width: 80% !important;

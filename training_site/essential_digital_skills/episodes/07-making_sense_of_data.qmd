@@ -63,8 +63,7 @@ In a chart, you instantly see: Chips dominate. Cookies are next. Fruit lags behi
 
 ## Single Variable Stories (Comparison & Change)
 
-**When to Use:** To see the distribution of a single category or track how one thing changes over time.
-**Key Concept:** Univariate Analysis - The story of a single column of data.
+**When to Use:** To see the distribution of a single category or track how one thing changes over time. **Key Concept:** Univariate Analysis - The story of a single column of data.
 
 | Chart Type   | What It Shows Best                               | Why It Matters                                                                 |
 |--------------|--------------------------------------------------|--------------------------------------------------------------------------------|
@@ -76,35 +75,50 @@ In a chart, you instantly see: Chips dominate. Cookies are next. Fruit lags behi
 
 ## Part-to-Whole Stories (Composition)
 
-**When to Use:** When you need to show proportions where all parts add up to 100%.
+**When to Use:** When you need to show proportions where all parts add up to 100%. **Key Concept:** Compositional Analysis (The makeup of the total pie).
 
-**Key Concept:** Compositional Analysis (The makeup of the total pie).
+::: {.columns}
+::: {.column}
 
--	**Pie Chart**
-   -	What It Shows Best: Proportion/Share of a simple whole.
-   -	Showing the split of Snack Categories by Share (e.g., 44% Chips, 33% Cookies, 22% Fruit).
+**Pie Chart**
 
--	**Stacked Bar Chart**
-   -	What It Shows Best: Composition that changes over a second category.
-   -	Showing Snack Preference Share by Campus Year (e.g., How the proportion of Chip eaters changes from Freshman to Senior year).
-   -	It allows comparison of the total length of the bars and the relative size of the segments within each bar.
+-	What It Shows Best: Proportion/Share of a simple whole.
+-	Showing the split of Snack Categories by Share (e.g., 44% Chips, 33% Cookies, 22% Fruit).
+:::
+::: {.column}
+
+**Stacked Bar Chart**
+-	What It Shows Best: Composition that changes over a second category.
+-	Showing Snack Preference Share by Campus Year (e.g., How the proportion of Chip eaters changes from Freshman to Senior year).
+-	It allows comparison of the total length of the bars and the relative size of the segments within each bar.
+:::
+::: 
 
 > ⚠️ Keep it simple! Avoid more than 5 slices or they become confusing and impossible to compare accurately.
 
 ## Connecting Two Variables (Relationships)
 
-**When to Use:** To see if two numerical factors influence each other.
+**When to Use:** To see if two numerical factors influence each other. **Key Concept:** Bivariate Analysis (The relationship between two columns).
 
-**Key Concept:** Bivariate Analysis (The relationship between two columns).
+::: {.columns}
+::: {.column}
 
--	Scatter Plot
-   -	What It Shows Best: Correlation and Relationships.
-   - 	Use Case: Plotting Height vs. Steps Walked.
-   -	Insight: Reveals three possibilities: Positive (dots go up), Negative (dots go down), or None (random cloud). It's also the best way to spot outliers (data points that don't fit the trend).
--	Bubble Chart
-   -	What It Shows Best: Relationships between three variables at once.
-   -	Use Case: Same as a Scatter Plot, but the size of the bubble (the third dimension) could represent the Average Cost of the item.
-   -	It adds a layer of information without cluttering the main X-Y relationship.
+**Scatter Plot**
+
+-	What It Shows Best: Correlation and Relationships.
+- 	Use Case: Plotting Height vs. Steps Walked.
+-	Insight: Reveals three possibilities: Positive (dots go up), Negative (dots go down), or None (random cloud). It's also the best way to spot outliers (data points that don't fit the trend).
+:::
+::: {.column}
+
+**Bubble Chart**
+
+-	What It Shows Best: Relationships between three variables at once.
+-	Use Case: Same as a Scatter Plot, but the size of the bubble (the third dimension) could represent the Average Cost of the item.
+-	It adds a layer of information without cluttering the main X-Y relationship.
+
+:::
+:::
 
 >🌱 Bivariate Analysis is the foundation to Discovering Links, Trends, and Outliers
 
