@@ -1,14 +1,7 @@
 ---
 title: MODULE TITLE
-title-block-style: none
 teaching: 40        # minutes of teaching
 exercises: 40       # minutes of exercises
-filters:
-  - dynamic-code-output
-  - pyodide
-  - webr
-execute: 
-  eval: false 
 ---
 
 ::: callout-title
