@@ -47,13 +47,13 @@ Avoiding bias and ensuring fair representation.
 
 # Data Sources
 
-##� Welcome to the Era of Data
+## Welcome to the Era of Data
 
 - Everything around you generates data — your phone, your commute, your spending, your sleep, your university’s systems.
 
 - Understanding where this data comes from (and how good it is) is the starting point of analysis.
 
-> �  Your brain processes 11 million bits of data per second
+> Your brain processes 11 million bits of data per second
 
 ## Digital Data Trace
 
@@ -120,15 +120,22 @@ Example: University demographic report or publicly available dataset of students
 
 #### Data Hunt Game
 
+::: panel-tabset
+
+##### Setup
+
+Downloaded dataset [data/student_data.xlsx](/data/student_data.xlsx)
+
 -	Everyone gets a blank card/paper.
 -	Collect Name, Height, Favorite Snack from 3 peers.
 -	Discuss how it felt to collect primary data.
 
-Downloaded dataset (link):
+##### Dataset comparison
 
 -	Variables: Name, Gender, Age, Favorite Snack, Height, Home Country, Steps Walked (Yesterday), Library Usage (per week), Commute Time, Campus Transport Method, Hours Slept (Avg. per night), Student Status, Participation in Clubs/Societies, Frequency of Healthy Meals, Postcode, IMD Score
 -	Compare collected primary data vs provided secondary dataset.
 
+:::
 :::
 
 # Planning for Good Data
@@ -195,17 +202,21 @@ Selecting appropriate variables leads to more accurate predictions, faster proce
 
 Each group is given cards/list with possible data variables
 
-Instructions:
+::: panel-tabset
+
+##### Instructions:
 
 1.	Choose a project idea.
 2.	Identify the analysis purpose and key question based on the project idea.
 3.	Select which variables you need from the list to answer the question.
 4.	Present your analysis purpose, refined key question and selected variables.
 
-Debrief Discussion:
+##### Debrief Discussion:
 
 -	Some data, though interesting, may not help answer the question.
 -	Planning prevents data overload, keeps analysis relevant, and saves time.
+
+:::
 :::
 
 # Tools and Formats
@@ -260,14 +271,21 @@ Now that we know different data formats and sources, lets connect them together 
 
 Each group is given a deck of cards with different data formats.
 
-Instructions:
+::: panel-tabset
+
+##### Instructions:
+
 1.	Hand out data cards to each group.
 2.	Categorise each card as primary or secondary data.
 
-Debrief:
+##### Debrief:
+
 -	Highlight: Some sources are borderline → context matters.
 -	Relate to dataset: “The data we collected from the class survey is primary, but the table I give you afterwards is secondary.”
+
 :::
+:::
+
 
 # Trust and Fairness in Data
 
@@ -309,7 +327,9 @@ Debrief:
 
 #### Biased Sampling Game
 
-Instructions:
+::: panel-tabset
+
+##### Instructions:
 
 1.	Each group gets a bag of colored counters representing the student dataset: Pink = female, Blue = male
 
@@ -317,12 +337,14 @@ Instructions:
 
 3.	Compare with the total population. (40% 21.75 years)
 
-Discussion Prompts
+##### Discussion Prompts:
 
 -	How does missing data skew results?
 -	What could have been done to get a fairer representation?
 -	Can some bias be unavoidable? How do we acknowledge it?
 -	Ambiguous / mixed counters → discuss real-world data ambiguities.
+
+:::
 :::
 
 # Further Information
