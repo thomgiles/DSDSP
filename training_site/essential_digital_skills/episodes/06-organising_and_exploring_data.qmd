@@ -126,24 +126,31 @@ Organising data includes properly identifying its type, as this determines what 
 
 #### Activity: The Data Detective Game
 
-Setup:
+::: panel-tabset
+
+##### Setup:
+
+Downloaded dataset [data/student_data.xlsx](/data/student_data.xlsx)
 
 -	Present the student dataset.
 -	Scan the dataset and start finding errors: missing values, inconsistent formats, duplicates. (2 mins)
 
-Instructions:
+##### Instructions:
 
 -	Answer the below questions (2-3 mins each).
 -	Explain what you changed and why.
 
-Questions:
+##### Questions:
 
 1. Based on your cleaned dataset (after removing duplicates), what is the total number of unique students surveyed?
 2. What is the most common of the Home Country after standardising the entries?
 3. Calculate the Average Age of all students whose favorite snack is Chips.
 
-Discussion: 
+##### Discussion: 
+
 How can inconsistent categorisation hide data and skew average?
+
+:::
 :::
 
 # Exploring Data
@@ -200,18 +207,20 @@ While the mean is often used, the median is crucial when your data might have ou
 
 #### Summary Game
 
-Download the following Dataset: *{insert link}*
+Download the cleaned dataset [data/cleaned_student_data.xlsx](/data/cleaned_student_data.xlsx)
 
-Questions: 
+::: panel-tabset
+
+##### Questions: 
 
 1. What is the most common method of transport used by students?
 2. What is the average number of hours students sleep?
 3. What are the minimum and maximum ages of the unique students surveyed?
 
-Discussion: 
+##### Discussion: 
 
 For each of the above, what is the test you used? 
-
+:::
 :::
 
 # Finding Patterns
@@ -284,17 +293,19 @@ Example table:
 
 #### Quick Insights Race
 
-Download the following Dataset: *{insert link}*
+Using the cleaned dataset [data/cleaned_student_data.xlsx](/data/cleaned_student_data.xlsx)
 
-Instructions: 
+::: panel-tabset
+
+##### Instructions: 
 
 -	In 5-6 minutes, find as many interesting facts (e.g., “Chips are most popular among 21–22-year-olds”).
 -	Share aloud — most insightful wins!
 
-Discussion: 
+##### Discussion: 
 
 Which patterns might be meaningful and which might just be random.
-
+:::
 :::
 
 # Predicting Outcomes
@@ -380,9 +391,15 @@ Predictions guide decision-making but should always include uncertainty.
 
 This activity forces groups to move beyond pattern recognition to hypothesis-driven prediction.
 
-Setup & Rules:
+::: panel-tabset
+
+##### Setup & Rules:
+
+Using the cleaned dataset [data/cleaned_student_data.xlsx](/data/cleaned_student_data.xlsx)
 
 Divide the class into groups (5-6 people each) Groups will act as data scientists to predict a new, unmeasured variable: Estimated Daily Energy Level (High or Low) for all students which is currently hidden from the dataset.
+
+##### Instructions: 
 
 Each group must complete the following four steps and record them:
 
@@ -391,6 +408,14 @@ Each group must complete the following four steps and record them:
 3.	Define The Criteria: State the relative thresholds for using those variables to categorise students as High or Low energy. This is their Predictive Rule. Example: "Low Energy if Hours Slept > 10.0 OR Height > 6 ft."
 4.	Calculate Prediction: Apply their group's rule to the dataset and calculate: What percentage of students in the dataset fall into the Low Energy category according to your rule?
 
+##### Example:
+
+| Element               | Group Presentation Task                                   |
+|-----------------------|-----------------------------------------------------------|
+| Hypothesis            | Correlation of Sleep and Activity with Estimated Energy   |
+| Variables & Criteria  | Low Energy if Hours Slept > 10.0                          |
+| Prediction            | 50%                                                       |
+:::
 :::
 
 # Further Information
