@@ -8,7 +8,7 @@ metadata:
 ::: {.content-visible when-format="revealjs"}
 
 <!-- Hidden by default -->
-![](fig/contribute-digital-tools-qr.png){fig-align="center" width=400px}
+![](fig/01_qr.png){fig-align="center" width=400px}
 
 :::
 

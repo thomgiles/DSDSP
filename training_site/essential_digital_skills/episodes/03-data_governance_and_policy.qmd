@@ -5,6 +5,13 @@ metadata:
   exercises: 40
 ---
 
+::: {.content-visible when-format="revealjs"}
+
+<!-- Hidden by default -->
+![](fig/03_qr.png){fig-align="center" width=400px}
+
+:::
+
 ::: callout-outcomes
 
 ## 💡 Learning Outcomes
