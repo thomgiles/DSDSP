@@ -5,6 +5,13 @@ metadata:
   exercises: 40
 ---
 
+::: {.content-visible when-format="revealjs"}
+
+<!-- Hidden by default -->
+![](fig/05_qr.png){fig-align="center" width=400px}
+
+:::
+
 # Introduction
 
 Understanding *where* data comes from, *how* it is collected, and *why* certain choices matter is fundamental to good research practice.  
@@ -124,16 +131,25 @@ Example: University demographic report or publicly available dataset of students
 
 ##### Setup
 
-Downloaded dataset [data/student_data.xlsx](/data/student_data.xlsx)
+**Part 1**
 
 -	Everyone gets a blank card/paper.
 -	Collect Name, Height, Favorite Snack from 3 peers.
 -	Discuss how it felt to collect primary data.
 
-##### Dataset comparison
+**Part 2**
+
+Downloaded dataset:
+
+<a class="btn btn-primary" href="data/student_data.xlsx" download>
+  ⬇ Download student dataset
+</a>
+
+##### Discussion
+
+-	Compare collected primary data vs provided secondary dataset. Does it feel the same to be given secondary data?
 
 -	Variables: Name, Gender, Age, Favorite Snack, Height, Home Country, Steps Walked (Yesterday), Library Usage (per week), Commute Time, Campus Transport Method, Hours Slept (Avg. per night), Student Status, Participation in Clubs/Societies, Frequency of Healthy Meals, Postcode, IMD Score
--	Compare collected primary data vs provided secondary dataset.
 
 :::
 :::

@@ -5,9 +5,10 @@ metadata:
   exercises: 40
 ---
 
-:::{.content-visible when-format="revealjs"}
+::: {.content-visible when-format="revealjs"}
 
-![](fig/contribute-digital-delivery-qr.jpg){fig-align="center" width=400px}
+<!-- Hidden by default -->
+![](fig/02_qr.png){fig-align="center" width=400px}
 
 :::
 

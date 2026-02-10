@@ -5,6 +5,13 @@ metadata:
   exercises: 40
 ---
 
+::: {.content-visible when-format="revealjs"}
+
+<!-- Hidden by default -->
+![](fig/06_qr.png){fig-align="center" width=400px}
+
+:::
+
 # Introduction
 
 Organising and exploring data is a critical step between data collection and meaningful analysis.  
@@ -130,7 +137,11 @@ Organising data includes properly identifying its type, as this determines what 
 
 ##### Setup:
 
-Downloaded dataset [data/student_data.xlsx](/data/student_data.xlsx)
+Downloaded dataset:
+
+<a class="btn btn-primary" href="data/student_data.xlsx" download>
+  ⬇ Download student dataset
+</a>
 
 -	Present the student dataset.
 -	Scan the dataset and start finding errors: missing values, inconsistent formats, duplicates. (2 mins)
@@ -207,7 +218,11 @@ While the mean is often used, the median is crucial when your data might have ou
 
 #### Summary Game
 
-Download the cleaned dataset [data/cleaned_student_data.xlsx](/data/cleaned_student_data.xlsx)
+Download the cleaned dataset
+
+<a class="btn btn-primary" href="data/cleaned_student_data.xlsx" download>
+  ⬇ Download cleaned student dataset
+</a>
 
 ::: panel-tabset
 
@@ -293,7 +308,11 @@ Example table:
 
 #### Quick Insights Race
 
-Using the cleaned dataset [data/cleaned_student_data.xlsx](/data/cleaned_student_data.xlsx)
+Using the cleaned dataset:
+
+<a class="btn btn-primary" href="data/cleaned_student_data.xlsx" download>
+  ⬇ Download cleaned student dataset
+</a>
 
 ::: panel-tabset
 
@@ -395,7 +414,12 @@ This activity forces groups to move beyond pattern recognition to hypothesis-dri
 
 ##### Setup & Rules:
 
-Using the cleaned dataset [data/cleaned_student_data.xlsx](/data/cleaned_student_data.xlsx)
+Using the cleaned dataset:
+
+<a class="btn btn-primary" href="data/cleaned_student_data.xlsx" download>
+  ⬇ Download cleaned student dataset
+</a>
+
 
 Divide the class into groups (5-6 people each) Groups will act as data scientists to predict a new, unmeasured variable: Estimated Daily Energy Level (High or Low) for all students which is currently hidden from the dataset.
 
