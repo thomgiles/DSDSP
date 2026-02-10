@@ -5,6 +5,13 @@ metadata:
   exercises: 40
 ---
 
+::: {.content-visible when-format="revealjs"}
+
+<!-- Hidden by default -->
+![](fig/08_qr.png){fig-align="center" width=400px}
+
+:::
+
 # Introduction
 
 Producing an insight is not the end of research, it is the beginning of the next decision. In applied data work, value is created not by analysis alone, but by how insights are translated into action, evaluated through feedback, and refined over time. Research therefore functions as an iterative process rather than a linear pipeline, where each action generates new data, constraints, and questions.

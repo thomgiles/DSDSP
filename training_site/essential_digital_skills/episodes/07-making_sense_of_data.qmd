@@ -5,6 +5,13 @@ metadata:
   exercises: 40
 ---
 
+::: {.content-visible when-format="revealjs"}
+
+<!-- Hidden by default -->
+![](fig/07_qr.png){fig-align="center" width=400px}
+
+:::
+
 # Introduction
 
 Data rarely speaks for itself. Before analysis can inform understanding or decision-making, it must be interpreted through appropriate visualisation, careful design, and contextual awareness. Tables of numbers may be precise, but without structure and framing they obscure patterns, exaggerate noise, and invite misinterpretation.
@@ -141,23 +148,20 @@ In a chart, you instantly see: Chips dominate. Cookies are next. Fruit lags behi
 
 ---
 
+::: {.content-visible when-format="revealjs"}
+
+**Please Complete following short poll**
+
+![](fig/07-app_qr.png){fig-align="center" width=400px}
+:::
+
+---
+
 ::: callout-task
 
 #### Activity: Quick Poll
 
-::: panel-tabset
-
-##### Question
-Complete the four short-response poll at the qr code location below
-
-::: {.content-visible when-format="revealjs"}
-
-<!-- Hidden by default -->
-![](fig/EDS07-Q1-qr_code.png){fig-align="center" width=400px}
-
-:::
-
-##### Wordcloud
+N.b. this is only active during lessions. 
 
 <iframe
   src="https://ds-shiny-helper.azurewebsites.net/edsm7/?embed=true#shiny-tab-results"
@@ -167,8 +171,6 @@ Complete the four short-response poll at the qr code location below
   style="border:none;"
   title="Q1">
 </iframe> 
-
-:::
 :::
 
 # Making Sense of Visuals
