@@ -1,3 +1,7 @@
+---
+title: "Working with SVG Figures"
+---
+
 ## Why SVG?
 
 The SVG format (for "Scalable Vector Graphics") has a number of advantages over standard "raster"

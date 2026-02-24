@@ -1,10 +1,12 @@
+---
+title: "Course README"
+---
+
 [![Build and Deploy Website](https://github.com/swcarpentry/r-novice-inflammation/workflows/01%20Build%20and%20Deploy%20Site/badge.svg)](https://github.com/swcarpentry/r-novice-inflammation/actions/workflows/sandpaper-main.yaml)
 [![Create a Slack Account with us](https://img.shields.io/badge/Create_Slack_Account-The_Carpentries-071159.svg)](https://slack-invite.carpentries.org/)
 [![Slack Status](https://img.shields.io/badge/Slack_Channel-swc--r--inflammation-E01563.svg)](https://carpentries.slack.com/messages/C9WDPCMUG)
 
 # r-novice-inflammation
-
-build-and-deploy-readme-badge
 
 [The Carpentries](https://carpentries.org/) teach foundational coding, and data science skills to
 researchers worldwide. This GitHub repository generates the Software Carpentry lesson website
@@ -45,7 +47,7 @@ to analyze the 12 files individually.
 ## Contributing
 
 We value your contributions. How to contribute to this lesson is outlined in
-[CONTRIBUTING.md](https://github.com/swcarpentry/r-novice-inflammation/blob/master/CONTRIBUTING.md).
+[CONTRIBUTING.qmd](CONTRIBUTING.qmd).
 If you have questions about our contributing guidelines, please create a new issue in the [issues]
 tab and one of the maintainers will respond.
 
@@ -63,6 +65,5 @@ If you have questions or proposals, please send them to the [r-discuss] mailing 
 [MATLAB]: https://github.com/swcarpentry/matlab-novice-inflammation
 [issues]: https://github.com/swcarpentry/r-novice-inflammation/issues
 [r-discuss]: https://carpentries.topicbox.com/groups/discuss
-
 
 

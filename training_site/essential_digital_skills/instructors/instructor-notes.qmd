@@ -1,0 +1,25 @@
+---
+title: Instructor Notes
+---
+
+## Teaching Focus
+
+The primary aim is to help learners make practical, defensible decisions about digital research workflows, not just memorize policy language.
+
+## Delivery Guidance
+
+- Prioritise scenario-based activities over long policy exposition.
+- Encourage participants to map concepts to their own projects.
+- Use short debrief loops after each task to consolidate learning.
+
+## Common Sticking Points
+
+- Confusion between governance policy and day-to-day workflow decisions.
+- Overly generic DMP responses lacking operational detail.
+- Limited understanding of role boundaries for data responsibility.
+
+## Suggested Facilitation Moves
+
+- Ask learners to justify tool/storage choices against risk level.
+- Use “what would you do next week?” prompts to force concrete planning.
+- Surface trade-offs explicitly (openness vs sensitivity, speed vs rigor).

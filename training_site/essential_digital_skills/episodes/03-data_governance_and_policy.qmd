@@ -8,7 +8,7 @@ metadata:
 ::: {.content-visible when-format="revealjs"}
 
 <!-- Hidden by default -->
-![](fig/03_qr.png){fig-align="center" width=400px}
+![](fig/0_qr.png)
 
 :::
 
@@ -43,7 +43,7 @@ metadata:
 
 # Data Protection and Legal Frameworks
 
-![](fig/data_protection.jpeg){fig-align="center" width=400px}
+![](fig/data_protection.jpeg)
 
 ## Why is Data Protection important?
 
@@ -185,7 +185,7 @@ Safeguards must ensure that personal data are used responsibly:
 
 # Institutional Conduct
 
-![](fig/institutional_conduct.jpeg){fig-align="center" width=400px}
+![](fig/institutional_conduct.jpeg)
 
 ## Ethics
 
@@ -254,7 +254,7 @@ flowchart LR
 
 # Data Classification and Information Security
 
-![](fig/data_clasification.jpeg){fig-align="center" width=400px}
+![](fig/data_clasification.jpeg)
 
 ## Handeling research data
 
@@ -310,7 +310,7 @@ flowchart LR
 
 # Policy and Digital Compliance Landscape
 
-![](fig/Digital-Compliance.jpeg){fig-align="center" width=400px}
+![](fig/Digital-Compliance.jpeg)
 
 ## Teired levels
  

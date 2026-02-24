@@ -1,0 +1,24 @@
+---
+title: Setup
+---
+
+## Overview
+
+This course is designed for researchers and professional services staff working in digital research environments. You can complete the activities with a web browser and access to standard university systems.
+
+## Recommended Preparation
+
+1. Ensure you can access your university account and Microsoft 365.
+2. Confirm access to Teams, OneDrive, and SharePoint.
+3. Bring a device that can open spreadsheets (Excel preferred).
+4. Download any activity datasets linked from session pages.
+
+## Optional Preparation
+
+- Install a QR code reader app on your phone for in-class polls.
+- Bring a recent project example so you can apply governance and data management tasks directly.
+
+## During the Course
+
+- Keep all working files in one dedicated folder for the course.
+- Save outputs from practical tasks (templates, notes, summaries) to reuse in your own research projects.

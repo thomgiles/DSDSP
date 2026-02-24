@@ -1,0 +1,13 @@
+---
+title: Additional Material
+---
+
+## Optional Extensions
+
+- Additional data-cleaning practice with base R and tidyverse tools.
+- Extra examples for plotting and exploratory analysis.
+- Optional reproducibility discussion topics (project structure, script conventions).
+
+## Suggested Use
+
+Use this page as a flexible bank of optional material when cohort needs differ across sessions.

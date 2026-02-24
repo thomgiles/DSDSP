@@ -1,0 +1,21 @@
+---
+title: Learner Profiles
+---
+
+## Profile 1: Early-Career Researchers
+
+- **Background:** New to institutional digital research systems.
+- **Motivation:** Build confidence in day-to-day digital research practice.
+- **Needs:** Clear workflows, practical examples, and policy context.
+
+## Profile 2: Research Staff Expanding Digital Practice
+
+- **Background:** Experienced in research methods but variable digital workflow maturity.
+- **Motivation:** Improve reproducibility, collaboration, and compliance.
+- **Needs:** Strong templates and operational decision frameworks.
+
+## Profile 3: Professional Services Partners
+
+- **Background:** Support roles across research governance, data, and systems.
+- **Motivation:** Align support guidance with research realities.
+- **Needs:** Shared language and role-clarity across teams.

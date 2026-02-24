@@ -1,0 +1,52 @@
+---
+title: "Applied R"
+subtitle: "Methods for Data Science pathway"
+---
+
+## Course Overview
+
+Applied R introduces practical R workflows for data analysis in research settings. The course covers core R syntax, data manipulation, control flow, and reproducible analytic practice.
+
+## Who This Is For
+
+- Researchers new to R.
+- Learners moving from other languages into R workflows.
+- Staff supporting research analysis and reporting.
+
+## What You Need
+
+- A laptop with current versions of R and RStudio.
+- Access to the lesson data files.
+- Basic familiarity with files and folders.
+
+## Lesson Sequence
+
+| Lesson | Focus |
+|---|---|
+| [01 RStudio Intro](episodes/01-Rstudio_intro.qmd) | RStudio and project setup |
+| [02 R Variables](episodes/02-R_variables_intro.qmd) | Core data types and objects |
+| [03 R Functions](episodes/03-R_functions.qmd) | Writing reusable functions |
+| [04 For Loops](episodes/04-for_loops.qmd) | Iteration and control flow |
+| [05 The Tidyverse](episodes/05-the_tidyverse.qmd) | Modern data wrangling workflows |
+
+## Course Materials
+
+### Learners
+
+- [Setup](learners/setup.qmd)
+- [Reference](learners/reference.qmd)
+- [Discussion](learners/discuss.qmd)
+
+### Instructors
+
+- [Instructor Notes](instructors/instructor-notes.qmd)
+- [Additional Material](instructors/additional_material.qmd)
+- [Extra Exercises](instructors/extra_exercises.qmd)
+
+### Community and Profiles
+
+- [Course README](README.qmd)
+- [Contributing](CONTRIBUTING.qmd)
+- [Learner Profiles](profiles/learner-profiles.qmd)
+- [Code of Conduct](CODE_OF_CONDUCT.qmd)
+- [License](LICENSE.qmd)

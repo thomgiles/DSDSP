@@ -46,6 +46,7 @@ RUN R -e "install.packages(c( \
 # Copy apps into Shiny Server directory
 # ---------------------------------------------------------
 COPY edsm1 /srv/shiny-server/edsm1
+COPY edsm1-v2 /srv/shiny-server/edsm1-v2
 COPY edsex1 /srv/shiny-server/edsex1
 COPY edsm7 /srv/shiny-server/edsm7
 

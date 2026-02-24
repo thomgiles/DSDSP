@@ -394,13 +394,23 @@ h5 { font-size: 1.15rem; font-weight: 500; color: $white; }
   max-height: 1.5em !important; 
 }
 
-.reveal .slide:not(.center) {
-    height: auto !important;
-    overflow-y: auto; 
+.reveal code {
+    color: $white;
+    background-color: $blue;
+    padding: 4px;
 }
 
 .reveal .progress {
     margin-bottom: 20px;
+}
+
+.reveal figure {
+  text-align: center;
+}
+
+.reveal figure img {
+  max-width: 800px;
+  max-height: 300px;
 }
 
 .reveal .footer {
@@ -510,6 +520,11 @@ h5 { font-size: 1.15rem; font-weight: 500; color: $white; }
     padding-top: 5px;
     padding-bottom: 5px;
     border-radius: 20px;
+}
+
+
+.mermaid-js {
+    max-height: 400px;
 }
 
 /* Optional: hide header/footer in print/PDF */
