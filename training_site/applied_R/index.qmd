@@ -45,7 +45,8 @@ Applied R introduces practical R workflows for data analysis in research setting
 
 ### Community and Profiles
 
+- [Course README](README.qmd)
 - [Contributing](CONTRIBUTING.qmd)
 - [Learner Profiles](profiles/learner-profiles.qmd)
-- [Code of Conduct](CODE_OF_CONDUCT.md)
-- [License](LICENSE.md)
+- [Code of Conduct](CODE_OF_CONDUCT.qmd)
+- [License](LICENSE.qmd)

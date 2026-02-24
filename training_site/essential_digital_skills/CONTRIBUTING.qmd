@@ -22,3 +22,8 @@ Contributions are welcome for:
 - Keep material practical and actionable.
 - Prefer clear examples over abstract statements.
 - Ensure references to policy/process remain current.
+
+## Project Policies
+
+- [Code of Conduct](CODE_OF_CONDUCT.qmd)
+- [License](LICENSE.qmd)

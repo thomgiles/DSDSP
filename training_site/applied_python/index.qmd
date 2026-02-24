@@ -48,7 +48,9 @@ Applied Python introduces core programming and data analysis workflows for early
 
 ### Community and Profiles
 
+- [Course README](README.qmd)
 - [Contributing](CONTRIBUTING.qmd)
 - [Learner Profiles](profiles/learner-profiles.qmd)
-- [Code of Conduct](CODE_OF_CONDUCT.md)
-- [License](LICENSE.md)
+- [Code of Conduct](CODE_OF_CONDUCT.qmd)
+- [License](LICENSE.qmd)
+- [Authors](AUTHORS.qmd)

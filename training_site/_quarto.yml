@@ -147,7 +147,10 @@ website:
                   - essential_digital_skills/instructors/instructor-notes.qmd
               - section: "Community & Metadata"
                 contents:
+                  - essential_digital_skills/README.qmd
                   - essential_digital_skills/CONTRIBUTING.qmd
+                  - essential_digital_skills/CODE_OF_CONDUCT.qmd
+                  - essential_digital_skills/LICENSE.qmd
                   - essential_digital_skills/profiles/learner-profiles.qmd
 
           - section: "Methods for Data Science"
@@ -178,11 +181,11 @@ website:
                       - applied_python/instructors/instructor-notes.qmd
                   - section: "Community & Metadata"
                     contents:
-                      - applied_python/README.md
+                      - applied_python/README.qmd
                       - applied_python/CONTRIBUTING.qmd
-                      - applied_python/CODE_OF_CONDUCT.md
-                      - applied_python/LICENSE.md
-                      - applied_python/AUTHORS.md
+                      - applied_python/CODE_OF_CONDUCT.qmd
+                      - applied_python/LICENSE.qmd
+                      - applied_python/AUTHORS.qmd
                       - applied_python/profiles/learner-profiles.qmd
 
               - section: "Applied Data Sciences (R)"
@@ -207,8 +210,8 @@ website:
                       - applied_R/instructors/instructor-notes.qmd
                   - section: "Community & Metadata"
                     contents:
-                      - applied_R/README.md
+                      - applied_R/README.qmd
                       - applied_R/CONTRIBUTING.qmd
-                      - applied_R/CODE_OF_CONDUCT.md
-                      - applied_R/LICENSE.md
+                      - applied_R/CODE_OF_CONDUCT.qmd
+                      - applied_R/LICENSE.qmd
                       - applied_R/profiles/learner-profiles.qmd
