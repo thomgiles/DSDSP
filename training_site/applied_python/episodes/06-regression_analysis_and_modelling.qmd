@@ -1,139 +1,464 @@
 ---
 title: Regression Analysis and Modelling
 metadata:
-  teaching: 20
+  teaching: 70
   exercises: 10
 ---
 
 ::: callout-outcomes
+
 ## Learning Outcomes
 
-- Train a simple linear regression model with scikit-learn.
-- Split data into training and testing subsets.
-- Evaluate model quality with MSE and R-squared.
-- Visualize observed versus predicted values.
+- Train a linear regression model on a dataset.
+- Test the model, and plot the results.
 :::
 
 ::: callout-questions
+
 ## Questions
 
-1. How can I train a linear regression model in Python?
-2. What does scikit-learn provide for modelling workflows?
-3. How do I interpret common regression metrics?
+- How can I train a Linear Regression model in Python?
+- What is the scikit-learn package?
 :::
 
-## Structure and Agenda
+## Structure & Agenda
 
-1. Load and prepare data (~5 min)
-2. Train/test a linear model (~10 min)
-3. Evaluate and visualize outputs (~10 min)
-4. Extension task (~5 min)
+1. Run a complete linear regression workflow in `scikit-learn` (~20 min)  
+2. Interpret average/min/max trends in the inflammation data (~20 min)  
+3. Build multi-panel plots with `matplotlib` (~20 min)  
+4. Tune plot scaling and layout for clearer interpretation (~20 min)  
 
-# Modelling Workflow
+> 🔧 Activities spaced throughout the session  
 
-## Import Packages
+# Model Walkthrough
+
+## Visualizing data
+
+This page is different!
+
+The mathematician Richard Hamming once said, "The purpose of computing is insight, not numbers," and the best way to develop insight is often to visualize data. Visualization deserves an entire lecture of its own, but we can explore a few features of Python's `matplotlib` library here. While there is no official plotting library, `matplotlib` is the *de facto* standard. First, we will import the `pyplot` module from `matplotlib` and use two of its functions to create and display a [heat map](../learners/reference.qmd#heat-map) of our data:
+
+> 📊 Check shape and indexing first before interpreting numerical results.
+
+## Instructor Note
+
+::: callout-important
+
+## Episode Prerequisites
+
+This lesson doesn't depend on any previous state in your notebook.
+
+:::
+
+We will build the full linear regression example in stages.
+
+> 💡 State one concrete behavior you expect before running the next code block.
+
+## Import and Prepare Data
 
 ```{python}
+# Code source: Jaques Grobler
+# License: BSD 3 clause
+
 import matplotlib.pyplot as plt
 import numpy as np
 
 from sklearn import datasets, linear_model
 from sklearn.metrics import mean_squared_error, r2_score
+
+# Load the diabetes dataset
+diabetes_X, diabetes_y = datasets.load_diabetes(return_X_y=True)
+
+# Use only one feature
+diabetes_X = diabetes_X[:, np.newaxis, 2]
+
+# Split the data into training/testing sets
+diabetes_X_train = diabetes_X[:-20]
+diabetes_X_test = diabetes_X[-20:]
+
+# Split the targets into training/testing sets
+diabetes_y_train = diabetes_y[:-20]
+diabetes_y_test = diabetes_y[-20:]
 ```
 
-> 📦 Keep modelling imports grouped for readability.
-
-## Load and Select Features
+## Train and Predict
 
 ```{python}
-X, y = datasets.load_diabetes(return_X_y=True)
-X = X[:, np.newaxis, 2]
+from sklearn import linear_model
+
+# Create linear regression object
+regr = linear_model.LinearRegression()
+
+# Train the model using the training sets
+regr.fit(diabetes_X_train, diabetes_y_train)
+
+# Make predictions using the testing set
+diabetes_y_pred = regr.predict(diabetes_X_test)
 ```
 
-> 🎯 Start simple: one feature helps explain the full workflow clearly.
-
-## Train/Test Split
+## Evaluate and Plot
 
 ```{python}
-X_train = X[:-20]
-X_test = X[-20:]
-y_train = y[:-20]
-y_test = y[-20:]
-```
+import matplotlib.pyplot as plt
+from sklearn.metrics import mean_squared_error, r2_score
 
-> 🧪 Holdout data is essential for honest evaluation.
+# The coefficients
+print("Coefficients: \n", regr.coef_)
+# The mean squared error
+print("Mean squared error: %.2f" % mean_squared_error(diabetes_y_test, diabetes_y_pred))
+# The coefficient of determination: 1 is perfect prediction
+print("Coefficient of determination: %.2f" % r2_score(diabetes_y_test, diabetes_y_pred))
 
-## Fit and Predict
-
-```{python}
-model = linear_model.LinearRegression()
-model.fit(X_train, y_train)
-y_pred = model.predict(X_test)
-```
-
-> 🤖 Fit on training data, evaluate on unseen test data.
-
-# Evaluation and Visualization
-
-## Model Metrics
-
-```{python}
-print("Coefficient:", model.coef_)
-print("Mean squared error:", mean_squared_error(y_test, y_pred))
-print("R-squared:", r2_score(y_test, y_pred))
-```
-
-> 📏 Lower MSE and higher R-squared generally indicate better fit.
-
-## Plot Observed vs Predicted
-
-```{python}
-plt.scatter(X_test, y_test, color="black", label="Observed")
-plt.plot(X_test, y_pred, color="blue", linewidth=2, label="Predicted")
+# Plot outputs
+plt.scatter(diabetes_X_test, diabetes_y_test, color="black")
+plt.plot(diabetes_X_test, diabetes_y_pred, color="blue", linewidth=3)
 
 plt.xticks(())
 plt.yticks(())
-plt.legend()
+
 plt.show()
 ```
 
-> 📉 Visual fit checks complement numeric metrics.
+## Linear Regression Fit in Context
 
-## Reproducible Modelling Notes
+![](fig/ols-result.png){alt='Scatter graph comparing the linear regression with the test dataset.'}
 
-- Keep preprocessing and splitting steps explicit.
-- Report model parameters and metrics together.
-- Save scripts and figures with your interpretation.
+This nicely demonstrates how linear regression attempts to draw a straight line that will best minimize the residual sum of squares between the observed responses in the dataset, and the responses predicted by the linear approximation.
 
-# Practice and Wrap-Up
+Each row in the heat map corresponds to a patient in the clinical trial dataset, and each column corresponds to a day in the dataset. Blue pixels in this heat map represent low values, while yellow pixels represent high values. As we can see, the general number of inflammation flare-ups for the patients rises and falls over a 40-day period.
 
-::: callout-task
-#### Task 1: Extend the Model
+## Sanity Check Against Trial Expectations
 
-::: panel-tabset
-##### Prompt
+So far so good as this is in line with our knowledge of the clinical trial and Dr. Maverick's claims:
 
-Modify the workflow to test one of these changes:
+- the patients take their medication once their inflammation flare-ups begin
+- it takes around 3 weeks for the medication to take effect and begin reducing flare-ups
+- and flare-ups appear to drop to zero by the end of the clinical trial.
 
-1. Use a different single feature column.
-2. Train on a different train/test split.
-3. Compare two models by MSE and R-squared.
+Now let's take a look at the average inflammation over time:
 
-##### Example Direction
+## Plot Daily Average Inflammation
 
 ```{python}
-X_alt = datasets.load_diabetes(return_X_y=True)[0][:, np.newaxis, 3]
+ave_inflammation = numpy.mean(data, axis=0)
+ave_plot = matplotlib.pyplot.plot(ave_inflammation)
+matplotlib.pyplot.show()
 ```
 
-Re-run fit/predict/evaluate and compare against the original setup.
+![](fig/inflammation-01-average.svg){alt='A line graph showing the average inflammation across all patients over a 40-day period.'}
+
+## Interpreting the Average Trend
+
+Here, we have put the average inflammation per day across all patients in the variable `ave_inflammation`, then asked `matplotlib.pyplot` to create and display a line graph of those values. The result is a reasonably linear rise and fall, in line with Dr. Maverick's claim that the medication takes 3 weeks to take effect. But a good data scientist doesn't just consider the average of a dataset, so let's have a look at two other statistics:
+
+## Plot Daily Maximum
+
+```{python}
+max_plot = matplotlib.pyplot.plot(numpy.amax(data, axis=0))
+matplotlib.pyplot.show()
+```
+
+![](fig/inflammation-01-maximum.svg){alt='A line graph showing the maximum inflammation across all patients over a 40-day period.'}
+
+## Plot Daily Minimum
+
+```{python}
+min_plot = matplotlib.pyplot.plot(numpy.amin(data, axis=0))
+matplotlib.pyplot.show()
+```
+
+![](fig/inflammation-01-minimum.svg){alt='A line graph showing the minimum inflammation across all patients over a 40-day period.'}
+
+## Spotting Suspicious Patterns
+
+The maximum value rises and falls linearly, while the minimum seems to be a step function. Neither trend seems particularly likely, so either there's a mistake in our calculations or something is wrong with our data. This insight would have been difficult to reach by examining the numbers themselves without visualization tools.
+
+## Grouping plots
+
+You can group similar plots in a single figure using subplots. The function `matplotlib.pyplot.figure()` creates a canvas for multiple subplots. The `figsize` parameter controls that canvas size.
+
+## Subplot Parameters
+
+Each subplot is created with `add_subplot(rows, columns, position)`.
+
+- `rows`: total subplot rows
+- `columns`: total subplot columns
+- `position`: reading order position (left-to-right, top-to-bottom)
+
+In this example we store each subplot in a variable (`axes1`, `axes2`, `axes3`) and set labels with `set_ylabel()`.
+
+> 📈 Choose plots that answer a specific question about the data.
+
+## Code Example: Grouping plots
+
+```{python}
+import numpy
+import matplotlib.pyplot
+
+data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
+
+fig = matplotlib.pyplot.figure(figsize=(10.0, 3.0))
+
+axes1 = fig.add_subplot(1, 3, 1)
+axes2 = fig.add_subplot(1, 3, 2)
+axes3 = fig.add_subplot(1, 3, 3)
+
+axes1.set_ylabel('average')
+axes1.plot(numpy.mean(data, axis=0))
+
+axes2.set_ylabel('max')
+axes2.plot(numpy.amax(data, axis=0))
+
+axes3.set_ylabel('min')
+axes3.plot(numpy.amin(data, axis=0))
+
+fig.tight_layout()
+
+matplotlib.pyplot.savefig('inflammation.png')
+matplotlib.pyplot.show()
+```
+
+## Result: Grouping plots
+
+![](fig/inflammation-01-group-plot.svg){alt='Three line graphs showing the daily average, maximum and minimum inflammation over a 40-day period.'}
+
+## What the Script Is Doing
+
+The [call](../learners/reference.qmd#function-call) to `loadtxt` reads our data, and the rest of the program tells the plotting library how large we want the figure to be, that we're creating three subplots, what to draw for each one, and that we want a tight layout. (If we leave out that call to `fig.tight_layout()`, the graphs will actually be squeezed together more closely.)
+
+## Saving Figures to Disk
+
+The call to `savefig` stores the plot as a graphics file. This can be a convenient way to store your plots for use in other documents, web pages etc. The graphics format is automatically determined by Matplotlib from the file name ending we specify; here PNG from 'inflammation.png'. Matplotlib supports many different graphics formats, including SVG, PDF, and JPEG.
+
+::: callout-note
+
+## Importing libraries with shortcuts
+
+In this lesson we use the `import matplotlib.pyplot` [syntax](../learners/reference.qmd#syntax) to import the `pyplot` module of `matplotlib`. However, shortcuts such as `import matplotlib.pyplot as plt` are frequently used. Importing `pyplot` this way means that after the initial import, rather than writing `matplotlib.pyplot.plot(...)`, you can now write `plt.plot(...)`. Another common convention is to use the shortcut `import numpy as np` when importing the NumPy library. We then can write `np.loadtxt(...)` instead of `numpy.loadtxt(...)`, for example.
+
+> 💡 State one concrete behavior you expect before running the next code block.
+
+## Why Aliases Are Common
+
+Some people prefer these shortcuts as it is quicker to type and results in shorter lines of code - especially for libraries with long names! You will frequently see Python code online using a `pyplot` function with `plt`, or a NumPy function with `np`, and it's because they've used this shortcut. It makes no difference which approach you choose to take, but you must be consistent as if you use `import matplotlib.pyplot as plt` then `matplotlib.pyplot.plot(...)` will not work, and you must use `plt.plot(...)` instead. Because of this, when working with other people it is important you agree on how libraries are imported.
+
+## Team Convention
+
 :::
+
+::: callout-task
+
+# Plot Customization Exercises
+
+## Plot Scaling
+
+Why do all of our plots stop just short of the upper end of our graph?
+
+::: callout-note
+
+> 📈 Choose plots that answer a specific question about the data.
+
+## Why Axes Stop Short
+
+Because matplotlib normally sets x and y axes limits to the min and max of our data (depending on data range)
+
 :::
+
+If we want to change this, we can use the `set_ylim(min, max)` method of each 'axes', for example:
+
+```{python}
+axes3.set_ylim(0, 6)
+```
+
+> 💡 State one concrete behavior you expect before running the next code block.
+
+## Challenge: Plot Scaling
+
+Update your plotting code to automatically set a more appropriate scale. (Hint: you can make use of the `max` and `min` methods to help.)
+
+::: callout-note
+
+## Manual Axis Limits
+
+```{python}
+# One method
+axes3.set_ylabel('min')
+axes3.plot(numpy.amin(data, axis=0))
+axes3.set_ylim(0, 6)
+```
+
+:::
+
+## Alternative Approach
+
+::: callout-note
+
+## Automatic Axis Limits
+
+```{python}
+# A more automated approach
+min_data = numpy.amin(data, axis=0)
+axes3.set_ylabel('min')
+axes3.plot(min_data)
+axes3.set_ylim(numpy.amin(min_data), numpy.amax(min_data) * 1.1)
+```
+
+:::
+
+## Compare the Two Approaches
+
+:::
+
+::: callout-task
+
+## Drawing Straight Lines
+
+In the center and right subplots above, we expect all lines to look like step functions because non-integer value are not realistic for the minimum and maximum values. However, you can see that the lines are not always vertical or horizontal, and in particular the step function in the subplot on the right looks slanted. Why is this?
+
+::: callout-note
+
+> 💡 State one concrete behavior you expect before running the next code block.
+
+## Why the Plot Looks Slanted
+
+Because matplotlib interpolates (draws a straight line) between the points. One way to do avoid this is to use the Matplotlib `drawstyle` option:
+
+## Step-Style Plotting
+
+```{python}
+import numpy
+import matplotlib.pyplot
+
+data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
+
+fig = matplotlib.pyplot.figure(figsize=(10.0, 3.0))
+
+axes1 = fig.add_subplot(1, 3, 1)
+axes2 = fig.add_subplot(1, 3, 2)
+axes3 = fig.add_subplot(1, 3, 3)
+
+axes1.set_ylabel('average')
+axes1.plot(numpy.mean(data, axis=0), drawstyle='steps-mid')
+
+axes2.set_ylabel('max')
+axes2.plot(numpy.amax(data, axis=0), drawstyle='steps-mid')
+
+axes3.set_ylabel('min')
+axes3.plot(numpy.amin(data, axis=0), drawstyle='steps-mid')
+
+fig.tight_layout()
+
+matplotlib.pyplot.show()
+```
+
+## Compare Line Styles
+
+![](fig/inflammation-01-line-styles.svg){alt='Three line graphs, with step lines connecting the points, showing the daily average, maximumand minimum inflammation over a 40-day period.'}
+
+:::
+
+:::
+
+::: callout-task
+
+## Make Your Own Plot
+
+Create a plot showing the standard deviation (`numpy.std`) of the inflammation data for each day across all patients.
+
+::: callout-note
+
+> 📈 Choose plots that answer a specific question about the data.
+
+## Worked Solution: Make Your Own Plot
+
+```{python}
+std_plot = matplotlib.pyplot.plot(numpy.std(data, axis=0))
+matplotlib.pyplot.show()
+```
+
+:::
+
+:::
+
+::: callout-task
+
+## Moving Plots Around
+
+Modify the program to display the three plots on top of one another instead of side by side.
+
+::: callout-note
+
+> 📈 Choose plots that answer a specific question about the data.
+
+## Worked Solution: Moving Plots Around
+
+```{python}
+import numpy
+import matplotlib.pyplot
+
+data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
+
+# change figsize (swap width and height)
+fig = matplotlib.pyplot.figure(figsize=(3.0, 10.0))
+
+# change add_subplot (swap first two parameters)
+axes1 = fig.add_subplot(3, 1, 1)
+axes2 = fig.add_subplot(3, 1, 2)
+axes3 = fig.add_subplot(3, 1, 3)
+
+axes1.set_ylabel('average')
+axes1.plot(numpy.mean(data, axis=0))
+
+axes2.set_ylabel('max')
+axes2.plot(numpy.amax(data, axis=0))
+
+axes3.set_ylabel('min')
+axes3.plot(numpy.amin(data, axis=0))
+
+fig.tight_layout()
+
+matplotlib.pyplot.show()
+```
+
+## Key Adjustment
+
+:::
+
+:::
+
+# Further Information
 
 ::: callout-keypoints
-## Key Points
 
-- `LinearRegression().fit(X_train, y_train)` trains an ordinary least squares model.
-- Holdout testing is essential for credible performance estimates.
-- Use both metrics and plots to assess fit quality.
-- Keep modelling steps explicit for reproducibility.
+## 📚 Keypoints
+
+- Use `scikit-learn` to fit and evaluate a basic linear regression model.
+- Inspect average, max, and min trends to detect suspicious data behavior.
+- Use `matplotlib` subplots to compare summary statistics side by side.
+- Adjust axes and draw styles to make plot interpretation more accurate.
+
 :::
+
+::: callout-hints
+
+## 🔦 Hints
+
+- Separate data preparation, model fitting, and evaluation into distinct steps.
+- Plot residual or comparison views to check model behavior, not just one score.
+- Keep feature and target naming explicit so formulas remain interpretable.
+
+:::
+
+## Module Summary
+
+This module combines exploratory plotting with introductory regression modelling. Learners fit a linear model, evaluate outputs, and connect numerical metrics to visual evidence from the underlying data.
+
+## Additional Learning
+
+The concepts in this module connect directly to practical data handling and exploration in Python.
+
+| Submodule | Python Connection | Why It Matters |
+| --- | --- | --- |
+| Linear Regression | [`LinearRegression`](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html) | Provides a baseline model for trend estimation. |
+| Model Evaluation | [Regression metrics](https://scikit-learn.org/stable/modules/model_evaluation.html#regression-metrics) | Metrics quantify prediction quality and model fit. |
+| Comparative Plotting | [Matplotlib subplots](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html) | Side-by-side plots improve analytical judgment. |

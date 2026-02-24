@@ -8,8 +8,8 @@ format:
       - pyodide
       - webr
     title-block-style: none
+    allow-html: true
   
-
   revealjs:
     theme:
       - black
@@ -23,15 +23,16 @@ format:
     controls-layout: bottom-right
     preview-links: auto
     navigation-mode: linear
-    footer: "Data Science and Digital Skills"
     filters:
       - dynamic-code-output
       - pyodide
       - webr
     title-block-style: none
-    
-  commonmark:
-    output-ext: digital-notebook.md
+    include-before-body:
+      - ../../reveal-header.html
+    include-after-body:
+      - ../../rjs-footer.js
+    allow-html: true
       
 execute: 
-  eval: false 
+  eval: false  

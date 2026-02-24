@@ -23,12 +23,14 @@ metadata:
 3. When should I use classes instead of standalone functions?
 :::
 
-## Structure and Agenda
+## Structure & Agenda
 
-1. Classes and objects (~10 min)
-2. Methods and state (~15 min)
-3. Inheritance basics (~10 min)
-4. Practical design guidance (~10 min)
+1. Classes and objects (~20 min)  
+2. Methods and state (~20 min)  
+3. Inheritance basics (~15 min)  
+4. Practical design guidance (~15 min)  
+
+> 🔧 Activities spaced throughout the session  
 
 # OOP Basics
 
@@ -186,8 +188,10 @@ print(s2.sample_id, s2.is_treated(), s2.value)
 :::
 :::
 
+# Further Information
+
 ::: callout-keypoints
-## Key Points
+## 📚 Keypoints
 
 - Classes package data and behavior together.
 - `__init__` defines how objects are created.
@@ -195,3 +199,27 @@ print(s2.sample_id, s2.is_treated(), s2.value)
 - Inheritance can reduce duplication, but keep hierarchies simple.
 - Good object design improves readability and maintainability in larger projects.
 :::
+
+::: callout-hints
+
+## 🔦 Hints
+
+- Start with a minimal class, then add methods only when repetition appears.
+- Keep class responsibilities narrow and names tied to domain meaning.
+- Prefer composition and small interfaces over deep inheritance trees.
+
+:::
+
+## Module Summary
+
+This module introduces object-oriented programming for structuring larger Python projects. Learners define classes, initialize object state, implement methods, and apply inheritance carefully when reuse is justified.
+
+## Additional Learning
+
+The concepts in this module connect directly to practical data handling and exploration in Python.
+
+| Submodule | Python Connection | Why It Matters |
+| --- | --- | --- |
+| Class Fundamentals | [Classes](https://docs.python.org/3/tutorial/classes.html) | Classes organize related data and behavior in one unit. |
+| Instance Methods | [Method objects](https://docs.python.org/3/tutorial/classes.html#method-objects) | Methods provide clear interfaces for repeated operations. |
+| Inheritance | [Inheritance](https://docs.python.org/3/tutorial/classes.html#inheritance) | Inheritance supports reuse when shared behavior is stable. |

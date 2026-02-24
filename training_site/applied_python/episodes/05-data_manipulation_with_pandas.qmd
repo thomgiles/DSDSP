@@ -1,7 +1,7 @@
 ---
 title: Data Manipulation with pandas
 metadata:
-  teaching: 50
+  teaching: 60
   exercises: 30
 ---
 
@@ -23,12 +23,14 @@ metadata:
 3. How can I summarize data by groups for analysis and plotting?
 :::
 
-## Structure and Agenda
+## Structure & Agenda
 
-1. DataFrame fundamentals (~10 min)
-2. Selecting and filtering data (~15 min)
-3. Transforming and cleaning (~15 min)
-4. Grouped summaries and export (~10 min)
+1. DataFrame fundamentals (~20 min)  
+2. Selecting and filtering data (~25 min)  
+3. Transforming and cleaning (~25 min)  
+4. Grouped summaries and export (~20 min)  
+
+> 🔧 Activities spaced throughout the session  
 
 # DataFrame Foundations
 
@@ -187,8 +189,10 @@ print(result)
 :::
 :::
 
+# Further Information
+
 ::: callout-keypoints
-## Key Points
+## 📚 Keypoints
 
 - pandas DataFrames are efficient, labeled table structures for analysis.
 - Boolean filtering and column selection are core day-to-day operations.
@@ -196,3 +200,27 @@ print(result)
 - `groupby` plus `agg` is the main pattern for grouped statistics.
 - Keep outputs reproducible by saving cleaned tables and summaries.
 :::
+
+::: callout-hints
+
+## 🔦 Hints
+
+- Inspect data early with `head()`, `info()`, and summary statistics.
+- Apply filters in small steps so each transformation is easy to verify.
+- Save cleaned outputs to support reproducibility and peer review.
+
+:::
+
+## Module Summary
+
+This module introduces pandas for tabular data workflows. Learners practice selecting columns, filtering rows, handling missing values, grouping data, and exporting clean summaries for downstream analysis.
+
+## Additional Learning
+
+The concepts in this module connect directly to practical data handling and exploration in Python.
+
+| Submodule | Python Connection | Why It Matters |
+| --- | --- | --- |
+| DataFrame Basics | [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) | DataFrames are the core structure for real-world tables. |
+| Filtering and Selection | [Indexing and selecting data](https://pandas.pydata.org/docs/user_guide/indexing.html) | Precise selection keeps analyses targeted and correct. |
+| Grouped Summaries | [`groupby`](https://pandas.pydata.org/docs/user_guide/groupby.html) | Group-wise statistics are essential for comparison tasks. |
