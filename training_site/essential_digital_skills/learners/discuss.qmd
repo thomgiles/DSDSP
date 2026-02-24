@@ -1,0 +1,19 @@
+---
+title: Discussion
+---
+
+## Discussion Prompts
+
+Use these prompts for breakout activities and reflection:
+
+1. Which digital tools are currently critical in your research workflow?
+2. Where are the biggest risks in your current data handling process?
+3. What data governance responsibilities are clear, and which are ambiguous?
+4. How could your team improve reproducibility in the next month?
+5. Which one change would most improve research data quality in your context?
+
+## Group Debrief Format
+
+- Summarize one practical change your group recommends.
+- Identify one barrier to implementing that change.
+- Propose one realistic first step for the next 2–4 weeks.

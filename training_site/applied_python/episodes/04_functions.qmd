@@ -1,0 +1,231 @@
+---
+title: Functions
+metadata:
+  teaching: 30
+  exercises: 0
+---
+
+::: callout-outcomes
+## Learning Outcomes
+
+- Define functions with parameters and return values.
+- Compose smaller functions into larger workflows.
+- Distinguish local and global variable scope.
+- Add docstrings and defaults for clearer APIs.
+- Test small functions before integrating into analysis pipelines.
+:::
+
+::: callout-questions
+## Questions
+
+1. How do I define and call my own functions?
+2. What is the difference between `print` and `return`?
+3. How do defaults and docstrings improve function usability?
+:::
+
+## Structure and Agenda
+
+1. Defining and calling functions (~10 min)
+2. Composition and scope (~10 min)
+3. Testing, documentation, and defaults (~10 min)
+
+# Function Basics
+
+## Define and Call a Function
+
+```{python}
+def fahr_to_celsius(temp):
+    return (temp - 32) * (5 / 9)
+
+print("freezing point:", fahr_to_celsius(32))
+print("boiling point:", fahr_to_celsius(212))
+```
+
+> 🧱 `def` defines reusable logic with inputs and outputs.
+
+## Compose Functions
+
+```{python}
+def celsius_to_kelvin(temp_c):
+    return temp_c + 273.15
+
+def fahr_to_kelvin(temp_f):
+    temp_c = fahr_to_celsius(temp_f)
+    return celsius_to_kelvin(temp_c)
+
+print(fahr_to_kelvin(212.0))
+```
+
+> 🔗 Build complex behavior by combining small functions.
+
+## Local Scope
+
+```{python}
+def show_value():
+    local_val = 42
+    return local_val
+
+print(show_value())
+# print(local_val)  # NameError if uncommented
+```
+
+> 🔒 Local variables only exist inside the function that defines them.
+
+## Global Scope Access
+
+```{python}
+scale = 10
+
+def multiply_by_scale(x):
+    return x * scale
+
+print(multiply_by_scale(3))
+```
+
+> 🌍 Local variables stay inside functions; globals are outside.
+
+# Refactoring Analysis Workflows
+
+## Setup Imports and Function Shell
+
+```{python}
+import glob
+import numpy as np
+import matplotlib.pyplot as plt
+
+
+def visualize(filename):
+    data = np.loadtxt(fname=filename, delimiter=",")
+    fig = plt.figure(figsize=(10.0, 3.0))
+```
+
+> 🧱 Start by defining function boundaries and setup steps.
+
+## Add Plotting Logic to `visualize()`
+
+```{python}
+    axes1 = fig.add_subplot(1, 3, 1)
+    axes2 = fig.add_subplot(1, 3, 2)
+    axes3 = fig.add_subplot(1, 3, 3)
+
+    axes1.set_ylabel("average")
+    axes1.plot(np.mean(data, axis=0))
+
+    axes2.set_ylabel("max")
+    axes2.plot(np.amax(data, axis=0))
+
+    axes3.set_ylabel("min")
+    axes3.plot(np.amin(data, axis=0))
+
+    fig.tight_layout()
+    plt.show()
+```
+
+> 📉 Encapsulation keeps notebooks cleaner and easier to maintain.
+
+## Define `detect_problems()`
+
+```{python}
+def detect_problems(filename):
+    data = np.loadtxt(fname=filename, delimiter=",")
+
+    if np.amax(data, axis=0)[0] == 0 and np.amax(data, axis=0)[20] == 20:
+        print("Suspicious looking maxima!")
+    elif np.sum(np.amin(data, axis=0)) == 0:
+        print("Minima add up to zero!")
+    else:
+        print("Seems OK!")
+```
+
+> 🚨 Keep anomaly checks in a dedicated function for reuse.
+
+## Run a Simple Analysis Pipeline
+
+```{python}
+for filename in sorted(glob.glob("inflammation*.csv"))[:3]:
+    print(filename)
+    visualize(filename)
+    detect_problems(filename)
+```
+
+> ✅ Function names make pipeline intent readable.
+
+# Testing and API Design
+
+## Define a Utility Function
+
+```{python}
+def offset_mean(data, target_mean_value=0.0):
+    """Return a copy of data offset so the mean equals target_mean_value."""
+    return (data - np.mean(data)) + target_mean_value
+```
+
+> 🧩 Utility functions should do one clear thing.
+
+## Test with Controlled Input
+
+```{python}
+z = np.zeros((2, 2))
+print(offset_mean(z, 3))
+```
+
+> 🧪 Test with simple controlled input first.
+
+## Verify Behavior on Real Data
+
+```{python}
+data = np.loadtxt(fname="inflammation-01.csv", delimiter=",")
+offset_data = offset_mean(data)
+
+print(np.mean(offset_data))
+print(np.std(data) - np.std(offset_data))
+```
+
+> 📏 Check expected properties, not just one output value.
+
+## `return` vs `print`
+
+```{python}
+def add(a, b):
+    print(a + b)
+
+A = add(7, 3)
+print(A)
+```
+
+> ⚠️ `print` displays output; `return` passes values to other code.
+
+# Practice and Wrap-Up
+
+## Practice Activity
+
+::: callout-task
+#### Task 1: Build and Test a Utility Function
+
+::: panel-tabset
+##### Prompt
+
+Write a function `rescale(input_array, low_val=0.0, high_val=1.0)` that scales values into a target range.
+
+##### Example Solution
+
+```{python}
+def rescale(input_array, low_val=0.0, high_val=1.0):
+    L = np.amin(input_array)
+    H = np.amax(input_array)
+    intermed_array = (input_array - L) / (H - L)
+    output_array = intermed_array * (high_val - low_val) + low_val
+    return output_array
+```
+:::
+:::
+
+::: callout-keypoints
+## Key Points
+
+- Use `def name(params):` to define reusable code.
+- Functions can call other functions to build larger workflows.
+- Local variables exist only inside their function scope.
+- Prefer clear names and docstrings for readability.
+- Defaults (`param=value`) make common calls simpler while preserving flexibility.
+:::

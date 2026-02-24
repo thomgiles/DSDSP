@@ -1,0 +1,234 @@
+---
+title: Types, Variables, and Basic Operations
+metadata:
+  teaching: 50
+  exercises: 25
+---
+
+::: callout-outcomes
+## Learning Outcomes
+
+- Assign values to variables and explain common Python data types.
+- Use built-in functions such as `print()`, `type()`, and `help()`.
+- Create, index, update, and copy lists safely.
+- Use slicing (including negative indices and step sizes) on strings and lists.
+- Explain mutability versus immutability in practical examples.
+:::
+
+::: callout-questions
+## Questions
+
+1. How do variables store values in Python?
+2. Which core data types should I be comfortable with first?
+3. How do I work with many values using lists?
+4. How do slicing and indexing help me subset data quickly?
+:::
+
+## Structure and Agenda
+
+1. Variables, expressions, and types (~20 min)
+2. Built-in functions and help (~10 min)
+3. Lists and mutability (~10 min)
+4. Slicing strings and lists (~10 min)
+5. Practice task (~10 min)
+
+# Foundations
+
+## Variables and Expressions
+
+```{python}
+weight_kg = 60.3
+patient_id = "001"
+weight_lb = 2.2 * weight_kg
+
+print(patient_id, "weight in kilograms:", weight_kg)
+print("weight in pounds:", weight_lb)
+```
+
+> 🔑 A variable is a label that points to a value.
+
+## Reassignment
+
+```{python}
+weight_kg = 65.0
+print("updated weight in kilograms:", weight_kg)
+```
+
+> 🔁 Reassigning a variable changes what it points to, not past calculations.
+
+## Core Data Types
+
+```{python}
+print(type(42))
+print(type(60.3))
+print(type("inflam_001"))
+```
+
+> 🧠 Start with `int`, `float`, and `str`.
+
+## Built-in Functions and Help
+
+```{python}
+print("hello")
+help(print)
+```
+
+> ❓ Use `help(function_name)` whenever syntax or parameters are unclear.
+
+## Comments in Code
+
+```{python}
+# There are 2.2 pounds per kilogram
+weight_lb = 2.2 * weight_kg
+```
+
+> 🛠️ Comments explain intent for your future self and collaborators.
+
+# Working with Lists and Slices
+
+## Create and Index Lists
+
+```{python}
+odds = [1, 3, 5, 7]
+print("first:", odds[0])
+print("last:", odds[-1])
+```
+
+> 📌 Python uses zero-based indexing.
+
+## Mutability: Lists vs Strings
+
+```{python}
+names = ["Curie", "Darwing", "Turing"]
+names[1] = "Darwin"
+print(names)
+```
+
+> ✅ Lists can be edited in place.
+
+## String Immutability
+
+```{python}
+name = "Darwin"
+# name[0] = "d"  # TypeError if uncommented
+```
+
+> ⚖️ Strings are immutable, so edits create new values instead.
+
+## Copying Lists Safely
+
+```{python}
+mild_salsa = ["peppers", "onions", "cilantro", "tomatoes"]
+hot_salsa = mild_salsa
+hot_salsa[0] = "hot peppers"
+
+print("mild:", mild_salsa)
+print("hot:", hot_salsa)
+```
+
+> ⚠️ Assignment copies references, not the list contents.
+
+## Create Independent Copies
+
+```{python}
+mild_salsa = ["peppers", "onions", "cilantro", "tomatoes"]
+hot_salsa = list(mild_salsa)
+hot_salsa[0] = "hot peppers"
+
+print("mild:", mild_salsa)
+print("hot:", hot_salsa)
+```
+
+> 🔒 Use `list(existing_list)` when you need independent mutable data.
+
+## Nested Lists
+
+```{python}
+veg = [
+    ["lettuce", "lettuce", "peppers", "zucchini"],
+    ["lettuce", "lettuce", "peppers", "zucchini"],
+    ["lettuce", "cilantro", "peppers", "zucchini"],
+]
+
+print(veg[0])
+print(veg[2][1])
+```
+
+> 🧩 Use two indices for 2D list access: `list[row][col]`.
+
+## Slicing Strings and Lists
+
+```{python}
+binomial_name = "Drosophila melanogaster"
+print(binomial_name[0:10])
+print(binomial_name[11:23])
+```
+
+> ✂️ String slicing is useful for structured labels and IDs.
+
+## Slicing Lists
+
+```{python}
+months = ["jan", "feb", "mar", "apr", "may", "jun", "jul", "aug", "sep", "oct", "nov", "dec"]
+print(months[8:])
+print(months[-4:])
+```
+
+> ✂️ Slicing uses `start:stop`, and `stop` is excluded.
+
+## Step Slices
+
+```{python}
+beatles = "In an octopus's garden in the shade"
+print(beatles[::2])
+```
+
+> 🪜 Add a third slice value for step size: `start:stop:step`.
+
+# Practice and Wrap-Up
+
+## Practice Activity
+
+::: callout-task
+#### Task 1: Types and Slicing Practice
+
+::: panel-tabset
+##### Prompt
+
+1. Create three variables: a string, an integer, and a float.
+2. Print each value and its type.
+3. Create a list of five values and print the first, last, and middle slice.
+4. Print every second character of the string `"Data Science"`.
+
+##### Example Solution
+
+```{python}
+planet = "Earth"
+apples = 5
+distance = 10.5
+
+print(planet, type(planet))
+print(apples, type(apples))
+print(distance, type(distance))
+
+values = [10, 20, 30, 40, 50]
+print(values[0])
+print(values[-1])
+print(values[1:4])
+
+text = "Data Science"
+print(text[::2])
+```
+:::
+:::
+
+::: callout-keypoints
+## Key Points
+
+- Use `name = value` to create or update variables.
+- Core beginner types include `int`, `float`, and `str`.
+- Lists are ordered, indexable, and mutable.
+- Strings are indexable but immutable.
+- Slicing uses `start:stop:step`, and negative indices count from the end.
+- Use `help()` and comments to make code easier to understand and maintain.
+:::

@@ -1,0 +1,234 @@
+---
+title: Errors, Debugging, and Defensive Programming
+metadata:
+  teaching: 90
+  exercises: 30
+---
+
+::: callout-outcomes
+## Learning Outcomes
+
+- Read Python tracebacks and identify where failures occur.
+- Distinguish common error types (`SyntaxError`, `NameError`, `IndexError`, file errors).
+- Use assertions to enforce preconditions and postconditions.
+- Apply test-driven thinking to define expected behavior before implementation.
+- Debug systematically with reproducible failure cases.
+:::
+
+::: callout-questions
+## Questions
+
+1. How does Python report errors and how should I read them?
+2. How can I make code fail early with useful diagnostics?
+3. Which debugging strategies are most effective in practice?
+:::
+
+## Structure and Agenda
+
+1. Reading errors and tracebacks (~30 min)
+2. Defensive programming with assertions (~25 min)
+3. Test-driven development patterns (~15 min)
+4. Systematic debugging workflow (~20 min)
+
+# Understanding Failures
+
+## Read Tracebacks from Bottom to Top
+
+Tracebacks usually tell you:
+
+1. where the failure occurred,
+2. which calls led there,
+3. what type of error happened.
+
+> 🧭 The lowest frame is often the most actionable location.
+
+## Example: `IndexError`
+
+```{python}
+def favorite_ice_cream():
+    ice_creams = ["chocolate", "vanilla", "strawberry"]
+    print(ice_creams[3])
+
+favorite_ice_cream()
+```
+
+> 🚨 Out-of-range access triggers `IndexError`.
+
+## Common Error Types
+
+- `SyntaxError` / `IndentationError`: code structure problems
+- `NameError`: undefined or misspelled variable
+- `IndexError`: invalid position in sequence
+- `FileNotFoundError` / related `OSError`: file or path problems
+
+## Example: `NameError`
+
+```{python}
+for number in range(10):
+    count = count + number
+print(count)
+```
+
+> 🔎 Initialize variables before first use.
+
+# Defensive Programming
+
+## Why Assertions Help
+
+Assertions make assumptions explicit and fail early when broken.
+
+```{python}
+def normalize_rectangle(rect):
+    """Normalize (x0, y0, x1, y1) rectangle to origin with max side scaled to 1.0."""
+    assert len(rect) == 4, "Rectangles must contain 4 coordinates"
+    x0, y0, x1, y1 = rect
+    assert x0 < x1, "Invalid X coordinates"
+    assert y0 < y1, "Invalid Y coordinates"
+```
+
+> 🛡️ Assertions protect code from invalid states.
+
+## Preconditions and Postconditions
+
+```{python}
+    dx = x1 - x0
+    dy = y1 - y0
+
+    if dx > dy:
+        scaled = dy / dx
+        upper_x, upper_y = 1.0, scaled
+    else:
+        scaled = dx / dy
+        upper_x, upper_y = scaled, 1.0
+
+    assert 0 < upper_x <= 1.0, "Calculated upper X invalid"
+    assert 0 < upper_y <= 1.0, "Calculated upper Y invalid"
+
+    return (0, 0, upper_x, upper_y)
+```
+
+> ✅ Preconditions validate inputs; postconditions validate outputs.
+
+# Testing Strategy
+
+## Test-Driven Development Pattern
+
+Define tests first, then implement behavior.
+
+```{python}
+def range_overlap(ranges):
+    """Return common overlap among a set of [left, right] ranges."""
+    if len(ranges) == 0:
+        return None
+
+    max_left = ranges[0][0]
+    min_right = ranges[0][1]
+
+    for left, right in ranges[1:]:
+        max_left = max(max_left, left)
+        min_right = min(min_right, right)
+
+    if max_left >= min_right:
+        return None
+
+    return (max_left, min_right)
+```
+
+## Validate with Small Tests
+
+```{python}
+def test_range_overlap():
+    assert range_overlap([(0.0, 1.0), (5.0, 6.0)]) is None
+    assert range_overlap([(0.0, 1.0), (1.0, 2.0)]) is None
+    assert range_overlap([(0.0, 1.0)]) == (0.0, 1.0)
+    assert range_overlap([(2.0, 3.0), (2.0, 4.0)]) == (2.0, 3.0)
+    assert range_overlap([(0.0, 1.0), (0.0, 2.0), (-1.0, 1.0)]) == (0.0, 1.0)
+    assert range_overlap([]) is None
+
+
+test_range_overlap()
+```
+
+> 🧪 Small deterministic tests make debugging faster.
+
+# Debugging Workflow
+
+## A Practical Sequence
+
+1. Define expected behavior before changing code.
+2. Reproduce failure every time.
+3. Make failure fast with a minimal test case.
+4. Change one thing at a time.
+5. Re-run tests after each change.
+6. Keep notes and ask for help early.
+
+> ⚙️ Systematic debugging beats random edits.
+
+## BMI Bug Walk-through
+
+```{python}
+patients = [[70, 1.8], [80, 1.9], [150, 1.7]]
+
+def calculate_bmi(weight, height):
+    return weight / (height ** 2)
+
+for patient in patients:
+    weight, height = patients[0]
+    bmi = calculate_bmi(height, weight)
+    print("Patient BMI:", bmi)
+```
+
+> 🧪 This bug combines two issues: fixed-index loop access and reversed arguments.
+
+## Corrected Version
+
+```{python}
+for patient in patients:
+    weight, height = patient
+    bmi = calculate_bmi(weight, height)
+    print("Patient BMI:", bmi)
+```
+
+> 🩺 Check loop variables and function argument order first.
+
+# Practice and Wrap-Up
+
+## Practice Activity
+
+::: callout-task
+#### Task 1: Add Defensive Checks
+
+::: panel-tabset
+##### Prompt
+
+Write a function `get_total_cars(values)` and add assertions that:
+
+1. The input is non-empty.
+2. Every item can be converted to an integer.
+3. The total is greater than zero.
+
+##### Example Solution
+
+```{python}
+def get_total_cars(values):
+    assert len(values) > 0
+    for element in values:
+        assert int(element)
+
+    values = [int(element) for element in values]
+    total = sum(values)
+    assert total > 0
+    return total
+```
+:::
+:::
+
+::: callout-keypoints
+## Key Points
+
+- Read tracebacks from bottom to top.
+- Use assertions to catch invalid states early.
+- Build tests that cover normal and edge cases.
+- Debugging should be reproducible and incremental.
+- Keep a tight loop: reproduce, isolate, change, retest.
+:::

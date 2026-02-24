@@ -8,7 +8,7 @@ metadata:
 ::: {.content-visible when-format="revealjs"}
 
 <!-- Hidden by default -->
-![](fig/06_qr.png){fig-align="center" width=400px}
+![](fig/06_qr.png)
 
 :::
 
@@ -63,7 +63,7 @@ By the end of this module, you will be able to:
 
 Data rarely arrives clean. Messy data is any dataset that violates the rules required for analysis.
 
-![](fig/06-image1.png){fig-align="center" width=400px}
+![](fig/06-image1.png)
 
 > 💬 Messy data is any data that violates the rules needed for easy analysis. It may contain missing values, inconsistent labels, extra spaces, or mixed types.
 
@@ -333,7 +333,7 @@ Which patterns might be meaningful and which might just be random.
 
 Prediction = using what you know to estimate something unknown.
  
-![](fig/06-image3.png){fig-align="center" width=400px}
+![](fig/06-image3.png)
 
 Even simple predictions rely on recognising past patterns.
 
@@ -356,7 +356,7 @@ you might predict that a new “chip lover” is also an active walker.
 
 Flow:
 
-![](fig/06-image4.png){fig-align="center" width=400px}
+![](fig/06-image4.png)
  
 Example:
 

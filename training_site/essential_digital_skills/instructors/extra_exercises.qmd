@@ -1,0 +1,15 @@
+---
+title: Extra Exercises
+---
+
+## Exercise 1: Data Risk Triage
+
+Given three project scenarios, rank data risks and propose immediate controls.
+
+## Exercise 2: DMP Rewrite Sprint
+
+Take a weak DMP paragraph and rewrite it to include operational detail (storage, access, retention, responsibility).
+
+## Exercise 3: FAIR Improvement Plan
+
+Select one dataset and draft a 30-day plan to improve findability and reusability.

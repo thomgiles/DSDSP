@@ -1,0 +1,234 @@
+---
+title: Data Manipulation and Visualization
+metadata:
+  teaching: 90
+  exercises: 40
+---
+
+::: callout-outcomes
+## Learning Outcomes
+
+- Import and use NumPy for tabular data analysis.
+- Inspect array structure with `shape`, `dtype`, and indexing.
+- Compute summary statistics across array axes.
+- Visualize arrays with Matplotlib using single and multi-panel plots.
+- Process multiple files with wildcard matching and loops.
+:::
+
+::: callout-questions
+## Questions
+
+1. How can I load and subset tabular data efficiently in Python?
+2. How do I compute patient/day summaries from arrays?
+3. How can plots help us detect suspicious data patterns?
+4. How do I automate repeated analysis across many files?
+:::
+
+## Structure and Agenda
+
+1. Loading and inspecting arrays with NumPy (~30 min)
+2. Slicing and statistical summaries (~20 min)
+3. Plotting with Matplotlib (~20 min)
+4. Multi-file processing with `glob` (~20 min)
+
+# NumPy Foundations
+
+## Load Data from CSV
+
+```{python}
+import numpy as np
+
+data = np.loadtxt(fname="inflammation-01.csv", delimiter=",")
+print(data.shape)
+```
+
+> 📥 Use `np.loadtxt` for quick loading of numeric tabular files.
+
+## Inspect Structure and Types
+
+```{python}
+print(type(data))
+print(data.dtype)
+print(data.shape)
+```
+
+> 🧠 `shape` and `dtype` are your first data sanity checks.
+
+## Index Single Values
+
+```{python}
+print("first value:", data[0, 0])
+print("middle value:", data[29, 19])
+```
+
+> 📌 Array access is `[row, column]` and indices start at 0.
+
+## Slice Subsets
+
+```{python}
+print(data[0:4, 0:10])
+print(data[:3, 36:])
+```
+
+> ✂️ Slicing pattern is `start:stop`, excluding `stop`.
+
+## Overall Statistics
+
+```{python}
+print(np.mean(data))
+print(np.amin(data), np.amax(data), np.std(data))
+```
+
+> 📊 Start with whole-dataset summaries to establish baseline behavior.
+
+## Axis-based Statistics
+
+```{python}
+print(np.mean(data, axis=0).shape)  # per day
+print(np.max(data, axis=1).shape)   # per patient
+```
+
+> 📊 Use `axis=0` for column-wise and `axis=1` for row-wise summaries.
+
+## Day-to-Day Change for One Patient
+
+```{python}
+patient3_week1 = data[3, :7]
+print(patient3_week1)
+print(np.diff(patient3_week1))
+```
+
+> 🔍 Use one patient trace first to verify interpretation.
+
+## Largest Absolute Change per Patient
+
+```{python}
+largest_abs_change = np.amax(np.absolute(np.diff(data, axis=1)), axis=1)
+print(largest_abs_change)
+```
+
+> 🔍 `np.diff` helps detect abrupt changes across time-like columns.
+
+# Visualization
+
+## Heatmap View
+
+```{python}
+import matplotlib.pyplot as plt
+
+plt.imshow(data)
+plt.show()
+```
+
+> 🎨 Quick plots often reveal problems hidden in raw tables.
+
+## Build a Multi-panel Layout
+
+```{python}
+fig = plt.figure(figsize=(10.0, 3.0))
+
+axes1 = fig.add_subplot(1, 3, 1)
+axes2 = fig.add_subplot(1, 3, 2)
+axes3 = fig.add_subplot(1, 3, 3)
+```
+
+> 🧱 Create the plotting layout before drawing data series.
+
+## Plot Mean, Max, and Min
+
+```{python}
+axes1.set_ylabel("average")
+axes1.plot(np.mean(data, axis=0), drawstyle="steps-mid")
+
+axes2.set_ylabel("max")
+axes2.plot(np.amax(data, axis=0), drawstyle="steps-mid")
+
+axes3.set_ylabel("min")
+axes3.plot(np.amin(data, axis=0), drawstyle="steps-mid")
+
+fig.tight_layout()
+plt.show()
+```
+
+> 📉 Multi-panel plots support fast side-by-side interpretation.
+
+# Multi-file Workflows
+
+## Discover Files with `glob`
+
+```{python}
+import glob
+
+filenames = sorted(glob.glob("inflammation*.csv"))
+print(filenames[:3])
+```
+
+> 🗂️ `glob` scales workflows from one file to many files.
+
+## Rule-based Data Checks
+
+```{python}
+for filename in filenames[:3]:
+    print(filename)
+    data = np.loadtxt(fname=filename, delimiter=",")
+
+    if np.amax(data, axis=0)[0] == 0 and np.amax(data, axis=0)[20] == 20:
+        print("Suspicious looking maxima!")
+    elif np.sum(np.amin(data, axis=0)) == 0:
+        print("Minima add up to zero!")
+    else:
+        print("Seems OK!")
+```
+
+> 🚨 Combine loops + conditionals for automated quality screening.
+
+## Build Composite Statistics
+
+```{python}
+composite_data = np.zeros((60, 40))
+
+for filename in filenames:
+    sample = np.loadtxt(fname=filename, delimiter=",")
+    composite_data = composite_data + sample
+
+composite_data = composite_data / len(filenames)
+print(composite_data.shape)
+```
+
+> 🧮 Aggregate across files to get stable cohort-level trends.
+
+# Practice and Wrap-Up
+
+## Practice Activity
+
+::: callout-task
+#### Task 1: Compare Two Trials
+
+::: panel-tabset
+##### Prompt
+
+Plot the difference between average inflammation in the first two files.
+
+##### Example Solution
+
+```{python}
+filenames = sorted(glob.glob("inflammation*.csv"))
+data0 = np.loadtxt(fname=filenames[0], delimiter=",")
+data1 = np.loadtxt(fname=filenames[1], delimiter=",")
+
+plt.ylabel("Difference in average")
+plt.plot(np.mean(data0, axis=0) - np.mean(data1, axis=0))
+plt.show()
+```
+:::
+:::
+
+::: callout-keypoints
+## Key Points
+
+- Use `np.loadtxt()` to read CSV-style numeric data.
+- Arrays use zero-based indexing with `[row, column]` access.
+- Use `axis=0` for column-wise operations and `axis=1` for row-wise operations.
+- Visual checks with Matplotlib can reveal issues hidden in raw tables.
+- `glob.glob()` plus loops scales analysis from one file to many files.
+:::

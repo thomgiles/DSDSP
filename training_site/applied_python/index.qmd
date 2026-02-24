@@ -1,58 +1,54 @@
 ---
 title: "Applied Python"
-subtitle: "Adapted from the Python Novice Inflamaition software carpentry course"
+subtitle: "Methods for Data Science pathway"
 ---
 
-### Scenario: A Miracle Arthritis Inflammation Cure
+## Course Overview
 
-Our imaginary colleague "Dr. Maverick" has invented a new miracle drug that promises to cure arthritis inflammation flare-ups after only 3 weeks since initially taking the medication! Naturally, we wish to see the clinical trial data, and after months of asking for the data they have finally provided us with a CSV spreadsheet containing the clinical trial data.
+Applied Python introduces core programming and data analysis workflows for early-career researchers. The course builds from Python fundamentals through array operations, visualization, modelling, and robust coding practices.
 
-------------------------------------------------------------------------
+## Who This Is For
 
-The CSV file contains the number of inflammation flare-ups per day for the 60 patients in the initial clinical trial, with the trial lasting 40 days. Each row corresponds to a patient, and each column corresponds to a day in the trial. Once a patient has their first inflammation flare-up they take the medication and wait a few weeks for it to take effect and reduce flare-ups.
+- Researchers with little or no prior Python experience.
+- Learners transitioning from another language to Python for data science.
+- Research staff who need reproducible, maintainable analysis workflows.
 
-------------------------------------------------------------------------
+## What You Need
 
-To see how effective the treatment is we would like to:
+- A laptop with Python 3.8+ installed.
+- Access to lesson datasets and example code.
+- A Python environment such as Jupyter Notebook, VS Code, or IPython.
 
-1.  Calculate the average inflammation per day across all patients.
-2.  Plot the result to discuss and share with colleagues.
+## Lesson Sequence
 
-![](episodes/fig/lesson-overview.svg "Lesson Overview"){alt="3-step flowchart shows inflammation data records for patients moving to the Analysis stepwhere a heat map of provided data is generated moving to the Conclusion step that asks thequestion, How does the medication affect patients?"}
+| Lesson | Focus |
+|---|---|
+| [01 Types, Variables, and Basic Operations](episodes/01-types_variables_and_basic_operations.qmd) | Core Python types, variables, lists, slicing |
+| [02 Loops and Control Flow](episodes/02-loops_and_control_flow.qmd) | Iteration, conditionals, boolean logic |
+| [03 Data Manipulation and Visualization](episodes/03-data_manipulation_and_visualization.qmd) | NumPy arrays, plotting, multi-file workflows |
+| [04 Functions](episodes/04_functions.qmd) | Defining, testing, and documenting functions |
+| [05 Data Manipulation with pandas](episodes/05-data_manipulation_with_pandas.qmd) | DataFrames, filtering, cleaning, grouped summaries |
+| [06 Regression Analysis and Modelling](episodes/06-regression_analysis_and_modelling.qmd) | Linear regression with scikit-learn |
+| [07 Python Object-Oriented Programming](episodes/07-python_object_oriented_programming.qmd) | Classes, methods, inheritance, design choices |
+| [08 Errors, Debugging, and Defensive Programming](episodes/08-errors_debugging_and_defensive_programming.qmd) | Tracebacks, assertions, testing, debugging workflow |
 
-### Data Format
+## Course Materials
 
-The data sets are stored in [comma-separated values](learners/reference.md#comma-separated-values) (CSV) format:
+### Learners
 
--   each row holds information for a single patient,
--   columns represent successive days.
+- [Setup](learners/setup.qmd)
+- [Reference](learners/reference.qmd)
+- [Discussion](learners/discuss.qmd)
 
-------------------------------------------------------------------------
+### Instructors
 
-The first three rows of our first file look like this:
+- [Instructor Notes](instructors/instructor-notes.qmd)
+- [Additional Material](instructors/additional_material.qmd)
+- [Extra Exercises](instructors/extra_exercises.qmd)
 
-``` source
-0,0,1,3,1,2,4,7,8,3,3,3,10,5,7,4,7,7,12,18,6,13,11,11,7,7,4,6,8,8,4,4,5,7,3,4,2,3,0,0
-0,1,2,1,2,1,3,2,2,6,10,11,5,9,4,4,7,16,8,6,18,4,12,5,12,7,11,5,11,3,3,5,4,4,5,5,1,1,0,1
-0,1,1,3,3,2,6,2,5,9,5,7,4,5,4,15,5,11,9,10,19,14,12,17,7,12,11,7,4,2,10,5,4,2,2,3,2,2,1,1
-```
+### Community and Profiles
 
-Each number represents the number of inflammation bouts that a particular patient experienced on a given day.
-
-For example, value "6" at row 3 column 7 of the data set above means that the third patient was experiencing inflammation six times on the seventh day of the clinical study.
-
-------------------------------------------------------------------------
-
-In order to analyze this data and report to our colleagues, we'll have to learn a little bit about programming.
-
-::: prereq
-## Prerequisites
-
-You need to understand the concepts of **files** and **directories** and how to start a Python interpreter before tackling this lesson. This lesson sometimes references Jupyter Notebook although you can use any Python interpreter mentioned in the [Setup](learners/setup.md).
-
-The commands in this lesson pertain to any officially supported Python version, currently **Python 3.8+**. Newer versions usually have better error printouts, so using newer Python versions is recommend if possible.
-:::
-
-## Getting Started
-
-To get started, follow the directions on the [Setup](learners/setup.md) page to download data and install a Python interpreter.
+- [Contributing](CONTRIBUTING.qmd)
+- [Learner Profiles](profiles/learner-profiles.qmd)
+- [Code of Conduct](CODE_OF_CONDUCT.md)
+- [License](LICENSE.md)

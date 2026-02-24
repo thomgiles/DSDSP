@@ -1,0 +1,24 @@
+---
+title: Contributing
+---
+
+## Contributing to Essential Digital Skills
+
+Contributions are welcome for:
+
+- content corrections,
+- improved teaching activities,
+- updated institutional references,
+- accessibility and usability improvements.
+
+## How to Contribute
+
+1. Open an issue describing the change.
+2. If editing content directly, use a focused branch and clear commit messages.
+3. Submit a pull request with a concise summary of what changed and why.
+
+## Content Principles
+
+- Keep material practical and actionable.
+- Prefer clear examples over abstract statements.
+- Ensure references to policy/process remain current.

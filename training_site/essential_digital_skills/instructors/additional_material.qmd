@@ -1,0 +1,15 @@
+---
+title: Additional Material
+---
+
+## Optional Extensions
+
+- Data classification decision exercises.
+- FAIR maturity self-assessment using participant datasets.
+- Structured review of a sample DMP with peer feedback.
+
+## Optional Demonstrations
+
+- Folder structure redesign for a live project scenario.
+- Metadata minimum template for cross-team collaboration.
+- Example workflow from collection to archiving.

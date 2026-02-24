@@ -8,7 +8,7 @@ metadata:
 ::: {.content-visible when-format="revealjs"}
 
 <!-- Hidden by default -->
-![](fig/02_qr.png){fig-align="center" width=400px}
+![](fig/02_qr.png)
 
 :::
 

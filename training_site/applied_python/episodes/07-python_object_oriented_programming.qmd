@@ -1,0 +1,197 @@
+---
+title: Python Object-Oriented Programming
+metadata:
+  teaching: 45
+  exercises: 25
+---
+
+::: callout-outcomes
+## Learning Outcomes
+
+- Define classes with attributes and methods.
+- Use constructors (`__init__`) to create consistent objects.
+- Encapsulate repeated logic in class methods.
+- Apply inheritance for simple code reuse.
+- Recognize where object-oriented design improves analysis code.
+:::
+
+::: callout-questions
+## Questions
+
+1. What problems do classes solve in scientific Python workflows?
+2. How do objects store both data and behavior?
+3. When should I use classes instead of standalone functions?
+:::
+
+## Structure and Agenda
+
+1. Classes and objects (~10 min)
+2. Methods and state (~15 min)
+3. Inheritance basics (~10 min)
+4. Practical design guidance (~10 min)
+
+# OOP Basics
+
+## Define a Class and Create Objects
+
+```{python}
+class PatientRecord:
+    def __init__(self, patient_id, inflammation_values):
+        self.patient_id = patient_id
+        self.inflammation_values = inflammation_values
+
+
+p1 = PatientRecord("P001", [0, 1, 3, 2, 1])
+print(p1.patient_id)
+print(p1.inflammation_values)
+```
+
+> 🧱 A class is a template; an object is one concrete instance.
+
+## Why Constructors Matter
+
+- `__init__` enforces consistent object creation.
+- Shared initialization rules reduce downstream errors.
+- Attributes become explicit and discoverable.
+
+> ✅ Constructors improve consistency and readability.
+
+# Methods and State
+
+## Add Behavior with Methods
+
+```{python}
+class PatientRecord:
+    def __init__(self, patient_id, inflammation_values):
+        self.patient_id = patient_id
+        self.inflammation_values = inflammation_values
+
+    def mean_inflammation(self):
+        return sum(self.inflammation_values) / len(self.inflammation_values)
+
+    def max_inflammation(self):
+        return max(self.inflammation_values)
+
+
+p1 = PatientRecord("P001", [0, 1, 3, 2, 1])
+print(p1.mean_inflammation())
+print(p1.max_inflammation())
+```
+
+> 🧠 Methods let data and analysis logic travel together.
+
+## Manage a Collection of Objects
+
+```{python}
+class TrialSummary:
+    def __init__(self):
+        self.records = []
+
+    def add_record(self, record):
+        self.records.append(record)
+
+    def patient_count(self):
+        return len(self.records)
+
+
+summary = TrialSummary()
+summary.add_record(PatientRecord("P001", [0, 1, 3, 2, 1]))
+summary.add_record(PatientRecord("P002", [0, 2, 2, 1, 0]))
+print(summary.patient_count())
+```
+
+> 📚 Encapsulation helps structure larger workflows cleanly.
+
+# Reuse Through Inheritance
+
+## Extend a Base Class
+
+```{python}
+class PatientRecord:
+    def __init__(self, patient_id, inflammation_values):
+        self.patient_id = patient_id
+        self.inflammation_values = inflammation_values
+
+    def mean_inflammation(self):
+        return sum(self.inflammation_values) / len(self.inflammation_values)
+
+
+class TreatedPatientRecord(PatientRecord):
+    def __init__(self, patient_id, inflammation_values, dose_mg):
+        super().__init__(patient_id, inflammation_values)
+        self.dose_mg = dose_mg
+
+    def dose_label(self):
+        return f"{self.dose_mg} mg"
+
+
+treated = TreatedPatientRecord("P010", [0, 1, 1, 0, 0], 50)
+print(treated.mean_inflammation())
+print(treated.dose_label())
+```
+
+> 🧬 Inheritance supports reuse, but keep class hierarchies simple.
+
+# Design Guidance
+
+## When to Use Classes
+
+Use classes when you repeatedly need:
+
+- shared data structure plus validation/defaults
+- related operations attached to the same entity
+- clearer interfaces for larger pipelines
+
+## When Functions Are Better
+
+Prefer simple functions when logic is:
+
+- short
+- stateless
+- independent of object lifecycle
+
+> ⚖️ Choose the simplest design that stays maintainable.
+
+# Practice and Wrap-Up
+
+::: callout-task
+#### Task 1: Model a Study Sample
+
+::: panel-tabset
+##### Prompt
+
+1. Create a class `Sample` with fields: `sample_id`, `group`, `value`.
+2. Add a method `is_treated()` returning `True` when `group == "treated"`.
+3. Create at least two objects and print their details.
+
+##### Example Solution
+
+```{python}
+class Sample:
+    def __init__(self, sample_id, group, value):
+        self.sample_id = sample_id
+        self.group = group
+        self.value = value
+
+    def is_treated(self):
+        return self.group == "treated"
+
+
+s1 = Sample("S01", "control", 4.1)
+s2 = Sample("S02", "treated", 2.8)
+
+print(s1.sample_id, s1.is_treated(), s1.value)
+print(s2.sample_id, s2.is_treated(), s2.value)
+```
+:::
+:::
+
+::: callout-keypoints
+## Key Points
+
+- Classes package data and behavior together.
+- `__init__` defines how objects are created.
+- Methods operate on object state through `self`.
+- Inheritance can reduce duplication, but keep hierarchies simple.
+- Good object design improves readability and maintainability in larger projects.
+:::
