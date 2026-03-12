@@ -791,4 +791,3 @@ The concepts in this module connect directly to practical data handling and expl
 | --- | --- | --- |
 | Function Definitions | [Defining functions](https://docs.python.org/3/tutorial/controlflow.html#defining-functions) | Functions reduce duplication and improve maintainability. |
 | Variable Scope and Parameters | [Python execution model](https://docs.python.org/3/reference/executionmodel.html) | Scope awareness prevents subtle state bugs. |
-| Command-Line Scripts | [`sys.argv`](https://docs.python.org/3/library/sys.html#sys.argv) | CLI scripts make analyses repeatable and automatable. |
