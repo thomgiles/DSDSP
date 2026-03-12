@@ -41,21 +41,13 @@ metadata:
 
 > 🔧 Activities spaced throughout the session  
 
-# Array Data Workflow
-
-## Overview
+# Analyzing data with numpy
 
 Words are useful, but what's more useful are the sentences and stories we build with them. Similarly, while a lot of powerful, general tools are built into Python, specialized tools built up from these basic units live in [libraries](../learners/reference.qmd#library) that can be called upon when needed.
 
-> 🧭 Keep the goal of this section visible while you run each example.
-
-## Loading data into Python
+## Importing a Python library
 
 To begin processing the clinical trial inflammation data, we need to load it into Python. We can do that using a library called [NumPy](https://numpy.org/doc/stable "NumPy Documentation"), which stands for Numerical Python. In general, you should use this library when you want to do fancy things with lots of numbers, especially if you have matrices or arrays. To tell Python that we'd like to start using NumPy, we need to [import](../learners/reference.qmd#import) it:
-
-> 📊 Check shape and indexing first before interpreting numerical results.
-
-## Import numpy
 
 ```{python}
 import numpy
@@ -63,7 +55,7 @@ import numpy
 
 Importing a library is like getting a piece of lab equipment out of a storage locker and setting it up on the bench. Libraries provide additional functionality to the basic Python package, much like a new piece of equipment adds functionality to a lab space. Just like in the lab, importing too many libraries can sometimes complicate and slow down your programs - so we only import what we need for each program.
 
-## Once we've imported the library we can ask
+## Loading data with numpy
 
 Once we've imported the library, we can ask the library to read our data file for us:
 
@@ -71,25 +63,15 @@ Once we've imported the library, we can ask the library to read our data file fo
 numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
 ```
 
-## Numpy loadtxt
-
 The expression `numpy.loadtxt(...)` is a [function call](../learners/reference.qmd#function-call) that asks Python to run the [function](../learners/reference.qmd#function) `loadtxt` which belongs to the `numpy` library. The dot notation in Python is used most of all as an object attribute/property specifier or for invoking its method. `object.property` will give you the object.property value, `object_name.method()` will invoke on object\_name method.
-
-## As an example John Smith is the John
 
 As an example, John Smith is the John that belongs to the Smith family. We could use the dot notation to write his name `smith.john`, just as `loadtxt` is a function that belongs to the `numpy` library.
 
-`numpy.loadtxt` has two [parameters](../learners/reference.qmd#parameter): the name of the file we want to read and the [delimiter](../learners/reference.qmd#delimiter) that separates values on a line. These both need to be character strings (or [strings](../learners/reference.qmd#string) for short), so we put them in quotes.
-
-## Since we haven't told it to do anything
+`numpy.loadtxt` has two [parameters](../learners/reference.qmd#parameter): the name of the file we want to read and the [delimiter](../learners/reference.qmd#delimiter) that separates values on a line. These both need to be [strings](../learners/reference.qmd#string), so we put them in quotes.
 
 Since we haven't told it to do anything else with the function's output, the [notebook](../learners/reference.qmd#notebook) displays it. In this case, that output is the data we just loaded. By default, only a few rows and columns are shown (with `...` to omit elements when displaying big arrays). Note that, to save space when displaying NumPy arrays, Python does not show us trailing zeros, so `1.0` becomes `1.`.
 
-## Our call to numpy loadtxt read our file
-
 Our call to `numpy.loadtxt` read our file but didn't save the data in memory. To do that, we need to assign the array to a variable. In a similar manner to how we assign a single value to a variable, we can also assign an array of values to a variable using the same syntax. Let's re-run `numpy.loadtxt` and save the returned data:
-
-## Data numpy loadtxt fname 'inflammation-01 csv' delimiter '
 
 ```{python}
 data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
@@ -97,13 +79,11 @@ data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
 
 This statement doesn't produce any output because we've assigned the output to the variable `data`. If we want to check that the data have been loaded, we can print the variable's value:
 
-## Code Example: Loading data into Python
-
 ```{python}
 print(data)
 ```
 
-## Now that the data are in memory
+## Data type and attributes
 
 Now that the data are in memory, we can manipulate them. First, let's ask what [type](../learners/reference.qmd#type) of thing `data` refers to:
 
@@ -111,19 +91,9 @@ Now that the data are in memory, we can manipulate them. First, let's ask what [
 print(type(data))
 ```
 
-## Data currently refers
-
 The output tells us that `data` currently refers to an N-dimensional array, the functionality for which is provided by the NumPy library. These data correspond to arthritis patients' inflammation. The rows are the individual patients, and the columns are their daily inflammation measurements.
 
-## Practice Prompt: Loading data into Python
-
-## Data Type
-
 A Numpy array contains one or more elements of the same type. The `type` function will only tell you that a variable is a NumPy array but won't tell you the type of thing inside the array. We can find out the type of the data contained in the NumPy array.
-
-> 📊 Check shape and indexing first before interpreting numerical results.
-
-## Print data dtype
 
 ```{python}
 print(data.dtype)
@@ -131,19 +101,15 @@ print(data.dtype)
 
 This tells us that the NumPy array's elements are [floating-point numbers](../learners/reference.qmd#floating-point-number).
 
-## With the following command we can see
-
 With the following command, we can see the array's [shape](../learners/reference.qmd#shape):
 
 ```{python}
 print(data.shape)
 ```
 
-## The data array variable contains 60 rows
-
 The output tells us that the `data` array variable contains 60 rows and 40 columns. When we created the variable `data` to store our arthritis data, we did not only create the array; we also created information about the array, called [members](../learners/reference.qmd#member) or attributes. This extra information describes `data` in the same way an adjective describes a noun. `data.shape` is an attribute of `data` which describes the dimensions of `data`. We use the same dotted notation for the attributes of variables that we use for the functions in libraries because they have the same part-and-whole relationship.
 
-## Get a single number from the array
+## Indexing numpy arrays
 
 If we want to get a single number from the array, we must provide an [index](../learners/reference.qmd#index) in square brackets after the variable name, just as we do in math when referring to an element of a matrix. Our inflammation data has two dimensions, so we will need to use two indices to refer to one specific value:
 
@@ -151,31 +117,21 @@ If we want to get a single number from the array, we must provide an [index](../
 print('first value in data:', data[0, 0])
 ```
 
-## Code Example: Data Type
-
 ```{python}
 print('middle value in data:', data[29, 19])
 ```
 
-## Why Indices Start at 0
-
-The expression `data[29, 19]` accesses the element at row 30, column 20. While this expression may not surprise you, `data[0, 0]` might. Programming languages like Fortran, MATLAB and R start counting at 1 because that's what human beings have done for thousands of years. Languages in the C family (including C++, Java, Perl, and Python) count from 0 because it represents an offset from the first value in the array (the second value is offset by one index from the first value). This is closer to the way that computers represent arrays (if you are interested in the historical reasons behind counting indices from zero, you can read [Mike Hoye's blog post](https://exple.tive.org/blarg/2013/10/22/citation-needed/)).
-
-## Index Ranges in 2D Arrays
+In Python indices start at `0`, so the expression `data[29, 19]` accesses the element at row 30, column 20, while the expression `data[0, 0]` accesses the element at row 1, column 1. 
 
 As a result, if we have an M×N array in Python, its indices go from 0 to M-1 on the first axis and 0 to N-1 on the second. It takes a bit of getting used to, but one way to remember the rule is that the index is how many steps we have to take from the start to get the item we want.
 
-## Practice Prompt: Data Type
-
 ![](fig/python-zero-index.svg){alt="'data' is a 3 by 3 numpy array containing row 0: \['A', 'B', 'C'\], row 1: \['D', 'E', 'F'\], androw 2: \['G', 'H', 'I'\]. Starting in the upper left hand corner, data\[0, 0\] = 'A', data\[0, 1\] = 'B',data\[0, 2\] = 'C', data\[1, 0\] = 'D', data\[1, 1\] = 'E', data\[1, 2\] = 'F', data\[2, 0\] = 'G',data\[2, 1\] = 'H', and data\[2, 2\] = 'I', in the bottom right hand corner."}
-
-## In the Corner
 
 What may also surprise you is that when Python displays an array, it shows the element with index `[0, 0]` in the upper left corner rather than the lower left. This is consistent with the way mathematicians draw matrices but different from the Cartesian coordinates. The indices are (row, column) instead of (column, row) for the same reason, which can be confusing when plotting data.
 
-> 📊 Check shape, type, and indexing before drawing conclusions from data.
+> 📊 Check shape and type before drawing conclusions from data.
 
-## Slicing data
+## Slicing numpy arrays
 
 An index like `[30, 20]` selects a single element of an array, but we can select whole sections as well. For example, we can select the first ten days (columns) of values for the first four patients (rows) like this:
 
@@ -183,11 +139,7 @@ An index like `[30, 20]` selects a single element of an array, but we can select
 print(data[0:4, 0:10])
 ```
 
-> 📊 Check shape and indexing first before interpreting numerical results.
-
-## The slice 0 4 means Start at index
-
-The [slice](../learners/reference.qmd#slice) `0:4` means, "Start at index 0 and go up to, but not including, index 4". Again, the up-to-but-not-including takes a bit of getting used to, but the rule is that the difference between the upper and lower bounds is the number of values in the slice.
+The [slice](../learners/reference.qmd#slice) `0:4` means, "Start at index `0` and go up to, but not including, index `4`". Again, the up-to-but-not-including takes a bit of getting used to, but the rule is that the difference between the upper and lower bounds is the number of values in the slice.
 
 We don't have to start slices at 0:
 
@@ -195,11 +147,7 @@ We don't have to start slices at 0:
 print(data[5:10, 0:10])
 ```
 
-## We also don't have to include the upper
-
 We also don't have to include the upper and lower bound on the slice. If we don't include the lower bound, Python uses 0 by default; if we don't include the upper, the slice runs to the end of the axis, and if we don't include either (i.e., if we use ':' on its own), the slice includes everything:
-
-## Small data 3 36
 
 ```{python}
 small = data[:3, 36:]
@@ -217,13 +165,9 @@ NumPy has several useful functions that take an array as input to perform operat
 print(numpy.mean(data))
 ```
 
-> 📊 Check shape and indexing first before interpreting numerical results.
-
-## Mean is a function that takes
-
 `mean` is a [function](../learners/reference.qmd#function) that takes an array as an [argument](../learners/reference.qmd#argument).
 
-## Not All Functions Have Input
+## Not all functions have input
 
 Generally, a function uses inputs to produce outputs. However, some functions produce outputs without needing any input. For example, checking the current time doesn't require any input.
 
@@ -232,17 +176,9 @@ import time
 print(time.ctime())
 ```
 
-> 🧩 Keep functions small, explicit, and focused on one task.
-
-## Functions without take in any arguments
-
 For functions that don't take in any arguments, we still need parentheses (`()`) to tell Python to go and do something for us.
 
-## Let's use three other NumPy functions to get
-
 Let's use three other NumPy functions to get some descriptive values about the dataset. We'll also use multiple assignment, a convenient Python feature that will enable us to do this all in one line.
-
-## Code Example: Not All Functions Have Input
 
 ```{python}
 maxval, minval, stdval = numpy.amax(data), numpy.amin(data), numpy.std(data)
@@ -252,42 +188,28 @@ print('minimum inflammation:', minval)
 print('standard deviation:', stdval)
 ```
 
-## We've assigned the return value from numpy amax
-
 Here we've assigned the return value from `numpy.amax(data)` to the variable `maxval`, the value from `numpy.amin(data)` to `minval`, and so on.
 
-## Practice Prompt: Not All Functions Have Input
+## Discovering functions
 
-## Discovering NumPy Functions in IPython
+How did we know what functions NumPy has and how to use them?
 
-How did we know what functions NumPy has and how to use them? If you are working in IPython or in a Jupyter Notebook, there is an easy way to find out. If you type the name of something followed by a dot, then you can use [tab completion](../learners/reference.qmd#tab-completion) (e.g. type `numpy.` and then press <kbd>Tab</kbd>) to see a list of all functions and attributes that you can use. After selecting one, you can also add a question mark (e.g. `numpy.cumprod?`) and IPython will return an explanation of the method.
+If you are working in a Jupyter Notebook or in IPython, there is an easy way to find out. If you type the name of something followed by a dot, then you can use [tab completion](../learners/reference.qmd#tab-completion) (e.g. type `numpy.` and then press <kbd>Tab</kbd>) to see a list of all functions and attributes that you can use. After selecting one, you can also add a question mark (e.g. `numpy.cumprod?`) and it will return an explanation of the method. This is the same as doing `help(numpy.cumprod)`.
 
-## Using `help()`
+Similarly, if you are using the \"plain vanilla\" Python interpreter, you can type `numpy.` and press the <kbd>Tab</kbd> key twice for a listing of what is available. You can then use the `help()` function to see an explanation of the function you're interested in, for example: `help(numpy.cumprod)`.
 
-This is the same as doing `help(numpy.cumprod)`. Similarly, if you are using the \"plain vanilla\" Python interpreter, you can type `numpy.` and press the <kbd>Tab</kbd> key twice for a listing of what is available. You can then use the `help()` function to see an explanation of the function you're interested in, for example: `help(numpy.cumprod)`.
-
-> 🧩 Keep functions small, explicit, and focused on one task.
-
-## Practice Prompt: Mystery Functions in IPython
-
-## Confusing Function Names
+## Confusing function names
 
 One might wonder why the functions are called `amax` and `amin` and not `max` and `min` or why the other is called `mean` and not `amean`. The package `numpy` does provide functions `max` and `min` that are fully equivalent to `amax` and `amin`, but they share a name with standard library functions `max` and `min` that come with Python itself. Referring to the functions like we did above, that is `numpy.max` for example, does not cause problems, but there are other ways to refer to them that could. In addition, text editors might highlight (color) these functions like standard library function, even though they belong to NumPy, which can be confusing and lead to errors. Since there is no function called `mean` in the standard library, there is no function called `amean`.
 
-> 🧩 Keep functions small, explicit, and focused on one task.
-
-## Axis-Based Summaries
+## Operations across an axis
 
 When analyzing data, though, we often want to look at variations in statistical values, such as the maximum inflammation per patient or the average inflammation per day. One way to do this is to create a new temporary array of the data we want, then ask it to do the calculation:
-
-## Code Example: Confusing Function Names
 
 ```{python}
 patient_0 = data[0, :] # 0 on the first axis (rows), everything on the second (columns)
 print('maximum inflammation for patient 0:', numpy.amax(patient_0))
 ```
-
-## We don't actually need to store the row
 
 We don't actually need to store the row in a variable of its own. Instead, we can combine the selection and the function call:
 
@@ -295,45 +217,35 @@ We don't actually need to store the row in a variable of its own. Instead, we ca
 print('maximum inflammation for patient 2:', numpy.amax(data[2, :]))
 ```
 
-## Operations Across an Axis
+## Choosing the correct axis
 
 What if we need the maximum inflammation for each patient over all days (as in the next diagram on the left) or the average for each day (as in the diagram on the right)? As the diagram below shows, we want to perform the operation across an axis:
 
 ![](fig/python-operations-across-axes.png){alt="Per-patient maximum inflammation is computed row-wise across all columns usingnumpy.amax(data, axis=1). Per-day average inflammation is computed column-wise across all rows usingnumpy.mean(data, axis=0)."}
 
-## Choosing the Correct Axis
+To find the **maximum inflammation reported for each patient**, you would apply the `max` function moving across the columns (axis 1).
 
-To find the **maximum inflammation reported for each patient**, you would apply the `max` function moving across the columns (axis 1). To find the **daily average inflammation reported across patients**, you would apply the `mean` function moving down the rows (axis 0).
+To find the **daily average inflammation reported across patients**, you would apply the `mean` function moving down the rows (axis 0).
 
 To support this functionality, most array functions allow us to specify the axis we want to work on. If we ask for the max across axis 1 (columns in our 2D example), we get:
-
-## Code Example: Confusing Function Names
 
 ```{python}
 print(numpy.max(data, axis=1))
 ```
 
-## As a quick check we can ask
-
 As a quick check, we can ask this array what its shape is. We expect 60 patient maximums:
-
-## Print numpy max data axis 1 shape
 
 ```{python}
 print(numpy.max(data, axis=1).shape)
 ```
 
-The expression `(60,)` tells us we have an N×1 vector, so this is the maximum inflammation per day for each patients.
+The expression `(60,)` tells us we have an `60×1` vector, so this is the maximum inflammation per day for each patient.
 
 If we ask for the average across/down axis 0 (rows in our 2D example), we get:
-
-## Code Example: Confusing Function Names
 
 ```{python}
 print(numpy.mean(data, axis=0))
 ```
-
-## Challenge: Check the array shape We expect 40
 
 Check the array shape. We expect 40 averages, one for each day of the study:
 
@@ -343,80 +255,26 @@ print(numpy.mean(data, axis=0).shape)
 
 Similarly, we can apply the `mean` function to axis 1 to get the patient's average inflammation over the duration of the study (60 values).
 
-## Code Example: Confusing Function Names
-
 ```{python}
 print(numpy.mean(data, axis=1))
 ```
 
-## Practice Prompt: Confusing Function Names
+## Challenge: Thin slices
 
-## Slicing Strings
+The expression `element[3:3]` produces an [empty string](../learners/reference.qmd#empty-string), i.e., a string that contains no characters. If `data` holds our array of patient data, 
+- What does `data[3:3, 4:4]` produce?
+- What about `data[3:3, :]`?
 
-A section of an array is called a [slice](../learners/reference.qmd#slice). We can take slices of character strings as well:
+### Solution: Thin slices
 
-```{python}
-element = 'oxygen'
-print('first three characters:', element[0:3])
-print('last three characters:', element[3:6])
+```
+array([], shape=(0, 0), dtype=float64)
+array([], shape=(0, 40), dtype=float64)
 ```
 
-> 💡 State one concrete behavior you expect before running the next code block.
-
-## What is the value of element 4
-
-What is the value of `element[:4]`? What about `element[4:]`? Or `element[:]`?
-
-## Practice Prompt: Slicing Strings
-
-## Worked Solution: Slicing Strings
-
-What is `element[-1]`? What is `element[-2]`?
-
-> 💡 State one concrete behavior you expect before running the next code block.
-
-## Worked Solution Prompt: Slicing Strings
-
-## Worked Solution: Slicing Strings
-
-Given those answers, explain what `element[1:-1]` does.
-
-## Worked Solution Prompt: Slicing Strings
-
-## Worked Solution: Slicing Strings
-
-Creates a substring from index 1 up to (not including) the final index, effectively removing the first and last letters from 'oxygen'
-
-How can we rewrite the slice for getting the last three characters of `element`, so that it works even if we assign a different string to `element`? Test your solution with the following strings: `carpentry`, `clone`, `hi`.
-
-## Worked Solution Code: Slicing Strings
-
-```{python}
-element = 'oxygen'
-print('last three characters:', element[-3:])
-element = 'carpentry'
-print('last three characters:', element[-3:])
-element = 'clone'
-print('last three characters:', element[-3:])
-element = 'hi'
-print('last three characters:', element[-3:])
-```
-
-## Worked Solution Prompt: Slicing Strings
-
-## Thin Slices
-
-The expression `element[3:3]` produces an [empty string](../learners/reference.qmd#empty-string), i.e., a string that contains no characters. If `data` holds our array of patient data, what does `data[3:3, 4:4]` produce? What about `data[3:3, :]`?
-
-> 💡 State one concrete behavior you expect before running the next code block.
-
-## Stacking Arrays
+## Challenge: Stacking arrays
 
 Arrays can be concatenated and stacked on top of one another, using NumPy's `vstack` and `hstack` functions for vertical and horizontal stacking, respectively.
-
-> 📊 Check shape and indexing first before interpreting numerical results.
-
-## Code Example: Stacking Arrays
 
 ```{python}
 import numpy
@@ -434,25 +292,17 @@ print('C = ')
 print(C)
 ```
 
-## Write some additional code that slices
-
 Write some additional code that slices the first and last columns of `A`, and stacks them into a 3x2 array. Make sure to `print` the results to verify your solution.
 
-## Worked Solution: Write some additional code that slices
+### Solution: Stacking arrays
 
 A 'gotcha' with array indexing is that singleton dimensions are dropped by default. That means `A[:, 0]` is a one dimensional array, which won't stack as desired. To preserve singleton dimensions, the index itself can be a slice or array. For example, `A[:, :1]` returns a two dimensional array with one singleton dimension (i.e. a column vector).
-
-## Worked Solution Code: Write some additional code that slices
 
 ```{python}
 D = numpy.hstack((A[:, :1], A[:, -1:]))
 print('D = ')
 print(D)
 ```
-
-## Worked Solution Prompt: Write some additional code that slices
-
-## Worked Solution: Write some additional code that slices
 
 An alternative way to achieve the same result is to use Numpy's delete function to remove the second column of A. If you're not sure what the parameters of numpy.delete mean, use the help files.
 
@@ -462,17 +312,18 @@ print('D = ')
 print(D)
 ```
 
-## Worked Solution Prompt: Write some additional code that slices
+Another alternative is to supply a list of indices to individually select the first and last columns of A.
 
-## Change In Inflammation
+```{python}
+D = A[:, (0, 2)]
+print(D)
+```
+
+## Challenge: Change in inflammation I
 
 The patient data is *longitudinal* in the sense that each row represents a series of observations relating to one individual. This means that the change in inflammation over time is a meaningful concept. Let's find out how to calculate changes in the data contained in an array with NumPy.
 
 The `numpy.diff()` function takes an array and returns the differences between two successive values. Let's use it to examine the changes each day across the first week of patient 3 from our inflammation dataset.
-
-> 💡 State one concrete behavior you expect before running the next code block.
-
-## Patient3_week1 data 3 7
 
 ```{python}
 patient3_week1 = data[3, :7]
@@ -480,8 +331,6 @@ print(patient3_week1)
 ```
 
 Calling `numpy.diff(patient3_week1)` would do the following calculations
-
-## 0 - 0 2 - 0 0 -
 
 ```{python}
 [ 0 - 0, 2 - 0, 0 - 2, 4 - 0, 2 - 4, 2 - 2 ]
@@ -493,15 +342,11 @@ and return the 6 difference values in a new array.
 numpy.diff(patient3_week1)
 ```
 
-## The array of differences is shorter by one
-
 Note that the array of differences is shorter by one element (length 6).
 
 When calling `numpy.diff` with a multi-dimensional array, an `axis` argument may be passed to the function to specify which axis to process. When applying `numpy.diff` to our 2D inflammation array `data`, which axis would we specify?
 
-## Practice Prompt: Change In Inflammation
-
-## Worked Solution: Change In Inflammation
+### Solution: Change in inflammation I
 
 Since the row axis (0) is patients, it does not make sense to get the difference between two arbitrary patients. The column axis (1) is in days, so the difference is the change in inflammation -- a meaningful concept.
 
@@ -509,17 +354,18 @@ Since the row axis (0) is patients, it does not make sense to get the difference
 numpy.diff(data, axis=1)
 ```
 
-## Worked Solution: Change In Inflammation
+## Challenge: Change in inflammation II
 
 If the shape of an individual data file is `(60, 40)` (60 rows and 40 columns), what would the shape of the array be after you run the `diff()` function and why?
 
-## Worked Solution: Change In Inflammation
+### Solution: Change in inflammation II
 
 The shape will be `(60, 39)` because there is one fewer difference between columns than there are columns in the data.
 
+## Challenge: Change in inflammation III
 How would you find the largest change in inflammation for each patient? Does it matter if the change in inflammation is an increase or a decrease?
 
-## Worked Solution: Change In Inflammation
+### Solution: Change in inflammation III
 
 By using the `numpy.amax()` function after you apply the `numpy.diff()` function, you will get the largest difference between days.
 
@@ -527,63 +373,19 @@ By using the `numpy.amax()` function after you apply the `numpy.diff()` function
 numpy.amax(numpy.diff(data, axis=1), axis=1)
 ```
 
-## Worked Solution Code: Change In Inflammation
-
-```{python}
-array([  7.,  12.,  11.,  10.,  11.,  13.,  10.,   8.,  10.,  10.,   7.,
-         7.,  13.,   7.,  10.,  10.,   8.,  10.,   9.,  10.,  13.,   7.,
-        12.,   9.,  12.,  11.,  10.,  10.,   7.,  10.,  11.,  10.,   8.,
-        11.,  12.,  10.,   9.,  10.,  13.,  10.,   7.,   7.,  10.,  13.,
-        12.,   8.,   8.,  10.,  10.,   9.,   8.,  13.,  10.,   7.,  10.,
-         8.,  12.,  10.,   7.,  12.])
-```
-
-## Worked Solution: Change In Inflammation
-
 If inflammation values *decrease* along an axis, then the difference from one element to the next will be negative. If you are interested in the **magnitude** of the change and not the direction, the `numpy.absolute()` function will provide that.
 
 Notice the difference if you get the largest *absolute* difference between readings.
-
-## Worked Solution Code: Change In Inflammation
 
 ```{python}
 numpy.amax(numpy.absolute(numpy.diff(data, axis=1)), axis=1)
 ```
 
-## Worked Solution Code: Change In Inflammation
+# Visualizing Data
 
-```{python}
-array([ 12.,  14.,  11.,  13.,  11.,  13.,  10.,  12.,  10.,  10.,  10.,
-        12.,  13.,  10.,  11.,  10.,  12.,  13.,   9.,  10.,  13.,   9.,
-        12.,   9.,  12.,  11.,  10.,  13.,   9.,  13.,  11.,  11.,   8.,
-        11.,  12.,  13.,   9.,  10.,  13.,  11.,  11.,  13.,  11.,  13.,
-        13.,  10.,   9.,  10.,  10.,   9.,   9.,  13.,  10.,   9.,  10.,
-        11.,  13.,  10.,  10.,  12.])
-```
+The mathematician Richard Hamming once said, "The purpose of computing is insight, not numbers," and the best way to develop insight is often to visualize data. Visualization deserves an entire lecture of its own, but we can explore a few features of Python's `matplotlib` library here. While there is no official plotting library, `matplotlib` is the *de facto* standard.
 
-## Worked Solution Prompt: Change In Inflammation
-
-## Worked Solution: Change In Inflammation
-
-- Import a library into a program using `import libraryname`.
-- Use the `numpy` library to work with arrays in Python.
-- The expression `array.shape` gives the shape of an array.
-- Use `array[x, y]` to select a single element from a 2D array.
-- Array indices start at 0, not 1.
-- Use `low:high` to specify a `slice` that includes the indices from `low` to `high-1`.
-- Use `# some kind of explanation` to add comments to programs.
-- Use `numpy.mean(array)`, `numpy.amax(array)`, and `numpy.amin(array)` to calculate simple statistics.
-- Use `numpy.mean(array, axis=0)` or `numpy.mean(array, axis=1)` to calculate statistics across the specified axis.
-
-# Visualization Workflow
-
-## Visualizing data
-
-The mathematician Richard Hamming once said, "The purpose of computing is insight, not numbers," and the best way to develop insight is often to visualize data. Visualization deserves an entire lecture of its own, but we can explore a few features of Python's `matplotlib` library here. While there is no official plotting library, `matplotlib` is the *de facto* standard. First, we will import the `pyplot` module from `matplotlib` and use two of its functions to create and display a [heat map](../learners/reference.qmd#heat-map) of our data:
-
-> 📊 Check shape and indexing first before interpreting numerical results.
-
-## Episode Prerequisites
+## Prerequisites
 
 If you are continuing in the same notebook from the previous episode, you already have a `data` variable and have imported `numpy`. If you are starting a new notebook at this point, you need the following two lines:
 
@@ -592,33 +394,27 @@ import numpy
 data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
 ```
 
-> 💡 State one concrete behavior you expect before running the next code block.
+## Creating a heat map with matplotlib
 
-## Code Example: Episode Prerequisites
+First, we will import the `pyplot` module from `matplotlib` and use two of its functions to create and display a [heat map](../learners/reference.qmd#heat-map) of our data:
 
 ```{python}
 import matplotlib.pyplot
 image = matplotlib.pyplot.imshow(data)
+matplotlib.pyplot.colorbar(image)
 matplotlib.pyplot.show()
 ```
 
 ![](fig/inflammation-01-imshow.svg){alt='Heat map representing the data variable. Each cell is colored by value along a color gradient from blue to yellow.'}
 
-## Each row in the heat map corresponds
-
 Each row in the heat map corresponds to a patient in the clinical trial dataset, and each column corresponds to a day in the dataset. Blue pixels in this heat map represent low values, while yellow pixels represent high values. As we can see, the general number of inflammation flare-ups for the patients rises and falls over a 40-day period.
 
 So far so good as this is in line with our knowledge of the clinical trial and Dr. Maverick's claims:
-
-## The patients take their medication once their inflammation
-
 - the patients take their medication once their inflammation flare-ups begin
 - it takes around 3 weeks for the medication to take effect and begin reducing flare-ups
 - and flare-ups appear to drop to zero by the end of the clinical trial.
 
 Now let's take a look at the average inflammation over time:
-
-## Code Example: Episode Prerequisites
 
 ```{python}
 ave_inflammation = numpy.mean(data, axis=0)
@@ -628,11 +424,7 @@ matplotlib.pyplot.show()
 
 ![](fig/inflammation-01-average.svg){alt='A line graph showing the average inflammation across all patients over a 40-day period.'}
 
-## Have put the average inflammation per day across
-
 Here, we have put the average inflammation per day across all patients in the variable `ave_inflammation`, then asked `matplotlib.pyplot` to create and display a line graph of those values. The result is a reasonably linear rise and fall, in line with Dr. Maverick's claim that the medication takes 3 weeks to take effect. But a good data scientist doesn't just consider the average of a dataset, so let's have a look at two other statistics:
-
-## Code Example: Episode Prerequisites
 
 ```{python}
 max_plot = matplotlib.pyplot.plot(numpy.amax(data, axis=0))
@@ -641,8 +433,6 @@ matplotlib.pyplot.show()
 
 ![](fig/inflammation-01-maximum.svg){alt='A line graph showing the maximum inflammation across all patients over a 40-day period.'}
 
-## Code Example: Episode Prerequisites
-
 ```{python}
 min_plot = matplotlib.pyplot.plot(numpy.amin(data, axis=0))
 matplotlib.pyplot.show()
@@ -650,17 +440,11 @@ matplotlib.pyplot.show()
 
 ![](fig/inflammation-01-minimum.svg){alt='A line graph showing the minimum inflammation across all patients over a 40-day period.'}
 
-## The maximum value rises and falls linearly
-
 The maximum value rises and falls linearly, while the minimum seems to be a step function. Neither trend seems particularly likely, so either there's a mistake in our calculations or something is wrong with our data. This insight would have been difficult to reach by examining the numbers themselves without visualization tools.
 
 ## Grouping plots
 
 You can group similar plots in a single figure using subplots. This script below uses a number of new commands. The function `matplotlib.pyplot.figure()` creates a space into which we will place all of our plots. The parameter `figsize` tells Python how big to make this space. Each subplot is placed into the figure using its `add_subplot` [method](../learners/reference.qmd#method). The `add_subplot` method takes 3 parameters. The first denotes how many total rows of subplots there are, the second parameter refers to the total number of subplot columns, and the final parameter denotes which subplot your variable is referencing (left-to-right, top-to-bottom). Each subplot is stored in a different variable (`axes1`, `axes2`, `axes3`). Once a subplot is created, the axes can be titled using the `set_xlabel()` command (or `set_ylabel()`). Here are our three plots side by side:
-
-> 📈 Choose plots that answer a specific question about the data.
-
-## Code Example: Grouping plots
 
 ```{python}
 import numpy
@@ -689,15 +473,9 @@ matplotlib.pyplot.savefig('inflammation.png')
 matplotlib.pyplot.show()
 ```
 
-## Practice Prompt: Grouping plots
-
 ![](fig/inflammation-01-group-plot.svg){alt='Three line graphs showing the daily average, maximum and minimum inflammation over a 40-day period.'}
 
-## The call to loadtxt reads our data
-
 The [call](../learners/reference.qmd#function-call) to `loadtxt` reads our data, and the rest of the program tells the plotting library how large we want the figure to be, that we're creating three subplots, what to draw for each one, and that we want a tight layout. (If we leave out that call to `fig.tight_layout()`, the graphs will actually be squeezed together more closely.)
-
-## The call to savefig stores the plot
 
 The call to `savefig` stores the plot as a graphics file. This can be a convenient way to store your plots for use in other documents, web pages etc. The graphics format is automatically determined by Matplotlib from the file name ending we specify; here PNG from 'inflammation.png'. Matplotlib supports many different graphics formats, including SVG, PDF, and JPEG.
 
@@ -705,23 +483,11 @@ The call to `savefig` stores the plot as a graphics file. This can be a convenie
 
 In this lesson we use the `import matplotlib.pyplot` [syntax](../learners/reference.qmd#syntax) to import the `pyplot` module of `matplotlib`. However, shortcuts such as `import matplotlib.pyplot as plt` are frequently used. Importing `pyplot` this way means that after the initial import, rather than writing `matplotlib.pyplot.plot(...)`, you can now write `plt.plot(...)`. Another common convention is to use the shortcut `import numpy as np` when importing the NumPy library. We then can write `np.loadtxt(...)` instead of `numpy.loadtxt(...)`, for example.
 
-> 💡 State one concrete behavior you expect before running the next code block.
-
-## Some people prefer these shortcuts
-
 Some people prefer these shortcuts as it is quicker to type and results in shorter lines of code - especially for libraries with long names! You will frequently see Python code online using a `pyplot` function with `plt`, or a NumPy function with `np`, and it's because they've used this shortcut. It makes no difference which approach you choose to take, but you must be consistent as if you use `import matplotlib.pyplot as plt` then `matplotlib.pyplot.plot(...)` will not work, and you must use `plt.plot(...)` instead. Because of this, when working with other people it is important you agree on how libraries are imported.
 
-## Practice Prompt: Importing libraries with shortcuts
+## Challenge: Plot scaling
 
-## Plot Scaling
-
-Why do all of our plots stop just short of the upper end of our graph?
-
-> 📈 Choose plots that answer a specific question about the data.
-
-## Worked Solution: Plot Scaling
-
-Because matplotlib normally sets x and y axes limits to the min and max of our data (depending on data range)
+All of our plots stop just short of the upper end of our graph because matplotlib normally sets x and y axes limits to the min and max of our data (depending on data range)
 
 If we want to change this, we can use the `set_ylim(min, max)` method of each 'axes', for example:
 
@@ -729,11 +495,9 @@ If we want to change this, we can use the `set_ylim(min, max)` method of each 'a
 axes3.set_ylim(0, 6)
 ```
 
-## Worked Solution: Plot Scaling
-
 Update your plotting code to automatically set a more appropriate scale. (Hint: you can make use of the `max` and `min` methods to help.)
 
-## Worked Solution Code: Plot Scaling
+### Solution: Plot scaling
 
 ```{python}
 # One method
@@ -741,10 +505,6 @@ axes3.set_ylabel('min')
 axes3.plot(numpy.amin(data, axis=0))
 axes3.set_ylim(0, 6)
 ```
-
-## Worked Solution Prompt: Plot Scaling
-
-## Worked Solution Code: Plot Scaling
 
 ```{python}
 # A more automated approach
@@ -754,19 +514,13 @@ axes3.plot(min_data)
 axes3.set_ylim(numpy.amin(min_data), numpy.amax(min_data) * 1.1)
 ```
 
-## Worked Solution Prompt: Plot Scaling
-
-## Drawing Straight Lines
+## Challenge: Drawing straight lines
 
 In the center and right subplots above, we expect all lines to look like step functions because non-integer values are not realistic for the minimum and maximum values. However, you can see that the lines are not always vertical or horizontal, and in particular the step function in the subplot on the right looks slanted. Why is this?
 
-> 💡 State one concrete behavior you expect before running the next code block.
-
-## Worked Solution: Drawing Straight Lines
+### Solution: Drawing straight lines
 
 Because matplotlib interpolates (draws a straight line) between the points. One way to do avoid this is to use the Matplotlib `drawstyle` option:
-
-## Worked Solution Code: Drawing Straight Lines
 
 ```{python}
 import numpy
@@ -794,30 +548,24 @@ fig.tight_layout()
 matplotlib.pyplot.show()
 ```
 
-## Worked Solution Prompt: Drawing Straight Lines
-
 ![](fig/inflammation-01-line-styles.svg){alt='Three line graphs, with step lines connecting the points, showing the daily average, maximumand minimum inflammation over a 40-day period.'}
 
-## Make Your Own Plot
+## Challenge: Make your own plot
 
 Create a plot showing the standard deviation (`numpy.std`) of the inflammation data for each day across all patients.
 
-> 📈 Choose plots that answer a specific question about the data.
-
-## Worked Solution Code: Make Your Own Plot
+### Solution: Make your own plot
 
 ```{python}
 std_plot = matplotlib.pyplot.plot(numpy.std(data, axis=0))
 matplotlib.pyplot.show()
 ```
 
-## Moving Plots Around
+## Challenge: Moving plots around
 
 Modify the program to display the three plots on top of one another instead of side by side.
 
-> 📈 Choose plots that answer a specific question about the data.
-
-## Worked Solution Code: Moving Plots Around
+### Solution: Moving plots around
 
 ```{python}
 import numpy
@@ -847,39 +595,29 @@ fig.tight_layout()
 matplotlib.pyplot.show()
 ```
 
-## Worked Solution: Moving Plots Around
-
-- Use the `pyplot` module from the `matplotlib` library for creating simple visualizations.
+# Analyzing Data from Multiple Files
 
 In the previous episode, we analyzed a single file of clinical trial inflammation data. However, after finding some peculiar and potentially suspicious trends in the trial data we ask Dr. Maverick if they have performed any other clinical trials. Surprisingly, they say that they have and provide us with 11 more CSV files for a further 11 clinical trials they have undertaken since the initial trial.
 
-## Worked Solution: Moving Plots Around
-
 Our goal now is to process all the inflammation data we have, which means that we still have eleven more files to go!
 
-The natural first step is to collect the names of all the files that we have to process. As a final piece to processing our inflammation data, we need a way to get a list of all the files in our `data` directory whose names start with `inflammation-` and end with `.csv`. The following library will help us to achieve this:
+## Using `glob`
 
-## Worked Solution Code: Moving Plots Around
+The natural first step is to collect the names of all the files that we have to process. As a final piece to processing our inflammation data, we need a way to get a list of all the files in our `data` directory whose names start with `inflammation-` and end with `.csv`. The following library will help us to achieve this:
 
 ```{python}
 import glob
 ```
 
-## Worked Solution: Moving Plots Around
-
 The `glob` library contains a function, also called `glob`, that finds files and directories whose names match a pattern. We provide those patterns as strings: the character `*` matches zero or more characters, while `?` matches any one character. We can use this to get the names of all the CSV files in the current directory:
-
-## Worked Solution Code: Moving Plots Around
 
 ```{python}
 print(glob.glob('inflammation*.csv'))
 ```
 
-## Worked Solution: Moving Plots Around
-
 As these examples show, `glob.glob`'s result is a list of file and directory paths in arbitrary order. This means we can loop over it to do something with each filename in turn. In our case, the "something" we want to do is generate a set of plots for each file in our inflammation dataset.
 
-## Worked Solution: Moving Plots Around
+## Plotting data from multiple files
 
 In the episode about visualizing data, we wrote Python code that plots values of interest from our first inflammation dataset (`inflammation-01.csv`), which revealed some suspicious features in it.
 
@@ -887,11 +625,7 @@ In the episode about visualizing data, we wrote Python code that plots values of
 
 We have a dozen data sets right now and potentially more on the way if Dr. Maverick can keep up their surprisingly fast clinical trial rate. We want to create plots for all of our data sets with a single statement.
 
-## Worked Solution: Moving Plots Around
-
 If we want to start by analyzing just the first three files in alphabetical order, we can use the `sorted` built-in function to generate a new sorted list from the `glob.glob` output:
-
-## Worked Solution Code: Moving Plots Around
 
 ```{python}
 import glob
@@ -928,44 +662,28 @@ for filename in filenames:
 
 ![](fig/03-loop_49_3.png){alt='Output from the second iteration of the for loop. Three line graphs showing the daily average, maximum and minimum inflammation over a 40-day period for all patients in the second dataset.'}
 
-## Worked Solution: Moving Plots Around
-
 ![](fig/03-loop_49_5.png){alt='Output from the third iteration of the for loop. Three line graphs showing the daily average, maximum and minimum inflammation over a 40-day period for all patients in the third dataset.'}
 
 The plots generated for the second clinical trial file look very similar to the plots for the first file: their average plots show similar "noisy" rises and falls; their maxima plots show exactly the same linear rise and fall; and their minima plots show similar staircase structures.
-
-## Worked Solution: Moving Plots Around
 
 The third dataset shows much noisier average and maxima plots that are far less suspicious than the first two datasets, however the minima plot shows that the third dataset minima is consistently zero across every day of the trial. If we produce a heat map for the third data file we see the following:
 
 ![](fig/inflammation-03-imshow.svg){alt='Heat map of the third inflammation dataset. Note that there are sporadic zero values throughout the entire dataset, and the last patient only has zero values over the 40 day study.'}
 
-## Worked Solution: Moving Plots Around
-
 We can see that there are zero values sporadically distributed across all patients and days of the clinical trial, suggesting that there were potential issues with data collection throughout the trial. In addition, we can see that the last patient in the study didn't have any inflammation flare-ups at all throughout the trial, suggesting that they may not even suffer from arthritis!
 
-# Multi-file Investigation
-
-## Checking our Data
+## Checking data from multiple files
 
 How can we use Python to automatically recognize the different features we saw, and take a different action for each?
 
 We can use conditionals to check for the suspicious features we saw in our inflammation data. We are about to use functions provided by the `numpy` module again. Therefore, if you're working in a new Python session, make sure to load the module and data with:
-
-> 📊 Check shape and indexing first before interpreting numerical results.
-
-## Code Example: Checking our Data
 
 ```{python}
 import numpy
 data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
 ```
 
-## From the first couple of plots we saw
-
 From the first couple of plots, we saw that maximum daily inflammation exhibits a strange behavior and raises one unit a day. Wouldn't it be a good idea to detect such behavior and report it as suspicious? Let's do that! However, instead of checking every single day of the study, let's merely check if maximum inflammation in the beginning (day 0) and in the middle (day 20) of the study are equal to the corresponding day numbers.
-
-## Code Example: Checking our Data
 
 ```{python}
 max_inflammation_0 = numpy.amax(data, axis=0)[0]
@@ -974,8 +692,6 @@ max_inflammation_20 = numpy.amax(data, axis=0)[20]
 if max_inflammation_0 == 0 and max_inflammation_20 == 20:
     print('Suspicious looking maxima!')
 ```
-
-## We also saw a different problem
 
 We also saw a different problem in the third dataset; the minima per day were all zero (looks like a healthy person snuck into our study). We can also check for this with an `elif` condition:
 
@@ -986,16 +702,12 @@ elif numpy.sum(numpy.amin(data, axis=0)) == 0:
 
 And if neither of these conditions are true, we can use `else` to give the all-clear:
 
-## Practice: Else
-
 ```{python}
 else:
     print('Seems OK!')
 ```
 
-Let's test that out:
-
-## Code Example: Checking our Data
+Let's test that out for the first dataset:
 
 ```{python}
 data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
@@ -1011,7 +723,7 @@ else:
     print('Seems OK!')
 ```
 
-## Code Example: Checking our Data
+and the third dataset:
 
 ```{python}
 data = numpy.loadtxt(fname='inflammation-03.csv', delimiter=',')
@@ -1027,13 +739,9 @@ else:
     print('Seems OK!')
 ```
 
-## In this way
-
 In this way, we have asked Python to do something different depending on the condition of our data. Here we printed messages in all cases, but we could also imagine not using the `else` catch-all so that messages are only printed when something is wrong, freeing us from having to manually examine every plot for features we've seen before.
 
 We can repeat this process for the remaining files:
-
-## Code Example: Checking our Data
 
 ```{python}
 import glob
@@ -1054,15 +762,11 @@ for filename in filenames:
         print('Seems OK!')
 ```
 
-## Practice Prompt: Checking our Data
-
-## Plotting Differences
+## Challenge: Plotting differences
 
 Plot the difference between the average inflammations reported in the first and second datasets (stored in `inflammation-01.csv` and `inflammation-02.csv`, correspondingly), i.e., the difference between the leftmost plots of the first two figures.
 
-> 📈 Choose plots that answer a specific question about the data.
-
-## Worked Solution Code: Plotting Differences
+### Solution: Plotting differences
 
 ```{python}
 import glob
@@ -1083,15 +787,9 @@ fig.tight_layout()
 matplotlib.pyplot.show()
 ```
 
-## Worked Solution Prompt: Plotting Differences
-
-## Generate Composite Statistics
+## Challenge: Generate composite statistics
 
 Use each of the files once to generate a dataset containing values averaged over all patients by completing the code inside the loop given below:
-
-> 📁 Automate repeated file operations to keep analysis reproducible.
-
-## Code Example: Generate Composite Statistics
 
 ```{python}
 filenames = glob.glob('inflammation*.csv')
@@ -1103,11 +801,9 @@ for filename in filenames:
 composite_data = composite_data / len(filenames)
 ```
 
-## Then use pyplot to generate average max
-
 Then use pyplot to generate average, max, and min for all patients.
 
-## Worked Solution Code: Then use pyplot to generate average max
+### Solution: Generate composite statistics
 
 ```{python}
 import glob
@@ -1143,21 +839,15 @@ fig.tight_layout()
 matplotlib.pyplot.show()
 ```
 
-## Worked Solution: Then use pyplot to generate average max
+# Conclusion of data analysis
 
 After spending some time investigating the heat map and statistical plots, as well as doing the above exercises to plot differences between datasets and to generate composite patient statistics, we gain some insight into the twelve clinical trial datasets.
 
 The datasets appear to fall into two categories:
-
-## Worked Solution: Then use pyplot to generate average max
-
 - seemingly "ideal" datasets that agree excellently with Dr. Maverick's claims,
   but display suspicious maxima and minima (such as `inflammation-01.csv` and `inflammation-02.csv`)
 - "noisy" datasets that somewhat agree with Dr. Maverick's claims, but show concerning
-  data collection issues such as sporadic missing values and even an unsuitable candidate
-  making it into the clinical trial.
-
-## Worked Solution: Then use pyplot to generate average max
+  data collection issues such as sporadic missing values and even an unsuitable candidate making it into the clinical trial.
 
 In fact, it appears that all three of the "noisy" datasets (`inflammation-03.csv`, `inflammation-08.csv`, and `inflammation-11.csv`) are identical down to the last value. Armed with this information, we confront Dr. Maverick about the suspicious data and duplicated files.
 
@@ -1171,6 +861,16 @@ Congratulations! We've investigated the inflammation data and proven that the da
 
 ## 📚 Keypoints
 
+- Import a library into a program using `import libraryname`.
+- Use the `numpy` library to work with arrays in Python.
+- The expression `array.shape` gives the shape of an array.
+- Use `array[x, y]` to select a single element from a 2D array.
+- Array indices start at 0, not 1.
+- Use `low:high` to specify a `slice` that includes the indices from `low` to `high-1`.
+- Use `# some kind of explanation` to add comments to programs.
+- Use `numpy.mean(array)`, `numpy.amax(array)`, and `numpy.amin(array)` to calculate simple statistics.
+- Use `numpy.mean(array, axis=0)` or `numpy.mean(array, axis=1)` to calculate statistics across the specified axis.
+- Use the `pyplot` module from the `matplotlib` library for creating simple visualizations.
 - Use `glob.glob(pattern)` to create a list of files whose names match a pattern.
 - Use `*` in a pattern to match zero or more characters, and `?` to match any single character.
 - Compare multiple summary plots before trusting any single trend line.
