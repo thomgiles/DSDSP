@@ -8,7 +8,14 @@ metadata:
 ::: {.content-visible when-format="revealjs"}
 
 <!-- Hidden by default -->
-![](fig/08_qr.png){fig-align="center" width=400px}
+![](fig/08_qr.png)
+
+:::
+
+::: {.content-visible when-format="revealjs"}
+
+<!-- Hidden by default -->
+![](fig/00_ms_form_questionaire_qr.png)
 
 :::
 
@@ -68,7 +75,7 @@ In research, "Action" often means building a prototype or testing a theory. The 
 ::: {.columns}
 ::: {.column}
 
-![](fig/08-image1.png){fig-align="center" width=400px}
+![](fig/08-image1.png)
 :::
 ::: {.column}
 
@@ -189,7 +196,7 @@ An insight is understanding.
 
 **Impact is change.**
 
-![](fig/08-image2.png){fig-align="center" width=400px}
+![](fig/08-image2.png)
  
 > 💡You can have a brilliant insight that changes absolutely nothing.
 

@@ -1,0 +1,41 @@
+---
+title: "Applied Python Lesson Style Context"
+---
+
+# Applied Python Lesson Style Context (from EDS + episode_template)
+
+Use this as the default structure when converting legacy episodes to Quarto.
+
+## Front matter
+
+- Include `title`.
+- Include teaching/exercise timing as:
+
+```yaml
+metadata:
+  teaching: <minutes>
+  exercises: <minutes>
+```
+
+## Core sections (expected order)
+
+1. `::: callout-outcomes` with `## Learning Outcomes`
+2. `::: callout-questions` with `## Questions`
+3. `## Structure and Agenda`
+4. Topic sections with `#` headings and practical examples
+5. At least one `::: callout-task` activity
+6. `::: callout-keypoints` summary at the end
+
+## Code blocks
+
+- Always use explicit engine blocks for executable code:
+  - ` ```{python} ` for Python
+  - ` ```{r} ` for R
+- Avoid plain fenced blocks like ` ```python ` or ` ```r `.
+
+## Style conventions
+
+- Keep content practical and workshop-oriented.
+- Use concise explanatory prose, then runnable examples.
+- Prefer activity-oriented prompts with optional example solutions.
+- Keep terminology and naming consistent across episodes.

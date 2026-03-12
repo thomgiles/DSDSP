@@ -8,7 +8,7 @@ metadata:
 ::: {.content-visible when-format="revealjs"}
 
 <!-- Hidden by default -->
-![](fig/07_qr.png){fig-align="center" width=400px}
+![](fig/07_qr.png)
 
 :::
 
@@ -54,7 +54,7 @@ By the end of this module, learners will be able to:
 
 Data visualisation transforms rows of numbers into stories the eye can instantly grasp.
 
-![](fig/07-image1.png){fig-align="center" width=400px}
+![](fig/07-image1.png)
 
 Patterns that hide in tables jump out in a chart.
 
@@ -62,7 +62,7 @@ Patterns that hide in tables jump out in a chart.
 
 ## Example: Tables vs. Charts
 
-![](fig/07-image2.png){fig-align="center" width=400px}
+![](fig/07-image2.png)
 
 In a chart, you instantly see: Chips dominate. Cookies are next. Fruit lags behind.
 
@@ -152,7 +152,7 @@ In a chart, you instantly see: Chips dominate. Cookies are next. Fruit lags behi
 
 **Please Complete following short poll**
 
-![](fig/07-app_qr.png){fig-align="center" width=400px}
+![](fig/07-app_qr.png)
 :::
 
 ---
@@ -189,7 +189,7 @@ Ask:
 
 ## Can you make sense of this graph?
 
-![](fig/07-image3.png){fig-align="center" width=400px}
+![](fig/07-image3.png)
 
 ::: {.columns}
 ::: {.column}
@@ -221,7 +221,7 @@ Good visuals show the truth clearly.
 
 ## Example: Misleading Visuals
 
-![](fig/07-image4.png){fig-align="center" width=400px}
+![](fig/07-image4.png)
 
 >⚙️ Same data, different impression.
 
@@ -293,13 +293,9 @@ Find the most effective matches.
 
 ## Why Context Matters
 
-A case study in data interpretation for an App Platform Owner.
+A case study in data interpretation for an App Platform Owner. if you are given a fact like: **60% of users quit!** Without context, this sounds alarming.
 
-**Fact: 60% of users quit.**
-
-Without context, this sounds alarming.
-
-![](fig/07-image5.png){fig-align="center" width=400px}
+![](fig/07-image5.png)
 
 > ⭐ Numbers tell what. Context tells why.
 
@@ -416,7 +412,7 @@ Team B's average of 8 is far more impressive given the competition.
 
 Data is only useful when it drives decisions.
 
-![](fig/07-image6.png){fig-align="center" width=400px}
+![](fig/07-image6.png)
 
 This is a cycle of continuous improvement!
 

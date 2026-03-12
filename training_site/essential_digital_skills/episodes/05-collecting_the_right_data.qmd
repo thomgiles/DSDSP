@@ -8,7 +8,7 @@ metadata:
 ::: {.content-visible when-format="revealjs"}
 
 <!-- Hidden by default -->
-![](fig/05_qr.png){fig-align="center" width=400px}
+![](fig/05_qr.png)
 
 :::
 
@@ -87,7 +87,7 @@ Data refers to raw facts, figures, observations, and symbols that represent vari
 
 
 
-![](fig/05-image1.png){fig-align="center" width=400px}
+![](fig/05-image1.png)
 
 > ❓ Before analysis, data is not meaningful — it becomes meaningful only after context and interpretation.
 
@@ -311,7 +311,7 @@ Each group is given a deck of cards with different data formats.
 -	Bias can lead to incorrect conclusions or poor decisions.
 -	Fair data improves credibility and decision-making.
 
-![](fig/05-image2.png){fig-align="center" width=400px}
+![](fig/05-image2.png)
 
 > ⚙️ Data is powerful — but only if reliable
 
@@ -333,7 +333,7 @@ Each group is given a deck of cards with different data formats.
 - Document your data collection process.
 - Reflect on what may be missing.
 
-![](fig/05-image3.png){fig-align="center" width=400px}
+![](fig/05-image3.png)
 
 > 💡 A bias occurs due to the tendency to search for, interpret, favor, and recall information in a way that confirms or supports one's prior beliefs or values.
 

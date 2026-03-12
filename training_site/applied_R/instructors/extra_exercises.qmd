@@ -1,0 +1,15 @@
+---
+title: Extra Exercises
+---
+
+## Exercise 1: Vector and Indexing Practice
+
+Create a numeric vector, select subsets using index positions, and compute summary statistics.
+
+## Exercise 2: Loop-to-Function Refactor
+
+Take a loop-based script and refactor repeated logic into a reusable function.
+
+## Exercise 3: Data Wrangling Challenge
+
+Using a small tabular dataset, perform filtering, grouping, and summary reporting.

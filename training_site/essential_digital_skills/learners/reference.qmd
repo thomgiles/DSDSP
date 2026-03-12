@@ -1,0 +1,25 @@
+---
+title: Reference
+---
+
+## Key Terms
+
+- **RDM (Research Data Management):** Planning, organising, storing, documenting, sharing, and preserving research data.
+- **DMP (Data Management Plan):** A living document describing how data will be handled across the project lifecycle.
+- **FAIR:** Data principles: Findable, Accessible, Interoperable, Reusable.
+- **DPIA:** Data Protection Impact Assessment for identifying and reducing data protection risks.
+- **Metadata:** Descriptive information that helps data be discovered, interpreted, and reused.
+
+## Institutional Platforms (Typical)
+
+- **Microsoft 365:** Collaboration, communication, shared documents.
+- **SharePoint/Teams:** Project spaces, document versioning, team collaboration.
+- **Research Information Systems:** Project and outputs tracking.
+
+## Good Practice Checklist
+
+- Use consistent folder and file naming.
+- Capture decisions and context in documentation.
+- Apply access controls based on sensitivity.
+- Back up and preserve data in approved locations.
+- Record data provenance and version history.

@@ -4,19 +4,6 @@ teaching: 40        # minutes of teaching
 exercises: 40       # minutes of exercises
 ---
 
-::: callout-title
-# MODULE MAIN TITLE (e.g., Essential Digital Skills Episode 1)
-:::
-
-# Module Overview
-
-- **Module:** CODE - Module Title  
-- **Course:** COURSE NAME  
-- **Audience:** Target audience (e.g., PhD, Postdoc)  
-- **Duration:** ~X minutes directed teaching (+Y exercises)  
-
----
-
 ::: callout-outcomes
 ## 💡 Learning Outcomes
 
@@ -123,3 +110,33 @@ total = sum(numbers)
 # Print the result
 print("The sum is:", total)
 ```
+
+# Further Information
+
+::: callout-keypoints
+
+## 📚 Keypoints
+
+* Somekeypoint
+
+:::
+
+::: callout-hints
+
+## 🔦 Hints
+
+* some hint
+:::
+
+## Module Summary
+
+short summary paragraph about the module
+
+## Additional Learning
+
+links to specific external resources. i.e. 
+The concepts in this module connect directly to practical data handling and exploration in Python.
+
+| Submodule                | Python Connection                                                   | Why It Matters                                                               |
+|--------------------------|---------------------------------------------------------------------|------------------------------------------------------------------------------|
+| Visualisations for Insights | Create bar, line, scatter, and pie charts using matplotlib or seaborn | Demonstrates how to transform numerical summaries into clear visuals.        |

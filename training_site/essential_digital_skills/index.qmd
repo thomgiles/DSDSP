@@ -1,15 +1,56 @@
 ---
 title: "Essential Digital Skills"
-format:
-  html:
-    theme: 
-        - default
-        - ../uon.scss
-    toc: true
-    number-sections: false
-    page-layout: article
 ---
 
-# Course Info:
+## Course Overview
 
-This course establishes 
+Essential Digital Skills is a foundation course for digital research practice at the University of Nottingham. It focuses on practical workflows for collaboration, governance, data management, and responsible digital practice.
+
+## Who This Is For
+
+- Early-career researchers developing digital research capability.
+- Research staff needing stronger data and governance workflows.
+- Professional services colleagues supporting research delivery.
+
+## What You Need
+
+- Access to institutional digital platforms (for example M365/Teams/SharePoint).
+- A device for practical exercises and group tasks.
+- Optional: a current project example to apply workshop activities directly.
+
+## Lesson Sequence
+
+| Lesson | Focus |
+|---|---|
+| [01 Digital Tools](episodes/01-digital_tools.qmd) | Core tools and institutional systems |
+| [02 Digital Delivery](episodes/02-digital_delivery.qmd) | Workflow and delivery practices |
+| [03 Data Governance and Policy](episodes/03-data_governance_and_policy.qmd) | Governance, compliance, and policy context |
+| [04 Research Data Management](episodes/04-research_data_managment.qmd) | RDM planning and lifecycle |
+| [05 Collecting the Right Data](episodes/05-collecting_the_right_data.qmd) | Data quality and collection design |
+| [06 Organising and Exploring Data](episodes/06-organising_and_exploring_data.qmd) | Structuring and initial exploration |
+| [07 Making Sense of Data](episodes/07-making_sense_of_data.qmd) | Interpretation and insight building |
+| [08 Insight to Impacts](episodes/08-insight_to_impacts.qmd) | Communicating impact |
+| [EXT1 Responsible AI](episodes/ext1-responsible_ai.qmd) | Risks and responsible AI use |
+| [EXT2 Hands-on AI](episodes/ext2-hands_on_ai.qmd) | Applied AI activity |
+
+## Course Materials
+
+### Learners
+
+- [Setup](learners/setup.qmd)
+- [Reference](learners/reference.qmd)
+- [Discussion](learners/discuss.qmd)
+
+### Instructors
+
+- [Instructor Notes](instructors/instructor-notes.qmd)
+- [Additional Material](instructors/additional_material.qmd)
+- [Extra Exercises](instructors/extra_exercises.qmd)
+
+### Community and Profiles
+
+- [Course README](README.qmd)
+- [Contributing](CONTRIBUTING.qmd)
+- [Learner Profiles](profiles/learner-profiles.qmd)
+- [Code of Conduct](CODE_OF_CONDUCT.qmd)
+- [License](LICENSE.qmd)

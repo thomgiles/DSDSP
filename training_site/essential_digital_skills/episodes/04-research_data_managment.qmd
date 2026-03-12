@@ -8,7 +8,7 @@ metadata:
 ::: {.content-visible when-format="revealjs"}
 
 <!-- Hidden by default -->
-![](fig/04_qr.png){fig-align="center" width=400px}
+![](fig/04_qr.png)
 
 :::
 
@@ -44,7 +44,7 @@ metadata:
 
 # RDM at UoN
 
-![](fig/04-image1.png){fig-align="center" width=400px}   
+![](fig/04-image1.png)   
 
 ## Why is RDM important
 
@@ -158,7 +158,7 @@ flowchart LR
 
 # Data Management Plans
 
-![](fig/04-image2.png){fig-align="center" width=400px}
+![](fig/04-image2.png)
 
 
 ## What is a data managment plan
@@ -235,7 +235,7 @@ DMPs complement ethical review and governance processes:
 
 # Data Structuring, Metadata and Archiving
 
-![](fig/04-image3.png){fig-align="center" width=400px}
+![](fig/04-image3.png)
 
 ## Be organised
 
@@ -317,7 +317,7 @@ YYYYMMDD_project-feature_description_vNN.ext
 
 # Reusable Data in Practice
 
-![](fig/04-image4.jpg){fig-align="center" width=400px}
+![](fig/04-image4.jpg)
 
 ## What is FAIR
 

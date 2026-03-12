@@ -8,7 +8,7 @@ metadata:
 ::: {.content-visible when-format="revealjs"}
 
 <!-- Hidden by default -->
-![](fig/RUAI_qr.png){fig-align="center" width=400px}
+![](fig/RUAI_qr.png)
 
 :::
 
@@ -239,7 +239,7 @@ Which AI tools (if any) have you used so far in your research workflow?  Select 
 ::: {.content-visible when-format="revealjs"}
 
 <!-- Hidden by default -->
-![](fig/EXT1-Q1-qr_code.png){fig-align="center" width=400px}
+![](fig/EXT1-Q1-qr_code.png)
 
 :::
 
@@ -603,7 +603,7 @@ How confident are you about using AI responsibly?
 ::: {.content-visible when-format="revealjs"}
 
 <!-- Hidden by default -->
-![](fig/EXT1-Q2_qr_code.png){fig-align="center" width=400px}
+![](fig/EXT1-Q2_qr_code.png)
 
 :::
 
