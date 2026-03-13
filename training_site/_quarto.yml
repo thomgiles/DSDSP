@@ -156,7 +156,7 @@ website:
           - section: "Methods for Data Science"
             href: index.qmd
             contents:
-              - section: "Applied Data Sciences (Python)"
+              - section: "Applied Data Science (Python)"
                 href: applied_python/index.qmd
                 contents:
                   - section: "Episodes"
@@ -188,7 +188,7 @@ website:
                       - applied_python/AUTHORS.qmd
                       - applied_python/profiles/learner-profiles.qmd
 
-              - section: "Applied Data Sciences (R)"
+              - section: "Applied Data Science (R)"
                 href: applied_R/index.qmd
                 contents:
                   - section: "Episodes"

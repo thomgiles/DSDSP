@@ -41,6 +41,57 @@ metadata:
 
 > 🔧 Activities spaced throughout the session  
 
+## Data Overview
+
+The best way to learn how to program is to do something useful,
+so this introduction to Python is built around a common scientific task:
+**data analysis**.
+
+### Scenario: A Miracle Arthritis Inflammation Cure
+
+Our imaginary colleague "Dr. Maverick" has invented a new miracle drug that promises to
+cure arthritis inflammation flare-ups after only 3 weeks since initially taking the
+medication! Naturally, we wish to see the clinical trial data, and after months of asking
+for the data they have finally provided us with a CSV spreadsheet containing the clinical
+trial data.
+
+The CSV file contains the number of inflammation flare-ups per day for the 60 patients
+in the initial clinical trial, with the trial lasting 40 days. Each row corresponds to a
+patient, and each column corresponds to a day in the trial. Once a patient has their first
+inflammation flare-up they take the medication and wait a few weeks for it to take effect
+and reduce flare-ups.
+
+To see how effective the treatment is we would like to:
+
+1. Calculate the average inflammation per day across all patients.
+2. Plot the result to discuss and share with colleagues.
+
+![](fig/lesson-overview.svg "Lesson Overview"){alt='3-step flowchart shows inflammation data records for patients moving to the Analysis step where a heat map of provided data is generated moving to the Conclusion step that asks the question, How does the medication affect patients?'}
+
+
+### Data Format
+
+The data sets are stored in
+[comma-separated values](../learners/reference.qmd#comma-separated-values) (CSV) format:
+
+- each row holds information for a single patient,
+- columns represent successive days.
+
+The first three rows of our first file look like this:
+
+```source
+0,0,1,3,1,2,4,7,8,3,3,3,10,5,7,4,7,7,12,18,6,13,11,11,7,7,4,6,8,8,4,4,5,7,3,4,2,3,0,0
+0,1,2,1,2,1,3,2,2,6,10,11,5,9,4,4,7,16,8,6,18,4,12,5,12,7,11,5,11,3,3,5,4,4,5,5,1,1,0,1
+0,1,1,3,3,2,6,2,5,9,5,7,4,5,4,15,5,11,9,10,19,14,12,17,7,12,11,7,4,2,10,5,4,2,2,3,2,2,1,1
+```
+
+Each number represents the number of inflammation bouts that a particular patient experienced on a
+given day.
+
+For example, value "6" at row 3 column 7 of the data set above means that the third
+patient was experiencing inflammation six times on the seventh day of the clinical study.
+
+
 # Analyzing data with numpy
 
 Words are useful, but what's more useful are the sentences and stories we build with them. Similarly, while a lot of powerful, general tools are built into Python, specialized tools built up from these basic units live in [libraries](../learners/reference.qmd#library) that can be called upon when needed.
@@ -129,7 +180,10 @@ As a result, if we have an M×N array in Python, its indices go from 0 to M-1 on
 
 What may also surprise you is that when Python displays an array, it shows the element with index `[0, 0]` in the upper left corner rather than the lower left. This is consistent with the way mathematicians draw matrices but different from the Cartesian coordinates. The indices are (row, column) instead of (column, row) for the same reason, which can be confusing when plotting data.
 
-> 📊 Check shape and type before drawing conclusions from data.
+::: {.callout-tip appearance="simple"}
+Check shape and type before drawing conclusions from data.
+:::
+
 
 ## Slicing numpy arrays
 
@@ -259,19 +313,25 @@ Similarly, we can apply the `mean` function to axis 1 to get the patient's avera
 print(numpy.mean(data, axis=1))
 ```
 
+::: {.callout-note appearance="simple" icon="false"}
 ## Challenge: Thin slices
 
 The expression `element[3:3]` produces an [empty string](../learners/reference.qmd#empty-string), i.e., a string that contains no characters. If `data` holds our array of patient data, 
+
 - What does `data[3:3, 4:4]` produce?
 - What about `data[3:3, :]`?
 
-### Solution: Thin slices
-
+<details>
+  <summary>Solution</summary>
 ```
 array([], shape=(0, 0), dtype=float64)
 array([], shape=(0, 40), dtype=float64)
 ```
+</details>
+:::
 
+
+::: {.callout-note appearance="simple" icon="false"}
 ## Challenge: Stacking arrays
 
 Arrays can be concatenated and stacked on top of one another, using NumPy's `vstack` and `hstack` functions for vertical and horizontal stacking, respectively.
@@ -294,8 +354,8 @@ print(C)
 
 Write some additional code that slices the first and last columns of `A`, and stacks them into a 3x2 array. Make sure to `print` the results to verify your solution.
 
-### Solution: Stacking arrays
-
+<details>
+  <summary>Solution</summary>
 A 'gotcha' with array indexing is that singleton dimensions are dropped by default. That means `A[:, 0]` is a one dimensional array, which won't stack as desired. To preserve singleton dimensions, the index itself can be a slice or array. For example, `A[:, :1]` returns a two dimensional array with one singleton dimension (i.e. a column vector).
 
 ```{python}
@@ -315,10 +375,13 @@ print(D)
 Another alternative is to supply a list of indices to individually select the first and last columns of A.
 
 ```{python}
-D = A[:, (0, 2)]
+D = A[:, [0, 2]]
 print(D)
 ```
+</details>
+:::
 
+::: {.callout-note appearance="simple" icon="false"}
 ## Challenge: Change in inflammation I
 
 The patient data is *longitudinal* in the sense that each row represents a series of observations relating to one individual. This means that the change in inflammation over time is a meaningful concept. Let's find out how to calculate changes in the data contained in an array with NumPy.
@@ -346,7 +409,8 @@ Note that the array of differences is shorter by one element (length 6).
 
 When calling `numpy.diff` with a multi-dimensional array, an `axis` argument may be passed to the function to specify which axis to process. When applying `numpy.diff` to our 2D inflammation array `data`, which axis would we specify?
 
-### Solution: Change in inflammation I
+<details>
+  <summary>Solution</summary>
 
 Since the row axis (0) is patients, it does not make sense to get the difference between two arbitrary patients. The column axis (1) is in days, so the difference is the change in inflammation -- a meaningful concept.
 
@@ -354,18 +418,28 @@ Since the row axis (0) is patients, it does not make sense to get the difference
 numpy.diff(data, axis=1)
 ```
 
+</details>
+:::
+
+::: {.callout-note appearance="simple" icon="false"}
 ## Challenge: Change in inflammation II
 
 If the shape of an individual data file is `(60, 40)` (60 rows and 40 columns), what would the shape of the array be after you run the `diff()` function and why?
 
-### Solution: Change in inflammation II
+<details>
+  <summary>Solution</summary>
 
 The shape will be `(60, 39)` because there is one fewer difference between columns than there are columns in the data.
 
+</details>
+:::
+
+::: {.callout-note appearance="simple" icon="false"}
 ## Challenge: Change in inflammation III
 How would you find the largest change in inflammation for each patient? Does it matter if the change in inflammation is an increase or a decrease?
 
-### Solution: Change in inflammation III
+<details>
+  <summary>Solution</summary>
 
 By using the `numpy.amax()` function after you apply the `numpy.diff()` function, you will get the largest difference between days.
 
@@ -380,6 +454,10 @@ Notice the difference if you get the largest *absolute* difference between readi
 ```{python}
 numpy.amax(numpy.absolute(numpy.diff(data, axis=1)), axis=1)
 ```
+
+</details>
+:::
+
 
 # Visualizing Data
 
@@ -485,6 +563,7 @@ In this lesson we use the `import matplotlib.pyplot` [syntax](../learners/refere
 
 Some people prefer these shortcuts as it is quicker to type and results in shorter lines of code - especially for libraries with long names! You will frequently see Python code online using a `pyplot` function with `plt`, or a NumPy function with `np`, and it's because they've used this shortcut. It makes no difference which approach you choose to take, but you must be consistent as if you use `import matplotlib.pyplot as plt` then `matplotlib.pyplot.plot(...)` will not work, and you must use `plt.plot(...)` instead. Because of this, when working with other people it is important you agree on how libraries are imported.
 
+::: {.callout-note appearance="simple" icon="false"}
 ## Challenge: Plot scaling
 
 All of our plots stop just short of the upper end of our graph because matplotlib normally sets x and y axes limits to the min and max of our data (depending on data range)
@@ -497,7 +576,8 @@ axes3.set_ylim(0, 6)
 
 Update your plotting code to automatically set a more appropriate scale. (Hint: you can make use of the `max` and `min` methods to help.)
 
-### Solution: Plot scaling
+<details>
+  <summary>Solution</summary>
 
 ```{python}
 # One method
@@ -513,12 +593,16 @@ axes3.set_ylabel('min')
 axes3.plot(min_data)
 axes3.set_ylim(numpy.amin(min_data), numpy.amax(min_data) * 1.1)
 ```
+</details>
+:::
 
+::: {.callout-note appearance="simple" icon="false"}
 ## Challenge: Drawing straight lines
 
 In the center and right subplots above, we expect all lines to look like step functions because non-integer values are not realistic for the minimum and maximum values. However, you can see that the lines are not always vertical or horizontal, and in particular the step function in the subplot on the right looks slanted. Why is this?
 
-### Solution: Drawing straight lines
+<details>
+  <summary>Solution</summary>
 
 Because matplotlib interpolates (draws a straight line) between the points. One way to do avoid this is to use the Matplotlib `drawstyle` option:
 
@@ -549,23 +633,31 @@ matplotlib.pyplot.show()
 ```
 
 ![](fig/inflammation-01-line-styles.svg){alt='Three line graphs, with step lines connecting the points, showing the daily average, maximumand minimum inflammation over a 40-day period.'}
+</details>
+:::
 
+::: {.callout-note appearance="simple" icon="false"}
 ## Challenge: Make your own plot
 
 Create a plot showing the standard deviation (`numpy.std`) of the inflammation data for each day across all patients.
 
-### Solution: Make your own plot
+<details>
+  <summary>Solution</summary>
 
 ```{python}
 std_plot = matplotlib.pyplot.plot(numpy.std(data, axis=0))
 matplotlib.pyplot.show()
 ```
+</details>
+:::
 
+::: {.callout-note appearance="simple" icon="false"}
 ## Challenge: Moving plots around
 
 Modify the program to display the three plots on top of one another instead of side by side.
 
-### Solution: Moving plots around
+<details>
+  <summary>Solution</summary>
 
 ```{python}
 import numpy
@@ -594,6 +686,9 @@ fig.tight_layout()
 
 matplotlib.pyplot.show()
 ```
+</details>
+:::
+
 
 # Analyzing Data from Multiple Files
 
@@ -762,11 +857,13 @@ for filename in filenames:
         print('Seems OK!')
 ```
 
+::: {.callout-note appearance="simple" icon="false"}
 ## Challenge: Plotting differences
 
 Plot the difference between the average inflammations reported in the first and second datasets (stored in `inflammation-01.csv` and `inflammation-02.csv`, correspondingly), i.e., the difference between the leftmost plots of the first two figures.
 
-### Solution: Plotting differences
+<details>
+  <summary>Solution</summary>
 
 ```{python}
 import glob
@@ -786,7 +883,10 @@ matplotlib.pyplot.plot(numpy.mean(data0, axis=0) - numpy.mean(data1, axis=0))
 fig.tight_layout()
 matplotlib.pyplot.show()
 ```
+</details>
+:::
 
+::: {.callout-note appearance="simple" icon="false"}
 ## Challenge: Generate composite statistics
 
 Use each of the files once to generate a dataset containing values averaged over all patients by completing the code inside the loop given below:
@@ -803,7 +903,8 @@ composite_data = composite_data / len(filenames)
 
 Then use pyplot to generate average, max, and min for all patients.
 
-### Solution: Generate composite statistics
+<details>
+  <summary>Solution</summary>
 
 ```{python}
 import glob
@@ -838,6 +939,9 @@ fig.tight_layout()
 
 matplotlib.pyplot.show()
 ```
+</details>
+:::
+
 
 # Conclusion of data analysis
 
