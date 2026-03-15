@@ -74,9 +74,7 @@ df.head()
 ::: {.callout-note}
 ### List Comprehensions
 
-List comprehensions are a concise way to create lists. They replace longer for loops and can make code more readable.
-
-A list comprehension has the basic form `[expression for item in iterable]`.
+List comprehensions are a concise way to create lists. They replace longer for loops and can make code more readable. A list comprehension has the basic form `[expression for item in iterable]`.
 
 An equivalent `for` loop for the list comprehension used above would be:
 ```{python}
@@ -92,7 +90,7 @@ df.columns = column_names
 ::: {.callout-note}
 ### F Strings
 
-Python f-strings are a way to format strings by embedding variables in strings using `{}`.
+Python f-strings are a way to format strings by embedding variables in strings using `{}`
 
 ```{python}
 name = "Bob"
@@ -223,7 +221,7 @@ per_day.plot(title="Per-day inflammation summary")
 ::: {.callout-tip}
 
 * Methods mirror NumPy: `mean`, `std`, `idxmax`, etc.
-* `.plot()` is a thin wrapper around Matplotlib—fast for exploration.
+* `DataFrame.plot()` is a thin wrapper around Matplotlib—fast for exploration.
 
 :::
 
