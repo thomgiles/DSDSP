@@ -90,20 +90,26 @@ df.describe()
 Clear, human-readable names avoid off-by-one mistakes.
 :::
 
-::: {.callout-note appearance="simple" icon="false"}
-### Challenge: Inspection
+
+
+::: callout-task
+#### Challenge: Inspection
+
+::: panel-tabset
+##### Task
 
 How many **patients** and **days** are in `inflammation-01.csv`?
 
-<details>
-  <summary>Solution</summary>
+##### Solution
 
 ```{python}
 n_patients, n_days = df.shape
 print(n_patients, n_days)
 ```
-</details>
 :::
+:::
+
+
 
 ## Selecting Data
 
@@ -126,9 +132,16 @@ first_week = [f"day_{i}" for i in range(7)]
 df[first_week].mean(axis=1)  # Patient-wise mean over first week
 ```
 
+
+Use boolean masks to filter rows.
+
 ```{python}
-mask = df["day_0"] > 0
-df.loc[mask, "day_0"].head()
+mask = df["day_1"] > 0
+df[mask].head()
+```
+
+```{python}
+df.loc[mask, ["day_0", "day_1"]].head()
 ```
 
 ::: {.callout-tip}
@@ -140,21 +153,25 @@ df.loc[mask, "day_0"].head()
 
 :::
 
-::: {.callout-note appearance="simple" icon="false"}
 
-### Challenge: Selection
+::: callout-task
+#### Challenge: Selection
+
+::: panel-tabset
+##### Task
 
 Get patient 10’s readings for days 10–19 using both `.iloc` and `.loc`.
 
-<details>
-  <summary>Solution</summary>
+##### Solution
 
 ```{python}
 df.iloc[10, 10:20]
 df.loc[10, [f"day_{i}" for i in range(10, 20)]]
 ```
-</details>
 :::
+:::
+
+
 
 ## Stats & Plots with pandas
 
@@ -181,23 +198,26 @@ per_day.plot(title="Per-day inflammation summary")
 
 :::
 
-::: {.callout-note appearance="simple" icon="false"}
 
-### Challenge: Plotting
+::: callout-task
+#### Challenge: Plotting
+
+::: panel-tabset
+##### Task
 
 Recreate the mean/min/max per-day plot with `.plot()`, adding axis labels.
 
-<details>
-  <summary>Solution</summary>
+##### Solution
 
 ```{python}
 ax = per_day.plot()
 ax.set_xlabel("day")
 ax.set_ylabel("value")
 ```
-
-</details>
 :::
+:::
+
+
 
 ## Creating New Columns
 
@@ -208,29 +228,27 @@ df["day_0_centered"] = df["day_0"] - df["day_0"].mean()
 df["any_week1_gt5"] = (df[first_week].max(axis=1) > 5).astype(int)
 ```
 
-::: {.callout-note appearance="simple" icon="false"}
 
-### Challenge: Create
+
+::: callout-task
+#### Challenge: Create
+
+::: panel-tabset
+##### Task
 
 Make `day_0_diff = day_0 - day_1` and `week1_std` as sample SD of days 0–6.
 
-<details>
-  <summary>Solution</summary>
+##### Solution
 
 ```{python}
 df["day_0_diff"] = df["day_0"] - df["day_1"]
 df["week1_std"] = df[first_week].std(axis=1, ddof=1)
 ```
-
-</details>
+:::
 :::
 
-### Creating New Columns with `assign`
 
-We can also use `assign` to create new columns. This is useful for chaining operations.
-
-This is slightly more verbose, but has the advantage of not modifying `df` until the end.
-It is preferred for more declarative code.
+We can also use `assign` to create new columns. This is slightly more verbose, but has the advantage of not modifying `df` until the end. It is preferred for more declarative code.
 
 ```{python}
 df = df.assign(
@@ -238,8 +256,6 @@ df = df.assign(
     week1_std = df[first_week].std(axis=1, ddof=1)
 )
 ```
-
-## Column Transformations
 
 ```{python}
 df["day_0_sq"] = df["day_0"] ** 2
@@ -287,28 +303,40 @@ print(df_cleaned)
 ## Grouped Summaries
 
 ```{python}
-summary = (
-    df.groupby("group", as_index=False)
-    .agg(
-        mean_inflammation=("inflammation", "mean"),
-        std_inflammation=("inflammation", "std"),
-        n=("sample_id", "count"),
-    )
-)
-print(summary)
+def initial_severity(row: pd.Series) -> str:
+    week1_total = row[first_week].sum()
+    if  week1_total <= 5:
+        return "low"
+    elif week1_total <= 10:
+        return "medium"
+    else:
+        return "high"
 
-day_cols = [c for c in wide.columns if c.startswith("day_")]
-summary = (
-    wide.groupby("week1_status")
-        .agg(["mean", "std", "count"])  # nested columns: (day, stat)
-)
+df["initial_severity"] = df.apply(initial_severity, axis=1)
+```
+
+```{python}
+df.groupby("initial_severity").mean()
+```
+
+```{python}
+summary = df.groupby("initial_severity").agg(["mean", "std", "count"])
+print(summary)
 ```
 
 ::: {.callout-tip}
 `groupby(...).agg(...)` is the standard summarization pattern.
 :::
 
-## Export Results
+## Sorting
+
+```{python}
+df.sort_values(by="initial_severity", ascending=True)
+```
+Notice the row labels (patient IDs) are preserved and sorted along with the data.
+
+
+## Exporting Results
 
 ```{python}
 summary.to_csv("pandas_summary.csv", index=False)
@@ -368,7 +396,14 @@ print("Wrote out/per_day_summary.csv")
 * Flattening the column MultiIndex is optional but makes the CSV easier to read.
 * Exporting with `to_csv` makes results reusable in other tools.
 
-## Supplement: Tiny CLI Wrapper
+
+
+::: callout-task
+#### Challenge: Tiny CLI Wrapper
+
+::: panel-tabset
+##### Task
+
 
 To run the workflow from the shell without using a notebook, save the below as `scripts/summarise_inflammation.py`:
 
@@ -442,134 +477,10 @@ To run from the command line, call the script with a glob pattern and optional o
 ```bash
 python scripts/summarise_inflammation.py "inflammation-*.csv" --out out/per_day_summary.csv
 ```
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## Create a DataFrame
-
-```{python}
-import pandas as pd
-
-records = {
-    "sample_id": ["S01", "S02", "S03", "S04"],
-    "group": ["control", "control", "treated", "treated"],
-    "day": [1, 1, 1, 1],
-    "inflammation": [4.2, 3.9, 2.8, 2.4],
-}
-
-df = pd.DataFrame(records)
-print(df)
-```
-
-> 🧱 DataFrames are labeled tables designed for analysis workflows.
-
-## Inspect Shape and Data Types
-
-```{python}
-print(df.shape)
-print(df.dtypes)
-```
-
-> 🔎 Check dimensions and data types before any transformation.
-
-## Preview and Describe
-
-```{python}
-print(df.head())
-print(df.describe(numeric_only=True))
-```
-
-> 🔍 Use preview and summary statistics to spot obvious issues early.
-
-# Selection and Filtering
-
-## Select Columns
-
-
-
-## Filter Rows
-
-```{python}
-treated = df[df["group"] == "treated"]
-print(treated)
-
-low_inflammation = df[df["inflammation"] < 3.0]
-print(low_inflammation)
-```
-
-> ✅ Boolean masks are the core filtering pattern.
-
-## Sort Data
-
-```{python}
-print(df.sort_values(by="inflammation", ascending=True))
-```
-
-> ↕️ Sorting helps validate trends and outliers quickly.
-
-# Transformation and Cleaning
-
-## Create Derived Columns
-
-```{python}
-df["inflammation_zscore"] = (
-    (df["inflammation"] - df["inflammation"].mean()) / df["inflammation"].std()
-)
-print(df)
-```
-
-> 🧮 Derived columns let you keep transformation logic in the table.
-
-
-# Aggregation and Output
-
-# Practice and Wrap-Up
-
-## Practice Activity
-
-::: callout-task
-#### Task 1: Build a Small Cleaning Pipeline
-
-::: panel-tabset
-##### Prompt
-
-1. Create a DataFrame with at least 6 rows and one missing numeric value.
-2. Filter to one category (for example, `treated`).
-3. Drop missing numeric values.
-4. Compute a grouped mean.
-5. Save the final summary as CSV.
-
-##### Example Solution
-
-```{python}
-df_task = pd.DataFrame(
-    {
-        "sample_id": ["S01", "S02", "S03", "S04", "S05", "S06"],
-        "group": ["control", "treated", "treated", "control", "treated", "control"],
-        "inflammation": [4.1, 3.0, None, 4.4, 2.7, 4.0],
-    }
-)
-
-treated = df_task[df_task["group"] == "treated"].dropna(subset=["inflammation"])
-result = treated.groupby("group", as_index=False).agg(mean_inflammation=("inflammation", "mean"))
-
-result.to_csv("treated_summary.csv", index=False)
-print(result)
-```
 :::
 :::
+
+
 
 # Further Information
 
