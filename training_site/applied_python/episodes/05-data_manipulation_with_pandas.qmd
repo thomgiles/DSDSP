@@ -71,8 +71,35 @@ df.columns = [f"day_{i}" for i in range(df.shape[1])]
 df.head()
 ```
 
-::: {.callout-info}
+::: {.callout-note}
 ### List Comprehensions
+
+List comprehensions are a concise way to create lists. They replace longer for loops and can make code more readable.
+
+A list comprehension has the basic form `[expression for item in iterable]`.
+
+An equivalent `for` loop for the list comprehension used above would be:
+```{python}
+column_names = []
+for i in range(df.shape[1]):
+    column_names.append(f"day_{i}")
+
+df.columns = column_names
+```
+:::
+
+
+::: {.callout-note}
+### F Strings
+
+Python f-strings are a way to format strings by embedding variables in strings using `{}`.
+
+```{python}
+name = "Bob"
+age = 5
+message = f"{name} is {age} years old!"
+print(message)
+```
 
 :::
 
@@ -81,6 +108,8 @@ df.head()
 ```{python}
 df.info()
 ```
+
+Use `DataFrame.describe()` to get summary statistics about data.
 
 ```{python}
 df.describe()
