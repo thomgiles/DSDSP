@@ -29,13 +29,19 @@ metadata:
 
 ## Structure & Agenda
 
-1. Run a complete linear regression workflow in `scikit-learn` (~20 min)  
-2. Interpret average/min/max trends in the inflammation data (~20 min)  
-3. Build multi-panel plots with `matplotlib` (~20 min)  
-4. Tune plot scaling and layout for clearer interpretation (~20 min)  
+1. Run a linear regression example with `statsmodels` (~20 min) 
+2. Run a complete linear regression workflow in `scikit-learn` (~20 min)
 
 > 🔧 Activities spaced throughout the session  
 
+
+::: callout-important
+
+## Episode Prerequisites
+
+This lesson doesn't depend on any previous state in your notebook.
+
+:::
 
 ## What is statsmodels?
 
@@ -57,7 +63,7 @@ Worked Example in docs:
 * Comfort with Python, pandas, and basic plotting (Matplotlib or pandas `.plot`).
 * Install:
 
-```bash
+```{bash}
 pip install statsmodels patsy
 ```
 
@@ -69,7 +75,7 @@ pip install statsmodels patsy
 
 The **formula API** (`statsmodels.formula.api` or `smf`) uses R-like model formulas via `patsy`. It integrates smoothly with pandas `DataFrame`s.
 
-```python
+```{python}
 import pandas as pd
 import statsmodels.formula.api as smf
 import statsmodels.api as sm
@@ -121,7 +127,7 @@ Key fields from `model.summary()`:
 
 Extract the essentials programmatically:
 
-```python
+```{python}
 out = pd.DataFrame({
     "coef": model.params,
     "se": model.bse,
@@ -140,7 +146,7 @@ out
 
 ## Prediction with Confidence Intervals
 
-```python
+```{python}
 new = pd.DataFrame({"hp":[100,150], "wt":[2.5, 3.2]})
 pred = model.get_prediction(new).summary_frame(alpha=0.05)  # includes mean_ci & obs_ci
 pred
@@ -153,7 +159,7 @@ pred
 
 * For reporting, prefer tabular outputs (`summary_frame`) you can save:
 
-```python
+```{python}
 pred.to_csv("predictions.csv", index=False)
 ```
 
@@ -163,7 +169,7 @@ pred.to_csv("predictions.csv", index=False)
 
 Check linear model assumptions quickly: linearity, homoscedasticity, normal-ish residuals, independence.
 
-```python
+```{python}
 import matplotlib.pyplot as plt
 import numpy as np
 
@@ -195,7 +201,7 @@ plt.show()
 
 For non-Gaussian outcomes (binary counts, rates):
 
-```python
+```{python}
 import statsmodels.api as sm
 import statsmodels.formula.api as smf
 
@@ -214,7 +220,7 @@ Fit `mpg ~ hp * wt` (which expands to `hp + wt + hp:wt`). Does the interaction a
 
 **Solution:**
 
-```python
+```{python}
 m_int = smf.ols("mpg ~ hp * wt", data=data).fit()
 print(m_int.summary().tables[1])  # coefficient table only
 ```
@@ -229,7 +235,7 @@ Create a binary indicator `heavy = (wt > wt.median())` and fit `mpg ~ hp + C(hea
 
 **Solution:**
 
-```python
+```{python}
 data = data.assign(heavy = (data["wt"] > data["wt"].median()))
 m_cat = smf.ols("mpg ~ hp + C(heavy)", data=data).fit()
 print(m_cat.summary().tables[1])
@@ -245,7 +251,7 @@ Make predictions for `hp={90, 120, 150}` at `wt=3.0`. Save the full prediction f
 
 **Solution:**
 
-```python
+```{python}
 grid = pd.DataFrame({"hp":[90,120,150], "wt":[3.0,3.0,3.0]})
 pred = model.get_prediction(grid).summary_frame()
 pred.to_csv("pred_grid.csv", index=False)
@@ -259,33 +265,11 @@ Explanation: The table includes fitted means and intervals. Mean CI reflects unc
 
 
 
+## What is scikit-learn?
 
+We will use `scikit-learn` to build the full linear regression example in stages.
 
-
-
-
-
-
-
-
-
-
-
-
-
-# Model Walkthrough
-
-::: callout-important
-
-## Episode Prerequisites
-
-This lesson doesn't depend on any previous state in your notebook.
-
-:::
-
-We will build the full linear regression example in stages.
-
-## Import and Prepare Data
+### Import and Prepare Data
 
 ```{python}
 # Code source: Jaques Grobler
@@ -312,7 +296,7 @@ diabetes_y_train = diabetes_y[:-20]
 diabetes_y_test = diabetes_y[-20:]
 ```
 
-## Train and Predict
+### Train and Predict
 
 ```{python}
 from sklearn import linear_model
@@ -327,7 +311,7 @@ regr.fit(diabetes_X_train, diabetes_y_train)
 diabetes_y_pred = regr.predict(diabetes_X_test)
 ```
 
-## Evaluate and Plot
+### Evaluate and Plot
 
 ```{python}
 import matplotlib.pyplot as plt
@@ -350,7 +334,6 @@ plt.yticks(())
 plt.show()
 ```
 
-## Linear Regression Fit in Context
 
 ![](fig/ols-result.png){alt='Scatter graph comparing the linear regression with the test dataset.'}
 
