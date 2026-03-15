@@ -58,7 +58,6 @@ Once we have defined a class, we can create objects of that class. Each object c
 
 ```{python}
 patient_1 = Patient("P001", [0, 1, 3, 2, 1])
-print(patient_1)
 print(patient_1.patient_id)
 print(patient_1.inflammation_values)
 ```
@@ -69,6 +68,10 @@ print(patient_2.patient_id)
 print(patient_2.inflammation_values)
 ```
 
+```{python}
+print(type(patient_1))
+print(patient_1)
+```
 
 ::: {.callout-tip}
 A class is a template for constructing objects. An object is one concrete instance of a class.
@@ -372,6 +375,43 @@ class AllInOnePrinter:
         self.scanner.scan_document()
 ```
 :::
+
+
+
+
+## Special Classes in Python
+
+You may not have realised, but you should already be familiar with
+some of the classes that come bundled as part of Python, for example:
+
+```{python}
+my_list = [1, 2, 3]
+my_dict = {1: '1', 2: '2', 3: '3'}
+my_set = {1, 2, 3}
+
+print(type(my_list))
+print(type(my_dict))
+print(type(my_set))
+```
+
+Lists, dictionaries and sets are a slightly special type of class,
+but they behave in much the same way as a class we might define ourselves:
+
+- They each hold some data (**attributes** or **state**).
+- They also provide some methods describing the behaviours of the data -
+  what can the data do and what can we do to the data?
+
+The behaviours we may have seen previously include:
+
+- Lists can be appended to
+- Lists can be indexed
+- Lists can be sliced
+- Key-value pairs can be added to dictionaries
+- The value at a key can be looked up in a dictionary
+- The union of two sets can be found (the set of values present in any of the sets)
+- The intersection of two sets can be found (the set of values present in all of the sets)
+
+
 
 ## Design Guidance
 
