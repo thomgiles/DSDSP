@@ -9,6 +9,11 @@ metadata:
 
 ## Learning Outcomes
 
+- Understand what `statsmodels` is and when to use it.
+- Fit a minimal Ordinary Least Squares (OLS) regression with the **formula API**.
+- Read and interpret the key parts of a model summary.
+- Make predictions with confidence intervals.
+- Know where to go next: GLMs (e.g., logistic regression)
 - Train a linear regression model on a dataset.
 - Test the model, and plot the results.
 :::
@@ -17,8 +22,9 @@ metadata:
 
 ## Questions
 
+- What is the `statsmodels` package?
+- What is the `scikit-learn` package?
 - How can I train a Linear Regression model in Python?
-- What is the scikit-learn package?
 :::
 
 ## Structure & Agenda
@@ -30,17 +36,244 @@ metadata:
 
 > 🔧 Activities spaced throughout the session  
 
+
+## What is statsmodels?
+
+`statsmodels` is a Python library for **classical statistical modeling**. It complements pandas/NumPy by providing well-tested implementations of linear models (OLS), generalised linear models (GLM), time series (ARIMA/ETS), and statistical tests, with rich summaries (standard errors, p-values, confidence intervals, diagnostic metrics).
+
+Use `statsmodels` when you need **interpretability**, **inference**, and **statistical diagnostics** beyond what scikit-learn typically exposes.
+
+Link to docs: [Docs](https://www.statsmodels.org/stable/index.html)
+
+Worked Example in docs:
+
+[Regression Examples](https://www.statsmodels.org/stable/examples/index.html#regression-examples)
+
+[Interaction Examples](https://www.statsmodels.org/0.6.1/examples/notebooks/generated/interactions_anova.html)
+
+
+## Prerequisites & Setup
+
+* Comfort with Python, pandas, and basic plotting (Matplotlib or pandas `.plot`).
+* Install:
+
+```bash
+pip install statsmodels patsy
+```
+
+* We’ll use a built-in dataset to avoid external downloads.
+
+---
+
+## Minimal OLS with the Formula API
+
+The **formula API** (`statsmodels.formula.api` or `smf`) uses R-like model formulas via `patsy`. It integrates smoothly with pandas `DataFrame`s.
+
+```python
+import pandas as pd
+import statsmodels.formula.api as smf
+import statsmodels.api as sm
+
+# 1) Load a sample dataset
+# 'auto' contains mpg and car attributes; if unavailable, use get_rdataset fallback.
+try:
+    data = sm.datasets.get_rdataset("mtcars").data.rename(columns=str.lower)
+except Exception:
+    # Fallback: small manual DataFrame (hp: horsepower, wt: weight, mpg: fuel efficiency)
+    data = pd.DataFrame({
+        "mpg":[21,21,22.8,21.4,18.7,18.1,14.3,24.4,22.8,19.2],
+        "hp":[110,110,93,110,175,105,245,62,95,123],
+        "wt":[2.62,2.875,2.32,3.215,3.44,3.46,3.57,3.19,3.15,3.44]
+    })
+
+# 2) Fit a simple linear model: mpg ~ hp + wt
+model = smf.ols("mpg ~ hp + wt", data=data).fit()
+
+# 3) Inspect a compact summary
+print(model.summary())
+```
+
+### Quick Tips
+
+* Formulas: `y ~ x1 + x2` (additive), `x1:x2` (interaction), `C(cat)` (treat a column as categorical),
+
+* y ~ x1 + x2 → main effects only
+* y ~ x1 * x2 → includes x1, x2, and their interaction (x1:x2)
+* y ~ x1:x2 → interaction only, no main effects
+* y ~ x1 + x2 + x1:x2 → explicit version of x1 * x2
+
+* `ols(...).fit()` returns a results object (`.params`, `.bse`, `.pvalues`, `.conf_int()`).
+* Use **clean column names** (snake\_case, no spaces) to avoid quoting hassles in formulas.
+
+---
+
+## Reading the Summary (Essentials)
+
+Key fields from `model.summary()`:
+
+* **coef**: estimated effect per unit change in predictor, holding others fixed.
+* **std err**: standard error of the estimate.
+* **t, P>|t|**: t-statistic and p-value for the null hypothesis that the coefficient is zero.
+* **\[0.025, 0.975]**: 95% confidence interval.
+* **R-squared / Adj. R-squared**: variance explained (adjusted penalises extra predictors).
+* **F-statistic**: global test that at least one predictor is nonzero.
+* **Durbin-Watson**: autocorrelation check (mainly for time-series-like residuals).
+
+Extract the essentials programmatically:
+
+```python
+out = pd.DataFrame({
+    "coef": model.params,
+    "se": model.bse,
+    "pval": model.pvalues
+})
+out["ci_low"], out["ci_high"] = model.conf_int()[0], model.conf_int()[1]
+out
+```
+
+### Quick Tips
+
+* Large absolute t-statistics and small p-values suggest evidence against a zero coefficient (context matters).
+* **Significance** is not **importance**—check effect sizes and domain relevance.
+
+---
+
+## Prediction with Confidence Intervals
+
+```python
+new = pd.DataFrame({"hp":[100,150], "wt":[2.5, 3.2]})
+pred = model.get_prediction(new).summary_frame(alpha=0.05)  # includes mean_ci & obs_ci
+pred
+```
+
+* `mean_ci_lower/upper`: CI for the **expected mean** of `y` at these predictors.
+* `obs_ci_lower/upper`: PI for a **new observation** (wider).
+
+### Quick Tips
+
+* For reporting, prefer tabular outputs (`summary_frame`) you can save:
+
+```python
+pred.to_csv("predictions.csv", index=False)
+```
+
+---
+
+## Very Brief Diagnostics
+
+Check linear model assumptions quickly: linearity, homoscedasticity, normal-ish residuals, independence.
+
+```python
+import matplotlib.pyplot as plt
+import numpy as np
+
+resid = model.resid
+fitted = model.fittedvalues
+
+# Residuals vs Fitted (look for funnel patterns)
+plt.scatter(fitted, resid)
+plt.axhline(0, linestyle="--")
+plt.xlabel("Fitted"); plt.ylabel("Residuals"); plt.title("Residuals vs Fitted")
+plt.show()
+
+# Q-Q plot (normality check)
+sm.qqplot(resid, line="45")
+plt.title("Q-Q Plot of Residuals")
+plt.show()
+```
+
+### Quick Tips
+
+* Patterns in residuals vs fitted suggest model misspecification or heteroscedasticity.
+* Consider transformations or alternative models (e.g., GLM) if assumptions are violated.
+
+---
+
+## Where Next? (Signposts)
+
+### Generalised Linear Models (GLM)
+
+For non-Gaussian outcomes (binary counts, rates):
+
+```python
+import statsmodels.api as sm
+import statsmodels.formula.api as smf
+
+# Logistic regression example: y is 0/1
+glm_logit = smf.glm("y ~ x1 + x2", data=df, family=sm.families.Binomial()).fit()
+print(glm_logit.summary())
+```
+
+* Common families: `Binomial` (logit/probit), `Poisson`, `Gamma` (with appropriate links).
+
+## Practical Mini-Exercises
+
+### Exercise 1 — Add an Interaction
+
+Fit `mpg ~ hp * wt` (which expands to `hp + wt + hp:wt`). Does the interaction appear significant?
+
+**Solution:**
+
+```python
+m_int = smf.ols("mpg ~ hp * wt", data=data).fit()
+print(m_int.summary().tables[1])  # coefficient table only
+```
+
+Explanation: The hp:wt row tests whether the effect of horsepower on mpg depends on weight. A small p-value (e.g., < 0.05) suggests meaningfully different slopes across weights; otherwise, prefer the simpler additive model.
+
+---
+
+### Exercise 2 — Categorical Predictor
+
+Create a binary indicator `heavy = (wt > wt.median())` and fit `mpg ~ hp + C(heavy)`. Interpret the `C(heavy)[T.True]` coefficient.
+
+**Solution:**
+
+```python
+data = data.assign(heavy = (data["wt"] > data["wt"].median()))
+m_cat = smf.ols("mpg ~ hp + C(heavy)", data=data).fit()
+print(m_cat.summary().tables[1])
+```
+
+Explanation: C(heavy)[T.True] is the average difference in mpg between heavy and light cars at the same horsepower. A negative, significant coefficient indicates heavier cars get fewer mpg, controlling for hp.
+
+---
+
+### Exercise 3 — Prediction Table
+
+Make predictions for `hp={90, 120, 150}` at `wt=3.0`. Save the full prediction frame to CSV.
+
+**Solution:**
+
+```python
+grid = pd.DataFrame({"hp":[90,120,150], "wt":[3.0,3.0,3.0]})
+pred = model.get_prediction(grid).summary_frame()
+pred.to_csv("pred_grid.csv", index=False)
+pred
+```
+
+Explanation: The table includes fitted means and intervals. Mean CI reflects uncertainty in the expected mpg at those settings; obs CI is wider, reflecting variability for a single new car.
+
+---
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Model Walkthrough
-
-## Visualizing data
-
-This page is different!
-
-The mathematician Richard Hamming once said, "The purpose of computing is insight, not numbers," and the best way to develop insight is often to visualize data. Visualization deserves an entire lecture of its own, but we can explore a few features of Python's `matplotlib` library here. While there is no official plotting library, `matplotlib` is the *de facto* standard. First, we will import the `pyplot` module from `matplotlib` and use two of its functions to create and display a [heat map](../learners/reference.qmd#heat-map) of our data:
-
-> 📊 Check shape and indexing first before interpreting numerical results.
-
-## Instructor Note
 
 ::: callout-important
 
@@ -51,8 +284,6 @@ This lesson doesn't depend on any previous state in your notebook.
 :::
 
 We will build the full linear regression example in stages.
-
-> 💡 State one concrete behavior you expect before running the next code block.
 
 ## Import and Prepare Data
 
@@ -125,306 +356,8 @@ plt.show()
 
 This nicely demonstrates how linear regression attempts to draw a straight line that will best minimize the residual sum of squares between the observed responses in the dataset, and the responses predicted by the linear approximation.
 
-Each row in the heat map corresponds to a patient in the clinical trial dataset, and each column corresponds to a day in the dataset. Blue pixels in this heat map represent low values, while yellow pixels represent high values. As we can see, the general number of inflammation flare-ups for the patients rises and falls over a 40-day period.
 
-## Sanity Check Against Trial Expectations
 
-So far so good as this is in line with our knowledge of the clinical trial and Dr. Maverick's claims:
-
-- the patients take their medication once their inflammation flare-ups begin
-- it takes around 3 weeks for the medication to take effect and begin reducing flare-ups
-- and flare-ups appear to drop to zero by the end of the clinical trial.
-
-Now let's take a look at the average inflammation over time:
-
-## Plot Daily Average Inflammation
-
-```{python}
-ave_inflammation = numpy.mean(data, axis=0)
-ave_plot = matplotlib.pyplot.plot(ave_inflammation)
-matplotlib.pyplot.show()
-```
-
-![](fig/inflammation-01-average.svg){alt='A line graph showing the average inflammation across all patients over a 40-day period.'}
-
-## Interpreting the Average Trend
-
-Here, we have put the average inflammation per day across all patients in the variable `ave_inflammation`, then asked `matplotlib.pyplot` to create and display a line graph of those values. The result is a reasonably linear rise and fall, in line with Dr. Maverick's claim that the medication takes 3 weeks to take effect. But a good data scientist doesn't just consider the average of a dataset, so let's have a look at two other statistics:
-
-## Plot Daily Maximum
-
-```{python}
-max_plot = matplotlib.pyplot.plot(numpy.amax(data, axis=0))
-matplotlib.pyplot.show()
-```
-
-![](fig/inflammation-01-maximum.svg){alt='A line graph showing the maximum inflammation across all patients over a 40-day period.'}
-
-## Plot Daily Minimum
-
-```{python}
-min_plot = matplotlib.pyplot.plot(numpy.amin(data, axis=0))
-matplotlib.pyplot.show()
-```
-
-![](fig/inflammation-01-minimum.svg){alt='A line graph showing the minimum inflammation across all patients over a 40-day period.'}
-
-## Spotting Suspicious Patterns
-
-The maximum value rises and falls linearly, while the minimum seems to be a step function. Neither trend seems particularly likely, so either there's a mistake in our calculations or something is wrong with our data. This insight would have been difficult to reach by examining the numbers themselves without visualization tools.
-
-## Grouping plots
-
-You can group similar plots in a single figure using subplots. The function `matplotlib.pyplot.figure()` creates a canvas for multiple subplots. The `figsize` parameter controls that canvas size.
-
-## Subplot Parameters
-
-Each subplot is created with `add_subplot(rows, columns, position)`.
-
-- `rows`: total subplot rows
-- `columns`: total subplot columns
-- `position`: reading order position (left-to-right, top-to-bottom)
-
-In this example we store each subplot in a variable (`axes1`, `axes2`, `axes3`) and set labels with `set_ylabel()`.
-
-> 📈 Choose plots that answer a specific question about the data.
-
-## Code Example: Grouping plots
-
-```{python}
-import numpy
-import matplotlib.pyplot
-
-data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
-
-fig = matplotlib.pyplot.figure(figsize=(10.0, 3.0))
-
-axes1 = fig.add_subplot(1, 3, 1)
-axes2 = fig.add_subplot(1, 3, 2)
-axes3 = fig.add_subplot(1, 3, 3)
-
-axes1.set_ylabel('average')
-axes1.plot(numpy.mean(data, axis=0))
-
-axes2.set_ylabel('max')
-axes2.plot(numpy.amax(data, axis=0))
-
-axes3.set_ylabel('min')
-axes3.plot(numpy.amin(data, axis=0))
-
-fig.tight_layout()
-
-matplotlib.pyplot.savefig('inflammation.png')
-matplotlib.pyplot.show()
-```
-
-## Result: Grouping plots
-
-![](fig/inflammation-01-group-plot.svg){alt='Three line graphs showing the daily average, maximum and minimum inflammation over a 40-day period.'}
-
-## What the Script Is Doing
-
-The [call](../learners/reference.qmd#function-call) to `loadtxt` reads our data, and the rest of the program tells the plotting library how large we want the figure to be, that we're creating three subplots, what to draw for each one, and that we want a tight layout. (If we leave out that call to `fig.tight_layout()`, the graphs will actually be squeezed together more closely.)
-
-## Saving Figures to Disk
-
-The call to `savefig` stores the plot as a graphics file. This can be a convenient way to store your plots for use in other documents, web pages etc. The graphics format is automatically determined by Matplotlib from the file name ending we specify; here PNG from 'inflammation.png'. Matplotlib supports many different graphics formats, including SVG, PDF, and JPEG.
-
-::: callout-note
-
-## Importing libraries with shortcuts
-
-In this lesson we use the `import matplotlib.pyplot` [syntax](../learners/reference.qmd#syntax) to import the `pyplot` module of `matplotlib`. However, shortcuts such as `import matplotlib.pyplot as plt` are frequently used. Importing `pyplot` this way means that after the initial import, rather than writing `matplotlib.pyplot.plot(...)`, you can now write `plt.plot(...)`. Another common convention is to use the shortcut `import numpy as np` when importing the NumPy library. We then can write `np.loadtxt(...)` instead of `numpy.loadtxt(...)`, for example.
-
-> 💡 State one concrete behavior you expect before running the next code block.
-
-## Why Aliases Are Common
-
-Some people prefer these shortcuts as it is quicker to type and results in shorter lines of code - especially for libraries with long names! You will frequently see Python code online using a `pyplot` function with `plt`, or a NumPy function with `np`, and it's because they've used this shortcut. It makes no difference which approach you choose to take, but you must be consistent as if you use `import matplotlib.pyplot as plt` then `matplotlib.pyplot.plot(...)` will not work, and you must use `plt.plot(...)` instead. Because of this, when working with other people it is important you agree on how libraries are imported.
-
-## Team Convention
-
-:::
-
-::: callout-task
-
-# Plot Customization Exercises
-
-## Plot Scaling
-
-Why do all of our plots stop just short of the upper end of our graph?
-
-::: callout-note
-
-> 📈 Choose plots that answer a specific question about the data.
-
-## Why Axes Stop Short
-
-Because matplotlib normally sets x and y axes limits to the min and max of our data (depending on data range)
-
-:::
-
-If we want to change this, we can use the `set_ylim(min, max)` method of each 'axes', for example:
-
-```{python}
-axes3.set_ylim(0, 6)
-```
-
-> 💡 State one concrete behavior you expect before running the next code block.
-
-## Challenge: Plot Scaling
-
-Update your plotting code to automatically set a more appropriate scale. (Hint: you can make use of the `max` and `min` methods to help.)
-
-::: callout-note
-
-## Manual Axis Limits
-
-```{python}
-# One method
-axes3.set_ylabel('min')
-axes3.plot(numpy.amin(data, axis=0))
-axes3.set_ylim(0, 6)
-```
-
-:::
-
-## Alternative Approach
-
-::: callout-note
-
-## Automatic Axis Limits
-
-```{python}
-# A more automated approach
-min_data = numpy.amin(data, axis=0)
-axes3.set_ylabel('min')
-axes3.plot(min_data)
-axes3.set_ylim(numpy.amin(min_data), numpy.amax(min_data) * 1.1)
-```
-
-:::
-
-## Compare the Two Approaches
-
-:::
-
-::: callout-task
-
-## Drawing Straight Lines
-
-In the center and right subplots above, we expect all lines to look like step functions because non-integer value are not realistic for the minimum and maximum values. However, you can see that the lines are not always vertical or horizontal, and in particular the step function in the subplot on the right looks slanted. Why is this?
-
-::: callout-note
-
-> 💡 State one concrete behavior you expect before running the next code block.
-
-## Why the Plot Looks Slanted
-
-Because matplotlib interpolates (draws a straight line) between the points. One way to do avoid this is to use the Matplotlib `drawstyle` option:
-
-## Step-Style Plotting
-
-```{python}
-import numpy
-import matplotlib.pyplot
-
-data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
-
-fig = matplotlib.pyplot.figure(figsize=(10.0, 3.0))
-
-axes1 = fig.add_subplot(1, 3, 1)
-axes2 = fig.add_subplot(1, 3, 2)
-axes3 = fig.add_subplot(1, 3, 3)
-
-axes1.set_ylabel('average')
-axes1.plot(numpy.mean(data, axis=0), drawstyle='steps-mid')
-
-axes2.set_ylabel('max')
-axes2.plot(numpy.amax(data, axis=0), drawstyle='steps-mid')
-
-axes3.set_ylabel('min')
-axes3.plot(numpy.amin(data, axis=0), drawstyle='steps-mid')
-
-fig.tight_layout()
-
-matplotlib.pyplot.show()
-```
-
-## Compare Line Styles
-
-![](fig/inflammation-01-line-styles.svg){alt='Three line graphs, with step lines connecting the points, showing the daily average, maximumand minimum inflammation over a 40-day period.'}
-
-:::
-
-:::
-
-::: callout-task
-
-## Make Your Own Plot
-
-Create a plot showing the standard deviation (`numpy.std`) of the inflammation data for each day across all patients.
-
-::: callout-note
-
-> 📈 Choose plots that answer a specific question about the data.
-
-## Worked Solution: Make Your Own Plot
-
-```{python}
-std_plot = matplotlib.pyplot.plot(numpy.std(data, axis=0))
-matplotlib.pyplot.show()
-```
-
-:::
-
-:::
-
-::: callout-task
-
-## Moving Plots Around
-
-Modify the program to display the three plots on top of one another instead of side by side.
-
-::: callout-note
-
-> 📈 Choose plots that answer a specific question about the data.
-
-## Worked Solution: Moving Plots Around
-
-```{python}
-import numpy
-import matplotlib.pyplot
-
-data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
-
-# change figsize (swap width and height)
-fig = matplotlib.pyplot.figure(figsize=(3.0, 10.0))
-
-# change add_subplot (swap first two parameters)
-axes1 = fig.add_subplot(3, 1, 1)
-axes2 = fig.add_subplot(3, 1, 2)
-axes3 = fig.add_subplot(3, 1, 3)
-
-axes1.set_ylabel('average')
-axes1.plot(numpy.mean(data, axis=0))
-
-axes2.set_ylabel('max')
-axes2.plot(numpy.amax(data, axis=0))
-
-axes3.set_ylabel('min')
-axes3.plot(numpy.amin(data, axis=0))
-
-fig.tight_layout()
-
-matplotlib.pyplot.show()
-```
-
-## Key Adjustment
-
-:::
-
-:::
 
 # Further Information
 
@@ -432,6 +365,11 @@ matplotlib.pyplot.show()
 
 ## 📚 Keypoints
 
+- `statsmodels` focuses on **inference** and **diagnostics** for classical models.
+- Use the **formula API** (`smf.ols("y ~ x1 + x2", data=...)`) for concise, readable models.
+- Read summaries for coefficients, uncertainty (SE/CI), and goodness-of-fit.
+- Use `get_prediction(...).summary_frame()` for CIs/PIs you can report.
+- For non-linear means or non-Gaussian outcomes, step up to **GLM**; for temporal dependence, explore **ARIMA/SARIMAX**.
 - Use `scikit-learn` to fit and evaluate a basic linear regression model.
 - Inspect average, max, and min trends to detect suspicious data behavior.
 - Use `matplotlib` subplots to compare summary statistics side by side.
