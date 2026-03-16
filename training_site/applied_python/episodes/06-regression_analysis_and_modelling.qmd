@@ -29,19 +29,99 @@ metadata:
 
 ## Structure & Agenda
 
-1. Run a linear regression example with `statsmodels` (~20 min) 
-2. Run a complete linear regression workflow in `scikit-learn` (~20 min)
+1. Run a complete linear regression workflow in `scikit-learn` (~20 min)
+2. Run a linear regression example with `statsmodels` (~20 min) 
 
 > 🔧 Activities spaced throughout the session  
 
 
 ::: callout-important
-
-## Episode Prerequisites
-
+##
 This lesson doesn't depend on any previous state in your notebook.
-
 :::
+
+## What is Scikit-Learn?
+
+[Scikit-Learn](https://github.com/scikit-learn/scikit-learn) is a python package designed to give access to well-known machine learning algorithms within Python code, through a clean application programming interface (API). It has been built by hundreds of contributors from around the world, and is used across industry and academia.
+
+Scikit-Learn is built upon Python's [NumPy (Numerical Python)](https://numpy.org) and [SciPy (Scientific Python)](https://scipy.org) libraries, which enable efficient in-core numerical and scientific computation within Python. As such, Scikit-Learn is not specifically designed for extremely large datasets, though there is [some work](https://github.com/ogrisel/parallel_ml_tutorial) in this area.
+
+We will use Scikit-Learn to build a full linear regression example in stages following the [example in the documentation](https://scikit-learn.org/stable/auto_examples/linear_model/plot_ols_ridge.html).
+
+```{bash}
+# Authors: The scikit-learn developers
+# SPDX-License-Identifier: BSD-3-Clause
+```
+
+### Import and Prepare Data
+
+```{python}
+# Load the diabetes dataset
+from sklearn.datasets import load_diabetes
+X, y = load_diabetes(return_X_y=True)
+X = X[:, [2]]  # Use only one feature
+```
+
+```{python}
+# Split the data into training/testing sets
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=20, shuffle=False)
+```
+
+### Model Training
+
+```{python}
+from sklearn.linear_model import LinearRegression
+
+# Create linear regression object
+regressor = LinearRegression()
+
+# Train the model using the training sets
+regressor.fit(X_train, y_train)
+```
+
+### Prediction and Evaluation
+```{python}
+from sklearn.metrics import mean_squared_error, r2_score
+
+# Make predictions using the testing set
+y_pred = regressor.predict(X_test)
+
+print(f"Mean squared error: {mean_squared_error(y_test, y_pred):.2f}")
+print(f"Coefficient of determination: {r2_score(y_test, y_pred):.2f}")
+```
+
+### Plotting
+
+```{python}
+import matplotlib.pyplot as plt
+
+fig, ax = plt.subplots(ncols=2, figsize=(10, 5), sharex=True, sharey=True)
+
+ax[0].scatter(X_train, y_train, label="Train data points")
+ax[0].plot(
+    X_train,
+    regressor.predict(X_train),
+    linewidth=3,
+    color="tab:orange",
+    label="Model predictions",
+)
+ax[0].set(xlabel="Feature", ylabel="Target", title="Train set")
+ax[0].legend()
+
+ax[1].scatter(X_test, y_test, label="Test data points")
+ax[1].plot(X_test, y_pred, linewidth=3, color="tab:orange", label="Model predictions")
+ax[1].set(xlabel="Feature", ylabel="Target", title="Test set")
+ax[1].legend()
+
+fig.suptitle("Linear Regression")
+
+plt.show()
+```
+
+This nicely demonstrates how linear regression attempts to draw a straight line that will best minimize the residual sum of squares between the observed responses in the dataset, and the responses predicted by the linear approximation.
+
+---
 
 ## What is statsmodels?
 
@@ -265,82 +345,6 @@ Explanation: The table includes fitted means and intervals. Mean CI reflects unc
 
 
 
-## What is scikit-learn?
-
-We will use `scikit-learn` to build the full linear regression example in stages.
-
-### Import and Prepare Data
-
-```{python}
-# Code source: Jaques Grobler
-# License: BSD 3 clause
-
-import matplotlib.pyplot as plt
-import numpy as np
-
-from sklearn import datasets, linear_model
-from sklearn.metrics import mean_squared_error, r2_score
-
-# Load the diabetes dataset
-diabetes_X, diabetes_y = datasets.load_diabetes(return_X_y=True)
-
-# Use only one feature
-diabetes_X = diabetes_X[:, np.newaxis, 2]
-
-# Split the data into training/testing sets
-diabetes_X_train = diabetes_X[:-20]
-diabetes_X_test = diabetes_X[-20:]
-
-# Split the targets into training/testing sets
-diabetes_y_train = diabetes_y[:-20]
-diabetes_y_test = diabetes_y[-20:]
-```
-
-### Train and Predict
-
-```{python}
-from sklearn import linear_model
-
-# Create linear regression object
-regr = linear_model.LinearRegression()
-
-# Train the model using the training sets
-regr.fit(diabetes_X_train, diabetes_y_train)
-
-# Make predictions using the testing set
-diabetes_y_pred = regr.predict(diabetes_X_test)
-```
-
-### Evaluate and Plot
-
-```{python}
-import matplotlib.pyplot as plt
-from sklearn.metrics import mean_squared_error, r2_score
-
-# The coefficients
-print("Coefficients: \n", regr.coef_)
-# The mean squared error
-print("Mean squared error: %.2f" % mean_squared_error(diabetes_y_test, diabetes_y_pred))
-# The coefficient of determination: 1 is perfect prediction
-print("Coefficient of determination: %.2f" % r2_score(diabetes_y_test, diabetes_y_pred))
-
-# Plot outputs
-plt.scatter(diabetes_X_test, diabetes_y_test, color="black")
-plt.plot(diabetes_X_test, diabetes_y_pred, color="blue", linewidth=3)
-
-plt.xticks(())
-plt.yticks(())
-
-plt.show()
-```
-
-
-![](fig/ols-result.png){alt='Scatter graph comparing the linear regression with the test dataset.'}
-
-This nicely demonstrates how linear regression attempts to draw a straight line that will best minimize the residual sum of squares between the observed responses in the dataset, and the responses predicted by the linear approximation.
-
-
-
 
 # Further Information
 
@@ -348,15 +352,12 @@ This nicely demonstrates how linear regression attempts to draw a straight line 
 
 ## 📚 Keypoints
 
+- Use `scikit-learn` to fit and evaluate a basic linear regression model.
 - `statsmodels` focuses on **inference** and **diagnostics** for classical models.
 - Use the **formula API** (`smf.ols("y ~ x1 + x2", data=...)`) for concise, readable models.
 - Read summaries for coefficients, uncertainty (SE/CI), and goodness-of-fit.
 - Use `get_prediction(...).summary_frame()` for CIs/PIs you can report.
 - For non-linear means or non-Gaussian outcomes, step up to **GLM**; for temporal dependence, explore **ARIMA/SARIMAX**.
-- Use `scikit-learn` to fit and evaluate a basic linear regression model.
-- Inspect average, max, and min trends to detect suspicious data behavior.
-- Use `matplotlib` subplots to compare summary statistics side by side.
-- Adjust axes and draw styles to make plot interpretation more accurate.
 
 :::
 
