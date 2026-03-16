@@ -641,3 +641,10 @@ The concepts in this module connect directly to practical data handling and expl
 | `for` Loops and Iteration | [The `for` statement](https://docs.python.org/3/reference/compound_stmts.html#the-for-statement) | Loops remove duplication and scale operations across datasets. |
 | Numeric Ranges | [`range`](https://docs.python.org/3/library/stdtypes.html#range) | `range` is central for controlled numeric iteration. |
 | Conditional Logic | [Boolean operations and comparisons](https://docs.python.org/3/library/stdtypes.html#boolean-operations-and-or-not) | Branching lets code respond safely to changing data. |
+
+::: {.callout-note appearance="minimal"}
+### Attribution
+This lesson is derived from materials developed by the [Software Carpentry](https://software-carpentry.org) project.
+
+The original content is licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) license: [https://github.com/swcarpentry/python-novice-inflammation/blob/main/LICENSE.md](https://github.com/swcarpentry/python-novice-inflammation/blob/main/LICENSE.md)
+:::

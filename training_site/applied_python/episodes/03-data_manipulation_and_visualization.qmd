@@ -1005,3 +1005,10 @@ The concepts in this module connect directly to practical data handling and expl
 | Reading Structured Data | [`numpy.loadtxt`](https://numpy.org/doc/stable/reference/generated/numpy.loadtxt.html) | Reliable ingestion is the first step in reproducible analysis. |
 | Array Aggregation | [NumPy statistics routines](https://numpy.org/doc/stable/reference/routines.statistics.html) | Aggregations turn raw values into interpretable summaries. |
 | Visualization Basics | [Matplotlib `pyplot` tutorial](https://matplotlib.org/stable/tutorials/pyplot.html) | Visual checks reveal trends and suspicious patterns quickly. |
+
+::: {.callout-note appearance="minimal"}
+### Attribution
+This lesson is derived from materials developed by the [Software Carpentry](https://software-carpentry.org) project.
+
+The original content is licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) license: [https://github.com/swcarpentry/python-novice-inflammation/blob/main/LICENSE.md](https://github.com/swcarpentry/python-novice-inflammation/blob/main/LICENSE.md)
+:::
