@@ -534,7 +534,9 @@ if not not True:
 ::: {.panel-tabset}
 ##### Task
 
-Write some conditions that print `True` if the variable `a` is within 10% of the variable `b` and `False` otherwise. Compare your implementation with your partner's: do you get the same answer for all possible pairs of numbers?
+Write some conditions that print `True` if the variable `a` is within 10% of the variable `b` and `False` otherwise.
+
+Compare your implementation with your partner's: do you get the same answer for all possible pairs of numbers?
 
 ##### Hint
 There is a [built-in function `abs`][abs-function] that returns the absolute value of a number:
@@ -564,6 +566,10 @@ print(abs(a - b) <= 0.1 * abs(b))
 This works because the Booleans `True` and `False` have string representations which can be printed.
 
 Printing the boolean directly avoids the extra `if`/`else` output code.
+
+:::
+::::
+
 
 :::: {.callout-task}
 #### Challenge: In-Place Operators
@@ -603,7 +609,12 @@ print(positive_sum, negative_sum)
 :::
 ::::
 
-## Challenge: Sorting a List Into Buckets
+
+:::: {.callout-task}
+#### Challenge: Sorting a List Into Buckets
+
+::: {.panel-tabset}
+##### Task
 
 In our `data` folder, large data sets are stored in files whose names start with "inflammation-" and small data sets are stored in files whose names start with "small-". We also have some other files that we do not care about at this point. We'd like to break all these files into three lists called `large_files`, `small_files`, and `other_files`, respectively.
 
@@ -619,8 +630,6 @@ Because `startswith` is case sensitive,
 'String'.startswith('str')
 ```
 
-### Starter Code
-
 Use the following Python code as your starting point:
 
 ```{python}
@@ -633,8 +642,6 @@ large_files = []
 small_files = []
 other_files = []
 ```
-
-### Success Criteria
 
 Your solution should:
 
@@ -650,9 +657,18 @@ small_files = ['small-01.csv', 'small-02.csv']
 other_files = ['myscript.py']
 ```
 
-## Solution: Sorting a List Into Buckets
+##### Solution
 
 ```{python}
+filenames = ['inflammation-01.csv',
+         'myscript.py',
+         'inflammation-02.csv',
+         'small-01.csv',
+         'small-02.csv']
+large_files = []
+small_files = []
+other_files = []
+
 for filename in filenames:
     if filename.startswith('inflammation-'):
         large_files.append(filename)
@@ -666,15 +682,22 @@ print('small_files:', small_files)
 print('other_files:', other_files)
 ```
 
-## Challenge: Counting Vowels
+:::
+::::
 
+
+:::: {.callout-task}
+#### Challenge: Counting Vowels
+
+::: {.panel-tabset}
+##### Task
 1. Write a loop that counts the number of vowels in a character string.
 2. Test it on a few individual words and full sentences.
 3. Once you are done, compare your solution to your neighbor's.
   Did you make the same decisions about how to handle the letter 'y'
   (which some people think is a vowel, and some do not)?
 
-## Solution: Counting Vowels
+##### Solution
 
 ```{python}
 vowels = 'aeiouAEIOU'
@@ -688,6 +711,10 @@ print('The number of vowels in this string is ' + str(count))
 ```
 
 [abs-function]: https://docs.python.org/3/library/functions.html#abs
+
+:::
+::::
+
 
 # Further Information
 
