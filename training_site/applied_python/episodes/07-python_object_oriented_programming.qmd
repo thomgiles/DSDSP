@@ -32,38 +32,65 @@ metadata:
 
 > 🔧 Activities spaced throughout the session  
 
-# OOP Basics
+# Object-Oriented Programming (OOP)
 
-## Define a Class and Create Objects
+Object-Oriented Programming (OOP) is a programming approach that bundles data and functionality together into "objects". This can help manage complexity in larger codebases by organizing related data and behavior.
+
+## Defining a Class
+
+A class is a template for creating objects. It defines the attributes (data) and methods (functions) that the objects will have. In Python, we use the `class` keyword to define a class.
 
 ```{python}
-class PatientRecord:
+class Patient:
     def __init__(self, patient_id, inflammation_values):
         self.patient_id = patient_id
         self.inflammation_values = inflammation_values
 
-
-p1 = PatientRecord("P001", [0, 1, 3, 2, 1])
-print(p1.patient_id)
-print(p1.inflammation_values)
 ```
 
-> 🧱 A class is a template; an object is one concrete instance.
+Here we’ve defined a class with one method: `__init__`. This method is the **initialiser** method, which is responsible for setting up the initial values and structure of the data inside a new instance of the class - this is very similar to **constructors** in other languages, so the term is often used in Python too. The `__init__` method is called every time we create a new instance of the class. The `__init__` method ensures that object construction is consistent by providing shared initialization rules for all objects.
 
-## Why Constructors Matter
+The argument `self` refers to the instance on which we are calling the method and gets filled in automatically by Python. We can use `self` to assign attributes to the object. Data encapsulated within our `Patient` class includes the patient ID, and a list of their inflammation values. In the initialiser method, we set an object’s attributes to the values provided. Attributes are typically hidden (encapsulated) internal object details ensuring that access to data is protected from unintended changes. They are manipulated internally by the class, which, in addition, can expose certain functionality as public behavior of the class to allow other objects to interact with this class’ instances.
 
-- `__init__` enforces consistent object creation.
-- Shared initialization rules reduce downstream errors.
-- Attributes become explicit and discoverable.
+## Creating Objects from a Class
 
-> ✅ Constructors improve consistency and readability.
-
-# Methods and State
-
-## Add Behavior with Methods
+Once we have defined a class, we can create objects of that class. Each object can have its own unique data.
 
 ```{python}
-class PatientRecord:
+patient_1 = Patient("P001", [0, 1, 3, 2, 1])
+print(patient_1.patient_id)
+print(patient_1.inflammation_values)
+```
+
+```{python}
+patient_2 = Patient("P002", [0, 2, 2, 1, 0])
+print(patient_2.patient_id)
+print(patient_2.inflammation_values)
+```
+
+```{python}
+print(type(patient_1))
+print(patient_1)
+```
+
+::: {.callout-tip}
+A class is a template for constructing objects. An object is one concrete instance of a class.
+:::
+
+
+## Adding Methods
+
+In addition to representing a piece of structured data
+(e.g. an object that has an id and the lists with timestamps and magnitude observations),
+a class can also provide a set of functions, or **methods**,
+which describe the **behaviours** of the data encapsulated in the instances of that class.
+To define the behaviour of a class we add functions which operate on the data the class contains.
+These functions are the member functions or methods.
+
+Methods on classes are the same as normal functions, except that they live inside a class and have an extra first parameter `self`. Using the name `self` is not strictly necessary, but is a very strong convention - it is extremely rare to see any other name chosen. When we call a method on an object, the value of `self` is automatically set to this object - hence the name. As we saw with the `__init__` method previously, we do not need to explicitly provide a value for the `self` argument, this is done for us by Python.
+
+```{python}
+class Patient:
     def __init__(self, patient_id, inflammation_values):
         self.patient_id = patient_id
         self.inflammation_values = inflammation_values
@@ -71,54 +98,186 @@ class PatientRecord:
     def mean_inflammation(self):
         return sum(self.inflammation_values) / len(self.inflammation_values)
 
-    def max_inflammation(self):
-        return max(self.inflammation_values)
-
-
-p1 = PatientRecord("P001", [0, 1, 3, 2, 1])
-print(p1.mean_inflammation())
-print(p1.max_inflammation())
+patient = Patient("P003", [0, 1, 3, 2, 1])
+print(patient.mean_inflammation())
 ```
 
-> 🧠 Methods let data and analysis logic travel together.
 
-## Manage a Collection of Objects
+### Dunder Methods
+
+Why is the `__init__` method not called `init`?
+There are a few special method names that we can use
+which Python will use to provide a few common behaviours,
+each of which begins and ends with a **d**ouble-**under**score,
+hence the name **dunder method**.
+
+When writing your own Python classes,
+you'll almost always want to write an `__init__` method,
+but there are a few other common ones you might need sometimes.
+You may have noticed in the code above that the method `print(p1)`
+returned `<__main__.Patient object at 0x7fd7e61b73d0>`,
+which is the string representation of the `patient` object.
+We may want the print statement to display the patients's id instead.
+We can achieve this by overriding the `__str__` method of our class.
 
 ```{python}
-class TrialSummary:
+class Patient:
+    def __init__(self, patient_id, inflammation_values):
+        self.patient_id = patient_id
+        self.inflammation_values = inflammation_values
+
+    def __str__(self):
+      return self.patient_id
+
+patient = Patient("P004", [0, 3, 5, 9, 2])
+print(patient)
+```
+
+These dunder methods are not usually called directly,
+but rather provide the implementation of some functionality we can use -
+we didn't call `patient.__str__()`,
+but it was called for us when we did `print(star)`.
+Some we see quite commonly are:
+
+- `__str__` - converts an object into its string representation, used when you call `str(object)` or `print(object)`.
+- `__getitem__` - Accesses an object by key, this is how `list[x]` and `dict[x]` are implemented
+- `__len__` - gets the length of an object when we use `len(object)` - usually the number of items it contains
+
+There are many more described in the Python documentation,
+but it’s also worth experimenting with built in Python objects to
+see which methods provide which behaviour.
+For a more complete list of these special methods,
+see the [Special Method Names](https://docs.python.org/3/reference/datamodel.html#special-method-names)
+section of the Python documentation.
+
+
+::: {.callout-note}
+## Class and Static Methods
+
+Sometimes, the function we're writing doesn't need access to
+any data belonging to a particular object.
+For these situations, we can instead use a **class method** or a **static method**.
+Class methods have access to the class that they're a part of,
+and can access data on that class -
+but do not belong to a specific instance of that class,
+whereas static methods have access to neither the class nor its instances.
+
+By convention, class methods use `cls` as their first argument instead of `self` -
+this is how we access the class and its data,
+just like `self` allows us to access the instance and its data.
+Static methods have neither `self` nor `cls`
+so the arguments look like a typical free function.
+These are the only common exceptions to using `self` for a method's first argument.
+
+Both of these method types are created using **decorators** -
+for more information see
+the [classmethod](https://docs.python.org/3/library/functions.html#classmethod)
+and [staticmethod](https://docs.python.org/3/library/functions.html#staticmethod)
+decorator sections of the Python documentation.
+:::
+
+
+
+
+
+### Properties
+
+The final special type of method we will introduce is a **property**.
+Properties are methods which behave like data -
+when we want to access them, we do not need to use brackets to call the method manually.
+
+```{python}
+class Patient:
+    def __init__(self, patient_id, inflammation_values):
+        self.patient_id = patient_id
+        self.inflammation_values = inflammation_values
+
+    @property
+    def last_observation(self):
+        return self.inflammation_values[-1]
+
+patient = Patient("P001", [0, 4, 1, 2, 0])
+last_observation = patient.last_observation
+print(last_observation)
+```
+
+
+You may recognise the `@` syntax from the `classmethod` and `staticmethod` documentation above -
+`property` is another example of a **decorator**.
+In this case the `property` decorator is taking the `last_observation` function
+and modifying its behaviour,
+so it can be accessed as if it were a normal attribute.
+It is also possible to make your own decorators, but we won't cover it here.
+
+
+
+
+## Relationships Between Classes
+
+We now have a language construct for grouping data and behaviour
+related to a single conceptual object.
+The next step we need to take is to describe the relationships between the concepts in our code.
+
+There are two fundamental types of relationship between objects
+which we need to be able to describe:
+
+1. Ownership - x **has a** y - this is **composition**
+2. Identity - x **is a** y - this is **inheritance**
+
+### Composition
+
+In object oriented programming, we can make things components of other things.
+
+We often use **composition** where we can say 'x *has a* y' -
+for example,
+we might want to say that a trial _has_ a patient. For our current class example,
+it will look like this:
+
+```{python}
+class Trial:
     def __init__(self):
-        self.records = []
+        self.patients = []
 
-    def add_record(self, record):
-        self.records.append(record)
+    def add_patient(self, patient):
+        self.patients.append(patient)
 
+    @property
     def patient_count(self):
-        return len(self.records)
+        return len(self.patients)
 
 
-summary = TrialSummary()
-summary.add_record(PatientRecord("P001", [0, 1, 3, 2, 1]))
-summary.add_record(PatientRecord("P002", [0, 2, 2, 1, 0]))
-print(summary.patient_count())
+trial = Trial()
+trial.add_patient(Patient("P001", [0, 1, 3, 2, 1]))
+trial.add_patient(Patient("P002", [0, 2, 2, 1, 0]))
+print(trial.patient_count)
 ```
 
-> 📚 Encapsulation helps structure larger workflows cleanly.
+Now we're using a composition of two custom classes to
+describe the relationship between two types of entity in the system that we're modelling. The benefit of this 
+approach is that we can create a new class called e.g. `Hospital`, which has its own analysis methods that
+differ from those of the class `Trial`. The implementation of the `Hospital` class will be different, but it can
+still have `Patient`s.
 
-# Reuse Through Inheritance
+### Inheritance
 
-## Extend a Base Class
+The other type of relationship used in object oriented programming is **inheritance**.
+Inheritance is about data and behaviour shared by classes,
+because they have some shared identity - 'x *is a* y'.
+If class `X` inherits from (*is a*) class `Y`,
+we say that `Y` is the **superclass** or **parent class** of `X`,
+or `X` is a **subclass** of `Y`.
+
+Extending the previous example, we can have patients given a placebo, and patients given the treatment. `TreatedPatient`s will benefit from an attribute representing the dose they have been assigned, while `PlaceboPatient`s can have an attribute representing the type of placebo administered such as "sugar pill" or "saline" to track experimental controls. Instead of writing these
+two classes completely independently, we can make them both the subclasses of the class `Patient`.
+
+To write our class in Python,
+we used the `class` keyword, the name of the class,
+and then a block of the functions that belong to it.
+If the class **inherits** from another class,
+we include the parent class name in brackets.
 
 ```{python}
-class PatientRecord:
-    def __init__(self, patient_id, inflammation_values):
-        self.patient_id = patient_id
-        self.inflammation_values = inflammation_values
-
-    def mean_inflammation(self):
-        return sum(self.inflammation_values) / len(self.inflammation_values)
-
-
-class TreatedPatientRecord(PatientRecord):
+class TreatedPatient(Patient):
     def __init__(self, patient_id, inflammation_values, dose_mg):
         super().__init__(patient_id, inflammation_values)
         self.dose_mg = dose_mg
@@ -126,17 +285,137 @@ class TreatedPatientRecord(PatientRecord):
     def dose_label(self):
         return f"{self.dose_mg} mg"
 
-
-treated = TreatedPatientRecord("P010", [0, 1, 1, 0, 0], 50)
+treated = TreatedPatient("P010", [0, 1, 1, 0, 0], 50)
 print(treated.mean_inflammation())
 print(treated.dose_label())
 ```
 
-> 🧬 Inheritance supports reuse, but keep class hierarchies simple.
+In this example, `Patient` is a **parent class** (or **superclass**),
+and `TreatedPatient` is a **subclass**.
 
-# Design Guidance
+There's something else we need to add as well -
+Python doesn't automatically call the `__init__` method on the parent class
+if we provide a new `__init__` for our subclass,
+so we'll need to call it ourselves.
+This makes sure that everything that needs to be initialised on the parent class has been,
+before we need to use it.
+If we don't define a new `__init__` method for our subclass,
+Python will look for one on the parent class and use it automatically.
+This is true of all methods -
+if we call a method which doesn't exist directly on our class,
+Python will search for it among the parent classes.
+The order in which it does this search is known as the **method resolution order**.
 
-## When to Use Classes
+The line `super().__init__(patient_id, inflammation_values)` gets the parent class,
+then calls the `__init__` method,
+providing the `patient_id` and `inflammation_values` variables that `Patient.__init__` requires.
+This is quite a common pattern, particularly for `__init__` methods,
+where we need to make sure an object is initialised as a valid `X`,
+before we can initialise it as a valid `Y` -
+e.g. a valid `Patient` must have a `patient_id`,
+before we can properly initialise a `TreatedPatient` model with their data.
+
+::: {.callout-note}
+### Composition vs Inheritance
+
+When deciding how to implement a model of a particular system,
+you often have a choice of either composition or inheritance,
+where there is no obviously correct choice.
+For example, instead of creating `TreatedPatient` and `PlaceboPatient` classes that inherit from `Patient`, we could have introduced a `TreatmentType` class that stores the details of the treatment given to a patient. In this alternative design, a `Patient` would simply have a `TreatmentType` object associated with them, rather than creating specialized subtypes of patient.
+
+Both of these would be perfectly valid models and would work for most purposes.
+However, unless there's something about how you need to use the model
+which would benefit from using a model based on inheritance,
+it's usually recommended to opt for **composition over inheritance**.
+This is a common design principle in the object oriented paradigm and is worth remembering,
+as it's very common for people to overuse inheritance once they've been introduced to it.
+
+For much more detail on this see the
+[Python Design Patterns guide](https://python-patterns.guide/gang-of-four/composition-over-inheritance/).
+:::
+
+::: {.callout-note}
+## Multiple Inheritance
+
+**Multiple Inheritance** is when a class inherits from more than one direct parent class.
+It exists in Python, but is often not present in other Object Oriented languages.
+
+```{python}
+class Printer:
+    pass
+
+class Scanner:
+    pass
+
+class AllInOnePrinter(Printer, Scanner):
+    pass
+```
+
+Although this might seem useful,
+it's best to avoid it unless you're sure it's the right thing to do,
+due to the complexity of the inheritance heirarchy.
+Often using multiple inheritance is a sign you should instead be using composition.
+
+```{python}
+class Printer:
+    pass
+
+class Scanner:
+    pass
+
+class AllInOnePrinter:
+    def __init__(self):
+        self.printer = Printer()
+        self.scanner = Scanner()
+
+    def print_document(self):
+        self.printer.print_document()
+
+    def scan_document(self):
+        self.scanner.scan_document()
+```
+:::
+
+
+
+
+## Special Classes in Python
+
+You may not have realised, but you should already be familiar with
+some of the classes that come bundled as part of Python, for example:
+
+```{python}
+my_list = [1, 2, 3]
+my_dict = {1: '1', 2: '2', 3: '3'}
+my_set = {1, 2, 3}
+
+print(type(my_list))
+print(type(my_dict))
+print(type(my_set))
+```
+
+Lists, dictionaries and sets are a slightly special type of class,
+but they behave in much the same way as a class we might define ourselves:
+
+- They each hold some data (**attributes** or **state**).
+- They also provide some methods describing the behaviours of the data -
+  what can the data do and what can we do to the data?
+
+The behaviours we may have seen previously include:
+
+- Lists can be appended to
+- Lists can be indexed
+- Lists can be sliced
+- Key-value pairs can be added to dictionaries
+- The value at a key can be looked up in a dictionary
+- The union of two sets can be found (the set of values present in any of the sets)
+- The intersection of two sets can be found (the set of values present in all of the sets)
+
+
+
+## Design Guidance
+
+### When to Use Classes
 
 Use classes when you repeatedly need:
 
@@ -144,7 +423,7 @@ Use classes when you repeatedly need:
 - related operations attached to the same entity
 - clearer interfaces for larger pipelines
 
-## When Functions Are Better
+### When Functions Are Better
 
 Prefer simple functions when logic is:
 
@@ -152,7 +431,9 @@ Prefer simple functions when logic is:
 - stateless
 - independent of object lifecycle
 
-> ⚖️ Choose the simplest design that stays maintainable.
+::: {.callout-tip}
+Choose the simplest design that stays maintainable.
+:::
 
 # Practice and Wrap-Up
 
