@@ -54,3 +54,10 @@ Applied Python introduces core programming and data analysis workflows for early
 - [Code of Conduct](CODE_OF_CONDUCT.qmd)
 - [License](LICENSE.qmd)
 - [Authors](AUTHORS.qmd)
+
+::: {.callout-note appearance="minimal"}
+### Attribution
+These lessons are derived from materials developed by the [Software Carpentry](https://software-carpentry.org) project.
+
+The original content is licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) license: [https://github.com/swcarpentry/python-novice-inflammation/blob/main/LICENSE.md](https://github.com/swcarpentry/python-novice-inflammation/blob/main/LICENSE.md)
+:::

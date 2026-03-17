@@ -384,3 +384,10 @@ The concepts in this module connect directly to practical data handling and expl
 | Linear Regression | [`LinearRegression`](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html) | Provides a baseline model for trend estimation. |
 | Model Evaluation | [Regression metrics](https://scikit-learn.org/stable/modules/model_evaluation.html#regression-metrics) | Metrics quantify prediction quality and model fit. |
 | Comparative Plotting | [Matplotlib subplots](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html) | Side-by-side plots improve analytical judgment. |
+
+::: {.callout-note appearance="minimal"}
+### Attribution
+This lesson is derived from materials developed by the [Software Carpentry](https://software-carpentry.org) project.
+
+The original content is licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) license: [https://github.com/swcarpentry/python-novice-inflammation/blob/main/LICENSE.md](https://github.com/swcarpentry/python-novice-inflammation/blob/main/LICENSE.md)
+:::

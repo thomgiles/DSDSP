@@ -39,7 +39,7 @@ metadata:
 
 > 🔧 Activities spaced throughout the session  
 
-# Introduction
+## Variables and Data Types
 
 Any Python interpreter can be used as a calculator:
 
@@ -49,9 +49,7 @@ Any Python interpreter can be used as a calculator:
 
 This is great but not very interesting.
 
-# Variables and Data Types
-
-## Variables
+### Variables
 
 To do anything useful with data, we need to assign its value to a *variable*. In Python, we can [assign](../learners/reference.qmd#assign) a value to a [variable](../learners/reference.qmd#variable), using the equals sign `=`. For example, we can track the weight of a patient who weighs 60 kilograms by assigning the value `60` to a variable `weight_kg`:
 
@@ -59,9 +57,9 @@ To do anything useful with data, we need to assign its value to a *variable*. In
 weight_kg = 60
 ```
 
-> From now on, whenever we use `weight_kg`, Python will substitute the value we assigned to it. In layperson's terms, **a variable is a name for a value**.
+From now on, whenever we use `weight_kg`, Python will substitute the value we assigned to it. In layperson's terms, **a variable is a name for a value**.
 
-## Naming Variables
+### Naming Variables
 
 In Python, variable names:
 
@@ -74,7 +72,7 @@ This means that, for example:
 - `weight0` is a valid variable name, whereas `0weight` is not
 - `weight` and `Weight` are different variables
 
-## Types of Data
+### Types of Data
 
 Python knows various types of data. Three common ones are:
 
@@ -96,7 +94,7 @@ To create a string, we add single or double quotes around some text. To identify
 patient_id = '001'
 ```
 
-## Using Variables in Python
+### Using Variables
 
 Once we have data stored with variable names, we can make use of it in calculations. We may want to store our patient's weight in pounds as well as kilograms:
 
@@ -110,7 +108,7 @@ We might decide to add a prefix to our patient identifier:
 patient_id = 'inflam_' + patient_id
 ```
 
-# Built-in Functions
+## Built-in Functions
 
 To carry out common tasks with data and variables in Python, the language provides us with several built-in [functions](../learners/reference.qmd#function). To display information to the screen, we use the `print` function:
 
@@ -119,13 +117,9 @@ print(weight_lb)
 print(patient_id)
 ```
 
-## Calling Functions
-
-When we want to make use of a function, referred to as calling the function, we follow its name by parentheses. The parentheses are important: if you leave them off, the function doesn't actually run!
+When we want to make use of a function, referred to as **calling** the function, we follow its name by parentheses. The parentheses are important: if you leave them off, the function doesn't actually run!
 
 Sometimes you will include values or variables inside the parentheses for the function to use. In the case of `print`, we use the parentheses to tell the function what value we want to display. We will learn more about how functions work and how to create our own in later episodes.
-
-## Using the `print` Function
 
 We can display multiple things at once using only one `print` call:
 
@@ -133,9 +127,7 @@ We can display multiple things at once using only one `print` call:
 print(patient_id, 'weight in kilograms:', weight_kg)
 ```
 
-> 🧪 Run this example and try changing the values in parentheses.
-
-## Nesting Functions
+> 🧪 Try changing the values in parentheses.
 
 We can also call a function inside of another [function call](../learners/reference.qmd#function-call). For example, Python has a built-in function called `type` that tells you a value's data type:
 
@@ -144,17 +136,47 @@ print(type(60.3))
 print(type(patient_id))
 ```
 
-## Evaluating Expressions Inside `print`
+Use `type()` when you are unsure what kind of value a variable holds. This can be used to investigate subtle bugs.
+
+:::: {.callout-task}
+#### Challenge: Inspecting Types
+
+::: {.panel-tabset}
+##### Task
+What are the data types of the following variables?
+
+```{python}
+planet = 'Earth'
+apples = 5
+distance = 10.5
+```
+
+##### Solution
+```{python}
+planet = 'Earth'
+apples = 5
+distance = 10.5
+
+print(type(planet))
+print(type(apples))
+print(type(distance))
+```
+:::
+:::: 
+
 
 We can also do arithmetic with variables right inside the `print` function:
 
 ```{python}
+# There are 2.2 pounds per kilogram
 print('weight in pounds:', 2.2 * weight_kg)
 ```
 
-> 🧪 Run this example and try changing the arithmetic formula.
+> 🧪 Try changing the arithmetic formula.
 
-## Reassigning Variables
+::: {.callout-tip}
+Everything in a line of code following the '#' symbol is a [comment](../learners/reference.qmd#comment) that is ignored by Python. Comments allow programmers to leave explanatory notes for other programmers or their future selves.
+:::
 
 The above command, however, did not change the value of `weight_kg`:
 
@@ -169,59 +191,38 @@ weight_kg = 65.0
 print('weight in kilograms is now:', weight_kg)
 ```
 
-> 🧪 Run this example and try changing the value of `weight_kg`.
+> 🧪 Try changing the value of `weight_kg`.
 
-## Getting Help
+### Getting Help
 
 Use the built-in function `help` to get help for a function. Every built-in function has extensive [documentation that can also be found online](https://docs.python.org/3/library/index.html).
 
 ```{python}
 help(print)
 ```
-> This help message (the function's "docstring") includes a usage statement, a list of parameters accepted by the function, and their default values if they have them.
+This help message (the function's "docstring") includes a usage statement, a list of parameters accepted by the function, and their default values if they have them.
 
-## Getting Help from Error Messages
+::: {.callout-tip}
+`help()` and documentation are useful when syntax or parameters are unclear.
+:::
 
-It is normal to encounter error messages while programming, whether you are learning for the first time or have been programming for many years. [We will discuss error messages in more detail later](./08-errors_debugging_and_defensive_programming.qmd).
-
-For now, let's explore how people use them to get more help when they are stuck with their Python code.
-
-> 💡 `help()` and docs are your fastest path when syntax or parameters are unclear.
-
-## Getting Help from Other Sources
-
-When you are blocked, use a reliable escalation path:
-
-- Search the exact final line of the error message.
-- Add `python` plus a short description of your goal.
-- Check [StackOverflow](https://stackoverflow.com/questions) for ranked answers to similar problems.
-- Ask an experienced colleague and share your exact code and error text.
-
-If you use code from elsewhere, read it first and confirm you understand what it does before running it.
-
-> 🔎 Use external help to learn, not just to copy.
->
-> [We will discuss more debugging strategies in greater depth later in the lesson](./08-errors_debugging_and_defensive_programming.qmd).
-
-# Variables as Sticky Notes
+:::: {.callout-note appearance="simple"}
+## Variables as Sticky Notes
 
 A variable in Python is analogous to a sticky note with a name written on it: assigning a value to a variable is like putting that sticky note on a particular value.
 
 ![](fig/python-sticky-note-variables-01.svg){alt='Value of 65.0 with weight\_kg label stuck on it'}
 
-> 💡 Assignments link names to objects.
-
-## Assigning Related Variables
+::: {.callout-tip}
+Assignment links a name to a value stored in memory.
+:::
 
 Using this analogy, we can investigate how assigning a value to one variable does **not** change values of other, seemingly related, variables. For example, let's store the subject's weight in pounds in its own variable:
 
 ```{python}
-# There are 2.2 pounds per kilogram
 weight_lb = 2.2 * weight_kg
 print('weight in kilograms:', weight_kg, 'and in pounds:', weight_lb)
 ```
-
-> 💡 Everything in a line of code following the '#' symbol is a [comment](../learners/reference.qmd#comment) that is ignored by Python. Comments allow programmers to leave explanatory notes for other programmers or their future selves.
 
 ![](fig/python-sticky-note-variables-02.svg){alt='Value of 65.0 with weight\_kg label stuck on it, and value of 143.0 with weight\_lb label stuck on it'}
 
@@ -234,10 +235,17 @@ print('weight in kilograms is now:', weight_kg, 'and weight in pounds is still:'
 
 ![](fig/python-sticky-note-variables-03.svg){alt='Value of 100.0 with label weight_kg stuck on it, and value of 143.0 with label weight_lb stuck on it'}
 
-> 💡 Reassigning one variable does not automatically recalculate other variables.
+::: {.callout-tip}
+Reassigning one variable does not automatically recalculate other variables.
+:::
 
-## Trace Variable Assignment Step by Step
+::::
 
+:::: {.callout-task}
+#### Challenge: Predict Variable Values
+
+::: {.panel-tabset}
+##### Task
 Before running this code, try to predict the values of `mass` and `age` when each line is run.
 
 ```{python}
@@ -247,48 +255,43 @@ mass = mass * 2.0
 age = age - 20
 ```
 
-> 🧪 Run one line at a time and track each variable.
 
-## Verify Your Prediction
+##### Hints
 
-```{python}
-mass = 47.5
-age = 122
-mass = mass * 2.0
-age = age - 20
-print(mass, age)
-```
+On each line, the right-hand side is evaluated first, then the variable is updated.
 
-> 💡 On each line, the right-hand side is evaluated first, then the variable is updated.
+Run one line at a time and track each variable.
 
-## Multiple Assignments
+
+##### Solution
+
+`mass` holds a value of 47.5, `age` does not exist
+
+`mass` still holds a value of 47.5, `age` holds a value of 122
+
+`mass` now has a value of 95.0, `age`'s value is still 122
+
+`mass` still has a value of 95.0, `age` now holds 102
+
+:::
+::::
+
+
+### Multiple Assignments
 
 Python can assign multiple variables in one line. This may be useful for swapping values without introducing an extra variable.
 
 ```{python}
 first, second = 'Grace', 'Hopper'
-third, fourth = second, first
-print(third, fourth)
+print(first, second)
 ```
-
-> ✅ Match the number of variables on the left to the number of values on the right.
-
-## Inspecting Types
-
-Use `type()` when you are unsure what kind of value a variable holds. These can be used to investigate subtle bugs in arithmetic, comparisons, or string operations.
 
 ```{python}
-planet = 'Earth'
-apples = 5
-distance = 10.5
-
-print(type(planet))
-print(type(apples))
-print(type(distance))
+first, second = second, first
+print(first, second)
 ```
 
-
-# Lists
+## Lists
 
 A [list](../learners/reference.qmd#list) lets you store many related values in one variable. Use lists when order matters and values belong together. For example, daily temperatures, sample IDs, or repeated measurements from one experiment.
 
@@ -299,7 +302,7 @@ odds = [1, 3, 5, 7]
 print('odds are:', odds)
 ```
 
-## Read List Elements by Position
+### Read List Elements by Position
 
 We can access elements of a list using indices. Indices are positions of elements in the list. In Python indices start at `0`, so the first element has an index of `0` and the fourth has an index of `3`.
 
@@ -314,7 +317,7 @@ print('second to last element:', odds[-2])
 
 Programming languages like Fortran, MATLAB and R start counting at 1 because that's what human beings have done for thousands of years. Languages in the C family (including C++, Java, Perl, and Python) count from 0 because it represents an offset from the first value in the array (the second value is offset by one index from the first value). This is closer to the way that computers represent arrays (if you are interested in the historical reasons behind counting indices from zero, you can read [Mike Hoye's blog post](https://exple.tive.org/blarg/2013/10/22/citation-needed/)).
 
-## Update List Elements In Place
+### Update List Elements In Place
 
 Lists are [mutable](../learners/reference.qmd#mutable), so single elements can be edited. The change happens directly in the existing list object.
 
@@ -325,7 +328,7 @@ names[1] = 'Darwin'  # correct the name
 print('after:', names)
 ```
 
-## Why Strings Behave Differently
+### Why Strings Behave Differently
 
 Strings are [immutable](../learners/reference.qmd#immutable) in Python. You can replace a whole string with a new one, but you cannot change individual characters of an existing string in place. This distinction between mutable and immutable types appears throughout Python.
 
@@ -334,9 +337,11 @@ name = 'Darwin'
 name[0] = 'd'
 ```
 
-> ⚠️ This raises a `TypeError` because strings do not support item assignment.
+::: {.callout-caution}
+This raises a `TypeError` because strings do not support item assignment.
+:::
 
-## Mutability and Side Effects
+### Mutability and Side Effects
 
 - Strings and numbers are immutable.
 - Lists are mutable.
@@ -351,9 +356,11 @@ print('mild salsa:', mild_salsa)
 print('hot salsa:', hot_salsa)
 ```
 
-> ⚠️ Both variables changed because they refer to the same list in memory.
+::: {.callout-note}
+Both variables changed because they refer to the same list in memory.
+:::
 
-## Copy Before Editing
+### Copy Before Editing
 
 Create an explicit copy when you need independent lists.
 
@@ -365,13 +372,13 @@ print('mild salsa:', mild_salsa)
 print('hot salsa:', hot_salsa)
 ```
 
-> ✅ `list(existing_list)` is a clear way to avoid accidental bugs from shared references.
-
 This is often the safest default when learners are still building confidence with references because code which modifies data in place can be more difficult to understand. However it is often more efficient to modify large data structures in place than to create a modified copy for every change.
 
-> 💡 Mutability is a key idea for debugging surprising state changes.
+::: {.callout-note}
+Mutability is a key idea for debugging surprising state changes.
+:::
 
-## Nested Lists
+### Nested Lists
 
 A list can contain any Python variables, including other lists.
 
@@ -402,8 +409,6 @@ print(veg[2])
 print(veg[0])
 ```
 
-## Select One Value with Two Indices
-
 Use two indices for nested lists. Think of the first index as selecting a row and the second as selecting a position inside that row.
 
 ```{python}
@@ -413,9 +418,11 @@ print(veg[1][2])
 
 ![](fig/04_groceries_veg00.png){alt='Nested list index map where first index selects row and second index selects basket in that row.'}
 
-> 💡 Pattern: `nested_list[row][column]`.
+::: {.callout-tip}
+Pattern: `nested_list[row][column]`.
+:::
 
-## Lists Can Hold Mixed Types
+### Lists Can Hold Mixed Types
 
 Lists can contain values of different data types.
 
@@ -424,9 +431,11 @@ sample_ages = [10, 12.5, 'Unknown']
 print(sample_ages)
 ```
 
-> ⚠️ This flexibility is useful, but if not intentional, can make debugging harder.
+::: {.callout-caution}
+This flexibility is useful, but if not intentional, can make debugging harder.
+:::
 
-## Modify Lists with Methods
+### Modifying Lists in Place
 
 Common methods to modify lists in place include `append`, `pop`, `reverse`, and `sort`. Use `append` to add one item, `pop` to remove and return an item, `reverse` to flip the order, and `sort` to sort the list in place.
 
@@ -445,9 +454,7 @@ odds.sort()
 print('odds after sorting:', odds)
 ```
 
-> 🔧 These methods change the original list in place.
-
-## Method Calls Follow the Same Reference Rules
+### Method Calls Follow the Same Reference Rules
 
 If two names refer to one list, method calls through either name change that shared list.
 
@@ -459,7 +466,7 @@ print('primes:', primes)
 print('odds:', odds)
 ```
 
-## Make an Independent Copy First
+### Make an Independent Copy First
 
 ```{python}
 odds = [3, 5, 7]
@@ -469,11 +476,13 @@ print('primes:', primes)
 print('odds:', odds)
 ```
 
-> ✅ Copy first whenever one list should change and the other should stay unchanged.
+::: {.callout-tip}
+Copy first whenever one list should change and the other should stay unchanged.
+:::
 
-# Slicing
+## Slicing
 
-## Slice Sequences with `start:stop`
+### Slice Sequences with `start:stop`
 
 A section of a list or string is called a [slice](../learners/reference.qmd#slice). To slice a list or string, we use a `start` index and a `stop` index. The start index is included, but the stop index is excluded. This \"include start, exclude stop\" rule is consistent across strings, lists, and other data types that can be sliced.
 
@@ -489,7 +498,7 @@ last = chromosomes[-1]
 print(group, species, autosomes, last)
 ```
 
-## Implied Bounds
+### Implied Bounds
 
 If you want to take a slice from the beginning of a sequence, you can omit the first index in the range.
 
@@ -506,30 +515,61 @@ sond = months[8:]
 print(sond)
 ```
 
-> 💡 Use `[:stop]` for "from start" and `[start:]` for "to end".
+::: {.callout-tip}
+Use `[:stop]` for "from the beginning" and `[start:]` for "to the end".
+:::
 
+:::: {.callout-task}
+#### Challenge: Slicing strings
 
-## Challenge: Slicing strings
+::: {.panel-tabset}
+##### Task
+
 ```{python}
 element = 'oxygen'
 print('first three characters:', element[0:3])
 print('last three characters:', element[3:6])
 ```
+
 - What is the value of `element[:4]`?
-- What about `element[4:]`? Or `element[:]`?
+- What about `element[4:]`?
+- Or `element[:]`?
 - What is `element[-1]`?
 - What is `element[-2]`?
 - Explain what `element[1:-1]` does.
 
-## Solution: Slicing strings
+##### Solution
+
+```{python}
+element = 'oxygen'
+print(element[:4])
+print(element[4:])
+print(element[:])
+print(element[-1])
+print(element[-2])
+print(element[1:-1])
+```
 
 `element[1:-1]` creates a substring from index 1 up to (not including) the final index, effectively removing the first and last letters from 'oxygen'
+:::
+::::
 
-## Challenge: Slicing strings from the end
+:::: {.callout-task}
+#### Challenge: Slicing strings from the end
 
-How can we rewrite the slice for getting the last three characters of `element`, so that it works even if we assign a different string to `element`? Test your solution with the following strings: `carpentry`, `clone`, `hi`.
+::: {.panel-tabset}
+##### Task
 
-## Solution: Slicing strings from the end
+```{python}
+element = 'oxygen'
+print('last three characters:', element[3:6])
+```
+
+How can we rewrite the slice for getting the last three characters of `element`, so that it works even if we assign a different string to `element`?
+
+Test your solution with the following strings: `carpentry`, `clone`, `hi`.
+
+##### Solution
 
 ```{python}
 element = 'oxygen'
@@ -542,9 +582,16 @@ element = 'hi'
 print('last three characters:', element[-3:])
 ```
 
-## Challenge: Slicing lists from the end
+:::
+::::
 
-Select the last 4 rows of the list. Aim for a solution that still works if the list length changes.
+:::: {.callout-task}
+#### Challenge: Slicing lists from the end
+
+::: {.panel-tabset}
+##### Task
+
+Select the last 2 rows of the list. Aim for a solution that still works if the list length changes.
 
 ```{python}
 list_for_slicing = [
@@ -556,13 +603,16 @@ list_for_slicing = [
 ]
 ```
 
-## Solution: Slicing lists from the end
+##### Solution
 
 ```{python}
-list_for_slicing[-4:]
+list_for_slicing[-2:]
 ```
 
-## Add a `step` for non-continuous slices
+:::
+::::
+
+### Add a `step` for non-continuous slices
 
 Use `start:stop:step` to sample at regular intervals. The third value `step` controls the spacing between selected elements.
 
@@ -572,7 +622,7 @@ subset = primes[0:12:3]
 print(subset)
 ```
 
-Keep the same `step` but set the `start` index later to select a different pattern.
+We can keep the same `step` but set the `start` index later to select a different pattern.
 
 ```{python}
 primes = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37]
@@ -580,7 +630,11 @@ subset = primes[2:12:3]
 print(subset)
 ```
 
-## Challenge: Every other character
+:::: {.callout-task}
+#### Challenge: Every other character
+
+::: {.panel-tabset}
+##### Task
 
 Create a slice that returns every second character:
 
@@ -588,18 +642,21 @@ Create a slice that returns every second character:
 beatles = "In an octopus's garden in the shade"
 ```
 
-## Solution: Every other character
+##### Solution
 
 ```{python}
 beatles[0:35:2]
 beatles[::2]
 ```
 
-> ✅ `::2` is a concise way to take every second value across the full sequence.
+`::2` is a concise way to take every second value across the full sequence.
 
-# Operator Overloading
+:::
+::::
 
-## Operator Meaning Depends on Data Type
+
+
+## Operator overloading
 
 For numbers, the `+` and `*` operators perform arithmetic.
 However, for lists and strings, they perform different operations: `+` concatenates and `*` repeats.
@@ -611,7 +668,19 @@ print("odds + evens:", odds + evens)
 print("odds * 3:", odds * 3)
 ```
 
-## Predict Before You Run
+::: {.callout-tip}
+The same operator symbol can implement different behavior for different data types.
+:::
+
+:::: {.callout-task}
+#### Challenge: Operator Overloading
+
+::: {.panel-tabset}
+##### Task
+
+```{python}
+counts = [2, 4, 6, 8, 10]
+```
 
 Which output matches `counts * 2`?
 
@@ -620,21 +689,25 @@ Which output matches `counts * 2`?
 3. `[[2, 4, 6, 8, 10], [2, 4, 6, 8, 10]]`
 4. `[2, 4, 6, 8, 10, 4, 8, 12, 16, 20]`
 
+
+##### Solution
+
+`counts * 2` replicates elements of the list and concatenates them together:
+
 ```{python}
 counts = [2, 4, 6, 8, 10]
-repeats = counts * 2
-print(repeats)
+print(counts * 2)
 ```
 
-## Explain the Result
-
-`counts * 2` repeats list elements in order. It is equivalent to:
+It is equivalent to `counts + counts`::
 
 ```{python}
 counts + counts
 ```
 
-> 💡 The same operator symbol can implement different behavior for different data types.
+:::
+::::
+
 
 # Further Information
 
@@ -676,3 +749,11 @@ The concepts in this module connect directly to practical data handling and expl
 | Variables and Assignment | [Simple statements](https://docs.python.org/3/reference/simple_stmts.html) | Correct assignment is essential for tracking program state. |
 | Built-in Data Types | [Built-in Types](https://docs.python.org/3/library/stdtypes.html) | Choosing the right type improves correctness and readability. |
 | Indexing and Slicing | [Sequence Types](https://docs.python.org/3/library/stdtypes.html#sequence-types-list-tuple-range) | Slicing is a core pattern for selecting and reshaping data. |
+
+
+::: {.callout-note appearance="minimal"}
+### Attribution
+This lesson is derived from materials developed by the [Software Carpentry](https://software-carpentry.org) project.
+
+The original content is licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) license: [https://github.com/swcarpentry/python-novice-inflammation/blob/main/LICENSE.md](https://github.com/swcarpentry/python-novice-inflammation/blob/main/LICENSE.md)
+:::

@@ -40,7 +40,7 @@ metadata:
 
 > 🔧 Activities spaced throughout the session  
 
-## Creating functions
+## Functions in Python
 
 At this point, we've seen that code can have Python make decisions about what it sees in our data. What if we want to convert some of our data, like taking a temperature in Fahrenheit and converting it to Celsius. We could write something like this for converting a single number
 
@@ -115,7 +115,7 @@ print('boiling point of water:', fahr_to_celsius(212), 'C')
 We've successfully called the function that we defined,
 and we have access to the value that we returned.
 
-## Composing functions
+### Composing functions
 
 Now that we've seen how to turn Fahrenheit into Celsius,
 we can also write the function to turn Celsius into Kelvin:
@@ -144,9 +144,12 @@ then combine them in ever-larger chunks to get the effect we want. Real-life fun
 to a few dozen lines --- but they shouldn't ever be much longer than that,
 or the next person who reads it won't be able to understand what's going on.
 
-> 🧩 Keep functions small and focused on one task.
+::: {.callout-tip}
+Keep functions small and focused on one task.
+:::
 
-## Variable scope
+
+### Variable scope
 
 In composing our temperature conversion functions, we created variables inside of those functions,
 `temp`, `temp_c`, `temp_f`, and `temp_k`.
@@ -182,7 +185,103 @@ temp_kelvin = fahr_to_kelvin(temp_fahr)
 print_temperatures()
 ```
 
-## Tidying up
+
+:::: {.callout-task}
+#### Challenge: Combining strings
+
+::: {.panel-tabset}
+##### Task
+
+"Adding" two strings produces their concatenation:
+`'a' + 'b'` is `'ab'`.
+Write a function called `fence` that takes two parameters called `original` and `wrapper`
+and returns a new string that has the wrapper character at the beginning and end of the original.
+A call to your function should look like this:
+
+```{python}
+print(fence('name', '*'))
+```
+
+##### Solution
+
+```{python}
+def fence(original, wrapper):
+    return wrapper + original + wrapper
+```
+
+:::
+::::
+
+
+:::: {.callout-task}
+#### Challenge: Selecting characters from strings
+
+::: {.panel-tabset}
+##### Task
+
+If the variable `s` refers to a string,
+then `s[0]` is the string's first character
+and `s[-1]` is its last.
+Write a function called `outer`
+that returns a string made up of just the first and last characters of its input.
+A call to your function should look like this:
+
+```{python}
+print(outer('helium'))
+```
+
+##### Solution
+
+```{python}
+def outer(input_string):
+    return input_string[0] + input_string[-1]
+```
+
+:::
+::::
+
+
+:::: {.callout-task}
+#### Challenge: Variables inside and outside functions
+
+::: {.panel-tabset}
+##### Task
+
+What does the following piece of code display when run --- and why?
+
+```{python}
+f = 0
+k = 0
+
+def f2k(f):
+    k = ((f - 32) * (5.0 / 9.0)) + 273.15
+    return k
+
+print(f2k(8))
+print(f2k(41))
+print(f2k(32))
+
+print(k)
+```
+
+##### Solution
+
+`k` is 0 because the `k` inside the function `f2k` doesn't know
+about the `k` defined outside the function. When the `f2k` function is called,
+it creates a [local variable](../learners/reference.qmd#local-variable)
+`k`. The function does not return any values
+and does not alter `k` outside of its local copy.
+Therefore the original value of `k` remains unchanged.
+Beware that a local `k` is created because `f2k` internal statements
+*affect* a new value to it. If `k` was only `read`, it would simply retrieve the
+global `k` value.
+
+:::
+::::
+
+
+
+### Tidying up
 
 Now that we know how to wrap bits of code up in functions,
 we can make our inflammation analysis easier to read and easier to reuse.
@@ -251,7 +350,51 @@ we can more easily read and understand what is happening in the `for` loop.
 Even better, if at some later date we want to use either of those pieces of code again,
 we can do so in a single line.
 
-## Testing functions
+
+
+:::: {.callout-task}
+#### Challenge: Return vs print
+
+::: {.panel-tabset}
+##### Task
+
+Note that `return` and `print` are not interchangeable.
+`print` is a Python function that *prints* data to the screen.
+It enables us, *users*, see the data.
+`return` statement, on the other hand, makes data visible to the program.
+Let's have a look at the following function:
+
+```{python}
+def add(a, b):
+    print(a + b)
+```
+
+**Question**: What will we see if we execute the following commands?
+
+```{python}
+A = add(7, 3)
+print(A)
+```
+
+##### Solution
+
+Python will first execute the function `add` with `a = 7` and `b = 3`,
+and, therefore, print `10`. However, because function `add` does not have a
+line that starts with `return` (no `return` "statement"), it will, by default, return
+nothing which, in Python world, is called `None`. Therefore, `A` will be assigned to `None`
+and the last line (`print(A)`) will print `None`. As a result, we will see:
+
+```
+10
+None
+```
+
+:::
+::::
+
+
+
+### Testing functions
 
 Once we start putting things in functions so that we can re-use them,
 we need to start testing that those functions are working correctly.
@@ -318,9 +461,11 @@ print('difference in standard deviations before and after:',
 Everything looks good,
 and we should probably get back to doing our analysis.
 
-> 🛡️ Tests catch mistakes early and make code safer.
+::: {.callout-tip}
+Tests catch mistakes early and make code safer.
+:::
 
-## Documenting functions
+### Documenting functions
 
 We have one more task first, though:
 we should write some [documentation](../learners/reference.qmd#documentation) for our function
@@ -374,7 +519,7 @@ def offset_mean(data, target_mean_value):
 help(offset_mean)
 ```
 
-## Defining defaults
+### Defining defaults
 
 We have passed parameters to functions in two ways:
 directly, as in `type(data)`,
@@ -487,7 +632,64 @@ first item in the list, but if we want the `','` to be assigned to the variable 
 we *do* have to provide `delimiter=` for the second parameter since `delimiter` is not
 the second parameter in the list.
 
-## Readable functions
+
+
+:::: {.callout-task}
+#### Challenge: Mixing default and non-default parameters
+
+::: {.panel-tabset}
+##### Task
+
+Given the following code:
+
+```{python}
+def numbers(one, two=2, three, four=4):
+    n = str(one) + str(two) + str(three) + str(four)
+    return n
+
+print(numbers(1, three=3))
+```
+
+- What do you expect will be printed?
+- What is actually printed?
+- What rule do you think Python is following?
+
+1. `1234`
+2. `one2three4`
+3. `1239`
+4. `SyntaxError`
+
+Given that, what does the following piece of code display when run?
+
+```{python}
+def func(a, b=3, c=6):
+    print('a: ', a, 'b: ', b, 'c:', c)
+
+func(-1, 2)
+```
+
+1. `a: b: 3 c: 6`
+2. `a: -1 b: 3 c: 6`
+3. `a: -1 b: 2 c: 6`
+4. `a: b: -1 c: 2`
+
+##### Solution
+
+Attempting to define the `numbers` function results in `4. SyntaxError`.
+The defined parameters `two` and `four` are given default values. Because
+`one` and `three` are not given default values, they are required to be
+included as arguments when the function is called and must be placed
+before any parameters that have default values in the function definition.
+
+The given call to `func` displays `a: -1 b: 2 c: 6`. -1 is assigned to
+the first parameter `a`, 2 is assigned to the next parameter `b`, and `c` is
+not passed a value, so it uses its default value 6.
+
+:::
+::::
+
+
+### Readable functions
 
 Consider these two functions:
 
@@ -532,86 +734,21 @@ programmer. If you need to revisit code that you wrote months ago and
 haven't thought about since then, you will appreciate the value of
 readable code!
 
-## Challenge: Combining strings
 
-"Adding" two strings produces their concatenation:
-`'a' + 'b'` is `'ab'`.
-Write a function called `fence` that takes two parameters called `original` and `wrapper`
-and returns a new string that has the wrapper character at the beginning and end of the original.
-A call to your function should look like this:
 
-```{python}
-print(fence('name', '*'))
-```
 
-### Solution: Combining strings
+:::: {.callout-task}
+#### Challenge: Rescaling an array
 
-```{python}
-def fence(original, wrapper):
-    return wrapper + original + wrapper
-```
-
-## Challenge: Return vs print
-
-Note that `return` and `print` are not interchangeable.
-`print` is a Python function that *prints* data to the screen.
-It enables us, *users*, see the data.
-`return` statement, on the other hand, makes data visible to the program.
-Let's have a look at the following function:
-
-```{python}
-def add(a, b):
-    print(a + b)
-```
-
-**Question**: What will we see if we execute the following commands?
-
-```{python}
-A = add(7, 3)
-print(A)
-```
-
-### Solution: Return vs print
-
-Python will first execute the function `add` with `a = 7` and `b = 3`,
-and, therefore, print `10`. However, because function `add` does not have a
-line that starts with `return` (no `return` "statement"), it will, by default, return
-nothing which, in Python world, is called `None`. Therefore, `A` will be assigned to `None`
-and the last line (`print(A)`) will print `None`. As a result, we will see:
-
-```
-10
-None
-```
-
-## Challenge: Selecting characters from strings
-
-If the variable `s` refers to a string,
-then `s[0]` is the string's first character
-and `s[-1]` is its last.
-Write a function called `outer`
-that returns a string made up of just the first and last characters of its input.
-A call to your function should look like this:
-
-```{python}
-print(outer('helium'))
-```
-
-## Solution: Selecting characters from strings
-
-```{python}
-def outer(input_string):
-    return input_string[0] + input_string[-1]
-```
-
-## Challenge: Rescaling an array
+::: {.panel-tabset}
+##### Task
 
 Write a function `rescale` that takes an array as input
 and returns a corresponding array of values scaled to lie in the range 0.0 to 1.0.
 (Hint: If `L` and `H` are the lowest and highest values in the original array,
 then the replacement for a value `v` should be `(v-L) / (H-L)`.)
 
-### Solution: Rescaling an array
+##### Solution
 
 ```{python}
 def rescale(input_array):
@@ -621,7 +758,15 @@ def rescale(input_array):
     return output_array
 ```
 
-## Challenge: Testing and documenting your function
+:::
+::::
+
+
+:::: {.callout-task}
+#### Challenge: Testing and documenting your function
+
+::: {.panel-tabset}
+##### Task
 
 Run the commands `help(numpy.arange)` and `help(numpy.linspace)`
 to see how to use these functions to generate regularly-spaced values,
@@ -629,7 +774,7 @@ then use those values to test your `rescale` function.
 Once you've successfully tested your function,
 add a docstring that explains what it does.
 
-## Solution: Testing and documenting your function
+##### Solution
 
 ```
 """Takes an array as input, and returns a corresponding array scaled so
@@ -644,14 +789,22 @@ array([ 0.  ,  0.25,  0.5 ,  0.75,  1.  ])
 """
 ```
 
-## Challenge: Defining defaults
+:::
+::::
+
+
+:::: {.callout-task}
+#### Challenge: Defining defaults
+
+::: {.panel-tabset}
+##### Task
 
 Rewrite the `rescale` function so that it scales data to lie between `0.0` and `1.0` by default,
 but will allow the caller to specify lower and upper bounds if they want.
 Compare your implementation to your neighbor's:
 do the two functions always behave the same way?
 
-### Solution: Defining defaults
+##### Solution
 
 ```{python}
 def rescale(input_array, low_val=0.0, high_val=1.0):
@@ -663,90 +816,24 @@ def rescale(input_array, low_val=0.0, high_val=1.0):
     return output_array
 ```
 
-## Challenge: Variables inside and outside functions
+:::
+::::
 
-What does the following piece of code display when run --- and why?
 
-```{python}
-f = 0
-k = 0
 
-def f2k(f):
-    k = ((f - 32) * (5.0 / 9.0)) + 273.15
-    return k
+:::: {.callout-task}
+#### Challenge: Readable code
 
-print(f2k(8))
-print(f2k(41))
-print(f2k(32))
-
-print(k)
-```
-
-### Solution: Variables inside and outside functions
-
-`k` is 0 because the `k` inside the function `f2k` doesn't know
-about the `k` defined outside the function. When the `f2k` function is called,
-it creates a [local variable](../learners/reference.qmd#local-variable)
-`k`. The function does not return any values
-and does not alter `k` outside of its local copy.
-Therefore the original value of `k` remains unchanged.
-Beware that a local `k` is created because `f2k` internal statements
-*affect* a new value to it. If `k` was only `read`, it would simply retrieve the
-global `k` value.
-
-## Challenge: Mixing default and non-default parameters
-
-Given the following code:
-
-```{python}
-def numbers(one, two=2, three, four=4):
-    n = str(one) + str(two) + str(three) + str(four)
-    return n
-
-print(numbers(1, three=3))
-```
-
-- What do you expect will be printed?
-- What is actually printed?
-- What rule do you think Python is following?
-
-1. `1234`
-2. `one2three4`
-3. `1239`
-4. `SyntaxError`
-
-Given that, what does the following piece of code display when run?
-
-```{python}
-def func(a, b=3, c=6):
-    print('a: ', a, 'b: ', b, 'c:', c)
-
-func(-1, 2)
-```
-
-1. `a: b: 3 c: 6`
-2. `a: -1 b: 3 c: 6`
-3. `a: -1 b: 2 c: 6`
-4. `a: b: -1 c: 2`
-
-### Solution: Mixing default and non-default parameters
-
-Attempting to define the `numbers` function results in `4. SyntaxError`.
-The defined parameters `two` and `four` are given default values. Because
-`one` and `three` are not given default values, they are required to be
-included as arguments when the function is called and must be placed
-before any parameters that have default values in the function definition.
-
-The given call to `func` displays `a: -1 b: 2 c: 6`. -1 is assigned to
-the first parameter `a`, 2 is assigned to the next parameter `b`, and `c` is
-not passed a value, so it uses its default value 6.
-
-## Challenge: Readable code
+::: {.panel-tabset}
+##### Task
 
 Revise a function you wrote for one of the previous exercises to try to make
 the code more readable. Then, collaborate with one of your neighbors
 to critique each other's functions and discuss how your function implementations
 could be further improved to make them more readable.
+
+:::
+::::
 
 # Further Information
 
@@ -791,3 +878,10 @@ The concepts in this module connect directly to practical data handling and expl
 | --- | --- | --- |
 | Function Definitions | [Defining functions](https://docs.python.org/3/tutorial/controlflow.html#defining-functions) | Functions reduce duplication and improve maintainability. |
 | Variable Scope and Parameters | [Python execution model](https://docs.python.org/3/reference/executionmodel.html) | Scope awareness prevents subtle state bugs. |
+
+::: {.callout-note appearance="minimal"}
+### Attribution
+This lesson is derived from materials developed by the [Software Carpentry](https://software-carpentry.org) project.
+
+The original content is licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) license: [https://github.com/swcarpentry/python-novice-inflammation/blob/main/LICENSE.md](https://github.com/swcarpentry/python-novice-inflammation/blob/main/LICENSE.md)
+:::

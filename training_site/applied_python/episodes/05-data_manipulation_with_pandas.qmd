@@ -544,3 +544,10 @@ The concepts in this module connect directly to practical data handling and expl
 | DataFrame Basics | [pandas DataFrame](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html) | DataFrames are the core structure for real-world tables. |
 | Filtering and Selection | [Indexing and selecting data](https://pandas.pydata.org/docs/user_guide/indexing.html) | Precise selection keeps analyses targeted and correct. |
 | Grouped Summaries | [`groupby`](https://pandas.pydata.org/docs/user_guide/groupby.html) | Group-wise statistics are essential for comparison tasks. |
+
+::: {.callout-note appearance="minimal"}
+### Attribution
+This lesson is derived from materials developed by the [Software Carpentry](https://software-carpentry.org) project.
+
+The original content is licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) license: [https://github.com/swcarpentry/python-novice-inflammation/blob/main/LICENSE.md](https://github.com/swcarpentry/python-novice-inflammation/blob/main/LICENSE.md)
+:::
