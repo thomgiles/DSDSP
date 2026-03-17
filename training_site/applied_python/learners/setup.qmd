@@ -31,7 +31,7 @@ This course will be taught using JupyterLab, a programming environment that runs
 You should see two folders called `data` and `code` in the `swc-python` directory on your
 Desktop.
 
-::: callout-note
+::: {.callout-note}
 
 Once you have successfully installed Anaconda, launched JupyterLab, and downloaded the lesson materials, your setup is complete.
 

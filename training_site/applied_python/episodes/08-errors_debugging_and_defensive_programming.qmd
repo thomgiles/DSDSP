@@ -817,3 +817,10 @@ The concepts in this module connect directly to practical data handling and expl
 | Exceptions and Tracebacks | [Errors and Exceptions](https://docs.python.org/3/tutorial/errors.html) | Reading tracebacks quickly shortens debug cycles. |
 | Assertions and Contracts | [`assert` statement](https://docs.python.org/3/reference/simple_stmts.html#the-assert-statement) | Assertions catch invalid states early. |
 | Interactive Debugging | [`pdb` debugger](https://docs.python.org/3/library/pdb.html) | Step-through debugging reveals actual runtime behavior. |
+
+::: {.callout-note appearance="minimal"}
+### Attribution
+This lesson is derived from materials developed by the [Software Carpentry](https://software-carpentry.org) project.
+
+The original content is licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) license: [https://github.com/swcarpentry/python-novice-inflammation/blob/main/LICENSE.md](https://github.com/swcarpentry/python-novice-inflammation/blob/main/LICENSE.md)
+:::
