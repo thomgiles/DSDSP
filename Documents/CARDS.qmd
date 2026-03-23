@@ -1,0 +1,255 @@
+---
+title: "Computational and Research Data Skills Programme (CARDS)"
+author: "Tom Giles"
+date: "11 March 2026"
+format:
+  docx:
+    toc: true
+    number-sections: true
+---
+
+# Executive Summary
+
+Contemporary research increasingly depends on computational methods, large-scale data and reproducible analytical workflows. However, structured training in these skills remains unevenly distributed across disciplines at the University of Nottingham. While support exists through the Researcher Academy, Libraries and the Digital Research Service (DRS), these capabilities currently operate largely independently and do not provide a coordinated programme of computational research skills development.
+
+This proposal establishes a collaborative model that integrates the institutional reach of the Researcher Academy with the technical expertise of the Digital Research Service to deliver scalable training in coding, computational analysis and reproducible research. The programme will be coordinated by a new CARDS Programme Lead role within the Digital Research Service and delivered through rotating specialist contributions from the wider DRS team.
+
+This approach creates a resilient, cost-effective model for developing digital research capability across disciplines while strengthening the University’s capacity to support modern research practice. In practical terms, it would convert an emerging but pilot-scale set of activities into an institutional programme with a defined portfolio, a clear coordination structure and an initial core delivery model of around **220 participant places annually**. However, publicly stated Nottingham doctoral training numbers suggest that, if the University aimed to reach most annual PhD entrants on structured training programmes, likely demand would sit closer to **500-650 participant places annually**, depending on how many learners also take a coding pathway. Under the current internal costing model for the planned three-year implementation period, this equates to **£829,750.26** of directly incurred staff cost and a total full economic cost to the University of **£1,608,319.74**.
+
+# Problem Statement
+
+Modern research increasingly relies on large, complex and computationally intensive data. Researchers across disciplines are expected to analyse, manage and share data in ways that support transparency, reproducibility and collaboration. While this shift is particularly visible in the natural sciences, similar trends are emerging across the humanities and social sciences, where digital methods such as large-scale text analysis, computational modelling and digital archiving are becoming increasingly common. As a result, methodological fluency in computational tools, data workflows and digital research practices is becoming a core component of contemporary research capability.
+
+Despite this shift, many researchers struggle to access structured training that enables them to engage confidently with these approaches. The pace at which computational and data-driven methods are evolving has outstripped the development of institutional training provision, meaning that critical skills are often acquired informally or on a project-by-project basis. This leads to inconsistent practices, duplicated effort and avoidable barriers to effective research.
+
+This challenge is recognised at the national level. Across the UKRI strategic delivery plans for 2022–2025, the development of “world-class people and careers” is identified as a central priority, with funders increasingly emphasising the need for researchers who are proficient in computational and data-driven methods. For example, the Medical Research Council highlights the integration of data science across biomedical research, while the Economic and Social Research Council emphasises the need for a data-literate social science workforce capable of working with complex datasets and computational tools. The Arts and Humanities Research Council similarly recognises the growing importance of digital research methods.
+
+At the same time, expectations around research quality and integrity increasingly emphasise transparent workflows, reproducible analysis and responsible data stewardship. Strengthening institutional capability in computational and data skills therefore supports not only methodological innovation but also the wider research culture priorities around rigour, openness and reproducibility.
+
+# Landscape Analysis
+
+The University of Nottingham already benefits from a strong foundation of researcher development and support services. The Researcher Academy (RA) delivers a broad programme supporting researchers across career stages, from first-year doctoral researchers to senior research leaders, including training in research communication, leadership, research culture and professional development. This work is closely aligned with the University’s wider research culture agenda, with Concordat reporting identifying the RA as a key mechanism for cultivating researcher excellence and connecting researchers with development opportunities across the institution.
+
+However, while extensive in scope, the RA’s training offer remains largely non-technical. Previous attempts to introduce digital research training through short-term secondments demonstrated the value of this provision but also highlighted a structural limitation: once the secondment ended, the specialist expertise left with the individual. The RA provides extensive researcher development infrastructure and reach across the institution, creating a strong platform for integrating specialist technical training delivered through complementary services.
+
+The University Libraries provide another essential component of the research support ecosystem. Their services include guidance and training that help researchers plan, publish, share and preserve research outputs, alongside support for literature searching, research profiles and responsible use of metrics. This work plays a vital role in supporting research integrity, discoverability and dissemination.
+
+However, the Libraries’ remit focuses on research stewardship and governance rather than programming, research software development or advanced computational analysis. While this support remains essential, the Libraries are not structured to meet the growing demand for hands-on training in coding, automation, machine learning and computational workflows.
+
+Complementing these services, the Digital Research Service (DRS) provides deep technical expertise in areas including data analytics, machine learning, research software engineering and large-scale data processing. The DRS supports over £300 million of funded research projects across the University, offering consultancy and collaboration on complex analytical and computational challenges.
+
+The scale of the potential audience is substantial. The University’s Annual Report and Accounts 2023/24 reports **2,218 postgraduate research students (FTE)**, while University research pages describe a community of **more than 3,000 research staff** and the Researcher Academy describes administrative support for **over 3,000 researchers** across the postgraduate research journey.
+
+These figures do not imply that every researcher requires the same level of computational training. They do, however, show that the addressable audience is far larger than current pilot-scale provision. Even if only a modest proportion of postgraduate researchers and research staff require structured support in coding, data workflows or reproducible practice in any given year, the level of likely demand is already materially greater than what can be sustained through ad hoc delivery.
+
+Recent institutional reporting also suggests strong appetite for structured skills provision. The University Concordat 12-Year Review notes that **895 researchers** completed on-demand research integrity training in 2022-23, **Research Integrity Week 2023 attracted 990 registrants**, **over 600 researchers** attended new UKRI open access briefings, and Research Data Management service requests increased by **25%** in 2022. The Researcher Academy’s recent Data Fest programmes have also included specialist sessions in Data Carpentry, text mining, machine learning and generative AI, indicating that demand is not limited to generic researcher development.
+
+In recent years the service has also delivered targeted training for specific research communities, including coding workshops for the BBSRC Doctoral Training Partnership and the Nottingham Biomedical Research Centre as part of the Data Science and Digital Skills programme. Internal DRS records indicate that, since 2018, the service has responded to more than **1,000 requests** from academic researchers for support with data analysis, computational workflows and research software. These activities demonstrate strong demand for technical training.
+
+Infrastructure to deliver this training is already emerging through the **digitalskills.nottingham.ac.uk** platform, which provides a growing collection of workshops and learning resources for researchers. Existing materials already cover an Essential Digital Skills foundation offer, Applied Python and Applied R pathways, and dedicated AI-for-research content that can be repackaged into a coherent institutional portfolio. One of the most developed components is the Essential Digital Skills curriculum. This introduces researchers to the core competencies required for modern, data-intensive research practice, including digital research tools and collaborative platforms, research data management and governance, exploratory data analysis, reproducible computational workflows and responsible use of emerging technologies such as artificial intelligence.
+
+Initial delivery to 25 students within the BBSRC Doctoral Training Partnership (DTP) has demonstrated both strong demand and broad disciplinary relevance. Participant feedback consistently indicates that structured training in computational tools and research data workflows addresses a significant gap in traditional researcher development provision, particularly for early-career researchers working with increasingly complex datasets. Plans are already in place to expand delivery to additional cohorts, including PhD students within the Nottingham Biomedical Research Centre (BRC) during the 2026–2027 academic year.
+
+Despite these promising developments, the current provision remains limited in scale and is not yet embedded within the University’s broader researcher development framework. Delivery currently relies on ad hoc engagements with individual doctoral training programmes and research centres, and capacity for expansion is constrained by the absence of a dedicated coordination function. As a result, access to structured training in computational and digital research methods remains uneven across disciplines and research communities within the University.
+
+Together, these services provide strong but largely separate capabilities in researcher development, research governance and computational expertise. However, the absence of a coordinated programme means that access to structured computational and research data skills training remains uneven across disciplines.
+
+# Strategic Opportunity
+
+Taken together, the current research support landscape at the University of Nottingham reveals a clear institutional opportunity. The University already possesses strong but largely separate capabilities in researcher development, research governance and computational research expertise. Integrating these strengths would enable the establishment of a coordinated programme that equips researchers with the methodological and technical skills increasingly required across disciplines.
+
+Evidence from across the University suggests that demand for computational and data-intensive research support continues to grow. Internal DRS records show that, since its establishment in 2018, the Digital Research Service has responded to more than **1,000 requests** from academic researchers seeking support with data analysis, computational workflows and advanced research software. While many of these engagements relate to project-specific analytical support, requests for structured training are also beginning to emerge. During the 2025–2026 academic year alone, the Digital Research Service received six separate requests from research groups and training programmes seeking training provision in areas including coding, machine learning and research data workflows.
+
+The demand pipeline is also visible in Nottingham’s doctoral training landscape. Publicly stated annual intakes on named Nottingham training programmes indicate a verified floor of roughly **140 new PhD entrants per year** on structured training routes before counting several joint programmes whose Nottingham-specific annual share is not stated publicly. This floor includes **30 places** in the BBSRC Doctoral Landscape Award, **up to 65 places** in the Midlands Graduate School ESRC Doctoral Training Partnership, **10 places per year** in Co(l)laboratory, around **13 places per year** in the Sustainable Hydrogen CDT, **6 funded studentships per year** in Transformative Pharmaceutical Technologies, **5 EPSRC PhD studentships per year** in Healthcare Technologies, **up to 6 studentships** in the Faculty of Science AI Doctoral Training Centre, **4 places** in Advanced Inter-disciplinary Models, and **3 places per year** in the AHRC Doctoral Landscape Award.
+
+Taken together, these indicators point to a sustained, multi-faculty pipeline of doctoral and early-career cohorts for whom computational skills provision could be embedded from launch, rather than built through one-off ad hoc requests. In other words, the case for CARDS is not based on the hope that demand might emerge in future; it is based on the existence of recurring institutional entry points where structured provision could be adopted immediately. They also show that the initial 220-place portfolio should be understood as a conservative starting configuration rather than as a proxy for full institutional demand.
+
+The CARDS programme addresses this opportunity by combining the institutional reach of the Researcher Academy with the technical expertise of the Digital Research Service. Through this partnership, the programme will provide structured training that enables researchers to develop practical competencies in computational analysis, research data workflows and reproducible research practices. This approach ensures that training remains both technically rigorous and accessible to researchers from a wide range of disciplinary backgrounds.
+
+Developing these capabilities is increasingly important as research across disciplines becomes more data-intensive and computationally enabled. Researchers are expected not only to generate and analyse complex datasets, but also to manage data responsibly, develop transparent analytical workflows and collaborate effectively using digital tools. Strengthening institutional provision in these areas therefore supports both methodological innovation and the broader research culture priorities around rigour, openness and reproducibility.
+
+This initiative also supports the University of Nottingham’s strategic ambition to remain among the UK’s leading research-intensive institutions. Sustaining this position requires continued investment not only in research infrastructure but also in the skills and support systems that enable researchers to use those resources effectively.
+
+By establishing a coordinated institutional model for computational and research data skills development, the University can strengthen its research capability while improving the accessibility and consistency of training across disciplines. In doing so, the CARDS programme provides a scalable framework for developing digital research capability and supporting researchers working with increasingly complex and data-intensive research methods.
+
+# Proposed Model
+
+This proposal establishes a collaborative delivery model that integrates the institutional reach of the Researcher Academy with the technical expertise of the Digital Research Service to provide structured training in computational and research data skills.
+
+The programme will be coordinated through a dedicated function embedded within the Digital Research Service and delivered in close partnership with the Researcher Academy and other institutional training providers. This coordination role will oversee the design, development and delivery of training that addresses core competencies in modern research workflows, including coding, computational data analysis, reproducible research practices and collaborative digital research tools.
+
+Training will be delivered through a structured portfolio of short courses designed to support researchers at different stages of their development. Delivery will take place primarily through in-person workshops, supported by digital learning resources and reusable online materials hosted through the Digital Skills platform.
+
+A central component of the programme will be the continued development of the Essential Digital Skills curriculum, which will serve as a foundational entry point for researchers developing computational and data literacy. This curriculum introduces researchers to the core competencies required for modern data-intensive research practice, including digital research tools and collaborative platforms, research data management and governance, exploratory data analysis, reproducible computational workflows and responsible use of emerging technologies such as artificial intelligence.
+
+The initial annual portfolio should prioritise courses that are already being developed on the Digital Skills platform. AI-related material should be delivered as a standalone course rather than as a small extension within Essential Digital Skills, because it raises a distinct combination of governance, prompting, validation and disclosure issues.
+
+The portfolio is intentionally structured as a progression rather than a loose collection of workshops. Foundation courses establish a common baseline in digital research practice. Applied Python and Applied R then provide language-specific routes into hands-on analysis. The standalone AI course addresses a different but now unavoidable category of researcher need: how to use AI tools in ways that are effective, governable and defensible.
+
+| Course | Typical duration | Primary audience | Delivery mode | Typical class size | Indicative annual participant places |
+|-----|-----|-----|-----|-----|-----|
+| Digital Research Foundations | Half-day | Doctoral starters and ECRs new to institutional digital workflows | In-person workshop plus reusable online materials | 25 | 25 participants |
+| Governance, Policy and Research Data Management | Half-day | Researchers handling personal, sensitive or complex research data | In-person workshop plus reusable online materials | 25 | 25 participants |
+| Collecting, Organising and Exploring Data | Half-day | Researchers designing studies or preparing data for analysis | In-person workshop plus reusable online materials | 25 | 25 participants |
+| Making Sense of Data and Communicating Impact | Half-day | Researchers moving from analysis to interpretation, reporting and impact | In-person workshop plus reusable online materials | 25 | 25 participants |
+| AI for Research: Responsible Use, Prompting and Validation | Half-day | Researchers beginning to use AI in discovery, writing, coding or analysis | In-person workshop with worked examples and optional practical activities | 25 | 25 participants |
+| Applied Python I: Foundations and Control Flow | One day | Researchers with little or no prior Python experience | Hands-on computer-lab workshop plus online exercises | 20 | 20 participants |
+| Applied Python II: Working with Research Data | One day | Researchers ready to move from syntax to data wrangling and visualisation | Hands-on computer-lab workshop plus online exercises | 20 | 20 participants |
+| Applied Python III: Modelling, Debugging and Robust Research Code | One day | Researchers already coding in Python who need more reliable analytical workflows | Hands-on computer-lab workshop plus online exercises | 15 | 15 participants |
+| Applied R I: Foundations, Functions and Loops | One day | Researchers with little or no prior R experience | Hands-on computer-lab workshop plus online exercises | 20 | 20 participants |
+| Applied R II: Tidyverse and Visualisation for Research Data | One day | Researchers using R for data wrangling, reporting and exploratory analysis | Hands-on computer-lab workshop plus online exercises | 20 | 20 participants |
+
+This core portfolio provides a credible starting offer of **approximately 220 participant places annually**. That figure is derived from one annual run of the initial 10-course portfolio and should therefore be read as an implementation-capacity assumption rather than as an estimate of institution-wide demand.
+
+Publicly stated Nottingham training-programme numbers suggest a more ambitious scenario. If most annual PhD entrants on structured training programmes completed the shared foundation and AI sequence, annual demand would already be around **500 participant places**. If around half of those learners also took one coding course, annual demand would rise towards **600 participant places**; if most of them also took a coding course, demand would move towards **650 participant places annually**. The 220-place model should therefore be understood as a realistic starting point for launch, with later scaling dependent on engagement with training leads and the level of protected delivery capacity available.
+
+The proposed class sizes are also deliberate. Foundation sessions can be delivered to larger cross-disciplinary cohorts because they focus on shared research practices and institutional workflows. Coding-intensive courses are designed for smaller groups because they depend on hands-on support, troubleshooting and practical application to research data. This makes the delivery model more pedagogically realistic and helps explain why participant-place estimates should not be benchmarked against lecture-style researcher development events.
+
+A key design principle of the model is that training delivery draws on expertise from across the wider Digital Research Service rather than relying on a small, dedicated training team. Rotating specialist contributions from the broader DRS staff pool allow the programme to access a wide range of expertise, including data science, research software engineering and advanced analytics. This approach ensures that training remains closely connected to current research practice and emerging computational methods.
+
+The distributed delivery model also strengthens organisational resilience. Training provision does not depend on a single individual or short-term appointment, reducing the risk that staff turnover disrupts programme continuity. Instead, expertise is distributed across a wider technical community, ensuring that training remains sustainable as the programme expands.
+
+Together, these complementary contributions create a model that connects existing institutional strengths rather than duplicating them. The Researcher Academy provides established training infrastructure and institutional reach across the researcher community, while the Digital Research Service provides deep technical expertise and direct engagement with computational research practice. By combining these capabilities, the CARDS programme establishes a scalable and sustainable framework for delivering computational and research data skills training across disciplines.
+
+# Staffing and Resources
+
+To deliver the CARDS programme effectively, the proposal requests the creation of one new strategic role supported by dedicated development capacity drawn from the existing Digital Research Service team.
+
+A CARDS Programme Lead within the Digital Research Service (**Level 6**) will provide strategic leadership for the initiative. The role will coordinate collaboration between the Digital Research Service, the Researcher Academy, Libraries and relevant faculty partners. The post holder will oversee programme development, ensure alignment with institutional and national priorities, and establish partnerships with doctoral training programmes and research centres. The role will also provide oversight of curriculum development, ensuring that training provision remains responsive to evolving research practices and technologies.
+
+During the initial establishment period the programme will also require the equivalent of **two Level 5 (APM45) FTE allocations** drawn from the wider DRS staff pool to support curriculum development and early delivery. These are not proposed as two additional appointments. Rather, they represent protected delivery capacity within the existing DRS establishment that enables the service to organise, schedule and quality-assure teaching commitments while drawing on staff from across the wider team.
+
+This flexible model enables the programme to deploy the most appropriate expertise depending on the training being developed while maintaining strong connections to active research projects. In practice, the protected APM45-equivalent capacity creates the headroom needed for planning, material generation and delivery coordination, while actual teaching and content development can be shared across a pool of nearly **30 DRS staff** spanning APM3, APM4 and APM5 roles. It also provides organisational resilience by distributing training capacity across a wider technical team rather than concentrating responsibility within a small number of dedicated roles.
+
+These allocations will focus on the design, development and delivery of training materials and workshops. Working closely with researchers and research support teams, the DRS pool will translate practical computational methods into accessible training formats suitable for researchers across different disciplinary backgrounds. The same model also supports maintenance and expansion of the Digital Skills training platform, ensuring that learning materials remain current and accessible.
+
+Together, this structure creates a focused coordination function supported by a wider network of technical specialists, enabling the CARDS programme to scale while maintaining strong links with real research practice across the University.
+
+An indicative annual capacity model helps clarify what this resource request is expected to cover. For planning purposes, the model below treats one full-time post as roughly **220 working days per year**. The new Level 6 Programme Lead therefore contributes around **220 staff days**, while the two APM45-equivalent allocations represent around **440 staff days** of protected DRS delivery capacity in total. The figures below are expressed as **staff days rather than room-booking days**, because coding-intensive workshops typically require co-facilitation and learner support rather than lecture-style delivery.
+
+| Activity | Programme Lead (days) | APM45-equivalent DRS capacity (days) | Total staff days | Notes |
+|-----|-----|-----|-----|-----|
+| Strategic coordination, partnerships, governance and scheduling | 70 | 15 | 85 | Coordination with RA, Libraries, faculties, DTPs, research centres and internal DRS planning |
+| Curriculum design, major revision and quality assurance | 35 | 170 | 205 | Development and maintenance of the 10-course portfolio, exercises, instructor notes and teaching materials |
+| Direct teaching delivery | 15 | 35 | 50 | Equivalent to roughly 7.5 core calendar teaching days for one annual delivery of the portfolio, rising through co-facilitation and repeated cohort delivery |
+| Learner support, follow-up and evaluation | 20 | 40 | 60 | Feedback review, post-course support, minor revisions and evaluation activity |
+| Digital platform maintenance and online learning materials | 15 | 75 | 90 | Maintaining the Digital Skills site, preparing reusable materials and keeping content current |
+| Internal instructor coordination, handover and dry runs | 20 | 35 | 55 | Instructor briefing, rehearsal, rota planning and consistency across distributed delivery |
+| Reporting, business development and growth planning | 25 | 0 | 25 | Institutional reporting, funding development and partnership growth |
+| Contingency and cohort-specific adaptation | 20 | 70 | 90 | Tailoring material for specific DTP, BRC or faculty cohorts and absorbing peak-demand periods |
+| **Total** | **220** | **440** | **660** | |
+
+This model makes two points clear. First, the visible teaching days are only a small part of the workload. The larger share of effort lies in course design, iterative improvement, learner support, platform maintenance and the coordination needed to run a distributed institutional programme rather than a one-off set of workshops. Second, the proposal is asking DRS to support a training function that is operationally meaningful, not simply to provide occasional teaching on top of existing commitments.
+
+The use of APM45-equivalent capacity should therefore be understood as an enabling mechanism rather than a constraint on delivery to two named members of staff. It provides the planning and development headroom that allows DRS to bring in the most appropriate people from across its wider technical pool for different parts of the portfolio. This reduces single-point failure, spreads teaching load more safely across the service and makes better use of existing specialist capability.
+
+This model also offers an internal operational benefit for DRS. Because delivery can be distributed across a pool of nearly 30 staff, CARDS provides a productive and strategically aligned use of staff time between peaks in project demand. In that sense, the model reduces both delivery risk for the programme and utilisation risk for the service. It should still be recognised as a strategic commitment of staff time, but it does not depend on creating two additional Level 5 posts or on identifying formal backfill for two specific individuals. If the programme were to scale from the initial **220 participant place** model towards the **500-650 participant place** range implied by most structured training-programme entrants, the scale of protected delivery capacity would need to be reviewed.
+
+# Expected Benefits
+
+At the researcher level, the CARDS programme will equip doctoral researchers, postdoctoral staff and early career academics with the technical competencies required to work effectively with complex data and computational research methods. Through structured training in coding, data analysis and reproducible research workflows, the programme will reduce barriers to adopting modern analytical approaches and support researchers in developing more efficient and transparent research practices. In its initial core delivery model, the programme can provide **around 220 participant places annually**. If the University chose to extend provision to most annual PhD entrants on structured training programmes, a more realistic medium-term scale would be **around 500-650 participant places annually**, depending on how many learners also progress into coding pathways.
+
+These figures should be read as participant places rather than unique individuals. That is appropriate for a developmental programme whose aim is progression: some researchers will attend a single foundation session, while others will move through multiple courses as they build competence in a specific language or workflow. The value of the programme therefore lies not only in reach, but in creating a structured pathway from initial awareness to practical capability.
+
+At the project level, improved computational and research data literacy will enable research teams to design more robust analytical workflows, reduce avoidable technical errors and improve the reproducibility of their results. This strengthens the credibility and long-term value of research outputs while improving the efficiency of research delivery.
+
+At the institutional level, embedding structured training in computational and research data skills supports broader objectives around research quality, openness and methodological rigour. It also strengthens the University’s ability to participate in increasingly data-intensive and interdisciplinary research programmes.
+
+A further institutional benefit arises through the way the programme supports the long-term capability of the Digital Research Service itself. The DRS currently operates on a predominantly cost-recovery model tied to funded research projects, meaning that team size can fluctuate with project demand. Establishing a coordinated training programme creates a complementary activity that helps maintain a stable pool of technical expertise between project cycles. This strengthens the University’s ability to respond rapidly to new research opportunities, support large collaborative grants and provide specialist analytical expertise when new projects begin.
+
+Finally, by integrating this programme with doctoral training partnerships, research centres and researcher development pathways, the University can establish a consistent baseline of computational and research data capability across its research community. This contributes to a research environment in which modern computational and reproducible practices are embedded as standard expectations.
+
+# Alignment with Institutional Strategy
+
+The CARDS programme aligns closely with several institutional priorities.
+
+First, it supports the University’s commitment to research excellence and research culture by strengthening the methodological capabilities that underpin high-quality research. By enabling researchers to adopt transparent, reproducible and computationally robust workflows, the programme reinforces institutional commitments to responsible research practice and strengthens the credibility and impact of research outputs.
+
+Second, the proposal complements the objectives of the **Future Nottingham programme**, which emphasises the need for sustainable and strategically focused services that maximise institutional impact. By establishing a small coordinating function that draws on expertise from across the Digital Research Service rather than creating a large standalone unit, the CARDS programme represents an efficient and resilient model for delivering specialist training capacity.
+
+Third, the initiative builds on the University’s existing investment in digital research infrastructure and support services. By equipping researchers with the computational and research data skills required to make effective use of these resources, the programme ensures that institutional investments in research infrastructure translate into improved research capability and productivity.
+
+Together, these contributions position the CARDS programme as a practical and strategically aligned initiative that strengthens the University’s research environment while supporting the development of modern, computationally informed research practices across disciplines.
+
+# Implementation Plan
+
+The CARDS programme will be implemented in three phases, enabling the initiative to establish a coordination function, expand training provision and integrate the programme within existing researcher development pathways.
+
+| Phase | Timing | Primary focus | Key activities | Intended outcome |
+|-----|-----|-----|-----|-----|
+| Phase 1 – Establishment | Year 1 | Establish the coordination function within DRS and consolidate existing provision | Recruitment or appointment of the CARDS Programme Lead<br>Consolidation and refinement of existing training materials within the Digital Skills platform<br>Expansion of the Essential Digital Skills curriculum as the foundational component of CARDS<br>Delivery of an initial series of pilot workshops and training sessions to refine programme structure and delivery methods<br>Establishment of partnerships with the Researcher Academy, Libraries and key doctoral training programmes | Governance structure, curriculum framework and initial delivery model established |
+| Phase 2 – Programme Expansion | Years 1–2 | Expand provision and embed the programme within existing research training structures | Structured engagement with DTP, CDT and research-centre training leads to identify priority short-course needs, cohort requirements and delivery opportunities<br>Translation of that engagement into a structured portfolio of workshops and short courses covering core competencies in computational research practice, including the initial portfolio outlined above<br>Expansion of delivery across doctoral training partnerships, research centres and faculty-based training initiatives<br>Integration of CARDS training within the Researcher Academy training catalogue<br>Development of online learning materials to support scalable delivery and wider participation | Broader reach across multiple research communities and a demand-informed programme of regular delivery established |
+| Phase 3 – Institutional Integration | Years 2–3 | Embed CARDS within institutional researcher development pathways | Integration of CARDS training within doctoral researcher development programmes<br>Development of training pathways for early career researchers and research staff<br>Exploration of opportunities to include elements of the programme within institutional researcher induction processes<br>Expansion of online learning resources to support sustained and scalable programme delivery | CARDS operating as an established component of the University’s researcher development ecosystem |
+
+# Financial Case
+
+The primary financial requirement for the proposal is the creation of one **Level 6 CARDS Programme Lead** role to provide strategic leadership, institutional coordination and programme oversight, together with protected delivery capacity equivalent to **two APM45 posts** drawn from the existing DRS staff base.
+
+Under the University’s current internal costing model for the planned three-year implementation period, the proposal is costed as follows:
+
+| Budget component | Cost |
+|-----|-----:|
+| Directly incurred staff | £829,750.26 |
+| Directly incurred non-staff | £0.00 |
+| Estate and infrastructure technician costs | £116,573.64 |
+| Indirect costs | £661,995.84 |
+| **Total cost to HEI** | **£1,608,319.74** |
+| **Cost / price to funder** | **£829,750.26** |
+
+Within the directly incurred staff total, the current costing model represents the programme as three staff lines:
+
+- **One APM6 Programme Lead** line, representing the new strategic coordination post
+- **Two APM5 Training Developer** lines, representing the equivalent level of protected delivery capacity required within DRS
+
+Operationally, however, the two APM5 lines should not be interpreted as two additional appointments. The staff are already in post. These lines are a budgeting mechanism used to cost the level of capacity that must be made available for curriculum development, material generation, delivery and platform maintenance. In practice, that work can be distributed across a pool of nearly **30 DRS staff** at APM3-5 level, depending on the expertise required for different parts of the portfolio.
+
+This distinction matters. The proposal is not asking the University to recruit three entirely separate teaching posts. It is asking for one new Level 6 coordination role, plus formal recognition that the equivalent of two APM45 posts of staff time within the existing DRS establishment will be committed to CARDS. This is what enables DRS to use the most appropriate staff member for particular teaching, material-development or support commitments, while avoiding over-reliance on a small number of named individuals.
+
+The resulting model is comparatively cost-effective because the directly incurred staff cost is concentrated in people rather than travel, consumables, equipment or other non-staff expenditure. It also makes better use of existing institutional capability: rather than creating a standalone training unit, the programme coordinates and scales expertise that already exists within the Digital Research Service.
+
+The internal budget profile also helps clarify the University contribution. The directly incurred staff cost of **£829,750.26** represents the investable staffing commitment needed to operate the programme across the three-year implementation period. The difference between this figure and the full economic cost to HEI reflects standard estate, infrastructure and indirect costs absorbed through the University costing model rather than additional programme-specific spending lines.
+
+Over time, the programme will move towards a **mixed funding model** in which core coordination is institutionally supported while elements of delivery are partially cost-recovered through collaborations with doctoral training partnerships, research centres and externally funded research programmes. This approach allows the programme to grow sustainably while remaining aligned with the evolving needs of the University’s research community.
+
+In addition to strengthening researcher capability, the programme will also support the long-term sustainability of institutional technical expertise. The Digital Research Service currently operates largely on a cost-recovery model linked to funded research projects, meaning that team size can fluctuate with project demand. Establishing a coordinated training programme helps maintain a stable pool of technical expertise between project cycles, strengthening the University’s ability to respond rapidly to new research opportunities, support large collaborative grants and provide specialist analytical expertise when new projects begin. In this respect, the model offers a double benefit: it reduces institutional risk by widening the pool of staff who can contribute to training delivery, and it reduces service risk by creating valuable internal work that can be distributed across the team when project demand is uneven.
+
+# Risks and Mitigation
+
+| Risk | Potential Impact | Mitigation |
+|-----|-----|-----|
+| Training delivery becomes dependent on a small number of specialists | Loss of staff could disrupt delivery and reduce continuity | Rotating developer allocations distribute expertise across the wider DRS team, reducing dependency on any single individual and maintaining distributed capability across the service |
+| Uptake is uneven across disciplines | Programme impact may be limited to already engaged communities or technically focused faculties | Partnership with the Researcher Academy, doctoral training programmes and research centres will broaden visibility and embed training within existing researcher development pathways |
+| Limited engagement from some faculties or research groups | Training may not reach researchers across all disciplines | Work with faculty research leads, doctoral training programmes and research centres to integrate CARDS training into existing development pathways |
+| Training content becomes outdated as methods and technologies evolve | Provision may lose relevance or fail to reflect current research practice | Continuous curriculum review, active involvement of current DRS specialists and close links to live research projects will keep content current |
+| Pressure on pooled DRS capacity constrains delivery | Competing service demands could limit training development and delivery | Strategic coordination through the CARDS Programme Lead role will enable prioritisation, planning and phased expansion of the programme |
+| Insufficient time allocated from the wider DRS pool | Curriculum development or delivery could slow during periods of high demand | Formal allocation of developer FTE during the establishment phase and advance scheduling of training activities |
+| Duplication with existing training provision | Confusion about responsibilities between RA, Libraries and DRS | Clear delineation of roles: RA for researcher development delivery, Libraries for governance and stewardship, DRS for computational and research data skills training |
+| Limited long-term funding | Programme sustainability may be uncertain beyond initial establishment | Gradual transition toward a mixed funding model including partial cost recovery through doctoral training programmes, research centres and funded projects |
+| Rapid growth in demand | Demand for training may exceed available delivery capacity | Phased expansion of the programme, prioritisation of scalable workshops and development of reusable online materials |
+
+# Evaluation and Success Measures
+
+The success of the CARDS programme will be assessed through a combination of quantitative and qualitative indicators that capture both participation and impact.
+
+Key measures will include:
+
+- Participation levels across training programmes, including the number of researchers attending workshops and courses delivered through CARDS
+- Engagement across the institution, measured through the number of faculties, schools or research centres incorporating CARDS training within their researcher development activities
+- Adoption within doctoral training programmes, including integration of training within doctoral training partnerships and structured doctoral development pathways
+- Participant feedback and learning outcomes, collected through post-course evaluations and follow-up surveys assessing confidence in computational and research data skills
+- Evidence of improved research practices, such as increased adoption of reproducible workflows, computational analysis methods and structured research data management approaches within research projects
+- Growth and engagement metrics for the Digital Skills training platform, including access to online training materials and learning resources
+
+The programme will be subject to periodic review, ensuring that training provision continues to reflect evolving research practices, technological developments and the needs of the University’s research community.
+
+# Long-Term Sustainability
+
+The CARDS programme is designed to establish a sustainable institutional capability for developing computational and research data skills across the University’s research community. By embedding the initiative within existing researcher development structures and drawing on the wider expertise of the Digital Research Service, the programme can expand training provision without requiring the creation of a large standalone training unit.
+
+A key element of this sustainability model is the distributed delivery approach. Rather than relying on a small, dedicated training team, the programme draws on specialist expertise from across the Digital Research Service. This rotating contribution model ensures that training remains closely aligned with current research practice and emerging computational methods while reducing reliance on individual staff members.
+
+As the programme develops, opportunities will be pursued to integrate elements of the training provision within doctoral training partnerships, research centres and faculty-based researcher development programmes. In many cases, these partnerships already require or request digital and computational training for doctoral researchers, creating opportunities for CARDS training to be embedded within existing development pathways.
+
+Over time, elements of programme delivery may also be supported through collaborations with externally funded research projects and training initiatives where specialist computational or data skills training is required. This approach enables elements of training delivery to be partially cost-recovered while maintaining core institutional coordination.
+
+Through this mixed delivery model, CARDS can operate as a sustainable institutional capability that combines core coordination with collaborative delivery across research communities. By establishing a structured programme for developing computational and research data skills, the University strengthens its ability to support modern research practice while embedding reproducible and computational approaches as standard expectations across its research environment.
