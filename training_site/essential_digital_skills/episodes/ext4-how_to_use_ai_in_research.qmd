@@ -114,6 +114,67 @@ Use a structure like this:
 
 This will outperform most vague one-line prompts because it reduces guesswork.
 
+## Start with the smallest useful task
+
+Researchers often ask for too much in one prompt:
+
+- read this topic
+- find the literature
+- compare the arguments
+- write the review
+- tell me the conclusion
+
+That is usually where drift begins.
+
+A better approach is to ask for the smallest useful intermediate step first.
+
+For example:
+
+- generate search terms
+- compare two definitions
+- rewrite notes into a table
+- explain one error message
+
+> Smaller tasks are easier to verify, easier to refine and easier to document.
+
+## Good follow-up prompts do one thing
+
+Once you get a first answer, the next prompt should usually narrow rather than widen.
+
+Good follow-ups often ask the model to:
+
+- clarify one ambiguous point
+- restructure the same content into a new format
+- identify assumptions or missing evidence
+- generate a checklist for manual verification
+
+Weak follow-ups often ask for a completely new task before the first one has been checked.
+
+## A worked prompt chain
+
+```{mermaid}
+flowchart LR
+    A["Define the task"] --> B["Get a first structured answer"]
+    B --> C["Interrogate assumptions or gaps"]
+    C --> D["Refine format for use"]
+    D --> E["Verify against source or data"]
+```
+
+This is slower than a single magic prompt, but usually faster than recovering from a vague answer later.
+
+## Prompting for uncertainty is a research skill
+
+Many people ask AI to sound certain because certainty feels efficient.
+
+In research work, better prompts often include instructions like:
+
+- "flag anything uncertain"
+- "distinguish evidence from inference"
+- "list what would need checking"
+- "do not invent citations or page numbers"
+
+These instructions do not guarantee correctness, but they make the output easier to handle responsibly.
+
 ---
 
 ::: callout-task
@@ -213,6 +274,50 @@ flowchart LR
 
 This pattern is safer than asking an AI tool to generate a free-standing answer from memory.
 
+## Three prompt patterns worth keeping
+
+| Pattern | Example use | Why it works |
+|---|---|---|
+| compare | compare two policy documents by theme | produces structure, not just summary |
+| transform | turn rough notes into a table or outline | keeps your source material central |
+| critique | identify missing caveats or assumptions | encourages challenge rather than acceptance |
+
+These are often more useful than asking for a polished answer straight away.
+
+## What not to ask from model memory
+
+Avoid prompts that depend entirely on the model remembering a domain perfectly.
+
+Examples:
+
+- "give me the definitive current policy"
+- "list the five most important papers in my field"
+- "quote the exact wording from that article"
+- "tell me what this funder definitely permits"
+
+Those may sound efficient, but they create exactly the kind of hidden risk that good research practice is supposed to reduce.
+
+## A source-grounded reading workflow
+
+1. Gather the actual paper, policy or document.
+2. Ask AI to summarise or compare only that material.
+3. Ask for uncertainties, assumptions or missing information.
+4. Verify the answer against the source yourself.
+5. Keep only the parts you can defend.
+
+This is one of the most reliable ways to keep AI support useful without handing over scholarly judgement.
+
+## AI is often best used as a second reader
+
+Good second-reader style prompts include:
+
+- "what assumptions is this argument relying on?"
+- "what did this summary leave out?"
+- "where is the author strongest or weakest?"
+- "what would an informed critic ask next?"
+
+That kind of use supports reading and thinking, rather than replacing it.
+
 ---
 
 ::: callout-task
@@ -299,6 +404,63 @@ flowchart LR
 ```
 
 This is a stronger pattern than copying an answer from a chat window directly into analysis.
+
+## A stronger code-help prompt
+
+Compare these two approaches.
+
+**Weak**
+
+> Fix my R code.
+
+**Stronger**
+
+> Explain why this R error occurs in plain English. Then suggest a corrected version using a toy dataset first. Add comments to the code and list two checks I should run before using it on the real data.
+
+The stronger prompt makes inspection part of the output rather than an afterthought.
+
+## Ask the model to reveal assumptions
+
+Technical outputs often hide important choices.
+
+Useful prompt additions include:
+
+- "state any assumptions you are making about the data"
+- "tell me what column types you expect"
+- "show the edge cases that could break this"
+- "suggest one diagnostic plot and one validation check"
+
+If the model cannot explain its assumptions clearly, that is useful information in itself.
+
+## Qualitative and mixed-methods work need special care
+
+AI can support qualitative research, but the safest uses are usually around structure rather than interpretation.
+
+Relatively safer uses:
+
+- drafting an interview guide
+- reorganising public notes into themes
+- generating a codebook template
+- producing memo prompts for the researcher
+
+Higher-risk uses:
+
+- inferring participant meaning without close reading
+- collapsing nuance into over-clean themes
+- processing identifiable or sensitive text in public tools
+
+> In qualitative work, the main risk is not only error. It is flattening context and voice.
+
+## A practical mixed-methods example
+
+| Stage | Sensible AI role | Human responsibility |
+|---|---|---|
+| survey design | draft candidate question wording | ensure validity and ethics |
+| interview planning | generate prompts or probes | tailor to participants and study design |
+| coding support | propose category labels or memo prompts | interpret data and preserve nuance |
+| reporting | convert notes into structure | defend findings and quotations |
+
+This keeps AI at the level of scaffolding while the researcher retains interpretive control.
 
 ---
 
@@ -398,6 +560,75 @@ flowchart LR
 | monitoring a public information source | any task where the evidence base is unclear and unreviewed |
 
 > Automate the structure, not the responsibility.
+
+## A simple logging habit that scales
+
+You do not need a complex system to document AI use.
+
+A lightweight note after each substantial use can include:
+
+- date
+- tool
+- task
+- prompt template or short description
+- what input was used
+- what was kept
+- what was checked
+
+That is often enough to support transparency later.
+
+## Decision tree: should this become a workflow?
+
+```{mermaid}
+flowchart LR
+    A["Repeated task"] --> B{Same input pattern each time?}
+    B -->|No| C["Keep it ad hoc"]
+    B -->|Yes| D{Output easy to verify?}
+    D -->|No| C
+    D -->|Yes| E{Low-risk material?}
+    E -->|No| F["Use only with tighter safeguards"]
+    E -->|Yes| G["Create a reusable workflow"]
+```
+
+This is helpful because not every recurring task deserves automation.
+
+## A sample AI use note
+
+```text
+Date: 2026-03-23
+Tool: ChatGPT
+Task: Compared two public AI policy pages and drafted a 6-point table
+Input: Public web text copied into prompt
+Output kept: Table headings and 3 rewritten bullets
+Checks: Manual comparison against source pages
+Disclosure: Internal project log only
+```
+
+Short notes like this make later reporting much easier.
+
+## When not to turn AI use into routine
+
+Do not formalise a workflow if:
+
+- the task depends on unstable judgement
+- the evidence base changes too quickly to trust a template
+- the input regularly includes sensitive or unpublished material
+- nobody is available to review the outputs properly
+
+In those cases, templating can create false confidence rather than real efficiency.
+
+## A good end-state for research AI use
+
+The goal is not constant AI use.
+
+The goal is:
+
+- selective use where it clearly helps
+- stronger task definition before prompting
+- visible validation after prompting
+- better records for anything substantial
+
+That is what makes AI support defensible in research settings.
 
 ---
 
