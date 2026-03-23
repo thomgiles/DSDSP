@@ -118,6 +118,58 @@ Large language models are impressive, but they still generate outputs by modelli
 
 > The history matters because it reminds us that AI systems have evolved, but they have not become substitutes for research judgement.
 
+## A quick timeline for researchers
+
+| Period | Technical shift | What it meant in practice |
+|---|---|---|
+| 1950s to 1980s | symbolic and rule-based AI | narrow expert systems and strong expectations |
+| 1990s to 2000s | statistical learning | pattern detection improved where labelled data existed |
+| 2010s | deep learning | rapid gains in vision, speech and some language tasks |
+| 2020s | foundation and generative models | general-purpose interfaces became usable across disciplines |
+
+This matters because many current research conversations are really collisions between older assumptions about software and newer expectations created by generative tools.
+
+## Four myths that history helps us avoid
+
+1. **"AI suddenly became intelligent."**
+
+It is more accurate to say that AI became more useful to non-specialists once interfaces, scale and cloud access improved.
+
+2. **"Newer means solved."**
+
+Modern systems are better at fluency and breadth, but they still inherit data, optimisation and evaluation problems.
+
+3. **"General-purpose means domain-safe."**
+
+A model that can answer many questions is not automatically competent in your field, your methods or your standards of evidence.
+
+4. **"If it works once, it will work reliably."**
+
+Current systems are often powerful but inconsistent. Repeatability still has to be designed and checked.
+
+## The pattern repeats: hype, adoption and normalisation
+
+```{mermaid}
+flowchart LR
+    A["Technical breakthrough"] --> B["Public excitement"]
+    B --> C["Rapid experimentation"]
+    C --> D["Institutional concern"]
+    D --> E["Everyday selective use"]
+```
+
+Most technologies in research pass through this pattern. The distinctive feature of AI is the speed at which this cycle has played out.
+
+## What stayed constant across AI eras
+
+Some things did not change even as models improved:
+
+- outputs still depend on training data and task framing
+- evaluation still matters more than demonstration
+- domain expertise still matters when consequences are high
+- convenience still tempts people to skip documentation
+
+> The tools changed dramatically. The need for careful research practice did not.
+
 ---
 
 ::: callout-task
@@ -244,6 +296,46 @@ Compression can be beneficial, but it removes some of the natural pauses where r
 
 > AI changes the pace of work, but it does not remove responsibility for research design or interpretation.
 
+## Different disciplines feel the impact differently
+
+| Area | More visible AI use | Less automatable or more contested work |
+|---|---|---|
+| lab and experimental research | protocol drafting, coding, image handling | experimental validity, instrumentation, safety |
+| social science | survey design support, coding help, synthesis | sampling, interpretation, ethics, context |
+| arts and humanities | language work, comparison, exploratory framing | close reading, interpretation, originality |
+| clinical or sensitive domains | documentation support, admin, triage-style assistance | diagnosis, confidentiality, accountability |
+
+The same tool can feel transformational in one discipline and marginal in another because the constraints are not the same.
+
+## Where lifecycle compression becomes risky
+
+When AI compresses a workflow, three kinds of research pause can disappear:
+
+- the pause where you notice the question is poorly framed
+- the pause where you realise the data are not fit for the claim
+- the pause where a colleague challenges an assumption before it becomes a result
+
+These pauses often feel inefficient in the moment, but they are part of how research quality is protected.
+
+## Accelerate the reversible, slow down the irreversible
+
+One practical rule is:
+
+- accelerate drafting, formatting, comparison and low-stakes scaffolding
+- slow down claims, interpretations, disclosures and anything tied to participants or policy
+
+This is useful because not all research actions carry the same downstream cost.
+
+## A lifecycle question worth asking in teams
+
+For each stage of a project, ask:
+
+1. What is the low-value friction here?
+2. What is the quality-control function of that friction?
+3. If AI removes it, what replaces the checkpoint?
+
+That turns AI from a generic productivity conversation into a workflow design conversation.
+
 ---
 
 ::: callout-task
@@ -345,6 +437,55 @@ It is:
 - which parts require friction, reflection and debate
 - how do we stop convenience from defining good practice
 
+## Authorship and contribution become harder to see
+
+| Contribution area | Easier with AI | Harder to judge afterwards |
+|---|---|---|
+| drafting | yes | who shaped the substantive argument |
+| coding | yes | who understood and validated the logic |
+| synthesis | yes | who selected and weighted the evidence |
+| editing | yes | where editing ended and authorship began |
+
+This is one reason disclosure matters. It helps teams distinguish assistance from contribution.
+
+## Students, supervisors and collaborators need explicit norms
+
+Unspoken assumptions are now risky.
+
+Teams should make visible:
+
+- which tools are acceptable
+- which tasks require approval first
+- what must be logged or disclosed
+- who reviews AI-assisted outputs before reuse
+
+Supervision gets easier when expectations are explicit early rather than negotiated after a problem appears.
+
+## Cheap production can create expensive clean-up
+
+```{mermaid}
+flowchart LR
+    A["Fast draft generation"] --> B["More text, code and notes"]
+    B --> C["More review burden"]
+    C --> D["More need for triage and checking"]
+    D --> E["Potential time saving disappears"]
+```
+
+AI feels efficient at the point of generation. The real question is whether the team saves time after checking, correction and discussion are included.
+
+## Sameness is an overlooked cultural risk
+
+If many people use similar models in similar ways, outputs can start to converge in tone, framing and structure.
+
+That can lead to:
+
+- less distinctive disciplinary voice
+- more standardised argument patterns
+- weaker visibility for minority perspectives
+- increased pressure to sound polished in the same way
+
+> A more productive research culture is not just faster. It is also more plural, critical and transparent.
+
 ---
 
 ::: callout-task
@@ -441,6 +582,40 @@ It is:
 3. Who remains accountable for the final claim?
 
 > The long-term impact of AI on research will be determined by collective norms, not only by model performance.
+
+## A simple research risk matrix
+
+| Scenario | Typical risk level | Why |
+|---|---|---|
+| summarising a public guidance page for personal notes | low | public source, easy to verify |
+| generating boilerplate code against toy data | low to medium | technical errors still possible |
+| comparing unpublished drafts across collaborators | medium | confidentiality and attribution issues |
+| analysing identifiable participant material in a public tool | high | ethics, governance and disclosure failure |
+| asking AI to produce findings or conclusions from your data | high | interpretation and accountability risk |
+
+The point is not to ban AI in difficult areas. It is to match the tool, safeguards and review burden to the stakes.
+
+## Institutional capability matters too
+
+Two researchers can face the same task and have different safe options because:
+
+- one has access to approved institutional tooling
+- one has local guidance from their school or centre
+- one has secure storage and reproducible workflows in place
+- one has supervisory review built into the project
+
+Good governance depends partly on the organisation, not only on individual caution.
+
+## The best future state is boring
+
+In a mature research environment, AI use should become less dramatic and more routine:
+
+- supported by clear local rules
+- documented like other methods decisions
+- integrated into training and supervision
+- reviewed proportionately to the risk
+
+That is usually a sign that a technology has moved from novelty to responsible practice.
 
 ---
 
