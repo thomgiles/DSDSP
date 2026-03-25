@@ -4,22 +4,35 @@ title: "Course README"
 
 # Essential Digital Skills
 
-Essential Digital Skills is a foundation course for digital research practice at the University of Nottingham. It focuses on practical workflows for collaboration, governance, data management, and responsible digital practice.
+Essential Digital Skills is a foundation course in practical digital research work at the University of Nottingham. It focuses on day-to-day judgement around collaboration, governance, data management, interpretation, and defensible digital practice.
+
+## What This Course Contains
+
+This course section of the site contains:
+
+- lesson pages
+- learner preparation and reference material
+- instructor notes and optional extensions
+- course-level information about contribution, conduct, licensing, and learner profiles
 
 ## Course Scope
 
 The course supports participants to:
 
-- use institutional digital tools effectively,
-- apply data governance and policy in day-to-day work,
-- organise, explore, and communicate data outputs,
-- make defensible decisions when using AI in research contexts.
+- use institutional digital tools more effectively
+- apply governance and policy in practical research situations
+- organise, explore, and communicate data more clearly
+- make better everyday decisions about storage, sharing, documentation, and interpretation
+
+## Course Position in the Programme
+
+Essential Digital Skills is part of the wider UoN Digital Skills training offer. It is designed as a practical entry point for learners who want stronger habits before moving into more specialised analytical or programming pathways.
 
 ## Contributing
 
 Contribution guidance is available in [CONTRIBUTING.qmd](CONTRIBUTING.qmd).
 
-## Supporting Documents
+## Related Course Information
 
 - [Code of Conduct](CODE_OF_CONDUCT.qmd)
 - [License](LICENSE.qmd)
