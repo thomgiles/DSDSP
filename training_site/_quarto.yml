@@ -168,7 +168,6 @@ website:
             - applied_python/CONTRIBUTING.qmd
             - applied_python/CODE_OF_CONDUCT.qmd
             - applied_python/LICENSE.qmd
-            - applied_python/AUTHORS.qmd
             - applied_python/profiles/learner-profiles.qmd
 
     - id: "applied-r"

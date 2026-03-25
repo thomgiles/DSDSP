@@ -138,11 +138,10 @@ Preparation details are in [Setup](learners/setup.qmd).
 - [Learner Profiles](profiles/learner-profiles.qmd)
 - [Code of Conduct](CODE_OF_CONDUCT.qmd)
 - [License](LICENSE.qmd)
-- [Authors](AUTHORS.qmd)
 
 ::: {.callout-note appearance="minimal"}
 ### Attribution
-These lessons are derived from materials developed by the [Software Carpentry](https://software-carpentry.org) project.
+This course is substantially adapted from Software Carpentry's `python-novice-inflammation` lesson.
 
-The original content is licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) license: [https://github.com/swcarpentry/python-novice-inflammation/blob/main/LICENSE.md](https://github.com/swcarpentry/python-novice-inflammation/blob/main/LICENSE.md)
+See [README](README.qmd) and [License](LICENSE.qmd) for source and licensing details.
 :::
