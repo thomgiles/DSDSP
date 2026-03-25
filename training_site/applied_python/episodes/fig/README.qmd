@@ -25,13 +25,13 @@ to them, but unneeded for us, and unsuited to our highly collaborative lesson de
 Below are some tips on keeping the information we need and removing the information we don't need
 in SVG files before submitting them to our repository.
 
-### Comments
+## Comments
 
 Before modifying an existing figure, inspect it with a text editor, making note of all comments,
 which in SVG files are enclosed between `<!--` and `-->`.  Be sure to add them back in (with
 appropriate changes) after editing the figure, if the tool you use removed them.
 
-### General tips
+## General tips
 
 When using any SVG editor, please make sure to:
 

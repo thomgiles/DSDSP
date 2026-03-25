@@ -72,7 +72,7 @@ df.head()
 ```
 
 ::: {.callout-note}
-### List Comprehensions
+## List Comprehensions
 
 List comprehensions are a concise way to create lists. They replace longer for loops and can make code more readable. A list comprehension has the basic form `[expression for item in iterable]`.
 
@@ -88,7 +88,7 @@ df.columns = column_names
 
 
 ::: {.callout-note}
-### F Strings
+## F Strings
 
 Python f-strings are a way to format strings by embedding variables in strings using `{}`
 
@@ -415,7 +415,7 @@ summary.to_csv("out/per_day_summary.csv", index=False)
 print("Wrote out/per_day_summary.csv")
 ```
 
-### Why this pattern?
+## Why this pattern?
 
 * `reset_index` ensures each patient has an explicit identifier.
 * `source` preserves provenance across files.
@@ -546,7 +546,7 @@ The concepts in this module connect directly to practical data handling and expl
 | Grouped Summaries | [`groupby`](https://pandas.pydata.org/docs/user_guide/groupby.html) | Group-wise statistics are essential for comparison tasks. |
 
 ::: {.callout-note appearance="minimal"}
-### Attribution
+## Attribution
 This lesson is derived from materials developed by the [Software Carpentry](https://software-carpentry.org) project.
 
 The original content is licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) license: [https://github.com/swcarpentry/python-novice-inflammation/blob/main/LICENSE.md](https://github.com/swcarpentry/python-novice-inflammation/blob/main/LICENSE.md)

@@ -49,7 +49,7 @@ Any Python interpreter can be used as a calculator:
 
 This is great but not very interesting.
 
-### Variables
+## Variables
 
 To do anything useful with data, we need to assign its value to a *variable*. In Python, we can [assign](../learners/reference.qmd#assign) a value to a [variable](../learners/reference.qmd#variable), using the equals sign `=`. For example, we can track the weight of a patient who weighs 60 kilograms by assigning the value `60` to a variable `weight_kg`:
 
@@ -59,7 +59,7 @@ weight_kg = 60
 
 From now on, whenever we use `weight_kg`, Python will substitute the value we assigned to it. In layperson's terms, **a variable is a name for a value**.
 
-### Naming Variables
+## Naming Variables
 
 In Python, variable names:
 
@@ -72,7 +72,7 @@ This means that, for example:
 - `weight0` is a valid variable name, whereas `0weight` is not
 - `weight` and `Weight` are different variables
 
-### Types of Data
+## Types of Data
 
 Python knows various types of data. Three common ones are:
 
@@ -94,7 +94,7 @@ To create a string, we add single or double quotes around some text. To identify
 patient_id = '001'
 ```
 
-### Using Variables
+## Using Variables
 
 Once we have data stored with variable names, we can make use of it in calculations. We may want to store our patient's weight in pounds as well as kilograms:
 
@@ -193,7 +193,7 @@ print('weight in kilograms is now:', weight_kg)
 
 > 🧪 Try changing the value of `weight_kg`.
 
-### Getting Help
+## Getting Help
 
 Use the built-in function `help` to get help for a function. Every built-in function has extensive [documentation that can also be found online](https://docs.python.org/3/library/index.html).
 
@@ -277,7 +277,7 @@ Run one line at a time and track each variable.
 ::::
 
 
-### Multiple Assignments
+## Multiple Assignments
 
 Python can assign multiple variables in one line. This may be useful for swapping values without introducing an extra variable.
 
@@ -302,7 +302,7 @@ odds = [1, 3, 5, 7]
 print('odds are:', odds)
 ```
 
-### Read List Elements by Position
+## Read List Elements by Position
 
 We can access elements of a list using indices. Indices are positions of elements in the list. In Python indices start at `0`, so the first element has an index of `0` and the fourth has an index of `3`.
 
@@ -317,7 +317,7 @@ print('second to last element:', odds[-2])
 
 Programming languages like Fortran, MATLAB and R start counting at 1 because that's what human beings have done for thousands of years. Languages in the C family (including C++, Java, Perl, and Python) count from 0 because it represents an offset from the first value in the array (the second value is offset by one index from the first value). This is closer to the way that computers represent arrays (if you are interested in the historical reasons behind counting indices from zero, you can read [Mike Hoye's blog post](https://exple.tive.org/blarg/2013/10/22/citation-needed/)).
 
-### Update List Elements In Place
+## Update List Elements In Place
 
 Lists are [mutable](../learners/reference.qmd#mutable), so single elements can be edited. The change happens directly in the existing list object.
 
@@ -328,7 +328,7 @@ names[1] = 'Darwin'  # correct the name
 print('after:', names)
 ```
 
-### Why Strings Behave Differently
+## Why Strings Behave Differently
 
 Strings are [immutable](../learners/reference.qmd#immutable) in Python. You can replace a whole string with a new one, but you cannot change individual characters of an existing string in place. This distinction between mutable and immutable types appears throughout Python.
 
@@ -341,7 +341,7 @@ name[0] = 'd'
 This raises a `TypeError` because strings do not support item assignment.
 :::
 
-### Mutability and Side Effects
+## Mutability and Side Effects
 
 - Strings and numbers are immutable.
 - Lists are mutable.
@@ -360,7 +360,7 @@ print('hot salsa:', hot_salsa)
 Both variables changed because they refer to the same list in memory.
 :::
 
-### Copy Before Editing
+## Copy Before Editing
 
 Create an explicit copy when you need independent lists.
 
@@ -378,7 +378,7 @@ This is often the safest default when learners are still building confidence wit
 Mutability is a key idea for debugging surprising state changes.
 :::
 
-### Nested Lists
+## Nested Lists
 
 A list can contain any Python variables, including other lists.
 
@@ -422,7 +422,7 @@ print(veg[1][2])
 Pattern: `nested_list[row][column]`.
 :::
 
-### Lists Can Hold Mixed Types
+## Lists Can Hold Mixed Types
 
 Lists can contain values of different data types.
 
@@ -435,7 +435,7 @@ print(sample_ages)
 This flexibility is useful, but if not intentional, can make debugging harder.
 :::
 
-### Modifying Lists in Place
+## Modifying Lists in Place
 
 Common methods to modify lists in place include `append`, `pop`, `reverse`, and `sort`. Use `append` to add one item, `pop` to remove and return an item, `reverse` to flip the order, and `sort` to sort the list in place.
 
@@ -454,7 +454,7 @@ odds.sort()
 print('odds after sorting:', odds)
 ```
 
-### Method Calls Follow the Same Reference Rules
+## Method Calls Follow the Same Reference Rules
 
 If two names refer to one list, method calls through either name change that shared list.
 
@@ -466,7 +466,7 @@ print('primes:', primes)
 print('odds:', odds)
 ```
 
-### Make an Independent Copy First
+## Make an Independent Copy First
 
 ```{python}
 odds = [3, 5, 7]
@@ -482,7 +482,7 @@ Copy first whenever one list should change and the other should stay unchanged.
 
 ## Slicing
 
-### Slice Sequences with `start:stop`
+## Slice Sequences with `start:stop`
 
 A section of a list or string is called a [slice](../learners/reference.qmd#slice). To slice a list or string, we use a `start` index and a `stop` index. The start index is included, but the stop index is excluded. This \"include start, exclude stop\" rule is consistent across strings, lists, and other data types that can be sliced.
 
@@ -498,7 +498,7 @@ last = chromosomes[-1]
 print(group, species, autosomes, last)
 ```
 
-### Implied Bounds
+## Implied Bounds
 
 If you want to take a slice from the beginning of a sequence, you can omit the first index in the range.
 
@@ -612,7 +612,7 @@ list_for_slicing[-2:]
 :::
 ::::
 
-### Add a `step` for non-continuous slices
+## Add a `step` for non-continuous slices
 
 Use `start:stop:step` to sample at regular intervals. The third value `step` controls the spacing between selected elements.
 
@@ -752,7 +752,7 @@ The concepts in this module connect directly to practical data handling and expl
 
 
 ::: {.callout-note appearance="minimal"}
-### Attribution
+## Attribution
 This lesson is derived from materials developed by the [Software Carpentry](https://software-carpentry.org) project.
 
 The original content is licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) license: [https://github.com/swcarpentry/python-novice-inflammation/blob/main/LICENSE.md](https://github.com/swcarpentry/python-novice-inflammation/blob/main/LICENSE.md)

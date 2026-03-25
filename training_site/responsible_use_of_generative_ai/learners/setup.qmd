@@ -1,0 +1,86 @@
+---
+title: Setup
+---
+
+## Before You Attend
+
+Responsible Use of Generative AI is a short course focused on judgement, prompting, validation, and documentation. You do not need coding experience, and you do not need to arrive as an AI expert. It is more helpful to bring one realistic research example and a willingness to critique outputs carefully.
+
+## Core Access Checklist
+
+Before the session, make sure you can:
+
+1. Sign in to your university account without difficulty.
+2. Open a modern web browser on your laptop or tablet.
+3. Access any institutionally approved AI tools you expect to use, such as Microsoft Copilot, if available to you.
+4. Open public or low-risk web documents that you can use for source-checking exercises.
+5. Join any course Teams space or local communication channel used by the teaching team.
+
+## Device and Materials
+
+Bring:
+
+- a laptop or tablet with a modern web browser
+- a charger
+- access to one low-risk document, policy page, or research task you can use as a live example
+
+Optional but useful:
+
+- a phone for QR-code polls or quick room activities
+- headphones if you prefer to work through short tool demonstrations individually
+
+## Bring a Safe Example
+
+The course works best when you have something real in mind. Before the session, try to identify:
+
+- one research task where AI might save time
+- one task where AI might create risk or extra checking work
+- one prompt you have used before, or wish you could use better
+- one public or non-sensitive source you could use for validation practice
+
+You do not need to bring live project files. A short written description is often enough.
+
+## Work Safely During the Course
+
+Use realistic examples without exposing restricted material.
+
+- Do not paste confidential, identifiable, unpublished, or contract-restricted material into unapproved AI tools.
+- Prefer public documents, policy pages, synthetic examples, or summarised notes.
+- If you are unsure whether a document is safe to use, switch to a lower-risk example and ask the instructor.
+- Treat classroom prompts as prototypes for your own practice, not as shortcuts around governance rules.
+
+## Suggested Working Folder
+
+Keep one folder for all course outputs so you can reuse them later.
+
+```text
+responsible-use-of-generative-ai/
+  notes/
+  prompts/
+  checks/
+  workflow-sketches/
+```
+
+This makes it easier to keep copies of:
+
+- prompt templates
+- critique notes
+- validation checklists
+- AI use notes
+- workflow or agent sketches
+
+## Session-by-Session Preparation
+
+| Session theme | Helpful preparation |
+|---|---|
+| [How AI Impacts Research](../episodes/ext1-how_ai_impacts_research.qmd) | Think of one research task where AI already feels useful and one where it feels risky |
+| [How to Use AI in Research](../episodes/ext2-how_to_use_ai_in_research.qmd) | Bring a low-risk prompt, policy page, reading task, or workflow you want to improve |
+
+## If You Do Not Have Tool Access
+
+That is completely fine. You can still participate fully by:
+
+- drafting prompts without running them
+- critiquing sample AI outputs
+- comparing workflows and validation steps
+- discussing governance, disclosure, and documentation choices

@@ -2,14 +2,68 @@
 title: Additional Material
 ---
 
-## Optional Extensions
+## Purpose
 
-- Data classification decision exercises.
-- FAIR maturity self-assessment using participant datasets.
-- Structured review of a sample DMP with peer feedback.
+Use this page for optional additions when you have extra time, a more advanced cohort, or a strong local example to work with. The best extensions in this course are still practical and discussion-led. They should deepen judgement rather than simply add more slides.
+
+## Optional Extensions by Theme
+
+### Digital tools and systems
+
+- Live walkthrough of how a project might use OneDrive, Teams, SharePoint, RIS, and ORCID together.
+- Research identity audit using a fictional or volunteer profile.
+- Short exercise comparing poor and strong folder structures for collaborative work.
+
+### Delivery and coordination
+
+- Ask groups to redesign a stalled project into a two-week sprint with review points.
+- Compare a status update that reports activity with one that reports progress and blockers.
+- Use a RACI-style sketch to clarify overlapping responsibilities in a research team.
+
+### Governance and compliance
+
+- Data flow mapping for a project involving collaborators, cloud services, and participant data.
+- "Escalate or decide locally?" sorting activity for ethics, DPIA, storage, and sharing questions.
+- A mini case in which lawful basis, ethics review, and classification all need to be distinguished.
+
+### Research data management
+
+- Before-and-after critique of a weak DMP paragraph.
+- Folder and file naming redesign for a realistic shared project.
+- Metadata minimum exercise: ask groups what another team would need in order to reuse a dataset.
+- FAIR maturity self-assessment using a live or fictional dataset.
+
+### Data interpretation and impact
+
+- Chart critique gallery: display 3 to 5 weak charts and ask groups to identify what each one hides.
+- Ask learners to rewrite a descriptive finding as an actionable recommendation for a named audience.
+- Use a short scenario where the same chart is interpreted differently when context changes.
+
+### AI in research
+
+- Prompt comparison exercise: weak prompt, stronger prompt, and source-bounded prompt.
+- Verification drill using an AI-generated summary and a source document.
+- Workflow design activity: where should AI help, where should it stop, and where should documentation happen?
 
 ## Optional Demonstrations
 
-- Folder structure redesign for a live project scenario.
-- Metadata minimum template for cross-team collaboration.
-- Example workflow from collection to archiving.
+These work best when they are short and tightly tied to the lesson objective.
+
+- Demonstrate version history and permissions in a shared Microsoft 365 document.
+- Show how a DMP becomes more useful when it names real storage locations and responsibilities.
+- Walk through a simple data lifecycle from collection to preservation.
+- Show how small wording changes in a prompt change usefulness more than style does.
+
+## Useful Artefacts to Prepare
+
+If you want richer discussion, bring one or more of the following:
+
+- a weak and strong DMP example
+- a simple folder tree with obvious problems
+- a chart with misleading design choices
+- a short policy or guidance excerpt for critique
+- an AI output that includes uncertainty, drift, or unsupported claims
+
+## Extension Design Principle
+
+If time is limited, prefer one extra case study with a strong debrief over several disconnected mini-tasks. In this course, depth usually teaches more than breadth.

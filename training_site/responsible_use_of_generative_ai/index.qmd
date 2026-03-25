@@ -1,0 +1,146 @@
+---
+title: "Responsible Use of Generative AI"
+subtitle: "A 2-hour course for selective, defensible AI use in research"
+---
+
+::: {.tier-card}
+### Course At A Glance
+
+- **Level:** Foundation to intermediate
+- **Duration:** 2 hours
+- **Best for:** Researchers, research staff, doctoral researchers, and professional services colleagues who need clearer judgement about AI use
+- **Main themes:** research change, prompt design, validation, documentation, governance, and repeatable workflows
+- **Format:** Two linked one-hour sessions or one 2-hour workshop
+- **Outcome:** More confident, source-aware, and defensible use of generative AI in research settings
+:::
+
+::: {.two-col-grid}
+::: {.item}
+## Why This Course Matters
+
+Generative AI can reduce friction in research work, but it also creates new checking work, new governance questions, and new opportunities to over-trust persuasive output. Many people are already experimenting with AI, yet still feel unsure about where it helps, where it creates risk, and what responsible use actually looks like in practice.
+
+This course is designed to close that gap. It helps learners understand how AI is changing research activity and how to use AI tools more selectively, with clearer boundaries, stronger validation, and better records.
+:::
+
+::: {.item}
+## What You Will Actually Do
+
+This is not a hype session and it is not a tool demo dressed up as policy. Learners work through prompt design, source checking, critique, documentation, and workflow decisions using realistic research examples.
+
+Across the course you will:
+
+- examine where AI genuinely changes research work
+- identify opportunities without ignoring risk relocation
+- practise stronger prompting with source boundaries and uncertainty cues
+- validate AI outputs against real documents
+- decide when AI use should stay ad hoc and when it can become a workflow or agent
+:::
+:::
+
+## Who This Is For
+
+This course is especially useful if you:
+
+- already use AI occasionally but want clearer rules for responsible use
+- need to explain or defend AI-assisted work in a research setting
+- want better habits for validation, documentation, and disclosure
+- support researchers and need a stronger framework for advising on AI practice
+
+No programming background is required.
+
+## You Will Build Confidence In
+
+::: {.four-col-grid}
+::: {.item}
+### Judging Where AI Helps
+
+Separate high-value support tasks from situations where AI mainly increases risk or checking burden.
+:::
+
+::: {.item}
+### Prompting More Deliberately
+
+Use clearer task framing, source boundaries, output formats, and follow-up prompts.
+:::
+
+::: {.item}
+### Checking Outputs Properly
+
+Verify claims, quotations, summaries, and workflow outputs against actual sources and research expectations.
+:::
+
+::: {.item}
+### Recording AI Use
+
+Keep lightweight notes, validation steps, and disclosure decisions that make AI use easier to explain later.
+:::
+:::
+
+## Learning Journey
+
+| Lesson | What you will tackle | Why it matters |
+|---|---|---|
+| [How AI Impacts Research](episodes/ext1-how_ai_impacts_research.qmd) | Opportunities, risks, governance, data security, and how AI changes research work | Builds judgement before tool use becomes routine |
+| [How to Use AI in Research](episodes/ext2-how_to_use_ai_in_research.qmd) | Prompt design, validation, source-grounded workflows, and practical AI exercises | Turns broad principles into concrete, defensible practice |
+
+## Suggested 2-Hour Delivery
+
+This course can run as:
+
+- one 2-hour session with a short break between the two lessons
+- two linked 1-hour sessions delivered separately
+
+A simple structure is:
+
+1. **Hour 1:** [How AI Impacts Research](episodes/ext1-how_ai_impacts_research.qmd)
+2. **Hour 2:** [How to Use AI in Research](episodes/ext2-how_to_use_ai_in_research.qmd)
+
+## What Learners Typically Leave With
+
+By the end of the course, learners should be more able to:
+
+- explain where AI changes research work and where human judgement must remain central
+- write stronger prompts with clearer boundaries and verification steps
+- spot when AI output needs source checking, clarification, or rejection
+- document AI-assisted work in a way that supports transparency later
+- decide when a repeated AI task is suitable for templating, workflow design, or simple automation
+
+## How To Prepare
+
+It helps to arrive with:
+
+- access to a browser and, if available, an approved institutional AI tool
+- one low-risk research task or prompt you want to improve
+- one public or non-sensitive document you can use for critique or comparison
+- one question about AI use, governance, or disclosure that feels unresolved in your context
+
+Detailed preparation guidance is available in [Setup](learners/setup.qmd).
+
+## Course Materials
+
+::: {.two-col-grid}
+::: {.item}
+### Learners
+
+- [Setup](learners/setup.qmd): what to bring, what to access, and how to prepare
+- [Reference](learners/reference.qmd): glossary, prompt templates, validation guidance, and documentation habits
+- [Discussion](learners/discuss.qmd): prompts for breakout work and end-of-session reflection
+:::
+
+::: {.item}
+### Instructors
+
+- [Instructor Notes](instructors/instructor-notes.qmd): delivery rhythm, facilitation guidance, and common sticking points
+- [Additional Material](instructors/additional_material.qmd): optional extensions, demos, and case ideas
+- [Extra Exercises](instructors/extra_exercises.qmd): backup activities for deeper critique and practice
+:::
+:::
+
+## Community and Course Information
+
+- [Course README](README.qmd)
+- [Contributing](CONTRIBUTING.qmd)
+- [Learner Profiles](profiles/learner-profiles.qmd)
+- [Code of Conduct](CODE_OF_CONDUCT.qmd)
+- [License](LICENSE.qmd)

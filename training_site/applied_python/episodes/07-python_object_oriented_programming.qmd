@@ -103,7 +103,7 @@ print(patient.mean_inflammation())
 ```
 
 
-### Dunder Methods
+## Dunder Methods
 
 Why is the `__init__` method not called `init`?
 There are a few special method names that we can use
@@ -180,7 +180,7 @@ decorator sections of the Python documentation.
 
 
 
-### Properties
+## Properties
 
 The final special type of method we will introduce is a **property**.
 Properties are methods which behave like data -
@@ -224,7 +224,7 @@ which we need to be able to describe:
 1. Ownership - x **has a** y - this is **composition**
 2. Identity - x **is a** y - this is **inheritance**
 
-### Composition
+## Composition
 
 In object oriented programming, we can make things components of other things.
 
@@ -258,7 +258,7 @@ approach is that we can create a new class called e.g. `Hospital`, which has its
 differ from those of the class `Trial`. The implementation of the `Hospital` class will be different, but it can
 still have `Patient`s.
 
-### Inheritance
+## Inheritance
 
 The other type of relationship used in object oriented programming is **inheritance**.
 Inheritance is about data and behaviour shared by classes,
@@ -316,7 +316,7 @@ e.g. a valid `Patient` must have a `patient_id`,
 before we can properly initialise a `TreatedPatient` model with their data.
 
 ::: {.callout-note}
-### Composition vs Inheritance
+## Composition vs Inheritance
 
 When deciding how to implement a model of a particular system,
 you often have a choice of either composition or inheritance,
@@ -415,7 +415,7 @@ The behaviours we may have seen previously include:
 
 ## Design Guidance
 
-### When to Use Classes
+## When to Use Classes
 
 Use classes when you repeatedly need:
 
@@ -423,7 +423,7 @@ Use classes when you repeatedly need:
 - related operations attached to the same entity
 - clearer interfaces for larger pipelines
 
-### When Functions Are Better
+## When Functions Are Better
 
 Prefer simple functions when logic is:
 
@@ -506,7 +506,7 @@ The concepts in this module connect directly to practical data handling and expl
 | Inheritance | [Inheritance](https://docs.python.org/3/tutorial/classes.html#inheritance) | Inheritance supports reuse when shared behavior is stable. |
 
 ::: {.callout-note appearance="minimal"}
-### Attribution
+## Attribution
 This lesson is derived from materials developed by the [Software Carpentry](https://software-carpentry.org) project.
 
 The original content is licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) license: [https://github.com/swcarpentry/python-novice-inflammation/blob/main/LICENSE.md](https://github.com/swcarpentry/python-novice-inflammation/blob/main/LICENSE.md)
