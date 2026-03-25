@@ -60,6 +60,8 @@ website:
         href: index.qmd
       - text: "Essential Digital Skills"
         href: essential_digital_skills/index.qmd
+      - text: "Responsible Use of Generative AI"
+        href: responsible_use_of_generative_ai/index.qmd
       - text: "Applied Data Science (Python)"
         href: applied_python/index.qmd
       - text: "Applied Data Science (R)"
@@ -84,8 +86,6 @@ website:
             - essential_digital_skills/episodes/06-organising_and_exploring_data.qmd
             - essential_digital_skills/episodes/07-making_sense_of_data.qmd
             - essential_digital_skills/episodes/08-insight_to_impacts.qmd
-            - essential_digital_skills/episodes/ext1-how_ai_impacts_research.qmd
-            - essential_digital_skills/episodes/ext2-how_to_use_ai_in_research.qmd
         - section: "Learners"
           contents:
             - essential_digital_skills/learners/setup.qmd
@@ -103,6 +103,36 @@ website:
             - essential_digital_skills/CODE_OF_CONDUCT.qmd
             - essential_digital_skills/LICENSE.qmd
             - essential_digital_skills/profiles/learner-profiles.qmd
+
+    - id: "responsible-use-of-generative-ai"
+      title: "Responsible Use of Generative AI"
+      style: "docked"
+      search: true
+      collapse-level: 3
+      contents:
+        - text: "Overview"
+          href: responsible_use_of_generative_ai/index.qmd
+        - section: "Lessons"
+          contents:
+            - responsible_use_of_generative_ai/episodes/ext1-how_ai_impacts_research.qmd
+            - responsible_use_of_generative_ai/episodes/ext2-how_to_use_ai_in_research.qmd
+        - section: "Learners"
+          contents:
+            - responsible_use_of_generative_ai/learners/setup.qmd
+            - responsible_use_of_generative_ai/learners/discuss.qmd
+            - responsible_use_of_generative_ai/learners/reference.qmd
+        - section: "Instructors"
+          contents:
+            - responsible_use_of_generative_ai/instructors/additional_material.qmd
+            - responsible_use_of_generative_ai/instructors/extra_exercises.qmd
+            - responsible_use_of_generative_ai/instructors/instructor-notes.qmd
+        - section: "Community & Metadata"
+          contents:
+            - responsible_use_of_generative_ai/README.qmd
+            - responsible_use_of_generative_ai/CONTRIBUTING.qmd
+            - responsible_use_of_generative_ai/CODE_OF_CONDUCT.qmd
+            - responsible_use_of_generative_ai/LICENSE.qmd
+            - responsible_use_of_generative_ai/profiles/learner-profiles.qmd
 
     - id: "applied-python"
       title: "Applied Data Science (Python)"

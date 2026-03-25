@@ -1,0 +1,49 @@
+---
+title: Discussion
+---
+
+## How To Use These Prompts
+
+Use these prompts for pair work, breakout groups, or end-of-session reflection. They are grouped around the two lessons in the course so they can be used during delivery or as a follow-up resource afterwards.
+
+## How AI Impacts Research
+
+Use alongside [How AI Impacts Research](../episodes/ext1-how_ai_impacts_research.qmd).
+
+1. Which parts of the research lifecycle feel most changed by AI already?
+2. Where does AI save time in your work, and where does it simply move the effort into checking?
+3. What kinds of AI use would feel clearly defensible in your context?
+4. What should remain a human responsibility even if AI tools become more capable?
+
+## How to Use AI in Research
+
+Use alongside [How to Use AI in Research](../episodes/ext2-how_to_use_ai_in_research.qmd).
+
+1. What makes a prompt useful for research rather than generic chat?
+2. Which tasks benefit most from source boundaries and explicit uncertainty prompts?
+3. What counts as enough validation before you reuse or repeat an AI-generated claim?
+4. When is it worth turning repeated prompting into a documented workflow or agent?
+
+## Documentation and Disclosure
+
+Use after either lesson when learners are thinking about defensibility and accountability.
+
+1. What would you need to record so you could explain your AI use a month later?
+2. Which uses belong in a methods note, which belong in an internal log, and which may need no formal disclosure?
+3. What would make a team-level AI workflow transparent rather than invisible?
+4. How much documentation is enough without becoming bureaucratic?
+
+## Group Debrief Format
+
+After a small-group discussion, ask each group to report:
+
+- one use of AI they would keep
+- one use of AI they would restrict or redesign
+- one practical habit they would adopt next week
+
+## End-of-Course Reflection
+
+1. What is one thing you now trust AI less for?
+2. What is one thing you can now use AI for more confidently?
+3. Which validation or documentation habit will you adopt first?
+4. What question about AI use still needs a policy, governance, or local support answer?

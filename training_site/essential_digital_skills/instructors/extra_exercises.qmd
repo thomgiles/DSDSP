@@ -126,7 +126,7 @@ Give learners a short finding such as a survey result, metric shift, or usage pa
 
 ## Exercise 9: AI Verification Drill
 
-**Best fit:** [How to Use AI in Research](../episodes/ext2-how_to_use_ai_in_research.qmd)
+**Best fit:** [How to Use AI in Research](../../responsible_use_of_generative_ai/episodes/ext2-how_to_use_ai_in_research.qmd)
 
 Provide a short AI-generated output and ask groups to mark:
 

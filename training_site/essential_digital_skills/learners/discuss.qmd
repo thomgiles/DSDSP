@@ -62,7 +62,7 @@ Use alongside [Making Sense of Data](../episodes/07-making_sense_of_data.qmd) an
 
 ## AI in Research
 
-Use alongside [How AI Impacts Research](../episodes/ext1-how_ai_impacts_research.qmd) and [How to Use AI in Research](../episodes/ext2-how_to_use_ai_in_research.qmd).
+Use alongside [How AI Impacts Research](../../responsible_use_of_generative_ai/episodes/ext1-how_ai_impacts_research.qmd) and [How to Use AI in Research](../../responsible_use_of_generative_ai/episodes/ext2-how_to_use_ai_in_research.qmd).
 
 1. Which parts of the research lifecycle feel most changed by AI already?
 2. Where does AI save time in your work, and where does it create checking work?

@@ -1,0 +1,39 @@
+---
+title: Additional Material
+---
+
+## Purpose
+
+Use this page for optional additions when you have extra time, a more confident cohort, or a strong local example to work with. The best extensions still deepen judgement rather than simply adding more AI content.
+
+## Optional Extensions by Theme
+
+### How AI changes research work
+
+- Ask groups to map where AI reduces effort and where it removes natural pauses for reflection.
+- Compare a research task completed manually, with AI support, and with over-reliance on AI.
+- Use a short case where speed improves output quantity but weakens checking discipline.
+
+### Documentation and workflows
+
+- Show a lightweight AI use note and ask what is missing.
+- Workflow design activity: where should AI help, where should it stop, and where should documentation happen?
+- Compare a sensible narrow agent idea with one that automates the wrong kind of judgement.
+
+## Optional Demonstrations
+
+- Demonstrate how a stronger prompt improves usefulness more than a role prompt alone.
+- Show how AI output changes when you move from "answer from memory" to "use only this source".
+- Walk through a simple policy-checking workflow from source to summary to manual validation.
+
+## Useful Artefacts to Prepare
+
+If you want richer discussion, bring one or more of the following:
+
+- a weak and strong prompt pair
+- an AI-generated summary with missing caveats
+- a short example of an AI use note or disclosure paragraph
+
+## Extension Design Principle
+
+If time is limited, choose one richer case study with a strong debrief over several disconnected mini-tasks. In AI teaching, depth usually beats breadth.

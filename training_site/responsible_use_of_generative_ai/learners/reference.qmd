@@ -1,0 +1,98 @@
+---
+title: Reference
+---
+
+## Core Terms
+
+- **Generative AI:** AI systems that generate text, images, code, audio, or other outputs from prompts or input material.
+- **LLM (Large Language Model):** A model trained on large amounts of text that predicts and generates language-like output.
+- **Prompt:** The instruction or input given to an AI tool.
+- **Source boundary:** An explicit instruction about what source, document, or evidence the tool should rely on.
+- **Hallucination:** A false, unsupported, or invented output presented as if it were reliable.
+- **Validation:** The checking work needed to confirm whether an AI output is accurate, relevant, and usable.
+- **Role prompting:** Asking the model to answer in a particular style or perspective, such as researcher or policy adviser.
+- **Prompt chain:** A sequence of smaller prompts used to refine, check, and restructure output.
+- **Workflow:** A repeatable set of steps that turns a task into a more consistent process.
+- **Agent:** A more structured AI setup that performs a narrow repeated task with defined steps and outputs.
+- **AI use note:** A short record of what tool was used, for what task, with what inputs, and what checks were performed.
+- **Disclosure:** A decision about whether AI use should be reported formally in methods, acknowledgements, or internal records.
+
+## Quick Decision Guide
+
+### Should I use AI for this task?
+
+| Situation | Usually sensible | Usually risky |
+|---|---|---|
+| public or low-risk source material | summarising, comparing, outlining, drafting structure | trusting claims without checking |
+| code or technical scaffolding | explanations, toy examples, boilerplate, debugging support | running uninspected code on real or sensitive data |
+| sensitive, unpublished, or restricted material | only within approved tools and governance rules | pasting into a public AI chat tool |
+| interpretation and judgement | asking for questions, alternatives, or critique | outsourcing conclusions you cannot defend |
+
+### Prompt ingredients worth including
+
+Use prompts that define:
+
+- the task
+- the audience or context
+- the source boundary
+- the output format
+- the uncertainty instruction
+- the validation step you will apply afterwards
+
+## A Useful Prompt Pattern
+
+> Help me with **[task]** for **[context or audience]**. Use **[source or boundary]**. Return the output as **[format]**. If something is uncertain, **flag it explicitly**. Do not invent evidence or citations.
+
+## Validation Checklist
+
+| Output type | What to check |
+|---|---|
+| summary or explanation | source accuracy, date, missing caveats |
+| citation or quotation | exact wording, existence, relevance |
+| comparison | whether the comparison reflects the actual source texts |
+| code or workflow suggestion | assumptions, edge cases, whether it runs or makes sense |
+| agent output | consistency, whether validation steps were actually followed |
+
+## A Lightweight AI Use Note
+
+You do not need a complex logging system. A short note can include:
+
+- date
+- tool
+- task
+- prompt or template
+- input material
+- checks performed
+- what was kept
+- disclosure decision
+
+Example:
+
+```text
+Date: 2026-03-23
+Tool: Copilot
+Task: Compared two public AI policy pages
+Input: Public web text copied into prompt
+Output kept: A short comparison table
+Checks: Manual comparison against source pages
+Disclosure: Internal project log only
+```
+
+## What Not To Paste Into a Public AI Tool
+
+Avoid sharing:
+
+- identifiable participant data
+- unpublished findings or draft papers that should remain confidential
+- contract-restricted or commercially sensitive material
+- peer review reports or confidential reviewer comments
+- anything your institution would not permit you to email to an external collaborator without agreement
+
+## If In Doubt
+
+Ask:
+
+1. Is the material safe for this tool?
+2. What part of the output will I need to verify manually?
+3. Am I using AI for support, or trying to outsource judgement?
+4. What would I need to record so this use could be explained later?

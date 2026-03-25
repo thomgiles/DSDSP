@@ -46,6 +46,21 @@ metadata:
 
 AI was used (but not harmed) in the generation of these training materials! 
 
+---
+
+::: callout-task
+
+#### Temperate Check
+
+::: panel-tabset
+
+##### Question
+
+How confident are you about using AI responsibly?
+
+:::
+:::
+
 # Foundations and Context
 
 ![](fig/responsible_ai.png){fig-align="center" width="500px"}
@@ -234,7 +249,9 @@ Big shift now is on optimisation as running large models is expensive!
 ::: panel-tabset
 
 ##### Question
+
 Fill in the following questionaire: 
+
 ::: {.content-visible when-format="revealjs"}
 
 <!-- Hidden by default -->
@@ -490,7 +507,7 @@ The Following Method was produced using AI:
 ***“Data will be analysed using to identify informative variables. Variables meeting a predefined relevance threshold will be retained. Cases showing minimal contribution will be excluded and the the top 25 highest-ranked variables will be taken forward for interpretation and reporting.”***
 
 1. What would count as substantive contributions in this artefact?
-2. What would need to be disclosed if AI materially contributed?
+2. What would need to be disclosed as AI materially contributed?
 :::
 
 
@@ -599,37 +616,6 @@ A simple operational test:
 
 If not, it should not be shared with an external AI service. Check with your organisation directly if there are local / secure versions of these tools avalible for you to use. 
 
----
-
-::: callout-task
-
-#### Poll: Which AI tools have you used?
-
-::: panel-tabset
-
-##### Question
-
-How confident are you about using AI responsibly?
-
-::: {.content-visible when-format="revealjs"}
-
-<!-- Hidden by default -->
-![](fig/EXT1-Q2_qr_code.png)
-
-:::
-
-##### Wordcloud
-
-<iframe
-  src="https://ds-shiny-helper.azurewebsites.net/edsex1/?embed=true#shiny-tab-q2_results"
-  width="100%"
-  height="500"
-  frameborder="0"
-  style="border:none;"
-  title="Q2">
-</iframe> 
-:::
-:::
 
 # Further Information
 

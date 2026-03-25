@@ -92,7 +92,7 @@ These light checks will help you get more from each topic.
 | [Organising and Exploring Data](../episodes/06-organising_and_exploring_data.qmd) | Bring a messy spreadsheet, table, or repeated reporting problem in mind |
 | [Making Sense of Data](../episodes/07-making_sense_of_data.qmd) | Bring an example chart or dashboard you have used or questioned |
 | [Insight to Impact](../episodes/08-insight_to_impacts.qmd) | Think of one analysis result that did or did not lead to action |
-| [AI sessions](../episodes/ext2-how_to_use_ai_in_research.qmd) | Bring a low-risk prompt, reading task, or workflow you want to improve |
+| [Responsible Use of Generative AI](../../responsible_use_of_generative_ai/index.qmd) | Bring a low-risk prompt, reading task, or workflow you want to improve |
 
 ## If You Are New to These Systems
 

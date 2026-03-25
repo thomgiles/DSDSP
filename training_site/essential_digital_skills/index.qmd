@@ -8,8 +8,8 @@ subtitle: "Foundation pathway for confident, defensible digital research practic
 
 - **Level:** Foundation
 - **Best for:** Early-career researchers, research staff, and professional services colleagues
-- **Main themes:** Collaboration, delivery, governance, research data management, data quality, interpretation, and responsible AI use
-- **Format:** Core lesson sequence with AI extension sessions that can be used to deepen or tailor delivery
+- **Main themes:** Collaboration, delivery, governance, research data management, data quality, interpretation, and defensible digital research practice
+- **Format:** Core lesson sequence for practical digital research work
 - **Outcome:** Better day-to-day judgement about where work should live, how it should be documented, and how research decisions can be made more safely and transparently
 :::
 
@@ -34,7 +34,7 @@ Across the course you will:
 - identify governance and data protection risks
 - improve data management and folder structures
 - question data quality, charts, and interpretation
-- explore what responsible and useful AI support looks like in research
+- improve practical decision-making across common research workflows
 :::
 :::
 
@@ -90,14 +90,9 @@ Read charts more critically, add context more deliberately, and communicate insi
 | [07 Making Sense of Data](episodes/07-making_sense_of_data.qmd) | Visualisation, chart critique, interpretation, and context | Helps learners avoid overclaiming and misreading evidence |
 | [08 Insight to Impact](episodes/08-insight_to_impacts.qmd) | Action, audience, feedback, and implementation | Connects analysis to decisions, communication, and change |
 
-## AI Extension Sessions
+## Related Course
 
-The AI sessions extend the foundation course without losing the same practical emphasis on judgement, evidence, and accountability.
-
-| Extension | Focus |
-|---|---|
-| [EXT1 How AI Impacts Research](episodes/ext1-how_ai_impacts_research.qmd) | Risks, governance, integrity, and the broader research context |
-| [EXT2 How to Use AI in Research](episodes/ext2-how_to_use_ai_in_research.qmd) | Prompt design, source-bounded workflows, validation habits, and practical experimentation |
+For dedicated AI teaching, see [Responsible Use of Generative AI](../responsible_use_of_generative_ai/index.qmd). That 2-hour course focuses on how AI changes research work and how to use AI more selectively through stronger prompting, validation, documentation, and workflow design.
 
 ## What Learners Typically Leave With
 
@@ -108,7 +103,7 @@ By the end of the pathway, learners should be more able to:
 - ask sharper questions about data sensitivity, sharing, and governance
 - improve folder structures, naming, and metadata for collaboration
 - interpret data outputs more critically and communicate them more clearly
-- use AI more selectively, with stronger boundaries and better verification
+- plan more defensible next steps in their own digital research practice
 
 ## How To Prepare
 

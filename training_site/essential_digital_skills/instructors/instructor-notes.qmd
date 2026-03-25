@@ -54,9 +54,9 @@ Use [Research Data Management](../episodes/04-research_data_managment.qmd) to co
 
 Use [Collecting the Right Data](../episodes/05-collecting_the_right_data.qmd) through [Insight to Impact](../episodes/08-insight_to_impacts.qmd) to build learners' judgement about data quality, organisation, visualisation, and action. Emphasise interpretation, not just technique.
 
-### AI sessions
+### Related AI course
 
-The AI lessons should be taught as judgement-heavy sessions. Whether you use the hands-on or lecture-led route, the core message is that AI can support research work, but not remove the need for verification, evidence, or accountability.
+Dedicated AI teaching now sits in [Responsible Use of Generative AI](../../responsible_use_of_generative_ai/index.qmd). If learners want deeper coverage of prompting, validation, documentation, and defensible AI use, that course is the natural follow-on.
 
 ## Common Sticking Points
 

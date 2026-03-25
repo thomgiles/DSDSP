@@ -1,0 +1,95 @@
+---
+title: Instructor Notes
+---
+
+## About This Course
+
+Responsible Use of Generative AI is a short course about judgement, not hype. The teaching goal is to help learners understand how AI changes research work and to give them practical habits for using AI more selectively, with clearer boundaries, stronger validation, and better records.
+
+The course works best when learners leave with:
+
+- a clearer sense of where AI actually helps
+- better prompting habits
+- stronger source-checking instincts
+- a lightweight approach to documentation and disclosure
+- more confidence saying "this task should stay manual"
+
+## Recommended Teaching Approach
+
+- Keep the tone practical and calm.
+- Treat AI as a research assistant that needs supervision, not as an authority.
+- Use concrete examples rather than abstract claims about the future of AI.
+- Prioritise critique and validation over tool enthusiasm.
+- Keep bringing the discussion back to evidence, accountability, and defensibility.
+
+## Delivery Pattern
+
+This course can run as one 2-hour workshop or two linked one-hour sessions.
+
+A reliable rhythm is:
+
+1. Short concept framing.
+2. Example or comparison.
+3. Pair or group activity.
+4. Debrief focused on practical decisions.
+
+Learners usually understand the material better after they have had to defend a prompt, identify a weak claim, or explain what should be checked next.
+
+## Session-Level Emphasis
+
+### How AI Impacts Research
+
+Use [How AI Impacts Research](../episodes/ext1-how_ai_impacts_research.qmd) to establish why AI changes research work and why opportunity and risk now travel together. This lesson should reduce simplistic positions like "AI is obviously good" or "AI is obviously cheating" and replace them with more useful judgement.
+
+### How to Use AI in Research
+
+Use [How to Use AI in Research](../episodes/ext2-how_to_use_ai_in_research.qmd) to move from principle to practice. Focus on prompt design, source boundaries, validation, documentation, and the question of when a repeated task deserves a workflow or agent.
+
+## Common Sticking Points
+
+- Learners confuse confidence in output style with confidence in factual reliability.
+- People underestimate how much checking work AI creates.
+- Tool questions get mixed up with policy questions.
+- Some learners assume disclosure rules are obvious when they are often context-dependent.
+- Others assume every repeated prompt should become an automation, even when the task is too unstable.
+
+## Facilitation Moves That Usually Help
+
+- Ask "what would you check next?" whenever a group accepts an AI claim too quickly.
+- Ask learners to rewrite vague prompts rather than only criticising them.
+- Turn open discussions into ranking tasks when the room is too abstract.
+- When groups describe a benefit, ask what responsibility or risk moved elsewhere.
+- When groups describe a risk, ask what safeguard or habit would reduce it.
+
+## Managing Policy and Tool Questions
+
+Learners will often ask for definitive answers about local policy, approved tools, or disclosure requirements. When the answer depends on context:
+
+- be honest about uncertainty
+- distinguish principle from local implementation
+- signpost the relevant institutional service or policy route
+- avoid improvising a confident answer when escalation is more responsible
+
+This matters especially for:
+
+- sensitive or unpublished material
+- authorship and disclosure
+- external sharing and cloud tools
+- funder- or publisher-specific requirements
+
+## Room Setup and Activity Design
+
+- Mixed-discipline groups usually work well because assumptions differ.
+- If confidence levels vary a lot, start with individual reflection before plenary.
+- If tool access is inconsistent, frame activities so they still work as paper-based prompt or workflow design tasks.
+- Encourage each group to capture one prompt improvement and one validation habit they want to keep.
+
+## Good Evidence of Learning
+
+You are looking for learners who can:
+
+- explain where AI is useful and where it should be constrained
+- write prompts with clearer task definition and source boundaries
+- identify what needs verification before reuse
+- describe a lightweight way to document AI use
+- distinguish between a one-off prompt, a reusable workflow, and a risky automation idea
