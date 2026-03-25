@@ -3,50 +3,135 @@ title: "Applied Python"
 subtitle: "Methods for Data Science pathway"
 ---
 
-## Course Overview
+::: {.tier-card}
+### Course At A Glance
 
-Applied Python introduces core programming and data analysis workflows for early-career researchers. The course builds from Python fundamentals through array operations, visualization, modelling, and robust coding practices.
+- **Level:** Introductory to lower-intermediate
+- **Best for:** Researchers who want a practical route into programming and data analysis
+- **Environment:** Python with notebook-style or interactive workflows
+- **Main themes:** Core syntax, data manipulation, plotting, modelling, functions, and debugging
+- **Outcome:** A working foundation for reproducible analysis rather than a vague familiarity with Python
+:::
+
+::: {.two-col-grid}
+::: {.item}
+## Why This Course Matters
+
+Applied Python turns Python from something you have "meant to learn" into something you can actually use. The course is designed for people who need to work with data, automate repetitive tasks, and read or adapt analysis code without feeling locked out by the language.
+
+Rather than racing through syntax in isolation, the lessons build toward practical research workflows: reading data, exploring it, visualising it, writing reusable functions, fitting simple models, and debugging code when it breaks.
+:::
+
+::: {.item}
+## What The Learning Experience Feels Like
+
+Expect a strongly hands-on course. Learners move between short explanations, live coding, notebook practice, and small problem-solving tasks.
+
+You will spend time:
+
+- writing and running code yourself
+- inspecting outputs and tracebacks
+- cleaning and reshaping data
+- making charts and checking what they really show
+- turning repeated steps into reusable functions
+- building confidence by fixing errors rather than avoiding them
+:::
+:::
 
 ## Who This Is For
 
-- Researchers with little or no prior Python experience.
-- Learners transitioning from another language to Python for data science.
-- Research staff who need reproducible, maintainable analysis workflows.
+This course is a good fit if you:
 
-## What You Need
+- are new to Python and want a structured starting point
+- already work with data but want stronger computational habits
+- need a route into analysis that is practical rather than theory-heavy
+- want to read, adapt, or collaborate on code with more confidence
 
-- A laptop with Python 3.8+ installed.
-- Access to lesson datasets and example code.
-- A Python environment such as Jupyter Notebook, VS Code, or IPython.
+You do not need previous Python experience, but you will get more from the course if you are comfortable with files, folders, and basic spreadsheet-style thinking.
 
-## Lesson Sequence
+## What You Will Learn To Do
 
-| Lesson | Focus |
-|---|---|
-| [01 Types, Variables, and Basic Operations](episodes/01-types_variables_and_basic_operations.qmd) | Core Python types, variables, lists, slicing |
-| [02 Loops and Control Flow](episodes/02-loops_and_control_flow.qmd) | Iteration, conditionals, boolean logic |
-| [03 Data Manipulation and Visualization](episodes/03-data_manipulation_and_visualization.qmd) | NumPy arrays, plotting, multi-file workflows |
-| [04 Functions](episodes/04_functions.qmd) | Defining, testing, and documenting functions |
-| [05 Data Manipulation with pandas](episodes/05-data_manipulation_with_pandas.qmd) | DataFrames, filtering, cleaning, grouped summaries |
-| [06 Regression Analysis and Modelling](episodes/06-regression_analysis_and_modelling.qmd) | Linear regression with scikit-learn |
-| [07 Python Object-Oriented Programming](episodes/07-python_object_oriented_programming.qmd) | Classes, methods, inheritance, design choices |
-| [08 Errors, Debugging, and Defensive Programming](episodes/08-errors_debugging_and_defensive_programming.qmd) | Tracebacks, assertions, testing, debugging workflow |
+::: {.four-col-grid}
+::: {.item}
+### Think In Python
+
+Use variables, lists, slicing, loops, and conditionals to express research tasks clearly.
+:::
+
+::: {.item}
+### Work With Data
+
+Move from raw tabular data to cleaner, more structured summaries using NumPy and pandas workflows.
+:::
+
+::: {.item}
+### Build Better Analysis
+
+Write functions, fit simple models, and organise code so it is easier to test and reuse.
+:::
+
+::: {.item}
+### Debug With Confidence
+
+Read tracebacks, reason about mistakes, and use defensive programming habits to catch problems early.
+:::
+:::
+
+## Course Journey
+
+| Lesson | What you will practise | Why it matters |
+|---|---|---|
+| [01 Types, Variables, and Basic Operations](episodes/01-types_variables_and_basic_operations.qmd) | Variables, lists, mutability, and slicing | Gives you the mental model needed for almost everything that follows |
+| [02 Loops and Control Flow](episodes/02-loops_and_control_flow.qmd) | Iteration, conditions, boolean logic, and simple automation | Lets you move from manual repetition to programmable workflows |
+| [03 Data Manipulation and Visualization](episodes/03-data_manipulation_and_visualization.qmd) | NumPy arrays, plotting, and multi-file analysis tasks | Connects Python to real analytical work quickly |
+| [04 Functions](episodes/04_functions.qmd) | Writing, testing, and documenting reusable functions | Helps learners replace copy-paste analysis with cleaner structure |
+| [05 Data Manipulation with pandas](episodes/05-data_manipulation_with_pandas.qmd) | DataFrames, filtering, reshaping, and grouped summaries | Builds everyday data wrangling fluency |
+| [06 Regression Analysis and Modelling](episodes/06-regression_analysis_and_modelling.qmd) | Simple regression workflows with scikit-learn | Introduces a first practical modelling pipeline |
+| [07 Python Object-Oriented Programming](episodes/07-python_object_oriented_programming.qmd) | Classes, methods, inheritance, and design trade-offs | Gives learners a first look at how larger Python code is organised |
+| [08 Errors, Debugging, and Defensive Programming](episodes/08-errors_debugging_and_defensive_programming.qmd) | Tracebacks, assertions, testing, and debugging habits | Makes learners more independent when code goes wrong |
+
+## What You Will Leave With
+
+By the end of the course, learners should be able to:
+
+- read and write short Python programs with less hesitation
+- inspect tabular data and perform common transformation tasks
+- build simple plots and explain what they show
+- create reusable functions instead of repeating the same code manually
+- understand the shape of a basic modelling workflow
+- diagnose common errors and recover more quickly when something breaks
+
+## What To Prepare
+
+Before the course, learners should have:
+
+- a laptop with Python installed
+- access to the lesson data and example files
+- a working environment such as JupyterLab, VS Code, IPython, or another Python interface
+
+Preparation details are in [Setup](learners/setup.qmd).
 
 ## Course Materials
 
+::: {.two-col-grid}
+::: {.item}
 ### Learners
 
-- [Setup](learners/setup.qmd)
-- [Reference](learners/reference.qmd)
-- [Discussion](learners/discuss.qmd)
+- [Setup](learners/setup.qmd): installation and environment guidance
+- [Reference](learners/reference.qmd): glossary and key concepts
+- [Discussion](learners/discuss.qmd): reflection prompts and discussion questions
+:::
 
+::: {.item}
 ### Instructors
 
-- [Instructor Notes](instructors/instructor-notes.qmd)
-- [Additional Material](instructors/additional_material.qmd)
-- [Extra Exercises](instructors/extra_exercises.qmd)
+- [Instructor Notes](instructors/instructor-notes.qmd): teaching rationale, sequencing, and teaching tips
+- [Additional Material](instructors/additional_material.qmd): extra explanations and optional content
+- [Extra Exercises](instructors/extra_exercises.qmd): additional challenge tasks and solutions
+:::
+:::
 
-### Community and Profiles
+## Community and Course Information
 
 - [Course README](README.qmd)
 - [Contributing](CONTRIBUTING.qmd)

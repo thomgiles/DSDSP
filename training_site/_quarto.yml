@@ -59,159 +59,117 @@ website:
       - text: "Home"
         href: index.qmd
       - text: "Essential Digital Skills"
-        menu:
-          - text: "Digital Tools"
-            href: essential_digital_skills/episodes/01-digital_tools.qmd
-          - text: "Digital Delivery"
-            href: essential_digital_skills/episodes/02-digital_delivery.qmd
-          - text: "Data Governance and Policy"
-            href: essential_digital_skills/episodes/03-data_governance_and_policy.qmd
-          - text: "Research Data Management"
-            href: essential_digital_skills/episodes/04-research_data_managment.qmd
-          - text: "Collecting the Right Data"
-            href: essential_digital_skills/episodes/05-collecting_the_right_data.qmd
-          - text: "Organising and Exploring Data"
-            href: essential_digital_skills/episodes/06-organising_and_exploring_data.qmd
-          - text: "Making Sense of Data"
-            href: essential_digital_skills/episodes/07-making_sense_of_data.qmd
-          - text: "Insight to Impact"
-            href: essential_digital_skills/episodes/08-insight_to_impacts.qmd
-          - text: "Responsible AI"
-            href: essential_digital_skills/episodes/ext1-responsible_ai.qmd
-          - text: "Hands-on AI"
-            href: essential_digital_skills/episodes/ext2-hands_on_ai.qmd
-
+        href: essential_digital_skills/index.qmd
       - text: "Applied Data Science (Python)"
-        menu:
-          - text: "01 Types, Variables, and Basics"
-            href: applied_python/episodes/01-types_variables_and_basic_operations.qmd
-          - text: "02 Loops and Control Flow"
-            href: applied_python/episodes/02-loops_and_control_flow.qmd
-          - text: "03 Data Manipulation and Visualization"
-            href: applied_python/episodes/03-data_manipulation_and_visualization.qmd
-          - text: "04 Functions"
-            href: applied_python/episodes/04_functions.qmd
-          - text: "05 Data Manipulation with pandas"
-            href: applied_python/episodes/05-data_manipulation_with_pandas.qmd
-          - text: "06 Regression Analysis and Modelling"
-            href: applied_python/episodes/06-regression_analysis_and_modelling.qmd
-          - text: "07 Python Object-Oriented Programming"
-            href: applied_python/episodes/07-python_object_oriented_programming.qmd
-          - text: "08 Errors, Debugging, and Defensive Programming"
-            href: applied_python/episodes/08-errors_debugging_and_defensive_programming.qmd
-
+        href: applied_python/index.qmd
       - text: "Applied Data Science (R)"
-        menu:
-          - text: "01 RStudio Intro"
-            href: applied_R/episodes/01-Rstudio_intro.qmd
-          - text: "02 R Variables"
-            href: applied_R/episodes/02-R_variables_intro.qmd
-          - text: "03 R Functions"
-            href: applied_R/episodes/03-R_functions.qmd
-          - text: "04 For Loops"
-            href: applied_R/episodes/04-for_loops.qmd
-          - text: "05 The Tidyverse"
-            href: applied_R/episodes/05-the_tidyverse.qmd
-
-
+        href: applied_R/index.qmd
 
   sidebar:
-    style: "docked"
-    search: true
-    collapse-level: 4
-    contents:
-      - section: "Learning modules"
-        contents:
-          - section: "Essential Digital Skills"
-            href: essential_digital_skills/index.qmd
-            contents:
-              - essential_digital_skills/episodes/01-digital_tools.qmd
-              - essential_digital_skills/episodes/02-digital_delivery.qmd
-              - essential_digital_skills/episodes/03-data_governance_and_policy.qmd
-              - essential_digital_skills/episodes/04-research_data_managment.qmd
-              - essential_digital_skills/episodes/05-collecting_the_right_data.qmd
-              - essential_digital_skills/episodes/06-organising_and_exploring_data.qmd
-              - essential_digital_skills/episodes/07-making_sense_of_data.qmd
-              - essential_digital_skills/episodes/08-insight_to_impacts.qmd
-              - essential_digital_skills/episodes/ext1-responsible_ai.qmd
-              - essential_digital_skills/episodes/ext2-hands_on_ai.qmd
-              - section: "Learners"
-                contents:
-                  - essential_digital_skills/learners/setup.qmd
-                  - essential_digital_skills/learners/discuss.qmd
-                  - essential_digital_skills/learners/reference.qmd
-              - section: "Instructors"
-                contents:
-                  - essential_digital_skills/instructors/additional_material.qmd
-                  - essential_digital_skills/instructors/extra_exercises.qmd
-                  - essential_digital_skills/instructors/instructor-notes.qmd
-              - section: "Community & Metadata"
-                contents:
-                  - essential_digital_skills/README.qmd
-                  - essential_digital_skills/CONTRIBUTING.qmd
-                  - essential_digital_skills/CODE_OF_CONDUCT.qmd
-                  - essential_digital_skills/LICENSE.qmd
-                  - essential_digital_skills/profiles/learner-profiles.qmd
+    - id: "essential-digital-skills"
+      title: "Essential Digital Skills"
+      style: "docked"
+      search: true
+      collapse-level: 3
+      contents:
+        - text: "Overview"
+          href: essential_digital_skills/index.qmd
+        - section: "Lessons"
+          contents:
+            - essential_digital_skills/episodes/01-digital_tools.qmd
+            - essential_digital_skills/episodes/02-digital_delivery.qmd
+            - essential_digital_skills/episodes/03-data_governance_and_policy.qmd
+            - essential_digital_skills/episodes/04-research_data_managment.qmd
+            - essential_digital_skills/episodes/05-collecting_the_right_data.qmd
+            - essential_digital_skills/episodes/06-organising_and_exploring_data.qmd
+            - essential_digital_skills/episodes/07-making_sense_of_data.qmd
+            - essential_digital_skills/episodes/08-insight_to_impacts.qmd
+            - essential_digital_skills/episodes/ext1-how_ai_impacts_research.qmd
+            - essential_digital_skills/episodes/ext2-how_to_use_ai_in_research.qmd
+        - section: "Learners"
+          contents:
+            - essential_digital_skills/learners/setup.qmd
+            - essential_digital_skills/learners/discuss.qmd
+            - essential_digital_skills/learners/reference.qmd
+        - section: "Instructors"
+          contents:
+            - essential_digital_skills/instructors/additional_material.qmd
+            - essential_digital_skills/instructors/extra_exercises.qmd
+            - essential_digital_skills/instructors/instructor-notes.qmd
+        - section: "Community & Metadata"
+          contents:
+            - essential_digital_skills/README.qmd
+            - essential_digital_skills/CONTRIBUTING.qmd
+            - essential_digital_skills/CODE_OF_CONDUCT.qmd
+            - essential_digital_skills/LICENSE.qmd
+            - essential_digital_skills/profiles/learner-profiles.qmd
 
-          - section: "Methods for Data Science"
-            href: index.qmd
-            contents:
-              - section: "Applied Data Science (Python)"
-                href: applied_python/index.qmd
-                contents:
-                  - section: "Episodes"
-                    contents:
-                      - applied_python/episodes/01-types_variables_and_basic_operations.qmd
-                      - applied_python/episodes/02-loops_and_control_flow.qmd
-                      - applied_python/episodes/03-data_manipulation_and_visualization.qmd
-                      - applied_python/episodes/04_functions.qmd
-                      - applied_python/episodes/05-data_manipulation_with_pandas.qmd
-                      - applied_python/episodes/06-regression_analysis_and_modelling.qmd
-                      - applied_python/episodes/07-python_object_oriented_programming.qmd
-                      - applied_python/episodes/08-errors_debugging_and_defensive_programming.qmd
-                  - section: "Learners"
-                    contents:
-                      - applied_python/learners/setup.qmd
-                      - applied_python/learners/discuss.qmd
-                      - applied_python/learners/reference.qmd
-                  - section: "Instructors"
-                    contents:
-                      - applied_python/instructors/additional_material.qmd
-                      - applied_python/instructors/extra_exercises.qmd
-                      - applied_python/instructors/instructor-notes.qmd
-                  - section: "Community & Metadata"
-                    contents:
-                      - applied_python/README.qmd
-                      - applied_python/CONTRIBUTING.qmd
-                      - applied_python/CODE_OF_CONDUCT.qmd
-                      - applied_python/LICENSE.qmd
-                      - applied_python/AUTHORS.qmd
-                      - applied_python/profiles/learner-profiles.qmd
+    - id: "applied-python"
+      title: "Applied Data Science (Python)"
+      style: "docked"
+      search: true
+      collapse-level: 3
+      contents:
+        - text: "Overview"
+          href: applied_python/index.qmd
+        - section: "Lessons"
+          contents:
+            - applied_python/episodes/01-types_variables_and_basic_operations.qmd
+            - applied_python/episodes/02-loops_and_control_flow.qmd
+            - applied_python/episodes/03-data_manipulation_and_visualization.qmd
+            - applied_python/episodes/04_functions.qmd
+            - applied_python/episodes/05-data_manipulation_with_pandas.qmd
+            - applied_python/episodes/06-regression_analysis_and_modelling.qmd
+            - applied_python/episodes/07-python_object_oriented_programming.qmd
+            - applied_python/episodes/08-errors_debugging_and_defensive_programming.qmd
+        - section: "Learners"
+          contents:
+            - applied_python/learners/setup.qmd
+            - applied_python/learners/discuss.qmd
+            - applied_python/learners/reference.qmd
+        - section: "Instructors"
+          contents:
+            - applied_python/instructors/additional_material.qmd
+            - applied_python/instructors/extra_exercises.qmd
+            - applied_python/instructors/instructor-notes.qmd
+        - section: "Community & Metadata"
+          contents:
+            - applied_python/README.qmd
+            - applied_python/CONTRIBUTING.qmd
+            - applied_python/CODE_OF_CONDUCT.qmd
+            - applied_python/LICENSE.qmd
+            - applied_python/AUTHORS.qmd
+            - applied_python/profiles/learner-profiles.qmd
 
-              - section: "Applied Data Science (R)"
-                href: applied_R/index.qmd
-                contents:
-                  - section: "Episodes"
-                    contents:
-                      - applied_R/episodes/01-Rstudio_intro.qmd
-                      - applied_R/episodes/02-R_variables_intro.qmd
-                      - applied_R/episodes/03-R_functions.qmd
-                      - applied_R/episodes/04-for_loops.qmd
-                      - applied_R/episodes/05-the_tidyverse.qmd
-                  - section: "Learners"
-                    contents:
-                      - applied_R/learners/setup.qmd
-                      - applied_R/learners/discuss.qmd
-                      - applied_R/learners/reference.qmd
-                  - section: "Instructors"
-                    contents:
-                      - applied_R/instructors/additional_material.qmd
-                      - applied_R/instructors/extra_exercises.qmd
-                      - applied_R/instructors/instructor-notes.qmd
-                  - section: "Community & Metadata"
-                    contents:
-                      - applied_R/README.qmd
-                      - applied_R/CONTRIBUTING.qmd
-                      - applied_R/CODE_OF_CONDUCT.qmd
-                      - applied_R/LICENSE.qmd
-                      - applied_R/profiles/learner-profiles.qmd
+    - id: "applied-r"
+      title: "Applied Data Science (R)"
+      style: "docked"
+      search: true
+      collapse-level: 3
+      contents:
+        - text: "Overview"
+          href: applied_R/index.qmd
+        - section: "Lessons"
+          contents:
+            - applied_R/episodes/01-Rstudio_intro.qmd
+            - applied_R/episodes/02-R_variables_intro.qmd
+            - applied_R/episodes/03-R_functions.qmd
+            - applied_R/episodes/04-for_loops.qmd
+            - applied_R/episodes/05-the_tidyverse.qmd
+        - section: "Learners"
+          contents:
+            - applied_R/learners/setup.qmd
+            - applied_R/learners/discuss.qmd
+            - applied_R/learners/reference.qmd
+        - section: "Instructors"
+          contents:
+            - applied_R/instructors/additional_material.qmd
+            - applied_R/instructors/extra_exercises.qmd
+            - applied_R/instructors/instructor-notes.qmd
+        - section: "Community & Metadata"
+          contents:
+            - applied_R/README.qmd
+            - applied_R/CONTRIBUTING.qmd
+            - applied_R/CODE_OF_CONDUCT.qmd
+            - applied_R/LICENSE.qmd
+            - applied_R/profiles/learner-profiles.qmd

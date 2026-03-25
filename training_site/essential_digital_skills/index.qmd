@@ -1,53 +1,146 @@
 ---
 title: "Essential Digital Skills"
+subtitle: "Foundation pathway for confident, defensible digital research practice"
 ---
 
-## Course Overview
+::: {.tier-card}
+### Course At A Glance
 
-Essential Digital Skills is a foundation course for digital research practice at the University of Nottingham. It focuses on practical workflows for collaboration, governance, data management, and responsible digital practice.
+- **Level:** Foundation
+- **Best for:** Early-career researchers, research staff, and professional services colleagues
+- **Main themes:** Collaboration, delivery, governance, research data management, data quality, interpretation, and responsible AI use
+- **Format:** Core lesson sequence with AI extension sessions that can be used to deepen or tailor delivery
+- **Outcome:** Better day-to-day judgement about where work should live, how it should be documented, and how research decisions can be made more safely and transparently
+:::
+
+::: {.two-col-grid}
+::: {.item}
+## Why This Course Matters
+
+Modern research is full of small digital decisions that carry real consequences. Where should project files live? What counts as good enough documentation? When does a governance issue need escalation? How do you tell the difference between an interesting chart and an actionable insight?
+
+Essential Digital Skills is designed to make those decisions easier. It gives learners a practical foundation for working inside the university research ecosystem with more confidence, less guesswork, and stronger habits for collaboration, compliance, and evidence.
+:::
+
+::: {.item}
+## What You Will Actually Do
+
+This is not a passive overview course. Learners work with realistic scenarios, map real workflows, critique weak practices, and improve them.
+
+Across the course you will:
+
+- map research tasks to the right institutional systems
+- think through delivery and coordination problems
+- identify governance and data protection risks
+- improve data management and folder structures
+- question data quality, charts, and interpretation
+- explore what responsible and useful AI support looks like in research
+:::
+:::
 
 ## Who This Is For
 
-- Early-career researchers developing digital research capability.
-- Research staff needing stronger data and governance workflows.
-- Professional services colleagues supporting research delivery.
+This course is especially useful if you:
 
-## What You Need
+- are starting to work more seriously with digital research workflows
+- want to feel more confident using university platforms and support systems
+- need stronger habits for documentation, storage, sharing, and team coordination
+- regularly make decisions about data, evidence, or reporting but have never had formal training in these areas
 
-- Access to institutional digital platforms (for example M365/Teams/SharePoint).
-- A device for practical exercises and group tasks.
-- Optional: a current project example to apply workshop activities directly.
+It is also a strong entry point for researchers who plan to continue into the Methods for Data Science pathway.
 
-## Lesson Sequence
+## You Will Build Confidence In
 
-| Lesson | Focus |
+::: {.four-col-grid}
+::: {.item}
+### Working Better Together
+
+Use the right tools for shared work, understand how systems connect, and reduce friction in collaboration.
+:::
+
+::: {.item}
+### Managing Risk
+
+Recognise when data, ethics, policy, or security issues need a more careful response.
+:::
+
+::: {.item}
+### Making Data More Usable
+
+Improve structure, documentation, metadata, and reuse potential rather than treating data management as an afterthought.
+:::
+
+::: {.item}
+### Turning Information Into Action
+
+Read charts more critically, add context more deliberately, and communicate insights more effectively.
+:::
+:::
+
+## Learning Journey
+
+| Lesson | What you will tackle | Why it matters |
+|---|---|---|
+| [01 Digital Tools](episodes/01-digital_tools.qmd) | Institutional systems, collaboration platforms, researcher identity, and digital security | Helps you understand the digital environment you are already working inside |
+| [02 Digital Delivery](episodes/02-digital_delivery.qmd) | Planning, coordination, sprint thinking, and shared ownership | Gives teams a more structured way to move work forward |
+| [03 Data Governance and Policy](episodes/03-data_governance_and_policy.qmd) | GDPR, ethics, classification, and compliance | Strengthens judgement around lawful, ethical, and institutionally defensible practice |
+| [04 Research Data Management](episodes/04-research_data_managment.qmd) | DMPs, storage, metadata, archiving, and FAIR reuse | Turns RDM from paperwork into practical workflow design |
+| [05 Collecting the Right Data](episodes/05-collecting_the_right_data.qmd) | Data sources, question design, formats, and fairness | Improves data quality before analysis even begins |
+| [06 Organising and Exploring Data](episodes/06-organising_and_exploring_data.qmd) | Tidy structures, exploration, pattern finding, and early hypothesis building | Makes messy data easier to interpret and use |
+| [07 Making Sense of Data](episodes/07-making_sense_of_data.qmd) | Visualisation, chart critique, interpretation, and context | Helps learners avoid overclaiming and misreading evidence |
+| [08 Insight to Impact](episodes/08-insight_to_impacts.qmd) | Action, audience, feedback, and implementation | Connects analysis to decisions, communication, and change |
+
+## AI Extension Sessions
+
+The AI sessions extend the foundation course without losing the same practical emphasis on judgement, evidence, and accountability.
+
+| Extension | Focus |
 |---|---|
-| [01 Digital Tools](episodes/01-digital_tools.qmd) | Core tools and institutional systems |
-| [02 Digital Delivery](episodes/02-digital_delivery.qmd) | Workflow and delivery practices |
-| [03 Data Governance and Policy](episodes/03-data_governance_and_policy.qmd) | Governance, compliance, and policy context |
-| [04 Research Data Management](episodes/04-research_data_managment.qmd) | RDM planning and lifecycle |
-| [05 Collecting the Right Data](episodes/05-collecting_the_right_data.qmd) | Data quality and collection design |
-| [06 Organising and Exploring Data](episodes/06-organising_and_exploring_data.qmd) | Structuring and initial exploration |
-| [07 Making Sense of Data](episodes/07-making_sense_of_data.qmd) | Interpretation and insight building |
-| [08 Insight to Impacts](episodes/08-insight_to_impacts.qmd) | Communicating impact |
-| [EXT1 Responsible AI](episodes/ext1-responsible_ai.qmd) | Risks and responsible AI use |
-| [EXT2 Hands-on AI](episodes/ext2-hands_on_ai.qmd) | Applied AI activity |
+| [EXT1 How AI Impacts Research](episodes/ext1-how_ai_impacts_research.qmd) | Risks, governance, integrity, and the broader research context |
+| [EXT2 How to Use AI in Research](episodes/ext2-how_to_use_ai_in_research.qmd) | Prompt design, source-bounded workflows, validation habits, and practical experimentation |
+
+## What Learners Typically Leave With
+
+By the end of the pathway, learners should be more able to:
+
+- choose better tools and storage locations for their work
+- identify weak points in project coordination and documentation
+- ask sharper questions about data sensitivity, sharing, and governance
+- improve folder structures, naming, and metadata for collaboration
+- interpret data outputs more critically and communicate them more clearly
+- use AI more selectively, with stronger boundaries and better verification
+
+## How To Prepare
+
+You do not need programming experience for this course. It helps to arrive with:
+
+- access to your university account and core platforms such as M365, Teams, OneDrive, and SharePoint
+- a device suitable for group exercises and practical tasks
+- one current project or workflow in mind that you can use as a live example
+
+Detailed preparation guidance is available in [Setup](learners/setup.qmd).
 
 ## Course Materials
 
+::: {.two-col-grid}
+::: {.item}
 ### Learners
 
-- [Setup](learners/setup.qmd)
-- [Reference](learners/reference.qmd)
-- [Discussion](learners/discuss.qmd)
+- [Setup](learners/setup.qmd): what to bring, what to access, and how to prepare
+- [Reference](learners/reference.qmd): glossary, platform guide, and practical checklists
+- [Discussion](learners/discuss.qmd): prompts for breakout work and end-of-session reflection
+:::
 
+::: {.item}
 ### Instructors
 
-- [Instructor Notes](instructors/instructor-notes.qmd)
-- [Additional Material](instructors/additional_material.qmd)
-- [Extra Exercises](instructors/extra_exercises.qmd)
+- [Instructor Notes](instructors/instructor-notes.qmd): teaching focus, facilitation moves, and common sticking points
+- [Additional Material](instructors/additional_material.qmd): optional extensions, demos, and case ideas
+- [Extra Exercises](instructors/extra_exercises.qmd): backup activities for consolidation or deeper discussion
+:::
+:::
 
-### Community and Profiles
+## Community and Course Information
 
 - [Course README](README.qmd)
 - [Contributing](CONTRIBUTING.qmd)

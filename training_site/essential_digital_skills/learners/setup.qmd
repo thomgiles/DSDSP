@@ -2,23 +2,103 @@
 title: Setup
 ---
 
-## Overview
+## Before You Attend
 
-This course is designed for researchers and professional services staff working in digital research environments. You can complete the activities with a web browser and access to standard university systems.
+Essential Digital Skills is a foundation course for researchers and professional services staff working in digital research environments. You do not need coding experience for this course, but you will get much more from the activities if you arrive with access to your core university systems and one live project example in mind.
 
-## Recommended Preparation
+## Core Access Checklist
 
-1. Ensure you can access your university account and Microsoft 365.
-2. Confirm access to Teams, OneDrive, and SharePoint.
-3. Bring a device that can open spreadsheets (Excel preferred).
-4. Download any activity datasets linked from session pages.
+Before the first session, make sure you can:
 
-## Optional Preparation
+1. Sign in to your university account without difficulty.
+2. Access Microsoft 365, especially Teams, OneDrive, Word, and Excel.
+3. Open SharePoint spaces you commonly use for project collaboration.
+4. Reach the systems discussed in the course, including RIS and UniCore, even if you do not use them every day.
+5. Join the course Teams space or any local communication channel used by the teaching team.
 
-- Install a QR code reader app on your phone for in-class polls.
-- Bring a recent project example so you can apply governance and data management tasks directly.
+## Device and Materials
+
+Bring:
+
+- a laptop or tablet with a modern web browser
+- a charger
+- a spreadsheet tool, ideally Excel
+- access to your usual project documents, notes, or non-sensitive sample materials
+
+Optional but useful:
+
+- a phone for QR-code polls or quick room activities
+- headphones if you prefer to work through short demos individually
+
+## Bring a Real Project Example
+
+Most activities work best when you can map them onto something real. Before each session, try to identify:
+
+- one project, dataset, or service you are currently working on
+- one collaboration challenge you want to improve
+- one governance, storage, or documentation question you are unsure about
+- one decision you need to make about tools, access, sharing, or AI use
+
+You do not need to bring full project files. A short written description is often enough.
+
+## Work Safely During the Course
+
+Use live examples without exposing sensitive material.
+
+- Do not bring confidential or special category data into open classroom activities.
+- Prefer anonymised, synthetic, or summarised examples where possible.
+- Do not upload restricted research data into unapproved external AI tools.
+- If you are unsure whether an example is safe to use, ask the instructor and switch to a lower-risk version.
+
+## Suggested Working Folder
+
+Keep one folder for all course outputs so you can reuse them later in your own projects.
+
+```text
+essential-digital-skills/
+  notes/
+  activities/
+  templates/
+  reflections/
+```
+
+This makes it easier to keep copies of:
+
+- folder structure sketches
+- DMP notes
+- FAIR checklists
+- chart critique notes
+- action plans from group discussions
+- AI prompt and verification examples
 
 ## During the Course
 
 - Keep all working files in one dedicated folder for the course.
 - Save outputs from practical tasks (templates, notes, summaries) to reuse in your own research projects.
+- Treat activities as prototypes for your own work rather than one-off classroom tasks.
+- Record decisions you make during exercises, especially around storage, access, documentation, and validation.
+
+## Session-by-Session Preparation
+
+These light checks will help you get more from each topic.
+
+| Session theme | Helpful preparation |
+|---|---|
+| [Digital Tools](../episodes/01-digital_tools.qmd) | Know which platforms your team already uses and where work currently gets stuck |
+| [Digital Delivery](../episodes/02-digital_delivery.qmd) | Bring a current project timeline, meeting rhythm, or planning challenge |
+| [Data Governance & Policy](../episodes/03-data_governance_and_policy.qmd) | Think of one project involving personal, sensitive, or shared data |
+| [Research Data Management](../episodes/04-research_data_managment.qmd) | Bring an example of a dataset, folder structure, or DMP question |
+| [Collecting the Right Data](../episodes/05-collecting_the_right_data.qmd) | Think of one data source you trust and one you would treat cautiously |
+| [Organising and Exploring Data](../episodes/06-organising_and_exploring_data.qmd) | Bring a messy spreadsheet, table, or repeated reporting problem in mind |
+| [Making Sense of Data](../episodes/07-making_sense_of_data.qmd) | Bring an example chart or dashboard you have used or questioned |
+| [Insight to Impact](../episodes/08-insight_to_impacts.qmd) | Think of one analysis result that did or did not lead to action |
+| [AI sessions](../episodes/ext2-how_to_use_ai_in_research.qmd) | Bring a low-risk prompt, reading task, or workflow you want to improve |
+
+## If You Are New to These Systems
+
+That is completely fine. The course is designed to help you:
+
+- recognise what each platform is for
+- choose more appropriate places to store and share work
+- ask better questions of support services
+- make more defensible day-to-day research decisions

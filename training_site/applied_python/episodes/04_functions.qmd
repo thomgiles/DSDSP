@@ -115,7 +115,7 @@ print('boiling point of water:', fahr_to_celsius(212), 'C')
 We've successfully called the function that we defined,
 and we have access to the value that we returned.
 
-### Composing functions
+## Composing functions
 
 Now that we've seen how to turn Fahrenheit into Celsius,
 we can also write the function to turn Celsius into Kelvin:
@@ -149,7 +149,7 @@ Keep functions small and focused on one task.
 :::
 
 
-### Variable scope
+## Variable scope
 
 In composing our temperature conversion functions, we created variables inside of those functions,
 `temp`, `temp_c`, `temp_f`, and `temp_k`.
@@ -281,7 +281,7 @@ global `k` value.
 
 
 
-### Tidying up
+## Tidying up
 
 Now that we know how to wrap bits of code up in functions,
 we can make our inflammation analysis easier to read and easier to reuse.
@@ -394,7 +394,7 @@ None
 
 
 
-### Testing functions
+## Testing functions
 
 Once we start putting things in functions so that we can re-use them,
 we need to start testing that those functions are working correctly.
@@ -465,7 +465,7 @@ and we should probably get back to doing our analysis.
 Tests catch mistakes early and make code safer.
 :::
 
-### Documenting functions
+## Documenting functions
 
 We have one more task first, though:
 we should write some [documentation](../learners/reference.qmd#documentation) for our function
@@ -519,7 +519,7 @@ def offset_mean(data, target_mean_value):
 help(offset_mean)
 ```
 
-### Defining defaults
+## Defining defaults
 
 We have passed parameters to functions in two ways:
 directly, as in `type(data)`,
@@ -689,7 +689,7 @@ not passed a value, so it uses its default value 6.
 ::::
 
 
-### Readable functions
+## Readable functions
 
 Consider these two functions:
 
@@ -880,7 +880,7 @@ The concepts in this module connect directly to practical data handling and expl
 | Variable Scope and Parameters | [Python execution model](https://docs.python.org/3/reference/executionmodel.html) | Scope awareness prevents subtle state bugs. |
 
 ::: {.callout-note appearance="minimal"}
-### Attribution
+## Attribution
 This lesson is derived from materials developed by the [Software Carpentry](https://software-carpentry.org) project.
 
 The original content is licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) license: [https://github.com/swcarpentry/python-novice-inflammation/blob/main/LICENSE.md](https://github.com/swcarpentry/python-novice-inflammation/blob/main/LICENSE.md)

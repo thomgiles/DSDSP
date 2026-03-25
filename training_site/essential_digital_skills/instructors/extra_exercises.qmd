@@ -2,14 +2,137 @@
 title: Extra Exercises
 ---
 
-## Exercise 1: Data Risk Triage
+## How To Use These
 
-Given three project scenarios, rank data risks and propose immediate controls.
+These exercises are designed for instructors who want extra practice material, catch-up tasks, or stronger consolidation activities. Most can run in 10 to 20 minutes with a short plenary.
 
-## Exercise 2: DMP Rewrite Sprint
+## Exercise 1: Tool and Workflow Audit
 
-Take a weak DMP paragraph and rewrite it to include operational detail (storage, access, retention, responsibility).
+**Best fit:** [Digital Tools](../episodes/01-digital_tools.qmd) or [Digital Delivery](../episodes/02-digital_delivery.qmd)
 
-## Exercise 3: FAIR Improvement Plan
+Ask learners to map one live workflow from "idea" to "shared output" and identify:
 
-Select one dataset and draft a 30-day plan to improve findability and reusability.
+- which system is used at each stage
+- where files move between systems
+- where duplication or confusion appears
+- one change that would reduce friction immediately
+
+**Debrief question:** Which platform decisions are historical habits rather than deliberate choices?
+
+## Exercise 2: Data Risk Triage
+
+**Best fit:** [Data Governance & Policy](../episodes/03-data_governance_and_policy.qmd)
+
+Give groups two or three short scenarios and ask them to rank the risks from lowest to highest. They should justify the ranking using factors such as:
+
+- identifiability
+- sensitivity
+- number of people involved
+- external sharing
+- cloud processing
+- unclear ownership or roles
+
+**Debrief question:** Which risk factor was most often overlooked on first reading?
+
+## Exercise 3: Escalate or Decide?
+
+**Best fit:** Governance or RDM sessions
+
+Provide a list of decisions and ask groups to sort them into:
+
+- decide locally
+- check with project lead
+- escalate to specialist support
+
+Useful prompts:
+
+- choosing a file naming convention
+- selecting a lawful basis
+- sharing data with an external partner
+- uploading material to an AI tool
+- defining a retention period
+- deciding whether ethics review is required
+
+**Debrief question:** What makes a decision suitable for local judgement rather than escalation?
+
+## Exercise 4: DMP Rewrite Sprint
+
+**Best fit:** [Research Data Management](../episodes/04-research_data_managment.qmd)
+
+Take a weak DMP paragraph and rewrite it to include:
+
+- what data will exist
+- where they will be stored
+- who has access
+- how they will be documented
+- what sharing conditions apply
+- how long they will be retained
+
+**Debrief question:** Which missing detail made the original paragraph least useful in practice?
+
+## Exercise 5: Folder Rescue
+
+**Best fit:** RDM or organising data sessions
+
+Present a messy shared project structure and ask groups to redesign it. They should explain:
+
+- how raw, cleaned, and derived data are separated
+- where documentation lives
+- what naming rules they would use
+- how versioning will be handled
+
+**Debrief question:** What problem would the redesigned structure solve first?
+
+## Exercise 6: FAIR in 30 Days
+
+**Best fit:** [Research Data Management](../episodes/04-research_data_managment.qmd)
+
+Select one dataset and ask learners to produce a short improvement plan under the four FAIR headings:
+
+- Findable
+- Accessible
+- Interoperable
+- Reusable
+
+Limit them to one month and realistic changes only.
+
+**Debrief question:** Which FAIR improvements are low effort but high value?
+
+## Exercise 7: Chart Critique and Repair
+
+**Best fit:** [Making Sense of Data](../episodes/07-making_sense_of_data.qmd)
+
+Show a poor chart and ask groups to identify:
+
+- what the chart is trying to say
+- what design choices make interpretation harder or misleading
+- what context is missing
+- how they would redesign it for a specific audience
+
+**Debrief question:** Did the redesign change the story, or just make the original story clearer?
+
+## Exercise 8: From Insight to Action
+
+**Best fit:** [Insight to Impact](../episodes/08-insight_to_impacts.qmd)
+
+Give learners a short finding such as a survey result, metric shift, or usage pattern. Ask them to produce:
+
+- one insight
+- one possible action
+- one likely constraint
+- one follow-up question
+
+**Debrief question:** What separated a strong action from a merely interesting observation?
+
+## Exercise 9: AI Verification Drill
+
+**Best fit:** [How to Use AI in Research](../episodes/ext2-how_to_use_ai_in_research.qmd)
+
+Provide a short AI-generated output and ask groups to mark:
+
+- which claims can be accepted quickly
+- which claims require source checking
+- which claims are ambiguous or unsupported
+- what prompt change might have reduced the problem
+
+**Debrief question:** Where did the burden of checking become most visible?

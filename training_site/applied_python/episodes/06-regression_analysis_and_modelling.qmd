@@ -53,7 +53,7 @@ We will use Scikit-Learn to build a full linear regression example in stages fol
 # SPDX-License-Identifier: BSD-3-Clause
 ```
 
-### Import and Prepare Data
+## Import and Prepare Data
 
 ```{python}
 # Load the diabetes dataset
@@ -68,7 +68,7 @@ from sklearn.model_selection import train_test_split
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=20, shuffle=False)
 ```
 
-### Model Training
+## Model Training
 
 ```{python}
 from sklearn.linear_model import LinearRegression
@@ -80,7 +80,7 @@ regressor = LinearRegression()
 regressor.fit(X_train, y_train)
 ```
 
-### Prediction and Evaluation
+## Prediction and Evaluation
 ```{python}
 from sklearn.metrics import mean_squared_error, r2_score
 
@@ -91,7 +91,7 @@ print(f"Mean squared error: {mean_squared_error(y_test, y_pred):.2f}")
 print(f"Coefficient of determination: {r2_score(y_test, y_pred):.2f}")
 ```
 
-### Plotting
+## Plotting
 
 ```{python}
 import matplotlib.pyplot as plt
@@ -179,7 +179,7 @@ model = smf.ols("mpg ~ hp + wt", data=data).fit()
 print(model.summary())
 ```
 
-### Quick Tips
+## Quick Tips
 
 * Formulas: `y ~ x1 + x2` (additive), `x1:x2` (interaction), `C(cat)` (treat a column as categorical),
 
@@ -217,7 +217,7 @@ out["ci_low"], out["ci_high"] = model.conf_int()[0], model.conf_int()[1]
 out
 ```
 
-### Quick Tips
+## Quick Tips
 
 * Large absolute t-statistics and small p-values suggest evidence against a zero coefficient (context matters).
 * **Significance** is not **importance**—check effect sizes and domain relevance.
@@ -235,7 +235,7 @@ pred
 * `mean_ci_lower/upper`: CI for the **expected mean** of `y` at these predictors.
 * `obs_ci_lower/upper`: PI for a **new observation** (wider).
 
-### Quick Tips
+## Quick Tips
 
 * For reporting, prefer tabular outputs (`summary_frame`) you can save:
 
@@ -268,7 +268,7 @@ plt.title("Q-Q Plot of Residuals")
 plt.show()
 ```
 
-### Quick Tips
+## Quick Tips
 
 * Patterns in residuals vs fitted suggest model misspecification or heteroscedasticity.
 * Consider transformations or alternative models (e.g., GLM) if assumptions are violated.
@@ -277,7 +277,7 @@ plt.show()
 
 ## Where Next? (Signposts)
 
-### Generalised Linear Models (GLM)
+## Generalised Linear Models (GLM)
 
 For non-Gaussian outcomes (binary counts, rates):
 
@@ -294,7 +294,7 @@ print(glm_logit.summary())
 
 ## Practical Mini-Exercises
 
-### Exercise 1 — Add an Interaction
+## Exercise 1 — Add an Interaction
 
 Fit `mpg ~ hp * wt` (which expands to `hp + wt + hp:wt`). Does the interaction appear significant?
 
@@ -309,7 +309,7 @@ Explanation: The hp:wt row tests whether the effect of horsepower on mpg depends
 
 ---
 
-### Exercise 2 — Categorical Predictor
+## Exercise 2 — Categorical Predictor
 
 Create a binary indicator `heavy = (wt > wt.median())` and fit `mpg ~ hp + C(heavy)`. Interpret the `C(heavy)[T.True]` coefficient.
 
@@ -325,7 +325,7 @@ Explanation: C(heavy)[T.True] is the average difference in mpg between heavy and
 
 ---
 
-### Exercise 3 — Prediction Table
+## Exercise 3 — Prediction Table
 
 Make predictions for `hp={90, 120, 150}` at `wt=3.0`. Save the full prediction frame to CSV.
 
@@ -386,7 +386,7 @@ The concepts in this module connect directly to practical data handling and expl
 | Comparative Plotting | [Matplotlib subplots](https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplots.html) | Side-by-side plots improve analytical judgment. |
 
 ::: {.callout-note appearance="minimal"}
-### Attribution
+## Attribution
 This lesson is derived from materials developed by the [Software Carpentry](https://software-carpentry.org) project.
 
 The original content is licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) license: [https://github.com/swcarpentry/python-novice-inflammation/blob/main/LICENSE.md](https://github.com/swcarpentry/python-novice-inflammation/blob/main/LICENSE.md)

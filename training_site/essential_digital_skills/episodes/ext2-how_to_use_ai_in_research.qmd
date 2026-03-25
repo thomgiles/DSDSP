@@ -1,5 +1,5 @@
 ---
-title: Hands‑on with AI for Research
+title: How to Use AI in Research
 metadata:
   teaching: 20
   exercises: 40
@@ -17,8 +17,8 @@ metadata:
 - Practise designing effective prompts for policy‑oriented research questions and document the results.  
 - Critically assess and validate AI‑generated summaries against authoritative policy documents and identify inaccuracies or omissions. 
 - Explore how role prompting influences Copilot responses and appreciate the limitations of AI advice.  
-- Reflect on responsible AI use through group exercises and develop plans for integrating AI into your research practice
-- Learn how to use agents for repeated tasks
+- Reflect on responsible AI use through group exercises and develop plans for integrating AI into your research practice.  
+- Learn when repeated prompting can become a documented workflow or a simple agent.
 :::
 
 <br>
@@ -33,14 +33,14 @@ metadata:
 
 ## Structure & Agenda
 
-1. **Orientation and Prompting** – 5 minutes introduction followed by a 5 minute prompt practice.  
-2. **Group Research with Copilot** – 5 minute small‑group task and 5 minute plenary.  
-3. **Critique and Validation** – 5 minute group critique and 5 minute plenary.  
-4. **Prompt Framing and Role Effects** – 5 minute role‑prompting experiment and 5 minute plenary.  
-5. **Using Agents for Repeated Tasks** – 5 minute role‑prompting experiment and 5 minute plenary.  
-6. **Going Further with AI** - 5 minute role‑prompting experiment and 5 minute plenary.  
+1. **Orientation and Prompting** – short introduction, a reusable prompt pattern and a prompt practice task.  
+2. **Group Research with Copilot** – small‑group policy exploration and plenary.  
+3. **Critique and Validation** – source-grounded checking, group critique and plenary.  
+4. **Prompt Framing and Role Effects** – role‑prompting experiment and plenary.  
+5. **Using Agents for Repeated Tasks** – workflow framing, agent design and plenary.  
+6. **Going Further with AI** – using AI to help design an agent.  
 
-> 🔧 The emphasis is on practical exercises; short teaching segments introduce each activity.
+> 🔧 The emphasis is still on practical exercises; short teaching segments provide prompt structure, validation habits and workflow ideas to support each activity.
 
 # Orientation and Prompting
 
@@ -48,14 +48,22 @@ metadata:
 
 ## Introduction
 
-This workshop builds on the principles introduced in the lecture. Responsible AI use requires transparency, verification, documentation, equity and continuous monitoring.  Participants will practise constructing clear and specific prompts and learn to record prompts and outputs for transparency.  Remember not to include confidential or proprietary information in prompts.
+This workshop builds on the principles introduced in the last session. Responsible AI use requires transparency, verification, documentation, equity and continuous monitoring.  Participants will practise constructing clear and specific prompts and learn to record prompts and outputs for transparency.  Remember not to include confidential or proprietary information in prompts.
+
+## A reusable prompt pattern
+
+A good policy when writing research prompt is to usually include:
+
+- the **task**: what you want Copilot to do  
+- the **context**: who the answer is for and why  
+- the **source boundary**: what document, website or evidence it should rely on  
+- the **output format**: bullets, table, checklist or short briefing  
+
+> A useful extra instruction is to **flag uncertainty rather than guessing**.
 
 ## Group Formation
 
-Participants should form upto **around five groups**
-
-> Groups will remain fixed throughout the workshop.
-
+Participants are welcome to form up into groups**.
 ---
 
 ::: callout-task
@@ -67,22 +75,22 @@ Participants should form upto **around five groups**
 
 [https://m365.cloud.microsoft/chat/](https://m365.cloud.microsoft/chat/)
 
-Formulate a prompt such as:
+Formulate a simple prompt such as:
 
-> *“Summarise the UoN policy on the use of generative AI tools”*
+> *“Summarise the University of Nottingham guidance on generative AI for researchers in six bullet points. Use only the linked guidance page. Flag any area that remains ambiguous or context-dependent.”*
 
 ##### Follow‑up
-- Was your prompt specific enough?  
+- Which part of your prompt defined the task, source boundary and output format?  
 - Did Copilot cite sources or mention limitations?  
 - What uncertainties remain about the policy?  
 :::
 :::
 
-# Group Research with Copilot
+# Building Research with Copilot
 
-## Assigned Policy Domains
+## Policy Domains
 
-Each group will be tasked with investigates one AI policy area:
+Each group or individual will investigate one AI policy area:
 
 1. **Publisher – Nature / Springer Nature**  
 2. **Academic Society – PSR / SAGE Publications**  
@@ -94,17 +102,16 @@ Each group will be tasked with investigates one AI policy area:
 
 ::: callout-task
 
-#### Task 2: Small-group work
+#### Task 2: Research with Copilot
 
 ::: panel-tabset
 ##### Exercise (5 min)
 Using Copilot, collect information about your assigned policy area. Document the outputs in a shared sheet or board.
 
 Groups should prepare to:
-- share the prompts used  
-- summarise Copilot’s interpretation of the policy  
+- share how they formulated their prompts used  
 - identify gaps, hallucinations or incorrect claims  
-- evaluate Copilot’s cited sources (if any)  
+- evaluate cited sources (if any)  
 
 ##### Plenary (5 min)
 Groups present initial findings and discuss prompt strategies and observed weaknesses in AI responses.
@@ -113,9 +120,19 @@ Groups present initial findings and discuss prompt strategies and observed weakn
 
 # Critique and Validation
 
+## Source first, summary second
+
+A safer workflow is:
+
+1. gather the official policy page or PDF  
+2. ask Copilot to summarise or compare only that material  
+3. ask it to flag uncertainty, assumptions or missing context  
+4. verify the answer against the source yourself  
+5. keep only the claims you can defend  
+
 ## Comparing AI Outputs to Official Documents
 
-The these are the official policy documents:
+These are the official policy documents:
 
 - **Journal publisher – Nature / Springer Nature** – see [Springer Nature Editorial Policies – Artificial Intelligence](https://www.nature.com/nature-portfolio/editorial-policies/ai)  
 - **Academic society – Political Studies Review / SAGE Publications** – see [SAGE AI Policy: Ethical Use of Generative AI in Research and Scholarly Publishing](https://psr.brunel.ac.uk/2024/5/04/the-ethical-use-of-generative-ai-in-publishing-and-research/) 
@@ -123,6 +140,16 @@ The these are the official policy documents:
 - **National guidelines – UKRI generative AI policy** – see [UKRI Generative AI in Application and Assessment Policy (Sept 2024; updated Dec 2024)](https://www.ukri.org/publications/generative-artificial-intelligence-in-application-and-assessment-policy/)
 - **Independent body – COPE generative AI policy** - see [COPE Authorship and AI tools policy](https://publicationethics.org/guidance/cope-position/authorship-and-ai-tools)
 
+## A practical validation checklist
+
+| Output | What to check |
+|---|---|
+| summary or explanation | source accuracy, date, missing caveats |
+| quoted rule or citation | exact wording, existence, relevance |
+| interpretation | scope, ambiguity, whether it follows from the source |
+| agent output | consistency, gaps and whether checks were actually applied |
+
+> Validation should be built into the workflow, not bolted on afterwards.
 
 ---
 
@@ -132,7 +159,9 @@ The these are the official policy documents:
 
 ::: panel-tabset
 ##### Exercise (5 min)
-Compare Copilot’s claims with the actual policy text. For at least two AI-generated statements, verify:
+Use Copilot to compair its initial claims with the actual policy text. 
+
+For at least two AI-generated statements, verify:
 
 - whether they appear in the official document  
 - whether Copilot added, omitted or distorted information  
@@ -146,11 +175,28 @@ Compare Copilot’s claims with the actual policy text. For at least two AI-gene
 :::
 :::
 
+## A worked prompt chain often help
+
+```{mermaid}
+flowchart LR
+    A["Define the task"] --> B["Get a first structured answer"]
+    B --> C["Interrogate assumptions or gaps"]
+    C --> D["Refine format for use"]
+    D --> E["Verify against source or data"]
+```
+
+This is slower than a single magic prompt, but usually faster than recovering from a vague answer later.
+
+
 # Prompt Framing and Role Effects
 
 ## Role Prompting
 
 The tone and content of Copilot’s output can vary depending on the role specified. Asking Copilot to answer “as a researcher”, “as a policy adviser” or “as a science journalist” can change the depth, formality and focus of the response. Prompt engineering strategies emphasise that the quality of outputs depends on the clarity and context provided.
+
+- useful for adapting tone to a research, policy or public-facing audience  
+- risky when style is mistaken for authority  
+- best used after the evidence boundary is clear  
 
 ---
 
@@ -177,16 +223,48 @@ Re-ask the same policy question used in Task 1 with **three different role instr
 
 # Using Agents for Repeatable Tasks
 
+## When a repeated task should become a workflow
+
+If you are doing the same low-risk task repeatedly, ad hoc prompting becomes inefficient.
+
+Good candidates for a reusable workflow have:
+
+- a stable input pattern  
+- a clear output structure  
+- public or approved source material  
+- an obvious validation step  
+
 ## Automating Policy Lookup with AI Agents
 
 Agents allow you to automate multi-step workflows—such as reviewing AI policies—so that the same procedure can be repeated with minimal prompting.  
 Once an agent is configured with clear instructions (e.g. how to retrieve, summarise and check policy information), you only need to supply the *topic* (e.g. “Nature”, “Cancer Research UK”, “SAGE Publications”) and the agent will run the full process.
 
+## Automate the structure, not the responsibility
+
+| Good agent candidates | Poor agent candidates |
+|---|---|
+| policy lookup from public websites | final interpretation of research findings |
+| turning repeated notes into a consistent template | authorship or disclosure decisions |
+| monitoring public guidance updates | any task based on unclear or sensitive evidence |
+
+> Agents work best when the task is narrow and easy to check.
+
+## A lightweight AI use note
+
+A short record after each substantial use can include:
+
+- date and tool  
+- task or agent purpose  
+- prompt or template used  
+- input material  
+- checks performed  
+- what you kept  
+
 ---
 
 ::: callout-task
 
-#### Task 5: Build an agent to automate AI-policy review
+#### Task 5: Build an agent to automate your AI-policy review
 
 ::: panel-tabset
 ##### Exercise (5 min)
@@ -197,9 +275,10 @@ Create an AI agent configured to:
 - identify disclosure and authorship rules  
 - flag uncertainties or possible hallucinations  
 - present information in a consistent structure  
+- include a short validation note explaining how the answer should be checked  
 
-Test it on at least **three** organisations.  
-Note where it succeeds, where it struggles and where human oversight is required.
+Test it on a few organisations.  
+Note where it succeeds, where it struggles and where human oversight is required. Keep a brief note of the agent instructions and the checks you applied.
 
 ##### Plenary (5 min)
 - Discuss benefits of automation vs. risks (e.g. propagating errors)  
@@ -207,38 +286,6 @@ Note where it succeeds, where it struggles and where human oversight is required
 :::
 :::
 
-# Going Further with AI
-
-## LLMs can write their own AI Agents
-
-Create a new agent, but this time use copilot to create the agent prompt instead of writing it yourself. be detailed and specific.
-
----
-
-::: callout-task
-
-#### Task 5: Build an agent with a LLM
-
-::: panel-tabset
-##### Exercise (5 min)
-Create another agent, this time using AI to write the prompt. 
-
-The AI agent sould be configured to:
-
-- accept a **single input**: the name of the organisation (e.g. *Nature*, *UKRI*, *COPE*)  
-- retrieve and summarise the organisation’s generative-AI policy  
-- identify disclosure and authorship rules  
-- flag uncertainties or possible hallucinations  
-- present information in a consistent structure  
-
-Test it on at least **three** organisations.  
-Note where it succeeds, where it struggles and where human oversight is required.
-
-##### Plenary (5 min)
-- Compare agent designs  
-- Which was better? the one you wrote or the one self written by AI? 
-:::
-:::
 
 # Further Information
 
@@ -247,8 +294,9 @@ Note where it succeeds, where it struggles and where human oversight is required
 - Major publishers (e.g. *Nature*) prohibit AI authorship but allow limited use of AI tools with disclosure.  
 - National and international bodies (UKRI, European Commission) provide explicit guidelines on responsible use of generative AI.  
 - Universities issue their own integrity guidance — always check local policy.  
-- Prompt engineering skills help improve clarity and reduce ambiguity in AI responses.  
-- Ethical use requires verification, transparency and acknowledgement of limitations.  
+- Prompt engineering skills help improve clarity, define source boundaries and reduce ambiguity in AI responses.  
+- Ethical use requires validation, transparency, documentation and acknowledgement of limitations.  
+- Repeatable workflows and agents are most useful when the task is narrow, low-risk and easy to check.  
 :::
 
 ---

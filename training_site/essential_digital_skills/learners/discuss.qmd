@@ -2,18 +2,87 @@
 title: Discussion
 ---
 
-## Discussion Prompts
+## How To Use These Prompts
 
-Use these prompts for breakout activities and reflection:
+Use these prompts for breakout activities, quick pair work, or end-of-session reflection. They are grouped by course theme so you can return to them across the programme rather than treating discussion as a one-off activity.
 
-1. Which digital tools are currently critical in your research workflow?
-2. Where are the biggest risks in your current data handling process?
-3. What data governance responsibilities are clear, and which are ambiguous?
-4. How could your team improve reproducibility in the next month?
-5. Which one change would most improve research data quality in your context?
+## Digital Tools and Research Identity
+
+Use alongside [Digital Tools](../episodes/01-digital_tools.qmd).
+
+1. Which digital systems are essential in your current workflow, and where do they overlap or conflict?
+2. Where do people in your team store files now, and which part of that setup feels most fragile?
+3. What makes a researcher identity feel consistent across ORCID, RIS, local profiles, and outputs?
+4. Which digital security habit would reduce the most risk for your current work?
+
+## Digital Delivery and Coordination
+
+Use alongside [Digital Delivery](../episodes/02-digital_delivery.qmd).
+
+1. Where does work in your team become stuck: planning, handover, review, or follow-up?
+2. What would a two-week research sprint look like in your context?
+3. Which responsibilities are clear in your projects, and which are assumed but undocumented?
+4. What would shared ownership look like in practice rather than as a slogan?
+
+## Governance, Ethics, and Data Protection
+
+Use alongside [Data Governance & Policy](../episodes/03-data_governance_and_policy.qmd).
+
+1. What kinds of data in your work are obviously high risk, and which are easy to underestimate?
+2. When people say "we have consent", what important governance questions may still be unanswered?
+3. Which project decisions should be escalated early rather than solved informally?
+4. Where are role boundaries around controller, processor, PI, and project team currently unclear?
+
+## Research Data Management
+
+Use alongside [Research Data Management](../episodes/04-research_data_managment.qmd).
+
+1. If someone joined your project tomorrow, what would they struggle to find or understand?
+2. Which part of your current DMP or data handling plan is most vague in practice?
+3. How do you currently separate raw, cleaned, and derived data, if at all?
+4. What is one realistic step that would make your data more reusable in six months?
+
+## Collecting, Organising, and Exploring Data
+
+Use alongside [Collecting the Right Data](../episodes/05-collecting_the_right_data.qmd) and [Organising and Exploring Data](../episodes/06-organising_and_exploring_data.qmd).
+
+1. What makes a data source trustworthy enough for your context?
+2. Which variable or category decisions most affect data quality in your work?
+3. What does "messy data" look like in your team?
+4. What do you usually notice first when exploring a new dataset: missingness, outliers, patterns, or confusion about meaning?
+
+## Visualisation, Interpretation, and Impact
+
+Use alongside [Making Sense of Data](../episodes/07-making_sense_of_data.qmd) and [Insight to Impact](../episodes/08-insight_to_impacts.qmd).
+
+1. What makes a visual convincing but still misleading?
+2. Which kinds of context are often missing when data are presented in your area?
+3. When does an insight become actionable rather than merely interesting?
+4. What kinds of feedback reveal blind spots, and what kinds only add noise?
+
+## AI in Research
+
+Use alongside [How AI Impacts Research](../episodes/ext1-how_ai_impacts_research.qmd) and [How to Use AI in Research](../episodes/ext2-how_to_use_ai_in_research.qmd).
+
+1. Which parts of the research lifecycle feel most changed by AI already?
+2. Where does AI save time in your work, and where does it create checking work?
+3. What should always remain a human responsibility in your context?
+4. What would count as transparent and defensible AI use in your team?
+5. Which prompt or workflow improvement would make AI use more useful without making it less trustworthy?
 
 ## Group Debrief Format
+
+After a small-group discussion, ask each group to report:
 
 - Summarize one practical change your group recommends.
 - Identify one barrier to implementing that change.
 - Propose one realistic first step for the next 2–4 weeks.
+
+## End-of-Course Reflection
+
+Use these prompts near the end of the course or as follow-up reflection.
+
+1. Which one part of your workflow do you now see differently?
+2. What is one decision you can make more confidently than before?
+3. Which support service, platform, or practice do you need to engage with next?
+4. What will you change first: tooling, documentation, governance, collaboration, or analysis practice?

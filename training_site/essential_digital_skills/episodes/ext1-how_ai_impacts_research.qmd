@@ -1,7 +1,7 @@
 ---
-title: Responsible Use of AI in Research (How AI impacts research)
+title: How AI Impacts Research
 metadata:
-  teaching: 40  
+  teaching: 40
   exercises: 20
 ---
 
@@ -234,8 +234,7 @@ Big shift now is on optimisation as running large models is expensive!
 ::: panel-tabset
 
 ##### Question
-Which AI tools (if any) have you used so far in your research workflow?  Select one or more options in the poll provided.  If you have not yet used any AI tools, indicate “None”.
-
+Fill in the following questionaire: 
 ::: {.content-visible when-format="revealjs"}
 
 <!-- Hidden by default -->
@@ -243,7 +242,7 @@ Which AI tools (if any) have you used so far in your research workflow?  Select 
 
 :::
 
-##### Wordcloud
+##### Results
 
 <iframe
   src="https://ds-shiny-helper.azurewebsites.net/edsex1/?embed=true#shiny-tab-q1_results"
@@ -309,6 +308,18 @@ AI can increase the *breadth* of exploration by lowering the cost of asking “w
 - Offer alternative explanatory narratives  
 
 > This can improve robustness *if* exploration is paired with explicit selection criteria and validation.
+
+## A simple research risk matrix
+
+| Scenario | Typical risk level | Why |
+|---|---|---|
+| summarising a public guidance page for personal notes | low | public source, easy to verify |
+| generating boilerplate code against toy data | low to medium | technical errors still possible |
+| comparing unpublished drafts across collaborators | medium | confidentiality and attribution issues |
+| analysing identifiable participant material in a public tool | high | ethics, governance and disclosure failure |
+| asking AI to produce findings or conclusions from your data | high | interpretation and accountability risk |
+
+The point is not to ban AI in difficult areas. It is to match the tool, safeguards and review burden to the stakes.
 
 ## Accessibility and inclusion
 
