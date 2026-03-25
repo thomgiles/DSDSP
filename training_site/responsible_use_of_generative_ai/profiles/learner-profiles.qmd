@@ -1,0 +1,21 @@
+---
+title: Learner Profiles
+---
+
+## Profile 1: Doctoral Researchers Exploring AI Carefully
+
+- **Background:** Curious about AI tools but unsure how far they can trust them.
+- **Motivation:** Save time without damaging research quality or integrity.
+- **Needs:** Clear boundaries, practical prompt examples, and validation habits.
+
+## Profile 2: Research Staff Using AI in Live Projects
+
+- **Background:** Already using AI occasionally for drafting, coding, or summarising.
+- **Motivation:** Make AI use more defensible and less ad hoc.
+- **Needs:** Workflow thinking, documentation habits, and better judgement about risk.
+
+## Profile 3: Professional Services and Research Support Colleagues
+
+- **Background:** Support researchers across governance, data, methods, or training.
+- **Motivation:** Give more consistent, practical advice about AI use.
+- **Needs:** Shared language, escalation boundaries, and examples of sensible practice.

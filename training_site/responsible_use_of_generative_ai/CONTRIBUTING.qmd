@@ -1,0 +1,31 @@
+---
+title: Contributing
+---
+
+## Contributing to Responsible Use of Generative AI
+
+Contributions are welcome for:
+
+- content corrections,
+- improved teaching activities,
+- updated institutional or policy references,
+- clearer examples of prompt design, validation, and documentation,
+- accessibility and usability improvements.
+
+## How to Contribute
+
+1. Open an issue describing the change.
+2. If editing content directly, use a focused branch and clear commit messages.
+3. Submit a pull request with a concise summary of what changed and why.
+
+## Content Principles
+
+- Keep material practical and judgement-focused.
+- Prefer source-grounded examples over abstract claims.
+- Avoid tool hype and keep governance language concrete.
+- Ensure references to policy or process remain current.
+
+## Project Policies
+
+- [Code of Conduct](CODE_OF_CONDUCT.qmd)
+- [License](LICENSE.qmd)

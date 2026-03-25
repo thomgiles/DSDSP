@@ -2,24 +2,156 @@
 title: Reference
 ---
 
-## Key Terms
+## Core Terms
 
-- **RDM (Research Data Management):** Planning, organising, storing, documenting, sharing, and preserving research data.
-- **DMP (Data Management Plan):** A living document describing how data will be handled across the project lifecycle.
-- **FAIR:** Data principles: Findable, Accessible, Interoperable, Reusable.
-- **DPIA:** Data Protection Impact Assessment for identifying and reducing data protection risks.
-- **Metadata:** Descriptive information that helps data be discovered, interpreted, and reused.
+- **RDM (Research Data Management):** Planning, organising, storing, documenting, sharing, and preserving research data across the project lifecycle.
+- **DMP (Data Management Plan):** A living plan describing how data will be collected, stored, documented, shared, retained, and preserved.
+- **FAIR:** Data principles that aim to make data Findable, Accessible, Interoperable, and Reusable.
+- **Metadata:** Descriptive information that helps data be understood, located, and reused.
+- **Data lifecycle:** The sequence from planning and collection through analysis, sharing, preservation, and reuse.
+- **Personal data:** Information relating to an identified or identifiable person.
+- **Special category data:** More sensitive personal data, such as health, genetic, biometric, race, religion, or sexual orientation data.
+- **Lawful basis:** The legal justification for processing personal data under UK GDPR.
+- **DPIA:** Data Protection Impact Assessment used to identify and reduce data protection risks.
+- **Data controller:** The organisation that decides why and how personal data are processed.
+- **Processor:** A party processing data on behalf of the controller.
+- **Ethics review:** Formal review of research involving humans, personal data, or other significant risks.
+- **Retention:** How long data are kept.
+- **Preservation:** Longer-term keeping of data so they remain usable and understandable.
+- **Version control:** A way of tracking changes to files, code, documents, or datasets over time.
+- **Reproducibility:** The ability to understand, check, and rerun a workflow or analysis.
 
-## Institutional Platforms (Typical)
+## Institutional Platforms
 
-- **Microsoft 365:** Collaboration, communication, shared documents.
-- **SharePoint/Teams:** Project spaces, document versioning, team collaboration.
-- **Research Information Systems:** Project and outputs tracking.
+| Platform | Typical use |
+|---|---|
+| **Microsoft 365** | Day-to-day collaboration, communication, writing, and spreadsheet work |
+| **OneDrive** | Individual working storage with sync and version history |
+| **Teams** | Group communication, meetings, and shared project working space |
+| **SharePoint** | Collaborative document storage with permissions and longer-lived team spaces |
+| **RIS (Worktribe)** | Research lifecycle tracking, outputs, grants, and linked researcher information |
+| **UniCore** | Finance, HR, procurement, and operational research administration |
+| **ORCID** | Persistent researcher identifier used to maintain a consistent research identity |
+| **TRE Secure Storage** | Restricted environment for sensitive or confidential data |
+| **CPS Research Storage** | Group-managed research storage for backed-up project data |
 
-## Good Practice Checklist
+## Quick Decision Guide
 
-- Use consistent folder and file naming.
-- Capture decisions and context in documentation.
-- Apply access controls based on sensitivity.
-- Back up and preserve data in approved locations.
-- Record data provenance and version history.
+### Where should this work live?
+
+| Situation | Usually the best fit |
+|---|---|
+| Personal draft notes or early working files | **OneDrive** |
+| Shared project documents used by a team | **Teams / SharePoint** |
+| Sensitive or confidential research data | **Approved secure storage** such as TRE Secure Storage |
+| Proposal, output, or institutional research record | **RIS (Worktribe)** |
+| Finance or procurement workflow | **UniCore** |
+| Public researcher identity and linked outputs | **ORCID** plus institutional systems |
+
+### Before you share a file or dataset
+
+Ask:
+
+1. Does it contain personal, confidential, or commercially sensitive information?
+2. Is the storage location approved for that level of sensitivity?
+3. Are permissions set to the smallest group that needs access?
+4. Is there enough documentation for someone else to understand the file?
+5. Have you recorded the version, source, and context?
+
+## Practical Good Practice
+
+### File and folder naming
+
+Use names that are consistent, sortable, and readable.
+
+```text
+2026-03-23_interview-theme-summary_v01.docx
+project-alpha/
+  raw-data/
+  cleaned-data/
+  documentation/
+  outputs/
+```
+
+Helpful patterns:
+
+- use dates in `YYYY-MM-DD` format
+- avoid spaces if files move across systems regularly
+- use meaningful version labels such as `v01`, `v02`, `final-reviewed`
+- separate raw, cleaned, and derived data
+
+### Minimum documentation to keep
+
+For most projects, try to retain:
+
+- who created or updated the file
+- when it was created or changed
+- what the file contains
+- how values, variables, or categories should be interpreted
+- what processing or transformation has already happened
+- where the authoritative version is stored
+
+### Metadata prompts
+
+If you are not sure what metadata to record, start with:
+
+- title
+- creator or owner
+- date
+- format
+- location
+- description
+- methods or source
+- access restrictions
+- reuse conditions
+
+## Governance and Compliance Reminders
+
+- Ethics approval and data protection are related but not identical.
+- Consent is important, but it is not automatically the lawful basis for research processing.
+- Personal data can include indirect identifiers, not just names and email addresses.
+- Sensitive data requires both stronger justification and stronger safeguards.
+- A good DMP should match your real storage, access, sharing, and retention practices.
+
+## Data Quality and Analysis Prompts
+
+When reviewing a dataset or chart, ask:
+
+- What exactly does each row represent?
+- Are categories used consistently?
+- What is missing, ambiguous, or mixed together?
+- What would a collaborator misunderstand without explanation?
+- Does the chart help interpretation or distort it?
+- What action is the audience expected to take from this output?
+
+## AI Use in Research
+
+Use AI most safely when you define:
+
+- the task
+- the context
+- the source boundary
+- the output format
+- the verification step
+
+A useful prompt pattern:
+
+> Help me with **[task]** for **[context]**. Use **[source or boundary]**. Return the result as **[format]**. Flag uncertainty and do not invent evidence.
+
+Before using AI on research work, ask:
+
+1. Is the material safe to paste into this tool?
+2. Do I need to use only approved or institutionally permitted services?
+3. What part of the answer must I verify manually?
+4. Am I asking for support, or am I trying to outsource judgement?
+
+## End-of-Course Checklist
+
+By the end of the course, you should be able to:
+
+- choose more appropriate tools for collaboration and storage
+- explain key governance and RDM concepts in practical terms
+- design a clearer folder structure and documentation approach
+- critique charts and data summaries more confidently
+- turn an analysis result into a clearer action or recommendation
+- use AI in a more selective, source-aware, and defensible way

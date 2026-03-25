@@ -1,0 +1,27 @@
+---
+title: "Course README"
+---
+
+# Responsible Use of Generative AI
+
+Responsible Use of Generative AI is a short course for researchers and research support staff who want to use AI more selectively, transparently, and defensibly.
+
+## Course Scope
+
+The course supports participants to:
+
+- understand how AI changes research work and judgement,
+- design stronger prompts with clearer boundaries,
+- validate AI outputs against real sources,
+- document AI-assisted work in a lightweight but useful way,
+- recognise when AI use should remain manual rather than automated.
+
+## Contributing
+
+Contribution guidance is available in [CONTRIBUTING.qmd](CONTRIBUTING.qmd).
+
+## Supporting Documents
+
+- [Code of Conduct](CODE_OF_CONDUCT.qmd)
+- [License](LICENSE.qmd)
+- [Learner Profiles](profiles/learner-profiles.qmd)

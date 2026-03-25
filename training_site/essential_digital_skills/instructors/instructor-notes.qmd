@@ -2,24 +2,125 @@
 title: Instructor Notes
 ---
 
-## Teaching Focus
+## About This Course
 
-The primary aim is to help learners make practical, defensible decisions about digital research workflows, not just memorize policy language.
+Essential Digital Skills is a foundation course in practical digital research work. The teaching goal is not to turn participants into policy specialists. It is to help them make better day-to-day decisions about collaboration, governance, data management, interpretation, and responsible AI use.
 
-## Delivery Guidance
+The course works best when learners leave with:
 
-- Prioritise scenario-based activities over long policy exposition.
-- Encourage participants to map concepts to their own projects.
-- Use short debrief loops after each task to consolidate learning.
+- a clearer mental model of the university research ecosystem
+- better judgement about where work should live and how it should be documented
+- stronger awareness of risk, roles, and escalation points
+- reusable habits they can apply immediately in their own projects
+
+## Recommended Teaching Approach
+
+- Keep teaching blocks short and concrete.
+- Prioritise scenario-based discussion over long stretches of exposition.
+- Ask learners to map each concept to a live project, role, or workflow.
+- Treat the course as workflow design, not compliance theatre.
+- Use debriefs to convert broad principles into next-week actions.
+
+## Delivery Pattern
+
+Most sessions in this course already follow a useful rhythm:
+
+1. Short concept framing.
+2. Example or comparison.
+3. Group activity or reflection task.
+4. Debrief focused on practical decisions.
+
+Maintain that pattern where possible. Learners often understand the concept more clearly after they have had to defend a choice, rank a risk, or improve a weak example.
+
+## Session-Level Emphasis
+
+### Digital tools
+
+Use [Digital Tools](../episodes/01-digital_tools.qmd) to clarify the role of Microsoft 365, SharePoint, RIS, UniCore, ORCID, and basic digital security practices. Learners often know these systems exist but not how they fit together.
+
+### Delivery and coordination
+
+Use [Digital Delivery](../episodes/02-digital_delivery.qmd) to make project planning feel lighter and more actionable. The aim is not to impose formal agile doctrine, but to give teams language for iteration, coordination, and shared ownership.
+
+### Governance and policy
+
+Use [Data Governance & Policy](../episodes/03-data_governance_and_policy.qmd) to distinguish ethics, lawful basis, data classification, and institutional compliance. Learners often collapse these into one vague idea of "policy".
+
+### Research data management
+
+Use [Research Data Management](../episodes/04-research_data_managment.qmd) to connect DMPs, folder structures, metadata, storage, retention, and FAIR reuse. Keep bringing the discussion back to actual files, responsibilities, and workflows.
+
+### Data collection to impact
+
+Use [Collecting the Right Data](../episodes/05-collecting_the_right_data.qmd) through [Insight to Impact](../episodes/08-insight_to_impacts.qmd) to build learners' judgement about data quality, organisation, visualisation, and action. Emphasise interpretation, not just technique.
+
+### Related AI course
+
+Dedicated AI teaching now sits in [Responsible Use of Generative AI](../../responsible_use_of_generative_ai/index.qmd). If learners want deeper coverage of prompting, validation, documentation, and defensible AI use, that course is the natural follow-on.
 
 ## Common Sticking Points
 
-- Confusion between governance policy and day-to-day workflow decisions.
-- Overly generic DMP responses lacking operational detail.
-- Limited understanding of role boundaries for data responsibility.
+- Confusion between governance principles and operational decisions.
+- Assuming consent solves all data protection questions.
+- Treating DMPs as proposal paperwork rather than live workflow planning.
+- Weak separation between raw, cleaned, and derived data.
+- Underestimating documentation and metadata needs.
+- Mistaking a persuasive chart for a trustworthy interpretation.
+- Treating AI fluency as evidence or authority.
+- Unclear boundaries between personal working storage and collaborative storage.
+- Limited understanding of who owns which decision in a project.
 
-## Suggested Facilitation Moves
+## Facilitation Moves That Usually Help
 
 - Ask learners to justify tool/storage choices against risk level.
 - Use “what would you do next week?” prompts to force concrete planning.
 - Surface trade-offs explicitly (openness vs sensitivity, speed vs rigor).
+- Ask "what would another team member need to know to use this safely?"
+- Push groups from abstract principles to named platforms, roles, and actions.
+- When an answer is vague, ask what document, system, or person would hold that decision in reality.
+- Turn comparison tasks into ranking tasks where possible. Ranking forces prioritisation.
+
+## Managing Policy Questions
+
+Learners will often ask for definitive answers about institutional policy. When the answer depends on context:
+
+- be honest about uncertainty
+- distinguish principle from local implementation
+- signpost the relevant service or approval route
+- avoid improvising a confident answer when escalation is the right move
+
+This is particularly important for:
+
+- ethics approval thresholds
+- personal and special category data
+- external sharing and cloud services
+- retention and preservation decisions
+- AI use with sensitive or unpublished material
+
+## Room Setup and Activity Design
+
+- Mixed-role groups usually work well because they expose different assumptions.
+- If the room is quiet, start with individual reflection before group discussion.
+- If the room is very mixed in confidence, ask pairs to nominate a reporter rather than relying on open plenary discussion.
+- Encourage groups to write down one recommended action and one unresolved question after each activity.
+
+## Good Evidence of Learning
+
+You are looking for learners who can:
+
+- explain why a tool or storage choice is appropriate
+- identify when a governance issue needs escalation
+- improve a weak DMP or documentation example
+- spot a misleading chart or weak interpretation
+- propose a small, realistic workflow improvement
+- describe AI use in terms of task, source boundary, and verification
+
+## Follow-Up Suggestions
+
+If you have time at the end of a session, ask learners to leave with one sentence in each of these forms:
+
+- "We should stop..."
+- "We should start..."
+- "We should clarify..."
+
+This produces better follow-up actions than a generic "Any questions?" close.

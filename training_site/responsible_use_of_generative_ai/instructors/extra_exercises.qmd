@@ -1,0 +1,71 @@
+---
+title: Extra Exercises
+---
+
+## How To Use These
+
+These exercises are designed for instructors who want more practice material, stronger consolidation, or a backup activity when a room moves quickly. Most can run in 10 to 20 minutes with a short plenary.
+
+## Exercise 1: Opportunity or Risk Relocation?
+
+**Best fit:** [How AI Impacts Research](../episodes/ext1-how_ai_impacts_research.qmd)
+
+Give groups three research tasks and ask them to identify:
+
+- what AI might make faster
+- what checking work would still remain
+- what new risks or responsibilities would appear
+
+**Debrief question:** Did AI remove work, or mostly move it somewhere less visible?
+
+## Exercise 2: Prompt Rewrite Sprint
+
+**Best fit:** [How to Use AI in Research](../episodes/ext2-how_to_use_ai_in_research.qmd)
+
+Take three vague prompts and ask groups to improve them by adding:
+
+- clearer task definition
+- source boundaries
+- output format
+- one explicit uncertainty instruction
+
+**Debrief question:** Which addition improved the prompt most?
+
+## Exercise 3: Source Check Triage
+
+**Best fit:** [How to Use AI in Research](../episodes/ext2-how_to_use_ai_in_research.qmd)
+
+Provide a short AI-generated output and ask groups to mark:
+
+- which claims can be checked quickly
+- which claims need careful source comparison
+- which claims are too vague or unsupported to keep
+- what prompt change might have reduced the problem
+
+**Debrief question:** Where did the burden of checking become most visible?
+
+## Exercise 4: What Should Never Become an Agent?
+
+**Best fit:** workflow and documentation discussions
+
+Ask groups to compare two candidate workflows and decide:
+
+- which task is narrow enough for a repeatable workflow
+- which task should remain manual
+- what validation checkpoint is non-negotiable
+
+**Debrief question:** What makes an automation idea look efficient but still irresponsible?
+
+## Exercise 5: AI Use Note in 90 Seconds
+
+**Best fit:** end-of-course consolidation
+
+Ask learners to write a short AI use note for one example task, including:
+
+- tool
+- task
+- input material
+- checks performed
+- what was kept
+
+**Debrief question:** What information was easiest to forget, and why does it matter later?

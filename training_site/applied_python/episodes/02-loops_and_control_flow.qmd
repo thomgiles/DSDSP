@@ -46,7 +46,7 @@ We start with a simple goal: print each value in a list.
 odds = [1, 3, 5, 7]
 ```
 
-### Manual Repetition
+## Manual Repetition
 
 A list has ordered positions (indices), so we can print items one by one:
 
@@ -61,7 +61,7 @@ print(odds[3])
 Notice the pattern: the action stays the same and only the index changes.
 :::
 
-### Why Manual Repetition Breaks Down
+## Why Manual Repetition Breaks Down
 
 1. Not scalable e.g. for lists with hundreds of elements.
 2. Hard to maintain e.g. when print output format changes.
@@ -80,7 +80,7 @@ print(odds[3])
 We want one approach that works for short and long lists without rewriting code.
 :::
 
-### Introducing a `for` Loop
+## Introducing a `for` Loop
 
 A [for loop](../learners/reference.qmd#for-loop) applies the same action to every item:
 
@@ -98,7 +98,7 @@ for num in odds:
     print(num)
 ```
 
-### General Loop Template
+## General Loop Template
 
 ```{python}
 for variable in collection:
@@ -110,7 +110,7 @@ A `for` loop means: for each value in the collection, run the block of code once
 Loops make repetition easier by moving "what changes" into a loop variable.
 :::
 
-### Reading the Loop Diagram
+## Reading the Loop Diagram
 
 ![](fig/05-loops_image_num.png){alt="Loop variable 'num' being assigned the value of each element in the list odds in turn and then being printed"}
 
@@ -120,7 +120,7 @@ In each cycle, `num` moves to point at the next value in `odds` and the loop bod
 You can read the loop diagram as: pick a value, run the body of code, and repeat.
 :::
 
-### Loop Syntax Rules
+## Loop Syntax Rules
 
 - The `for` line must end with a colon.
 - The loop body must be indented.
@@ -159,7 +159,7 @@ The body of the loop is executed 6 times.
 ::::
 
 
-### Loop Variable Names
+## Loop Variable Names
 
 In the example above, the loop variable was given the name `num` as a mnemonic; it is short for 'number'. We can choose any name we want for variables. We might just as easily have chosen the name `banana` for the loop variable, as long as we use the same name when we invoke the variable inside the loop:
 
@@ -175,7 +175,7 @@ It is a good idea to choose variable names that are meaningful, otherwise it wou
 Use meaningful names to make it easier to understand and debug your code.
 :::
 
-### Counting with a Loop
+## Counting with a Loop
 
 Here's another loop that repeatedly updates a variable:
 
@@ -199,7 +199,7 @@ It's worth tracing the execution of this little program step by step. Since ther
 Trace one iteration at a time to verify how each variable changes.
 :::
 
-### Loop Variable Scope
+## Loop Variable Scope
 
 Note that a loop variable is a variable that is being used to record progress in a loop. It still exists after the loop is over, and we can re-use variables previously defined as loop variables as well:
 
@@ -210,7 +210,7 @@ for name in ['Curie', 'Darwin', 'Turing']:
 print('after the loop, name is', name)
 ```
 
-### Counting with `len`
+## Counting with `len`
 
 Note also that finding the length of an object is such a common operation that Python actually has a built-in function to do it called `len`:
 
@@ -218,7 +218,7 @@ Note also that finding the length of an object is such a common operation that P
 print(len([0, 1, 2, 3]))
 ```
 
-### Prefer Built-In Functions
+## Prefer Built-In Functions
 
 For example, `len` is much faster than any function we could write ourselves, and much easier to read than a two-line loop; it will also give us the length of many other things that we haven't met yet, so we should always use it when we can.
 
@@ -254,7 +254,7 @@ print(sum(numbers))
 
 
 
-### Looping Over `range`
+## Looping Over `range`
 
 Python has a built-in function called `range` that generates a sequence of numbers. `range` can accept 1, 2, or 3 parameters.
 
@@ -377,13 +377,13 @@ else:
 print('done')
 ```
 
-### Branch Execution Flow
+## Branch Execution Flow
 
 The second line of this code uses the keyword `if` to tell Python that we want to make a choice. If the test that follows the `if` statement is true, the body of the `if` (i.e., the set of lines indented underneath it) is executed, and "greater" is printed. If the test is false, the body of the `else` is executed instead, and "not greater" is printed. Only one or the other is ever executed before continuing on with program execution to print "done":
 
 ![](fig/python-flowchart-conditional.png){alt='A flowchart diagram of the if-else construct that tests if variable num is greater than 100'}
 
-### `if` without `else`
+## `if` without `else`
 
 Conditional statements don't have to include an `else`. If there isn't one, Python simply does nothing if the test is false:
 
@@ -395,7 +395,7 @@ if num > 100:
 print('...after conditional')
 ```
 
-### `elif`
+## `elif`
 
 We can also chain several tests together using `elif`, which is short for "else if". The following Python code uses `elif` to print the sign of a number.
 
@@ -410,7 +410,7 @@ else:
     print(num, 'is negative')
 ```
 
-### Comparison Operators
+## Comparison Operators
 
 Note that to test for equality we use a double equals sign `==` rather than a single equals sign `=` which is used to assign values.
 
@@ -441,7 +441,7 @@ else:
     print('both parts are false')
 ```
 
-### Boolean Values
+## Boolean Values
 
 `True` and `False` are special keywords in Python which represent boolean truth values and are of type `bool`. A statement such as `1 > 0` returns the value `True`, while `-1 > 0` returns the value `False`.
 
@@ -760,7 +760,7 @@ The concepts in this module connect directly to practical data handling and expl
 | Conditional Logic | [Boolean operations and comparisons](https://docs.python.org/3/library/stdtypes.html#boolean-operations-and-or-not) | Branching lets code respond safely to changing data. |
 
 ::: {.callout-note appearance="minimal"}
-### Attribution
+## Attribution
 This lesson is derived from materials developed by the [Software Carpentry](https://software-carpentry.org) project.
 
 The original content is licensed under the Creative Commons Attribution 4.0 International (CC BY 4.0) license: [https://github.com/swcarpentry/python-novice-inflammation/blob/main/LICENSE.md](https://github.com/swcarpentry/python-novice-inflammation/blob/main/LICENSE.md)
