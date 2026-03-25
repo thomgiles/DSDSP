@@ -6,17 +6,31 @@ title: Contributing
 
 Contributions are welcome for:
 
-- content corrections,
-- improved teaching activities,
-- updated institutional or policy references,
-- clearer examples of prompt design, validation, and documentation,
-- accessibility and usability improvements.
+- content corrections
+- improved teaching activities
+- updated institutional or policy references
+- clearer examples of prompt design, validation, and documentation
+- accessibility and usability improvements
 
 ## How to Contribute
 
 1. Open an issue describing the change.
 2. If editing content directly, use a focused branch and clear commit messages.
 3. Submit a pull request with a concise summary of what changed and why.
+
+## What Makes a Good Contribution
+
+- Keep the material practical and judgement-focused.
+- Prefer source-grounded examples over abstract claims.
+- Avoid hype and keep governance language concrete.
+- Flag policy, tool, or institutional references that may have changed.
+- If a change affects delivery, note the implications for learners or instructors.
+
+## Licensing and Attribution
+
+By contributing to this course, you agree that your contribution can be published under the terms described in [LICENSE.qmd](LICENSE.qmd).
+
+If you reuse outside material, include enough information for that source to be credited and checked properly.
 
 ## Content Principles
 

@@ -2,12 +2,68 @@
 title: "Contributor Code of Conduct"
 ---
 
-As contributors and maintainers of this project,
-we pledge to follow the [The Carpentries Code of Conduct][coc].
+## Our Commitment
 
-Instances of abusive, harassing, or otherwise unacceptable behavior
-may be reported by following our [reporting guidelines][coc-reporting].
+The UoN Digital Skills programme is committed to providing a respectful, welcoming, and supportive environment for learners, instructors, contributors, and staff.
 
+We want people to be able to ask questions, make mistakes, teach, learn, and collaborate without fear of harassment, exclusion, intimidation, or humiliation.
 
-[coc-reporting]: https://docs.carpentries.org/policies/coc/incident-reporting.html
-[coc]: https://docs.carpentries.org/policies/coc/
+## Scope
+
+This code applies to:
+
+- course sessions delivered in person or online
+- GitHub repositories and pull request discussions for these materials
+- email, chat, and other communication spaces used for course delivery or maintenance
+- associated community spaces where people are participating in connection with the Digital Skills programme
+
+## Expected Behaviour
+
+We expect participants to:
+
+- use welcoming and inclusive language
+- be respectful of different viewpoints, experiences, and skill levels
+- accept constructive feedback gracefully
+- focus on shared learning and community benefit
+- respect professional boundaries, privacy, and consent
+- show courtesy to other learners, instructors, contributors, and support staff
+
+## Unacceptable Behaviour
+
+We do not tolerate:
+
+- harassment, discrimination, or demeaning comments about identity, background, experience, or technical choices
+- intimidation, stalking, threats, or deliberately making others feel unsafe
+- unwelcome sexual attention or non-consensual physical contact
+- sustained disruption of teaching sessions, online discussions, or collaborative work
+- insults, slurs, exclusionary jokes, or persistent bad-faith interaction
+- publishing private communication or personal information without consent
+- continuing unwanted interaction after being asked to stop
+
+## Reporting a Concern
+
+If you experience or witness behaviour that makes a course space unsafe or exclusionary:
+
+1. If you feel able, ask for the behaviour to stop.
+2. Contact an instructor, facilitator, or course organiser.
+3. Or email `digitalresearch@nottingham.ac.uk`.
+
+If the concern involves the person receiving the report, please contact another member of the teaching team or use the shared course contact email instead.
+
+For urgent safety concerns, contact venue staff, university security, or emergency services as appropriate.
+
+## Response and Consequences
+
+Course organisers may:
+
+- clarify expectations or issue a warning
+- ask someone to stop a behaviour immediately
+- remove a participant from a session or online space
+- restrict future participation
+- escalate the matter through relevant university processes where needed
+
+Reports will be handled as discreetly as possible, though absolute confidentiality cannot be guaranteed if safety or formal investigation requires escalation.
+
+## Attribution
+
+This local code is adapted for the UoN Digital Skills programme from the structure and principles of [The Carpentries Code of Conduct](https://docs.carpentries.org/policies/coc/).
