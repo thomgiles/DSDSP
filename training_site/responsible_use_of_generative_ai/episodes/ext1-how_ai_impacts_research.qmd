@@ -50,15 +50,10 @@ AI was used (but not harmed) in the generation of these training materials!
 
 ::: callout-task
 
-#### Temperate Check
-
-::: panel-tabset
-
-##### Question
+#### Task: Temperate Check
 
 How many of you you already used Generative AI in your research? (show of hands)
 
-:::
 :::
 
 # Foundations and Context
@@ -70,7 +65,7 @@ How many of you you already used Generative AI in your research? (show of hands)
 - Artificial Intelligence (AI) emerged in the 1950s 
 - Initial ideas were around whether machines could replicate human thought. 
 
-> Alan Turing argued that intelligence might be understood through behaviour rather than internal processes, leading to the famous question: *Can machines think?*
+> 🤔 Alan Turing argued that intelligence might be understood through behaviour rather than internal processes, leading to the famous question: *Can machines think?*
 
 ## Expansion of Rule-Based AI (1960–1970)
 
@@ -81,7 +76,7 @@ Intelligence was treated as a problem of **logic, rules, and formal symbols**.
 - Knowledge could be encoded as **if–then rules**
 - Computers would outperform humans by applying rules **faster and more consistently**
  
-> *If reasoning can be fully specified, it can be automated.*
+> ⚙️ *If reasoning can be fully specified, it can be automated.*
 
 ## Growth of Structured Knowledge Systems
 
@@ -106,7 +101,7 @@ Human expertise had to be encoded manually, often as **thousands of explicit rul
 - Maintaining internal consistency became impractical
 - System performance degraded as complexity increased
 
->🧠 At the same time, early research into **neural networks stalled** following early mathematical criticism, accelerating the loss of confidence and funding.
+> 🧠 At the same time, early research into **neural networks stalled** following early mathematical criticism, accelerating the loss of confidence and funding.
 
 ## The Emergence of Machine Learning (1980–1995)
 
@@ -118,7 +113,7 @@ in the 80s ML emerged when researchers realised that instead of telling computer
 - **Statistical methods improved** (e.g., Bayesian modelling, maximum likelihood).
 - **Computers became fast enough** to fit models to real datasets.
 
-> ML became the dominant paradigm because it could adapt to messy, uncertain, real-world problems.
+> 📈 ML became the dominant paradigm because it could adapt to messy, uncertain, real-world problems.
 
 ## Core Machine Learning Approaches
 
@@ -147,7 +142,6 @@ In the early 2000s Natural Language Processing (NLP) emerged as a field of AI th
 graph LR
     D["Input data"]
     I["Input layer"]
-    H["Hidden layer"]
     H1["Hidden layer"]
     H2["Hidden layer"]
 
@@ -157,8 +151,6 @@ graph LR
     I -->|Feed forward| O
     O -->|back-propagation| I
     D --> I
-    I --> H
-    H --> O
     I --> H1
     H1 --> O
     I --> H2
@@ -166,7 +158,7 @@ graph LR
     O --> R
 ```
 
-> Language is challenging because meaning depends on context and relationships across sentences. 
+> 🗣️ Language is challenging because meaning depends on context and relationships across sentences. 
 
 ## A field ready for change (2014-2016)
 
@@ -184,7 +176,9 @@ Transformers introduced something called self-attention, this essentially allowe
 
 > 🚀 This unlocked large-scale training and dramatically improved performance across language, vision and multimodal tasks.
 
-## Example
+## Maintaing Context
+
+At each step, the model attends over the tokens currently in its context window, using self-attention to weigh which parts of the prompt and prior output matter most for predicting the next token.
 
 ```{mermaid}
 
@@ -202,7 +196,7 @@ sequenceDiagram
 
 ## The cogs behind Generative AI
 
-By predicting the most likely next token from prior context, transformers learn statistical patterns that can be reused across tasks, enabling flexible inference beyond simple memorisation.
+By predicting the most likely next token from prior context, transformer models can learn statistical patterns that can be reused across tasks, enabling flexible inference beyond simple memorisation.
 
 > ✨ Given a large enough training set, this allows them to generate responses the appear thougtful. 
 
@@ -240,18 +234,6 @@ Big shift now is on optimisation as running large models is expensive!
 
 > 🌐 Modern generative AI is the result of many incremental breakthroughs.
 
----
-
-::: callout-task
-
-#### Poll: Which AI tools have you used?
-
-::: panel-tabset
-
-##### Question
-
-Fill in the following questionaire: 
-
 ::: {.content-visible when-format="revealjs"}
 
 <!-- Hidden by default -->
@@ -259,7 +241,11 @@ Fill in the following questionaire:
 
 :::
 
-##### Results
+---
+
+::: callout-task
+
+#### Task: Questionaire
 
 <iframe
   src="https://ds-shiny-helper.azurewebsites.net/edsex1/?embed=true#shiny-tab-q1_results"
@@ -269,7 +255,7 @@ Fill in the following questionaire:
   style="border:none;"
   title="Q1">
 </iframe> 
-:::
+
 :::
 
 # 1. Opportunities
@@ -282,7 +268,7 @@ Generative AI represents a structural change in research by **compressing intell
 
 Rather than replacing expertise, it reallocates researcher effort from **production** to **evaluation, verification, and judgement**.
 
-> The key transformation is therefore epistemic rather than technical: researchers are increasingly positioned as *editors of reasoning* rather than sole producers of intermediate artefacts.
+> ✍️ The key transformation is therefore epistemic rather than technical: researchers are increasingly positioned as *editors of reasoning* rather than sole producers of intermediate artefacts.
 
 ## Compression of the research lifecycle
 
@@ -299,7 +285,7 @@ graph LR
 
 ```
 
-> This compression increases throughput but reduces natural pauses for critical reflection, peer discussion, and methodological reconsideration. Opportunities therefore emerge only when deliberate checkpoints are reintroduced.
+> ⏸️ This compression increases throughput but reduces natural pauses for critical reflection, peer discussion, and methodological reconsideration. Opportunities therefore emerge only when deliberate checkpoints are reintroduced.
 
 ## Where genuine opportunities arise
 
@@ -313,7 +299,7 @@ Common high‑value gains include:
 - improved accessibility and clarity of written communication  
 - faster iteration during early exploratory phases  
 
-> These benefits are particularly significant in environments characterised by limited time, high cognitive load, or interdisciplinary translation.
+> ⏱️ These benefits are particularly significant in environments characterised by limited time, high cognitive load, or interdisciplinary translation.
 
 ## Expansion of exploratory space
 
@@ -324,7 +310,7 @@ AI can increase the *breadth* of exploration by lowering the cost of asking “w
 - Reframe research questions  
 - Offer alternative explanatory narratives  
 
-> This can improve robustness *if* exploration is paired with explicit selection criteria and validation.
+> ✅ This can improve robustness *if* exploration is paired with explicit selection criteria and validation.
 
 ## A simple research risk matrix
 
@@ -336,7 +322,7 @@ AI can increase the *breadth* of exploration by lowering the cost of asking “w
 | analysing identifiable participant material in a public tool | high | ethics, governance and disclosure failure |
 | asking AI to produce findings or conclusions from your data | high | interpretation and accountability risk |
 
-The point is not to ban AI in difficult areas. It is to match the tool, safeguards and review burden to the stakes.
+> ⚖️ The point is not to ban AI in difficult areas. It is to match the tool, safeguards and review burden to the stakes.
 
 ## Accessibility and inclusion
 
@@ -347,7 +333,7 @@ When used carefully, AI can also support:
 - translation across disciplinary vocabularies  
 - structured drafting for early‑career researchers  
 
-> These gains offer both social and pedagogical impact, not merely technical.
+> 🌍 These gains offer both social and pedagogical impact, not merely technical.
 
 ---
 
@@ -378,7 +364,7 @@ AI‑enabled capacity is valuable only when the researcher retains ownership of:
 - interpretation  
 - uncertainty  
 
-> Where ownership is ceded, opportunity are rapidly converted into risks. 
+> 🚨 Where ownership is ceded, opportunity are rapidly converted into risks. 
 
 ## Capacity gain requires explicit control mechanisms
 
@@ -389,7 +375,7 @@ Effective use of AI in research therefore requires intentionally designed safegu
 - verify all claims against primary sources
 - map key claims directly to results
 
-> Opportunity only scales with *control*. Speed without control does not create research value.
+> 🎛️ Opportunity only scales with *control*. Speed without control does not create research value.
 
 ## Why governance is now a research necessity
 
@@ -410,7 +396,7 @@ flowchart LR
   B --> C2 --> D
 ```
 
-> This strains established norms around **authorship, contribution, provenance, and accountability**.
+> 🧾 This strains established norms around **authorship, contribution, provenance, and accountability**.
 
 ## False authorship: the institutional framing
 
@@ -422,7 +408,7 @@ This includes AI contribution to:
 - code and analysis outputs
 - images, figures, or other generated artefacts
 
-> It is your responsibility to disclose the use of AI in reasearch.  
+> 📢 It is your responsibility to disclose the use of AI in reasearch.  
 
 ## Permission is contextual, not assumed
 
@@ -433,7 +419,7 @@ AI acceptability varies by:
 - collaboration agreements
 - funder/publisher expectations
 
-> The governance principle: **permission must be explicit**; ambiguity is risk.
+> 🔐 The governance principle: **permission must be explicit**; ambiguity is risk.
 
 ## Accountability: what must remain human
 
@@ -444,7 +430,7 @@ The researcher must be able to:
 3. defend claims against evidence
 4. describe limitations and uncertainty
 
-> AI can assist, but as a tool, cannot carry responsibility for the quality of research.
+> 👤 AI can assist, but as a tool, cannot carry responsibility for the quality of research.
 
 ## Transparency and traceability as research norms
 
@@ -456,6 +442,8 @@ Traceability aligns with established research integrity practices.
 | Where AI influenced decisions | auditability of reasoning |
 | What was verified (and how) | defensible claims |
 | What was not verified | honest uncertainty |
+
+> 👤 Data transparency is not an extra requirement created by AI; it should be an extension of normal research practice.
 
 ## Contribution boundaries: editing vs substantive generation
 
@@ -475,6 +463,8 @@ flowchart TB
   style D stroke-width:3px
 ```
 
+> 👤 The critical question is not whether AI was used, but how it was used
+
 ## Integrity risks that look “benign”
 
 Research-relevant risks often arise from normal workflow choices:
@@ -483,7 +473,7 @@ Research-relevant risks often arise from normal workflow choices:
 - Adopting analytic code without validation
 - Using a summary that narrows the literature space prematurely
 
-> Failing to disclose material AI contribution where required may seem minor, but can have significant ethical and governance implication. 
+> ⚠️ Failing to disclose material AI contribution where required may seem minor, but can have significant ethical and governance implication. 
 
 ## What good disclosure achieves
 
@@ -494,7 +484,7 @@ Disclosure is not a punishment; it enables:
 - auditability and reproducibility
 - trust within teams and with audiences
 
-> You make a claim? Was AI involved? If Yes, keep an audit of how its involved and disclose it! 
+> 📝 You make a claim? Was AI involved? If Yes, keep an audit of how its involved and disclose it! 
 
 ---
 
@@ -504,7 +494,13 @@ Disclosure is not a punishment; it enables:
 
 The Following Method was produced using AI:
 
-***“Data will be analysed using to identify informative variables. Variables meeting a predefined relevance threshold will be retained. Cases showing minimal contribution will be excluded and the the top 25 highest-ranked variables will be taken forward for interpretation and reporting.”***
+
+***“Data will be analysed using to identify informative variables.***
+
+***Variables meeting a predefined relevance threshold will be retained. 
+
+***Cases showing minimal contribution will be excluded and the the top 25 highest-ranked variables will be taken forward for interpretation and reporting.”***
+
 
 1. What would count as substantive contributions in this artefact?
 2. What would need to be disclosed as AI materially contributed?
@@ -538,7 +534,7 @@ flowchart TB
   style D stroke-width:3px
 ```
 
-> The dominant risk is not malicious intent but **loss of visibility and control** once material leaves institutional systems.
+> 🔒 The dominant risk is not malicious intent but **loss of visibility and control** once material leaves institutional systems.
 
 ## What “data” means in AI-mediated research
 
@@ -550,7 +546,7 @@ In AI-assisted workflows, “data” includes any material that encodes research
 - code containing credentials, endpoints, or infrastructure details  
 - metadata that reveals study design, populations, or timing  
 
-> Much of this material is *informally handled* but *formally sensitive*.
+> 📎 Much of this material is *informally handled* but *formally sensitive*.
 
 ## High-risk material: common categories
 
@@ -562,15 +558,14 @@ In AI-assisted workflows, “data” includes any material that encodes research
 | IP / commercial | methods, pipelines, agreements | loss of competitive advantage |
 | Security material | tokens, keys, internal URLs | direct compromise |
 
-> Risk frequently arises from **aggregation**, not single items.
+> 🧩 Risk frequently arises from **aggregation**, not single items.
 
 ## De-identification is not a sufficient safeguard
 
 Removing explicit identifiers does not eliminate disclosure risk.  
 Residual risk persists through rare attribute combinations, contextual cues in narrative text, small-n summaries, or linkage with external information.
 
-> The practical implication is operational rather than theoretical:  
-*“Anonymised” does not mean “safe to upload.”*
+> 🛠️ The practical implication is operational rather than theoretical: *“Anonymised” does not mean “safe to upload.”*
 
 ## AI systems as unregulated collaborators
 
@@ -581,7 +576,7 @@ A useful governance analogy is to treat external AI services as collaborators wh
 - no data-sharing agreement  
 - no enforceable deletion or confidentiality guarantees  
 
-> This framing clarifies why **minimum necessary disclosure** is a defensible default.
+> 🧭 This framing clarifies why **minimum necessary disclosure** is a defensible default.
 
 ## Jurisdiction, retention, and opacity
 
@@ -592,7 +587,7 @@ From a research governance perspective, unresolved questions include:
 3. whether content is reused for model improvement  
 4. whether third parties (plugins, analytics, telemetry) have access  
 
-> Uncertainty itself constitutes a risk factor when handling sensitive research material.
+> ❓ Uncertainty itself constitutes a risk factor when handling sensitive research material.
 
 ## Behavioural drift as a security threat
 
@@ -606,15 +601,15 @@ flowchart LR
   style E stroke-width:3px
 ```
 
-> This form of “quiet drift” is harder to detect than discrete policy violations.
+> 🔍 This form of “quiet drift” is harder to detect than discrete policy violations.
 
 ## Practical implication for researchers
 
 A simple operational test:
 
-> *Would I be permitted to email this material to an external collaborator without a formal agreement?*
+> 📧 *Would I be permitted to email this material to an external collaborator without a formal agreement?*
 
-If not, it should not be shared with an external AI service. Check with your organisation directly if there are local / secure versions of these tools avalible for you to use. 
+If not, i t should not be shared with an external AI service. Check with your organisation directly if there are local / secure versions of these tools avalible for you to use. 
 
 
 # Further Information
@@ -631,7 +626,7 @@ AI supports research via literature search, coding, analysis and translation, bu
 
 - Ethical use requires transparency, accountability, fairness, privacy, and disclosure—AI is never an author.
 
-> Use secure, approved tools; avoid sensitive data sharing; follow institutional, funder and publisher policies.
+> 🛡️ Use secure, approved tools; avoid sensitive data sharing; follow institutional, funder and publisher policies.
 :::
 
 ::: callout-hints

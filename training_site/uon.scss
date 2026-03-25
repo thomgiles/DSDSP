@@ -383,6 +383,16 @@ h5 { font-size: 1.15rem; font-weight: 500; color: $white; }
   --gf: 40px;    /* footer height */
 }
 
+.reveal a {
+    font-weight: 400;
+    background-color: rgba(0, 0, 0, 0);
+    text-decoration: inherit;
+    color: $white;
+    background-color: $teal;
+}
+
+
+
 @media (max-width: 640px) {
   :root {
     --gh: 50px;
