@@ -11,15 +11,48 @@ jobs:
   pool:
     vmImage: ubuntu-latest
   variables:
-    - group: Azure-Static-Web-Apps-nice-rock-0193cc903-variable-group  # Assuming PAT is stored here, or create a new group
+    - group: Azure-Static-Web-Apps-nice-rock-0193cc903-variable-group
 
   steps:
     - checkout: self
       submodules: true
+      fetchDepth: 0
+      fetchTags: true
+      persistCredentials: true
 
     - script: |
+        set -euo pipefail
+        : "${GIT_USER:?GIT_USER is not set}"
+        : "${GIT_PAT:?GIT_PAT is not set}"
+
         git config --global user.email "pipeline@azure.com"
         git config --global user.name "Azure Pipeline"
-        git remote add github https://$(GIT_USER):$(GIT_PAT)@github.com/thomgiles/DSDSP.git || git remote set-url github https://$(GIT_USER):$(GIT_PAT)@github.com/thomgiles/DSDSP.git
-        git push github main
+
+        export GIT_TERMINAL_PROMPT=0
+        export GCM_INTERACTIVE=Never
+
+        cat > git-askpass.sh <<'EOF'
+        #!/usr/bin/env bash
+        case "$1" in
+          *Username*) echo "$GIT_USER" ;;
+          *Password*) echo "$GIT_PAT" ;;
+          *) echo ;;
+        esac
+        EOF
+        chmod 700 git-askpass.sh
+        export GIT_ASKPASS="$PWD/git-askpass.sh"
+
+        REPO_URL="https://github.com/thomgiles/DSDSP.git"
+        git ls-remote "$REPO_URL" >/dev/null
+
+        SOURCE_COMMIT="${BUILD_SOURCEVERSION:-HEAD}"
+        git rev-parse --verify "${SOURCE_COMMIT}^{commit}" >/dev/null
+
+        # Push the checked-out Azure commit to GitHub main.
+        git push "$REPO_URL" "${SOURCE_COMMIT}:refs/heads/main"
+
+        rm -f git-askpass.sh
       displayName: 'Sync to GitHub'
+      env:
+        GIT_USER: $(GIT_USER)
+        GIT_PAT: $(GIT_PAT)

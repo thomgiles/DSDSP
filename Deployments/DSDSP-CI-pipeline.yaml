@@ -1,82 +1,120 @@
-  name: dsdsp-prod-$(Date:yyyyMMdd)
+name: dsdsp-prod-$(Date:yyyyMMdd)
 
-  trigger:
-    branches:
-      include:
-        - main
+trigger:
+  branches:
+    include:
+      - main
 
-  pr:
-    branches:
-      include:
-        - main
+pr:
+  branches:
+    include:
+      - main
 
-  jobs:
-  - job: build_and_deploy_job
-    displayName: Build and Deploy Job
-    timeoutInMinutes: 240
-    pool:
-      vmImage: ubuntu-latest
-    variables:
-      - group:  Azure-Static-Web-Apps-nice-rock-0193cc903-variable-group
-    
-    steps:
-      - checkout: self
-        submodules: true
+jobs:
+- job: build_and_deploy_job
+  displayName: Build and Deploy Job
+  timeoutInMinutes: 240
+  pool:
+    vmImage: ubuntu-latest
+  variables:
+    - group: Azure-Static-Web-Apps-nice-rock-0193cc903-variable-group
 
-      - script: |
-          sudo apt-get update
-          sudo apt-get install -y curl \
+  steps:
+    - checkout: self
+      submodules: true
+
+    # ---- R setup ---------------------------------------------------------
+    - script: |
+        sudo apt-get update
+        sudo apt-get install -y curl \
           libxml2-dev libcurl4-openssl-dev libssl-dev \
           libfontconfig1-dev libfreetype6-dev \
           libharfbuzz-dev libfribidi-dev libpng-dev \
           chromium-browser fonts-noto-cjk \
           libtiff5-dev libjpeg-dev libgl1-mesa-dev libgmp-dev pandoc
-          sudo apt-get install -y --no-install-recommends r-base
-          R --version
-        displayName: 'Set up R'
+        sudo apt-get install -y --no-install-recommends r-base
+        R --version
+      displayName: 'Set up R'
 
-      - script: |
-          mkdir -p ~/.R/library
-          export R_LIBS_USER=$HOME/.R/library
-          echo 'R_LIBS_USER="~/.R/library"' >> ~/.Renviron
-          Rscript -e 'install.packages(c("renv","rmarkdown", "reticulate", "gapminder", "tidyverse", "readxl", "openxlsx", "gridExtra", "ggExtra", "knitr"))'
-        workingDirectory: training_site
-        displayName: 'Restore R environment'
+    - script: |
+        mkdir -p ~/.R/library
+        export R_LIBS_USER=$HOME/.R/library
+        echo 'R_LIBS_USER="~/.R/library"' >> ~/.Renviron
+        Rscript -e 'install.packages(c("renv","rmarkdown","reticulate","gapminder","tidyverse","readxl","openxlsx","gridExtra","ggExtra","knitr"))'
+      workingDirectory: training_site
+      displayName: 'Restore R environment'
 
-      - task: UsePythonVersion@0
-        inputs:
-          versionSpec: '3.11'
-        displayName: 'Set up Python 3.11'
+    # ---- Python setup ----------------------------------------------------
+    - task: UsePythonVersion@0
+      inputs:
+        versionSpec: '3.11'
+      displayName: 'Set up Python 3.11'
 
-      - script: |
-          pip install -r requirements.txt
-          pip install jupyter pyyaml
-        workingDirectory: training_site
-        displayName: 'Install Python packages'
+    - script: |
+        pip install -r requirements.txt
+        pip install jupyter pyyaml
+      workingDirectory: training_site
+      displayName: 'Install Python packages'
 
-      - script: |
-          sudo apt-get update
-          sudo apt-get install librsvg2-bin
-          curl -sSLO https://quarto.org/download/latest/quarto-linux-amd64.deb
-          sudo dpkg -i quarto-linux-amd64.deb
-          quarto --version
-          quarto install tinytex
-        displayName: 'Install Quarto CLI'
+    # ---- Quarto setup ----------------------------------------------------
+    - script: |
+        set -eux
+        sudo apt-get update
+        sudo apt-get install -y \
+          librsvg2-bin \
+          fonts-noto-cjk \
+          fonts-dejavu \
+          ghostscript \
+          pandoc \
+          chromium-browser \
+          curl
 
-      - script: |
-          export R_LIBS_USER=$HOME/.R/library
-          quarto render . --verbose --no-cache
-          echo "list contents"
-          pwd
-          ls -al
-          ls -al _site || echo "_site not found"
-          test -f _site/index.html
-        workingDirectory: training_site
-        displayName: 'Render Quarto site'
+        # --- Install tectonic manually (since not in Ubuntu 24.04 repos)
+        curl -sSL https://github.com/tectonic-typesetting/tectonic/releases/latest/download/tectonic-x86_64-unknown-linux-gnu.deb -o tectonic.deb
+        sudo dpkg -i tectonic.deb || sudo apt-get -f install -y
 
-      - task: AzureStaticWebApp@0
-        inputs:
-          azure_static_web_apps_api_token: $(AZURE_STATIC_WEB_APPS_API_TOKEN_NICE_ROCK_0193CC903)
-          app_location: "training_site"
-          output_location: "_site"
-          api_location: ""
+        # --- Install Quarto
+        curl -sSLO https://quarto.org/download/latest/quarto-linux-amd64.deb
+        sudo dpkg -i quarto-linux-amd64.deb
+
+        quarto --version
+
+        # --- Install TinyTeX (fallback LaTeX toolchain)
+        quarto install tinytex
+
+      displayName: 'Install Quarto CLI and PDF dependencies'
+
+
+    # ---- Environment prep for Quarto render ------------------------------
+    - script: |
+        export QUARTO_TMPDIR=$PWD/.tmp
+        mkdir -p .tmp
+        export R_LIBS_USER=$HOME/.R/library
+        export PATH=$PATH:$HOME/.TinyTeX/bin/x86_64-linux
+        echo "R_LIBS_USER=$R_LIBS_USER"
+        echo "QUARTO_TMPDIR=$QUARTO_TMPDIR"
+      displayName: 'Prepare Quarto environment'
+
+    # ---- Render step -----------------------------------------------------
+    - script: |
+        set -eux
+        export R_LIBS_USER=$HOME/.R/library
+        export QUARTO_TMPDIR=$PWD/.tmp
+        export PATH=$PATH:$HOME/.TinyTeX/bin/x86_64-linux
+
+        # Optional: reduce parallelism to avoid timeouts
+        quarto render . --no-cache --log-level debug
+
+        echo "Render complete. Listing output:"
+        ls -al _site || echo "_site not found"
+        test -f _site/index.html
+      workingDirectory: training_site
+      displayName: 'Render Quarto site'
+
+    # ---- Deploy step -----------------------------------------------------
+    - task: AzureStaticWebApp@0
+      inputs:
+        azure_static_web_apps_api_token: $(AZURE_STATIC_WEB_APPS_API_TOKEN_NICE_ROCK_0193CC903)
+        app_location: "training_site"
+        output_location: "_site"
+        api_location: ""
