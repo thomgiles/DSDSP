@@ -16,6 +16,8 @@ jobs:
   steps:
     - checkout: self
       submodules: true
+      fetchDepth: 0
+      fetchTags: true
 
     - script: |
         set -euo pipefail
@@ -41,7 +43,9 @@ jobs:
 
         REPO_URL="https://github.com/thomgiles/DSDSP.git"
         git ls-remote "$REPO_URL" >/dev/null
-        git push "$REPO_URL" HEAD:refs/heads/main
+
+        # Push the fully-fetched Azure branch ref to GitHub main.
+        git push "$REPO_URL" refs/remotes/origin/main:refs/heads/main
 
         rm -f git-askpass.sh
       displayName: 'Sync to GitHub'
