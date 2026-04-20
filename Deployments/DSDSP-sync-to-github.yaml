@@ -11,15 +11,24 @@ jobs:
   pool:
     vmImage: ubuntu-latest
   variables:
-    - group: Azure-Static-Web-Apps-nice-rock-0193cc903-variable-group  # Assuming PAT is stored here, or create a new group
+    - group: Azure-Static-Web-Apps-nice-rock-0193cc903-variable-group
 
   steps:
     - checkout: self
       submodules: true
 
     - script: |
+        set -euo pipefail
+
         git config --global user.email "pipeline@azure.com"
         git config --global user.name "Azure Pipeline"
-        git remote add github https://$(GIT_USER):$(GIT_PAT)@github.com/thomgiles/DSDSP.git || git remote set-url github https://$(GIT_USER):$(GIT_PAT)@github.com/thomgiles/DSDSP.git
-        git push github main
+
+        # Build URL at runtime so special characters in secrets are handled safely.
+        GIT_URL="https://${GIT_USER}:${GIT_PAT}@github.com/thomgiles/DSDSP.git"
+
+        git remote add github "$GIT_URL" || git remote set-url github "$GIT_URL"
+        git push github HEAD:main
       displayName: 'Sync to GitHub'
+      env:
+        GIT_USER: $(GIT_USER)
+        GIT_PAT: $(GIT_PAT)
