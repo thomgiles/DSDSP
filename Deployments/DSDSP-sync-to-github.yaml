@@ -44,8 +44,14 @@ jobs:
         REPO_URL="https://github.com/thomgiles/DSDSP.git"
         git ls-remote "$REPO_URL" >/dev/null
 
-        # Push the fully-fetched Azure branch ref to GitHub main.
-        git push "$REPO_URL" refs/remotes/origin/main:refs/heads/main
+        SOURCE_BRANCH="${BUILD_SOURCEBRANCHNAME:-main}"
+
+        # Ensure the remote-tracking ref exists in this agent checkout.
+        git fetch --force --tags origin "+refs/heads/${SOURCE_BRANCH}:refs/remotes/origin/${SOURCE_BRANCH}"
+        git rev-parse --verify "refs/remotes/origin/${SOURCE_BRANCH}" >/dev/null
+
+        # Push Azure main to GitHub main.
+        git push "$REPO_URL" "refs/remotes/origin/${SOURCE_BRANCH}:refs/heads/main"
 
         rm -f git-askpass.sh
       displayName: 'Sync to GitHub'
