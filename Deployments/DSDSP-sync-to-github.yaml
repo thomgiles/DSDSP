@@ -25,13 +25,25 @@ jobs:
         git config --global user.email "pipeline@azure.com"
         git config --global user.name "Azure Pipeline"
 
-        # PAT auth for Git over HTTPS uses username:PAT as Basic auth.
-        AUTH_HEADER=$(printf '%s:%s' "$GIT_USER" "$GIT_PAT" | base64 | tr -d '\n')
-        REPO_URL="https://github.com/thomgiles/DSDSP.git"
+        export GIT_TERMINAL_PROMPT=0
+        export GCM_INTERACTIVE=Never
 
-        # Fail early with a clear auth/access check.
-        git -c http.extraHeader="Authorization: Basic ${AUTH_HEADER}" ls-remote "$REPO_URL" >/dev/null
-        git -c http.extraHeader="Authorization: Basic ${AUTH_HEADER}" push "$REPO_URL" HEAD:main
+        cat > git-askpass.sh <<'EOF'
+        #!/usr/bin/env bash
+        case "$1" in
+          *Username*) echo "$GIT_USER" ;;
+          *Password*) echo "$GIT_PAT" ;;
+          *) echo ;;
+        esac
+        EOF
+        chmod 700 git-askpass.sh
+        export GIT_ASKPASS="$PWD/git-askpass.sh"
+
+        REPO_URL="https://github.com/thomgiles/DSDSP.git"
+        git ls-remote "$REPO_URL" >/dev/null
+        git push "$REPO_URL" HEAD:refs/heads/main
+
+        rm -f git-askpass.sh
       displayName: 'Sync to GitHub'
       env:
         GIT_USER: $(GIT_USER)
