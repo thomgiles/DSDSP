@@ -23,12 +23,11 @@ jobs:
         git config --global user.email "pipeline@azure.com"
         git config --global user.name "Azure Pipeline"
 
-        # Build URL at runtime so special characters in secrets are handled safely.
-        GIT_URL="https://${GIT_USER}:${GIT_PAT}@github.com/thomgiles/DSDSP.git"
+        # Authenticate with PAT using an HTTP header (no password-style URL auth).
+        AUTH_HEADER=$(printf 'x-access-token:%s' "$GIT_PAT" | base64 | tr -d '\n')
 
-        git remote add github "$GIT_URL" || git remote set-url github "$GIT_URL"
-        git push github HEAD:main
+        git -c http.https://github.com/.extraheader="AUTHORIZATION: basic ${AUTH_HEADER}" \
+          push https://github.com/thomgiles/DSDSP.git HEAD:main
       displayName: 'Sync to GitHub'
       env:
-        GIT_USER: $(GIT_USER)
         GIT_PAT: $(GIT_PAT)
