@@ -1,0 +1,25 @@
+name: dsdsp-sync-github-$(Date:yyyyMMdd)
+
+trigger:
+  branches:
+    include:
+      - main
+
+jobs:
+- job: sync_to_github
+  displayName: Sync to GitHub
+  pool:
+    vmImage: ubuntu-latest
+  variables:
+    - group: Azure-Static-Web-Apps-nice-rock-0193cc903-variable-group  # Assuming PAT is stored here, or create a new group
+
+  steps:
+    - checkout: self
+      submodules: true
+
+    - script: |
+        git config --global user.email "pipeline@azure.com"
+        git config --global user.name "Azure Pipeline"
+        git remote add github https://$(GIT_USER):$(GIT_PAT)@github.com/thomgiles/DSDSP.git || git remote set-url github https://$(GIT_USER):$(GIT_PAT)@github.com/thomgiles/DSDSP.git
+        git push github main
+      displayName: 'Sync to GitHub'
