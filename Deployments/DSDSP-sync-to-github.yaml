@@ -18,6 +18,7 @@ jobs:
       submodules: true
       fetchDepth: 0
       fetchTags: true
+      persistCredentials: true
 
     - script: |
         set -euo pipefail
@@ -44,14 +45,11 @@ jobs:
         REPO_URL="https://github.com/thomgiles/DSDSP.git"
         git ls-remote "$REPO_URL" >/dev/null
 
-        SOURCE_BRANCH="${BUILD_SOURCEBRANCHNAME:-main}"
+        SOURCE_COMMIT="${BUILD_SOURCEVERSION:-HEAD}"
+        git rev-parse --verify "${SOURCE_COMMIT}^{commit}" >/dev/null
 
-        # Ensure the remote-tracking ref exists in this agent checkout.
-        git fetch --force --tags origin "+refs/heads/${SOURCE_BRANCH}:refs/remotes/origin/${SOURCE_BRANCH}"
-        git rev-parse --verify "refs/remotes/origin/${SOURCE_BRANCH}" >/dev/null
-
-        # Push Azure main to GitHub main.
-        git push "$REPO_URL" "refs/remotes/origin/${SOURCE_BRANCH}:refs/heads/main"
+        # Push the checked-out Azure commit to GitHub main.
+        git push "$REPO_URL" "${SOURCE_COMMIT}:refs/heads/main"
 
         rm -f git-askpass.sh
       displayName: 'Sync to GitHub'
