@@ -37,10 +37,12 @@ jobs:
       displayName: 'Set up R'
 
     - script: |
+        set -eux
         mkdir -p ~/.R/library
         export R_LIBS_USER=$HOME/.R/library
         echo 'R_LIBS_USER="~/.R/library"' >> ~/.Renviron
-        Rscript -e 'install.packages(c("renv","rmarkdown","reticulate","gapminder","tidyverse","readxl","openxlsx","gridExtra","ggExtra","knitr"))'
+        Rscript -e 'options(repos = c(CRAN = "https://cloud.r-project.org")); install.packages("renv", dependencies = TRUE); renv::consent(provided = TRUE); renv::restore(prompt = FALSE)'
+        Rscript -e 'pkgs <- c("rmarkdown","reticulate","gapminder","tidyverse","readxl","openxlsx","gridExtra","ggExtra","knitr"); missing <- pkgs[!vapply(pkgs, requireNamespace, logical(1), quietly = TRUE)]; if (length(missing)) stop("Missing R packages after restore: ", paste(missing, collapse = ", ")); cat("R package check passed\n")'
       workingDirectory: training_site
       displayName: 'Restore R environment'
 
