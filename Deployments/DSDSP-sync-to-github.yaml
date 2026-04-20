@@ -19,12 +19,20 @@ jobs:
 
     - script: |
         set -euo pipefail
+        : "${GIT_USER:?GIT_USER is not set}"
         : "${GIT_PAT:?GIT_PAT is not set}"
 
         git config --global user.email "pipeline@azure.com"
         git config --global user.name "Azure Pipeline"
 
-        git push "https://x-access-token:${GIT_PAT}@github.com/thomgiles/DSDSP.git" HEAD:main
+        # PAT auth for Git over HTTPS uses username:PAT as Basic auth.
+        AUTH_HEADER=$(printf '%s:%s' "$GIT_USER" "$GIT_PAT" | base64 | tr -d '\n')
+        REPO_URL="https://github.com/thomgiles/DSDSP.git"
+
+        # Fail early with a clear auth/access check.
+        git -c http.extraHeader="Authorization: Basic ${AUTH_HEADER}" ls-remote "$REPO_URL" >/dev/null
+        git -c http.extraHeader="Authorization: Basic ${AUTH_HEADER}" push "$REPO_URL" HEAD:main
       displayName: 'Sync to GitHub'
       env:
+        GIT_USER: $(GIT_USER)
         GIT_PAT: $(GIT_PAT)
