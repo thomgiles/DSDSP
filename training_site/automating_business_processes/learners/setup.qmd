@@ -1,0 +1,33 @@
+---
+title: "Setup"
+---
+
+# Setup
+
+For the first module, learners need access to Microsoft 365 and Power Automate.
+
+## Accounts and Apps
+
+Check that you can open:
+
+- Power Automate;
+- Outlook;
+- OneDrive or SharePoint;
+- Excel for the web;
+- Word for the web;
+- Teams or the Approvals app, if available.
+
+## Test Files
+
+Create a test Excel workbook saved as `.xlsx` in OneDrive or SharePoint. Add a table named `MailingList` with these columns:
+
+- `RecipientName`
+- `RecipientEmail`
+- `CourseName`
+- `SessionDate`
+- `Status`
+- `SentAt`
+
+Create a test Word document saved as `.docx`. If your tenant supports the Word template action, add content controls for the same fields.
+
+Use test data only.

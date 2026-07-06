@@ -1,0 +1,17 @@
+---
+title: "Extra Exercises"
+---
+
+# Extra Exercises
+
+## Reminder Flow
+
+Create a scheduled flow that checks an Excel table for rows where `Status` is not `Complete` and `DueDate` is before today. Send a reminder email for each overdue row.
+
+## Shared Mailbox Triage
+
+Create a flow that starts when an email arrives in a shared mailbox, checks for a keyword in the subject, and posts a summary to a Teams channel.
+
+## Approval Escalation Design
+
+Design an approval process where unanswered approvals are escalated after two working days. Identify where the escalation state should be recorded.

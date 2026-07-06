@@ -1,0 +1,7 @@
+---
+title: "Contributing"
+---
+
+# Contributing
+
+Contributions should keep examples practical, use test data, and make any licensing, connector, or tenant assumptions explicit.

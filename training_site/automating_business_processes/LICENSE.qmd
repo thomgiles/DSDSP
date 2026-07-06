@@ -1,0 +1,7 @@
+---
+title: "License"
+---
+
+# License
+
+These training materials are provided for internal teaching and adaptation within the Digital Research training site.

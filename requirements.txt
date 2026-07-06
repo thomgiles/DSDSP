@@ -1,0 +1,6 @@
+quarto
+jupyter
+ipykernel
+pandas
+matplotlib
+

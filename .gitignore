@@ -14,18 +14,27 @@ index_files/
 __pycache__/
 .venv/
 .env
+local_env_backups/
  
 # OS-specific
 .DS_Store
+*-MACBOOK-*
+*MACBOOK*
+~$*
  
-# R environment
-renv/
+# R local/session files
 .Rproj.user/
 .Rhistory
 .RData
-.Rprofile
- 
-# Lockfiles (optional — but you may want to commit these)
+
+# renv: keep project metadata, ignore installed package libraries/caches
+renv/
+
+
+
+# Commit these:
+# .Rprofile
 # renv.lock
+# renv/activate.R
+# renv/settings.json
 # requirements.txt
-# environment.yml

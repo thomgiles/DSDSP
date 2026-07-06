@@ -1,3 +1,18 @@
-/.quarto/
+.quarto/
+_site/
+_freeze/
+*_files/
+
+.venv/
+renv/library/
+
+_quarto_internal_scss_error.scss
+.DS_Store
+**/.DS_Store
+._*
+~$*
+*.Zone.Identifier
 
 **/*.quarto_ipynb
+
+/.quarto/
