@@ -22,14 +22,25 @@ local_env_backups/
 *MACBOOK*
 ~$*
  
-# R environment
-renv/
+# R local/session files
 .Rproj.user/
 .Rhistory
 .RData
-.Rprofile
- 
-# Lockfiles (optional — but you may want to commit these)
+
+# renv: keep project metadata, ignore installed package libraries/caches
+renv/library/
+renv/staging/
+renv/sandbox/
+renv/local/
+renv/python/
+
+# Optional: prevent old profiles coming back
+renv/profile
+renv/profiles/
+
+# Commit these:
+# .Rprofile
 # renv.lock
+# renv/activate.R
+# renv/settings.json
 # requirements.txt
-# environment.yml
