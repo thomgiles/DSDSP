@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
+  <title id="title">Choosing the right Power Automate trigger</title>
+  <desc id="desc">A trigger search panel showing common trigger patterns: manual, scheduled, form, email, file, and system event.</desc>
+  <defs>
+    <filter id="shadow" x="-10%" y="-20%" width="120%" height="140%">
+      <feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#10263b" flood-opacity="0.16"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="620" rx="28" fill="#f7fbfc"/>
+  <text x="600" y="58" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#10263b">Choose the Trigger That Matches the Start Event</text>
+  <text x="600" y="94" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#405162">Search by how the work begins, not by the action you eventually want to perform.</text>
+
+  <g filter="url(#shadow)">
+    <rect x="170" y="135" width="860" height="92" rx="20" fill="#ffffff"/>
+  </g>
+  <rect x="205" y="165" width="790" height="34" rx="17" fill="#edf4f6" stroke="#b9ccd4"/>
+  <circle cx="230" cy="182" r="9" fill="none" stroke="#405162" stroke-width="3"/>
+  <path d="M237 189 L250 202" stroke="#405162" stroke-width="3" stroke-linecap="round"/>
+  <text x="275" y="189" font-family="Arial, sans-serif" font-size="20" fill="#405162">Search triggers: manual, form, email, file, recurrence...</text>
+
+  <g font-family="Arial, sans-serif" text-anchor="middle">
+    <g>
+      <rect x="110" y="290" width="150" height="105" rx="18" fill="#006781"/>
+      <text x="185" y="326" font-size="20" font-weight="700" fill="#ffffff">Manual</text>
+      <text x="185" y="354" font-size="14" fill="#ffffff">A person</text>
+      <text x="185" y="376" font-size="14" fill="#ffffff">starts it</text>
+    </g>
+    <g>
+      <rect x="285" y="290" width="150" height="105" rx="18" fill="#298582"/>
+      <text x="360" y="326" font-size="20" font-weight="700" fill="#ffffff">Scheduled</text>
+      <text x="360" y="354" font-size="14" fill="#ffffff">Time-based</text>
+      <text x="360" y="376" font-size="14" fill="#ffffff">batch work</text>
+    </g>
+    <g>
+      <rect x="460" y="290" width="150" height="105" rx="18" fill="#009bc1"/>
+      <text x="535" y="326" font-size="20" font-weight="700" fill="#ffffff">Form</text>
+      <text x="535" y="354" font-size="14" fill="#ffffff">Structured</text>
+      <text x="535" y="376" font-size="14" fill="#ffffff">request data</text>
+    </g>
+    <g>
+      <rect x="635" y="290" width="150" height="105" rx="18" fill="#405162"/>
+      <text x="710" y="326" font-size="20" font-weight="700" fill="#ffffff">Email</text>
+      <text x="710" y="354" font-size="14" fill="#ffffff">Mailbox</text>
+      <text x="710" y="376" font-size="14" fill="#ffffff">arrival</text>
+    </g>
+    <g>
+      <rect x="810" y="290" width="150" height="105" rx="18" fill="#006781"/>
+      <text x="885" y="326" font-size="20" font-weight="700" fill="#ffffff">File</text>
+      <text x="885" y="354" font-size="14" fill="#ffffff">Document</text>
+      <text x="885" y="376" font-size="14" fill="#ffffff">created</text>
+    </g>
+    <g>
+      <rect x="985" y="290" width="150" height="105" rx="18" fill="#298582"/>
+      <text x="1060" y="326" font-size="20" font-weight="700" fill="#ffffff">System</text>
+      <text x="1060" y="354" font-size="14" fill="#ffffff">Record</text>
+      <text x="1060" y="376" font-size="14" fill="#ffffff">changes</text>
+    </g>
+  </g>
+
+  <g font-family="Arial, sans-serif" fill="#10263b">
+    <rect x="245" y="465" width="710" height="82" rx="16" fill="#ffffff" stroke="#d8e3e8" stroke-width="2"/>
+    <text x="600" y="498" text-anchor="middle" font-size="20" font-weight="700">Trigger choice controls the starting data</text>
+    <text x="600" y="528" text-anchor="middle" font-size="17">If the trigger does not contain the data you need, the rest of the flow becomes fragile.</text>
+  </g>
+</svg>

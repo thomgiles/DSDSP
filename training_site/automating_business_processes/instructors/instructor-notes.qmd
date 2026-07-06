@@ -10,6 +10,31 @@ The first module is designed for approximately 100 minutes:
 - 50 minutes practical activity;
 - five teaching blocks, each followed by an activity.
 
+## Session Map
+
+| Part | Focus | Activity |
+|---|---|---|
+| 1 | Start the flow | Build a manual request trigger |
+| 2 | Move data | Add a connector and notification |
+| 3 | Shape values | Clean, format, and route inputs |
+| 4 | Pause for a decision | Add an approval branch |
+| 5 | Work from a table | Send personalised test emails |
+
+The session is intentionally practical. Each short teaching block is followed by an activity where everyone builds or modifies a real flow in Power Automate.
+
+## Workshop Rhythm
+
+```{mermaid}
+flowchart LR
+  A[Teach 8-10 min] --> B[Build 8-10 min]
+  B --> C[Test]
+  C --> D[Inspect run history]
+  D --> E[Discuss production risks]
+  E --> A
+```
+
+Every activity follows the same pattern: build a small version, test with safe data, inspect the run, and then ask what would need to change before production use.
+
 ## Before Teaching
 
 Confirm which connectors are enabled in the tenant, especially Approvals, Excel Online, Word Online, Outlook, Teams, OneDrive, and SharePoint. If Word template actions are not available, run Activity 5 with personalised email body text instead of populated Word documents.
