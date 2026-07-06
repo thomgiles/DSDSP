@@ -4,7 +4,7 @@ This repository contains training content for the Digital Research Service (DRS)
 
 The main build target is the Quarto site in `training_site/`, rendered to `training_site/_site/` and deployed with Azure Static Web Apps.
 
-## Repository Layout
+## Repository Layout 
 
 - `training_site/`: Quarto project, lesson content, Python and R dependencies
 - `Deployments/`: Azure Pipelines definitions for development and production

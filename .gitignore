@@ -28,15 +28,9 @@ local_env_backups/
 .RData
 
 # renv: keep project metadata, ignore installed package libraries/caches
-renv/library/
-renv/staging/
-renv/sandbox/
-renv/local/
-renv/python/
+renv/
 
-# Optional: prevent old profiles coming back
-renv/profile
-renv/profiles/
+
 
 # Commit these:
 # .Rprofile

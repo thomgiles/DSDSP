@@ -83,7 +83,6 @@ jobs:
         Rscript --vanilla -e '
           pkgs <- c(
             "rmarkdown",
-            "reticulate",
             "gapminder",
             "tidyverse",
             "readxl",
