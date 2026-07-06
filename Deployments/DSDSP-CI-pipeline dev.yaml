@@ -14,8 +14,10 @@ jobs:
 - job: build_and_deploy_job
   displayName: Build and Deploy Job
   timeoutInMinutes: 240
+
   pool:
-    vmImage: ubuntu-latest
+    vmImage: ubuntu-24.04
+
   variables:
     - group: Azure-Static-Web-Apps-victorious-moss-01eb84103-variable-group
 
@@ -25,24 +27,80 @@ jobs:
 
     # ---- R setup ---------------------------------------------------------
     - script: |
-        sudo apt-get update
-        sudo apt-get install -y curl \
-          libxml2-dev libcurl4-openssl-dev libssl-dev \
-          libfontconfig1-dev libfreetype6-dev \
-          libharfbuzz-dev libfribidi-dev libpng-dev \
-          chromium-browser fonts-noto-cjk \
-          libtiff5-dev libjpeg-dev libgl1-mesa-dev libgmp-dev pandoc
-        sudo apt-get install -y --no-install-recommends r-base
-        R --version
-      displayName: 'Set up R'
+        set -eux
 
+        sudo apt-get update
+
+        sudo apt-get install -y --no-install-recommends \
+          curl \
+          ca-certificates \
+          libxml2-dev \
+          libcurl4-openssl-dev \
+          libssl-dev \
+          libuv1-dev \
+          libfontconfig1-dev \
+          libfreetype6-dev \
+          libharfbuzz-dev \
+          libfribidi-dev \
+          libpng-dev \
+          libtiff5-dev \
+          libjpeg-dev \
+          libgl1-mesa-dev \
+          libgmp-dev \
+          librsvg2-bin \
+          fonts-noto-cjk \
+          fonts-dejavu \
+          ghostscript \
+          pandoc \
+          r-base
+
+        R --version
+      displayName: 'Set up R and system dependencies'
+
+    # ---- R package restore -----------------------------------------------
     - script: |
         set -eux
-        mkdir -p ~/.R/library
-        export R_LIBS_USER=$HOME/.R/library
-        echo 'R_LIBS_USER="~/.R/library"' >> ~/.Renviron
-        Rscript -e 'options(repos = c(CRAN = "https://cloud.r-project.org")); install.packages("renv", dependencies = TRUE); renv::consent(provided = TRUE); renv::restore(prompt = FALSE)'
-        Rscript -e 'pkgs <- c("rmarkdown","reticulate","gapminder","tidyverse","readxl","openxlsx","gridExtra","ggExtra","knitr"); missing <- pkgs[!vapply(pkgs, requireNamespace, logical(1), quietly = TRUE)]; if (length(missing)) stop("Missing R packages after restore: ", paste(missing, collapse = ", ")); cat("R package check passed\n")'
+
+        # Force the normal project environment.
+        # This prevents renv from using:
+        # renv/profiles/lesson-requirements/renv.lock
+        unset RENV_PROFILE
+        rm -f renv/profile
+
+        mkdir -p "$HOME/.R/library"
+
+        export R_LIBS_USER="$HOME/.R/library"
+        echo 'R_LIBS_USER="~/.R/library"' > "$HOME/.Renviron"
+
+        Rscript --vanilla -e 'options(repos = c(CRAN = "https://cloud.r-project.org")); install.packages("renv")'
+
+        Rscript --vanilla -e '
+          Sys.unsetenv("RENV_PROFILE")
+          renv::consent(provided = TRUE)
+          renv::restore(lockfile = "renv.lock", prompt = FALSE)
+        '
+
+        Rscript --vanilla -e '
+          pkgs <- c(
+            "rmarkdown",
+            "reticulate",
+            "gapminder",
+            "tidyverse",
+            "readxl",
+            "openxlsx",
+            "gridExtra",
+            "ggExtra",
+            "knitr"
+          )
+
+          missing <- pkgs[!vapply(pkgs, requireNamespace, logical(1), quietly = TRUE)]
+
+          if (length(missing)) {
+            stop("Missing R packages after restore: ", paste(missing, collapse = ", "))
+          }
+
+          cat("R package check passed\n")
+        '
       workingDirectory: training_site
       displayName: 'Restore R environment'
 
@@ -53,7 +111,14 @@ jobs:
       displayName: 'Set up Python 3.11'
 
     - script: |
-        pip install -r requirements.txt
+        set -eux
+
+        python -m pip install --upgrade pip
+
+        if [ -f requirements.txt ]; then
+          pip install -r requirements.txt
+        fi
+
         pip install jupyter pyyaml
       workingDirectory: training_site
       displayName: 'Install Python packages'
@@ -61,54 +126,44 @@ jobs:
     # ---- Quarto setup ----------------------------------------------------
     - script: |
         set -eux
-        sudo apt-get update
-        sudo apt-get install -y \
-          librsvg2-bin \
-          fonts-noto-cjk \
-          fonts-dejavu \
-          ghostscript \
-          pandoc \
-          chromium-browser \
-          curl
 
-        # --- Install tectonic manually (since not in Ubuntu 24.04 repos)
-        curl -sSL https://github.com/tectonic-typesetting/tectonic/releases/latest/download/tectonic-x86_64-unknown-linux-gnu.deb -o tectonic.deb
+        # Install Tectonic manually.
+        curl -sSL \
+          https://github.com/tectonic-typesetting/tectonic/releases/latest/download/tectonic-x86_64-unknown-linux-gnu.deb \
+          -o tectonic.deb
+
         sudo dpkg -i tectonic.deb || sudo apt-get -f install -y
 
-        # --- Install Quarto
+        # Install Quarto.
         curl -sSLO https://quarto.org/download/latest/quarto-linux-amd64.deb
-        sudo dpkg -i quarto-linux-amd64.deb
+        sudo dpkg -i quarto-linux-amd64.deb || sudo apt-get -f install -y
 
         quarto --version
 
-        # --- Install TinyTeX (fallback LaTeX toolchain)
+        # TinyTeX fallback for PDF rendering.
         quarto install tinytex
-
       displayName: 'Install Quarto CLI and PDF dependencies'
-
-
-    # ---- Environment prep for Quarto render ------------------------------
-    - script: |
-        export QUARTO_TMPDIR=$PWD/.tmp
-        mkdir -p .tmp
-        export R_LIBS_USER=$HOME/.R/library
-        export PATH=$PATH:$HOME/.TinyTeX/bin/x86_64-linux
-        echo "R_LIBS_USER=$R_LIBS_USER"
-        echo "QUARTO_TMPDIR=$QUARTO_TMPDIR"
-      displayName: 'Prepare Quarto environment'
 
     # ---- Render step -----------------------------------------------------
     - script: |
         set -eux
-        export R_LIBS_USER=$HOME/.R/library
-        export QUARTO_TMPDIR=$PWD/.tmp
-        export PATH=$PATH:$HOME/.TinyTeX/bin/x86_64-linux
 
-        # Optional: reduce parallelism to avoid timeouts
+        unset RENV_PROFILE
+
+        export R_LIBS_USER="$HOME/.R/library"
+        export QUARTO_TMPDIR="$PWD/.tmp"
+        export PATH="$PATH:$HOME/.TinyTeX/bin/x86_64-linux"
+
+        mkdir -p "$QUARTO_TMPDIR"
+
+        echo "R_LIBS_USER=$R_LIBS_USER"
+        echo "QUARTO_TMPDIR=$QUARTO_TMPDIR"
+
         quarto render . --no-cache --log-level debug
 
         echo "Render complete. Listing output:"
         ls -al _site || echo "_site not found"
+
         test -f _site/index.html
       workingDirectory: training_site
       displayName: 'Render Quarto site'
