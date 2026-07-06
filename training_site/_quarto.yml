@@ -66,6 +66,8 @@ website:
         href: applied_python/index.qmd
       - text: "Applied Data Science (R)"
         href: applied_R/index.qmd
+      - text: "Automating Business Processes"
+        href: automating_business_processes/index.qmd
 
   sidebar:
     - id: "essential-digital-skills"
@@ -202,3 +204,32 @@ website:
             - applied_R/CODE_OF_CONDUCT.qmd
             - applied_R/LICENSE.qmd
             - applied_R/profiles/learner-profiles.qmd
+
+    - id: "automating-business-processes"
+      title: "Automating Business Processes"
+      style: "docked"
+      search: true
+      collapse-level: 3
+      contents:
+        - text: "Overview"
+          href: automating_business_processes/index.qmd
+        - section: "Lessons"
+          contents:
+            - automating_business_processes/episodes/01-power_automate.qmd
+        - section: "Learners"
+          contents:
+            - automating_business_processes/learners/setup.qmd
+            - automating_business_processes/learners/discuss.qmd
+            - automating_business_processes/learners/reference.qmd
+        - section: "Instructors"
+          contents:
+            - automating_business_processes/instructors/additional_material.qmd
+            - automating_business_processes/instructors/extra_exercises.qmd
+            - automating_business_processes/instructors/instructor-notes.qmd
+        - section: "Community & Metadata"
+          contents:
+            - automating_business_processes/README.qmd
+            - automating_business_processes/CONTRIBUTING.qmd
+            - automating_business_processes/CODE_OF_CONDUCT.qmd
+            - automating_business_processes/LICENSE.qmd
+            - automating_business_processes/profiles/learner-profiles.qmd

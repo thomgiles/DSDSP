@@ -1,0 +1,34 @@
+---
+title: "Reference"
+---
+
+# Reference
+
+## Power Automate Terms
+
+- **Flow:** an automation made from a trigger and one or more actions.
+- **Trigger:** the event that starts a flow.
+- **Action:** a step that does work after the trigger.
+- **Connector:** the integration between Power Automate and another service.
+- **Dynamic content:** values supplied by previous steps in the flow.
+- **Expression:** a formula used to transform, test, or format values.
+- **Run history:** the record of each flow run, including inputs, outputs, and errors.
+
+## Common Expression Functions
+
+| Function | Use |
+|---|---|
+| `concat()` | Join values |
+| `formatDateTime()` | Format dates |
+| `coalesce()` | Provide a fallback value |
+| `if()` | Return a value conditionally |
+| `equals()` | Compare values |
+| `contains()` | Test whether a value contains another value |
+| `toLower()` | Standardise text |
+| `replace()` | Replace text |
+| `split()` | Break text into a list |
+| `length()` | Count characters or items |
+
+## Excel Requirements
+
+Power Automate works most reliably with Excel when the data is in a named table inside an `.xlsx` workbook stored in OneDrive or SharePoint.

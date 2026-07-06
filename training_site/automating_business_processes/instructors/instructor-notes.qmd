@@ -1,0 +1,34 @@
+---
+title: "Instructor Notes"
+---
+
+# Instructor Notes
+
+The first module is designed for approximately 100 minutes:
+
+- 50 minutes directed teaching;
+- 50 minutes practical activity;
+- five teaching blocks, each followed by an activity.
+
+## Before Teaching
+
+Confirm which connectors are enabled in the tenant, especially Approvals, Excel Online, Word Online, Outlook, Teams, OneDrive, and SharePoint. If Word template actions are not available, run Activity 5 with personalised email body text instead of populated Word documents.
+
+Prepare a small test workbook and Word template in case learners cannot create their own quickly.
+
+## Delivery Notes
+
+Keep the examples small. The aim is for every learner to build and run flows during the session, not to produce a production-ready automation.
+
+Emphasise:
+
+- test data only;
+- ownership and permissions;
+- run history as the first debugging tool;
+- Excel tables as a requirement, not an optional formatting choice;
+- approval outcomes needing a durable record;
+- bulk email needing careful testing and local communication rules.
+
+## Timing
+
+If time is short, keep Activities 1 to 4 hands-on and treat Activity 5 as a worked design plus a short demonstration. If time is available, learners can build the full Excel-to-email loop with one or two test rows.

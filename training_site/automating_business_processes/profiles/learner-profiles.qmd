@@ -1,0 +1,13 @@
+---
+title: "Learner Profiles"
+---
+
+# Learner Profiles
+
+This course is suitable for learners who:
+
+- regularly copy information between Microsoft 365 tools;
+- manage request, approval, reminder, or reporting processes;
+- maintain small Excel trackers;
+- send repeated communications to groups;
+- want to understand when no-code automation is appropriate and when a more governed system is needed.

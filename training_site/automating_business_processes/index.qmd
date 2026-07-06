@@ -1,0 +1,36 @@
+---
+title: "Automating Business Processes"
+---
+
+# Automating Business Processes
+
+This course introduces practical automation for everyday business and research support workflows. Learners will design, test, and improve small automations that reduce repetitive administration while keeping approvals, auditability, and data quality visible.
+
+## Modules
+
+1. [Power Automate fundamentals](episodes/01-power_automate.qmd)
+
+## Course Outcomes
+
+By the end of the course learners should be able to:
+
+- identify business processes that are suitable for automation;
+- choose appropriate automation triggers and connectors;
+- build flows that use conditions, expressions, approvals, files, and tabular data;
+- explain common risks in automated workflows, including permissions, data protection, and failure handling;
+- document an automation clearly enough that another colleague can run or maintain it.
+
+## Audience
+
+This course is designed for colleagues who already use Microsoft 365 tools such as Outlook, Teams, SharePoint, OneDrive, Excel, or Word, and who want to automate repeatable work without writing a full application.
+
+## Prerequisites
+
+Learners should have access to a Microsoft 365 account with Power Automate enabled. Some activities use Outlook, Excel, Word, OneDrive, SharePoint, Teams, and the Approvals app. Tenant configuration and licensing can affect which connectors and actions are available.
+
+## Lesson Material
+
+- [Learner setup](learners/setup.qmd)
+- [Reference](learners/reference.qmd)
+- [Discussion](learners/discuss.qmd)
+- [Instructor notes](instructors/instructor-notes.qmd)

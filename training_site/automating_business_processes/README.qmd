@@ -1,0 +1,9 @@
+---
+title: "README"
+---
+
+# Automating Business Processes
+
+Course materials for Automating Business Processes.
+
+The first module introduces Power Automate through five short teaching blocks and five practical activities.

@@ -1,0 +1,9 @@
+---
+title: "Code of Conduct"
+---
+
+# Code of Conduct
+
+Learners and instructors are expected to create a respectful, inclusive, and practical learning environment.
+
+During automation exercises, use test data only and avoid exposing personal, confidential, or sensitive information.
