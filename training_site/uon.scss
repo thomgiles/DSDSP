@@ -385,10 +385,11 @@ h5 { font-size: 1.15rem; font-weight: 500; color: $white; }
 
 .reveal a {
     font-weight: 400;
-    background-color: rgba(0, 0, 0, 0);
     text-decoration: inherit;
     color: $white;
-    background-color: $teal;
+    border-radius: 5px;
+    padding: 5px;
+    background-color: #10263b;
 }
 
 
@@ -419,8 +420,11 @@ h5 { font-size: 1.15rem; font-weight: 500; color: $white; }
 }
 
 .reveal figure img {
-  max-width: 800px;
-  max-height: 300px;
+  max-width: min(900px, 92%);
+  max-height: calc(100vh - var(--gh) - var(--gf) - 170px);
+  width: auto;
+  height: auto;
+  object-fit: contain;
 }
 
 .reveal .footer {

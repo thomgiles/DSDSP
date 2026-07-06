@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 0 1200 420" role="img" aria-labelledby="title desc">
+  <title id="title">Power Automate flow anatomy</title>
+  <desc id="desc">A trigger starts the flow, actions shape data, a decision routes work, an outcome is recorded, and people are notified.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#405162"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-20%" width="120%" height="140%">
+      <feDropShadow dx="0" dy="8" stdDeviation="7" flood-color="#10263b" flood-opacity="0.16"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="420" rx="28" fill="#f7fbfc"/>
+
+  <g filter="url(#shadow)">
+    <rect x="70" y="85" width="160" height="110" rx="18" fill="#006781"/>
+    <rect x="285" y="85" width="160" height="110" rx="18" fill="#298582"/>
+    <rect x="500" y="85" width="160" height="110" rx="18" fill="#405162"/>
+    <rect x="715" y="85" width="160" height="110" rx="18" fill="#009bc1"/>
+    <rect x="930" y="85" width="160" height="110" rx="18" fill="#10263b"/>
+  </g>
+
+  <g font-family="Arial, sans-serif" fill="#ffffff" text-anchor="middle">
+    <text x="150" y="123" font-size="23" font-weight="700">Trigger</text>
+    <text x="150" y="155" font-size="16">What starts it?</text>
+    <text x="365" y="123" font-size="23" font-weight="700">Actions</text>
+    <text x="365" y="155" font-size="16">Get and shape data</text>
+    <text x="580" y="123" font-size="23" font-weight="700">Decision</text>
+    <text x="580" y="155" font-size="16">Condition or approval</text>
+    <text x="795" y="123" font-size="23" font-weight="700">Record</text>
+    <text x="795" y="155" font-size="16">Write the outcome</text>
+    <text x="1010" y="123" font-size="23" font-weight="700">Notify</text>
+    <text x="1010" y="155" font-size="16">Tell the right people</text>
+  </g>
+
+  <g stroke="#405162" stroke-width="5" marker-end="url(#arrow)" fill="none">
+    <path d="M235 140 H275"/>
+    <path d="M450 140 H490"/>
+    <path d="M665 140 H705"/>
+    <path d="M880 140 H920"/>
+  </g>
+
+  <g font-family="Arial, sans-serif" fill="#10263b">
+    <rect x="160" y="275" width="880" height="74" rx="14" fill="#ffffff" stroke="#d8e3e8" stroke-width="2"/>
+    <text x="600" y="304" text-anchor="middle" font-size="19" font-weight="700">Design check</text>
+    <text x="600" y="334" text-anchor="middle" font-size="17">If you cannot name the trigger, record, owner, and failure route, the automation is not ready.</text>
+  </g>
+</svg>

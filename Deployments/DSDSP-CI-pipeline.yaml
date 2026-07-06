@@ -31,8 +31,28 @@ jobs:
         sudo apt-get update
 
         sudo apt-get install -y --no-install-recommends \
-          curl \
           ca-certificates \
+          curl \
+          gnupg \
+          software-properties-common \
+          dirmngr
+
+        curl -fsSL https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc \
+          | sudo gpg --dearmor -o /usr/share/keyrings/cran-archive-keyring.gpg
+
+        echo "deb [signed-by=/usr/share/keyrings/cran-archive-keyring.gpg] https://cloud.r-project.org/bin/linux/ubuntu noble-cran40/" \
+          | sudo tee /etc/apt/sources.list.d/cran-r.list
+
+        sudo apt-get update
+
+        sudo apt-get install -y --no-install-recommends \
+          r-base \
+          r-base-dev \
+          pandoc \
+          cmake \
+          gfortran \
+          libblas-dev \
+          liblapack-dev \
           libxml2-dev \
           libcurl4-openssl-dev \
           libssl-dev \
@@ -49,20 +69,17 @@ jobs:
           librsvg2-bin \
           fonts-noto-cjk \
           fonts-dejavu \
-          ghostscript \
-          pandoc \
-          r-base
+          ghostscript
 
         R --version
+
+        Rscript --vanilla -e 'cat("R version:", as.character(getRversion()), "\n"); if (getRversion() < "4.4.0") stop("R >= 4.4.0 is required by renv.lock")'
       displayName: 'Set up R and system dependencies'
 
     # ---- R package restore -----------------------------------------------
     - script: |
         set -eux
 
-        # Force the normal project environment.
-        # This prevents renv from using:
-        # renv/profiles/lesson-requirements/renv.lock
         unset RENV_PROFILE
         rm -f renv/profile
 
@@ -74,14 +91,18 @@ jobs:
         Rscript --vanilla -e 'options(repos = c(CRAN = "https://cloud.r-project.org")); install.packages("renv")'
 
         Rscript --vanilla -e '
+          source("renv/activate.R")
           Sys.unsetenv("RENV_PROFILE")
           renv::consent(provided = TRUE)
           renv::restore(lockfile = "renv.lock", prompt = FALSE)
         '
 
         Rscript --vanilla -e '
+          source("renv/activate.R")
+
           pkgs <- c(
             "rmarkdown",
+            "reticulate",
             "gapminder",
             "tidyverse",
             "readxl",
@@ -125,20 +146,17 @@ jobs:
     - script: |
         set -eux
 
-        # Install Tectonic manually.
         curl -sSL \
           https://github.com/tectonic-typesetting/tectonic/releases/latest/download/tectonic-x86_64-unknown-linux-gnu.deb \
           -o tectonic.deb
 
         sudo dpkg -i tectonic.deb || sudo apt-get -f install -y
 
-        # Install Quarto.
         curl -sSLO https://quarto.org/download/latest/quarto-linux-amd64.deb
         sudo dpkg -i quarto-linux-amd64.deb || sudo apt-get -f install -y
 
         quarto --version
 
-        # TinyTeX fallback for PDF rendering.
         quarto install tinytex
       displayName: 'Install Quarto CLI and PDF dependencies'
 
