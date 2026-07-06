@@ -1,0 +1,13 @@
+---
+title: "Discussion"
+---
+
+# Discussion
+
+Use these prompts after the Power Automate module:
+
+- Which routine process in your area would benefit most from automation?
+- What should still require human review or approval?
+- What data would the flow need to read, write, or send?
+- Who should own the flow and its connections?
+- What would a failed run look like, and who should be notified?

@@ -1,0 +1,14 @@
+---
+title: "Digital Research at UoN"
+subtitle: "What do you need to know out of the box to do digital research at UoN"
+format:
+  html:
+    theme: 
+        - default
+        - ../../uon.scss
+    toc: true
+    number-sections: false
+    page-layout: article
+---
+
+### Some Heading

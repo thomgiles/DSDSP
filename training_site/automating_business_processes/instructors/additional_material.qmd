@@ -1,0 +1,15 @@
+---
+title: "Additional Material"
+---
+
+# Additional Material
+
+Potential extension topics:
+
+- SharePoint lists as an alternative to Excel trackers;
+- Dataverse for governed business data;
+- environment strategy and solution-aware flows;
+- service accounts and shared ownership;
+- error handling with scopes and failure branches;
+- child flows and reusable automation components;
+- governance for connectors, data loss prevention policies, and premium licensing.

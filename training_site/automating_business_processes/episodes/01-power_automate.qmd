@@ -1,0 +1,647 @@
+---
+title: Power Automate Fundamentals
+metadata:
+  teaching: 50
+  exercises: 50
+---
+
+::: callout-outcomes
+
+## Learning Outcomes
+
+- Explain what Power Automate is useful for, and where it is a poor fit.
+- Choose between manual, scheduled, event-based, and request-based triggers.
+- Identify the main connector types Power Automate can handle.
+- Build a simple cloud flow that passes data between Microsoft 365 services.
+- Use expressions and internal functions to clean, format, and route values.
+- Add an approval step and handle approve and reject outcomes.
+- Work with Excel workbooks safely by using named tables.
+- Design a personalised email workflow using Excel rows and Word template content.
+- Inspect run history and use it to debug common flow failures.
+- Describe the ownership, data protection, and maintenance risks in an automation.
+
+:::
+
+::: callout-questions
+
+## Questions
+
+1. What kinds of business processes are good candidates for automation?
+2. How do triggers and connectors shape what a flow can do?
+3. How can expressions make flows more reliable without making them unreadable?
+4. How should approvals be recorded and communicated?
+5. Why does Power Automate require Excel data to be structured as tables?
+6. How can we send personalised emails without creating an unsafe bulk-mail process?
+
+:::
+
+## Structure & Agenda
+
+1. **Orientation and triggers** - what starts a flow and what information is available at the start. (~10+10 min)
+2. **Connectors and data movement** - how Power Automate talks to Microsoft 365 and other systems. (~10+10 min)
+3. **Expressions and internal functions** - how to clean values, format dates, and route work. (~10+10 min)
+4. **Approvals and decision records** - how to request a decision and handle outcomes. (~10+10 min)
+5. **Excel tables and template emails** - how to work with tabular data and personalised messages. (~10+10 min)
+
+> The session is intentionally practical. Each short teaching block is followed by an activity where everyone builds or modifies a real flow in Power Automate.
+
+# Orientation and Triggers
+
+## What Power Automate Is For
+
+Power Automate is a workflow automation tool. It is useful when a process has a repeatable pattern, a clear start point, and predictable next steps.
+
+Good candidates include:
+
+- sending a notification when a request arrives;
+- copying structured details into a tracker;
+- requesting approval from a named person or group;
+- sending reminders before a deadline;
+- creating a document from a template;
+- updating a row or list item after an action has happened.
+
+It is usually a poor fit when:
+
+- the process requires complex judgement at every step;
+- the source data is inconsistent or unstructured;
+- the official record must live in a system that Power Automate cannot access;
+- the workflow needs high-volume transactional reliability;
+- no one is willing to own the flow after the workshop.
+
+> A useful first question is not "can this be automated?" but "what decision, record, or communication should happen every time this event occurs?"
+
+## What Is a Trigger?
+
+A trigger is the event that starts a flow. The trigger defines:
+
+- when the flow runs;
+- what data is available at the start;
+- who or what connection the flow uses;
+- how often the flow might run;
+- what kind of failures are likely.
+
+For example, a flow started by a new email will have subject, sender, received time, body, and attachment data. A flow started manually will only have the fields you ask the user to provide.
+
+## Trigger Patterns
+
+Power Automate supports several trigger patterns.
+
+| Trigger pattern | Example | Useful when |
+|---|---|---|
+| Manual | Manually trigger a flow | A person chooses when the process starts |
+| Scheduled | Recurrence | Work should happen at a known time |
+| Event-based | When a file is created | A system event should start the work |
+| Form-based | When a new response is submitted | Users submit structured data |
+| Email-based | When a new email arrives | Requests arrive in a mailbox |
+| Request/API | When an HTTP request is received | Another system starts the workflow |
+| Business-system | When a Dataverse row is added or modified | A managed record changes |
+
+The safest first build is usually manual. Once the logic works, you can replace the trigger with a form, email, SharePoint, or scheduled trigger.
+
+## Choosing a Trigger
+
+Before choosing a trigger, ask:
+
+- What exact event should start the process?
+- Does the event contain all data the flow needs?
+- Could the same event happen twice?
+- Should the flow run immediately, or is a scheduled batch acceptable?
+- Does the trigger use a personal connection, shared mailbox, service account, or system connection?
+- What happens when the person who created the flow leaves the team?
+
+> Trigger choice is a governance choice. It affects permissions, ownership, auditability, and support.
+
+---
+
+::: callout-task
+
+#### Task 1: Build a Triggered Request Flow (10 min)
+
+**Objective:** Create a manually triggered flow and inspect the data made available by the trigger.
+
+::: panel-tabset
+
+##### Exercise
+
+1. Open Power Automate and create an **Instant cloud flow**.
+2. Name the flow `ABP test request - your initials`.
+3. Choose **Manually trigger a flow**.
+4. Add trigger inputs for requester name, requester email, request type, requested-by date, and notes.
+5. Add a **Compose** action called `Request summary`.
+6. Build a short readable summary from the trigger fields.
+7. Save and test the flow using test data only.
+8. Open the run history and inspect the trigger inputs and compose output.
+
+##### Check
+
+Your run should show:
+
+- a successful trigger step;
+- the values entered in the test panel;
+- one successful compose step;
+- a readable request summary in the compose output.
+
+##### Plenary
+
+- Which trigger would be more appropriate for a real request in your area: manual, form, email, scheduled, or file-based?
+- What would change if this request arrived through Microsoft Forms?
+- What would change if the request arrived in a shared mailbox?
+
+:::
+
+:::
+
+# Connectors and Data Movement
+
+## What Is a Connector?
+
+A connector is the integration between Power Automate and another service.
+
+Connectors provide:
+
+- triggers, which start flows;
+- actions, which do work after the flow has started;
+- authentication, which controls what the flow is allowed to access;
+- dynamic content, which exposes values from one step to later steps.
+
+For example, the Outlook connector can trigger a flow when an email arrives and can also send an email later in the same flow.
+
+## Connector Types
+
+Power Automate can handle many connector types.
+
+| Connector type | Examples | Common use |
+|---|---|---|
+| Microsoft 365 | Outlook, Teams, SharePoint, OneDrive | Everyday collaboration workflows |
+| Data | Excel Online, SharePoint lists, Dataverse, SQL Server | Reading and writing structured records |
+| Documents | Word Online, OneDrive, SharePoint, PDF services | Creating, moving, and converting files |
+| Communication | Outlook, Teams, notifications | Sending messages and alerts |
+| Business apps | Dynamics 365, Planner, ServiceNow, Jira | Operational workflows |
+| AI and content | AI Builder, text analysis, document processing | Extracting or transforming content |
+| Custom/API | HTTP, custom connectors, webhooks | Connecting to internal or external services |
+
+Tenant policy and licensing can affect availability. Premium connectors may not be available to all learners.
+
+## Connections and Ownership
+
+Each connector action uses a connection. A connection is the signed-in identity that Power Automate uses to access a service.
+
+This matters because:
+
+- a flow may stop working when the owner's password changes;
+- a flow may lose access when the owner leaves;
+- a personal mailbox connection may send messages from the wrong person;
+- a shared mailbox may be more appropriate than a personal mailbox;
+- a team-owned SharePoint site may be more maintainable than a personal OneDrive folder.
+
+> For any flow that matters, document who owns it, which connections it uses, and where its official records are stored.
+
+## A Connector Map
+
+Before building a real flow, sketch the connectors.
+
+| Process step | System | Connector | Trigger/action | Record created? |
+|---|---|---|---|---|
+| Request starts | Manual trigger or Forms | Power Automate or Forms | Trigger | No |
+| Record request | Excel or SharePoint | Excel Online or SharePoint | Action | Yes |
+| Ask decision | Approvals | Approvals | Action | Yes |
+| Notify requester | Outlook | Office 365 Outlook | Action | No |
+| Notify team | Teams | Microsoft Teams | Action | Optional |
+
+This simple map helps reveal whether the process has an official record or is only sending messages.
+
+---
+
+::: callout-task
+
+#### Task 2: Connector Triage and First Notification (10 min)
+
+**Objective:** Add an Outlook action and identify the connectors, permissions, and data risks in the flow.
+
+::: panel-tabset
+
+##### Exercise
+
+1. Open the flow from Task 1.
+2. Add **Send an email** after `Request summary`.
+3. Choose the Office 365 Outlook action if it is available.
+4. Send the email to yourself, using `Request summary` as the message body.
+5. Save and test the flow.
+6. Confirm that the email arrived.
+7. Open run history and inspect the Outlook action inputs.
+8. Sketch a connector map with one row per flow step.
+
+##### Connector Map
+
+Record:
+
+- the trigger connector;
+- the built-in action;
+- the Outlook action;
+- the data each step receives;
+- the data each step sends;
+- where the official record should live in a production version.
+
+##### Plenary
+
+- Which connector creates the biggest maintenance or data protection risk?
+- Who should own the connection used to send email?
+- Should the production version use a personal mailbox, shared mailbox, SharePoint list, or Dataverse table?
+
+:::
+
+:::
+
+# Expressions and Internal Functions
+
+## Why Expressions Matter
+
+Dynamic content is often enough for a simple flow. Expressions become useful when a value needs to be cleaned, tested, formatted, or combined.
+
+Examples include:
+
+- changing text to lower case before comparing it;
+- formatting a date for an email;
+- using a fallback when a field is blank;
+- checking whether notes include a keyword;
+- joining several fields into one message;
+- building a filename from request details;
+- counting rows returned from Excel or SharePoint.
+
+Expressions make a flow more powerful, but they can also make it harder to maintain. Use them deliberately and name actions clearly.
+
+## Common Functions
+
+| Function | Use | Example pattern |
+|---|---|---|
+| `concat()` | Join text | `concat('Request: ', variables('Title'))` |
+| `formatDateTime()` | Format a date | `formatDateTime(utcNow(), 'dd MMM yyyy')` |
+| `coalesce()` | Fallback for blanks | `coalesce(triggerBody()?['text'], 'Not provided')` |
+| `if()` | Return one of two values | `if(equals(x, y), 'Yes', 'No')` |
+| `equals()` | Compare values | `equals(toLower(value), 'urgent')` |
+| `contains()` | Check whether text includes a value | `contains(toLower(value), 'urgent')` |
+| `toLower()` | Standardise text | `toLower(triggerBody()?['text'])` |
+| `replace()` | Replace text | `replace(value, '/', '-')` |
+| `split()` | Split text into parts | `split(value, ';')` |
+| `length()` | Count characters or items | `length(outputs('List_rows')?['body/value'])` |
+
+## Expression Design Rules
+
+Keep expressions maintainable:
+
+- use a separate compose action for important transformations;
+- rename compose actions after what they produce;
+- avoid nesting too many functions in one expression;
+- test one expression at a time;
+- inspect outputs in run history;
+- add a short note in the action name if the logic is not obvious.
+
+For example, `Normalised request type` is clearer than `Compose 2`.
+
+## Nulls and Missing Values
+
+User input is often incomplete. A flow should not assume that every value exists.
+
+Common defensive patterns include:
+
+- use required fields in the trigger or form where possible;
+- use `coalesce()` to provide safe fallback text;
+- use a condition to stop or redirect incomplete requests;
+- send a correction email rather than continuing with bad data;
+- write validation failures to the run history.
+
+> Validation is part of automation. A flow that quietly sends bad data faster is not an improvement.
+
+## Conditions
+
+A condition sends a flow down one branch or another.
+
+Typical conditions include:
+
+- if request type contains `urgent`;
+- if amount is greater than a threshold;
+- if requester email ends with an institutional domain;
+- if status equals `Ready`;
+- if approval outcome equals `Approve`;
+- if a list of rows has length greater than zero.
+
+Conditions should be readable. If the condition is hard to read, create a compose action immediately before it and test the compose output.
+
+---
+
+::: callout-task
+
+#### Task 3: Clean, Format, and Route Request Data (10 min)
+
+**Objective:** Use expressions to normalise request data, format a date, handle blank notes, and route urgent requests.
+
+::: panel-tabset
+
+##### Exercise
+
+1. Open the flow from Task 2.
+2. Add a **Compose** action called `Normalised request type` and use `toLower()` on the request type.
+3. Add a **Compose** action called `Formatted requested date` and use `formatDateTime()` on the requested-by date.
+4. Add a **Compose** action called `Safe notes` and use `coalesce()` so blank notes become `No notes provided`.
+5. Add a **Condition** using `contains()` so request types containing `urgent` follow the urgent branch.
+6. In each branch, add a compose action returning either `Urgent` or `Standard`.
+7. Test the flow twice: once with an urgent request and once with a standard request.
+8. Use run history to inspect each expression output and branch choice.
+
+##### Check
+
+Use run history to confirm:
+
+- `Normalised request type` produces lower-case text;
+- `Formatted requested date` produces a readable date;
+- blank notes become `No notes provided`;
+- urgent and standard requests follow different branches.
+
+##### Plenary
+
+- Which expression is most likely to break if the trigger changes?
+- How could you make that logic easier to maintain?
+- Which validation should happen before the flow starts?
+
+:::
+
+:::
+
+# Approvals and Decision Records
+
+## Why Use Approvals?
+
+Approvals are useful when an automation must pause for a human decision.
+
+Approval flows can support:
+
+- requests that need authorisation;
+- sign-off for documents;
+- controlled access to shared resources;
+- purchasing or travel decisions;
+- publication or communication checks;
+- exceptions to a standard process.
+
+The value is not just the notification. The value is the decision record.
+
+## Approval Patterns
+
+Common approval patterns include:
+
+| Pattern | Meaning | Use when |
+|---|---|---|
+| Approve/Reject - First to respond | Any one approver can decide | A named role handles the queue |
+| Approve/Reject - Everyone must approve | All approvers must agree | The decision needs multiple sign-offs |
+| Custom responses | More than approve/reject | You need options such as revise, defer, or escalate |
+| Create approval only | Approval is created but not awaited | Another flow or process manages waiting |
+| Start and wait | The flow pauses until a response | The next step depends on the decision |
+
+In this session we will use **Start and wait for an approval** because the flow needs to branch after the decision.
+
+## Designing an Approval
+
+Before adding the action, define:
+
+- who the approver is;
+- what information they need;
+- what decision options they have;
+- whether comments are required;
+- where the decision is recorded;
+- what message goes back to the requester;
+- what happens if the approval is not answered.
+
+An approval without enough context produces poor decisions. An approval without a record produces poor auditability.
+
+## Handling Rejection
+
+Do not treat rejection as failure. A rejected request is a successful flow outcome.
+
+A good rejection branch should:
+
+- tell the requester what happened;
+- include comments or next steps where appropriate;
+- update the tracker;
+- avoid sending confusing success messages;
+- make it easy for the requester to resubmit if allowed.
+
+---
+
+::: callout-task
+
+#### Task 4: Add an Approval Step (10 min)
+
+**Objective:** Add a human approval decision and handle both approved and rejected outcomes.
+
+::: panel-tabset
+
+##### Exercise
+
+1. Open the flow from Task 3.
+2. Add **Start and wait for an approval** after the request has been summarised and prioritised.
+3. Choose **Approve/Reject - First to respond**.
+4. Set the title to include requester name and request type.
+5. Put the request summary, priority, requested date, and notes in the approval details.
+6. Assign the approval to your partner, table lead, test account, or yourself.
+7. Add a **Condition** based on the approval outcome.
+8. In the approved branch, send a confirmation email to yourself.
+9. In the rejected branch, send a rejection email to yourself.
+10. Save, test, complete the approval, and inspect run history.
+
+##### Check
+
+Use run history to confirm:
+
+- the flow paused at the approval step;
+- the approval went to the expected person;
+- the approval outcome was captured;
+- the correct branch ran;
+- approver comments were available for later steps.
+
+##### Plenary
+
+- Where should the official approval record live?
+- What information should be recorded for audit purposes?
+- What should happen if the approver is away?
+- Would first-to-respond be acceptable for a real version?
+
+:::
+
+:::
+
+# Excel Tables and Template Emails
+
+## Working With Excel
+
+Excel is often used as a lightweight tracker. Power Automate can work with Excel, but only if the workbook is structured correctly.
+
+The most important rule is:
+
+> Power Automate works with Excel **tables**, not arbitrary ranges of cells.
+
+An Excel file full of values may look like data to a person, but the connector needs a named table so it can identify rows and columns reliably.
+
+## Excel Table Requirements
+
+For the Excel Online Business connector:
+
+- save the workbook as `.xlsx`;
+- store it in OneDrive for Business or SharePoint;
+- format the data as a table;
+- give the table a clear name, such as `Requests` or `MailingList`;
+- use one row per record;
+- use simple column names;
+- avoid merged cells;
+- avoid blank header cells;
+- avoid subtotals inside the table;
+- close the workbook before running update-heavy flows;
+- keep volumes modest.
+
+Legacy `.xls` files and visually formatted spreadsheets are common causes of failed flows.
+
+## Listing Rows
+
+The **List rows present in a table** action reads rows from an Excel table.
+
+Important details:
+
+- choose the correct location;
+- choose the correct document library;
+- select the exact workbook;
+- select the named table;
+- use filters carefully;
+- remember that each row can be processed in an **Apply to each** loop.
+
+If the table does not appear, check that the workbook is saved in the right place and the range is actually formatted as a table.
+
+## Word Templates
+
+Word template workflows usually use content controls.
+
+A typical pattern is:
+
+1. Create a Word `.docx` template.
+2. Add content controls for fields such as name, course, date, and message.
+3. Save the template in OneDrive or SharePoint.
+4. Use **Populate a Microsoft Word template** in Power Automate.
+5. Save the populated document.
+6. Optionally convert it to PDF.
+7. Attach it to an email or store it in a document library.
+
+If the Word template action is not available, the fallback is to build a personalised email body directly from Excel row values.
+
+## Bulk Email Safety
+
+Mass email workflows need controls.
+
+Use:
+
+- a test run with one or two rows;
+- a `Status` column such as `Ready`, `Sent`, `Error`, or `Hold`;
+- a `SentAt` timestamp;
+- a `TestMode` flag where appropriate;
+- a shared mailbox if the message should not come from a personal account;
+- a clear stop condition so the same row is not emailed repeatedly.
+
+Never test bulk email with a real recipient list first.
+
+---
+
+::: callout-task
+
+#### Task 5: Build an Excel-to-Email Workflow (10 min)
+
+**Objective:** Use an Excel table as a small mailing tracker and send personalised test emails from table rows.
+
+::: panel-tabset
+
+##### Setup
+
+1. Create an `.xlsx` workbook in OneDrive or SharePoint.
+2. Format the data as a table named `MailingList`.
+3. Include columns for `RecipientName`, `RecipientEmail`, `CourseName`, `SessionDate`, `MessageType`, `Status`, and `SentAt`.
+4. Add one or two test rows, using only your own email or a test mailbox.
+
+##### Exercise
+
+1. Create an **Instant cloud flow** called `ABP test mailout - your initials`.
+2. Add **List rows present in a table** and select `MailingList`.
+3. Add **Apply to each** over the returned rows.
+4. Inside the loop, add a condition so only rows where `Status` is `Ready` continue.
+5. In the `Yes` branch, send a personalised email using the row values.
+6. Update the row so `Status` becomes `Sent` and `SentAt` contains the current time.
+7. If Word template actions are available, identify where **Populate a Microsoft Word template** would sit in the branch.
+8. Test with one or two rows and inspect the run history.
+
+##### Check
+
+Confirm:
+
+- the Excel table appears in the action picker;
+- the loop runs once per row;
+- only rows marked `Ready` send emails;
+- emails go only to test addresses;
+- rows update after sending;
+- a second run does not send duplicate messages.
+
+##### Plenary
+
+- What controls would you add before using this pattern for a real mailing list?
+- Should messages come from a personal mailbox or shared mailbox?
+- When should Excel be replaced by a SharePoint list or Dataverse table?
+
+:::
+
+:::
+
+# Wrap-Up
+
+## Module Summary
+
+In this module you built and inspected small Power Automate flows that:
+
+- started from a manual trigger;
+- passed request details between steps;
+- used connectors to send notifications;
+- used expressions to clean and format values;
+- routed work through conditions;
+- paused for an approval decision;
+- read rows from an Excel table;
+- sent personalised test emails;
+- updated a tracker after sending.
+
+The technical steps matter, but the design choices matter more. A useful automation has a clear trigger, appropriate connectors, maintainable logic, a durable record, and an owner.
+
+:::: callout-keypoints
+
+## Keypoints
+
+- Triggers define when a flow starts and what data is available.
+- Connectors define which systems a flow can read from or write to.
+- Connections define whose permissions the flow uses.
+- Expressions are useful for small, inspectable transformations.
+- Conditions should be readable and testable.
+- Approvals should create a decision record, not just send a notification.
+- Excel data must be in a named table for reliable Power Automate use.
+- Bulk email workflows need test mode, status fields, and duplicate-send protection.
+- Run history is the main debugging tool.
+- Production flows need ownership, documentation, and a support route.
+
+::::
+
+:::: callout-hints
+
+## Hints
+
+- Build manually first, then replace the trigger once the logic works.
+- Use one or two test records before trying a full list.
+- Rename actions as soon as their purpose is clear.
+- Prefer SharePoint lists or Dataverse when the record is important.
+- Keep approval messages short but complete enough to support a decision.
+- Use a shared mailbox when messages should come from a team rather than a person.
+- Add a `Status` column before sending repeated or bulk messages.
+
+::::
+
+## Additional Learning
+
+Useful next topics include SharePoint lists as workflow records, Dataverse, solution-aware flows, error handling with scopes, reminders and escalation, custom connectors, data loss prevention policies, and Power Automate Desktop.
