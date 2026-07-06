@@ -1,6 +1,6 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
-  <title id="title">Power Automate workflow built in the workshop</title>
-  <desc id="desc">The workshop workflow starts with a manual request, creates a summary, sends a notification, routes with expressions, asks for approval, reads Excel rows, sends emails, and checks records.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 40 1200 360" role="img" aria-labelledby="title desc">
+  <title id="title">Final Excel and Word template workflow</title>
+  <desc id="desc">The final workshop workflow runs left to right: an instant cloud flow lists rows from Table1, loops through each returned row, populates a Word template, sends the generated document as an email attachment, and checks run history.</desc>
   <defs>
     <filter id="shadow" x="-10%" y="-20%" width="120%" height="140%">
       <feDropShadow dx="0" dy="8" stdDeviation="9" flood-color="#10263b" flood-opacity="0.14"/>
@@ -9,45 +9,57 @@
       <path d="M2 2 L10 6 L2 10 Z" fill="#405162"/>
     </marker>
   </defs>
-  <rect width="1200" height="620" rx="28" fill="#f7fbfc"/>
-  <text x="600" y="58" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#10263b">The Full Practice Flow</text>
-  <text x="600" y="92" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#405162">Each activity added one more production habit to the same automation pattern.</text>
-  <g stroke="#405162" stroke-width="3" fill="none" marker-end="url(#arrow)">
-    <path d="M235 215 L315 215"/>
-    <path d="M475 215 L555 215"/>
-    <path d="M715 215 L795 215"/>
-    <path d="M875 265 L875 335"/>
-    <path d="M795 405 L715 405"/>
-    <path d="M555 405 L475 405"/>
-    <path d="M315 405 L235 405"/>
+
+  <rect y="40" width="1200" height="360" rx="28" fill="#f7fbfc"/>
+
+  <g stroke="#405162" stroke-width="4" fill="none" marker-end="url(#arrow)">
+    <path d="M205 225 H255"/>
+    <path d="M445 225 H500"/>
+    <path d="M1000 225 H1040"/>
   </g>
+
   <g font-family="Arial, sans-serif" text-anchor="middle" filter="url(#shadow)">
-    <rect x="75" y="165" width="160" height="100" rx="20" fill="#006781"/>
-    <rect x="315" y="165" width="160" height="100" rx="20" fill="#298582"/>
-    <rect x="555" y="165" width="160" height="100" rx="20" fill="#009bc1"/>
-    <rect x="795" y="165" width="160" height="100" rx="20" fill="#405162"/>
-    <rect x="795" y="355" width="160" height="100" rx="20" fill="#006781"/>
-    <rect x="555" y="355" width="160" height="100" rx="20" fill="#298582"/>
-    <rect x="315" y="355" width="160" height="100" rx="20" fill="#009bc1"/>
-    <rect x="75" y="355" width="160" height="100" rx="20" fill="#10263b"/>
+    <rect x="45" y="175" width="160" height="100" rx="22" fill="#006781"/>
+    <rect x="255" y="175" width="190" height="100" rx="22" fill="#009bc1"/>
+    <rect x="500" y="95" width="500" height="260" rx="28" fill="#298582"/>
+    <rect x="1040" y="175" width="125" height="100" rx="22" fill="#10263b"/>
   </g>
-  <g font-family="Arial, sans-serif" text-anchor="middle" fill="#fff">
-    <text x="155" y="207" font-size="18" font-weight="700">Manual</text>
-    <text x="155" y="232" font-size="15">request</text>
-    <text x="395" y="207" font-size="18" font-weight="700">Request</text>
-    <text x="395" y="232" font-size="15">summary</text>
-    <text x="635" y="207" font-size="18" font-weight="700">Connector</text>
-    <text x="635" y="232" font-size="15">notification</text>
-    <text x="875" y="207" font-size="18" font-weight="700">Expressions</text>
-    <text x="875" y="232" font-size="15">and routing</text>
-    <text x="875" y="397" font-size="18" font-weight="700">Approval</text>
-    <text x="875" y="422" font-size="15">decision</text>
-    <text x="635" y="397" font-size="18" font-weight="700">Excel table</text>
-    <text x="635" y="422" font-size="15">rows</text>
-    <text x="395" y="397" font-size="18" font-weight="700">Personalised</text>
-    <text x="395" y="422" font-size="15">test emails</text>
-    <text x="155" y="397" font-size="18" font-weight="700">Run history</text>
-    <text x="155" y="422" font-size="15">and records</text>
+
+  <g font-family="Arial, sans-serif" text-anchor="middle" fill="#ffffff">
+    <text x="125" y="214" font-size="18" font-weight="700">Instant</text>
+    <text x="125" y="239" font-size="15">cloud flow</text>
+
+    <text x="350" y="208" font-size="18" font-weight="700">List rows</text>
+    <text x="350" y="233" font-size="15">from Table1</text>
+    <text x="350" y="255" font-size="13">Excel Online</text>
+
+    <text x="1102" y="214" font-size="17" font-weight="700">Inspect</text>
+    <text x="1102" y="239" font-size="14">run history</text>
   </g>
-  <text x="600" y="540" text-anchor="middle" font-family="Arial, sans-serif" font-size="21" font-weight="700" fill="#10263b">The production version can swap the trigger or record source without changing the core pattern.</text>
+
+  <g font-family="Arial, sans-serif" text-anchor="middle">
+    <text x="645" y="142" font-size="17" font-weight="700" fill="#ffffff">Apply to each returned row</text>
+
+    <g stroke="#405162" stroke-width="3" fill="none" marker-end="url(#arrow)">
+      <path d="M625 225 H680"/>
+      <path d="M810 225 H865"/>
+    </g>
+
+    <g filter="url(#shadow)">
+      <rect x="535" y="185" width="90" height="80" rx="18" fill="#ffffff" fill-opacity="0.96"/>
+      <rect x="680" y="185" width="130" height="80" rx="18" fill="#ffffff" fill-opacity="0.96"/>
+      <rect x="865" y="185" width="95" height="80" rx="18" fill="#ffffff" fill-opacity="0.96"/>
+    </g>
+
+    <text x="580" y="216" font-size="16" font-weight="700" fill="#10263b">Current</text>
+    <text x="580" y="238" font-size="14" fill="#405162">row</text>
+
+    <text x="745" y="211" font-size="16" font-weight="700" fill="#10263b">Populate</text>
+    <text x="745" y="233" font-size="14" fill="#405162">Word</text>
+    <text x="745" y="252" font-size="13" fill="#405162">template</text>
+
+    <text x="912" y="216" font-size="16" font-weight="700" fill="#10263b">Send</text>
+    <text x="912" y="238" font-size="13" fill="#405162">email + file</text>
+
+  </g>
 </svg>

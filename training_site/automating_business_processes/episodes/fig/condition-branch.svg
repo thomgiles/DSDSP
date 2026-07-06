@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="380" viewBox="0 105 1200 380" role="img" aria-labelledby="title desc">
   <title id="title">Condition branch in Power Automate</title>
   <desc id="desc">A request is normalised, checked for urgency, routed to urgent or standard handling, and then continues.</desc>
   <defs>
@@ -9,9 +9,7 @@
       <path d="M2 2 L10 6 L2 10 Z" fill="#405162"/>
     </marker>
   </defs>
-  <rect width="1200" height="620" rx="28" fill="#f7fbfc"/>
-  <text x="600" y="58" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#10263b">Conditions Route Work Down Different Paths</text>
-  <text x="600" y="92" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#405162">Make the test readable before you branch.</text>
+  <rect y="105" width="1200" height="380" rx="28" fill="#f7fbfc"/>
   <g stroke="#405162" stroke-width="3" fill="none" marker-end="url(#arrow)">
     <path d="M250 295 L370 295"/>
     <path d="M520 295 L610 295"/>
@@ -37,6 +35,5 @@
     <text x="1048" y="174" font-size="20" font-weight="700" fill="#fff">Urgent path</text>
     <text x="925" y="405" font-size="18" font-weight="700" fill="#10263b">No</text>
     <text x="1048" y="404" font-size="20" font-weight="700" fill="#fff">Standard path</text>
-    <text x="600" y="525" font-size="21" font-weight="700" fill="#10263b">Both branches should rejoin a clear next step or finish cleanly.</text>
   </g>
 </svg>

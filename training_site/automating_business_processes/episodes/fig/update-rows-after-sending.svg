@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="465" viewBox="0 55 1200 465" role="img" aria-labelledby="title desc">
   <title id="title">Update rows after sending emails</title>
   <desc id="desc">A mailout workflow sends only ready rows, updates status and sent time after sending, and skips rows that have already been sent.</desc>
   <defs>
@@ -9,9 +9,7 @@
       <path d="M2 2 L10 6 L2 10 Z" fill="#405162"/>
     </marker>
   </defs>
-  <rect width="1200" height="620" rx="28" fill="#f7fbfc"/>
-  <text x="600" y="58" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#10263b">Update the Row After the Action</text>
-  <text x="600" y="92" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#405162">The update step is what stops the same row being processed again.</text>
+  <rect y="55" width="1200" height="465" rx="28" fill="#f7fbfc"/>
 
   <g stroke="#405162" stroke-width="4" fill="none" marker-end="url(#arrow)">
     <path d="M250 300 L350 300"/>
@@ -50,6 +48,4 @@
     <text x="868" y="138" font-size="18" font-weight="700">protection</text>
   </g>
 
-  <rect x="250" y="510" width="700" height="58" rx="16" fill="#ffffff" stroke="#d8e3e8" stroke-width="2"/>
-  <text x="600" y="546" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#10263b">For mailouts, sending is not complete until the tracker has been updated.</text>
 </svg>

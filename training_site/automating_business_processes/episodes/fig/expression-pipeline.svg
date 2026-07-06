@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="205" viewBox="0 205 1200 205" role="img" aria-labelledby="title desc">
   <title id="title">Expression pipeline</title>
   <desc id="desc">Raw input is cleaned, formatted, tested, routed, and turned into readable output.</desc>
   <defs>
@@ -9,9 +9,7 @@
       <path d="M2 2 L10 6 L2 10 Z" fill="#405162"/>
     </marker>
   </defs>
-  <rect width="1200" height="620" rx="28" fill="#f7fbfc"/>
-  <text x="600" y="58" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#10263b">Expressions Shape Values Between Steps</text>
-  <text x="600" y="92" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#405162">Use small named transformations so the flow remains inspectable.</text>
+  <rect y="205" width="1200" height="205" rx="28" fill="#f7fbfc"/>
   <g stroke="#405162" stroke-width="3" fill="none" marker-end="url(#arrow)">
     <path d="M250 310 L330 310"/>
     <path d="M470 310 L550 310"/>
@@ -37,6 +35,4 @@
     <text x="1060" y="300" font-size="22" font-weight="700">Route</text>
     <text x="1060" y="328" font-size="16">condition</text>
   </g>
-  <rect x="300" y="465" width="600" height="70" rx="18" fill="#fff" stroke="#d8e3e8" stroke-width="2"/>
-  <text x="600" y="508" text-anchor="middle" font-family="Arial, sans-serif" font-size="21" font-weight="700" fill="#10263b">Readable output is easier to test, debug, and maintain.</text>
 </svg>
