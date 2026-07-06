@@ -14,9 +14,13 @@ index_files/
 __pycache__/
 .venv/
 .env
+local_env_backups/
  
 # OS-specific
 .DS_Store
+*-MACBOOK-*
+*MACBOOK*
+~$*
  
 # R environment
 renv/

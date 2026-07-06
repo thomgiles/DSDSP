@@ -1,6 +1,19 @@
 project:
   type: website
   output-dir: _site
+  render:
+    - "!_extensions/**"
+    - "!.quarto/**"
+    - "!.venv/**"
+    - "!_freeze/**"
+    - "!_site/**"
+    - "!renv/**"
+    - index.qmd
+    - applied_R/**/*.qmd
+    - applied_python/**/*.qmd
+    - automating_business_processes/**/*.qmd
+    - essential_digital_skills/**/*.qmd
+    - responsible_use_of_generative_ai/**/*.qmd
 
 execute:
   freeze: auto
