@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 65 1200 600" role="img" aria-labelledby="title desc">
   <title id="title">Power Automate connector landscape</title>
   <desc id="desc">Power Automate connects to Microsoft 365, data stores, documents, communication tools, business apps, and custom APIs.</desc>
   <defs>
@@ -6,7 +6,8 @@
       <path d="M2,2 L10,6 L2,10 Z" fill="#405162"/>
     </marker>
   </defs>
-  <rect width="1200" height="620" rx="28" fill="#f7fbfc"/>
+  <rect y="65" width="1200" height="600" rx="28" fill="#f7fbfc"/>
+  <g transform="translate(0 60)">
   <circle cx="600" cy="300" r="118" fill="#10263b"/>
   <text x="600" y="284" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#ffffff">Power</text>
   <text x="600" y="322" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#ffffff">Automate</text>
@@ -52,5 +53,6 @@
       <text x="905" y="474" font-size="21" font-weight="700" fill="#ffffff">Custom/API</text>
       <text x="905" y="504" font-size="15" fill="#ffffff">HTTP, webhooks, custom connectors</text>
     </g>
+  </g>
   </g>
 </svg>
