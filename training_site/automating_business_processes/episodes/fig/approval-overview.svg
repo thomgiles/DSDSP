@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="330" viewBox="0 130 1200 330" role="img" aria-labelledby="title desc">
   <title id="title">What a Power Automate approval does</title>
   <desc id="desc">An automation pauses, sends an approval card to an approver, waits for approve or reject, and then continues down the appropriate path.</desc>
   <defs>
@@ -9,9 +9,7 @@
       <path d="M2 2 L10 6 L2 10 Z" fill="#405162"/>
     </marker>
   </defs>
-  <rect width="1200" height="620" rx="28" fill="#f7fbfc"/>
-  <text x="600" y="58" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#10263b">An Approval Pauses the Flow for a Human Decision</text>
-  <text x="600" y="92" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#405162">The flow waits, captures the response, and then continues based on the outcome.</text>
+  <rect y="130" width="1200" height="330" rx="28" fill="#f7fbfc"/>
 
   <g stroke="#405162" stroke-width="4" fill="none" marker-end="url(#arrow)">
     <path d="M250 300 L365 300"/>
@@ -55,7 +53,4 @@
     <text x="1095" y="292" font-size="21" font-weight="700" fill="#ffffff">Next</text>
     <text x="1095" y="320" font-size="21" font-weight="700" fill="#ffffff">step</text>
   </g>
-
-  <rect x="300" y="500" width="600" height="60" rx="16" fill="#ffffff" stroke="#d8e3e8" stroke-width="2"/>
-  <text x="600" y="537" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#10263b">Good approvals include enough context to make a decision without chasing email.</text>
 </svg>

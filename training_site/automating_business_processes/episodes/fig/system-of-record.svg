@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="620" viewBox="0 0 1200 620" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="445" viewBox="0 95 1200 445" role="img" aria-labelledby="title desc">
   <title id="title">Choosing a system of record</title>
   <desc id="desc">A workflow checks whether an official record exists, then either points to it or creates one before notifying people.</desc>
   <defs>
@@ -9,9 +9,7 @@
       <path d="M2 2 L10 6 L2 10 Z" fill="#405162"/>
     </marker>
   </defs>
-  <rect width="1200" height="620" rx="28" fill="#f7fbfc"/>
-  <text x="600" y="58" text-anchor="middle" font-family="Arial, sans-serif" font-size="34" font-weight="700" fill="#10263b">Messages Are Not the Record</text>
-  <text x="600" y="92" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#405162">A useful flow updates the place where the process is officially tracked.</text>
+  <rect y="95" width="1200" height="445" rx="28" fill="#f7fbfc"/>
   <g stroke="#405162" stroke-width="3" fill="none" marker-end="url(#arrow)">
     <path d="M300 185 L475 185"/>
     <path d="M600 255 L600 330"/>
@@ -37,6 +35,5 @@
     <text x="850" y="436" font-size="18" fill="#fff">update a record</text>
     <text x="600" y="372" font-size="18" font-weight="700" fill="#fff">No record?</text>
     <text x="600" y="398" font-size="16" fill="#fff">fix that first</text>
-    <text x="600" y="540" font-size="22" font-weight="700" fill="#10263b">Then notify people and use run history for technical evidence.</text>
   </g>
 </svg>

@@ -2,7 +2,7 @@
 title: Power Automate Fundamentals
 metadata:
   teaching: 50
-  exercises: 50
+  exercises: 70
 ---
 
 ::: callout-outcomes
@@ -33,10 +33,10 @@ metadata:
 ## Structure & Agenda
 
 1. Automating business processes with Power Automate (~10+10 min)
-2. Triggers and flow start points (~10+10 min)
-3. Connectors and data movement (~10+10 min)
-4. Expressions, functions, and routing (~10+10 min)
-5. Approvals, Excel tables, and template emails (~10+10 min)
+2. Triggers and flow start points (~10+15 min)
+3. Connectors and data movement (~10+15 min)
+4. Expressions, functions, and routing (~10+15 min)
+5. Approvals, Excel tables, and template emails (~10+15 min)
 
 > 🔧 5 activities spaced throughout the session.
 
@@ -62,9 +62,13 @@ For example, a flow might:
 
 ![Power Automate sits inside the Microsoft Power Platform alongside Power Apps, Power BI, and Power Pages.](fig/power-platform-overview.svg){fig-align="center" width="88%"}
 
+> 🧩 Power Automate is one part of the Microsoft Power Platform.
+
 ## Main Parts of a Flow
 
 ![A flow moves from trigger, to actions, to decision, to record, to notification.](fig/flow-anatomy.svg){fig-align="center" width="88%"}
+
+> 🔁 A flow moves from trigger, to actions, to decision, to record, to notification.
 
 ## Decide Whether Automation Fits
 
@@ -113,6 +117,8 @@ If one of those answers is unclear, do a smaller manual or semi-automated versio
 ## Understand Triggers
 
 ![A trigger controls when the flow runs, what data is available, which connection is used, how often it can run, and what might fail.](fig/trigger-anatomy.svg){fig-align="center" width="88%"}
+
+> 🚦 A trigger decides how the flow starts.
 
 ## Types of Triggers
 
@@ -190,6 +196,8 @@ For example, the Outlook connector can trigger a flow when an email arrives and 
 
 ![Power Automate can connect to Microsoft 365, data stores, documents, communication tools, business apps, and APIs.](fig/connector-landscape.svg){fig-align="center" width="88%"}
 
+> 🔌 Connector types determine which systems the flow can read from and write to.
+
 ## Types of Connectors
 
 Power Automate can handle many connector types.
@@ -236,9 +244,10 @@ Service accounts need governance. They should have only the access the flow need
 
 ::: callout-task
 
-#### Task 2: Connector Triage and First Notification (10 min)
+#### Task 2: Connector Triage and First Notification (15 min)
 
 **Objective:** Add an Outlook action 
+
 ::: panel-tabset
 
 ##### Exercise
@@ -257,9 +266,7 @@ Service accounts need governance. They should have only the access the flow need
 - Which connector creates the biggest maintenance or data protection risk?
 - Who should own the connection used to send email?
 
-::: panel-tabset
 :::
-
 :::
 
 # Cleaning and Routing Data
@@ -271,6 +278,8 @@ Expressions are small formulas inside Power Automate.
 They are used when dynamic content needs to be changed before the next step uses it.
 
 ![](fig/expression-pipeline.svg){fig-align="center" width="88%"}
+
+> 🧮 Expressions shape values between steps.
 
 ## Text and Date Functions
 
@@ -351,11 +360,13 @@ For example:
 
 ![A condition checks a normalised value and routes work down urgent or standard paths.](fig/condition-branch.svg){fig-align="center" width="88%"}
 
+> 🔀 Conditions route work down different paths.
+
 ---
 
 ::: callout-task
 
-#### Task 3: Clean, Format, and Route Request Data (10 min)
+#### Task 3: Clean, Format, and Route Request Data (15 min)
 
 **Objective:** Use expressions to normalise request data, format a date, handle blank notes, and route urgent requests.
 
@@ -385,6 +396,8 @@ Use run history to confirm:
 ## What Approvals Do
 
 ![An approval pauses the flow, sends an approval card, waits for approve or reject, and then continues down the matching path.](fig/approval-overview.svg){fig-align="center" width="88%"}
+
+> ✅ An approval pauses the flow for a human decision.
 
 ## When to Use Approvals
 
@@ -429,6 +442,8 @@ An approval without enough context produces poor decisions. An approval without 
 
 ![A condition checks whether the approval outcome equals Approve, then routes to approved or rejected handling.](fig/approval-branch.svg){fig-align="center" width="88%"}
 
+> 🔀 Branch on the approval outcome.
+
 ## Handle Rejected Requests
 
 Do not treat rejection as failure. A rejected request is a successful flow outcome.
@@ -445,7 +460,7 @@ A good rejection branch should:
 
 ::: callout-task
 
-#### Task 4: Add an Approval Step (10 min)
+#### Task 4: Add an Approval Step (15 min)
 
 **Objective:** Add a human approval decision and handle both approved and rejected outcomes.
 
@@ -472,6 +487,7 @@ Use run history to confirm:
 - the correct branch ran;
 - approver comments were available for later steps.
 
+:::
 :::
 
 # Use Excel Tables and Send Emails
@@ -535,6 +551,8 @@ For the Excel Online Business connector:
 
 ![A safe mailout reads rows, checks status, sends only ready rows, and updates sent rows.](fig/excel-mailout-pattern.svg){fig-align="center" width="88%"}
 
+> 📧 A safe Excel-to-email pattern reads controlled rows, sends only ready messages, and updates the tracker.
+
 ## Read Rows from Excel
 
 The **List rows present in a table** action reads rows from an Excel table.
@@ -554,9 +572,13 @@ If the table does not appear, check that the workbook is saved in the right plac
 
 ![After sending, update the row status and sent time so future runs skip already processed rows.](fig/update-rows-after-sending.svg){fig-align="center" width="88%"}
 
+> 🧾 Update the row after the action.
+
 ## Use Word Templates
 
 ![Excel row values populate content controls in a Word template, then the generated document is saved and sent or stored.](fig/word-template-flow.svg){fig-align="center" width="88%"}
+
+> 📄 Combine Excel rows with Word templates.
 
 ## Word Template Steps
 
@@ -586,7 +608,7 @@ Upload copies to your own OneDrive or SharePoint area before using them in Power
 
 ::: callout-task
 
-#### Task 5: Build an Excel-to-Email Workflow (10 min)
+#### Task 5: Build an Excel-to-Email Workflow (15 min)
 
 **Objective:** Use an Excel table as a small mailing tracker and send personalised test emails from table rows.
 
@@ -623,7 +645,9 @@ Upload copies to your own OneDrive or SharePoint area before using them in Power
 
 ## What You Built
 
-![The workshop flow starts with a manual request, adds notification, expressions, approval, Excel rows, test emails, and run history checks.](fig/workshop-build.svg){fig-align="center" width="88%"}
+![The final workshop flow starts with an instant flow, reads Table1, applies each row to a Word template, sends an email with the generated attachment, and checks run history.](fig/workshop-build.svg){fig-align="center" width="88%"}
+
+> 🏁 The final practice flow combines Excel rows, Word templates, test emails, and run history checks.
 
 ## Summary of the Module
 
