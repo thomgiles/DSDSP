@@ -14,7 +14,7 @@ metadata:
 - Identify the main connector types Power Automate can handle.
 - Build a simple cloud flow that passes data between Microsoft 365 services.
 - Use expressions and internal functions to clean, format, and route values.
-- Add an approval step and handle approve and reject outcomes.
+- Add an approval step and handle approval and rejection outcomes.
 - Work with Excel workbooks safely by using named tables.
 - Design a personalised email workflow using Excel rows and Word template content.
 - Inspect run history and use it to debug common flow failures.
