@@ -4,30 +4,103 @@ title: "Setup"
 
 # Setup
 
-For the first module, learners need access to Microsoft 365 and Power Automate.
+For the first module, you need access to Microsoft 365 and Power Automate. You will also use the example Excel workbook and Word template supplied with the course.
 
 ## Accounts and Apps
 
 Check that you can open:
 
-- Power Automate;
+- [Power Automate](https://make.powerautomate.com/);
 - Outlook;
 - OneDrive or SharePoint;
 - Excel for the web;
 - Word for the web;
 - Teams or the Approvals app, if available.
 
-## Test Files
+Power Automate works through your Microsoft 365 account. If your account cannot access a file, mailbox, SharePoint site, or approval app, the flow may not be able to access it either.
 
-Create a test Excel workbook saved as `.xlsx` in OneDrive or SharePoint. Add a table named `MailingList` with these columns:
+## Download the Example Files
 
-- `RecipientName`
-- `RecipientEmail`
-- `CourseName`
-- `SessionDate`
-- `Status`
-- `SentAt`
+Use these files for the Excel and Word template activity:
 
-Create a test Word document saved as `.docx`. If your tenant supports the Word template action, add content controls for the same fields.
+- [Download the example Excel table](../episodes/data/Example_table.xlsx)
+- [Download the example Word template](../episodes/data/Example_template.docx)
 
-Use test data only.
+Save both files somewhere Power Automate can access, usually:
+
+- OneDrive for Business; or
+- a SharePoint document library.
+
+Do not leave the files only in your local Downloads folder. Power Automate needs the cloud location.
+
+## Example Excel Workbook
+
+The supplied workbook is called `Example_table.xlsx`.
+
+It contains a named Excel table:
+
+| Setting | Value |
+|---|---|
+| Workbook | `Example_table.xlsx` |
+| Table name | `Table1` |
+| Columns | `First Name`, `Last Name`, `Email` |
+
+The table contains test rows only. The email addresses are examples and should be replaced with your own email address or a safe test mailbox before sending anything.
+
+Power Automate reads rows from the named table, not from an arbitrary range of cells. In the activity, use **List rows present in a table** and select `Table1`.
+
+> 📌 If `Table1` does not appear in Power Automate, check that the workbook is uploaded to OneDrive or SharePoint and that the data is still formatted as an Excel table.
+
+## Example Word Template
+
+The supplied Word document is called `Example_template.docx`.
+
+It includes two content controls:
+
+| Word content control | Fill it with this Excel column |
+|---|---|
+| `FirstName` | `First Name` |
+| `Surname` | `Last Name` |
+
+In Power Automate, use **Populate a Microsoft Word template** and map the Excel row values into these fields.
+
+The template creates a simple letter. The populated document can then be attached to an email or saved into OneDrive or SharePoint.
+
+> 🧩 The Word field names do not have to match the Excel column names exactly, but the mapping must be deliberate.
+
+## Suggested Working Folder
+
+Create a small working folder in OneDrive or SharePoint, for example:
+
+```text
+Power Automate Practice
+├── Example_table.xlsx
+└── Example_template.docx
+```
+
+Keep both files in the same working area for the session. This makes them easier to find when selecting files in Power Automate actions.
+
+## Safe Test Data
+
+Before running any email workflow:
+
+- replace example email addresses with your own email address;
+- keep the number of test rows small;
+- add an obvious test subject line;
+- send only to yourself or a safe test mailbox;
+- inspect run history before increasing the number of rows.
+
+Do not use real mailing lists, live participant data, or external recipients during the workshop.
+
+## What You Should Be Able to Do Before the Activity
+
+Before the Excel and Word activity, check that you can:
+
+1. Open `Example_table.xlsx` in Excel for the web.
+2. Click inside the table and see that it is named `Table1`.
+3. Open `Example_template.docx` in Word.
+4. Store both files in OneDrive or SharePoint.
+5. Find both files from Power Automate when adding actions.
+6. Send a test email to yourself from Power Automate.
+
+If any of these checks fail, use the activity time to troubleshoot access and file location before building the full flow.

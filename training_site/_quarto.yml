@@ -232,6 +232,7 @@ website:
         - section: "Learners"
           contents:
             - automating_business_processes/learners/setup.qmd
+            - automating_business_processes/learners/additional_material.qmd
             - automating_business_processes/learners/discuss.qmd
             - automating_business_processes/learners/reference.qmd
         - section: "Instructors"

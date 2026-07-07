@@ -31,6 +31,7 @@ Learners should have access to a Microsoft 365 account with Power Automate enabl
 ## Lesson Material
 
 - [Learner setup](learners/setup.qmd)
+- [Additional material](learners/additional_material.qmd)
 - [Reference](learners/reference.qmd)
 - [Discussion](learners/discuss.qmd)
 - [Instructor notes](instructors/instructor-notes.qmd)
