@@ -238,6 +238,1791 @@ h5 { font-size: 1.15rem; font-weight: 500; color: $white; }
 }
 @media (max-width: 900px) { .two-col-grid { grid-template-columns: 1fr; gap: 1rem; padding: 12px; } }
 
+/* ===========================
+   MODERN LANDING PAGE
+   =========================== */
+body.landing-page .quarto-title-block {
+  display: none;
+}
+
+body.landing-page main#quarto-document-content {
+  margin-top: 0;
+}
+
+.landing-hero {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  min-height: 72vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, rgba(16, 38, 59, 0.92), rgba(0, 103, 129, 0.74)),
+    url("assets/classroom.jpg") center / cover no-repeat;
+  background-attachment: fixed;
+  color: $white;
+  padding: 6rem max(2rem, calc((100vw - 1160px) / 2));
+}
+
+.landing-hero-compact {
+  min-height: 42vh;
+}
+
+.landing-energy-field {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  opacity: 0.36;
+  pointer-events: none;
+}
+
+.landing-energy-line {
+  position: absolute;
+  right: -12vw;
+  width: 55vw;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgba($white, 0.78), transparent);
+  filter: drop-shadow(0 0 12px rgba($blue2, 0.85));
+  animation: landing-sweep 8s ease-in-out infinite;
+}
+
+.landing-energy-line.line-one { top: 18%; animation-delay: 0s; }
+.landing-energy-line.line-two { top: 58%; animation-delay: 1.8s; }
+.landing-energy-line.line-three { top: 82%; animation-delay: 3.4s; }
+
+.landing-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 660px;
+}
+
+.landing-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  max-width: min(100%, 760px);
+  padding: 0.45rem 0.9rem;
+  border: 1px solid rgba($white, 0.55);
+  border-radius: 999px;
+  background: $teal;
+  color: $white;
+  font-size: 0.85rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-transform: uppercase;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.14);
+}
+
+.landing-eyebrow-branded {
+  backdrop-filter: blur(10px);
+}
+
+.landing-eyebrow a {
+  color: $white;
+  text-decoration: none;
+}
+
+.landing-eyebrow a:hover {
+  color: $white;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+.landing-eyebrow p,
+.landing-actions p,
+.landing-stat p {
+  margin: 0;
+}
+
+.landing-stat p + p {
+  margin-top: 0.25rem;
+}
+
+.cell-code.hidden,
+.cell-code.hidden + .code-copy-button,
+.code-copy-outer-scaffold:has(.cell-code.hidden) {
+  display: none !important;
+}
+
+.landing-hero h1 {
+  color: $white;
+  font-size: clamp(2.6rem, 7vw, 5.4rem);
+  line-height: 0.98;
+  max-width: 900px;
+  margin: 1.4rem 0 1rem;
+}
+
+.landing-hero p {
+  max-width: 740px;
+  font-size: clamp(1.05rem, 2vw, 1.4rem);
+  margin-bottom: 1.6rem;
+}
+
+.landing-hero .landing-eyebrow p {
+  max-width: none;
+  margin: 0;
+  font-size: inherit;
+  line-height: 1.2;
+}
+
+.landing-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  margin: 1.5rem 0;
+}
+
+.landing-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.75rem 1rem;
+  border: 1px solid rgba($ink, 0.22);
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 700;
+  color: $ink;
+  background: $white;
+}
+
+.landing-button:hover {
+  color: $ink;
+  border-color: $teal;
+}
+
+.landing-button-primary {
+  background: $teal;
+  color: $white;
+  border-color: $teal;
+}
+
+.landing-button-primary:hover {
+  color: $white;
+  background: $blue;
+}
+
+.landing-centered-action {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.35rem;
+}
+
+.landing-stats {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.95rem;
+  max-width: 760px;
+  margin-top: 2rem;
+}
+
+.landing-stat {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.35rem 0.75rem;
+  align-items: center;
+  min-height: 104px;
+  padding: 1rem;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba($white, 0.18), rgba($white, 0.08));
+  border: 1px solid rgba($white, 0.3);
+  border-radius: 8px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.16);
+  transition: transform 0.22s ease, background 0.22s ease;
+}
+
+.landing-stat::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  background: radial-gradient(circle at top right, rgba($blue2, 0.45), transparent 42%);
+  transition: opacity 0.22s ease;
+}
+
+.landing-stat:hover {
+  transform: translateY(-4px);
+  background: linear-gradient(135deg, rgba($white, 0.24), rgba($white, 0.11));
+}
+
+.landing-stat:hover::before {
+  opacity: 1;
+}
+
+.landing-stat-icon,
+.landing-stat-value,
+.landing-stat-label {
+  position: relative;
+  z-index: 1;
+}
+
+.landing-stat-icon {
+  grid-row: span 2;
+  display: grid;
+  place-items: center;
+  width: 42px;
+  aspect-ratio: 1;
+  border-radius: 8px;
+  background: rgba($white, 0.16);
+  font-size: 1.35rem;
+  animation: landing-stat-float 4.5s ease-in-out infinite;
+}
+
+.landing-stat:nth-child(2) .landing-stat-icon { animation-delay: 0.45s; }
+.landing-stat:nth-child(3) .landing-stat-icon { animation-delay: 0.9s; }
+
+.landing-stat-value {
+  display: block;
+  color: $white;
+  font-size: clamp(1.2rem, 2vw, 1.55rem);
+  font-weight: 900;
+  line-height: 1.05;
+}
+
+.landing-stat-label {
+  color: rgba($white, 0.78);
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.landing-orbit {
+  position: absolute;
+  right: max(2.5rem, calc((100vw - 1160px) / 2));
+  top: 52%;
+  width: min(36.4vw, 468px);
+  aspect-ratio: 1;
+  transform: translateY(-50%);
+  z-index: 1;
+  opacity: 0.92;
+}
+
+.landing-orbit-ring {
+  position: absolute;
+  inset: 8%;
+  border: 1px solid rgba($white, 0.35);
+  border-radius: 50%;
+  animation: landing-rotate 28s linear infinite;
+}
+
+.landing-orbit-ring::before,
+.landing-orbit-ring::after {
+  content: "";
+  position: absolute;
+  inset: 16%;
+  border: 1px solid rgba($white, 0.18);
+  border-radius: 50%;
+}
+
+.landing-orbit-ring::after {
+  inset: 31%;
+}
+
+.landing-orbit-node {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  justify-content: center;
+  min-width: 82px;
+  min-height: 42px;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  color: $ink;
+  background: rgba($white, 0.92);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.18);
+  font-weight: 800;
+  font-size: 1rem;
+  line-height: 1.1;
+  text-align: center;
+  animation: landing-counter-rotate 28s linear infinite;
+}
+
+.node-data { left: 50%; top: -21px; transform: translateX(-50%); }
+.node-ai { right: -34px; top: 50%; transform: translateY(-50%); }
+.node-code { left: 50%; bottom: -21px; transform: translateX(-50%); }
+.node-auto { left: -54px; top: 50%; transform: translateY(-50%); }
+
+.landing-orbit-core {
+  position: absolute;
+  inset: 35%;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  text-align: center;
+  color: $white;
+  background: rgba($ink, 0.72);
+  border: 1px solid rgba($white, 0.3);
+  font-weight: 800;
+  font-size: 1rem;
+  line-height: 1.15;
+  box-shadow: 0 0 0 14px rgba($white, 0.08);
+  animation: landing-pulse 3.8s ease-in-out infinite;
+}
+
+.landing-stat strong {
+  display: block;
+  font-size: 1.35rem;
+  color: $white;
+}
+
+.landing-section {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 4rem 1.5rem;
+}
+
+.landing-section-heading {
+  max-width: 760px;
+  margin-bottom: 1.8rem;
+}
+
+.landing-section-heading h2 {
+  font-size: clamp(1.8rem, 4vw, 3rem);
+  margin-bottom: 0.8rem;
+  color: $ink;
+}
+
+.landing-feature-grid,
+.landing-course-grid,
+.landing-pathway-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.landing-feature,
+.landing-pathway-step,
+.landing-course-card,
+.landing-split-panel {
+  border: 1px solid rgba($slate, 0.16);
+  border-radius: 8px;
+  background: $white;
+  box-shadow: 0 12px 34px rgba(16, 38, 59, 0.09);
+}
+
+.landing-feature,
+.landing-pathway-step {
+  padding: 1.35rem;
+}
+
+.landing-feature {
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.landing-feature:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 18px 42px rgba(16, 38, 59, 0.14);
+}
+
+.landing-feature h3,
+.landing-pathway-step h3 {
+  margin-top: 0;
+  color: $blue;
+}
+
+#module-finder {
+  position: relative;
+  overflow: hidden;
+  background:
+    linear-gradient(90deg, rgba(16, 38, 59, 0.92), rgba(0, 103, 129, 0.74)),
+    url("assets/classroom.jpg") center / cover no-repeat;
+  background-attachment: fixed;
+  max-width: none;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  padding-top: calc(4rem + 20px);
+  padding-bottom: calc(4rem + 20px);
+  padding-left: max(1.5rem, calc((100vw - 1160px) / 2));
+  padding-right: max(1.5rem, calc((100vw - 1160px) / 2));
+  color: $white;
+}
+
+#module-finder::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba($blue2, 0.28), transparent 30%),
+    radial-gradient(circle at 82% 76%, rgba($teal, 0.22), transparent 34%);
+  pointer-events: none;
+}
+
+#module-finder > * {
+  position: relative;
+  z-index: 1;
+}
+
+#module-finder .landing-section-heading h2,
+#module-finder .landing-section-heading p {
+  color: $white;
+}
+
+#module-finder .observablehq {
+  max-width: 1160px;
+}
+
+.landing-course-tabset {
+  max-width: 1160px;
+}
+
+.landing-course-tabset .tab-content {
+  border: 1px solid rgba($white, 0.24);
+  border-top: none;
+  border-radius: 0 0 14px 14px;
+  padding: 1.4rem;
+  background: $white;
+  color: $ink;
+  box-shadow: 0 18px 48px rgba(0, 0, 0, 0.16);
+}
+
+.landing-course-tabset .nav-tabs {
+  border-bottom-color: rgba($white, 0.24);
+}
+
+.landing-course-tabset .nav-tabs .nav-link {
+  margin-left: 0;
+}
+
+.landing-course-tabset p {
+  color: $ink;
+}
+
+.landing-course-tabset .tab-pane > p:first-child {
+  max-width: 760px;
+  margin-bottom: 1.25rem;
+}
+
+.landing-filter-panel {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  max-width: 1160px;
+  margin: 0 0 1.25rem 0;
+}
+
+.landing-filter-panel label {
+  display: grid;
+  gap: 0.25rem;
+  font-weight: 800;
+}
+
+.landing-filter-panel label span {
+  color: rgba($white, 0.78);
+  font-size: 0.82rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.landing-course-tabset .landing-filter-panel label span {
+  color: $slate;
+}
+
+#module-finder select,
+.landing-filter-search {
+  min-width: 180px;
+  border-radius: 8px;
+  border: 1px solid rgba($slate, 0.22);
+  padding: 0.45rem 0.7rem;
+  background: $white;
+}
+
+.landing-filter-search {
+  min-width: min(260px, 70vw);
+}
+
+.landing-filter-count {
+  align-self: end;
+  min-height: 41px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.45rem 0.8rem;
+  border-radius: 8px;
+  background: rgba($white, 0.78);
+  color: $ink;
+  font-weight: 700;
+  box-shadow: 0 8px 22px rgba(16, 38, 59, 0.08);
+}
+
+.landing-filter-count strong {
+  color: $teal;
+  font-size: 1.3rem;
+}
+
+.landing-course-card {
+  position: relative;
+  display: flex;
+  min-height: 235px;
+  flex-direction: column;
+  padding: 1.25rem;
+  color: $ink;
+  text-decoration: none;
+  overflow: hidden;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+  animation: landing-card-in 0.45s ease var(--card-delay, 0ms) both;
+}
+
+.landing-course-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 5px;
+  background: linear-gradient(90deg, $teal, $blue2);
+}
+
+.landing-course-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at var(--mx, 50%) var(--my, 50%), rgba($blue2, 0.18), transparent 34%);
+  transition: opacity 0.18s ease;
+}
+
+.landing-course-card:hover::after {
+  opacity: 1;
+}
+
+.landing-course-card:hover {
+  color: $ink;
+  transform: translateY(-2px);
+  box-shadow: 0 18px 42px rgba(16, 38, 59, 0.14);
+}
+
+.landing-course-card[hidden] {
+  display: none;
+}
+
+.landing-module-card {
+  min-height: 220px;
+}
+
+.landing-module-card .landing-card-badge {
+  max-width: calc(100% - 98px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.landing-card-badge,
+.landing-card-status {
+  width: fit-content;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 0.25rem 0.55rem;
+}
+
+.landing-card-badge {
+  background: rgba($teal, 0.12);
+  color: $teal;
+}
+
+.landing-card-status {
+  position: absolute;
+  top: 1.15rem;
+  right: 1.15rem;
+  background: rgba($blue2, 0.12);
+  color: $blue;
+}
+
+.landing-course-card h3 {
+  color: $ink;
+  margin: 1.2rem 0 0.55rem;
+}
+
+.landing-course-card p {
+  flex: 1;
+  margin-bottom: 1rem;
+}
+
+.landing-card-meta {
+  font-weight: 700;
+  color: $teal;
+}
+
+.landing-pathway {
+  position: relative;
+  max-width: none;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  padding: 5rem max(1.5rem, calc((100vw - 1160px) / 2));
+  background:
+    radial-gradient(circle at 15% 15%, rgba($blue2, 0.16), transparent 32%),
+    radial-gradient(circle at 86% 72%, rgba($teal, 0.14), transparent 30%),
+    linear-gradient(180deg, $white, rgba($teal, 0.06));
+}
+
+.landing-pathway-network {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1.12fr 1fr;
+  grid-template-rows: repeat(3, minmax(150px, auto));
+  gap: 1.1rem 2.4rem;
+  min-height: 570px;
+  align-items: center;
+}
+
+.landing-network-lines {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.network-line {
+  fill: none;
+  stroke: rgba($teal, 0.55);
+  stroke-width: 5;
+  stroke-linecap: round;
+  stroke-dasharray: 11 13;
+  animation: landing-network-flow 1.6s linear infinite;
+}
+
+.line-ai,
+.line-ai-end { stroke: rgba($blue2, 0.62); }
+.line-auto,
+.line-auto-end { stroke: rgba($teal, 0.66); }
+.line-code,
+.line-code-end { stroke: rgba($blue, 0.56); }
+
+#pathway-arrow path {
+  fill: $teal;
+}
+
+.landing-network-node {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  min-height: 160px;
+  flex-direction: column;
+  color: $ink;
+  text-decoration: none;
+  padding: 1.1rem;
+  overflow: hidden;
+  border: 1px solid rgba($slate, 0.16);
+  border-radius: 12px;
+  background: rgba($white, 0.92);
+  box-shadow: 0 18px 46px rgba(16, 38, 59, 0.12);
+  backdrop-filter: blur(10px);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.landing-network-node::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  background:
+    radial-gradient(circle at 90% 8%, rgba($blue2, 0.18), transparent 32%),
+    linear-gradient(135deg, rgba($teal, 0.08), transparent 48%);
+  transition: opacity 0.22s ease;
+}
+
+.landing-network-node > * {
+  position: relative;
+  z-index: 1;
+}
+
+.landing-network-node:hover {
+  color: $ink;
+  transform: translateY(-6px) scale(1.01);
+  box-shadow: 0 28px 64px rgba(16, 38, 59, 0.18);
+}
+
+.landing-network-node:hover::before {
+  opacity: 1;
+}
+
+.landing-network-node h3 {
+  color: $ink;
+  font-size: 1.25rem;
+  margin: 0.7rem 0 0.45rem;
+}
+
+.landing-network-node p {
+  flex: 1;
+  margin-bottom: 0.8rem;
+}
+
+.node-foundation {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+.pathway-node-ai {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.pathway-node-automation {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+.pathway-node-code {
+  grid-column: 2;
+  grid-row: 3;
+}
+
+.node-outcome {
+  grid-column: 3;
+  grid-row: 2;
+  background: linear-gradient(135deg, rgba($ink, 0.95), rgba($blue, 0.94));
+  color: $white;
+}
+
+.node-outcome h3,
+.node-outcome .landing-pathway-link {
+  color: $white;
+}
+
+.node-outcome p {
+  color: rgba($white, 0.8);
+}
+
+.landing-pathway-step {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  min-height: 285px;
+  flex-direction: column;
+  color: $ink;
+  text-decoration: none;
+  padding: 1.45rem;
+  isolation: isolate;
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.landing-pathway-grid {
+  position: relative;
+}
+
+.landing-pathway-grid::before {
+  content: "";
+  position: absolute;
+  left: 11%;
+  right: 11%;
+  top: 58px;
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, $teal, $blue2, $teal);
+  box-shadow: 0 0 28px rgba($blue2, 0.28);
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: landing-grow 1.5s ease forwards;
+}
+
+.landing-pathway-step::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0;
+  background:
+    radial-gradient(circle at 85% 16%, rgba($blue2, 0.18), transparent 30%),
+    linear-gradient(135deg, rgba($teal, 0.1), transparent 46%);
+  transition: opacity 0.22s ease;
+}
+
+.landing-pathway-step::after {
+  content: "";
+  position: absolute;
+  inset: auto 1.35rem 0 1.35rem;
+  height: 4px;
+  background: linear-gradient(90deg, $teal, $blue2);
+  transform: scaleX(0);
+  transform-origin: left;
+  animation: landing-grow 1.4s ease forwards;
+}
+
+.landing-pathway-step:nth-child(2)::after { animation-delay: 0.2s; }
+.landing-pathway-step:nth-child(3)::after { animation-delay: 0.4s; }
+
+.landing-pathway-step:hover {
+  color: $ink;
+  transform: translateY(-7px);
+  box-shadow: 0 24px 56px rgba(16, 38, 59, 0.16);
+}
+
+.landing-pathway-step:hover::before {
+  opacity: 1;
+}
+
+.landing-pathway-number {
+  position: relative;
+  z-index: 1;
+  width: fit-content;
+  padding: 0.3rem 0.62rem;
+  border-radius: 999px;
+  background: $ink;
+  color: $white;
+  font-weight: 900;
+  box-shadow: 0 12px 30px rgba(16, 38, 59, 0.18);
+}
+
+.landing-pathway-icon {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  aspect-ratio: 1;
+  margin: 1.2rem 0 1rem;
+  border-radius: 16px;
+  background: linear-gradient(135deg, rgba($teal, 0.16), rgba($blue2, 0.2));
+  border: 1px solid rgba($slate, 0.12);
+  font-size: 1.7rem;
+  animation: landing-stat-float 4.8s ease-in-out infinite;
+}
+
+.landing-pathway-step:nth-child(2) .landing-pathway-icon { animation-delay: 0.4s; }
+.landing-pathway-step:nth-child(3) .landing-pathway-icon { animation-delay: 0.8s; }
+
+.landing-pathway-step h3 {
+  color: $ink;
+  font-size: 1.45rem;
+  margin-bottom: 0.65rem;
+}
+
+.landing-pathway-step p {
+  flex: 1;
+}
+
+.landing-pathway-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: $teal;
+  font-weight: 900;
+}
+
+.landing-pathway-link::after {
+  content: "→";
+  transition: transform 0.18s ease;
+}
+
+.landing-pathway-step:hover .landing-pathway-link::after {
+  transform: translateX(4px);
+}
+
+.landing-module-map {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.landing-module-area {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(230px, 0.4fr) minmax(0, 1fr);
+  gap: 1.25rem;
+  overflow: hidden;
+  padding: 1.35rem;
+  border: 1px solid rgba($slate, 0.14);
+  border-radius: 14px;
+  background:
+    radial-gradient(circle at 100% 0%, rgba($blue2, 0.18), transparent 32%),
+    linear-gradient(135deg, rgba($white, 0.98), rgba($teal, 0.07));
+  box-shadow: 0 18px 46px rgba(16, 38, 59, 0.1);
+  isolation: isolate;
+  animation: landing-card-in 0.5s ease calc(var(--area-index) * 80ms) both;
+}
+
+.landing-module-area::before {
+  content: attr(data-area);
+  position: absolute;
+  right: 1rem;
+  bottom: -0.45rem;
+  z-index: -1;
+  color: rgba($ink, 0.045);
+  font-size: clamp(3rem, 9vw, 7.5rem);
+  font-weight: 900;
+  line-height: 0.9;
+  white-space: nowrap;
+}
+
+.landing-module-area::after {
+  content: "";
+  position: absolute;
+  top: 2rem;
+  bottom: 2rem;
+  left: calc(40% + 1.35rem);
+  width: 3px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, $teal, rgba($blue2, 0.65), $teal);
+  box-shadow: 0 0 18px rgba($blue2, 0.28);
+}
+
+.landing-module-area-copy,
+.landing-module-node-list {
+  position: relative;
+  z-index: 1;
+}
+
+.landing-module-area-copy {
+  align-self: start;
+}
+
+.landing-module-area-kicker {
+  display: inline-flex;
+  width: fit-content;
+  margin-bottom: 0.6rem;
+  border-radius: 999px;
+  padding: 0.25rem 0.6rem;
+  background: rgba($teal, 0.12);
+  color: $teal;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.landing-module-area-copy h3 {
+  color: $ink;
+  margin: 0 0 0.45rem;
+}
+
+.landing-module-area-copy p {
+  margin-bottom: 0.9rem;
+}
+
+.landing-module-area-copy a {
+  color: $teal;
+  font-weight: 900;
+}
+
+.landing-module-area-copy a::after {
+  content: " →";
+}
+
+.landing-module-node-list {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.landing-module-node {
+  display: grid;
+  grid-template-columns: 42px 1fr;
+  gap: 0.75rem;
+  align-items: center;
+  min-height: 62px;
+  padding: 0.75rem 0.85rem;
+  border: 1px solid rgba($slate, 0.12);
+  border-radius: 10px;
+  background: rgba($white, 0.9);
+  color: $ink;
+  text-decoration: none;
+  box-shadow: 0 10px 24px rgba(16, 38, 59, 0.07);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  animation: landing-card-in 0.42s ease calc((var(--area-index) * 80ms) + (var(--node-index) * 35ms)) both;
+}
+
+.landing-module-node span {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: linear-gradient(135deg, $teal, $blue2);
+  color: $white;
+  font-weight: 900;
+}
+
+.landing-module-node strong {
+  line-height: 1.15;
+}
+
+.landing-module-node:hover {
+  color: $ink;
+  transform: translateX(5px);
+  border-color: rgba($teal, 0.36);
+  box-shadow: 0 16px 34px rgba(16, 38, 59, 0.12);
+}
+
+.landing-course-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.landing-course-overview-card {
+  position: relative;
+  display: flex;
+  min-height: 320px;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 1.25rem;
+  border: 1px solid rgba($slate, 0.16);
+  border-radius: 8px;
+  background: $white;
+  color: $ink;
+  box-shadow: 0 12px 34px rgba(16, 38, 59, 0.09);
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+  animation: landing-card-in 0.45s ease var(--card-delay, 0ms) both;
+}
+
+.landing-course-overview-card::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 5px;
+  background: linear-gradient(90deg, $teal, $blue2);
+}
+
+.landing-course-overview-card::after {
+  content: attr(data-area);
+  position: absolute;
+  right: 1rem;
+  bottom: -0.25rem;
+  color: rgba($ink, 0.04);
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 900;
+  line-height: 0.9;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.landing-course-overview-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 42px rgba(16, 38, 59, 0.14);
+}
+
+.landing-course-overview-copy,
+.landing-course-module-list,
+.landing-course-overview-link {
+  position: relative;
+  z-index: 1;
+}
+
+.landing-course-overview-copy h3 {
+  color: $ink;
+  margin: 0.9rem 0 0.55rem;
+}
+
+.landing-course-module-list,
+.landing-course-glance-list {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0.6rem 0 1rem;
+}
+
+.landing-course-glance-list {
+  padding: 0;
+  list-style: none;
+}
+
+.landing-course-glance-list li {
+  position: relative;
+  padding: 0.55rem 0.65rem 0.55rem 2rem;
+  border: 1px solid rgba($slate, 0.12);
+  border-radius: 8px;
+  background: rgba($teal, 0.045);
+  color: $ink;
+  line-height: 1.25;
+}
+
+.landing-course-glance-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0.65rem;
+  top: 0.55rem;
+  color: $teal;
+  font-weight: 900;
+}
+
+.landing-course-module-link {
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  gap: 0.6rem;
+  align-items: center;
+  padding: 0.5rem 0.6rem;
+  border: 1px solid rgba($slate, 0.12);
+  border-radius: 8px;
+  background: rgba($teal, 0.045);
+  color: $ink;
+  text-decoration: none;
+  transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+}
+
+.landing-course-module-link span {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: linear-gradient(135deg, $teal, $blue2);
+  color: $white;
+  font-size: 0.78rem;
+  font-weight: 900;
+}
+
+.landing-course-module-link strong {
+  line-height: 1.15;
+}
+
+.landing-course-module-link:hover {
+  color: $ink;
+  transform: translateX(4px);
+  border-color: rgba($teal, 0.34);
+  background: rgba($blue2, 0.08);
+}
+
+.landing-course-overview-link {
+  margin-top: auto;
+  text-decoration: none;
+}
+
+.landing-course-overview-link::after {
+  content: " →";
+}
+
+.about-gradient-band {
+  max-width: none;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  padding: calc(4rem + 20px) max(1.5rem, calc((100vw - 1160px) / 2));
+  background:
+    radial-gradient(circle at 15% 18%, rgba($blue2, 0.18), transparent 30%),
+    linear-gradient(135deg, rgba($ink, 0.97), rgba($blue, 0.92));
+  color: $white;
+}
+
+.about-gradient-band .landing-section-heading h2,
+.about-gradient-band .landing-section-heading p {
+  color: $white;
+}
+
+.about-principles-grid,
+.about-audience-grid,
+.about-tier-track,
+.about-contact-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.about-principles-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.about-audience-grid,
+.about-contact-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.about-contact-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.about-principle,
+.about-audience-card,
+.about-tier,
+.about-contact-card {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba($slate, 0.14);
+  border-radius: 12px;
+  background: $white;
+  box-shadow: 0 16px 38px rgba(16, 38, 59, 0.09);
+}
+
+.about-principle {
+  padding: 1.2rem;
+  background: rgba($white, 0.94);
+  color: $ink;
+}
+
+.about-principle .about-card-icon,
+.about-contact-card span {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  aspect-ratio: 1;
+  margin-bottom: 0.8rem;
+  border-radius: 10px;
+  background: linear-gradient(135deg, $teal, $blue2);
+  color: $white;
+  font-size: 1.25rem;
+}
+
+.about-principle h3,
+.about-audience-card h3,
+.about-tier h3 {
+  color: $ink;
+  margin-top: 0;
+}
+
+.about-audience-card {
+  padding: 1.35rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.about-card-icon {
+  display: grid;
+  place-items: center;
+  width: 46px;
+  aspect-ratio: 1;
+  margin-bottom: 0.8rem;
+  border-radius: 14px;
+  background: linear-gradient(135deg, $teal, $blue2);
+  color: $white;
+  font-size: 1.35rem;
+  box-shadow: 0 12px 28px rgba(16, 38, 59, 0.14);
+}
+
+.about-audience-card:hover,
+.about-contact-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 50px rgba(16, 38, 59, 0.15);
+}
+
+.about-two-col {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  align-items: start;
+  overflow: hidden;
+  border: 1px solid rgba($slate, 0.12);
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at 12% 14%, rgba($blue2, 0.16), transparent 32%),
+    radial-gradient(circle at 86% 80%, rgba($teal, 0.14), transparent 34%),
+    linear-gradient(135deg, rgba($white, 0.96), rgba($teal, 0.06));
+  box-shadow: 0 22px 58px rgba(16, 38, 59, 0.1);
+}
+
+.about-two-col-panel {
+  min-height: 100%;
+  padding: 1.4rem;
+  border: 1px solid rgba($slate, 0.1);
+  border-radius: 14px;
+  background: rgba($white, 0.9);
+  box-shadow: 0 14px 34px rgba(16, 38, 59, 0.07);
+}
+
+.about-two-col .landing-section-heading {
+  margin-bottom: 1.2rem;
+}
+
+.about-two-col .about-audience-grid,
+.about-two-col .about-tier-track {
+  grid-template-columns: 1fr;
+}
+
+.about-two-col .about-tier-track::before {
+  display: none;
+}
+
+.about-two-col .about-audience-card,
+.about-two-col .about-tier {
+  border-color: rgba($slate, 0.1);
+  background:
+    radial-gradient(circle at 100% 0%, rgba($blue2, 0.1), transparent 36%),
+    $white;
+}
+
+.about-two-col .about-tier {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.25rem 0.9rem;
+  align-items: start;
+}
+
+.about-two-col .about-tier .about-tier-number {
+  grid-row: span 2;
+  width: 48px;
+  margin-bottom: 0;
+}
+
+.about-two-col .about-tier h3 {
+  margin-bottom: 0.25rem;
+}
+
+.about-two-col .about-tier p {
+  margin-bottom: 0;
+}
+
+.about-two-col .landing-centered-action {
+  margin-top: 1rem;
+  justify-content: stretch;
+}
+
+.about-two-col .landing-centered-action p,
+.about-two-col .landing-centered-action a {
+  width: 100%;
+}
+
+.about-tier-track {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  position: relative;
+}
+
+.about-tier-track::before {
+  content: "";
+  position: absolute;
+  left: 10%;
+  right: 10%;
+  top: 36px;
+  height: 4px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, $teal, $blue2, $teal);
+}
+
+.about-tier {
+  padding: 1.35rem;
+}
+
+.about-tier-number {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 58px;
+  aspect-ratio: 1;
+  margin-bottom: 1rem;
+  border-radius: 50%;
+  background: $ink;
+  color: $white;
+  font-weight: 900;
+  box-shadow: 0 12px 30px rgba(16, 38, 59, 0.18);
+}
+
+.about-contact {
+  padding-top: 5rem;
+}
+
+.about-contact-card {
+  display: block;
+  padding: 1.35rem;
+  color: $ink;
+  text-decoration: none;
+}
+
+.about-contact-card strong,
+.about-contact-card em {
+  display: block;
+}
+
+.about-contact-card em {
+  color: $teal;
+  font-style: normal;
+  font-weight: 800;
+  margin-top: 0.35rem;
+}
+
+.landing-ticker {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  overflow: hidden;
+  border-top: 1px solid rgba($slate, 0.12);
+  border-bottom: 1px solid rgba($slate, 0.12);
+  background: rgba($teal, 0.08);
+}
+
+.landing-ticker-track {
+  display: flex;
+  width: max-content;
+  gap: 0.8rem;
+  padding: 1rem 0;
+  animation: landing-ticker 34s linear infinite;
+}
+
+.landing-ticker span {
+  display: inline-flex;
+  align-items: center;
+  border-radius: 999px;
+  padding: 0.45rem 0.85rem;
+  background: $white;
+  color: $ink;
+  font-weight: 800;
+  box-shadow: 0 8px 24px rgba(16, 38, 59, 0.08);
+  white-space: nowrap;
+}
+
+.landing-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.85fr);
+  gap: 2rem;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  max-width: none;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  padding: calc(4rem + 20px) max(1.5rem, calc((100vw - 1160px) / 2));
+  background:
+    linear-gradient(90deg, rgba(16, 38, 59, 0.92), rgba(0, 103, 129, 0.74)),
+    url("assets/classroom.jpg") center / cover no-repeat;
+  background-attachment: fixed;
+  color: $white;
+}
+
+.landing-split::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 18% 24%, rgba($blue2, 0.3), transparent 32%),
+    radial-gradient(circle at 84% 72%, rgba($teal, 0.24), transparent 34%);
+  pointer-events: none;
+}
+
+.landing-split > * {
+  position: relative;
+  z-index: 1;
+}
+
+.landing-split-copy {
+  position: relative;
+  padding: 1.6rem;
+  border-radius: 12px;
+  background:
+    linear-gradient(135deg, rgba($white, 0.16), rgba($white, 0.08));
+  border: 1px solid rgba($white, 0.22);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.16);
+  backdrop-filter: blur(10px);
+}
+
+.landing-split-copy h2,
+.landing-split-copy p,
+.landing-split-copy a {
+  color: $white;
+}
+
+.landing-split-copy li {
+  margin-bottom: 0.35rem;
+}
+
+.landing-research-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.7rem;
+  margin: 1.35rem 0;
+}
+
+.landing-research-item {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.85rem;
+  border-radius: 8px;
+  background: $blue;
+  color: $white;
+  border: 1px solid rgba($white, 0.18);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.16);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+
+.landing-research-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 30px rgba(16, 38, 59, 0.11);
+}
+
+.landing-research-item span {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  aspect-ratio: 1;
+  border-radius: 8px;
+  background: rgba($white, 0.16);
+}
+
+.landing-research-item strong {
+  line-height: 1.2;
+}
+
+.landing-split-panel {
+  padding: 1.75rem 1.5rem 1.5rem;
+  background: $ink;
+  color: $white;
+}
+
+.landing-split-panel h3 {
+  color: $white;
+  margin: 0 0 2rem;
+}
+
+.landing-rhythm-wheel {
+  position: relative;
+  min-height: 360px;
+  margin-top: 2.25rem;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle, rgba($teal, 0.22) 0 26%, transparent 27%),
+    conic-gradient(from -90deg, rgba($teal, 0.5), rgba($blue2, 0.46), rgba($teal, 0.5));
+  box-shadow: inset 0 0 0 1px rgba($white, 0.2);
+}
+
+.landing-rhythm-wheel::before {
+  content: "";
+  position: absolute;
+  inset: 18%;
+  border: 3px dashed rgba($white, 0.42);
+  border-radius: 50%;
+  animation: landing-rotate 26s linear infinite;
+}
+
+.landing-rhythm-core {
+  position: absolute;
+  inset: 37%;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba($ink, 0.78);
+  border: 1px solid rgba($white, 0.24);
+  color: $white;
+  font-weight: 900;
+  text-align: center;
+  line-height: 1.15;
+}
+
+.landing-rhythm-step {
+  position: absolute;
+  display: grid;
+  gap: 0.2rem;
+  width: min(190px, 45%);
+  padding: 0.9rem;
+  border-radius: 14px;
+  background: rgba($white, 0.94);
+  color: $ink;
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.18);
+  animation: landing-stat-float 5.5s ease-in-out infinite;
+}
+
+.landing-rhythm-step span {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: linear-gradient(135deg, $teal, $blue2);
+  color: $white;
+  font-weight: 900;
+}
+
+.landing-rhythm-step strong {
+  color: $ink;
+  font-size: 1.15rem;
+  line-height: 1.1;
+}
+
+.landing-rhythm-step em {
+  color: rgba($ink, 0.72);
+  font-style: normal;
+  line-height: 1.2;
+}
+
+.rhythm-teach {
+  top: 0;
+  left: 50%;
+  translate: -50% -24%;
+}
+
+.rhythm-engage {
+  right: -4%;
+  bottom: 9%;
+  animation-delay: 0.5s;
+}
+
+.rhythm-review {
+  left: -4%;
+  bottom: 9%;
+  animation-delay: 1s;
+}
+
+@media (max-width: 900px) {
+  .landing-hero {
+    min-height: 68vh;
+    padding: 4rem 1.5rem;
+    background-attachment: scroll;
+  }
+
+  #module-finder,
+  .landing-split {
+    background-attachment: scroll;
+  }
+
+  .landing-stats,
+  .landing-feature-grid,
+  .landing-course-grid,
+  .landing-course-list,
+  .landing-pathway-grid,
+  .landing-module-area,
+  .about-principles-grid,
+  .about-audience-grid,
+  .about-tier-track,
+  .about-contact-grid,
+  .about-two-col,
+  .landing-split {
+    grid-template-columns: 1fr;
+  }
+
+  .landing-pathway-grid::before {
+    left: 29px;
+    right: auto;
+    top: 40px;
+    bottom: 40px;
+    width: 4px;
+    height: auto;
+    transform: scaleY(0);
+    transform-origin: top;
+  }
+
+  .landing-pathway-network {
+    grid-template-columns: 1fr;
+    grid-template-rows: none;
+    min-height: auto;
+    gap: 1rem;
+  }
+
+  .landing-network-lines {
+    display: none;
+  }
+
+  .node-foundation,
+  .pathway-node-ai,
+  .pathway-node-automation,
+  .pathway-node-code,
+  .node-outcome {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .landing-network-node {
+    min-height: auto;
+  }
+
+  .landing-module-area::after {
+    display: none;
+  }
+
+  .about-tier-track::before {
+    display: none;
+  }
+
+  .landing-research-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .landing-orbit {
+    opacity: 0.18;
+    right: -120px;
+    width: 320px;
+  }
+
+  .landing-rhythm-wheel {
+    display: grid;
+    gap: 0.85rem;
+    min-height: auto;
+    border-radius: 14px;
+    padding: 1rem;
+    background: rgba($white, 0.08);
+  }
+
+  .landing-rhythm-wheel::before,
+  .landing-rhythm-core {
+    display: none;
+  }
+
+  .landing-rhythm-step {
+    position: static;
+    width: auto;
+    animation: none;
+  }
+
+  .rhythm-teach,
+  .rhythm-engage,
+  .rhythm-review {
+    translate: none;
+  }
+}
+
+@keyframes landing-rotate {
+  to { rotate: 360deg; }
+}
+
+@keyframes landing-counter-rotate {
+  to { rotate: -360deg; }
+}
+
+@keyframes landing-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.04); }
+}
+
+@keyframes landing-grow {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
+@keyframes landing-ticker {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes landing-sweep {
+  0%, 100% { transform: translateX(0) rotate(-8deg); opacity: 0.15; }
+  50% { transform: translateX(-18vw) rotate(-8deg); opacity: 0.85; }
+}
+
+@keyframes landing-card-in {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes landing-session-glow {
+  0%, 72%, 100% {
+    background: rgba($white, 0.08);
+    transform: translateX(0);
+  }
+  12%, 28% {
+    background: rgba($teal, 0.42);
+    transform: translateX(6px);
+  }
+}
+
+@keyframes landing-stat-float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-4px); }
+}
+
+@keyframes landing-network-flow {
+  to { stroke-dashoffset: -24; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .landing-orbit-ring,
+  .landing-orbit-node,
+  .landing-orbit-core,
+  .landing-energy-line,
+  .landing-ticker-track,
+  .landing-pathway-grid::before,
+  .network-line,
+  .landing-pathway-step::after,
+  .landing-pathway-icon,
+  .landing-course-card,
+  .landing-course-overview-card,
+  .landing-module-area,
+  .landing-module-node,
+  .landing-rhythm-wheel::before,
+  .landing-rhythm-step,
+  .landing-stat-icon {
+    animation: none;
+  }
+
+  .landing-feature,
+  .landing-course-card,
+  .landing-course-overview-card,
+  .landing-course-module-link,
+  .landing-module-node {
+    transition: none;
+  }
+}
+
 .two-col-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);

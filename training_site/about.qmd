@@ -1,0 +1,217 @@
+---
+title: "About Digital Skills"
+breadcrumb: false
+page-class: landing-page
+
+format:
+  html:
+    theme:
+      - default
+      - ./uon.scss
+    toc: false
+    number-sections: false
+    page-layout: full
+    sidebar: false
+---
+
+```{=html}
+<style>
+#title-block-header { display: none; }
+main#quarto-document-content { margin-top: 0; }
+.cell-code.hidden,
+.cell-code.hidden + .code-copy-button,
+.code-copy-outer-scaffold:has(.cell-code.hidden) {
+  display: none !important;
+}
+</style>
+```
+
+::: {.landing-hero .landing-hero-compact}
+::: {.landing-energy-field aria-hidden="true"}
+::: {.landing-energy-line .line-one}
+:::
+::: {.landing-energy-line .line-two}
+:::
+::: {.landing-energy-line .line-three}
+:::
+:::
+::: {.landing-hero-content}
+::: {.landing-eyebrow .landing-eyebrow-branded}
+[Developed By The University of Nottingham Digital Research Service](https://digitalresearch.nottingham.ac.uk/)
+:::
+
+# About the Digital Skills Programme
+
+Practical, reusable training for researchers who need reliable digital methods.
+:::
+:::
+
+::: {.landing-section .about-lede}
+::: {.landing-section-heading}
+## Learn Skills You Can Use Immediately
+
+The Digital Skills programme is built around practical research workflows, not abstract tool demos. Each course gives learners something they can reuse: a cleaner folder structure, a safer data process, a working automation, a reproducible analysis, or a clearer AI workflow.
+:::
+
+::: {.landing-feature-grid}
+::: {.landing-feature}
+### 🧭 Find the Right Starting Point
+
+Choose foundation, responsible AI, automation, Python, or R depending on your current work.
+:::
+::: {.landing-feature}
+### 🛠️ Build While You Learn
+
+Sessions combine short teaching blocks with practical activities and discussion.
+:::
+::: {.landing-feature}
+### 🔁 Reuse the Materials
+
+Slides, setup guides, examples, and references are available from each course page.
+:::
+:::
+:::
+
+::: {.landing-section .about-gradient-band}
+::: {.landing-section-heading}
+## Why This Programme Exists
+
+Modern research projects routinely involve code, large data sets, digital collaboration, and complex computational workflows. Many researchers have limited time to build confidence with software engineering, digital infrastructure, automation, or best practice for managing data.
+
+The programme addresses this gap through a structured training pathway aligned with open science, reproducible research, and research integrity.
+:::
+
+::: {.about-principles-grid}
+::: {.about-principle}
+<div class="about-card-icon" aria-hidden="true">🪜</div>
+<h3>Structured Progression</h3>
+
+Courses are organised so learners can build skills incrementally and revisit concepts as needed.
+:::
+::: {.about-principle}
+<div class="about-card-icon" aria-hidden="true">🧪</div>
+<h3>Hands-On Learning</h3>
+
+Sessions use collaborative exercises, scenario-based tasks, and practical build activities.
+:::
+::: {.about-principle}
+<div class="about-card-icon" aria-hidden="true">🔓</div>
+<h3>Open Science Focus</h3>
+
+Modules emphasise FAIR data, reproducible workflows, responsible governance, and transparent documentation.
+:::
+::: {.about-principle}
+<div class="about-card-icon" aria-hidden="true">🌐</div>
+<h3>Discipline-Agnostic Design</h3>
+
+The methods and tools apply across research domains, with space for specialist workflows where needed.
+:::
+:::
+:::
+
+::: {.landing-section .about-two-col}
+::: {.about-two-col-panel}
+::: {.landing-section-heading}
+## Who It Is For
+
+The programme supports learners at different levels of experience, from researchers developing foundational digital confidence to advanced learners who want to strengthen computational, analytical, and data-driven workflows.
+:::
+
+::: {.about-audience-grid}
+::: {.about-audience-card}
+<div class="about-card-icon" aria-hidden="true">🎓</div>
+<h3>Doctoral Researchers</h3>
+
+Build practical habits for data, automation, analysis, and responsible use of AI.
+:::
+::: {.about-audience-card}
+<div class="about-card-icon" aria-hidden="true">🚀</div>
+<h3>Early-Career Researchers</h3>
+
+Strengthen workflows that can be reused across projects, publications, and collaborations.
+:::
+::: {.about-audience-card}
+<div class="about-card-icon" aria-hidden="true">⚙️</div>
+<h3>Analysts and Professional Services</h3>
+
+Improve repeatable digital processes, reporting workflows, and operational data handling.
+:::
+:::
+:::
+
+::: {.about-two-col-panel}
+::: {.landing-section-heading}
+## Training Tiers
+
+Learners can move through the pathway in order or choose the course that matches the work in front of them.
+:::
+
+::: {.about-tier-track}
+::: {.about-tier}
+<div class="about-tier-number">01</div>
+<h3>Foundation</h3>
+
+Essential Digital Skills introduces the core tools, policies, and principles required for computational research.
+:::
+::: {.about-tier}
+<div class="about-tier-number">02</div>
+<h3>Extend</h3>
+
+Responsible AI and automation courses help learners apply practical guardrails to common research and business processes.
+:::
+::: {.about-tier}
+<div class="about-tier-number">03</div>
+<h3>Analyse</h3>
+
+Python and R courses support reproducible data analysis, modelling, reporting, and debugging.
+:::
+:::
+
+::: {.landing-centered-action}
+[Explore courses and modules](courses.qmd){.landing-button .landing-button-primary}
+:::
+:::
+:::
+
+::: {.landing-section .landing-split}
+::: {.landing-split-copy}
+## Delivery Model
+
+Sessions are primarily in person to support discussion, collaboration, and peer learning. Cohorts are cross-disciplinary where possible so learners can compare workflows across different research contexts.
+
+Assessment is formative. Learners receive feedback from instructors, peers, and the practical behaviour of the systems they build.
+:::
+::: {.landing-split-panel}
+### Materials Usually Include
+
+- Slides
+- Learner setup guides
+- Practical exercises
+- Example data or documents
+- Reference pages
+- Instructor notes
+:::
+:::
+
+::: {.landing-section .about-contact}
+::: {.landing-section-heading}
+## Contact
+
+For general enquiries, registration, or accessibility queries, contact the Digital Research Service.
+:::
+
+```{=html}
+<div class="about-contact-grid">
+  <a class="about-contact-card" href="mailto:digitalresearch@nottingham.ac.uk">
+    <span aria-hidden="true">✉️</span>
+    <strong>Digital Research Service</strong>
+    <em>digitalresearch@nottingham.ac.uk</em>
+  </a>
+  <a class="about-contact-card" href="mailto:tom.giles@nottingham.ac.uk">
+    <span aria-hidden="true">👤</span>
+    <strong>Programme Lead</strong>
+    <em>Dr Thomas Giles</em>
+  </a>
+</div>
+```
+:::
