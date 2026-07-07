@@ -40,9 +40,9 @@ Examples:
 
 For a SharePoint trigger, this usually means:
 
-- which site to watch;
-- which list or library to watch;
-- whether the flow should start when an item is created, modified, or both.
+- Which site to watch;
+- Which list or library to watch;
+- Whether the flow should start when an item is created, modified, or both.
 
 A common mistake is choosing the right connector but the wrong location. If a flow never starts, check the site, list, library, and permissions before rebuilding the whole flow.
 
@@ -54,10 +54,10 @@ A common mistake is choosing the right connector but the wrong location. If a fl
 
 Treat generated or suggested flows like a draft:
 
-- check the trigger matches the real process;
-- check every connector uses the right account;
-- check where records are written;
-- test with safe data before using real recipients or live records.
+- Check the trigger matches the real process;
+- Check every connector uses the right account;
+- Check where records are written;
+- Test with safe data before using real recipients or live records.
 
 ## Connectors in Plain English
 
@@ -87,10 +87,10 @@ Useful Microsoft references:
 
 For example:
 
-- a form trigger might provide `Responder email`;
-- an Excel row might provide `First Name`;
-- an approval action might provide `Outcome`;
-- an Outlook trigger might provide `Subject` and `From`.
+- A form trigger might provide `Responder email`;
+- An Excel row might provide `First Name`;
+- An approval action might provide `Outcome`;
+- An Outlook trigger might provide `Subject` and `From`.
 
 Dynamic content is powerful, but it can also be confusing. If you are not sure what a value contains, run the flow once and inspect the run history.
 
@@ -110,12 +110,12 @@ Use approvals when the next step depends on a human decision. Do not use them ju
 
 Include:
 
-- what is being requested;
-- who requested it;
-- the key dates or deadlines;
-- links to useful documents or records;
-- what approve and reject mean;
-- where comments or reasons will be recorded.
+- What is being requested;
+- Who requested it;
+- The key dates or deadlines;
+- Links to useful documents or records;
+- What approve and reject mean;
+- Where comments or reasons will be recorded.
 
 ## Branching After an Approval
 
@@ -125,9 +125,9 @@ Include:
 
 Typical pattern:
 
-- if approved, update the record and send a confirmation;
-- if rejected, update the record and tell the requester what happened;
-- if the approval times out, escalate or mark it for manual follow-up.
+- If approved, update the record and send a confirmation;
+- If rejected, update the record and tell the requester what happened;
+- If the approval times out, escalate or mark it for manual follow-up.
 
 Rejection is not a technical error. It is a valid business outcome.
 
@@ -139,11 +139,11 @@ Rejection is not a technical error. It is a valid business outcome.
 
 For important flows, think about where the official decision record should live:
 
-- approval history;
-- an Excel tracker;
-- a SharePoint list;
-- a Dataverse table;
-- a case management system.
+- Approval history;
+- An Excel tracker;
+- A SharePoint list;
+- A Dataverse table;
+- A case management system.
 
 ## Updating an Item or Record
 
@@ -153,11 +153,11 @@ For important flows, think about where the official decision record should live:
 
 This is what turns a notification flow into a process flow. A useful automation should usually leave a record behind:
 
-- status changed from `Ready` to `Sent`;
-- approval outcome recorded as `Approved` or `Rejected`;
-- sent date written into `SentAt`;
-- owner or reviewer assigned;
-- comments stored somewhere findable.
+- Status changed from `Ready` to `Sent`;
+- Approval outcome recorded as `Approved` or `Rejected`;
+- Sent date written into `SentAt`;
+- Owner or reviewer assigned;
+- Comments stored somewhere findable.
 
 ## Run History
 
@@ -167,12 +167,12 @@ This is what turns a notification flow into a process flow. A useful automation 
 
 Use run history to check:
 
-- whether the flow started;
-- which step failed;
-- what data each step received;
-- what each step returned;
-- whether the wrong branch was followed;
-- whether a connector account had permission.
+- Whether the flow started;
+- Which step failed;
+- What data each step received;
+- What each step returned;
+- Whether the wrong branch was followed;
+- Whether a connector account had permission.
 
 Do not debug by guessing. Run history shows the evidence.
 
