@@ -14,11 +14,11 @@ This course introduces practical automation for everyday business and research s
 
 By the end of the course learners should be able to:
 
-- identify business processes that are suitable for automation;
-- choose appropriate automation triggers and connectors;
-- build flows that use conditions, expressions, approvals, files, and tabular data;
-- explain common risks in automated workflows, including permissions, data protection, and failure handling;
-- document an automation clearly enough that another colleague can run or maintain it.
+- Identify business processes that are suitable for automation;
+- Choose appropriate automation triggers and connectors;
+- Build flows that use conditions, expressions, approvals, files, and tabular data;
+- Explain common risks in automated workflows, including permissions, data protection, and failure handling;
+- Document an automation clearly enough that another colleague can run or maintain it.
 
 ## Audience
 

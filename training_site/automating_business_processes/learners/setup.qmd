@@ -29,7 +29,7 @@ Use these files for the Excel and Word template activity:
 Save both files somewhere Power Automate can access, usually:
 
 - OneDrive for Business; or
-- a SharePoint document library.
+- A SharePoint document library.
 
 Do not leave the files only in your local Downloads folder. Power Automate needs the cloud location.
 
@@ -84,11 +84,11 @@ Keep both files in the same working area for the session. This makes them easier
 
 Before running any email workflow:
 
-- replace example email addresses with your own email address;
-- keep the number of test rows small;
-- add an obvious test subject line;
-- send only to yourself or a safe test mailbox;
-- inspect run history before increasing the number of rows.
+- Replace example email addresses with your own email address;
+- Keep the number of test rows small;
+- Add an obvious test subject line;
+- Send only to yourself or a safe test mailbox;
+- Inspect run history before increasing the number of rows.
 
 Do not use real mailing lists, live participant data, or external recipients during the workshop.
 

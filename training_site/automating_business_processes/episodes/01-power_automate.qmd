@@ -48,11 +48,11 @@ Power Automate is Microsoft’s workflow automation tool for connecting apps, da
 
 **For example, a flow might:**
 
-- capture a request from a form;
-- add the request to a tracker;
-- ask someone to approve it;
-- send an email or Teams message;
-- update a record when the work is complete.
+- Capture a request from a form;
+- Add the request to a tracker;
+- Ask someone to approve it;
+- Send an email or Teams message;
+- Update a record when the work is complete.
 
 > 💬 Think of Power Automate as a way to turn a repeatable administrative process into a visible, testable workflow.
 
@@ -170,10 +170,10 @@ The trigger controls the first assumptions the flow makes.
 
 Your run should show:
 
-- a successful trigger step;
-- the values entered in the test panel;
-- one successful compose step;
-- a readable request summary in the compose output.
+- A successful trigger step;
+- The values entered in the test panel;
+- One successful compose step;
+- A readable request summary in the compose output.
 
 :::
 
@@ -187,10 +187,10 @@ A connector is the integration between Power Automate and another service.
 
 **Connectors provide:**
 
-- triggers, which start flows;
-- actions, which do work after the flow has started;
-- authentication, which controls what the flow is allowed to access;
-- dynamic content, which exposes values from one step to later steps.
+- Triggers, which start flows;
+- Actions, which do work after the flow has started;
+- Authentication, which controls what the flow is allowed to access;
+- Dynamic content, which exposes values from one step to later steps.
 
 > 📬 For example, the Outlook connector can trigger a flow when an email arrives and can also send an email later in the same flow.
 
@@ -222,11 +222,11 @@ Each connector action uses a connection. A connection is the signed-in identity 
 
 **This matters because:**
 
-- a flow may stop working when the owner's password changes;
-- a flow may lose access when the owner leaves;
-- a personal mailbox connection may send messages from the wrong person;
-- a shared mailbox may be more appropriate than a personal mailbox;
-- a team-owned SharePoint site may be more maintainable than a personal OneDrive folder.
+- A flow may stop working when the owner's password changes;
+- A flow may lose access when the owner leaves;
+- A personal mailbox connection may send messages from the wrong person;
+- A shared mailbox may be more appropriate than a personal mailbox;
+- A team-owned SharePoint site may be more maintainable than a personal OneDrive folder.
 
 > 🧩 For any flow that matters, document who owns it, which connections it uses, and where its official records are stored.
 
@@ -236,10 +236,10 @@ For important workflows, avoid relying on one person's account where possible.
 
 **Better options may include:**
 
-- a shared mailbox for team email;
-- a team-owned SharePoint site for files and lists;
-- a dedicated service account where your organisation allows it;
-- a named flow owner group rather than one individual.
+- A shared mailbox for team email;
+- A team-owned SharePoint site for files and lists;
+- A dedicated service account where your organisation allows it;
+- A named flow owner group rather than one individual.
 
 > 🔐 Service accounts need governance. They should have only the access the flow needs, an owner, a support route, and a documented password or credential process.
 
@@ -311,10 +311,10 @@ The whole point of Power Automate is that it is a low-code or no-code solution t
 
 To keep expressions maintainable, users should:
 
-- use a separate compose action for each important transformation;
-- rename compose actions after what they produce;
-- avoid nesting too many functions in one expression;
-- add a short note in the action name if the logic is not obvious.
+- Use a separate compose action for each important transformation;
+- Rename compose actions after what they produce;
+- Avoid nesting too many functions in one expression;
+- Add a short note in the action name if the logic is not obvious.
 
 > 🏷️ For example, `Compose normalise request type` is clearer than `Compose 2`.
 
@@ -324,10 +324,10 @@ User input is often incomplete. A flow should not assume that every value exists
 
 **Common defensive patterns include:**
 
-- using required fields in the trigger or form where possible;
-- using `coalesce()` to provide safe fallback text;
-- using a condition to stop or redirect incomplete requests;
-- sending a correction email rather than continuing with bad data and writing failures to the run history.
+- Using required fields in the trigger or form where possible;
+- Using `coalesce()` to provide safe fallback text;
+- Using a condition to stop or redirect incomplete requests;
+- Sending a correction email rather than continuing with bad data and writing failures to the run history.
 
 > 💬 Validation is part of automation. A flow that quietly sends bad data faster is not an improvement over a manual process. 
 
@@ -337,17 +337,17 @@ Branching means sending a flow down different paths depending on a test. In Powe
 
 **Some common examples include:**
 
-- if request type contains `urgent`;
-- if amount is greater than a threshold;
-- if requester email ends with an institutional domain;
-- if approval outcome equals `Approve`;
-- if a list of rows has length greater than zero.
+- If request type contains `urgent`;
+- If amount is greater than a threshold;
+- If requester email ends with an institutional domain;
+- If approval outcome equals `Approve`;
+- If a list of rows has length greater than zero.
 
 > 🧭 Conditions should be readable. If the condition is hard to read, create a compose action immediately before it and test the compose output.
 
 ## Branching Example
 
-The below process treats urgent request independent from other request. 
+The process below treats urgent requests differently from standard requests.
 
 ![A condition tests a value and sends the run down the matching branch.](fig/condition-branch.svg){fig-align="center" width="88%"}
 
@@ -367,7 +367,7 @@ The below process treats urgent request independent from other request.
 
 1. Open the flow from Task 2.
 2. Add a **Compose** action called `Formatted requested date` and use `formatDateTime()` on the requested-by date.
-3. Add a **Condition** using `contains()` so if the request text containing `urgent` the response is true. 
+3. Add a **Condition** using `contains()` so the response is true when the request text contains `urgent`.
 4. In each branch, add a compose action returning either `Urgent` or `Standard`.
 5. Test the flow twice: once with an urgent request and once with a standard request.
 
@@ -376,7 +376,7 @@ The below process treats urgent request independent from other request.
 Use run history to confirm:
 
 - `Formatted requested date` produces a readable date;
-- urgent and standard requests follow different branches.
+- Urgent and standard requests follow different branches.
 
 :::
 
@@ -440,11 +440,11 @@ The approval result should drive the next step.
 
 **A good rejection branch should:**
 
-- tell the requester what happened;
-- include comments or next steps where appropriate;
-- update the tracker;
-- avoid sending confusing success messages;
-- make it easy for the requester to resubmit if allowed.
+- Tell the requester what happened;
+- Include comments or next steps where appropriate;
+- Update the tracker;
+- Avoid sending confusing success messages;
+- Make it easy for the requester to resubmit if allowed.
 
 > 🚫 Do not treat rejection as failure. A rejected request is a successful flow outcome.
 
@@ -472,11 +472,11 @@ The approval result should drive the next step.
 
 Use run history to confirm:
 
-- the flow paused at the approval step;
-- the approval went to the expected person;
-- the approval outcome was captured;
-- the correct branch ran;
-- approver comments were available for later steps.
+- The flow paused at the approval step;
+- The approval went to the expected person;
+- The approval outcome was captured;
+- The correct branch ran;
+- Approver comments were available for later steps.
 
 :::
 :::
@@ -487,11 +487,11 @@ Use run history to confirm:
 
 Many business processes start as a spreadsheet. Power Automate can turn each row into an action:
 
-- read a request from a table;
-- check whether it is ready;
-- create a document or message;
-- send a personalised email;
-- update the row so it is not processed twice.
+- Read a request from a table;
+- Check whether it is ready;
+- Create a document or message;
+- Send a personalised email;
+- Update the row so it is not processed twice.
 
 > 🧱 The key is structure. The workbook must behave like a small data source, not like a visual report.
 
@@ -554,12 +554,12 @@ The **List rows present in a table** action reads rows from an Excel table.
 
 Important details:
 
-- choose the correct location;
-- choose the correct document library;
-- select the exact workbook;
-- select the named table;
-- use filters carefully;
-- remember that each row can be processed in an **Apply to each** loop.
+- Choose the correct location;
+- Choose the correct document library;
+- Select the exact workbook;
+- Select the named table;
+- Use filters carefully;
+- Remember that each row can be processed in an **Apply to each** loop.
 
 > 🔎 If the table does not appear, check that the workbook is saved in the right place and the range is actually formatted as a table.
 
@@ -633,7 +633,7 @@ Use the provided examples for Task 5, or create your own files with the same str
 
 ##### Hints
 
-- There is also an email column in the xls
+- There is also an email column in the Excel workbook.
 - You could use that to dynamically set who the message is being sent to! 
 
 :::
@@ -654,15 +654,15 @@ The final flow brings the main patterns together.
 
 In this module you built and inspected small Power Automate flows that:
 
-- started from a manual trigger;
-- passed request details between steps;
-- used connectors to send notifications;
-- used expressions to clean and format values;
-- routed work through conditions;
-- paused for an approval decision;
-- read rows from an Excel table;
-- sent personalised test emails;
-- updated a tracker after sending.
+- Started from a manual trigger;
+- Passed request details between steps;
+- Used connectors to send notifications;
+- Used expressions to clean and format values;
+- Routed work through conditions;
+- Paused for an approval decision;
+- Read rows from an Excel table;
+- Sent personalised test emails;
+- Updated a tracker after sending.
 
 > 🧠 The technical steps matter, but the design choices matter more. A useful automation has a clear trigger, appropriate connectors, maintainable logic, a durable record, and an owner.
 
