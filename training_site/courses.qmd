@@ -1,0 +1,225 @@
+---
+title: "Courses"
+breadcrumb: false
+page-class: landing-page
+
+format:
+  html:
+    theme:
+      - default
+      - ./uon.scss
+    toc: false
+    number-sections: false
+    page-layout: full
+    sidebar: false
+---
+
+```{=html}
+<style>
+#title-block-header { display: none; }
+main#quarto-document-content { margin-top: 0; }
+.cell-code.hidden,
+.cell-code.hidden + .code-copy-button,
+.code-copy-outer-scaffold:has(.cell-code.hidden) {
+  display: none !important;
+}
+</style>
+```
+
+::: {.landing-hero .landing-hero-compact}
+::: {.landing-energy-field aria-hidden="true"}
+::: {.landing-energy-line .line-one}
+:::
+::: {.landing-energy-line .line-two}
+:::
+::: {.landing-energy-line .line-three}
+:::
+:::
+::: {.landing-hero-content}
+::: {.landing-eyebrow .landing-eyebrow-branded}
+[Developed By The University of Nottingham Digital Research Service](https://digitalresearch.nottingham.ac.uk/)
+:::
+
+# Courses and Modules
+
+Use the module finder or course list to locate the right sessions for you.
+:::
+:::
+
+{{< include _includes/landing-site-data.html >}}
+
+::: {#module-finder .landing-section .landing-course-browser}
+::: {.panel-tabset .landing-course-tabset}
+
+### Module Finder
+
+Use the filters to find modules by course, training area, level, or keyword.
+
+```{=html}
+<div class="landing-filter-panel" data-module-filter>
+  <label>
+    <span>Keyword</span>
+    <input id="module-search-filter" class="landing-filter-search" type="search" placeholder="Search modules">
+  </label>
+  <label>
+    <span>Training area</span>
+    <select id="module-area-filter">
+      <option value="All">All</option>
+    </select>
+  </label>
+  <label>
+    <span>Course</span>
+    <select id="module-course-filter">
+      <option value="All">All</option>
+    </select>
+  </label>
+  <label>
+    <span>Level</span>
+    <select id="module-level-filter">
+      <option value="All">All</option>
+    </select>
+  </label>
+  <div class="landing-filter-count" aria-live="polite">
+    <strong id="module-match-count">0</strong>
+    matching modules
+  </div>
+</div>
+
+<div class="landing-course-grid" id="landing-module-grid"></div>
+```
+
+### Courses
+
+The pathway is flexible. Learners can start with core digital practice, then move into responsible AI, automation, or code-based data science.
+
+```{=html}
+<div id="landing-course-list" class="landing-course-list" aria-label="Course list"></div>
+```
+:::
+:::
+
+```{=html}
+<script>
+(() => {
+  const escapeHtml = (value) => String(value ?? "").replace(/[&<>"']/g, (char) => ({
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;"
+  }[char]));
+
+  const uniqueValues = (items, key) => Array.from(
+    new Set(items.map((item) => item[key]).filter(Boolean))
+  ).sort((a, b) => a.localeCompare(b));
+
+  const setOptions = (select, values) => {
+    if (!select) return;
+    select.innerHTML = `<option value="All">All</option>${values.map((value) =>
+      `<option value="${escapeHtml(value)}">${escapeHtml(value)}</option>`
+    ).join("")}`;
+  };
+
+  const initModuleFinder = () => {
+    const dataElement = document.getElementById("landing-site-data");
+    const grid = document.getElementById("landing-module-grid");
+    const courseList = document.getElementById("landing-course-list");
+    const area = document.getElementById("module-area-filter");
+    const course = document.getElementById("module-course-filter");
+    const level = document.getElementById("module-level-filter");
+    const search = document.getElementById("module-search-filter");
+    const count = document.getElementById("module-match-count");
+
+    if (!dataElement || !grid || !area || !course || !level || !search || !count) return;
+
+    let siteData = {courses: [], modules: []};
+    try {
+      siteData = JSON.parse(dataElement.textContent);
+    } catch {
+      return;
+    }
+
+    const courses = siteData.courses || [];
+    const modules = siteData.modules || [];
+
+    setOptions(area, uniqueValues(modules, "area"));
+    setOptions(course, uniqueValues(modules, "course"));
+    setOptions(level, uniqueValues(modules, "level"));
+
+    grid.innerHTML = modules.map((module, index) => `
+      <a class="landing-course-card landing-module-card" href="${escapeHtml(module.href)}"
+        data-area="${escapeHtml(module.area)}"
+        data-level="${escapeHtml(module.level)}"
+        data-course="${escapeHtml(module.course)}"
+        data-search="${escapeHtml(`${module.title} ${module.course} ${module.area} ${module.level}`.toLowerCase())}"
+        style="--card-delay:${Math.min(index * 35, 280)}ms">
+        <span class="landing-card-badge">${escapeHtml(module.course)}</span>
+        <span class="landing-card-status">${module.number ? `Module ${escapeHtml(module.number)}` : "Module"}</span>
+        <h3>${escapeHtml(module.title)}</h3>
+        <p>${escapeHtml(module.course)}</p>
+        <span class="landing-card-meta">${escapeHtml(module.area)} · ${escapeHtml(module.level)}</span>
+      </a>
+    `).join("");
+
+    if (courseList) {
+      courseList.innerHTML = courses.map((courseItem, courseIndex) => {
+        const glanceItems = courseItem.glance || [];
+        return `
+          <article class="landing-course-overview-card" data-area="${escapeHtml(courseItem.area)}" style="--card-delay:${Math.min(courseIndex * 60, 240)}ms">
+            <div class="landing-course-overview-copy">
+              <span class="landing-module-area-kicker">${escapeHtml(courseItem.area)} · ${escapeHtml(courseItem.level)}</span>
+              <h3>${escapeHtml(courseItem.title)}</h3>
+              <p>${escapeHtml(courseItem.intro || courseItem.summary || courseItem.subtitle)}</p>
+            </div>
+            <ul class="landing-course-glance-list">
+              ${glanceItems.slice(0, 4).map((item) => `
+                <li>${escapeHtml(item)}</li>
+              `).join("")}
+            </ul>
+            <a class="landing-card-meta landing-course-overview-link" href="${escapeHtml(courseItem.href)}">View course overview</a>
+          </article>
+        `;
+      }).join("");
+    }
+
+    const cards = Array.from(grid.querySelectorAll(".landing-module-card"));
+
+    const filterCards = () => {
+      const searchTerm = search.value.trim().toLowerCase();
+      let visible = 0;
+      cards.forEach((card, index) => {
+        const areaMatch = area.value === "All" || card.dataset.area === area.value;
+        const courseMatch = course.value === "All" || card.dataset.course === course.value;
+        const levelMatch = level.value === "All" || card.dataset.level === level.value;
+        const searchMatch = searchTerm === "" || card.dataset.search.includes(searchTerm);
+        const show = areaMatch && courseMatch && levelMatch && searchMatch;
+        card.hidden = !show;
+        card.style.setProperty("--card-delay", `${Math.min(index * 60, 240)}ms`);
+        if (show) visible += 1;
+      });
+      count.textContent = visible;
+    };
+
+    cards.forEach((card) => {
+      card.addEventListener("pointermove", (event) => {
+        const rect = card.getBoundingClientRect();
+        card.style.setProperty("--mx", `${event.clientX - rect.left}px`);
+        card.style.setProperty("--my", `${event.clientY - rect.top}px`);
+      });
+    });
+
+    area.addEventListener("change", filterCards);
+    course.addEventListener("change", filterCards);
+    level.addEventListener("change", filterCards);
+    search.addEventListener("input", filterCards);
+    filterCards();
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initModuleFinder);
+  } else {
+    initModuleFinder();
+  }
+})();
+</script>
+```

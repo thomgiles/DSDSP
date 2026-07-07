@@ -1,6 +1,8 @@
 project:
   type: website
   output-dir: _site
+  pre-render:
+    - scripts/build_landing_data.py
   render:
     - "!_extensions/**"
     - "!.quarto/**"
@@ -9,6 +11,8 @@ project:
     - "!_site/**"
     - "!renv/**"
     - index.qmd
+    - about.qmd
+    - courses.qmd
     - applied_R/**/*.qmd
     - applied_python/**/*.qmd
     - automating_business_processes/**/*.qmd
@@ -52,9 +56,9 @@ website:
       United Kingdom
     center: |
       <h3>Quick links</h3>
-      [Submit an enquiry](#)  
+      [Submit an enquiry](mailto:digitalresearch@nottingham.ac.uk)  
       [Capabilities](#)  
-      [About us](#)  
+      [About us](about.qmd)  
       [Jobs](#)  
       [Privacy policy](#)
       
@@ -71,16 +75,10 @@ website:
     left:
       - text: "Home"
         href: index.qmd
-      - text: "Essential Digital Skills"
-        href: essential_digital_skills/index.qmd
-      - text: "Responsible Use of Generative AI"
-        href: responsible_use_of_generative_ai/index.qmd
-      - text: "Applied Data Science (Python)"
-        href: applied_python/index.qmd
-      - text: "Applied Data Science (R)"
-        href: applied_R/index.qmd
-      - text: "Automating Business Processes"
-        href: automating_business_processes/index.qmd
+      - text: "About"
+        href: about.qmd
+      - text: "Courses"
+        href: courses.qmd
 
   sidebar:
     - id: "essential-digital-skills"
