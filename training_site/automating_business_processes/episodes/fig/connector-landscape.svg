@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="600" viewBox="0 65 1200 600" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="420" viewBox="0 80 1200 420" role="img" aria-labelledby="title desc">
   <title id="title">Power Automate connector landscape</title>
   <desc id="desc">Power Automate connects to Microsoft 365, data stores, documents, communication tools, business apps, and custom APIs.</desc>
   <defs>
@@ -6,53 +6,51 @@
       <path d="M2,2 L10,6 L2,10 Z" fill="#405162"/>
     </marker>
   </defs>
-  <rect y="65" width="1200" height="600" rx="28" fill="#f7fbfc"/>
-  <g transform="translate(0 60)">
-  <circle cx="600" cy="300" r="118" fill="#10263b"/>
-  <text x="600" y="284" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#ffffff">Power</text>
-  <text x="600" y="322" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" font-weight="700" fill="#ffffff">Automate</text>
-  <text x="600" y="360" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" fill="#d7eef3">trigger + actions</text>
+  <rect y="80" width="1200" height="420" rx="28" fill="#f7fbfc"/>
+  <circle cx="600" cy="285" r="92" fill="#10263b"/>
+  <text x="600" y="273" text-anchor="middle" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#ffffff">Power</text>
+  <text x="600" y="306" text-anchor="middle" font-family="Arial, sans-serif" font-size="25" font-weight="700" fill="#ffffff">Automate</text>
+  <text x="600" y="337" text-anchor="middle" font-family="Arial, sans-serif" font-size="15" fill="#d7eef3">trigger + actions</text>
 
   <g stroke="#405162" stroke-width="4" marker-end="url(#arrow)" fill="none">
-    <path d="M514 220 L322 130"/>
-    <path d="M596 178 L596 90"/>
-    <path d="M686 220 L884 130"/>
-    <path d="M484 344 L300 470"/>
-    <path d="M600 422 L600 530"/>
-    <path d="M716 344 L900 470"/>
+    <path d="M525 235 L356 170"/>
+    <path d="M600 193 L600 155"/>
+    <path d="M675 235 L844 170"/>
+    <path d="M525 335 L356 400"/>
+    <path d="M600 377 L600 415"/>
+    <path d="M675 335 L844 400"/>
   </g>
 
   <g font-family="Arial, sans-serif" text-anchor="middle">
     <g>
-      <rect x="165" y="70" width="260" height="96" rx="18" fill="#006781"/>
-      <text x="295" y="106" font-size="21" font-weight="700" fill="#ffffff">Microsoft 365</text>
-      <text x="295" y="136" font-size="15" fill="#ffffff">Outlook, Teams, SharePoint</text>
+      <rect x="165" y="110" width="260" height="82" rx="18" fill="#006781"/>
+      <text x="295" y="142" font-size="21" font-weight="700" fill="#ffffff">Microsoft 365</text>
+      <text x="295" y="169" font-size="15" fill="#ffffff">Outlook, Teams, SharePoint</text>
     </g>
     <g>
-      <rect x="470" y="34" width="260" height="96" rx="18" fill="#298582"/>
-      <text x="600" y="70" font-size="21" font-weight="700" fill="#ffffff">Data</text>
-      <text x="600" y="100" font-size="15" fill="#ffffff">Excel, Lists, Dataverse, SQL</text>
+      <rect x="470" y="100" width="260" height="82" rx="18" fill="#298582"/>
+      <text x="600" y="132" font-size="21" font-weight="700" fill="#ffffff">Data</text>
+      <text x="600" y="159" font-size="15" fill="#ffffff">Excel, Lists, Dataverse, SQL</text>
     </g>
     <g>
-      <rect x="775" y="70" width="260" height="96" rx="18" fill="#009bc1"/>
-      <text x="905" y="106" font-size="21" font-weight="700" fill="#ffffff">Documents</text>
-      <text x="905" y="136" font-size="15" fill="#ffffff">Word, OneDrive, PDF</text>
+      <rect x="775" y="110" width="260" height="82" rx="18" fill="#009bc1"/>
+      <text x="905" y="142" font-size="21" font-weight="700" fill="#ffffff">Documents</text>
+      <text x="905" y="169" font-size="15" fill="#ffffff">Word, OneDrive, PDF</text>
     </g>
     <g>
-      <rect x="165" y="438" width="260" height="96" rx="18" fill="#405162"/>
-      <text x="295" y="474" font-size="21" font-weight="700" fill="#ffffff">Communication</text>
-      <text x="295" y="504" font-size="15" fill="#ffffff">Email, Teams, notifications</text>
+      <rect x="165" y="378" width="260" height="82" rx="18" fill="#405162"/>
+      <text x="295" y="410" font-size="21" font-weight="700" fill="#ffffff">Communication</text>
+      <text x="295" y="437" font-size="15" fill="#ffffff">Email, Teams, notifications</text>
     </g>
     <g>
-      <rect x="470" y="490" width="260" height="96" rx="18" fill="#006781"/>
-      <text x="600" y="526" font-size="21" font-weight="700" fill="#ffffff">Business Apps</text>
-      <text x="600" y="556" font-size="15" fill="#ffffff">Planner, Dynamics, Jira</text>
+      <rect x="470" y="390" width="260" height="82" rx="18" fill="#006781"/>
+      <text x="600" y="422" font-size="21" font-weight="700" fill="#ffffff">Business Apps</text>
+      <text x="600" y="449" font-size="15" fill="#ffffff">Planner, Dynamics, Jira</text>
     </g>
     <g>
-      <rect x="775" y="438" width="260" height="96" rx="18" fill="#298582"/>
-      <text x="905" y="474" font-size="21" font-weight="700" fill="#ffffff">Custom/API</text>
-      <text x="905" y="504" font-size="15" fill="#ffffff">HTTP, webhooks, custom connectors</text>
+      <rect x="775" y="378" width="260" height="82" rx="18" fill="#298582"/>
+      <text x="905" y="410" font-size="21" font-weight="700" fill="#ffffff">Custom/API</text>
+      <text x="905" y="437" font-size="15" fill="#ffffff">HTTP, webhooks, custom connectors</text>
     </g>
-  </g>
   </g>
 </svg>
