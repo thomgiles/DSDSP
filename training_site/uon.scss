@@ -276,6 +276,15 @@ h5 { font-size: 1.15rem; font-weight: 500; color: $white; }
   margin: 0 auto 1rem;
 }
 
+p.caption {
+    background: $teal;
+    padding: 10px;
+    color: white;
+    border-radius: 20px;
+    margin-right: 50px;
+    margin-left: 50px;
+}
+
 /* ===========================
    TABS
    =========================== */
@@ -391,6 +400,8 @@ h5 { font-size: 1.15rem; font-weight: 500; color: $white; }
     padding: 5px;
     background-color: #10263b;
 }
+
+
 
 
 

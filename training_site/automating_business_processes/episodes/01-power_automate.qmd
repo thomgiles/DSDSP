@@ -60,15 +60,19 @@ For example, a flow might:
 
 ## Where Power Automate Fits
 
-![Power Automate sits inside the Microsoft Power Platform alongside Power Apps, Power BI, and Power Pages.](fig/power-platform-overview.svg){fig-align="center" width="88%"}
+Power Automate is one part of the wider Power Platform.
 
-> 🧩 Power Automate is one part of the Microsoft Power Platform.
+![Power Automate handles workflow automation; the other tools focus on apps, reporting, and websites.](fig/power-platform-overview.svg){fig-align="center" width="88%"}
+
+> 🧩 The key distinction is that Power Automate moves work between systems.
 
 ## Main Parts of a Flow
 
-![A flow moves from trigger, to actions, to decision, to record, to notification.](fig/flow-anatomy.svg){fig-align="center" width="88%"}
+Most flows follow the same basic shape.
 
-> 🔁 A flow moves from trigger, to actions, to decision, to record, to notification.
+![A flow starts with a trigger, performs actions, may branch, and usually records or communicates an outcome.](fig/flow-anatomy.svg){fig-align="center" width="88%"}
+
+> 🔁 When debugging, inspect the flow in this order: trigger, data, decision, output.
 
 ## Decide Whether Automation Fits
 
@@ -103,22 +107,24 @@ Power Automate is a workflow automation tool. It is useful when a process has a 
 
 ## Should I automate it!
 
-> 💬 A useful first question is not "can this be automated?" but "what decision, record, or communication should happen every time this event occurs?"
+A useful first question is not "can this be automated?" but "what decision, record, or communication should happen every time this event occurs?"
 
 Before building, test the idea against four questions:
 
 1. What event starts the work?
 2. Is the input data structured enough to trust?
-3. Whenhere will the outcome be written?
+3. Where will the outcome be written?
 4. Who fixes it when it fails?
 
-If one of those answers is unclear, do a smaller manual or semi-automated version first.
+> 💬 If one of those answers is unclear, do a smaller manual or semi-automated version first.
 
 ## Understand Triggers
 
-![A trigger controls when the flow runs, what data is available, which connection is used, how often it can run, and what might fail.](fig/trigger-anatomy.svg){fig-align="center" width="88%"}
+The trigger controls the first assumptions the flow makes.
 
-> 🚦 A trigger decides how the flow starts.
+![Different trigger choices affect timing, available data, permissions, and failure points.](fig/trigger-anatomy.svg){fig-align="center" width="88%"}
+
+> 🚦 Choose the trigger that matches the real-world start of the process.
 
 ## Types of Triggers
 
@@ -129,7 +135,7 @@ If one of those answers is unclear, do a smaller manual or semi-automated versio
 | Event-based | When a file / form response is created | A system event should start the work |
 | Email-based | When a new email arrives | Requests arrive in a mailbox |
 
-The safest first build is usually manual. Once the logic works, you can replace the trigger with a form, email, SharePoint, or scheduled trigger.
+> 🧪 The safest first build is usually manual. Once the logic works, you can replace the trigger with a form, email, SharePoint, or scheduled trigger.
 
 ## Questions Before Choosing a Trigger
 
@@ -190,13 +196,15 @@ Connectors provide:
 - authentication, which controls what the flow is allowed to access;
 - dynamic content, which exposes values from one step to later steps.
 
-For example, the Outlook connector can trigger a flow when an email arrives and can also send an email later in the same flow.
+> 📬 For example, the Outlook connector can trigger a flow when an email arrives and can also send an email later in the same flow.
 
 ## What Power Automate Can Connect To
 
-![Power Automate can connect to Microsoft 365, data stores, documents, communication tools, business apps, and APIs.](fig/connector-landscape.svg){fig-align="center" width="88%"}
+Connectors are what let a flow work across services.
 
-> 🔌 Connector types determine which systems the flow can read from and write to.
+![Common connector groups include Microsoft 365, data stores, documents, communication tools, apps, and APIs.](fig/connector-landscape.svg){fig-align="center" width="88%"}
+
+> 🔌 A connector is useful only if the connection has the right permissions.
 
 ## Types of Connectors
 
@@ -208,10 +216,9 @@ Power Automate can handle many connector types.
 | Data | Excel Online, SharePoint lists, Dataverse, SQL Server | Reading and writing structured records |
 | Documents | Word Online, OneDrive, SharePoint, PDF services | Creating, moving, and converting files |
 | Communication | Outlook, Teams, notifications | Sending messages and alerts |
-| AI and content | AI Builder, text analysis, document processing | Extracting or transforming content |
-| And a lot more! | HTTP, custom connectors, webhooks, external services |
+| AI and a lot more! | AI Builder, text analysis, document processing, external services | Extracting or transforming and disseminating content |
 
-> Tenant policy and licensing can affect availability. Premium connectors may not be available to all learners.
+> 💳 Licensing can affect availability. Premium connectors may not be available to everyone.
 
 ## Connector Permissions
 
@@ -238,7 +245,7 @@ Better options may include:
 - a dedicated service account where your organisation allows it;
 - a named flow owner group rather than one individual.
 
-Service accounts need governance. They should have only the access the flow needs, an owner, a support route, and a documented password or credential process.
+> 🔐 Service accounts need governance. They should have only the access the flow needs, an owner, a support route, and a documented password or credential process.
 
 ---
 
@@ -277,9 +284,9 @@ Expressions are small formulas inside Power Automate.
 
 They are used when dynamic content needs to be changed before the next step uses it.
 
-![](fig/expression-pipeline.svg){fig-align="center" width="88%"}
+![Expressions can clean text, format dates, combine values, and prepare data for the next action.](fig/expression-pipeline.svg){fig-align="center" width="88%"}
 
-> 🧮 Expressions shape values between steps.
+> 🧮 Use expressions when dynamic content is close, but not quite in the shape you need.
 
 ## Text and Date Functions
 
@@ -290,6 +297,7 @@ They are used when dynamic content needs to be changed before the next step uses
 | `toLower()` | Standardise text | `toLower(triggerBody()?['text'])` |
 | `replace()` | Replace text | `replace(value, '/', '-')` |
 | `split()` | Split text into parts | `split(value, ';')` |
+> 🧹 Text and date functions are usually used to make messy input consistent before the next step uses it.
 
 ## Logic and List Functions
 
@@ -300,6 +308,8 @@ They are used when dynamic content needs to be changed before the next step uses
 | `equals()` | Compare values | `equals(toLower(value), 'urgent')` |
 | `contains()` | Check whether text includes a value | `contains(toLower(value), 'urgent')` |
 | `length()` | Count characters or items | `length(outputs('List_rows')?['body/value'])` |
+
+> 🔎 Logic and list functions help the flow choose a path, check for missing data, or count what came back from a connector.
 
 ## Keep Expressions Readable
 
@@ -312,7 +322,7 @@ Keeping expressions maintainable:
 - inspect outputs in run history;
 - add a short note in the action name if the logic is not obvious.
 
-> For example, `Compose nomalise request type` is clearer than `Compose 2`.
+> 🏷️ For example, `Compose normalise request type` is clearer than `Compose 2`.
 
 ## Handle Missing Values
 
@@ -340,7 +350,7 @@ Typical conditions include:
 - if approval outcome equals `Approve`;
 - if a list of rows has length greater than zero.
 
-Conditions should be readable. If the condition is hard to read, create a compose action immediately before it and test the compose output.
+> 🧭 Conditions should be readable. If the condition is hard to read, create a compose action immediately before it and test the compose output.
 
 ## Branching
 
@@ -354,13 +364,15 @@ For example:
 - incomplete requests can stop and ask for correction;
 - approved and rejected requests can send different messages.
 
-> Each branch should have a clear purpose and a clear end point.
+> 🛤️ Each branch should have a clear purpose and a clear end point.
 
 ## Branching with Conditions
 
-![A condition checks a normalised value and routes work down urgent or standard paths.](fig/condition-branch.svg){fig-align="center" width="88%"}
+Conditions let the flow choose between routes.
 
-> 🔀 Conditions route work down different paths.
+![A condition tests a value and sends the run down the matching branch.](fig/condition-branch.svg){fig-align="center" width="88%"}
+
+> 🔀 Keep condition tests readable so the run history explains the decision.
 
 ---
 
@@ -395,9 +407,11 @@ Use run history to confirm:
 
 ## What Approvals Do
 
-![An approval pauses the flow, sends an approval card, waits for approve or reject, and then continues down the matching path.](fig/approval-overview.svg){fig-align="center" width="88%"}
+Approvals add a deliberate human pause.
 
-> ✅ An approval pauses the flow for a human decision.
+![The flow sends a request, waits for a decision, and then continues using the response.](fig/approval-overview.svg){fig-align="center" width="88%"}
+
+> ✅ Use approvals when judgement or accountability matters.
 
 ## When to Use Approvals
 
@@ -412,8 +426,6 @@ Approval flows can support:
 
 ## Choose an Approval Type
 
-Common approval patterns include:
-
 | Pattern | Meaning | Use when |
 |---|---|---|
 | Approve/Reject - First to respond | Any one approver can decide | A named role handles the queue |
@@ -422,7 +434,7 @@ Common approval patterns include:
 | Create approval only | Approval is created but not awaited | Another flow or process manages waiting |
 | Start and wait | The flow pauses until a response | The next step depends on the decision |
 
-In this session we will use **Start and wait for an approval** because the flow needs to branch after the decision.
+> ⏸️ In this session we will use **Start and wait for an approval** because the flow needs to branch after the decision.
 
 ## Give Approvers Enough Context
 
@@ -436,25 +448,28 @@ Before adding the action, define:
 - what message goes back to the requester;
 - what happens if the approval is not answered.
 
-An approval without enough context produces poor decisions. An approval without a record produces poor auditability.
+> 📝 An approval without enough context produces poor decisions. An approval without a record produces poor auditability.
 
 ## Branch on the Approval Outcome
 
-![A condition checks whether the approval outcome equals Approve, then routes to approved or rejected handling.](fig/approval-branch.svg){fig-align="center" width="88%"}
+The approval result should drive the next step.
 
-> 🔀 Branch on the approval outcome.
+![Approved and rejected outcomes should lead to different handling, messages, and records.](fig/approval-branch.svg){fig-align="center" width="88%"}
+
+> 🛤️ A rejection is still a valid outcome, not a broken flow.
 
 ## Handle Rejected Requests
 
-Do not treat rejection as failure. A rejected request is a successful flow outcome.
-
-A good rejection branch should:
+**A good rejection branch should:**
 
 - tell the requester what happened;
 - include comments or next steps where appropriate;
 - update the tracker;
 - avoid sending confusing success messages;
 - make it easy for the requester to resubmit if allowed.
+
+> 🚫 Do not treat rejection as failure. A rejected request is a successful flow outcome.
+
 
 ---
 
@@ -472,10 +487,8 @@ A good rejection branch should:
 2. Add **Start and wait for an approval** after the request has been summarised and prioritised.
 3. Choose **Approve/Reject - First to respond**. Set the title to include requester name and request type. Put the request summary, priority, requested date, and notes in the approval details.
 4. Assign the approval to your partner, table lead, test account, or yourself.
-5. Add a **Condition** based on the approval outcome.
-6. In the approved branch, send a confirmation email to yourself.
-7. In the rejected branch, send a rejection email to yourself.
-8. Save, test, complete the approval, and inspect run history.
+5. Add a **Condition** based on the approval outcome: In the approved branch, send a confirmation email to yourself and in the rejected branch, send a rejection email to yourself.
+6. Save, test, complete the approval, and inspect run history.
 
 ##### Check
 
@@ -494,9 +507,7 @@ Use run history to confirm:
 
 ## From Rows to Actions
 
-Many business processes start as a spreadsheet.
-
-Power Automate can turn each row into an action:
+Many business processes start as a spreadsheet. Power Automate can turn each row into an action:
 
 - read a request from a table;
 - check whether it is ready;
@@ -504,21 +515,23 @@ Power Automate can turn each row into an action:
 - send a personalised email;
 - update the row so it is not processed twice.
 
-The key is structure. The workbook must behave like a small data source, not like a visual report.
+> 🧱 The key is structure. The workbook must behave like a small data source, not like a visual report.
 
 ## Use Excel as a Tracker
 
 Excel is often used as a lightweight tracker. Power Automate can work with Excel, but only if the workbook is structured correctly.
 
-The most important rule is:
+::: {.callout-note}
 
-> Power Automate works with Excel **tables**, not arbitrary ranges of cells.
+The most important rule is that: Power Automate works with Excel **tables**, not arbitrary ranges of cells.*
 
-An Excel file full of values may look like data to a person, but the connector needs a named table so it can identify rows and columns reliably.
+:::
+
+> 📊 An Excel file full of values may look like data to a person, but the connector needs a named table so it can identify rows and columns reliably.
 
 ## Prepare Excel Tables
 
-For the Excel Online Business connector:
+When using Excel online you need to set up the document correctly: 
 
 ::: {.two-col-grid}
 ::: {.item}
@@ -547,11 +560,15 @@ For the Excel Online Business connector:
 :::
 :::
 
+> 💡 Basically, keep it simple!
+
 ## Send Emails from Table Rows
 
-![A safe mailout reads rows, checks status, sends only ready rows, and updates sent rows.](fig/excel-mailout-pattern.svg){fig-align="center" width="88%"}
+Excel mailouts work best when the table controls who is ready to receive a message.
 
-> 📧 A safe Excel-to-email pattern reads controlled rows, sends only ready messages, and updates the tracker.
+![The flow reads rows, checks status, sends only eligible messages, and updates the tracker.](fig/excel-mailout-pattern.svg){fig-align="center" width="88%"}
+
+> 📧 Always test mailouts with safe addresses before using real recipients.
 
 ## Read Rows from Excel
 
@@ -566,19 +583,23 @@ Important details:
 - use filters carefully;
 - remember that each row can be processed in an **Apply to each** loop.
 
-If the table does not appear, check that the workbook is saved in the right place and the range is actually formatted as a table.
+> 🔎 If the table does not appear, check that the workbook is saved in the right place and the range is actually formatted as a table.
 
-## Update Rows After Sending
+## Use Flags to Track Actions
 
-![After sending, update the row status and sent time so future runs skip already processed rows.](fig/update-rows-after-sending.svg){fig-align="center" width="88%"}
+Status flags stop the same row being processed repeatedly.
 
-> 🧾 Update the row after the action.
+![After sending, update the row with a sent status and timestamp.](fig/update-rows-after-sending.svg){fig-align="center" width="88%"}
 
-## Use Word Templates
+> 🧾 A tracker is only trustworthy if the flow writes back what happened.
 
-![Excel row values populate content controls in a Word template, then the generated document is saved and sent or stored.](fig/word-template-flow.svg){fig-align="center" width="88%"}
+## Incorporating Word Templates
 
-> 📄 Combine Excel rows with Word templates.
+Word templates turn each Excel row into a personalised document.
+
+![Excel values populate Word content controls before the generated file is saved or sent.](fig/word-template-flow.svg){fig-align="center" width="88%"}
+
+> 📄 This pattern is useful for certificates, letters, confirmations, and notices.
 
 ## Word Template Steps
 
@@ -592,7 +613,7 @@ A typical pattern is:
 6. Optionally convert it to PDF.
 7. Attach it to an email or store it in a document library.
 
-If the Word template action is not available, the fallback is to build a personalised email body directly from Excel row values.
+> 📨 If the Word template action is not available, the fallback is to build a personalised email body directly from Excel row values.
 
 
 ## Download the Practice Files
@@ -602,7 +623,7 @@ Use the provided examples for Task 5, or create your own files with the same str
 - [Download the example Excel table](data/Example_table.xlsx)
 - [Download the example Word template](data/Example_template.docx)
 
-Upload copies to your own OneDrive or SharePoint area before using them in Power Automate.
+> 📁 Upload copies to your own OneDrive or SharePoint area before using them in Power Automate.
 
 ---
 
@@ -645,9 +666,11 @@ Upload copies to your own OneDrive or SharePoint area before using them in Power
 
 ## What You Built
 
-![The final workshop flow starts with an instant flow, reads Table1, applies each row to a Word template, sends an email with the generated attachment, and checks run history.](fig/workshop-build.svg){fig-align="center" width="88%"}
+The final flow brings the main patterns together.
 
-> 🏁 The final practice flow combines Excel rows, Word templates, test emails, and run history checks.
+![The workshop build reads Table1, loops through rows, fills a Word template, sends an email, and checks run history.](fig/workshop-build.svg){fig-align="center" width="88%"}
+
+> 🏁 The same structure can be adapted to many admin workflows.
 
 ## Summary of the Module
 
@@ -663,7 +686,7 @@ In this module you built and inspected small Power Automate flows that:
 - sent personalised test emails;
 - updated a tracker after sending.
 
-The technical steps matter, but the design choices matter more. A useful automation has a clear trigger, appropriate connectors, maintainable logic, a durable record, and an owner.
+> 🧠 The technical steps matter, but the design choices matter more. A useful automation has a clear trigger, appropriate connectors, maintainable logic, a durable record, and an owner.
 
 :::: callout-keypoints
 
