@@ -71,34 +71,10 @@ Research Data Management (RDM) ensures that data are **organised, secure, docume
 | **Information Security**        | Defines classification tiers and enforces access controls.                                                                 |
 
 ## RDM roles
-```{mermaid}
-flowchart LR
-    PI[Principal Investigator]
-    T[Project Team]
-    R[Researchers]
-    L[Library - RDM Support]
-    IT[Digital Technology Services]
-    IS[Information Security]
 
-    A[DMP & Preservation Oversight]
-    B[Apply RDM Standards]
-    C[Liaise for Metadata & Archiving]
-    D[Metadata & Documentation Advice]
-    E[Secure Storage & Access Controls]
+![Research data management role map linking project roles to RDM responsibilities.](fig/eds-rdm-roles-map.svg){fig-align="center" width="88%"}
 
-    %% Role-to-Responsibility Mapping
-    PI --> A
-    T --> B
-    R --> C
-    L --> D
-    IT --> E
-    E --> IS
-
-    %% Responsibility Flow
-    A --> B --> C --> D --> E
-```
-
-> 🧭 *Good RDM depends on collaboration and accountability across roles.*
+> 🧩 RDM works best when responsibilities are explicit rather than assumed.
 
 ## Code of Practice on RDM: Expectations
 
@@ -110,15 +86,9 @@ flowchart LR
 
 ## Data Lifecycle Model
 
-```{mermaid}
-flowchart LR
-    A[Plan & Design] --> B[Collect]
-    B --> C[Process & Analyse]
-    C --> D[Store & Share]
-    D --> E[Preserve & Reuse]
-```
+![Data lifecycle flow from planning and collection through processing, storage, sharing, preservation, and reuse.](fig/eds-data-lifecycle-flow.svg){fig-align="center" width="76%"}
 
-> 🔁 *RDM supports every stage of the data lifecycle, not just archiving.*
+> 🔁 Decisions made early affect whether data can be understood and reused later.
 
 ## Costs and Resourcing
 
@@ -339,10 +309,9 @@ These are designed to promote transparency and maximise research value.
 | **Interoperable** | Open formats, controlled vocabularies         | CSV + ontology alignment      |
 | **Reusable**      | Licences, provenance, documentation           | CC BY licence + CODEBOOK.md   |
 
-```{mermaid}
-flowchart LR
-    A[Findable] --> B[Accessible] --> C[Interoperable] --> D[Reusable] --> A
-```
+![FAIR data cycle showing findable, accessible, interoperable, and reusable principles.](fig/eds-fair-cycle.svg){fig-align="center" width="64%"}
+
+> ♻️ FAIR is a reuse test: can someone find, understand, access, and responsibly use the dataset?
 
 ## Evaluating FAIR Reuse Potential
 

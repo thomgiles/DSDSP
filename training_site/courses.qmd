@@ -26,74 +26,67 @@ main#quarto-document-content { margin-top: 0; }
 </style>
 ```
 
-::: {.landing-hero .landing-hero-compact}
-::: {.landing-energy-field aria-hidden="true"}
-::: {.landing-energy-line .line-one}
-:::
-::: {.landing-energy-line .line-two}
-:::
-::: {.landing-energy-line .line-three}
-:::
-:::
+::: {.landing-hero .landing-hero-compact .landing-page-hero}
 ::: {.landing-hero-content}
-::: {.landing-eyebrow .landing-eyebrow-branded}
-[Developed By The University of Nottingham Digital Research Service](https://digitalresearch.nottingham.ac.uk/)
-:::
-
 # Courses and Modules
 
-Use the module finder or course list to locate the right sessions for you.
+This programme has delveloped a number of course each with multiple modules. Use the tool below to locate the right sessions for you.
 :::
 :::
 
 {{< include _includes/landing-site-data.html >}}
 
 ::: {#module-finder .landing-section .landing-course-browser}
-::: {.panel-tabset .landing-course-tabset}
+::: {.landing-course-search-shell}
 
-### Module Finder
+## Course and Module Finder
 
-Use the filters to find modules by course, training area, level, or keyword.
+Use the rocker to search courses or individual modules with the same filters.
 
 ```{=html}
-<div class="landing-filter-panel" data-module-filter>
+<div class="landing-search-mode" role="group" aria-label="Choose search mode">
+  <button type="button" class="is-active" data-search-mode="courses" aria-pressed="true">Courses</button>
+  <button type="button" data-search-mode="modules" aria-pressed="false">Modules</button>
+</div>
+
+<div class="landing-filter-panel" data-course-module-filter>
   <label>
     <span>Keyword</span>
-    <input id="module-search-filter" class="landing-filter-search" type="search" placeholder="Search modules">
+    <input id="course-module-search-filter" class="landing-filter-search" type="search" placeholder="Search courses">
   </label>
   <label>
     <span>Training area</span>
-    <select id="module-area-filter">
+    <select id="course-module-area-filter">
       <option value="All">All</option>
     </select>
   </label>
-  <label>
+  <label data-course-filter-wrap hidden>
     <span>Course</span>
-    <select id="module-course-filter">
+    <select id="course-module-course-filter">
       <option value="All">All</option>
     </select>
   </label>
   <label>
     <span>Level</span>
-    <select id="module-level-filter">
+    <select id="course-module-level-filter">
       <option value="All">All</option>
     </select>
   </label>
   <div class="landing-filter-count" aria-live="polite">
-    <strong id="module-match-count">0</strong>
-    matching modules
+    <strong id="course-module-match-count">0</strong>
+    <span id="course-module-match-label">matching courses</span>
   </div>
 </div>
 
-<div class="landing-course-grid" id="landing-module-grid"></div>
-```
+<div class="landing-results-view" data-results-view="courses">
+  <p class="landing-results-intro">The pathway is flexible. Learners can start with core digital practice, then move into responsible AI, automation, or code-based data science.</p>
+  <div id="landing-course-list" class="landing-course-list" aria-label="Course list"></div>
+</div>
 
-### Courses
-
-The pathway is flexible. Learners can start with core digital practice, then move into responsible AI, automation, or code-based data science.
-
-```{=html}
-<div id="landing-course-list" class="landing-course-list" aria-label="Course list"></div>
+<div class="landing-results-view" data-results-view="modules" hidden>
+  <p class="landing-results-intro">Use module search when you want a specific topic, activity, or session inside a course.</p>
+  <div class="landing-course-grid" id="landing-module-grid" aria-label="Module list"></div>
+</div>
 ```
 :::
 :::
@@ -124,13 +117,18 @@ The pathway is flexible. Learners can start with core digital practice, then mov
     const dataElement = document.getElementById("landing-site-data");
     const grid = document.getElementById("landing-module-grid");
     const courseList = document.getElementById("landing-course-list");
-    const area = document.getElementById("module-area-filter");
-    const course = document.getElementById("module-course-filter");
-    const level = document.getElementById("module-level-filter");
-    const search = document.getElementById("module-search-filter");
-    const count = document.getElementById("module-match-count");
+    const area = document.getElementById("course-module-area-filter");
+    const course = document.getElementById("course-module-course-filter");
+    const level = document.getElementById("course-module-level-filter");
+    const search = document.getElementById("course-module-search-filter");
+    const count = document.getElementById("course-module-match-count");
+    const countLabel = document.getElementById("course-module-match-label");
+    const courseFilterWrap = document.querySelector("[data-course-filter-wrap]");
+    const modeGroup = document.querySelector(".landing-search-mode");
+    const modeButtons = Array.from(document.querySelectorAll("[data-search-mode]"));
+    const resultViews = Array.from(document.querySelectorAll("[data-results-view]"));
 
-    if (!dataElement || !grid || !area || !course || !level || !search || !count) return;
+    if (!dataElement || !grid || !courseList || !area || !course || !level || !search || !count || !countLabel || !modeGroup || !modeButtons.length || !resultViews.length) return;
 
     let siteData = {courses: [], modules: []};
     try {
@@ -141,10 +139,11 @@ The pathway is flexible. Learners can start with core digital practice, then mov
 
     const courses = siteData.courses || [];
     const modules = siteData.modules || [];
+    let activeMode = "courses";
 
-    setOptions(area, uniqueValues(modules, "area"));
+    setOptions(area, uniqueValues(courses, "area"));
     setOptions(course, uniqueValues(modules, "course"));
-    setOptions(level, uniqueValues(modules, "level"));
+    setOptions(level, uniqueValues(courses, "level"));
 
     grid.innerHTML = modules.map((module, index) => `
       <a class="landing-course-card landing-module-card" href="${escapeHtml(module.href)}"
@@ -165,7 +164,11 @@ The pathway is flexible. Learners can start with core digital practice, then mov
       courseList.innerHTML = courses.map((courseItem, courseIndex) => {
         const glanceItems = courseItem.glance || [];
         return `
-          <article class="landing-course-overview-card" data-area="${escapeHtml(courseItem.area)}" style="--card-delay:${Math.min(courseIndex * 60, 240)}ms">
+          <article class="landing-course-overview-card"
+            data-area="${escapeHtml(courseItem.area)}"
+            data-level="${escapeHtml(courseItem.level)}"
+            data-search="${escapeHtml(`${courseItem.title} ${courseItem.area} ${courseItem.level} ${courseItem.intro || ""} ${courseItem.summary || ""} ${courseItem.subtitle || ""} ${glanceItems.join(" ")}`.toLowerCase())}"
+            style="--card-delay:${Math.min(courseIndex * 60, 240)}ms">
             <div class="landing-course-overview-copy">
               <span class="landing-module-area-kicker">${escapeHtml(courseItem.area)} · ${escapeHtml(courseItem.level)}</span>
               <h3>${escapeHtml(courseItem.title)}</h3>
@@ -182,25 +185,70 @@ The pathway is flexible. Learners can start with core digital practice, then mov
       }).join("");
     }
 
-    const cards = Array.from(grid.querySelectorAll(".landing-module-card"));
+    const moduleCards = Array.from(grid.querySelectorAll(".landing-module-card"));
+    const courseCards = Array.from(courseList.querySelectorAll(".landing-course-overview-card"));
+
+    const updateFilterOptions = () => {
+      const items = activeMode === "courses" ? courses : modules;
+      setOptions(area, uniqueValues(items, "area"));
+      setOptions(level, uniqueValues(items, "level"));
+      area.value = "All";
+      level.value = "All";
+      course.value = "All";
+      if (courseFilterWrap) {
+        courseFilterWrap.hidden = activeMode !== "modules";
+      }
+      search.placeholder = activeMode === "courses" ? "Search courses" : "Search modules";
+    };
+
+    const updateMode = (mode) => {
+      activeMode = mode;
+      modeGroup.classList.toggle("is-modules", activeMode === "modules");
+      modeButtons.forEach((button) => {
+        const selected = button.dataset.searchMode === activeMode;
+        button.classList.toggle("is-active", selected);
+        button.setAttribute("aria-pressed", selected ? "true" : "false");
+      });
+      resultViews.forEach((view) => {
+        const selected = view.dataset.resultsView === activeMode;
+        view.hidden = !selected;
+        view.classList.toggle("is-active", selected);
+      });
+      updateFilterOptions();
+      filterCards();
+    };
 
     const filterCards = () => {
       const searchTerm = search.value.trim().toLowerCase();
       let visible = 0;
-      cards.forEach((card, index) => {
+      const activeCards = activeMode === "courses" ? courseCards : moduleCards;
+      const inactiveCards = activeMode === "courses" ? moduleCards : courseCards;
+
+      inactiveCards.forEach((card) => {
+        card.hidden = true;
+      });
+
+      activeCards.forEach((card) => {
         const areaMatch = area.value === "All" || card.dataset.area === area.value;
-        const courseMatch = course.value === "All" || card.dataset.course === course.value;
+        const courseMatch = activeMode === "courses" || course.value === "All" || card.dataset.course === course.value;
         const levelMatch = level.value === "All" || card.dataset.level === level.value;
         const searchMatch = searchTerm === "" || card.dataset.search.includes(searchTerm);
         const show = areaMatch && courseMatch && levelMatch && searchMatch;
         card.hidden = !show;
-        card.style.setProperty("--card-delay", `${Math.min(index * 60, 240)}ms`);
-        if (show) visible += 1;
+        if (show) {
+          card.style.setProperty("--card-delay", `${Math.min(visible * 55, 330)}ms`);
+          visible += 1;
+        }
       });
       count.textContent = visible;
+      countLabel.textContent = activeMode === "courses" ? "matching courses" : "matching modules";
+      count.parentElement?.classList.remove("is-updating");
+      window.requestAnimationFrame(() => {
+        count.parentElement?.classList.add("is-updating");
+      });
     };
 
-    cards.forEach((card) => {
+    moduleCards.forEach((card) => {
       card.addEventListener("pointermove", (event) => {
         const rect = card.getBoundingClientRect();
         card.style.setProperty("--mx", `${event.clientX - rect.left}px`);
@@ -212,13 +260,39 @@ The pathway is flexible. Learners can start with core digital practice, then mov
     course.addEventListener("change", filterCards);
     level.addEventListener("change", filterCards);
     search.addEventListener("input", filterCards);
-    filterCards();
+    modeButtons.forEach((button) => {
+      button.addEventListener("click", () => updateMode(button.dataset.searchMode));
+    });
+    updateMode("courses");
+  };
+
+  const initCourseScrollReveals = () => {
+    const revealItems = document.querySelectorAll("#module-finder");
+    if (!revealItems.length) return;
+
+    if (!("IntersectionObserver" in window)) {
+      revealItems.forEach((item) => item.classList.add("is-visible"));
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        entry.target.classList.toggle("is-visible", entry.isIntersecting);
+      }
+    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.18 });
+
+    revealItems.forEach((item) => observer.observe(item));
+  };
+
+  const initCoursesPage = () => {
+    initModuleFinder();
+    initCourseScrollReveals();
   };
 
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initModuleFinder);
+    document.addEventListener("DOMContentLoaded", initCoursesPage);
   } else {
-    initModuleFinder();
+    initCoursesPage();
   }
 })();
 </script>
