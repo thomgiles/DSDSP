@@ -1,6 +1,9 @@
 project:
   type: website
   output-dir: _site
+  resources:
+    - js/homepage-header-hero.js
+    - js/homepage-workshop-rhythm.js
   pre-render:
     - scripts/build_landing_data.py
   render:
@@ -32,10 +35,6 @@ format:
     page-layout: article
 
 website:
-  cookie-consent:
-    type: express
-    style: headline
-    palette: dark
   open-graph:
     locale: es_ES
     site-name: Quarto
@@ -58,7 +57,7 @@ website:
       <h3>Quick links</h3>
       [Submit an enquiry](mailto:digitalresearch@nottingham.ac.uk)  
       [Capabilities](#)  
-      [About us](about.qmd)  
+      <a href="/about.html">About us</a>
       [Jobs](#)  
       [Privacy policy](#)
       

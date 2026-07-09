@@ -1,7 +1,12 @@
 ---
 title: "Essential Digital Skills"
 subtitle: "Foundation pathway for confident, defensible digital research practice"
+page-class: course-page
 ---
+
+```{=html}
+<div class="course-page-marker" aria-hidden="true"></div>
+```
 
 ::: {.tier-card}
 ### Course At A Glance

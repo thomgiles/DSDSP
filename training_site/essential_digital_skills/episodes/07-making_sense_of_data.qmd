@@ -250,29 +250,9 @@ When interpreting a visual:
 
 ## Effective Design Principles
 
-```{mermaid}
+![Effective visual design map connecting simplicity, consistent colours, labelling, and scale choices.](fig/eds-visual-design-principles.svg){fig-align="center" width="78%"}
 
-flowchart LR
-    A[Effective Visual Design]
-    B[Keep it simple]-->B1[Clarity over decoration]
-    C[Use consistent colours]-->C1[One hue = one category]
-    D[Label everything]-->D1[Never assume context]
-    E[Start scales at zero]-->E1[Unless statistically justified]
-
-    A --> B
-    A --> C
-    A --> D
-    A --> E
-
-    style A fill:#22223b,color:#ffffff,stroke:#22223b,stroke-width:2px
-    style B fill:#cdb4db,color:#000000,stroke:#7b2cbf,stroke-width:2px
-    style C fill:#bde0fe,color:#000000,stroke:#1d4ed8,stroke-width:2px
-    style D fill:#caffbf,color:#000000,stroke:#2d6a4f,stroke-width:2px
-    style E fill:#ffd6a5,color:#000000,stroke:#bc6c25,stroke-width:2px
-   
-```
-
-> 🎯 You become the detective again — this time, investigating design truth.
+> 🧠 Good visuals reduce interpretation effort without hiding uncertainty or context.
 
 ---
 

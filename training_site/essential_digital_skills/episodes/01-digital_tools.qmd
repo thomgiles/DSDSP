@@ -58,17 +58,9 @@ It is also about **connecting researchers** with the people who work with data, 
 
 This programme aims to bridge the gap between disciplinary experts and technical specialists. 
 
-  ```{mermaid}
-flowchart TB
-    A["Data Collection"] --> B["Analysis"] --> C["Collaboration"] --> D["Publication & Sharing"]
-    D --> A
-    style A fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
-    style B fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px
-    style C fill:#FFF3E0,stroke:#EF6C00,stroke-width:1px
-    style D fill:#F3E5F5,stroke:#6A1B9A,stroke-width:1px
-```
+![Research workflow loop showing collection, analysis, collaboration, and sharing as a repeatable cycle.](fig/eds-research-workflow-loop.svg){fig-align="center" width="76%"}
 
-> 💬 *Collaboration at every stage of the research process improves the quality of  outputs and supports a more open, reproducible culture.*
+> 🧭 Support is most useful when it travels with the project from first data capture to final sharing.
 
 ## Programme Structure
 
@@ -129,16 +121,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
 Digital research depends on **connected systems** that enable collaboration, safeguard data, and streamline research workflows.
 
-```{mermaid}
-flowchart TB
-    A["Researchers"]:::a --> B["Institutional Systems"]:::b --> C["Collaborative Outputs"]:::c
-    C --> A
-    classDef a fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
-    classDef b fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px
-    classDef c fill:#FFF3E0,stroke:#EF6C00,stroke-width:1px
-```
+![Institutional research ecosystem showing researchers, systems, and collaborative outputs as a connected loop.](fig/eds-institutional-systems-loop.svg){fig-align="center" width="68%"}
 
-> 🧩 *Institutional systems form the backbone of a connected research ecosystem.*
+> 🧩 The value is in the connection between people, platforms, and outputs, not the platform list itself.
 
 ## UoN’s Digital Ecosystem
 
@@ -190,17 +175,9 @@ UniCore and RIS link the operational and administrative sides of research.
 
 **UniCore** is UoN’s enterprise system for managing finance, HR, and procurement.
 
-```{mermaid}
-flowchart TB
-    P["Purchasing"]:::a --> E["Expenses"]:::b --> H["HR & Leave Management"]:::c --> R["Research Operations"]:::d
-    R --> P
-    classDef a fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
-    classDef b fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px
-    classDef c fill:#FFF3E0,stroke:#EF6C00,stroke-width:1px
-    classDef d fill:#F3E5F5,stroke:#6A1B9A,stroke-width:1px
-```
+![UniCore operations loop connecting purchasing, expenses, HR, leave management, and research operations.](fig/eds-unicore-operations-loop.svg){fig-align="center" width="74%"}
 
-> 🧭 *UniCore underpins the financial and operational side of research at the university.*
+> 🧭 Operational systems shape research delivery because they affect what teams can buy, claim, plan, and report.
 
 ## RIS (Research Information System)
 
@@ -233,17 +210,9 @@ flowchart TB
 
 By using institutional systems effectively teams build **trust and accountability**, data remains **secure, reusable, and open** and researchers can spend more time working on **innovation and discovery**
 
-```{mermaid}
-flowchart TB
-    A["Transparency"]:::a --> B["Trust"]:::b --> C["Collaboration"]:::c --> D["Impact"]:::d
-    D --> A
-    classDef a fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
-    classDef b fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px
-    classDef c fill:#FFF3E0,stroke:#EF6C00,stroke-width:1px
-    classDef d fill:#F3E5F5,stroke:#6A1B9A,stroke-width:1px
-```
+![Connected research loop showing transparency, trust, collaboration, and impact feeding into one another.](fig/eds-connected-research-loop.svg){fig-align="center" width="74%"}
 
-> 🌍 *Digital infrastructure is the connective tissue of modern research.*
+> 🌍 Good infrastructure makes research easier to audit, hand over, and reuse.
 
 ---
 
@@ -290,17 +259,9 @@ document.addEventListener("DOMContentLoaded", function() {
 
 Your **research identity** defines how your work is discovered, attributed, and connected across the digital research ecosystem.
 
-```{mermaid}
-flowchart TB
-    P["Publications"]:::a --> O["ORCID iD"]:::b --> R["Repositories & Funders"]:::c --> I["Institutional Systems (RIS, HR)"]:::d
-    I --> P
-    classDef a fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
-    classDef b fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px
-    classDef c fill:#FFF3E0,stroke:#EF6C00,stroke-width:1px
-    classDef d fill:#F3E5F5,stroke:#6A1B9A,stroke-width:1px
-```
+![Research identity loop linking publications, ORCID iD, repositories, funders, and institutional systems.](fig/eds-research-identity-loop.svg){fig-align="center" width="76%"}
 
-> 🧩 *A coherent digital identity ensures your contributions are visible, citable, and connected.*
+> 🧩 Persistent identifiers reduce the chance that outputs become separated from the person or project that produced them.
 
 ## The Importance of Consistency
 
@@ -318,19 +279,9 @@ A consistent identity links your outputs, affiliations, and roles automatically 
 
 **ORCID (Open Researcher and Contributor ID)** is the global standard for uniquely identifying researchers across institutions and disciplines.
 
-```{mermaid}
-flowchart LR
-    A["Researcher"]:::a --> B["ORCID iD"]:::b --> C["Funders"]:::c
-    B --> D["Publishers"]:::d
-    B --> E["Repositories"]:::e
-    classDef a fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
-    classDef b fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px
-    classDef c fill:#FFF3E0,stroke:#EF6C00,stroke-width:1px
-    classDef d fill:#F3E5F5,stroke:#6A1B9A,stroke-width:1px
-    classDef e fill:#E1F5FE,stroke:#0277BD,stroke-width:1px
-```
+![ORCID connection map showing an ORCID iD linking a researcher to funders, publishers, and repositories.](fig/eds-orcid-connections.svg){fig-align="center" width="74%"}
 
-> 🧠 *Your ORCID iD is your digital fingerprint across the global research ecosystem.*
+> 🧠 ORCID is useful because other systems can read the same stable identifier.
 
 
 ## RIS (Research Information System) at UoN
@@ -388,17 +339,9 @@ Visit [Orcid](https://orcid.org/), Log in / sign up
 
 Effective digital research requires vigilance, responsibility, and sound data stewardship to protect not only research, but also collaborators and institutions.
 
-```{mermaid}
-flowchart TB
-    A["Trust & Compliance"]:::a --> B["Data Integrity"]:::b --> C["Confidentiality"]:::c --> D["Continuity"]:::d --> E["Collaboration Resilience"]:::e --> A
-    classDef a fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
-    classDef b fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px
-    classDef c fill:#FFF3E0,stroke:#EF6C00,stroke-width:1px
-    classDef d fill:#F3E5F5,stroke:#6A1B9A,stroke-width:1px
-    classDef e fill:#E1F5FE,stroke:#0277BD,stroke-width:1px
-```
+![Digital security loop showing trust, integrity, confidentiality, continuity, and collaboration resilience.](fig/eds-digital-security-loop.svg){fig-align="center" width="78%"}
 
-> 🔒 *Digital security is a collective responsibility: protecting data protects discovery.*
+> 🔒 Security failures usually damage trust first, then data and continuity.
 
 ## Passwords & Access Management
 
@@ -417,16 +360,9 @@ Weak or reused passwords are still the most common research vulnerability.
 **MFA** adds a crucial verification step beyond a password.  
 Even if your password is compromised, MFA prevents most unauthorised logins.
 
-```{mermaid}
-flowchart LR
-    U["User Login"]:::a --> P["Password"]:::b --> V["Second Factor (App / SMS / Key)"]:::c --> A["Access Granted"]:::d
-    classDef a fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
-    classDef b fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px
-    classDef c fill:#FFF3E0,stroke:#EF6C00,stroke-width:1px
-    classDef d fill:#F3E5F5,stroke:#6A1B9A,stroke-width:1px
-```
+![Multi-factor authentication flow from user login through password and second factor to access granted.](fig/eds-mfa-access-flow.svg){fig-align="center" width="70%"}
 
-> 🔐 *Think of MFA as the seatbelt of your digital life—simple, unobtrusive, and essential.*
+> 🔐 MFA makes one stolen password much less useful to an attacker.
 
 ## Device & Data Protection
 

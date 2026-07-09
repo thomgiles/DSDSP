@@ -66,20 +66,9 @@ Avoiding bias and ensuring fair representation.
 
 Digital Trace Data refers to the traces that are left across the internet as humans communicate, coordinate, gather information, and manage their daily lives. 
 
-```{mermaid}
-sequenceDiagram
-    participant User
-    participant DigitalSystem
-    participant DataStore
-    participant ThirdParties
+![Digital data trace sequence showing user interaction, system trace generation, storage, and third-party access.](fig/eds-digital-data-trace.svg){fig-align="center" width="82%"}
 
-    User->>DigitalSystem: Interact with device / internet
-    DigitalSystem->>DataStore: Generate digital trace
-    DataStore->>ThirdParties: Provide access to data
-    ThirdParties->>DataStore: Advertising or behavioural research
-```
-
-> 🚀 Every single day, approximately 2.5 quintillion bytes of data are generated globally, this persists over time
+> 🚀 Trace data may feel passive, but it is still created, stored, shared, and interpreted through systems.
 
 ## What is data?
 
@@ -160,41 +149,15 @@ Downloaded dataset:
 
 You’ve got a dataset — but do you know why you’re collecting it?
 
-```{mermaid}
-mindmap
-  root(Good data)
-    Relevant(Relevant)
-      Answers(Answers the research question)
-      Objectives(Clear objectives)
-      Variables(Appropriate variables)
-    Accurate(Accurate)
-      Reality(Faithfully represents reality)
-      Sources(Validated sources)
-      Errors(Error checking)
-    Complete(Complete)
-      Missing(Minimal missing values)
-      LowMissing(Low missingness)
-      Gaps(Documented gaps)
-    Consistent(Consistent)
-      Formats(Uniform formats and standards)
-      Units(Standard units)
-      Naming(Consistent naming)
-```
+![Good data planning map showing relevance, accuracy, completeness, and consistency with supporting checks.](fig/eds-good-data-mindmap.svg){fig-align="center" width="86%"}
 
-> Good data is not accidental. It is designed.
+> 🧭 Good datasets are designed around the research question before collection starts.
 
 ## How Good Questions Lead to Good Data
 
-```{mermaid}
-timeline
-    Step1 : Vague idea → Improve campus transport
-    Step2 : Define analysis purpose → Connecting demographic factors to commute burden
-    Step3 : Measurable questions → What % cycle?; Do PG students commute longer than UG?
-    Step 4: Decide Variables → Commute Time, Student Status, Transport Method?
-    Step 5: Drop irrelevant variables → i.e. Height + Favorite snack → irrelevant
-```
+![Timeline showing a vague research idea becoming measurable questions, variables, and dropped irrelevant fields.](fig/eds-good-questions-timeline.svg){fig-align="center" width="84%"}
 
-> 📌 Identifying the right questions is not enough, you need to look at the data available to you!
+> 📌 Each step removes ambiguity until the data collection plan matches the analysis purpose.
 
 ## Importance of Choosing the Right Variables
 

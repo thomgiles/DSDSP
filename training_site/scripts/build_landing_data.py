@@ -112,9 +112,17 @@ def course_intro(path: Path) -> str:
     lines = text.splitlines()
     paragraph: list[str] = []
     in_fenced_div = False
+    in_code_block = False
 
     for line in lines:
         stripped = line.strip()
+        if stripped.startswith("```"):
+            in_code_block = not in_code_block
+            continue
+        if in_code_block:
+            continue
+        if stripped.startswith("<"):
+            continue
         if stripped.startswith(":::"):
             in_fenced_div = not in_fenced_div
             if paragraph:

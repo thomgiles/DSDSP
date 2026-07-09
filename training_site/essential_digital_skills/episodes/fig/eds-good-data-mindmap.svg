@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="560" viewBox="0 0 1200 560" role="img" aria-labelledby="title desc">
+  <title id="title">Good data planning map</title>
+  <desc id="desc">Good data depends on relevance, accuracy, completeness, and consistency, each supported by practical checks.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="13" markerHeight="13" refX="10" refY="6.5" orient="auto">
+      <path d="M2 2 L10 6.5 L2 11 Z" fill="#405162"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-20%" width="120%" height="145%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#10263b" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="560" rx="28" fill="#f7fbfc"/>
+
+  <g stroke="none" filter="url(#shadow)" font-family="sans-serif">
+    <rect x="500" y="220" width="200" height="120" rx="28" fill="#10263b"/>
+<text x="600.0" y="287.0" font-size="23" font-weight="700" fill="#ffffff" text-anchor="middle">Good data</text>
+    <rect x="70" y="60" width="350" height="170" rx="22" fill="#006781"/>
+<text x="245.0" y="108.0" font-size="19" font-weight="700" fill="#ffffff" text-anchor="middle">Relevant</text>
+    <circle cx="125" cy="142" r="5" fill="#ffffff" fill-opacity="0.95"/>
+<text x="145" y="148" font-size="14" font-weight="650" fill="#ffffff" text-anchor="start">Answers the question</text>
+    <circle cx="125" cy="172" r="5" fill="#ffffff" fill-opacity="0.95"/>
+<text x="145" y="178" font-size="14" font-weight="650" fill="#ffffff" text-anchor="start">Clear objectives</text>
+    <circle cx="125" cy="202" r="5" fill="#ffffff" fill-opacity="0.95"/>
+<text x="145" y="208" font-size="14" font-weight="650" fill="#ffffff" text-anchor="start">Appropriate variables</text>
+    <rect x="780" y="60" width="350" height="170" rx="22" fill="#298582"/>
+<text x="955.0" y="108.0" font-size="19" font-weight="700" fill="#ffffff" text-anchor="middle">Accurate</text>
+    <circle cx="835" cy="142" r="5" fill="#ffffff" fill-opacity="0.95"/>
+<text x="855" y="148" font-size="14" font-weight="650" fill="#ffffff" text-anchor="start">Represents reality</text>
+    <circle cx="835" cy="172" r="5" fill="#ffffff" fill-opacity="0.95"/>
+<text x="855" y="178" font-size="14" font-weight="650" fill="#ffffff" text-anchor="start">Validated sources</text>
+    <circle cx="835" cy="202" r="5" fill="#ffffff" fill-opacity="0.95"/>
+<text x="855" y="208" font-size="14" font-weight="650" fill="#ffffff" text-anchor="start">Error checking</text>
+    <rect x="70" y="330" width="350" height="170" rx="22" fill="#405162"/>
+<text x="245.0" y="378.0" font-size="19" font-weight="700" fill="#ffffff" text-anchor="middle">Complete</text>
+    <circle cx="125" cy="412" r="5" fill="#ffffff" fill-opacity="0.95"/>
+<text x="145" y="418" font-size="14" font-weight="650" fill="#ffffff" text-anchor="start">Minimal missing values</text>
+    <circle cx="125" cy="442" r="5" fill="#ffffff" fill-opacity="0.95"/>
+<text x="145" y="448" font-size="14" font-weight="650" fill="#ffffff" text-anchor="start">Low missingness</text>
+    <circle cx="125" cy="472" r="5" fill="#ffffff" fill-opacity="0.95"/>
+<text x="145" y="478" font-size="14" font-weight="650" fill="#ffffff" text-anchor="start">Documented gaps</text>
+    <rect x="780" y="330" width="350" height="170" rx="22" fill="#009bc1"/>
+<text x="955.0" y="378.0" font-size="19" font-weight="700" fill="#ffffff" text-anchor="middle">Consistent</text>
+    <circle cx="835" cy="412" r="5" fill="#ffffff" fill-opacity="0.95"/>
+<text x="855" y="418" font-size="14" font-weight="650" fill="#ffffff" text-anchor="start">Uniform formats</text>
+    <circle cx="835" cy="442" r="5" fill="#ffffff" fill-opacity="0.95"/>
+<text x="855" y="448" font-size="14" font-weight="650" fill="#ffffff" text-anchor="start">Standard units</text>
+    <circle cx="835" cy="472" r="5" fill="#ffffff" fill-opacity="0.95"/>
+<text x="855" y="478" font-size="14" font-weight="650" fill="#ffffff" text-anchor="start">Consistent naming</text>
+  </g>
+  <g>
+<path d="M500 245 C445 190 425 148 420 145" stroke="#405162" stroke-width="3.8" fill="none"/>
+<path d="M700 245 C755 190 775 148 780 145" stroke="#405162" stroke-width="3.8" fill="none"/>
+<path d="M500 315 C445 372 425 412 420 415" stroke="#405162" stroke-width="3.8" fill="none"/>
+<path d="M700 315 C755 372 775 412 780 415" stroke="#405162" stroke-width="3.8" fill="none"/>
+  </g>
+</svg>
