@@ -1,7 +1,12 @@
 ---
 title: "Responsible Use of Generative AI"
 subtitle: "A 2-hour course for selective, defensible AI use in research"
+page-class: course-page
 ---
+
+```{=html}
+<div class="course-page-marker" aria-hidden="true"></div>
+```
 
 ::: {.tier-card}
 ### Course At A Glance

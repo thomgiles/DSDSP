@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
+  <title id="title">Effective visual design principles</title>
+  <desc id="desc">Effective visual design combines simplicity, consistent colour, clear labels, and honest scale choices.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2 2 L10 6 L2 10 Z" fill="#405162"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-20%" width="120%" height="145%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#10263b" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="360" rx="28" fill="#f7fbfc"/>
+  <g stroke="#405162" stroke-width="4" marker-end="url(#arrow)" fill="none">
+    <path d="M600 180 Q410.0 142.5 220 105"/>
+    <path d="M600 180 Q790.0 142.5 980 105"/>
+    <path d="M600 180 Q410.0 220.0 220 260"/>
+    <path d="M600 180 Q790.0 220.0 980 260"/>
+  </g><g filter="url(#shadow)" font-family="sans-serif">
+    <rect x="475" y="122" width="250" height="116" rx="24" fill="#10263b"/>
+    <rect x="75" y="51" width="290" height="108" rx="20" fill="#006781"/>
+    <rect x="835" y="51" width="290" height="108" rx="20" fill="#298582"/>
+    <rect x="75" y="206" width="290" height="108" rx="20" fill="#405162"/>
+    <rect x="835" y="206" width="290" height="108" rx="20" fill="#009bc1"/>
+  </g><g font-family="sans-serif">
+<text x="600" y="173.0" font-size="20" font-weight="700" fill="#ffffff" text-anchor="middle">Effective Visual</text>
+<text x="600" y="197.0" font-size="20" font-weight="700" fill="#ffffff" text-anchor="middle">Design</text>
+<text x="220" y="99.0" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">Keep it simple</text>
+<text x="220" y="133.0" font-size="12.5" font-weight="600" fill="#ffffff" text-anchor="middle">Clarity over decoration</text>
+<text x="980" y="87.0" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">Use consistent</text>
+<text x="980" y="111.0" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">colours</text>
+<text x="980" y="133.0" font-size="12.5" font-weight="600" fill="#ffffff" text-anchor="middle">One hue = one category</text>
+<text x="220" y="254.0" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">Label everything</text>
+<text x="220" y="288.0" font-size="12.5" font-weight="600" fill="#ffffff" text-anchor="middle">Never assume context</text>
+<text x="980" y="242.0" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">Start scales at</text>
+<text x="980" y="266.0" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">zero</text>
+<text x="980" y="292.0" font-size="12.5" font-weight="600" fill="#ffffff" text-anchor="middle">Unless statistically</text>
+<text x="980" y="310.0" font-size="12.5" font-weight="600" fill="#ffffff" text-anchor="middle">justified</text>
+  </g>
+</svg>

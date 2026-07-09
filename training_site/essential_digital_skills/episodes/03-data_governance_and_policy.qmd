@@ -67,38 +67,9 @@ Personal data means *any information relating to an identified or identifiable p
 
 ## The GDPR Framework
 
-```{mermaid}
-flowchart LR
-    A[Data Subject]
-    A1[Provides Data]
-    B[Researcher / Controller]
-    B1[Processes Data]
-    C[Processor / Collaborator]
-    C1[Transfers / Shares Data]
-    D[Data Storage / Cloud]
-    D1[Provides Access or Retention]
+![GDPR framework diagram connecting data subjects, controllers, processors, and storage or cloud services.](fig/eds-gdpr-framework.svg){fig-align="center" width="82%"}
 
-    %% Main linear flow
-    A --> B --> C --> D
-
-    %% Descriptive side nodes
-    A --> A1
-    B --> B1
-    C --> C1
-    D --> D1
-
-    %% Styling
-    style A fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
-    style A1 fill:#BBDEFB,stroke:#1976D2,stroke-width:1px,stroke-dasharray:2 2
-    style B fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px
-    style B1 fill:#C8E6C9,stroke:#388E3C,stroke-width:1px,stroke-dasharray:2 2
-    style C fill:#FFF3E0,stroke:#EF6C00,stroke-width:1px
-    style C1 fill:#FFE0B2,stroke:#F57C00,stroke-width:1px,stroke-dasharray:2 2
-    style D fill:#F3E5F5,stroke:#6A1B9A,stroke-width:1px
-    style D1 fill:#E1BEE7,stroke:#8E24AA,stroke-width:1px,stroke-dasharray:2 2
-```
-
-> ⚖️ *Every processing activity must have a lawful basis and respect data subject rights.*
+> 🧭 The key distinction is who decides why data is used, who acts on instructions, and where access is controlled.
 
 ## Lawful Basis for Research (UK GDPR Article 6)
 
@@ -130,18 +101,11 @@ It complements ethical approval and transparency but does not replace institutio
 
 ## Special Category Data (UK GDPR Article 9)
 
-```{mermaid}
-flowchart LR
-    A[Personal Data]
-    B[Special Category Data]
-    C[Health, Genetic, Biometric]
-    D[Race, Religion, Political Opinion]
-    E[Sexual Orientation]
+![Special category data flow showing personal data leading to Article 9 data examples.](fig/eds-special-category-flow.svg){fig-align="center" width="78%"}
 
-    A --> B --> C --> D --> E
-```
+> ⚠️ Article 9 data raises the evidence threshold because misuse can harm people directly.
 
-Special category data (Article 9) require **both** a lawful basis (Art 6) and a specific **Article 9 condition**commonly *scientific research with appropriate safeguards*.
+Special category data (Article 9) require **both** a lawful basis (Art 6) and a specific **Article 9 condition**, commonly *scientific research with appropriate safeguards*.
 
 ## Research Safeguards
 
@@ -208,16 +172,9 @@ Ethical review ensures that research is conducted with **integrity, transparency
 * **Proportionate review** based on level of risk: School/Faculty REC or NHS REC
 * Some low-risk activities may be registered but not reviewed if fully anonymised
 
-```{mermaid}
-flowchart LR
-    A[Research Idea] --> B[Ethics Self-Assessment]
-    B --> C{Human Data or Participants?}
-    C -->|No| D[Record Only]
-    C -->|Yes| E[Ethics Application]
-    E --> F{Low or High Risk?}
-    F -->|Low| G[School/Faculty REC]
-    F -->|High| H[NHS or Specialist REC]
-```
+![Ethics review route from research idea through self-assessment, participant checks, application, and risk review.](fig/eds-ethics-review-flow.svg){fig-align="center" width="86%"}
+
+> 🧭 Early self-assessment prevents ethics and governance questions from becoming late-stage delays.
 
 ## Common Ethical Issues
 
@@ -256,18 +213,15 @@ flowchart LR
 
 ![](fig/data_clasification.jpeg)
 
-## Handeling research data
+## Handling research data
 
 Research data must be handled according to sensitivity and risk. UoN’s **Information Classification Framework** defines four tiers: Public, Internal, Confidential and Highly Confidential.
 
 ## Information Classification Model
 
-```{mermaid}
-flowchart LR
-    A[Public] --> B[Internal]
-    B --> C[Confidential]
-    C --> D[Highly Confidential]
-```
+![Information classification flow from public through internal and confidential to highly confidential.](fig/eds-information-classification-flow.svg){fig-align="center" width="70%"}
+
+> 🔐 Classification should be decided before storage and sharing choices are made.
 
 | **Level**               | **Description**                     | **Examples**                           | **Storage Guidance**             |
 | ----------------------- | ----------------------------------- | -------------------------------------- | -------------------------------- |
@@ -334,13 +288,9 @@ Data governance operates across multiple levels: **institutional, national and f
 
 ## Implementing Compliance in Projects
 
-```{mermaid}
-flowchart LR
-    A[Institutional Policy] --> B[Funder Requirements]
-    B --> C[Project-Level Implementation]
-    C --> D[Monitoring & Review]
-    D --> A
-```
+![Project compliance cycle connecting institutional policy, funder requirements, implementation, and monitoring.](fig/eds-compliance-project-cycle.svg){fig-align="center" width="72%"}
+
+> 📋 Compliance is maintained through repeated checks, not a single form at the start.
 
 ## Essential Compliance Documents
 

@@ -1,10 +1,14 @@
 ---
 title: "Automating Business Processes"
+subtitle: "Power Automate workflows, approvals, Excel tables, and template emails."
+page-class: course-page
 ---
 
-# Automating Business Processes
-
 This course introduces practical automation for everyday business and research support workflows. Learners will design, test, and improve small automations that reduce repetitive administration while keeping approvals, auditability, and data quality visible.
+
+```{=html}
+<div class="course-page-marker" aria-hidden="true"></div>
+```
 
 ## Modules
 

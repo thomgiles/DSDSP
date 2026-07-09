@@ -168,15 +168,11 @@ These are the official policy documents:
 
 > ✅ Validation should be built into the workflow, not bolted on afterwards.
 
-## A worked prompt chain often help
+## A worked prompt chain often helps
 
-```{mermaid}
-flowchart LR
-    A["Define the task"] --> B["Get a first structured answer"]
-    B --> C["Interrogate assumptions or gaps"]
-    C --> D["Refine format for use"]
-    D --> E["Verify against source or data"]
-```
+![Prompt chain flow showing task definition, first structured answer, gap interrogation, format refinement, and verification.](fig/rai-prompt-chain-flow.svg){fig-align="center" width="78%"}
+
+> 🧭 The chain is useful because it separates generation, critique, and verification into visible steps.
 
 > 🧭 A staged prompt chain is less about cleverness than control: it helps separate drafting, critique, refinement, and verification so the final output is more reliable and easier to defend.
 

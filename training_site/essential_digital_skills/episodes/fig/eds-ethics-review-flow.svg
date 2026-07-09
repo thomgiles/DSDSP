@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="430" viewBox="0 0 1200 430" role="img" aria-labelledby="title desc">
+  <title id="title">Ethics review route</title>
+  <desc id="desc">A simple ethics route where a research idea and ethics self-assessment feed into a human data decision, which routes to record-only or ethics application via REC.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="13" markerHeight="13" refX="10" refY="6.5" orient="auto">
+      <path d="M2 2 L10 6.5 L2 11 Z" fill="#405162"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-20%" width="120%" height="145%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#10263b" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="430" rx="28" fill="#f7fbfc"/>
+
+  <g font-family="sans-serif" filter="url(#shadow)">
+    <rect x="70" y="86" width="195" height="88" rx="18" fill="#006781"/>
+    <rect x="70" y="256" width="260" height="88" rx="18" fill="#298582"/>
+
+    <path d="M520 125 L640 215 L520 305 L400 215 Z" fill="#10263b"/>
+
+    <rect x="800" y="70" width="210" height="80" rx="18" fill="#009bc1"/>
+    <rect x="800" y="290" width="170" height="80" rx="18" fill="#006781"/>
+    <rect x="1025" y="290" width="145" height="80" rx="18" fill="#298582"/>
+  </g>
+
+  <g fill="none" stroke="#405162" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round" marker-end="url(#arrow)">
+    <path d="M265 130 C330 130 372 165 430 205"/>
+    <path d="M330 300 C376 296 400 268 430 232"/>
+    <path d="M610 185 C670 130 725 110 790 110"/>
+    <path d="M610 245 C670 310 725 330 790 330"/>
+    <path d="M970 330 H1015"/>
+  </g>
+
+  <g font-family="sans-serif" fill="#405162">
+    <text x="715" y="102" font-size="15" font-weight="800" text-anchor="middle">No</text>
+    <text x="715" y="349" font-size="15" font-weight="800" text-anchor="middle">Yes</text>
+  </g>
+
+  <g font-family="sans-serif" fill="#ffffff" text-anchor="middle">
+    <text x="167.5" y="137" font-size="18" font-weight="700">Research Idea</text>
+
+    <text x="200" y="294" font-size="17" font-weight="700">Ethics</text>
+    <text x="200" y="318" font-size="17" font-weight="700">Self-Assessment</text>
+
+    <text x="520" y="208" font-size="18" font-weight="700">Human Data?</text>
+    <text x="905" y="117" font-size="18" font-weight="700">Record Only</text>
+
+    <text x="885" y="323" font-size="16" font-weight="700">Ethics</text>
+    <text x="885" y="345" font-size="16" font-weight="700">Application</text>
+
+    <text x="1097.5" y="337" font-size="17" font-weight="700">REC</text>
+  </g>
+</svg>

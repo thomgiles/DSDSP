@@ -50,22 +50,9 @@ Research today rarely occurs in isolation: projects depend on complex workflows,
 
 The traditional research pipeline—design, collect, analyse, publish—provides clarity but lacks adaptability. Digital delivery reimagines this as a **cyclical model** in which research evolves through continuous refinement, validation, and dissemination.
 
-```{mermaid}
-flowchart LR
-    A[Design & Plan] --> B[Develop & Implement]
-    B --> C[Test & Validate]
-    C --> D[Document & Communicate]
-    D --> E[Reflect & Adjust]
-    E --> A
+![Iterative research delivery loop moving through design, development, testing, documentation, and reflection.](fig/eds-iterative-delivery-loop.svg){fig-align="center" width="78%"}
 
-    style A fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
-    style B fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px
-    style C fill:#FFF3E0,stroke:#EF6C00,stroke-width:1px
-    style D fill:#F3E5F5,stroke:#6A1B9A,stroke-width:1px
-    style E fill:#F0F4C3,stroke:#9E9D24,stroke-width:1px
-```
-
-> 🔁 *Digital delivery reframes the research process as a continuous loop of improvement and transparency.*
+> 🔁 The loop gives teams permission to adjust the plan when evidence, blockers, or stakeholder needs change.
 
 ## Core Dimensions of Digital Delivery
 
@@ -103,14 +90,9 @@ Adopting digital delivery means:
 * Designing workflows that are **auditable, modular, and reusable**
 * Valuing **communication and visibility** as much as results
 
-```{mermaid}
-flowchart TB
-    A[Plan] --> B[Build] --> C[Share] --> D[Learn] --> A
-    style A fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
-    style B fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px
-    style C fill:#FFF3E0,stroke:#EF6C00,stroke-width:1px
-    style D fill:#F3E5F5,stroke:#6A1B9A,stroke-width:1px
-```
+![Digital delivery cycle showing plan, build, share, and learn.](fig/eds-digital-delivery-cycle.svg){fig-align="center" width="62%"}
+
+> 🧭 Small delivery loops keep work visible without turning research into a rigid production line.
 
 ---
 
@@ -149,22 +131,9 @@ Digital delivery depends on thoughtful planning and structured coordination, par
 
 Digital projects often involve researchers, analysts, data stewards, and technical leads. Coordination is achieved through **shared visibility** and **mutual accountability**, not through micromanagement.
 
-```{mermaid}
-flowchart TB
-    PI[Principal Investigator] --> PM[Project Coordinator]
-    PM --> DS[Data Scientist]
-    DS --> AN[Analyst]
-    AN --> DV[Developer]
-    DV --> PI
+![Delivery roles loop showing coordination between PI, project coordinator, data scientist, analyst, and developer.](fig/eds-delivery-roles-loop.svg){fig-align="center" width="76%"}
 
-    style PI fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px
-    style PM fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
-    style DS fill:#FFF3E0,stroke:#EF6C00,stroke-width:1px
-    style AN fill:#F3E5F5,stroke:#6A1B9A,stroke-width:1px
-    style DV fill:#F0F4C3,stroke:#9E9D24,stroke-width:1px
-```
-
-> 🧭 *Coordination is not control—it is visibility of interdependencies and continuous communication.*
+> 🧭 Roles overlap in practice; the point is to keep handovers visible.
 
 ## Effective Communication Practices
 
@@ -225,14 +194,9 @@ Agile is not about speed but **responsiveness**—learning quickly from each cyc
 
 A **sprint** is a short, focused cycle (often 1–2 weeks) in which the team commits to delivering a defined output. Each sprint closes with reflection and planning for the next.
 
-```{mermaid}
-flowchart LR
-    P[Planning]:::plan --> E[Execution]:::exec --> R[Review]:::rev --> RE[Retrospective]:::retro --> P
-    classDef plan fill:#E3F2FD,stroke:#1565C0;
-    classDef exec fill:#E8F5E9,stroke:#2E7D32;
-    classDef rev fill:#FFF3E0,stroke:#EF6C00;
-    classDef retro fill:#F3E5F5,stroke:#6A1B9A;
-```
+![Research sprint cycle showing planning, execution, review, and retrospective.](fig/eds-research-sprint-cycle.svg){fig-align="center" width="65%"}
+
+> 🕒 The sprint boundary keeps work small enough to review and improve.
 
 ## Typical Sprint Activities
 
@@ -288,18 +252,9 @@ Agile and digital delivery both depend on collective ownership. A sustainable re
 
 Research excellence relies not only on technical skill but also on **collaboration and reflection**. Agile encourages distributed leadership and mutual support.
 
-```{mermaid}
-flowchart LR
-    A[Shared Accountability] --> B[Psychological Safety]
-    B --> C[Continuous Learning]
-    C --> D[Transparency]
-    D --> A
+![Research culture loop showing shared accountability, psychological safety, continuous learning, and transparency.](fig/eds-research-culture-loop.svg){fig-align="center" width="72%"}
 
-    style A fill:#E3F2FD,stroke:#1565C0,stroke-width:1px
-    style B fill:#FFF3E0,stroke:#EF6C00,stroke-width:1px
-    style C fill:#E8F5E9,stroke:#2E7D32,stroke-width:1px
-    style D fill:#F3E5F5,stroke:#6A1B9A,stroke-width:1px
-```
+> 💬 A healthy delivery culture makes issues discussable before they become project risks.
 
 ## Practices That Support Shared Ownership
 

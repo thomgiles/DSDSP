@@ -137,26 +137,9 @@ in the 80s ML emerged when researchers realised that instead of telling computer
 
 In the early 2000s Natural Language Processing (NLP) emerged as a field of AI that focuses on understanding and generating human language. It focused on tasks such as translation, sentiment analysis, summarisation and question answering.
 
-```{mermaid}
+![Neural network flow showing input data passing through input and hidden layers to output data, with a feedback path for back-propagation.](fig/rai-neural-network-flow.svg){fig-align="center" width="78%"}
 
-graph LR
-    D["Input data"]
-    I["Input layer"]
-    H1["Hidden layer"]
-    H2["Hidden layer"]
-
-    O["Output layer"]
-    R["Output data"]
-
-    I -->|Feed forward| O
-    O -->|back-propagation| I
-    D --> I
-    I --> H1
-    H1 --> O
-    I --> H2
-    H2 --> O
-    O --> R
-```
+> 🧠 Learning improves when output errors are fed back into the model rather than treated as final answers.
 
 > 🗣️ Language is challenging because meaning depends on context and relationships across sentences. 
 
@@ -176,23 +159,13 @@ Transformers introduced something called self-attention, this essentially allowe
 
 > 🚀 This unlocked large-scale training and dramatically improved performance across language, vision and multimodal tasks.
 
-## Maintaing Context
+## Maintaining Context
 
 At each step, the model attends over the tokens currently in its context window, using self-attention to weigh which parts of the prompt and prior output matter most for predicting the next token.
 
-```{mermaid}
+![Prompt generation loop showing a prompt entering an LLM, attention being computed, tokens emitted, and context updated.](fig/rai-context-generation-loop.svg){fig-align="center" width="78%"}
 
-sequenceDiagram
-    participant U as Prompt
-    participant M as LLM
-    U->>M: Provide prompt
-    M->>M: Compute attention
-    M->>U: Output token
-    loop Generation
-        M->>M: Update context
-        M->>U: Emit next token
-    end
-```
+> 🧭 Context is active memory for the current exchange, not a guarantee of understanding.
 
 ## The cogs behind Generative AI
 
@@ -274,16 +247,9 @@ Rather than replacing expertise, it reallocates researcher effort from **product
 
 AI-enabled workflows can collapse traditionally sequential stages of research, reducing temporal distance between ideation, analysis, and dissemination.
 
-```{mermaid}
+![Research lifecycle compression diagram showing AI shortcuts between question framing, synthesis, analysis, and dissemination.](fig/rai-research-lifecycle-compression.svg){fig-align="center" width="78%"}
 
-graph LR
-  A["Question framing"] --> B["Evidence synthesis"]
-  B --> C["Analysis & modelling"]
-  C --> D["Dissemination"]
-  A -. "AI-assisted shortcuts" .-> C
-  B -. "AI-assisted drafting" .-> D
-
-```
+> ⏸️ Faster movement between stages makes deliberate review points more important, not less.
 
 > ⏸️ This compression increases throughput but reduces natural pauses for critical reflection, peer discussion, and methodological reconsideration. Opportunities therefore emerge only when deliberate checkpoints are reintroduced.
 
@@ -381,20 +347,9 @@ Effective use of AI in research therefore requires intentionally designed safegu
 
 Generative AI makes it easier for substantive contributions to be produced rapidly and invisibly: 
 
-```{mermaid}
+![AI governance accountability flow showing AI-assisted contribution feeding outputs, claims, methods, interpretation, and researcher accountability.](fig/rai-governance-accountability.svg){fig-align="center" width="80%"}
 
-flowchart LR
-  A["AI-assisted contribution"] 
-  B["Research output"]
-  C["Claim"]
-  C1["method"]
-  C2["interpretation"]
-  D["Researcher accountability"]
-
-  A --> B --> C --> D
-  B --> C1 --> D
-  B --> C2 --> D
-```
+> 🧾 Accountability cannot be delegated to the tool that generated or shaped the material.
 
 > 🧾 This strains established norms around **authorship, contribution, provenance, and accountability**.
 
@@ -449,19 +404,9 @@ Traceability aligns with established research integrity practices.
 
 A recurring problem is distinguishing *language editing* (clarity, structure) from *substantive contribution* (ideas, methods, claims, interpretation)
 
-```{mermaid}
+![Contribution boundary diagram separating surface editing, structural shaping, substantive contribution, and credentialed output.](fig/rai-contribution-boundaries.svg){fig-align="center" width="80%"}
 
-flowchart TB
-  A[Surface editing] --> A1[grammar, clarity]
-  B[Structural shaping] --> B1[outline, framing]
-  C[Substantive contribution] --> C1[ideas, claims, methods]
-  D[Credentialed output] --> D1[assessment/publication]
-
-  style A stroke-width:3px
-  style B stroke-width:3px
-  style C stroke-width:3px
-  style D stroke-width:3px
-```
+> 👤 The risk rises when the tool starts shaping claims, methods, interpretation, or assessed work.
 
 > 👤 The critical question is not whether AI was used, but how it was used
 
@@ -516,23 +461,9 @@ The Following Method was produced using AI:
 Many AI tools operate outside institutional infrastructure and governance controls.  
 This transforms routine academic actions (summarising notes, refining code, drafting interpretation) into potential **boundary-crossing events** that may bypass established safeguards.
 
-```{mermaid}
+![AI data risk flow showing routine academic work moving through an external AI service into loss of control and downstream risks.](fig/rai-data-risk-flow.svg){fig-align="center" width="80%"}
 
-flowchart TB
-  B["Routine academic task"]
-  C["External AI service"]
-  D["Loss of control"]
-
-  B --> C
-  C --> D
-
-  D --> E["Unclear retention"]
-  D --> F["Jurisdictional uncertainty"]
-  D --> G["Secondary use risk"]
-
-  style C stroke-width:3px
-  style D stroke-width:3px
-```
+> 🔐 The boundary crossing is the critical moment: once material leaves governed systems, controls become uncertain.
 
 > 🔒 The dominant risk is not malicious intent but **loss of visibility and control** once material leaves institutional systems.
 
@@ -594,12 +525,9 @@ From a research governance perspective, unresolved questions include:
 Risk is not only technical; it is behavioural.  
 Convenience can normalise incremental risk-taking without explicit decision points.
 
-```{mermaid}
+![Behavioural drift flow showing normal research work becoming convenient AI use, reduced deliberation, normalised exposure, and elevated risk.](fig/rai-behavioural-drift-flow.svg){fig-align="center" width="76%"}
 
-flowchart LR
-    A["Normal research task"] --> B["Convenient AI use"] --> C["Reduced deliberation"] --> D["Normalised exposure"] --> E["Elevated risk"]
-  style E stroke-width:3px
-```
+> 🔍 Drift is dangerous because each individual step can feel too small to question.
 
 > 🔍 This form of “quiet drift” is harder to detect than discrete policy violations.
 
@@ -609,7 +537,7 @@ A simple operational test:
 
 > 📧 *Would I be permitted to email this material to an external collaborator without a formal agreement?*
 
-If not, i t should not be shared with an external AI service. Check with your organisation directly if there are local / secure versions of these tools avalible for you to use. 
+If not, it should not be shared with an external AI service. Check with your organisation directly if there are local / secure versions of these tools available for you to use.
 
 
 # Further Information

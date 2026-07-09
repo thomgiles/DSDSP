@@ -1,7 +1,7 @@
 ---
 title: "About Digital Skills"
 breadcrumb: false
-page-class: landing-page
+page-class: "landing-page about-page"
 
 format:
   html:
@@ -26,28 +26,16 @@ main#quarto-document-content { margin-top: 0; }
 </style>
 ```
 
-::: {.landing-hero .landing-hero-compact}
-::: {.landing-energy-field aria-hidden="true"}
-::: {.landing-energy-line .line-one}
-:::
-::: {.landing-energy-line .line-two}
-:::
-::: {.landing-energy-line .line-three}
-:::
-:::
+::: {.landing-hero .landing-hero-compact .landing-page-hero}
 ::: {.landing-hero-content}
-::: {.landing-eyebrow .landing-eyebrow-branded}
-[Developed By The University of Nottingham Digital Research Service](https://digitalresearch.nottingham.ac.uk/)
-:::
-
 # About the Digital Skills Programme
 
 Practical, reusable training for researchers who need reliable digital methods.
 :::
 :::
 
-::: {.landing-section .about-lede}
-::: {.landing-section-heading}
+::: {.landing-section .landing-programme-summary .about-lede}
+::: {.landing-summary-copy}
 ## Learn Skills You Can Use Immediately
 
 The Digital Skills programme is built around practical research workflows, not abstract tool demos. Each course gives learners something they can reuse: a cleaner folder structure, a safer data process, a working automation, a reproducible analysis, or a clearer AI workflow.
@@ -68,6 +56,32 @@ Sessions combine short teaching blocks with practical activities and discussion.
 ### 🔁 Reuse the Materials
 
 Slides, setup guides, examples, and references are available from each course page.
+:::
+:::
+:::
+
+::: {#open-access .landing-section .about-open-access}
+::: {.landing-section-heading}
+## Open Access Materials
+
+The Digital Skills programme is designed so learners can return to the materials after a workshop and reuse them in their own work. Course pages collect slides, setup notes, practical exercises, example files, and references wherever those materials can be shared openly.
+:::
+
+::: {.landing-feature-grid}
+::: {.landing-feature}
+### 🔓 Open by Default
+
+Materials are published on the training site where possible, so learners can revisit them without waiting for a follow-up email or a private file share.
+:::
+::: {.landing-feature}
+### ♻️ Built for Reuse
+
+Examples are written as starting points for real workflows, including templates, data checks, automation patterns, and reproducible analysis structures.
+:::
+::: {.landing-feature}
+### 🧭 Clear Boundaries
+
+Where access, licensing, institutional systems, or sensitive data matter, the materials explain what can be reused and what needs local approval or adaptation.
 :::
 :::
 :::
@@ -215,3 +229,35 @@ For general enquiries, registration, or accessibility queries, contact the Digit
 </div>
 ```
 :::
+
+```{=html}
+<script>
+(() => {
+  const initAboutScrollReveals = () => {
+    const revealItems = document.querySelectorAll(
+      ".about-lede, .about-open-access, .about-gradient-band, .about-two-col, .landing-split, .about-contact"
+    );
+    if (!revealItems.length) return;
+
+    if (!("IntersectionObserver" in window)) {
+      revealItems.forEach((item) => item.classList.add("is-visible"));
+      return;
+    }
+
+    const observer = new IntersectionObserver((entries) => {
+      for (const entry of entries) {
+        entry.target.classList.toggle("is-visible", entry.isIntersecting);
+      }
+    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.18 });
+
+    revealItems.forEach((item) => observer.observe(item));
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initAboutScrollReveals);
+  } else {
+    initAboutScrollReveals();
+  }
+})();
+</script>
+```

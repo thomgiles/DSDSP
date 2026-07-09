@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="430" viewBox="0 0 1200 430" role="img" aria-labelledby="title desc">
+  <title id="title">Iterative research delivery loop</title>
+  <desc id="desc">Research delivery moves through design, implementation, testing, documentation, and reflection before repeating.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="13" markerHeight="13" refX="10" refY="6.5" orient="auto">
+      <path d="M2 2 L10 6.5 L2 11 Z" fill="#405162"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-20%" width="120%" height="145%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#10263b" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="430" rx="28" fill="#f7fbfc"/>
+
+  <g>
+<path d="M300 108 H350 H590 C620 108 640 140 640 175" stroke="#405162" stroke-width="3.8" marker-end="url(#arrow)" fill="none"/>
+<path d="M640 251 C640 300 610 318 485 318" stroke="#405162" stroke-width="3.8" marker-end="url(#arrow)" fill="none"/>
+<path d="M360 318 H300 C240 318 210 296 195 280" stroke="#405162" stroke-width="3.8" marker-end="url(#arrow)" fill="none"/>
+<path d="M195 280 V155" stroke="#405162" stroke-width="3.8" marker-end="url(#arrow)" fill="none"/>
+  </g>
+  <g filter="url(#shadow)" font-family="sans-serif">
+    <rect x="90" y="70" width="210" height="76" rx="18" fill="#006781"/>
+<text x="195.0" y="104.0" font-size="17" font-weight="700" fill="#fff" text-anchor="middle">Design &amp;</text>
+<text x="195.0" y="126.0" font-size="17" font-weight="700" fill="#fff" text-anchor="middle">Plan</text>
+    <rect x="360" y="70" width="230" height="76" rx="18" fill="#298582"/>
+<text x="475.0" y="104.0" font-size="17" font-weight="700" fill="#fff" text-anchor="middle">Develop &amp;</text>
+<text x="475.0" y="126.0" font-size="17" font-weight="700" fill="#fff" text-anchor="middle">Implement</text>
+    <rect x="640" y="175" width="220" height="76" rx="18" fill="#405162"/>
+<text x="750.0" y="209.0" font-size="17" font-weight="700" fill="#fff" text-anchor="middle">Test &amp;</text>
+<text x="750.0" y="231.0" font-size="17" font-weight="700" fill="#fff" text-anchor="middle">Validate</text>
+    <rect x="360" y="280" width="250" height="76" rx="18" fill="#009bc1"/>
+<text x="485.0" y="314.0" font-size="17" font-weight="700" fill="#fff" text-anchor="middle">Document &amp;</text>
+<text x="485.0" y="336.0" font-size="17" font-weight="700" fill="#fff" text-anchor="middle">Communicate</text>
+    <rect x="90" y="280" width="210" height="76" rx="18" fill="#10263b"/>
+<text x="195.0" y="314.0" font-size="17" font-weight="700" fill="#fff" text-anchor="middle">Reflect &amp;</text>
+<text x="195.0" y="336.0" font-size="17" font-weight="700" fill="#fff" text-anchor="middle">Adjust</text>
+  </g>
+</svg>
