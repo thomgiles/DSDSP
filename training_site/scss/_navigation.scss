@@ -1,0 +1,29 @@
+/* ===========================
+   NAVBAR
+   =========================== */
+.navbar {
+  padding: 0;
+  margin: 0 0 10px -20px;
+  font: 600 15.1474px "Circular Bold", sans-serif;
+}
+nav.navbar.navbar-expand-lg { padding-bottom: 20px; }
+nav.quarto-secondary-nav { display: none; }
+li.nav-item.dropdown { margin-right: 10px; }
+a.navbar-brand.navbar-brand-logo { margin: 0; padding: 0; }
+.navbar-container { display: flex; justify-content: flex-start; }
+.nav-items { display: flex; list-style: none; }
+
+div#navbarCollapse {
+    padding-bottom: 15px;
+    padding-top: 35px;
+}
+
+.navbar .navbar-container > .navbar-brand-container {
+  margin: 0px 0 0 -8px !important;
+  padding: 0;
+}
+.navbar-nav {
+  margin: 0 auto 0 60px !important;
+  padding-top: 10px;
+}
+.navbar-logo { max-height: 93px; width: auto; padding-right: 10px; }

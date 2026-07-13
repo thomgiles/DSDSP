@@ -1,0 +1,17 @@
+/* ===========================
+   CARDS & LAYOUT
+   =========================== */
+.tier-card {
+  background-color: rgba($link-color, 0.05);
+  border-left: 4px solid $link-color;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  margin: 1rem 0 2rem;
+  h3 { margin-top: 0; }
+}
+.breakout { display: block; width: 200%; margin: 20px; height: auto; }
+@supports (width: 100svw) {
+  .breakout-full { width: 100svw; margin-left: calc(-50svw + 50%); }
+  .breakout-right { margin-right: max(0px, calc(-50svw + 50%)); }
+  .breakout-left  { margin-left:  max(0px, calc(-50svw + 50%)); }
+}

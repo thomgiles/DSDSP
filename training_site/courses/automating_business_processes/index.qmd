@@ -1,0 +1,165 @@
+---
+title: "Automating Business Processes"
+subtitle: "Power Automate workflows, approvals, Excel tables, and template emails"
+page-class: course-page
+course-area: "Automation"
+course-level: "Intermediate"
+course-status: "New"
+course-badge: "Power Automate"
+course-icon: "⚙️"
+course-summary: "Power Automate workflows, approvals, Excel tables, and template emails."
+course-tags: ["Power Automate", "Workflow automation", "Approvals", "Excel tables", "Word templates", "Microsoft 365"]
+---
+
+```{=html}
+<div class="course-page-marker" aria-hidden="true"></div>
+```
+
+::: {.tier-card}
+### Course At A Glance
+
+- **Level:** Intermediate
+- **Duration:** Practical workshop format
+- **Best for:** Researchers, research support staff, analysts, administrators, and professional services colleagues who want to reduce repeatable manual work
+- **Main themes:** Power Automate, triggers, connectors, expressions, approvals, Excel tables, Word templates, and maintainable workflow design
+- **Format:** One applied lesson built around short teaching blocks and hands-on flow building
+- **Outcome:** A clearer understanding of when to automate, how to build a basic workflow, and how to keep ownership, data, and failure handling visible
+:::
+
+::: {.two-col-grid}
+::: {.item}
+## Why This Course Matters
+
+Many business and research support processes still rely on repeated copying, forwarding, checking, and updating. These tasks are often small enough to be ignored individually, but together they create delay, error, and hidden dependency on one person knowing the process.
+
+Automating Business Processes introduces Power Automate as a practical way to connect common Microsoft 365 tools without building a full application. The focus is not automation for its own sake. The course helps learners decide which processes are suitable, what records need to be protected, and how to design flows that another colleague could understand later.
+:::
+
+::: {.item}
+## What You Will Actually Do
+
+Learners build and inspect real Power Automate flows using safe example files and realistic workflow patterns.
+
+Across the course you will:
+
+- choose a trigger that matches the real start of a process
+- connect Microsoft 365 tools using standard connectors
+- use expressions to clean and route values
+- add an approval branch and handle rejection
+- read rows from an Excel table and send personalised messages
+- connect Excel data to a Word template for repeatable documents
+:::
+:::
+
+## Who This Is For
+
+This course is especially useful if you:
+
+- regularly move information between Outlook, Teams, SharePoint, OneDrive, Excel, or Word
+- manage a process where requests need acknowledgement, routing, approval, or record keeping
+- want to automate simple work without writing a full application
+- need better judgement about permissions, ownership, service accounts, and maintainability
+- support a team where manual handoffs are causing delay or avoidable errors
+
+It works well after [Essential Digital Skills](../essential_digital_skills/index.qmd), but learners can join directly if they already use Microsoft 365 confidently.
+
+## You Will Build Confidence In
+
+::: {.four-col-grid}
+::: {.item}
+### Spotting Automation Fit
+
+Identify processes with clear triggers, structured inputs, predictable decisions, and a named owner.
+:::
+
+::: {.item}
+### Building Maintainable Flows
+
+Use triggers, connectors, conditions, and expressions in a way that is testable and understandable.
+:::
+
+::: {.item}
+### Managing Decisions and Records
+
+Add approval paths, rejection outcomes, audit trails, and clear storage locations for official records.
+:::
+
+::: {.item}
+### Reducing Operational Risk
+
+Think through permissions, connection ownership, service accounts, failure handling, and handover.
+:::
+:::
+
+## Learning Journey
+
+| Lesson | What you will tackle | Why it matters |
+|---|---|---|
+| [Power Automate Fundamentals](episodes/01-power_automate.qmd) | Workflow shape, triggers, connectors, expressions, approvals, Excel tables, Word templates, and email automation | Gives learners a practical foundation for designing and testing small automations safely |
+
+## Practical Build
+
+The workshop centres on a small but realistic automation pattern:
+
+1. Start from a manual or system trigger.
+2. Collect or read structured data.
+3. Clean and route values using expressions and conditions.
+4. Pause for an approval decision where needed.
+5. Send a personalised message or document.
+6. Update the source record so the process remains auditable.
+
+Example files are provided for the Excel table and Word template activities.
+
+## What Learners Typically Leave With
+
+By the end of the course, learners should be more able to:
+
+- explain whether a process is a good candidate for automation
+- choose between manual, scheduled, and event-based triggers
+- build a small flow using common Microsoft 365 connectors
+- use expressions and conditions without losing sight of the process logic
+- add approvals and handle both approved and rejected outcomes
+- document ownership, connections, records, and maintenance risks
+- recognise when a flow needs team ownership or a service account conversation before production use
+
+## How To Prepare
+
+Learners should have access to a Microsoft 365 account with Power Automate enabled. Some activities use Outlook, Excel, Word, OneDrive, SharePoint, Teams, and the Approvals app. Tenant configuration and licensing can affect which connectors and actions are available.
+
+It helps to arrive with:
+
+- access to [Power Automate](https://make.powerautomate.com/)
+- permission to use OneDrive or SharePoint for safe test files
+- access to Outlook and Teams for test notifications
+- one repeatable process you might want to automate later
+
+Detailed preparation guidance is available in [Setup](learners/setup.qmd).
+
+## Course Materials
+
+::: {.two-col-grid}
+::: {.item}
+### Learners
+
+- [Setup](learners/setup.qmd): access checks, example files, and workshop preparation
+- [Additional Material](learners/additional_material.qmd): extra examples, connector guidance, and simplified Microsoft learning notes
+- [Reference](learners/reference.qmd): Power Automate terminology, design checks, and troubleshooting prompts
+- [Discussion](learners/discuss.qmd): prompts for process selection, risk review, and reflection
+:::
+
+::: {.item}
+### Instructors
+
+- [Instructor Notes](instructors/instructor-notes.qmd): session rhythm, teaching notes, and facilitation guidance
+- [Additional Material](instructors/additional_material.qmd): optional extensions, demos, and supporting examples
+- [Extra Exercises](instructors/extra_exercises.qmd): backup activities for deeper practice or consolidation
+:::
+:::
+
+## Community and Course Information
+
+- [Course README](README.qmd)
+- [Contributing](CONTRIBUTING.qmd)
+- [Learner Profiles](profiles/learner-profiles.qmd)
+- [Code of Conduct](CODE_OF_CONDUCT.qmd)
+- [License](LICENSE.qmd)

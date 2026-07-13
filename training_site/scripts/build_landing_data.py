@@ -9,53 +9,28 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-OUTPUT = ROOT / "_includes" / "landing-site-data.html"
-
-COURSE_META = {
-    "essential_digital_skills": {
-        "area": "Foundation",
-        "level": "Foundation",
-        "status": "Core",
-        "badge": "Oct to Jan",
-        "summary": "Core tools, data handling, evidence, insight, and impact.",
-    },
-    "responsible_use_of_generative_ai": {
-        "area": "Responsible AI",
-        "level": "Foundation",
-        "status": "Core",
-        "badge": "Extension",
-        "summary": "Prompting, checking, critique, and responsible AI decisions.",
-    },
-    "automating_business_processes": {
-        "area": "Automation",
-        "level": "Intermediate",
-        "status": "New",
-        "badge": "Power Automate",
-        "summary": "Power Automate workflows, approvals, Excel tables, and template emails.",
-    },
-    "applied_python": {
-        "area": "Data Science",
-        "level": "Intermediate",
-        "status": "Optional",
-        "badge": "Python",
-        "summary": "Python for analysis, modelling, reporting, and debugging.",
-    },
-    "applied_R": {
-        "area": "Data Science",
-        "level": "Intermediate",
-        "status": "Optional",
-        "badge": "R",
-        "summary": "R and tidyverse workflows for applied analysis.",
-    },
-}
+COURSES_ROOT = ROOT / "courses"
+OUTPUT = ROOT / "html" / "landing-site-data.html"
 
 COURSE_ORDER = {
     "essential_digital_skills": 1,
-    "responsible_use_of_generative_ai": 2,
-    "automating_business_processes": 3,
-    "applied_python": 4,
-    "applied_R": 5,
+    "methods_for_data_science": 2,
+    "responsible_use_of_generative_ai": 3,
+    "automating_business_processes": 4,
+    "applied_python": 5,
+    "applied_R": 6,
 }
+
+COURSE_FRONTMATTER_KEYS = {
+    "area": ("course-area", "area"),
+    "level": ("course-level", "level"),
+    "status": ("course-status", "status"),
+    "badge": ("course-badge", "badge"),
+    "summary": ("course-summary", "summary"),
+    "icon": ("course-icon", "icon"),
+}
+
+COURSE_TAG_KEYS = ("course-tags", "tags")
 
 
 def read_frontmatter_value(path: Path, key: str) -> str | None:
@@ -79,6 +54,40 @@ def read_frontmatter_value(path: Path, key: str) -> str | None:
     ):
         value = value[1:-1]
     return value.strip()
+
+
+def read_frontmatter_list(path: Path, keys: tuple[str, ...]) -> list[str]:
+    text = path.read_text(encoding="utf-8", errors="ignore")
+    if not text.startswith("---"):
+        return []
+
+    end = text.find("\n---", 3)
+    if end == -1:
+        return []
+
+    frontmatter = text[3:end]
+    for key in keys:
+        inline = re.search(rf"^\s*{re.escape(key)}\s*:\s*\[(.*?)\]\s*$", frontmatter, re.MULTILINE)
+        if inline:
+            return [
+                item.strip().strip("\"'")
+                for item in inline.group(1).split(",")
+                if item.strip()
+            ]
+
+        block = re.search(
+            rf"^\s*{re.escape(key)}\s*:\s*\n(?P<body>(?:\s+-\s+.+\n?)+)",
+            frontmatter,
+            re.MULTILINE,
+        )
+        if block:
+            return [
+                item.strip().strip("\"'")
+                for item in re.findall(r"^\s+-\s+(.+?)\s*$", block.group("body"), re.MULTILINE)
+                if item.strip()
+            ]
+
+    return []
 
 
 def strip_frontmatter(text: str) -> str:
@@ -158,6 +167,40 @@ def course_glance_items(path: Path) -> list[str]:
     return items
 
 
+def course_glance_map(items: list[str]) -> dict[str, str]:
+    values: dict[str, str] = {}
+    for item in items:
+        if ":" not in item:
+            continue
+        key, value = item.split(":", 1)
+        values[key.strip().lower()] = value.strip()
+    return values
+
+
+def read_course_metadata(path: Path, glance: dict[str, str]) -> dict[str, str]:
+    metadata: dict[str, str] = {}
+    for field, keys in COURSE_FRONTMATTER_KEYS.items():
+        for key in keys:
+            value = read_frontmatter_value(path, key)
+            if value:
+                metadata[field] = value
+                break
+
+    metadata.setdefault("level", glance.get("level", "Available"))
+    metadata.setdefault("status", "Available")
+    metadata.setdefault(
+        "badge",
+        glance.get("duration")
+        or glance.get("environment")
+        or glance.get("format")
+        or "Course",
+    )
+    metadata.setdefault("summary", glance.get("main themes", ""))
+    metadata.setdefault("area", metadata["badge"] if metadata["badge"] != "Course" else "Course")
+    metadata.setdefault("icon", "📚")
+    return metadata
+
+
 def title_from_filename(path: Path) -> str:
     stem = re.sub(r"^\d+[-_]", "", path.stem)
     stem = stem.replace("_", " ").replace("-", " ")
@@ -174,7 +217,7 @@ def build_data() -> dict[str, list[dict[str, str]]]:
     modules: list[dict[str, str]] = []
 
     course_dirs = sorted(
-        [path for path in ROOT.iterdir() if path.is_dir()],
+        [path for path in COURSES_ROOT.iterdir() if path.is_dir()],
         key=lambda path: (COURSE_ORDER.get(path.name, 999), path.name.lower()),
     )
 
@@ -189,23 +232,26 @@ def build_data() -> dict[str, list[dict[str, str]]]:
         if not index.exists() or not episodes.exists():
             continue
 
-        meta = COURSE_META.get(course_dir.name, {})
         title = read_frontmatter_value(index, "title") or title_from_filename(course_dir)
-        subtitle = read_frontmatter_value(index, "subtitle") or meta.get("summary", "")
+        subtitle = read_frontmatter_value(index, "subtitle") or ""
         intro = course_intro(index)
         glance = course_glance_items(index)
+        meta = read_course_metadata(index, course_glance_map(glance))
+        tags = read_frontmatter_list(index, COURSE_TAG_KEYS)
         course = {
             "slug": course_dir.name,
             "title": title,
             "subtitle": subtitle,
-            "href": f"{course_dir.name}/index.html",
-            "area": meta.get("area", "Other"),
-            "level": meta.get("level", "Other"),
-            "status": meta.get("status", "Available"),
-            "badge": meta.get("badge", "Course"),
-            "summary": meta.get("summary", subtitle),
+            "href": f"courses/{course_dir.name}/index.html",
+            "area": meta["area"],
+            "level": meta["level"],
+            "status": meta["status"],
+            "badge": meta["badge"],
+            "summary": meta["summary"] or subtitle,
             "intro": intro or subtitle or meta.get("summary", ""),
             "glance": glance,
+            "tags": tags,
+            "icon": meta["icon"],
         }
         courses.append(course)
 
@@ -214,10 +260,11 @@ def build_data() -> dict[str, list[dict[str, str]]]:
                 continue
             number = module_number(episode)
             module_title = read_frontmatter_value(episode, "title") or title_from_filename(episode)
+            module_icon = read_frontmatter_value(episode, "module-icon") or course["icon"]
             modules.append(
                 {
                     "title": module_title,
-                    "href": f"{course_dir.name}/episodes/{episode.with_suffix('.html').name}",
+                    "href": f"courses/{course_dir.name}/episodes/{episode.with_suffix('.html').name}",
                     "course": title,
                     "courseSlug": course_dir.name,
                     "area": course["area"],
@@ -225,6 +272,8 @@ def build_data() -> dict[str, list[dict[str, str]]]:
                     "status": course["status"],
                     "badge": course["badge"],
                     "number": number,
+                    "tags": tags,
+                    "icon": module_icon,
                 }
             )
 

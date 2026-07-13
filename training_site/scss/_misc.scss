@@ -1,0 +1,41 @@
+/* ===========================
+   MISC
+   =========================== */
+hr { border: 0; border-top: 1px solid $white; }
+
+.breadcrumb {
+  --bs-breadcrumb-divider-color: $white;
+  --bs-breadcrumb-item-active-color: $white;
+}
+
+
+/* Cookie banner (TermsFeed) */
+.termsfeed-com---palette-dark.termsfeed-com---nb { background-color: $slate; }
+.termsfeed-com---palette-dark .cc-nb-okagree,
+.termsfeed-com---palette-dark .cc-nb-changep,
+.termsfeed-com---palette-dark .cc-nb-reject {
+  background-color: $blue;
+  color: $white;
+}
+
+/* Hide breadcrumbs entirely */
+.quarto-page-breadcrumbs {
+  display: none !important;
+}
+
+.table {
+    border: 1px solid  $ink;
+}
+
+tr.header {
+    background: $teal;
+    color: $white;
+}
+
+tr.even {
+    background: $grey;
+}
+
+.blockquote {
+    color: $ink;
+}

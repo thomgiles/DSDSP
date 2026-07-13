@@ -1,0 +1,39 @@
+/* Theme */
+$theme: "lumen" !default;
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+$font-family-sans-serif:   "Circular Book", Helvetica, Arial, sans-serif !default;
+$font-family-monospace:    "Circular Book", Circular, monospace !default;
+$headings-font-family:     "Circular Bold", Helvetica, Arial, sans-serif;
+
+/* Colours */
+$teal:   #298582;
+$blue2:  #009bc1;
+$blue:   #006781;
+$slate:  #405162;
+$ink:    #10263b;
+$white:  #ffffff;
+$grey:   #B6B6B61F;
+$beige:  #ebdcc1;
+
+/* Bootstrap overrides */
+$body-bg:        $white !default;
+$body-color:     $ink !default;
+$link-color:     $teal !default;
+$navbar-bg:      $white !default;
+$navbar-fg:      $ink !default;
+$sidebar-bg:     $white !default;
+$sidebar-fg:     $ink !default;
+$footer-bg:      $grey !default;
+$footer-fg:      $ink !default;
+$code-block-bg:  $white !default;
+
+/* Global fixes */
+html, body { overflow-x: hidden; }
+body {
+  font-family: "Circular Book", Circular, monospace;
+  line-height: 1.65;
+}
+main#quarto-document-content { margin-top: -15px; }
+#quarto-content > * { padding-top: 0px; }

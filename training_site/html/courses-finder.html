@@ -1,0 +1,45 @@
+```{=html}
+<div class="landing-search-mode" role="group" aria-label="Choose search mode">
+  <button type="button" class="is-active" data-search-mode="courses" aria-pressed="true">Courses</button>
+  <button type="button" data-search-mode="modules" aria-pressed="false">Modules</button>
+</div>
+
+<div class="landing-filter-panel" data-course-module-filter>
+  <label>
+    <span>Keyword</span>
+    <input id="course-module-search-filter" class="landing-filter-search" type="search" placeholder="Search courses">
+  </label>
+  <label>
+    <span>Training area</span>
+    <select id="course-module-area-filter">
+      <option value="All">All</option>
+    </select>
+  </label>
+  <label data-course-filter-wrap hidden>
+    <span>Course</span>
+    <select id="course-module-course-filter">
+      <option value="All">All</option>
+    </select>
+  </label>
+  <label>
+    <span>Level</span>
+    <select id="course-module-level-filter">
+      <option value="All">All</option>
+    </select>
+  </label>
+  <div class="landing-filter-count" aria-live="polite">
+    <strong id="course-module-match-count">0</strong>
+    <span id="course-module-match-label">matching courses</span>
+  </div>
+</div>
+
+<div class="landing-results-view" data-results-view="courses">
+  <p class="landing-results-intro">The pathway is flexible. Learners can start with core digital practice, then move into responsible AI, automation, or code-based data science.</p>
+  <div id="landing-course-list" class="landing-course-list" aria-label="Course list"></div>
+</div>
+
+<div class="landing-results-view" data-results-view="modules" hidden>
+  <p class="landing-results-intro">Use module search when you want a specific topic, activity, or session inside a course.</p>
+  <div class="landing-course-grid" id="landing-module-grid" aria-label="Module list"></div>
+</div>
+```

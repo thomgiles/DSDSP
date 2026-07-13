@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
+  <title id="title">RDM role and responsibility map</title>
+  <desc id="desc">Research data management roles are grouped with their responsibilities in a left-to-right sequence of forward-flow cards.</desc>
+  <defs>
+    <filter id="shadow" x="-10%" y="-20%" width="120%" height="145%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#10263b" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+
+  <rect width="1200" height="360" rx="28" fill="#f7fbfc"/>
+
+  <g filter="url(#shadow)" font-family="sans-serif">
+    <path d="M34 74 H176 L204 180 L176 286 H34 Z" fill="#006781"/>
+    <path d="M222 74 H364 L392 180 L364 286 H222 Z" fill="#298582"/>
+    <path d="M410 74 H552 L580 180 L552 286 H410 Z" fill="#405162"/>
+    <path d="M598 74 H740 L768 180 L740 286 H598 Z" fill="#009bc1"/>
+    <path d="M786 74 H928 L956 180 L928 286 H786 Z" fill="#10263b"/>
+    <path d="M974 74 H1116 L1144 180 L1116 286 H974 Z" fill="#2f7f9f"/>
+  </g>
+
+  <g stroke="#ffffff" stroke-width="2" stroke-opacity="0.55">
+    <line x1="58" y1="154" x2="168" y2="154"/>
+    <line x1="246" y1="154" x2="356" y2="154"/>
+    <line x1="434" y1="154" x2="544" y2="154"/>
+    <line x1="622" y1="154" x2="732" y2="154"/>
+    <line x1="810" y1="154" x2="920" y2="154"/>
+    <line x1="998" y1="154" x2="1108" y2="154"/>
+  </g>
+
+  <g font-family="sans-serif" fill="#ffffff" text-anchor="middle">
+    <text x="109" y="112" font-size="14" font-weight="800">Principal</text>
+    <text x="109" y="134" font-size="14" font-weight="800">Investigator</text>
+    <text x="109" y="202" font-size="14" font-weight="700">DMP &amp;</text>
+    <text x="109" y="224" font-size="14" font-weight="700">Preservation</text>
+    <text x="109" y="246" font-size="14" font-weight="700">Oversight</text>
+
+    <text x="297" y="123" font-size="14" font-weight="800">Project Team</text>
+    <text x="297" y="213" font-size="14" font-weight="700">Apply RDM</text>
+    <text x="297" y="235" font-size="14" font-weight="700">Standards</text>
+
+    <text x="485" y="123" font-size="14" font-weight="800">Researchers</text>
+    <text x="485" y="202" font-size="14" font-weight="700">Metadata &amp;</text>
+    <text x="485" y="224" font-size="14" font-weight="700">Archiving</text>
+    <text x="485" y="246" font-size="14" font-weight="700">Liaison</text>
+
+    <text x="673" y="112" font-size="14" font-weight="800">Library RDM</text>
+    <text x="673" y="134" font-size="14" font-weight="800">Support</text>
+    <text x="673" y="213" font-size="14" font-weight="700">Documentation</text>
+    <text x="673" y="235" font-size="14" font-weight="700">Advice</text>
+
+    <text x="861" y="101" font-size="14" font-weight="800">Digital</text>
+    <text x="861" y="123" font-size="14" font-weight="800">Technology</text>
+    <text x="861" y="145" font-size="14" font-weight="800">Services</text>
+    <text x="861" y="202" font-size="14" font-weight="700">Secure Storage</text>
+    <text x="861" y="224" font-size="14" font-weight="700">&amp; Access</text>
+    <text x="861" y="246" font-size="14" font-weight="700">Controls</text>
+
+    <text x="1049" y="112" font-size="14" font-weight="800">Information</text>
+    <text x="1049" y="134" font-size="14" font-weight="800">Security</text>
+    <text x="1049" y="213" font-size="14" font-weight="700">Classification</text>
+    <text x="1049" y="235" font-size="14" font-weight="700">&amp; Assurance</text>
+  </g>
+</svg>

@@ -1,0 +1,33 @@
+---
+title: "Licenses"
+---
+
+## Instructional Material
+
+Unless otherwise noted, the instructional material in this course is made available under the [Creative Commons Attribution 4.0 International license][cc-by-human].
+
+You are free:
+
+- to **share** the material in any medium or format
+- to **adapt** the material for your own teaching or reuse
+
+for any purpose, even commercially.
+
+You must give appropriate credit, provide a link to the license, and indicate whether changes were made.
+
+## Code and Software
+
+Unless otherwise noted, example scripts, code snippets, and other software in this course are made available under the [MIT license][mit-license].
+
+## Third-Party Material
+
+Some pages may include links, images, excerpts, or examples from third parties. Those materials remain subject to their original attribution and licensing terms.
+
+If you reuse material from this course and it includes third-party content, make sure you preserve that attribution and check whether additional permissions are needed.
+
+## No Warranty
+
+Course materials are provided as-is, without warranty of any kind.
+
+[cc-by-human]: https://creativecommons.org/licenses/by/4.0/
+[mit-license]: https://opensource.org/licenses/mit-license.html

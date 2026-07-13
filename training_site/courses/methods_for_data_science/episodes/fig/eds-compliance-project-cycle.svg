@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="390" viewBox="0 0 1200 390" role="img" aria-labelledby="title desc">
+  <title id="title">Compliance project cycle</title>
+  <desc id="desc">Project compliance connects policy, funder requirements, implementation, and monitoring.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="13" markerHeight="13" refX="10" refY="6.5" orient="auto">
+      <path d="M2 2 L10 6.5 L2 11 Z" fill="#405162"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-20%" width="120%" height="145%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#10263b" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="390" rx="28" fill="#f7fbfc"/>
+
+  <g>
+<path d="M330 174 C390 115 420 95 460 95" stroke="#405162" stroke-width="3.8" marker-end="url(#arrow)" fill="none"/>
+<path d="M720 95 C770 105 815 130 850 160" stroke="#405162" stroke-width="3.8" marker-end="url(#arrow)" fill="none"/>
+<path d="M990 220 C895 298 820 314 730 314" stroke="#405162" stroke-width="3.8" marker-end="url(#arrow)" fill="none"/>
+<path d="M470 314 C350 300 265 245 220 215" stroke="#405162" stroke-width="3.8" marker-end="url(#arrow)" fill="none"/>
+  </g><g filter="url(#shadow)" font-family="sans-serif">
+    <rect x="90" y="135" width="240" height="78" rx="18" fill="#006781"/>
+<text x="210.0" y="170.0" font-size="17" font-weight="700" fill="#fff" text-anchor="middle">Institutional</text>
+<text x="210.0" y="192.0" font-size="17" font-weight="700" fill="#fff" text-anchor="middle">Policy</text>
+    <rect x="470" y="55" width="250" height="78" rx="18" fill="#298582"/>
+<text x="595.0" y="90.0" font-size="17" font-weight="700" fill="#fff" text-anchor="middle">Funder</text>
+<text x="595.0" y="112.0" font-size="17" font-weight="700" fill="#fff" text-anchor="middle">Requirements</text>
+    <rect x="860" y="135" width="260" height="78" rx="18" fill="#405162"/>
+<text x="990.0" y="170.0" font-size="17" font-weight="700" fill="#fff" text-anchor="middle">Project</text>
+<text x="990.0" y="192.0" font-size="17" font-weight="700" fill="#fff" text-anchor="middle">Implementation</text>
+    <rect x="470" y="275" width="250" height="78" rx="18" fill="#009bc1"/>
+<text x="595.0" y="310.0" font-size="17" font-weight="700" fill="#fff" text-anchor="middle">Monitoring &amp;</text>
+<text x="595.0" y="332.0" font-size="17" font-weight="700" fill="#fff" text-anchor="middle">Review</text>
+    <circle cx="600" cy="195" r="58" fill="#10263b"/>
+<text x="600" y="202.0" font-size="15" font-weight="700" fill="#fff" text-anchor="middle">Compliance</text>
+  </g>
+</svg>
