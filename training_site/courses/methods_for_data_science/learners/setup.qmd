@@ -1,0 +1,39 @@
+---
+title: Setup
+---
+
+## Before You Attend
+
+Methods for Data Science is a foundation course for learners who collect, organise, interpret, or communicate data. You do not need programming experience, but you will get more from the course if you arrive with one real data example in mind.
+
+## Core Access Checklist
+
+Before the first session, make sure you can:
+
+1. Sign in to your university account without difficulty.
+2. Open Microsoft Excel or another spreadsheet tool.
+3. Download and open example spreadsheets from the course site.
+4. Access Microsoft Forms or the browser-based tools used for room activities.
+5. Join the course Teams space or any local communication channel used by the teaching team.
+
+## Device and Materials
+
+Bring:
+
+- a laptop or tablet with a modern web browser
+- a charger
+- spreadsheet access, ideally Excel
+- one dataset, chart, dashboard, report, or data collection process you have used or questioned
+
+## Session Preparation
+
+| Session | Prepare before attending |
+|---|---|
+| [Collecting the Right Data](../episodes/05-collecting_the_right_data.qmd) | Think of one data source you trust and one you would treat cautiously |
+| [Organising and Exploring Data](../episodes/06-organising_and_exploring_data.qmd) | Bring a messy spreadsheet, table, or repeated reporting problem in mind |
+| [Making Sense of Data](../episodes/07-making_sense_of_data.qmd) | Bring an example chart or dashboard you have used or questioned |
+| [Insight to Impact](../episodes/08-insight_to_impacts.qmd) | Think of one analysis result that did or did not lead to action |
+
+## Data Safety
+
+Do not bring sensitive, confidential, personal, or unpublished research data unless your instructor has explicitly asked for it and confirmed the handling route. Use fictional, public, anonymised, or low-risk examples for discussion.

@@ -1,0 +1,20 @@
+/* ===========================
+   GRIDS
+   =========================== */
+.five-col-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 2rem;
+  .item, h2 { text-align: center; }
+}
+@media (max-width: 1200px) { .five-col-grid { grid-template-columns: repeat(3, 1fr); gap: 1.5rem; padding: 16px; } }
+@media (max-width: 900px)  { .five-col-grid { grid-template-columns: repeat(2, 1fr); gap: 1.25rem; padding: 14px; } }
+@media (max-width: 560px)  { .five-col-grid { grid-template-columns: 1fr; gap: 1rem; padding: 12px; } }
+
+.two-col-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem;
+  .item, h2 { text-align: left; }
+}
+@media (max-width: 900px) { .two-col-grid { grid-template-columns: 1fr; gap: 1rem; padding: 12px; } }

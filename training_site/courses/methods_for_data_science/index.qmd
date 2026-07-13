@@ -1,0 +1,153 @@
+---
+title: "Methods for Data Science"
+subtitle: "Data quality, exploration, visualisation, interpretation, and impact"
+page-class: course-page
+course-area: "Data Science"
+course-level: "Foundation"
+course-status: "Core"
+course-badge: "Data Methods"
+course-icon: "📊"
+course-summary: "Collecting, organising, exploring, interpreting, and communicating data for research decisions."
+course-tags: ["Data quality", "Data collection", "Data visualisation", "Evidence", "Insight", "Impact"]
+---
+
+```{=html}
+<div class="course-page-marker" aria-hidden="true"></div>
+```
+
+::: {.tier-card}
+### Course At A Glance
+
+- **Level:** Foundation
+- **Best for:** Researchers, research staff, analysts, and professional services colleagues who want stronger judgement around data work
+- **Main themes:** Data sources, quality, organisation, exploration, visualisation, interpretation, and impact
+- **Format:** Four practical lessons for applied data thinking before deeper Python or R work
+- **Outcome:** Stronger confidence in moving from data collection to analysis, communication, and action
+:::
+
+::: {.two-col-grid}
+::: {.item}
+## Why This Course Matters
+
+Methods for Data Science picks up after the core digital foundations. It focuses on the decisions that shape whether data can be trusted, interpreted, and used well.
+
+The course is not about jumping straight into code. It helps learners understand where data comes from, how structure affects analysis, why visualisation can mislead, and how insight becomes useful only when it connects to decisions, audiences, and feedback.
+:::
+
+::: {.item}
+## What You Will Actually Do
+
+Learners work through practical examples, critique data and charts, clean and explore simple datasets, and discuss what would make an insight useful in a real project.
+
+Across the course you will:
+
+- compare data sources and collection choices
+- identify weak questions and missing variables
+- clean, structure, and explore messy data
+- critique charts and visual design choices
+- connect interpretation to decisions, feedback, and impact
+:::
+:::
+
+## Who This Is For
+
+This course is especially useful if you:
+
+- collect, clean, interpret, or report data as part of your work
+- want stronger judgement before moving into Python, R, or more advanced analysis
+- need to explain data findings to colleagues, managers, partners, or research teams
+- want to avoid common mistakes in data collection, visualisation, and interpretation
+
+It works well after [Essential Digital Skills](../essential_digital_skills/index.qmd), but learners can also join directly if they already understand basic research data management and governance.
+
+## You Will Build Confidence In
+
+::: {.four-col-grid}
+::: {.item}
+### Collecting Better Data
+
+Understand data sources, question design, formats, and fairness before analysis begins.
+:::
+
+::: {.item}
+### Organising Messy Data
+
+Clean, structure, and validate data so that summaries and comparisons are more trustworthy.
+:::
+
+::: {.item}
+### Making Sense of Evidence
+
+Use visualisation and context to interpret patterns without overclaiming.
+:::
+
+::: {.item}
+### Turning Insight Into Impact
+
+Connect findings to decisions, audiences, feedback, and practical change.
+:::
+:::
+
+## Learning Journey
+
+| Lesson | What you will tackle | Why it matters |
+|---|---|---|
+| [05 Collecting the Right Data](episodes/05-collecting_the_right_data.qmd) | Data sources, question design, formats, and fairness | Improves data quality before analysis even begins |
+| [06 Organising and Exploring Data](episodes/06-organising_and_exploring_data.qmd) | Tidy structures, exploration, pattern finding, and early hypothesis building | Makes messy data easier to interpret and use |
+| [07 Making Sense of Data](episodes/07-making_sense_of_data.qmd) | Visualisation, chart critique, interpretation, and context | Helps learners avoid overclaiming and misreading evidence |
+| [08 Insight to Impact](episodes/08-insight_to_impacts.qmd) | Action, audience, feedback, and implementation | Connects analysis to decisions, communication, and change |
+
+## Related Courses
+
+For practical coding and reproducible analysis, continue to [Applied Python](../applied_python/index.qmd) or [Applied R](../applied_R/index.qmd).
+
+For wider digital research foundations, see [Essential Digital Skills](../essential_digital_skills/index.qmd).
+
+## What Learners Typically Leave With
+
+By the end of the pathway, learners should be more able to:
+
+- plan data collection around clearer questions and variables
+- recognise avoidable quality issues before analysis starts
+- organise tabular data for easier exploration
+- choose and critique charts with more confidence
+- explain what an insight does and does not justify
+- frame findings for different audiences without changing the evidence
+
+## How To Prepare
+
+You do not need programming experience for this course. It helps to arrive with:
+
+- a device suitable for group exercises and practical tasks
+- spreadsheet access, ideally Excel
+- one dataset, chart, dashboard, report, or data collection process you have used or questioned
+
+Detailed preparation guidance is available in [Setup](learners/setup.qmd).
+
+## Course Materials
+
+::: {.two-col-grid}
+::: {.item}
+### Learners
+
+- [Setup](learners/setup.qmd): what to bring, what to access, and how to prepare
+- [Reference](learners/reference.qmd): glossary, platform guide, and practical checklists
+- [Discussion](learners/discuss.qmd): prompts for breakout work and end-of-session reflection
+:::
+
+::: {.item}
+### Instructors
+
+- [Instructor Notes](instructors/instructor-notes.qmd): teaching focus, facilitation moves, and common sticking points
+- [Additional Material](instructors/additional_material.qmd): optional extensions, demos, and case ideas
+- [Extra Exercises](instructors/extra_exercises.qmd): backup activities for consolidation or deeper discussion
+:::
+:::
+
+## Community and Course Information
+
+- [Course README](README.qmd)
+- [Contributing](CONTRIBUTING.qmd)
+- [Learner Profiles](profiles/learner-profiles.qmd)
+- [Code of Conduct](CODE_OF_CONDUCT.qmd)
+- [License](LICENSE.qmd)

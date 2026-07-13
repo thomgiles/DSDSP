@@ -1,0 +1,20 @@
+/* ===========================
+   IMAGES
+   =========================== */
+.round-img {
+  width: clamp(72px, 14vw, 120px);
+  height: clamp(72px, 14vw, 120px);
+  object-fit: cover;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 1rem;
+}
+
+p.caption {
+    background: $teal;
+    padding: 10px;
+    color: white;
+    border-radius: 20px;
+    margin-right: 50px;
+    margin-left: 50px;
+}

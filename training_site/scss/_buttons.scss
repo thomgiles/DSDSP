@@ -1,0 +1,28 @@
+/* ===========================
+   Buttons
+   =========================== */
+
+.termsfeed-com---palette-dark 
+  .cc-nb-okagree,
+.termsfeed-com---palette-dark 
+  .cc-nb-changep,
+.termsfeed-com---palette-dark 
+  .cc-nb-reject,
+  div.quarto-about-jolla .about-link {
+    background-color: $white;
+    color: $ink;
+    border-radius: 20px;
+    border: solid 2px $ink;
+    padding: 10px 30px 10px 30px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.termsfeed-com---palette-dark 
+  .cc-nb-okagree:hover,
+.termsfeed-com---palette-dark 
+  .cc-nb-changep:hover,
+.termsfeed-com---palette-dark 
+  .cc-nb-reject:hover,
+  div.quarto-about-jolla .about-link:hover {
+    background-color: transparent;
+}

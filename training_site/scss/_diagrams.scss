@@ -1,0 +1,24 @@
+/* ===========================
+   Mermaid Diagrams
+   =========================== */
+
+/* For a specific graph */
+/* Increase mermaid text size */
+.mermaid text {
+  font-size: 22px !important;
+}
+
+/* Try to increase perceived padding by scaling node shapes slightly */
+.mermaid .node rect,
+.mermaid .node polygon,
+.mermaid .node circle,
+.mermaid .node ellipse {
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: scale(1.08);
+}
+
+img.figure-img {
+    max-width: 100%;
+}
+
