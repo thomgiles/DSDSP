@@ -1,0 +1,1012 @@
+/* ===========================
+   Reveal Slides
+   =========================== */
+
+:root {
+  --gh: 80px;   /* header height */
+  --gf: 40px;   /* footer height */
+
+  /* Animation timings */
+  --rjs-anim-fast: 240ms;
+  --rjs-anim-med: 720ms;
+  --rjs-anim-slow: 1100ms;
+  --rjs-anim-extra: 1400ms;
+
+  /* Animation easing */
+  --rjs-ease-out: cubic-bezier(.16, 1, .3, 1);
+  --rjs-ease-soft: cubic-bezier(.22, .61, .36, 1);
+
+  /* JS-assisted fit fallback.
+     Defaults to 1 when no JS is used. */
+  --rjs-fit-scale: 1;
+
+  /* Shared visual values */
+  --rjs-radius-sm: 5px;
+  --rjs-radius-md: 14px;
+  --rjs-radius-lg: 20px;
+
+  --rjs-shadow-soft: 0 10px 28px rgba(0, 0, 0, 0.12);
+  --rjs-shadow-lift: 0 16px 38px rgba(0, 0, 0, 0.18);
+}
+
+@media (max-width: 640px) {
+  :root {
+    --gh: 50px;
+    --gf: 30px;
+  }
+}
+
+
+/* ===========================
+   Base Reveal Styling
+   =========================== */
+
+.reveal {
+  color: $ink;
+  text-rendering: optimizeLegibility;
+}
+
+.reveal .slides {
+  padding-top: calc(var(--gh) + 100px) !important;
+  padding-bottom: calc(var(--gf) + 50px) !important;
+}
+
+.reveal .slides section {
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.reveal.smaller .slides {
+  text-align: center;
+  font-size: smaller;
+}
+
+
+/* ===========================
+   Safe Slide Animation
+   =========================== */
+
+/*
+  These selectors deliberately avoid .past and .future slides.
+
+  They target only:
+  1. the active horizontal slide
+  2. the active child slide inside a vertical RevealJS stack
+*/
+
+@keyframes rjs-rise-in {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+    filter: blur(2px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes rjs-right-in {
+  from {
+    opacity: 0;
+    transform: translateX(-26px);
+    filter: blur(2px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes rjs-left-in {
+  from {
+    opacity: 0;
+    transform: translateX(26px);
+    filter: blur(2px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+    filter: blur(0);
+  }
+}
+
+@keyframes rjs-scale-in {
+  from {
+    opacity: 0;
+    transform: scale(.97);
+    filter: blur(2px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes rjs-fade-in {
+  from {
+    opacity: 0;
+    filter: blur(1px);
+  }
+
+  to {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+/* Default active slide entrance */
+.reveal .slides > section.present:not(.stack) > *,
+.reveal .slides > section.stack.present > section.present > * {
+  animation-name: rjs-rise-in;
+  animation-duration: var(--rjs-anim-slow);
+  animation-timing-function: var(--rjs-ease-out);
+  animation-fill-mode: both;
+}
+
+/* Headings: slower lateral entrance */
+.reveal .slides > section.present:not(.stack) > h1,
+.reveal .slides > section.present:not(.stack) > h2,
+.reveal .slides > section.present:not(.stack) > h3,
+.reveal .slides > section.present:not(.stack) > h4,
+.reveal .slides > section.stack.present > section.present > h1,
+.reveal .slides > section.stack.present > section.present > h2,
+.reveal .slides > section.stack.present > section.present > h3,
+.reveal .slides > section.stack.present > section.present > h4 {
+  animation-name: rjs-right-in;
+  animation-duration: var(--rjs-anim-extra);
+}
+
+/* Figures and images: scale in cleanly */
+.reveal .slides > section.present:not(.stack) > figure,
+.reveal .slides > section.present:not(.stack) > .quarto-figure,
+.reveal .slides > section.present:not(.stack) > img,
+.reveal .slides > section.stack.present > section.present > figure,
+.reveal .slides > section.stack.present > section.present > .quarto-figure,
+.reveal .slides > section.stack.present > section.present > img {
+  animation-name: rjs-scale-in;
+  animation-duration: var(--rjs-anim-extra);
+}
+
+/* Code and tables: fade only to avoid visual wobble */
+.reveal .slides > section.present:not(.stack) > pre,
+.reveal .slides > section.present:not(.stack) > div.sourceCode,
+.reveal .slides > section.present:not(.stack) > table,
+.reveal .slides > section.stack.present > section.present > pre,
+.reveal .slides > section.stack.present > section.present > div.sourceCode,
+.reveal .slides > section.stack.present > section.present > table {
+  animation-name: rjs-fade-in;
+  animation-duration: var(--rjs-anim-med);
+}
+
+/* Blockquotes and callouts: opposite lateral entrance */
+.reveal .slides > section.present:not(.stack) > blockquote,
+.reveal .slides > section.present:not(.stack) > .callout,
+.reveal .slides > section.stack.present > section.present > blockquote,
+.reveal .slides > section.stack.present > section.present > .callout {
+  animation-name: rjs-left-in;
+  animation-duration: var(--rjs-anim-extra);
+}
+
+/* Gentle stagger */
+.reveal .slides > section.present:not(.stack) > *:nth-child(1),
+.reveal .slides > section.stack.present > section.present > *:nth-child(1) {
+  animation-delay: 60ms;
+}
+
+.reveal .slides > section.present:not(.stack) > *:nth-child(2),
+.reveal .slides > section.stack.present > section.present > *:nth-child(2) {
+  animation-delay: 160ms;
+}
+
+.reveal .slides > section.present:not(.stack) > *:nth-child(3),
+.reveal .slides > section.stack.present > section.present > *:nth-child(3) {
+  animation-delay: 260ms;
+}
+
+.reveal .slides > section.present:not(.stack) > *:nth-child(4),
+.reveal .slides > section.stack.present > section.present > *:nth-child(4) {
+  animation-delay: 360ms;
+}
+
+.reveal .slides > section.present:not(.stack) > *:nth-child(5),
+.reveal .slides > section.stack.present > section.present > *:nth-child(5) {
+  animation-delay: 460ms;
+}
+
+.reveal .slides > section.present:not(.stack) > *:nth-child(n + 6),
+.reveal .slides > section.stack.present > section.present > *:nth-child(n + 6) {
+  animation-delay: 560ms;
+}
+
+/* Never animate the persistent chrome */
+.global-header,
+.global-header *,
+.reveal .footer,
+.reveal .footer * {
+  animation: none !important;
+  transform: none !important;
+  filter: none !important;
+}
+
+
+/* ===========================
+   Fragments
+   =========================== */
+
+.reveal .fragment {
+  transform: translateY(16px);
+  filter: blur(1px);
+  transition:
+    opacity var(--rjs-anim-med) var(--rjs-ease-out),
+    transform var(--rjs-anim-med) var(--rjs-ease-out),
+    filter var(--rjs-anim-med) var(--rjs-ease-out);
+}
+
+.reveal .fragment.visible {
+  transform: translateY(0);
+  filter: blur(0);
+}
+
+.reveal .fragment.fade-left {
+  transform: translateX(22px);
+}
+
+.reveal .fragment.fade-left.visible {
+  transform: translateX(0);
+}
+
+.reveal .fragment.fade-right {
+  transform: translateX(-22px);
+}
+
+.reveal .fragment.fade-right.visible {
+  transform: translateX(0);
+}
+
+.reveal .fragment.grow.visible {
+  transform: scale(1.04);
+}
+
+.reveal .fragment.fade-in-then-semi-out.visible:not(.current-fragment) {
+  opacity: .45;
+}
+
+
+/* ===========================
+   Links
+   =========================== */
+
+.reveal a {
+  font-weight: 400;
+  text-decoration: inherit;
+  color: $white;
+  border-radius: 5px;
+  padding: 5px;
+  background-color: #10263b;
+  transition:
+    background-color var(--rjs-anim-fast) var(--rjs-ease-soft),
+    color var(--rjs-anim-fast) var(--rjs-ease-soft),
+    box-shadow var(--rjs-anim-fast) var(--rjs-ease-soft);
+}
+
+.reveal a:hover,
+.reveal a:focus {
+  background-color: $teal;
+  color: $white;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.14);
+}
+
+.reveal a:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, .9);
+  outline-offset: 3px;
+}
+
+
+/* ===========================
+   Logos
+   =========================== */
+
+.reveal .slide-logo {
+  max-height: 1.5em !important;
+}
+
+
+/* ===========================
+   Code
+   =========================== */
+
+.reveal code {
+  color: $white;
+  background-color: $blue;
+  padding: 4px;
+  border-radius: var(--rjs-radius-sm);
+}
+
+.reveal pre {
+  border-radius: var(--rjs-radius-md);
+  overflow: hidden;
+}
+
+.reveal pre code {
+  display: block;
+  background-color: $ink;
+  color: $white;
+  padding: 1em;
+  border-radius: var(--rjs-radius-md);
+  max-height: calc(100vh - var(--gh) - var(--gf) - 220px);
+  overflow: auto;
+  line-height: 1.35;
+}
+
+
+/* ===========================
+   Progress
+   =========================== */
+
+.reveal .progress {
+  margin-bottom: 20px;
+  bottom: calc(var(--gf) + 2px);
+  height: 5px;
+  color: $teal;
+}
+
+.reveal .progress span {
+  transition: width var(--rjs-anim-med) var(--rjs-ease-soft);
+}
+
+
+/* ===========================
+   Figures and Images
+   =========================== */
+
+.reveal figure {
+  text-align: center;
+}
+
+.reveal figure img {
+  max-width: min(900px, 92%);
+  max-height: calc(100vh - var(--gh) - var(--gf) - 170px);
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  border-radius: var(--rjs-radius-md);
+}
+
+.reveal figcaption {
+  margin-top: .4em;
+  font-size: .72em;
+  line-height: 1.25;
+  color: rgba($ink, .7);
+}
+
+
+/* ===========================
+   Footer
+   =========================== */
+
+.reveal .footer {
+  background: $ink;
+  display: block;
+  position: fixed;
+  bottom: 0 !important;
+  left: 0;
+  right: 0;
+  width: 100%;
+  text-align: center;
+  font: 500 14px "Circular Bold", Helvetica, Arial, sans-serif !important;
+  z-index: 900;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  padding-left: 0;
+  padding-right: 0;
+  color: $white;
+  min-height: var(--gf);
+}
+
+.reveal .footer a {
+  color: $white;
+  padding: 10px;
+  background: transparent;
+}
+
+.reveal .footer a:hover,
+.reveal .footer a:focus {
+  background: rgba(255, 255, 255, .12);
+  box-shadow: none;
+}
+
+
+/* ===========================
+   Persistent Header
+   =========================== */
+
+.global-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: var(--gh);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  background: $ink;
+  color: $white;
+  padding: 0 16px;
+  font: 500 14px "Circular Bold", Helvetica, Arial, sans-serif;
+}
+
+.global-header a {
+  color: $white;
+  text-decoration: none;
+  margin-left: 0;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+}
+
+.global-header a:hover,
+.global-header a:focus {
+  background: transparent;
+  box-shadow: none;
+}
+
+.gh-inner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.gh-home {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.gh-logo {
+  height: calc(var(--gh) - 12px);
+  width: auto;
+  object-fit: contain;
+  display: block;
+  image-rendering: -webkit-optimize-contrast;
+}
+
+.gh-sep {
+  margin: 0 8px;
+  opacity: .75;
+}
+
+
+/* ===========================
+   Blockquotes
+   =========================== */
+
+.reveal blockquote {
+  background-color: $ink !important;
+  box-shadow: none;
+  text-align: left;
+  color: $white;
+  border-left: 8px solid $teal;
+  border-radius: var(--rjs-radius-md);
+  padding: .8em 1em;
+}
+
+.reveal blockquote p {
+  margin: 0;
+}
+
+
+/* ===========================
+   Callouts
+   =========================== */
+
+.reveal .callout-task {
+  text-align: left;
+}
+
+.reveal .callout {
+  border-radius: var(--rjs-radius-md);
+}
+
+.reveal .callout-title-container {
+  font-weight: 700;
+}
+
+.reveal section.rjs-fit-managed.callout-outcomes,
+.reveal section.rjs-fit-managed.callout-questions,
+.reveal section.rjs-fit-managed.callout-keypoints,
+.reveal section.rjs-fit-managed.callout-hints,
+.reveal section.rjs-fit-managed.callout-task {
+  box-sizing: border-box;
+  max-height: calc(
+    100vh - var(--gh) - var(--gf) - 42px - var(--rjs-fit-callout-trim, 0px)
+  );
+  margin-left: auto;
+  margin-right: auto;
+  overflow-y: auto;
+}
+
+.reveal section.rjs-fit-managed .callout,
+.reveal section.rjs-fit-managed [class*="callout-"] {
+  box-sizing: border-box;
+  max-height: calc(
+    100vh - var(--gh) - var(--gf) - 150px - var(--rjs-fit-callout-trim, 0px)
+  );
+  overflow-y: auto;
+}
+
+.reveal section.rjs-fit-callout-tight.callout-outcomes,
+.reveal section.rjs-fit-callout-tight.callout-questions,
+.reveal section.rjs-fit-callout-tight.callout-keypoints,
+.reveal section.rjs-fit-callout-tight.callout-hints,
+.reveal section.rjs-fit-callout-tight.callout-task,
+.reveal section.rjs-fit-callout-tight .callout,
+.reveal section.rjs-fit-callout-tight [class*="callout-"] {
+  padding-top: .45em;
+  padding-bottom: .45em;
+}
+
+.reveal section.rjs-fit-managed.callout-outcomes,
+.reveal section.rjs-fit-managed.callout-questions,
+.reveal section.rjs-fit-managed.callout-keypoints,
+.reveal section.rjs-fit-managed.callout-hints {
+  --rjs-callout-bg: #{$teal};
+  --rjs-callout-head: #{darken($teal, 12%)};
+  background: transparent !important;
+  border: 0;
+  box-shadow: none;
+  color: $ink;
+  max-height: none;
+  overflow: visible;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.reveal section.rjs-fit-managed.callout-questions,
+.reveal section.rjs-fit-managed.callout-keypoints {
+  --rjs-callout-bg: #{$blue};
+  --rjs-callout-head: #{darken($blue, 12%)};
+}
+
+.reveal section.rjs-fit-managed.callout-outcomes > h2,
+.reveal section.rjs-fit-managed.callout-questions > h2,
+.reveal section.rjs-fit-managed.callout-keypoints > h2,
+.reveal section.rjs-fit-managed.callout-hints > h2 {
+  width: min(920px, 92%) !important;
+  margin: 0 auto !important;
+  padding: .55em .75em !important;
+  background: var(--rjs-callout-head) !important;
+  color: $white !important;
+  border-radius: var(--rjs-radius-md) var(--rjs-radius-md) 0 0;
+  box-sizing: border-box;
+}
+
+.reveal section.rjs-fit-managed.callout-outcomes > :not(h2),
+.reveal section.rjs-fit-managed.callout-questions > :not(h2),
+.reveal section.rjs-fit-managed.callout-keypoints > :not(h2),
+.reveal section.rjs-fit-managed.callout-hints > :not(h2) {
+  display: block !important;
+  width: min(920px, 92%) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  margin-top: 0 !important;
+  padding: .8em 1.4em .9em 2.2em;
+  background: var(--rjs-callout-bg) !important;
+  color: $white;
+  border-radius: 0 0 var(--rjs-radius-md) var(--rjs-radius-md);
+  box-sizing: border-box;
+  max-height: calc(
+    100vh - var(--gh) - var(--gf) - 230px - var(--rjs-fit-callout-trim, 0px)
+  );
+  overflow-y: auto;
+}
+
+
+/* ===========================
+   Controls
+   =========================== */
+
+.reveal .controls {
+  top: calc(var(--gh) + 8px);
+  bottom: calc(var(--gf) + 8px);
+  color: $teal;
+}
+
+.reveal .controls .controls-arrow {
+  margin-bottom: calc(var(--gf) - 8px);
+}
+
+.reveal .controls button {
+  transition:
+    transform var(--rjs-anim-fast) var(--rjs-ease-soft),
+    opacity var(--rjs-anim-fast) var(--rjs-ease-soft);
+}
+
+.reveal .controls button:hover {
+  transform: scale(1.06);
+}
+
+
+/* ===========================
+   Panel Tabsets
+   =========================== */
+
+.panel-tabset [role=tab] {
+  background-color: $blue !important;
+  border: 1px solid $blue !important;
+  color: white !important;
+  margin-left: 15px;
+  border-radius: var(--rjs-radius-sm);
+  transition:
+    background-color var(--rjs-anim-fast) var(--rjs-ease-soft),
+    border-color var(--rjs-anim-fast) var(--rjs-ease-soft),
+    box-shadow var(--rjs-anim-fast) var(--rjs-ease-soft);
+}
+
+.panel-tabset [role=tab][aria-selected=true] {
+  background-color: $teal !important;
+  border: 1px solid $teal !important;
+  color: white !important;
+  margin-left: 15px;
+}
+
+.panel-tabset [role=tab]:hover,
+.panel-tabset [role=tab]:focus {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, .14);
+}
+
+
+/* ===========================
+   Lists
+   =========================== */
+
+.reveal ol,
+.reveal dl,
+.reveal ul {
+  width: 80% !important;
+  background: $grey;
+  padding-left: 50px;
+  padding-right: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border-radius: 20px;
+}
+
+.reveal li + li {
+  margin-top: .25em;
+}
+
+.reveal li::marker {
+  color: $blue;
+  font-weight: 700;
+}
+
+
+/* ===========================
+   Tables
+   =========================== */
+
+.reveal table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: var(--rjs-radius-md);
+  overflow: hidden;
+  font-size: .75em;
+}
+
+.reveal thead th {
+  background: $ink;
+  color: $white;
+}
+
+.reveal th,
+.reveal td {
+  padding: .5em .7em;
+  border-bottom: 1px solid rgba(0, 0, 0, .12);
+}
+
+.reveal tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.reveal tbody tr {
+  transition: background-color var(--rjs-anim-fast) var(--rjs-ease-soft);
+}
+
+.reveal tbody tr:hover {
+  background-color: rgba($teal, .12);
+}
+
+
+/* ===========================
+   Mermaid
+   =========================== */
+
+.mermaid-js {
+  max-height: 400px;
+  overflow: auto;
+  border-radius: var(--rjs-radius-md);
+}
+
+
+/* ===========================
+   Header-aware Slide Fitting
+   =========================== */
+
+/*
+  These classes respect your existing header/footer layout.
+
+  Use:
+
+  ## Dense slide {.fit-slide}
+
+  or
+
+  ## Large visual {.visual}
+*/
+
+.reveal section.rjs-fit-managed,
+.reveal section.fit-slide,
+.reveal section.auto-fit {
+  font-size: calc(1em * var(--rjs-fit-scale));
+  padding-top: var(--rjs-fit-top-space, 0) !important;
+}
+
+/* Tighter vertical spacing only on fitted slides.
+   The JS calculates the desired inter-block gap in px, so avoid native
+   heading/list margins fighting the measured layout. */
+.reveal section.rjs-fit-managed > *,
+.reveal section.fit-slide > *,
+.reveal section.auto-fit > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.reveal section.rjs-fit-managed > * + *,
+.reveal section.fit-slide > * + *,
+.reveal section.auto-fit > * + * {
+  margin-top: var(--rjs-fit-gap, .38em);
+}
+
+/* Preserve your list design, but tighten it slightly */
+.reveal section.rjs-fit-managed ol,
+.reveal section.rjs-fit-managed dl,
+.reveal section.rjs-fit-managed ul,
+.reveal section.fit-slide ol,
+.reveal section.fit-slide dl,
+.reveal section.fit-slide ul,
+.reveal section.auto-fit ol,
+.reveal section.auto-fit dl,
+.reveal section.auto-fit ul {
+  width: 80% !important;
+  padding-left: 44px;
+  padding-right: 18px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+/* Dense list spacing */
+.reveal section.rjs-fit-managed li + li,
+.reveal section.fit-slide li + li,
+.reveal section.auto-fit li + li {
+  margin-top: .12em;
+}
+
+/* Header/footer-aware media limits */
+.reveal section.rjs-fit-managed figure img,
+.reveal section.rjs-fit-managed img,
+.reveal section.fit-slide figure img,
+.reveal section.fit-slide img,
+.reveal section.auto-fit figure img,
+.reveal section.auto-fit img {
+  max-height: calc(
+    100vh - var(--gh) - var(--gf) - 140px - var(--rjs-fit-media-trim, 0px)
+  );
+  height: auto;
+  object-fit: contain;
+}
+
+.reveal section.rjs-fit-media-tight figure,
+.reveal section.rjs-fit-media-tight .quarto-figure {
+  max-height: calc(
+    100vh - var(--gh) - var(--gf) - 120px - var(--rjs-fit-media-trim, 0px)
+  );
+  overflow: hidden;
+}
+
+/* Header/footer-aware code limits */
+.reveal section.rjs-fit-managed pre code,
+.reveal section.fit-slide pre code,
+.reveal section.auto-fit pre code {
+  max-height: calc(100vh - var(--gh) - var(--gf) - 180px);
+  overflow: auto;
+  line-height: 1.25;
+}
+
+/* Header/footer-aware table limits */
+.reveal section.rjs-fit-managed table,
+.reveal section.fit-slide table,
+.reveal section.auto-fit table {
+  font-size: .68em;
+}
+
+.reveal section.rjs-fit-tight {
+  --rjs-fit-gap: min(var(--rjs-fit-gap, 6px), 8px);
+}
+
+.reveal section.rjs-fit-managed.callout-outcomes > :not(h2),
+.reveal section.rjs-fit-managed.callout-questions > :not(h2),
+.reveal section.rjs-fit-managed.callout-keypoints > :not(h2),
+.reveal section.rjs-fit-managed.callout-hints > :not(h2) {
+  width: min(920px, 92%) !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 1.6em !important;
+  padding-right: 1.4em !important;
+  list-style-position: inside;
+}
+
+.reveal section.rjs-fit-managed.callout-outcomes > :not(h2) li::marker,
+.reveal section.rjs-fit-managed.callout-questions > :not(h2) li::marker,
+.reveal section.rjs-fit-managed.callout-keypoints > :not(h2) li::marker,
+.reveal section.rjs-fit-managed.callout-hints > :not(h2) li::marker {
+  color: rgba(255, 255, 255, .9);
+}
+
+/* Visual slide class */
+.reveal section.visual figure img,
+.reveal section.visual img,
+.reveal section.visual video,
+.reveal section.visual iframe {
+  max-height: calc(100vh - var(--gh) - var(--gf) - 110px);
+  max-width: min(1000px, 94%);
+}
+
+/* Compact slide class */
+.reveal section.compact {
+  font-size: .82em;
+}
+
+.reveal section.compact > * {
+  margin-top: .28em;
+  margin-bottom: .28em;
+}
+
+.reveal section.compact ol,
+.reveal section.compact dl,
+.reveal section.compact ul {
+  width: 82% !important;
+  padding-top: 3px;
+  padding-bottom: 3px;
+}
+
+/* Scrollable escape hatch */
+.reveal .scroll-box {
+  max-height: calc(100vh - var(--gh) - var(--gf) - 180px);
+  overflow: auto;
+  padding-right: .5em;
+}
+
+/* Disable animation for specific slides/content */
+.reveal .no-animation,
+.reveal .no-animation * {
+  animation: none !important;
+  transition: none !important;
+  transform: none !important;
+  filter: none !important;
+}
+
+
+/* ===========================
+   Mobile Adjustments
+   =========================== */
+
+@media (max-width: 640px) {
+  .global-header {
+    font-size: 12px;
+    padding: 0 10px;
+  }
+
+  .gh-logo {
+    height: calc(var(--gh) - 10px);
+  }
+
+  .reveal .footer {
+    font-size: 11px !important;
+    padding-top: 8px;
+    padding-bottom: 6px;
+  }
+
+  .reveal .slides {
+    padding-top: calc(var(--gh) + 60px) !important;
+    padding-bottom: calc(var(--gf) + 35px) !important;
+  }
+
+  .reveal ol,
+  .reveal dl,
+  .reveal ul {
+    width: 92% !important;
+    padding-left: 34px;
+    padding-right: 14px;
+  }
+
+  .reveal figure img {
+    max-width: 94%;
+    max-height: calc(100vh - var(--gh) - var(--gf) - 140px);
+  }
+
+  .reveal section.fit-slide,
+  .reveal section.auto-fit {
+    font-size: calc(.82em * var(--rjs-fit-scale));
+  }
+
+  .reveal section.fit-slide ol,
+  .reveal section.fit-slide dl,
+  .reveal section.fit-slide ul,
+  .reveal section.auto-fit ol,
+  .reveal section.auto-fit dl,
+  .reveal section.auto-fit ul {
+    width: 92% !important;
+    padding-left: 30px;
+  }
+
+  .reveal pre code {
+    max-height: calc(100vh - var(--gh) - var(--gf) - 160px);
+    font-size: .62em;
+  }
+
+  .mermaid-js {
+    max-height: calc(100vh - var(--gh) - var(--gf) - 150px);
+  }
+}
+
+
+/* ===========================
+   Reduced Motion
+   =========================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal .slides > section.present:not(.stack) > *,
+  .reveal .slides > section.stack.present > section.present > *,
+  .reveal .fragment,
+  .reveal .fragment.visible {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}
+
+
+/* ===========================
+   Print / PDF
+   =========================== */
+
+@media print {
+  .global-header,
+  .reveal .footer {
+    display: none !important;
+  }
+
+  .reveal .slides,
+  .reveal .controls {
+    padding: 0 !important;
+    top: 0 !important;
+    bottom: 0 !important;
+  }
+
+  .reveal .slides > section.present:not(.stack) > *,
+  .reveal .slides > section.stack.present > section.present > * {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    filter: none !important;
+  }
+}

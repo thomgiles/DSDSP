@@ -1,0 +1,29 @@
+---
+title: Additional Material
+---
+
+## Purpose
+
+Use this page for optional additions when you have extra time, a more advanced cohort, or a strong local data example to work with.
+
+## Optional Extensions
+
+### Data Source Comparison
+
+- Compare institutional data, survey data, open data, and manually collected data for the same question.
+- Ask learners to identify what each source can and cannot justify.
+
+### Data Cleaning Demonstration
+
+- Show a before-and-after spreadsheet with inconsistent labels, missing values, and duplicated records.
+- Ask learners which transformations should be documented.
+
+### Visualisation Critique
+
+- Use a gallery of charts with truncated axes, overloaded colour, missing labels, or weak context.
+- Ask learners to rewrite the chart title as a claim and then test whether the chart supports it.
+
+### Insight Communication
+
+- Give learners one finding and three audiences.
+- Ask them to adapt the emphasis without changing the evidence.

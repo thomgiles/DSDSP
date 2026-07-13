@@ -1,0 +1,43 @@
+---
+title: Extra Exercises
+---
+
+## Exercise 1: Source Quality Triage
+
+**Best fit:** [Collecting the Right Data](../episodes/05-collecting_the_right_data.qmd)
+
+Give groups three possible data sources for the same question. Ask them to rank each source for relevance, trustworthiness, completeness, and likely bias.
+
+**Debrief question:** Which source looked useful at first but became weaker after inspection?
+
+## Exercise 2: Variable Cut-Down
+
+**Best fit:** [Collecting the Right Data](../episodes/05-collecting_the_right_data.qmd)
+
+Give learners a broad research question and a long list of possible variables. Ask them to choose only the variables they would collect first and justify what they excluded.
+
+**Debrief question:** Which "nice to have" variable was hardest to drop?
+
+## Exercise 3: Messy Table Audit
+
+**Best fit:** [Organising and Exploring Data](../episodes/06-organising_and_exploring_data.qmd)
+
+Ask learners to inspect a deliberately messy spreadsheet and classify each issue as missingness, duplication, inconsistent labelling, invalid value, or unclear structure.
+
+**Debrief question:** Which issue would most distort a summary statistic?
+
+## Exercise 4: Chart Critique Gallery
+
+**Best fit:** [Making Sense of Data](../episodes/07-making_sense_of_data.qmd)
+
+Show several weak charts and ask learners to identify what each chart appears to claim, which design choice shapes that claim, what context is missing, and how they would redesign it.
+
+**Debrief question:** Which chart looked persuasive before you inspected it carefully?
+
+## Exercise 5: From Insight to Action
+
+**Best fit:** [Insight to Impact](../episodes/08-insight_to_impacts.qmd)
+
+Give a short data finding and ask groups to write three versions: a research interpretation, an operational recommendation, and a short message for a non-specialist audience.
+
+**Debrief question:** What changed between the three versions, and what had to stay the same?

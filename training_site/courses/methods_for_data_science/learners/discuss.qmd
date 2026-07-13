@@ -1,0 +1,43 @@
+---
+title: Discussion
+---
+
+## How To Use These Prompts
+
+Use these prompts for breakout activities, quick pair work, or end-of-session reflection. They focus on the data-methods half of the Digital Skills pathway.
+
+## Collecting the Right Data
+
+Use alongside [Collecting the Right Data](../episodes/05-collecting_the_right_data.qmd).
+
+1. Which data sources in your work feel trustworthy, and why?
+2. Which variables are genuinely needed for your current question?
+3. Where could collection choices introduce bias?
+4. What would make your data source easier for someone else to understand?
+
+## Organising and Exploring Data
+
+Use alongside [Organising and Exploring Data](../episodes/06-organising_and_exploring_data.qmd).
+
+1. Where do errors or inconsistencies most often enter your data?
+2. What makes a spreadsheet easy or hard to analyse?
+3. Which checks would you run before trusting a summary?
+4. How would you explain the difference between clean enough and perfect?
+
+## Making Sense of Data
+
+Use alongside [Making Sense of Data](../episodes/07-making_sense_of_data.qmd).
+
+1. What chart, dashboard, or statistic have you seen misinterpreted?
+2. Which context would change how someone reads your current findings?
+3. What visual design choice most often misleads people?
+4. What would you need to know before acting on a chart?
+
+## Insight to Impact
+
+Use alongside [Insight to Impact](../episodes/08-insight_to_impacts.qmd).
+
+1. What makes an insight actionable rather than merely interesting?
+2. Who needs to hear your findings, and what would each audience need emphasised?
+3. What feedback would tell you whether an insight had made a difference?
+4. When should a finding lead to a new question rather than a final recommendation?

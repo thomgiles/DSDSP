@@ -1,0 +1,40 @@
+---
+title: Instructor Notes
+---
+
+## About This Course
+
+Methods for Data Science is the data-methods half of the foundation pathway. The teaching goal is not to turn learners into statisticians or programmers. It is to improve judgement about data collection, organisation, interpretation, and communication.
+
+The course works best when learners leave with:
+
+- a clearer idea of what makes data fit for purpose
+- stronger habits for inspecting and organising tabular data
+- more confidence critiquing visualisations and summaries
+- a practical sense of how findings become decisions, actions, and feedback
+
+## Recommended Teaching Approach
+
+- Keep examples concrete and low-risk.
+- Ask learners to connect each idea to a real dataset, chart, or report.
+- Treat data quality as design work, not just cleaning work.
+- Separate what the data shows from what the learner thinks should happen next.
+- Use debriefs to connect analysis choices to real-world consequences.
+
+## Session-Level Emphasis
+
+### Collecting the right data
+
+Use [Collecting the Right Data](../episodes/05-collecting_the_right_data.qmd) to show that analysis quality starts before analysis begins. Emphasise question design, source quality, variables, formats, and fairness.
+
+### Organising and exploring data
+
+Use [Organising and Exploring Data](../episodes/06-organising_and_exploring_data.qmd) to make messy data visible. Learners should practise spotting inconsistencies, standardising structures, and asking early exploratory questions.
+
+### Making sense of data
+
+Use [Making Sense of Data](../episodes/07-making_sense_of_data.qmd) to build visual and interpretive judgement. Emphasise that charts are arguments, not neutral decorations.
+
+### Insight to impact
+
+Use [Insight to Impact](../episodes/08-insight_to_impacts.qmd) to connect findings to audiences, action, feedback, and iteration. Keep asking what would change because of the insight.

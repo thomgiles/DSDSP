@@ -1,0 +1,80 @@
+/* ===========================
+   ABOUT / HERO
+   =========================== */
+.quarto-about-jolla.column-page,
+.dark {
+  background: url("assets/dsdsp_abstract_cropped.png") center / cover no-repeat fixed;
+  color: $white;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  min-height: 40vh;
+  padding: 20px;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  @supports (width: 100svw) {
+    width: 100svw;
+    margin-left: calc(-50svw + 50%);
+  }
+} 
+
+.full-width-image {
+  padding: 0px;
+  width: 100vw;
+  margin-bottom: -20px;
+  max-width: none;
+  margin-left: calc(-50vw + 50%);
+  @supports (width: 100svw) {
+    width: 100svw;
+    margin-left: calc(-50svw + 50%);
+  }
+}
+
+.beige {
+  background-color: $beige;
+  font-style: italic;
+  font-size: 20px;
+  font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: $ink;
+  padding-left: 100px;
+  padding-right: 100px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-align: center;
+  min-height: 20vh;
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  @supports (width: 100svw) {
+    width: 100svw;
+    margin-left: calc(-50svw + 50%);
+  }
+}
+
+div.quarto-about-jolla{
+  margin-top: 0px !important;
+}
+
+.quarto-title { text-align: center; font-size: 40px; font-weight: bold; color: $white !important; }
+
+.hero-container {
+  position: relative;
+  width: 100%;
+  min-height: 360px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at 20% 20%, #0e1a2b, #003b5e 50%, #4e2a84);
+}
+div#hero-heading { text-align: center; }
+.hero-text {
+  text-align: center;
+  background-color: rgba(14, 26, 43, 0.7);
+  padding: 2rem 3rem;
+  border-radius: 0.5rem;
+  color: $white;
+  max-width: 800px;
+  h1 { margin: 0 0 0.5rem 0; font-size: 2.5rem; }
+  p { margin: 0; font-size: 1.2rem; }
+}

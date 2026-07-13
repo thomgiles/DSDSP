@@ -2,8 +2,15 @@ project:
   type: website
   output-dir: _site
   resources:
-    - js/homepage-header-hero.js
-    - js/homepage-workshop-rhythm.js
+    - js/index-header-hero.js
+    - js/index-workshop-rhythm.js
+    - js/index-landing.js
+    - js/about-header-hero.js
+    - js/about-scroll-reveal.js
+    - js/courses-header-hero.js
+    - js/courses-finder.js
+    - js/rjs-footer.js
+    - html/reveal-header.html
   pre-render:
     - scripts/build_landing_data.py
   render:
@@ -16,11 +23,7 @@ project:
     - index.qmd
     - about.qmd
     - courses.qmd
-    - applied_R/**/*.qmd
-    - applied_python/**/*.qmd
-    - automating_business_processes/**/*.qmd
-    - essential_digital_skills/**/*.qmd
-    - responsible_use_of_generative_ai/**/*.qmd
+    - courses/**/*.qmd
 
 execute:
   freeze: auto
@@ -87,34 +90,62 @@ website:
       collapse-level: 3
       contents:
         - text: "Overview"
-          href: essential_digital_skills/index.qmd
+          href: courses/essential_digital_skills/index.qmd
         - section: "Lessons"
           contents:
-            - essential_digital_skills/episodes/01-digital_tools.qmd
-            - essential_digital_skills/episodes/02-digital_delivery.qmd
-            - essential_digital_skills/episodes/03-data_governance_and_policy.qmd
-            - essential_digital_skills/episodes/04-research_data_managment.qmd
-            - essential_digital_skills/episodes/05-collecting_the_right_data.qmd
-            - essential_digital_skills/episodes/06-organising_and_exploring_data.qmd
-            - essential_digital_skills/episodes/07-making_sense_of_data.qmd
-            - essential_digital_skills/episodes/08-insight_to_impacts.qmd
+            - courses/essential_digital_skills/episodes/01-digital_tools.qmd
+            - courses/essential_digital_skills/episodes/02-digital_delivery.qmd
+            - courses/essential_digital_skills/episodes/03-data_governance_and_policy.qmd
+            - courses/essential_digital_skills/episodes/04-research_data_managment.qmd
         - section: "Learners"
           contents:
-            - essential_digital_skills/learners/setup.qmd
-            - essential_digital_skills/learners/discuss.qmd
-            - essential_digital_skills/learners/reference.qmd
+            - courses/essential_digital_skills/learners/setup.qmd
+            - courses/essential_digital_skills/learners/discuss.qmd
+            - courses/essential_digital_skills/learners/reference.qmd
         - section: "Instructors"
           contents:
-            - essential_digital_skills/instructors/additional_material.qmd
-            - essential_digital_skills/instructors/extra_exercises.qmd
-            - essential_digital_skills/instructors/instructor-notes.qmd
+            - courses/essential_digital_skills/instructors/additional_material.qmd
+            - courses/essential_digital_skills/instructors/extra_exercises.qmd
+            - courses/essential_digital_skills/instructors/instructor-notes.qmd
         - section: "Community & Metadata"
           contents:
-            - essential_digital_skills/README.qmd
-            - essential_digital_skills/CONTRIBUTING.qmd
-            - essential_digital_skills/CODE_OF_CONDUCT.qmd
-            - essential_digital_skills/LICENSE.qmd
-            - essential_digital_skills/profiles/learner-profiles.qmd
+            - courses/essential_digital_skills/README.qmd
+            - courses/essential_digital_skills/CONTRIBUTING.qmd
+            - courses/essential_digital_skills/CODE_OF_CONDUCT.qmd
+            - courses/essential_digital_skills/LICENSE.qmd
+            - courses/essential_digital_skills/profiles/learner-profiles.qmd
+
+    - id: "methods-for-data-science"
+      title: "Methods for Data Science"
+      style: "docked"
+      search: true
+      collapse-level: 3
+      contents:
+        - text: "Overview"
+          href: courses/methods_for_data_science/index.qmd
+        - section: "Lessons"
+          contents:
+            - courses/methods_for_data_science/episodes/05-collecting_the_right_data.qmd
+            - courses/methods_for_data_science/episodes/06-organising_and_exploring_data.qmd
+            - courses/methods_for_data_science/episodes/07-making_sense_of_data.qmd
+            - courses/methods_for_data_science/episodes/08-insight_to_impacts.qmd
+        - section: "Learners"
+          contents:
+            - courses/methods_for_data_science/learners/setup.qmd
+            - courses/methods_for_data_science/learners/discuss.qmd
+            - courses/methods_for_data_science/learners/reference.qmd
+        - section: "Instructors"
+          contents:
+            - courses/methods_for_data_science/instructors/additional_material.qmd
+            - courses/methods_for_data_science/instructors/extra_exercises.qmd
+            - courses/methods_for_data_science/instructors/instructor-notes.qmd
+        - section: "Community & Metadata"
+          contents:
+            - courses/methods_for_data_science/README.qmd
+            - courses/methods_for_data_science/CONTRIBUTING.qmd
+            - courses/methods_for_data_science/CODE_OF_CONDUCT.qmd
+            - courses/methods_for_data_science/LICENSE.qmd
+            - courses/methods_for_data_science/profiles/learner-profiles.qmd
 
     - id: "responsible-use-of-generative-ai"
       title: "Responsible Use of Generative AI"
@@ -123,28 +154,28 @@ website:
       collapse-level: 3
       contents:
         - text: "Overview"
-          href: responsible_use_of_generative_ai/index.qmd
+          href: courses/responsible_use_of_generative_ai/index.qmd
         - section: "Lessons"
           contents:
-            - responsible_use_of_generative_ai/episodes/ext1-how_ai_impacts_research.qmd
-            - responsible_use_of_generative_ai/episodes/ext2-how_to_use_ai_in_research.qmd
+            - courses/responsible_use_of_generative_ai/episodes/ext1-how_ai_impacts_research.qmd
+            - courses/responsible_use_of_generative_ai/episodes/ext2-how_to_use_ai_in_research.qmd
         - section: "Learners"
           contents:
-            - responsible_use_of_generative_ai/learners/setup.qmd
-            - responsible_use_of_generative_ai/learners/discuss.qmd
-            - responsible_use_of_generative_ai/learners/reference.qmd
+            - courses/responsible_use_of_generative_ai/learners/setup.qmd
+            - courses/responsible_use_of_generative_ai/learners/discuss.qmd
+            - courses/responsible_use_of_generative_ai/learners/reference.qmd
         - section: "Instructors"
           contents:
-            - responsible_use_of_generative_ai/instructors/additional_material.qmd
-            - responsible_use_of_generative_ai/instructors/extra_exercises.qmd
-            - responsible_use_of_generative_ai/instructors/instructor-notes.qmd
+            - courses/responsible_use_of_generative_ai/instructors/additional_material.qmd
+            - courses/responsible_use_of_generative_ai/instructors/extra_exercises.qmd
+            - courses/responsible_use_of_generative_ai/instructors/instructor-notes.qmd
         - section: "Community & Metadata"
           contents:
-            - responsible_use_of_generative_ai/README.qmd
-            - responsible_use_of_generative_ai/CONTRIBUTING.qmd
-            - responsible_use_of_generative_ai/CODE_OF_CONDUCT.qmd
-            - responsible_use_of_generative_ai/LICENSE.qmd
-            - responsible_use_of_generative_ai/profiles/learner-profiles.qmd
+            - courses/responsible_use_of_generative_ai/README.qmd
+            - courses/responsible_use_of_generative_ai/CONTRIBUTING.qmd
+            - courses/responsible_use_of_generative_ai/CODE_OF_CONDUCT.qmd
+            - courses/responsible_use_of_generative_ai/LICENSE.qmd
+            - courses/responsible_use_of_generative_ai/profiles/learner-profiles.qmd
 
     - id: "applied-python"
       title: "Applied Data Science (Python)"
@@ -153,34 +184,34 @@ website:
       collapse-level: 3
       contents:
         - text: "Overview"
-          href: applied_python/index.qmd
+          href: courses/applied_python/index.qmd
         - section: "Lessons"
           contents:
-            - applied_python/episodes/01-types_variables_and_basic_operations.qmd
-            - applied_python/episodes/02-loops_and_control_flow.qmd
-            - applied_python/episodes/03-data_manipulation_and_visualization.qmd
-            - applied_python/episodes/04_functions.qmd
-            - applied_python/episodes/05-data_manipulation_with_pandas.qmd
-            - applied_python/episodes/06-regression_analysis_and_modelling.qmd
-            - applied_python/episodes/07-python_object_oriented_programming.qmd
-            - applied_python/episodes/08-errors_debugging_and_defensive_programming.qmd
+            - courses/applied_python/episodes/01-types_variables_and_basic_operations.qmd
+            - courses/applied_python/episodes/02-loops_and_control_flow.qmd
+            - courses/applied_python/episodes/03-data_manipulation_and_visualization.qmd
+            - courses/applied_python/episodes/04_functions.qmd
+            - courses/applied_python/episodes/05-data_manipulation_with_pandas.qmd
+            - courses/applied_python/episodes/06-regression_analysis_and_modelling.qmd
+            - courses/applied_python/episodes/07-python_object_oriented_programming.qmd
+            - courses/applied_python/episodes/08-errors_debugging_and_defensive_programming.qmd
         - section: "Learners"
           contents:
-            - applied_python/learners/setup.qmd
-            - applied_python/learners/discuss.qmd
-            - applied_python/learners/reference.qmd
+            - courses/applied_python/learners/setup.qmd
+            - courses/applied_python/learners/discuss.qmd
+            - courses/applied_python/learners/reference.qmd
         - section: "Instructors"
           contents:
-            - applied_python/instructors/additional_material.qmd
-            - applied_python/instructors/extra_exercises.qmd
-            - applied_python/instructors/instructor-notes.qmd
+            - courses/applied_python/instructors/additional_material.qmd
+            - courses/applied_python/instructors/extra_exercises.qmd
+            - courses/applied_python/instructors/instructor-notes.qmd
         - section: "Community & Metadata"
           contents:
-            - applied_python/README.qmd
-            - applied_python/CONTRIBUTING.qmd
-            - applied_python/CODE_OF_CONDUCT.qmd
-            - applied_python/LICENSE.qmd
-            - applied_python/profiles/learner-profiles.qmd
+            - courses/applied_python/README.qmd
+            - courses/applied_python/CONTRIBUTING.qmd
+            - courses/applied_python/CODE_OF_CONDUCT.qmd
+            - courses/applied_python/LICENSE.qmd
+            - courses/applied_python/profiles/learner-profiles.qmd
 
     - id: "applied-r"
       title: "Applied Data Science (R)"
@@ -189,31 +220,31 @@ website:
       collapse-level: 3
       contents:
         - text: "Overview"
-          href: applied_R/index.qmd
+          href: courses/applied_R/index.qmd
         - section: "Lessons"
           contents:
-            - applied_R/episodes/01-Rstudio_intro.qmd
-            - applied_R/episodes/02-R_variables_intro.qmd
-            - applied_R/episodes/03-R_functions.qmd
-            - applied_R/episodes/04-for_loops.qmd
-            - applied_R/episodes/05-the_tidyverse.qmd
+            - courses/applied_R/episodes/01-Rstudio_intro.qmd
+            - courses/applied_R/episodes/02-R_variables_intro.qmd
+            - courses/applied_R/episodes/03-R_functions.qmd
+            - courses/applied_R/episodes/04-for_loops.qmd
+            - courses/applied_R/episodes/05-the_tidyverse.qmd
         - section: "Learners"
           contents:
-            - applied_R/learners/setup.qmd
-            - applied_R/learners/discuss.qmd
-            - applied_R/learners/reference.qmd
+            - courses/applied_R/learners/setup.qmd
+            - courses/applied_R/learners/discuss.qmd
+            - courses/applied_R/learners/reference.qmd
         - section: "Instructors"
           contents:
-            - applied_R/instructors/additional_material.qmd
-            - applied_R/instructors/extra_exercises.qmd
-            - applied_R/instructors/instructor-notes.qmd
+            - courses/applied_R/instructors/additional_material.qmd
+            - courses/applied_R/instructors/extra_exercises.qmd
+            - courses/applied_R/instructors/instructor-notes.qmd
         - section: "Community & Metadata"
           contents:
-            - applied_R/README.qmd
-            - applied_R/CONTRIBUTING.qmd
-            - applied_R/CODE_OF_CONDUCT.qmd
-            - applied_R/LICENSE.qmd
-            - applied_R/profiles/learner-profiles.qmd
+            - courses/applied_R/README.qmd
+            - courses/applied_R/CONTRIBUTING.qmd
+            - courses/applied_R/CODE_OF_CONDUCT.qmd
+            - courses/applied_R/LICENSE.qmd
+            - courses/applied_R/profiles/learner-profiles.qmd
 
     - id: "automating-business-processes"
       title: "Automating Business Processes"
@@ -222,25 +253,25 @@ website:
       collapse-level: 3
       contents:
         - text: "Overview"
-          href: automating_business_processes/index.qmd
+          href: courses/automating_business_processes/index.qmd
         - section: "Lessons"
           contents:
-            - automating_business_processes/episodes/01-power_automate.qmd
+            - courses/automating_business_processes/episodes/01-power_automate.qmd
         - section: "Learners"
           contents:
-            - automating_business_processes/learners/setup.qmd
-            - automating_business_processes/learners/additional_material.qmd
-            - automating_business_processes/learners/discuss.qmd
-            - automating_business_processes/learners/reference.qmd
+            - courses/automating_business_processes/learners/setup.qmd
+            - courses/automating_business_processes/learners/additional_material.qmd
+            - courses/automating_business_processes/learners/discuss.qmd
+            - courses/automating_business_processes/learners/reference.qmd
         - section: "Instructors"
           contents:
-            - automating_business_processes/instructors/additional_material.qmd
-            - automating_business_processes/instructors/extra_exercises.qmd
-            - automating_business_processes/instructors/instructor-notes.qmd
+            - courses/automating_business_processes/instructors/additional_material.qmd
+            - courses/automating_business_processes/instructors/extra_exercises.qmd
+            - courses/automating_business_processes/instructors/instructor-notes.qmd
         - section: "Community & Metadata"
           contents:
-            - automating_business_processes/README.qmd
-            - automating_business_processes/CONTRIBUTING.qmd
-            - automating_business_processes/CODE_OF_CONDUCT.qmd
-            - automating_business_processes/LICENSE.qmd
-            - automating_business_processes/profiles/learner-profiles.qmd
+            - courses/automating_business_processes/README.qmd
+            - courses/automating_business_processes/CONTRIBUTING.qmd
+            - courses/automating_business_processes/CODE_OF_CONDUCT.qmd
+            - courses/automating_business_processes/LICENSE.qmd
+            - courses/automating_business_processes/profiles/learner-profiles.qmd

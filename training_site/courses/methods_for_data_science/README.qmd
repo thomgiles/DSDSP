@@ -1,0 +1,9 @@
+---
+title: README
+---
+
+# Methods for Data Science
+
+Methods for Data Science is a foundation course in practical data judgement. It focuses on collecting useful data, organising and exploring it, interpreting visual evidence, and turning findings into action.
+
+The course sits after Essential Digital Skills and before more code-focused Applied Python or Applied R pathways.

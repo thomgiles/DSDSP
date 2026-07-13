@@ -1,0 +1,47 @@
+/* ===========================
+   Dynamic Code Blocks / Output
+   =========================== */
+
+/* qpyodide / qwebr */
+.qpyodide-output-code-area, .qwebr-output-code-area {
+  background: $white;
+  border: none;
+  border-radius: 0 0 10px 10px;
+  padding: 10px;
+  color: $ink;
+}
+.qpyodide-console-area, .qwebr-console-area {
+  padding: 10px;
+  color: $ink;
+  border: solid 1px;
+  border-radius: 0 0 10px 10px;
+  background: $grey;
+  text-align: left;
+}
+.qpyodide-editor-toolbar, .qwebr-editor-toolbar {
+  padding: 10px;
+  background-color: $grey;
+  border-radius: 10px 10px 0 0;
+  border: solid 1px;
+}
+
+
+.qpyodide-editor, .qwebr-editor {
+    border: none !important;
+    background: $white;
+    color: $ink;
+}
+
+.qpyodide-interactive-area, .qwebr-interactive-area {
+    margin: 20px;
+}
+
+.qpyodide-button, .qwebr-button {
+    background-color: $teal;
+    color: $white;
+    margin: 5px; 
+    padding: 10px;
+    border-radius: 20px;
+    border: solid 2px $teal;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}

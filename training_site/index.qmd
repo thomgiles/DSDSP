@@ -15,35 +15,14 @@ format:
 ---
 
 ```{=html}
-<style>
-#title-block-header { display: none; }
-main#quarto-document-content { margin-top: 0; }
-.cell-code.hidden,
-.cell-code.hidden + .code-copy-button,
-.code-copy-outer-scaffold:has(.cell-code.hidden) {
-  display: none !important;
-}
-.landing-eyebrow p,
-.landing-actions p,
-.landing-stat p {
-  margin: 0;
-}
-.landing-stat p + p {
-  margin-top: 0.25rem;
-}
-homepage-header-hero,
-homepage-workshop-rhythm {
-  display: block;
-}
-</style>
+<script src="js/index-header-hero.js" defer></script>
+<script src="js/index-workshop-rhythm.js" defer></script>
+<script src="js/index-landing.js" defer></script>
 ```
 
-```{=html}
-<script src="js/homepage-header-hero.js" defer></script>
-<script src="js/homepage-workshop-rhythm.js" defer></script>
-```
+{{< include html/landing-page-styles.html >}}
 
-{{< include _includes/landing-site-data.html >}}
+{{< include html/landing-site-data.html >}}
 
 ::: {.landing-section .landing-programme-summary}
 
@@ -53,27 +32,7 @@ homepage-workshop-rhythm {
 This programme is built around complete course areas, focused modules, and open materials that can be revisited after a workshop.
 :::
 
-```{=html}
-<div class="landing-stats-column">
-  <div class="landing-stats" aria-label="Digital Skills programme summary">
-    <a class="landing-stat" href="courses.qmd#courses">
-      <span class="landing-stat-icon" aria-hidden="true">📚</span>
-      <span class="landing-stat-value" id="course-total-count">0</span>
-      <span class="landing-stat-label">Courses</span>
-    </a>
-    <a class="landing-stat" href="courses.qmd#module-finder">
-      <span class="landing-stat-icon" aria-hidden="true">🧩</span>
-      <span class="landing-stat-value" id="module-total-count">0</span>
-      <span class="landing-stat-label">Modules</span>
-    </a>
-    <a class="landing-stat" href="about.qmd#open-access">
-      <span class="landing-stat-icon" aria-hidden="true">🔓</span>
-      <span class="landing-stat-value">Open</span>
-      <span class="landing-stat-label">Reusable materials</span>
-    </a>
-  </div>
-</div>
-```
+{{< include html/index-training-summary.html >}}
 :::
 
 ::: {.landing-section .landing-course-carousel-section}
@@ -83,16 +42,7 @@ This programme is built around complete course areas, focused modules, and open 
 Browse the main course areas, then jump into the course page for modules, setup notes, and materials.
 :::
 
-```{=html}
-<div class="landing-course-carousel-shell">
-  <button class="landing-course-carousel-nav landing-course-carousel-prev" type="button" data-course-carousel-prev aria-label="Previous course area">‹</button>
-  <div class="landing-course-carousel-viewport">
-    <div class="landing-course-carousel" id="landing-course-carousel" aria-label="Course areas" tabindex="0"></div>
-  </div>
-  <button class="landing-course-carousel-nav landing-course-carousel-next" type="button" data-course-carousel-next aria-label="Next course area">›</button>
-</div>
-<div class="landing-course-carousel-dots" data-course-carousel-dots aria-label="Course carousel position"></div>
-```
+{{< include html/index-course-carousel.html >}}
 :::
 
 ::: {.landing-section .landing-research-section}
@@ -101,40 +51,7 @@ Browse the main course areas, then jump into the course page for modules, setup 
 
 The materials are aimed at researchers, doctoral students, analysts, and professional services teams who need reliable, practical digital methods.
 
-```{=html}
-<div class="landing-research-grid">
-  <div class="landing-research-item" role="button" tabindex="0" data-research-modal="activities">
-    <span aria-hidden="true">🧪</span>
-    <strong>Realistic activities</strong>
-    <p class="landing-research-detail">Open details about practical, scenario-based workshop tasks.</p>
-  </div>
-  <div class="landing-research-item" role="button" tabindex="0" data-research-modal="examples">
-    <span aria-hidden="true">♻️</span>
-    <strong>Reusable examples</strong>
-    <p class="landing-research-detail">Open details about materials learners can adapt after the session.</p>
-  </div>
-  <div class="landing-research-item" role="button" tabindex="0" data-research-modal="guides">
-    <span aria-hidden="true">📋</span>
-    <strong>Setup and reference guides</strong>
-    <p class="landing-research-detail">Open details about setup notes, references, and follow-on support.</p>
-  </div>
-  <div class="landing-research-item" role="button" tabindex="0" data-research-modal="instructors">
-    <span aria-hidden="true">🎓</span>
-    <strong>Instructor notes</strong>
-    <p class="landing-research-detail">Open details about teaching notes, prompts, and delivery guidance.</p>
-  </div>
-</div>
-
-<dialog class="landing-research-modal" id="landing-research-modal" aria-labelledby="landing-research-modal-title">
-  <div class="landing-research-modal-panel">
-    <button class="landing-research-modal-close" type="button" aria-label="Close details">×</button>
-    <span class="landing-research-modal-icon" aria-hidden="true"></span>
-    <h3 id="landing-research-modal-title"></h3>
-    <p class="landing-research-modal-lede"></p>
-    <ul class="landing-research-modal-list"></ul>
-  </div>
-</dialog>
-```
+{{< include html/index-research-materials.html >}}
 :::
 :::
 
@@ -145,293 +62,13 @@ The materials are aimed at researchers, doctoral students, analysts, and profess
 Each in-person session cycles through short teaching, hands-on activity, and structured review so learners can apply the idea before moving on. The idea is to connect the people who most need training in specific digital skills and processes with the people who use them on a day-to-day basis.
 :::
 
-```{=html}
-<homepage-workshop-rhythm></homepage-workshop-rhythm>
-```
-:::
-
-::: {.landing-ticker aria-hidden="true"}
-::: {.landing-ticker-track}
-<span>Reproducible workflows</span>
-<span>Power Automate</span>
-<span>Responsible AI</span>
-<span>Python</span>
-<span>R</span>
-<span>Research data</span>
-<span>Collaboration</span>
-<span>Open science</span>
-<span>Reproducible workflows</span>
-<span>Power Automate</span>
-<span>Responsible AI</span>
-<span>Python</span>
-<span>R</span>
-<span>Research data</span>
-<span>Collaboration</span>
-<span>Open science</span>
-:::
+{{< include html/index-workshop-rhythm.html >}}
 :::
 
 ```{=html}
-<a class="landing-credit-banner" href="https://digitalresearch.nottingham.ac.uk/">
-  Developed By The University of Nottingham Digital Research Service
-</a>
+<div class="landing-ticker" aria-label="Training keywords">
+  <div class="landing-ticker-track" data-keyword-ticker></div>
+</div>
 ```
 
-```{=html}
-<script>
-(() => {
-  const escapeHtml = (value) => String(value ?? "").replace(/[&<>"']/g, (char) => ({
-    "&": "&amp;",
-    "<": "&lt;",
-    ">": "&gt;",
-    '"': "&quot;",
-    "'": "&#39;"
-  }[char]));
-
-  const getSiteData = () => {
-    const dataElement = document.getElementById("landing-site-data");
-    if (!dataElement) return {courses: [], modules: []};
-
-    try {
-      return JSON.parse(dataElement.textContent);
-    } catch {
-      return {courses: [], modules: []};
-    }
-  };
-
-  const initLandingCounts = () => {
-    const courseTotal = document.getElementById("course-total-count");
-    const moduleTotal = document.getElementById("module-total-count");
-
-    const siteData = getSiteData();
-    const courses = siteData.courses || [];
-    const modules = siteData.modules || [];
-    if (courseTotal) courseTotal.textContent = courses.length;
-    if (moduleTotal) moduleTotal.textContent = modules.length;
-  };
-
-  const initCourseCarousel = () => {
-    const carousel = document.getElementById("landing-course-carousel");
-    if (!carousel) return;
-
-    const siteData = getSiteData();
-    const courses = siteData.courses || [];
-    if (!courses.length) return;
-
-    carousel.innerHTML = courses.map((course, index) => {
-      const summary = course.summary || course.subtitle || course.intro || "";
-      return `
-        <a class="landing-course-carousel-card" href="${escapeHtml(course.href)}" data-course-index="${index}" style="--card-delay:${Math.min(index * 90, 360)}ms">
-          <span class="landing-card-badge">${escapeHtml(course.area || "Course")}</span>
-          <span class="landing-card-status">${escapeHtml(course.badge || course.status || course.level || "")}</span>
-          <h3>${escapeHtml(course.title)}</h3>
-          <p>${escapeHtml(summary)}</p>
-          <span class="landing-card-meta">${escapeHtml(course.level || "Flexible")} · View course</span>
-        </a>
-      `;
-    }).join("");
-
-    const cards = Array.from(carousel.querySelectorAll(".landing-course-carousel-card"));
-    const previous = document.querySelector("[data-course-carousel-prev]");
-    const next = document.querySelector("[data-course-carousel-next]");
-    const dots = document.querySelector("[data-course-carousel-dots]");
-    let activeIndex = 0;
-
-    if (dots) {
-      dots.innerHTML = courses.map((course, index) => `
-        <button type="button" data-course-carousel-dot="${index}" aria-label="Show ${escapeHtml(course.title)}"></button>
-      `).join("");
-    }
-
-    const dotButtons = dots ? Array.from(dots.querySelectorAll("button")) : [];
-
-    const getOffset = (index) => {
-      let offset = index - activeIndex;
-      const half = courses.length / 2;
-      if (offset > half) offset -= courses.length;
-      if (offset < -half) offset += courses.length;
-      return offset;
-    };
-
-    const setActive = (index) => {
-      activeIndex = (index + courses.length) % courses.length;
-
-      cards.forEach((card, cardIndex) => {
-        const offset = getOffset(cardIndex);
-        const absOffset = Math.abs(offset);
-        const visible = absOffset <= 2;
-        const scale = offset === 0 ? 1.16 : Math.max(0.7, 0.88 - absOffset * 0.1);
-        const translateX = offset * 38;
-        const translateZ = offset === 0 ? 190 : (2 - absOffset) * 44;
-        const rotateY = offset * -20;
-        const opacity = visible ? Math.max(0.34, 1 - absOffset * 0.22) : 0;
-
-        card.classList.toggle("is-active", offset === 0);
-        card.setAttribute("aria-hidden", visible ? "false" : "true");
-        card.tabIndex = visible ? 0 : -1;
-        card.style.zIndex = String(20 - absOffset);
-        card.style.opacity = String(opacity);
-        card.style.pointerEvents = visible ? "auto" : "none";
-        card.style.transform = `translateX(${translateX}%) translateZ(${translateZ}px) rotateY(${rotateY}deg) scale(${scale})`;
-      });
-
-      dotButtons.forEach((button, index) => {
-        const active = index === activeIndex;
-        button.classList.toggle("is-active", active);
-        button.setAttribute("aria-current", active ? "true" : "false");
-      });
-    };
-
-    previous?.addEventListener("click", () => setActive(activeIndex - 1));
-    next?.addEventListener("click", () => setActive(activeIndex + 1));
-    dotButtons.forEach((button) => {
-      button.addEventListener("click", () => setActive(Number(button.dataset.courseCarouselDot)));
-    });
-    carousel.addEventListener("keydown", (event) => {
-      if (event.key === "ArrowLeft") {
-        event.preventDefault();
-        setActive(activeIndex - 1);
-      }
-      if (event.key === "ArrowRight") {
-        event.preventDefault();
-        setActive(activeIndex + 1);
-      }
-    });
-
-    setActive(0);
-  };
-
-  const initScrollReveals = () => {
-    const revealItems = document.querySelectorAll(
-      ".landing-programme-summary, .landing-course-carousel-section, .landing-ticker, .landing-research-section, .landing-workshop-section, .landing-credit-banner"
-    );
-    if (!revealItems.length) return;
-
-    if (!("IntersectionObserver" in window)) {
-      revealItems.forEach((item) => item.classList.add("is-visible"));
-      return;
-    }
-
-    const observer = new IntersectionObserver((entries) => {
-      for (const entry of entries) {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-        } else {
-          entry.target.classList.remove("is-visible");
-        }
-      }
-    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.22 });
-
-    revealItems.forEach((item) => observer.observe(item));
-  };
-
-  const initResearchModal = () => {
-    const modal = document.getElementById("landing-research-modal");
-    const cards = document.querySelectorAll("[data-research-modal]");
-    if (!modal || !cards.length) return;
-
-    const modalContent = {
-      activities: {
-        icon: "🧪",
-        title: "Realistic Activities",
-        lede: "Activities are designed around the kinds of messy-but-manageable work people recognise from research and professional services settings.",
-        points: [
-          "Learners practise with plausible data, documents, decisions, and constraints rather than toy examples.",
-          "Tasks usually produce a useful artefact: a cleaner folder structure, a working flow, an analysis script, a data check, or a documented decision.",
-          "Activities are deliberately scoped so learners can complete them in the room and still have time to inspect, discuss, and improve the result.",
-          "Where possible, examples include safe failure points so learners see how to debug, recover, and make better design choices."
-        ]
-      },
-      examples: {
-        icon: "♻️",
-        title: "Reusable Examples",
-        lede: "The training materials are intended to be useful after the session, not just during delivery.",
-        points: [
-          "Worked examples can be adapted into templates for research projects, admin processes, analysis reports, and teaching materials.",
-          "Example data and documents are chosen to demonstrate transferable patterns while avoiding sensitive or project-specific information.",
-          "Code, automation steps, and document structures are written so learners can reuse the approach with their own files and systems.",
-          "The aim is to leave learners with something concrete they can revisit when the same task appears in real work."
-        ]
-      },
-      guides: {
-        icon: "📋",
-        title: "Setup and Reference Guides",
-        lede: "Learners should not have to rely on memory or screenshots after a workshop finishes.",
-        points: [
-          "Setup notes help learners prepare accounts, software, permissions, and example files before a practical session starts.",
-          "Reference guides capture the key steps, vocabulary, and checks needed to repeat the workflow independently.",
-          "Guides separate one-off setup from repeatable practice so learners can find the right instruction quickly.",
-          "Where a tool or process has risks, the notes include prompts about ownership, records, access, data protection, and maintainability."
-        ]
-      },
-      instructors: {
-        icon: "🎓",
-        title: "Instructor Notes",
-        lede: "Instructor notes make sessions easier to deliver consistently while still leaving room for discussion and local examples.",
-        points: [
-          "Notes include suggested timings, teaching prompts, common pitfalls, and points where learners may need extra support.",
-          "They help instructors explain why a method matters, not just which buttons to press or which command to run.",
-          "Discussion prompts encourage learners to connect the exercise to their own research, governance, and operational contexts.",
-          "The notes also make it easier to update materials over time as tools, policies, and learner needs change."
-        ]
-      }
-    };
-
-    const icon = modal.querySelector(".landing-research-modal-icon");
-    const title = modal.querySelector("#landing-research-modal-title");
-    const lede = modal.querySelector(".landing-research-modal-lede");
-    const list = modal.querySelector(".landing-research-modal-list");
-    const close = modal.querySelector(".landing-research-modal-close");
-
-    const closeModal = () => {
-      if (typeof modal.close === "function") {
-        modal.close();
-      } else {
-        modal.removeAttribute("open");
-      }
-    };
-
-    const openModal = (key) => {
-      const content = modalContent[key];
-      if (!content) return;
-      icon.textContent = content.icon;
-      title.textContent = content.title;
-      lede.textContent = content.lede;
-      list.innerHTML = content.points.map((point) => `<li>${point}</li>`).join("");
-      if (typeof modal.showModal === "function") {
-        modal.showModal();
-      } else {
-        modal.setAttribute("open", "");
-      }
-    };
-
-    cards.forEach((card) => {
-      card.addEventListener("click", () => openModal(card.dataset.researchModal));
-      card.addEventListener("keydown", (event) => {
-        if (event.key !== "Enter" && event.key !== " ") return;
-        event.preventDefault();
-        openModal(card.dataset.researchModal);
-      });
-    });
-
-    close?.addEventListener("click", closeModal);
-    modal.addEventListener("click", (event) => {
-      if (event.target === modal) closeModal();
-    });
-  };
-
-  const initLanding = () => {
-    initLandingCounts();
-    initCourseCarousel();
-    initScrollReveals();
-    initResearchModal();
-  };
-
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initLanding);
-  } else {
-    initLanding();
-  }
-})();
-</script>
-```
+{{< include html/index-credit-banner.html >}}

@@ -1,0 +1,72 @@
+body:has(.course-page-marker) #title-block-header {
+  width: 100%;
+  margin-left: 0;
+  margin-bottom: clamp(1.8rem, 4vw, 3rem);
+  padding:
+    clamp(2rem, 4.5vw, 3.6rem)
+    0
+    clamp(2.2rem, 5vw, 4rem);
+  box-sizing: border-box;
+  background: transparent;
+  color: $ink;
+}
+
+.course-page-marker {
+  display: none;
+}
+
+body:has(.course-page-marker) #title-block-header .quarto-title {
+  max-width: 760px;
+  text-align: left;
+  font-size: initial;
+  font-weight: initial;
+  color: $ink !important;
+}
+
+body:has(.course-page-marker) #title-block-header h1.title {
+  max-width: 880px;
+  margin: 0 0 1.1rem;
+  color: $ink !important;
+  font-size: clamp(1.5rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 0.94;
+  letter-spacing: -0.045em;
+}
+
+body:has(.course-page-marker) #title-block-header .subtitle {
+  max-width: 680px;
+  margin: 0;
+  color: rgba($ink, 0.78);
+  font-size: clamp(1.08rem, 2vw, 1.42rem);
+  line-height: 1.52;
+  font-weight: 400;
+}
+
+body:has(.course-page-marker) main#quarto-document-content h1 {
+  color: $ink;
+  font-size: clamp(2rem, 4vw, 3.4rem);
+  line-height: 1;
+  margin-top: 2rem;
+  margin-bottom: 0.85rem;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+body:has(.course-page-marker) main#quarto-document-content h2 {
+  color: $ink;
+  font-size: clamp(1.65rem, 3vw, 2.45rem);
+  line-height: 1.05;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  font-weight: 500;
+  letter-spacing: -0.018em;
+  text-wrap: balance;
+}
+
+body:has(.course-page-marker) main#quarto-document-content > section:first-child > h1:first-child,
+body:has(.course-page-marker) main#quarto-document-content > section:first-child > h2:first-child,
+body:has(.course-page-marker) main#quarto-document-content > h1:first-child,
+body:has(.course-page-marker) main#quarto-document-content > h2:first-child {
+  margin-top: 0;
+}

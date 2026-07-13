@@ -15,54 +15,45 @@ format:
 ---
 
 ```{=html}
-<style>
-#title-block-header { display: none; }
-main#quarto-document-content { margin-top: 0; }
-.cell-code.hidden,
-.cell-code.hidden + .code-copy-button,
-.code-copy-outer-scaffold:has(.cell-code.hidden) {
-  display: none !important;
-}
-</style>
+<script src="js/about-header-hero.js" defer></script>
+<script src="js/about-scroll-reveal.js" defer></script>
 ```
 
-::: {.landing-hero .landing-hero-compact .landing-page-hero}
-::: {.landing-hero-content}
-# About the Digital Skills Programme
+{{< include html/landing-page-styles.html >}}
 
-Practical, reusable training for researchers who need reliable digital methods.
-:::
-:::
+```{=html}
+<about-header-hero></about-header-hero>
+```
 
 ::: {.landing-section .landing-programme-summary .about-lede}
 ::: {.landing-summary-copy}
 ## Learn Skills You Can Use Immediately
 
-The Digital Skills programme is built around practical research workflows, not abstract tool demos. Each course gives learners something they can reuse: a cleaner folder structure, a safer data process, a working automation, a reproducible analysis, or a clearer AI workflow.
+The Digital Skills programme is built around practical research workflows, not abstract tool demos. Each module gives learners something they can reuse: a cleaner folder structure, a safer data process, a working automation, a reproducible analysis, or a clearer workflow.
 :::
 
 ::: {.landing-feature-grid}
 ::: {.landing-feature}
-### 🧭 Find the Right Starting Point
+### 🧭 Discover
 
-Choose foundation, responsible AI, automation, Python, or R depending on your current work.
+Use our course finder to explore the available courses and modules and identify the training that best fits your research needs.
 :::
 ::: {.landing-feature}
-### 🛠️ Build While You Learn
+### 🛠️ Build
 
-Sessions combine short teaching blocks with practical activities and discussion.
+Sessions mix focused teaching, hands-on tasks, and group discussion so learners can apply ideas straight away.
 :::
 ::: {.landing-feature}
-### 🔁 Reuse the Materials
+### 🔁 Reuse
 
-Slides, setup guides, examples, and references are available from each course page.
+Each course page includes slides, setup notes, examples, and references so learners can return to the materials later.
 :::
 :::
 :::
 
 ::: {#open-access .landing-section .about-open-access}
 ::: {.landing-section-heading}
-## Open Access Materials
+## Open Access
 
 The Digital Skills programme is designed so learners can return to the materials after a workshop and reuse them in their own work. Course pages collect slides, setup notes, practical exercises, example files, and references wherever those materials can be shared openly.
 :::
@@ -95,32 +86,7 @@ Modern research projects routinely involve code, large data sets, digital collab
 The programme addresses this gap through a structured training pathway aligned with open science, reproducible research, and research integrity.
 :::
 
-::: {.about-principles-grid}
-::: {.about-principle}
-<div class="about-card-icon" aria-hidden="true">🪜</div>
-<h3>Structured Progression</h3>
-
-Courses are organised so learners can build skills incrementally and revisit concepts as needed.
-:::
-::: {.about-principle}
-<div class="about-card-icon" aria-hidden="true">🧪</div>
-<h3>Hands-On Learning</h3>
-
-Sessions use collaborative exercises, scenario-based tasks, and practical build activities.
-:::
-::: {.about-principle}
-<div class="about-card-icon" aria-hidden="true">🔓</div>
-<h3>Open Science Focus</h3>
-
-Modules emphasise FAIR data, reproducible workflows, responsible governance, and transparent documentation.
-:::
-::: {.about-principle}
-<div class="about-card-icon" aria-hidden="true">🌐</div>
-<h3>Discipline-Agnostic Design</h3>
-
-The methods and tools apply across research domains, with space for specialist workflows where needed.
-:::
-:::
+{{< include html/about-principles-grid.html >}}
 :::
 
 ::: {.landing-section .about-two-col}
@@ -128,58 +94,20 @@ The methods and tools apply across research domains, with space for specialist w
 ::: {.landing-section-heading}
 ## Who It Is For
 
-The programme supports learners at different levels of experience, from researchers developing foundational digital confidence to advanced learners who want to strengthen computational, analytical, and data-driven workflows.
+The programme supports a range of experience levels, from learners building digital confidence to those strengthening computational, analytical, and data-driven research workflows.
 :::
 
-::: {.about-audience-grid}
-::: {.about-audience-card}
-<div class="about-card-icon" aria-hidden="true">🎓</div>
-<h3>Doctoral Researchers</h3>
-
-Build practical habits for data, automation, analysis, and responsible use of AI.
-:::
-::: {.about-audience-card}
-<div class="about-card-icon" aria-hidden="true">🚀</div>
-<h3>Early-Career Researchers</h3>
-
-Strengthen workflows that can be reused across projects, publications, and collaborations.
-:::
-::: {.about-audience-card}
-<div class="about-card-icon" aria-hidden="true">⚙️</div>
-<h3>Analysts and Professional Services</h3>
-
-Improve repeatable digital processes, reporting workflows, and operational data handling.
-:::
-:::
+{{< include html/about-audience-grid.html >}}
 :::
 
 ::: {.about-two-col-panel}
 ::: {.landing-section-heading}
 ## Training Tiers
 
-Learners can move through the pathway in order or choose the course that matches the work in front of them.
+Learners can follow the pathway step by step or choose the course that best matches their current project, role, or skills gap.
 :::
 
-::: {.about-tier-track}
-::: {.about-tier}
-<div class="about-tier-number">01</div>
-<h3>Foundation</h3>
-
-Essential Digital Skills introduces the core tools, policies, and principles required for computational research.
-:::
-::: {.about-tier}
-<div class="about-tier-number">02</div>
-<h3>Extend</h3>
-
-Responsible AI and automation courses help learners apply practical guardrails to common research and business processes.
-:::
-::: {.about-tier}
-<div class="about-tier-number">03</div>
-<h3>Analyse</h3>
-
-Python and R courses support reproducible data analysis, modelling, reporting, and debugging.
-:::
-:::
+{{< include html/about-tier-track.html >}}
 
 ::: {.landing-centered-action}
 [Explore courses and modules](courses.qmd){.landing-button .landing-button-primary}
@@ -214,50 +142,5 @@ Assessment is formative. Learners receive feedback from instructors, peers, and 
 For general enquiries, registration, or accessibility queries, contact the Digital Research Service.
 :::
 
-```{=html}
-<div class="about-contact-grid">
-  <a class="about-contact-card" href="mailto:digitalresearch@nottingham.ac.uk">
-    <span aria-hidden="true">✉️</span>
-    <strong>Digital Research Service</strong>
-    <em>digitalresearch@nottingham.ac.uk</em>
-  </a>
-  <a class="about-contact-card" href="mailto:tom.giles@nottingham.ac.uk">
-    <span aria-hidden="true">👤</span>
-    <strong>Programme Lead</strong>
-    <em>Dr Thomas Giles</em>
-  </a>
-</div>
-```
+{{< include html/about-contact-grid.html >}}
 :::
-
-```{=html}
-<script>
-(() => {
-  const initAboutScrollReveals = () => {
-    const revealItems = document.querySelectorAll(
-      ".about-lede, .about-open-access, .about-gradient-band, .about-two-col, .landing-split, .about-contact"
-    );
-    if (!revealItems.length) return;
-
-    if (!("IntersectionObserver" in window)) {
-      revealItems.forEach((item) => item.classList.add("is-visible"));
-      return;
-    }
-
-    const observer = new IntersectionObserver((entries) => {
-      for (const entry of entries) {
-        entry.target.classList.toggle("is-visible", entry.isIntersecting);
-      }
-    }, { rootMargin: "0px 0px -8% 0px", threshold: 0.18 });
-
-    revealItems.forEach((item) => observer.observe(item));
-  };
-
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initAboutScrollReveals);
-  } else {
-    initAboutScrollReveals();
-  }
-})();
-</script>
-```
