@@ -8,7 +8,7 @@ These exercises are designed for instructors who want more practice material, st
 
 ## Exercise 1: Opportunity or Risk Relocation?
 
-**Best fit:** [How AI Impacts Research](../episodes/ext1-how_ai_impacts_research.qmd)
+**Best fit:** [How AI Impacts Research](../episodes/ext1-how_ai_impacts_teaching_and_research.qmd)
 
 Give groups three research tasks and ask them to identify:
 
@@ -20,7 +20,7 @@ Give groups three research tasks and ask them to identify:
 
 ## Exercise 2: Prompt Rewrite Sprint
 
-**Best fit:** [How to Use AI in Research](../episodes/ext2-how_to_use_ai_in_research.qmd)
+**Best fit:** [How to Use AI in Research](../episodes/ext2-how_to_use_ai_in_teaching_and_research.qmd)
 
 Take three vague prompts and ask groups to improve them by adding:
 
@@ -33,7 +33,7 @@ Take three vague prompts and ask groups to improve them by adding:
 
 ## Exercise 3: Source Check Triage
 
-**Best fit:** [How to Use AI in Research](../episodes/ext2-how_to_use_ai_in_research.qmd)
+**Best fit:** [How to Use AI in Research](../episodes/ext2-how_to_use_ai_in_teaching_and_research.qmd)
 
 Provide a short AI-generated output and ask groups to mark:
 

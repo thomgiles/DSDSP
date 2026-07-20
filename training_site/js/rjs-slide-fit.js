@@ -36,7 +36,7 @@
 
     overflowTolerancePx: 10,
 
-    delayedFitPassesMs: [80, 250, 700]
+    delayedFitPassesMs: [60, 160, 360, 800, 1400]
   };
 
   const MANAGED_CLASSES = [
@@ -44,16 +44,25 @@
     "rjs-fit-tight",
     "rjs-fit-media-tight",
     "rjs-fit-callout-tight",
+    "rjs-fit-table-slide",
+    "rjs-fit-code-slide",
+    "rjs-fit-visual-slide",
+    "rjs-fit-title-visual",
+    "rjs-fit-quote-slide",
     "rjs-fit-roomy",
     "rjs-fit-overflow",
     "is-auto-fitted"
   ];
+
+  const SHRINKABLE_CALLOUT_SELECTOR =
+    ".callout-outcomes, .callout-questions, .callout-keypoints, .callout-hints";
 
   let resizeTimer = null;
   let isFitting = false;
   let resizeObserver = null;
   let observedSlide = null;
   let fitPassTimers = [];
+  const decodedImages = new WeakSet();
 
   /* ------------------------------------------------------------------------
      Basic helpers
@@ -73,9 +82,36 @@
   }
 
   function getActiveSlide() {
-    return (
+    if (window.Reveal?.getCurrentSlide) {
+      return window.Reveal.getCurrentSlide();
+    }
+
+    let slide = (
       document.querySelector(".reveal .slides > section.stack.present > section.present") ||
       document.querySelector(".reveal .slides > section.present:not(.stack)")
+    );
+
+    while (slide) {
+      const nested = Array.from(slide.children).find((child) => (
+        child instanceof HTMLElement &&
+        child.tagName === "SECTION" &&
+        child.classList.contains("present")
+      ));
+
+      if (!nested) {
+        break;
+      }
+
+      slide = nested;
+    }
+
+    return slide;
+  }
+
+  function hasShrinkableCallout(slide) {
+    return (
+      slide.matches(SHRINKABLE_CALLOUT_SELECTOR) ||
+      slide.querySelector(SHRINKABLE_CALLOUT_SELECTOR) !== null
     );
   }
 
@@ -205,6 +241,7 @@
     slide.style.removeProperty("--rjs-fit-top-space");
     slide.style.removeProperty("--rjs-fit-media-trim");
     slide.style.removeProperty("--rjs-fit-callout-trim");
+    slide.style.removeProperty("--rjs-fit-safe-height");
   }
 
   function clearFitPassTimers() {
@@ -218,9 +255,30 @@
     slide.style.setProperty("--rjs-fit-top-space", `${Math.round(layout.topSpacePx)}px`);
     slide.style.setProperty("--rjs-fit-media-trim", `${Math.round(layout.mediaTrimPx)}px`);
     slide.style.setProperty("--rjs-fit-callout-trim", `${Math.round(layout.calloutTrimPx)}px`);
+    slide.style.setProperty("--rjs-fit-safe-height", `${Math.round(layout.safeHeightPx)}px`);
 
     slide.classList.add("rjs-fit-managed");
     slide.classList.add("is-auto-fitted");
+
+    if (layout.hasTable) {
+      slide.classList.add("rjs-fit-table-slide");
+    }
+
+    if (layout.hasCode) {
+      slide.classList.add("rjs-fit-code-slide");
+    }
+
+    if (layout.hasVisual) {
+      slide.classList.add("rjs-fit-visual-slide");
+    }
+
+    if (layout.isTitleVisual) {
+      slide.classList.add("rjs-fit-title-visual");
+    }
+
+    if (layout.hasQuote) {
+      slide.classList.add("rjs-fit-quote-slide");
+    }
 
     if (layout.scale < 0.96) {
       slide.classList.add("rjs-fit-tight");
@@ -259,13 +317,19 @@
     let scale = Math.min(scaleX, scaleY, 1);
     scale = clamp(scale, CONFIG.minScale, 1);
 
+    const hasTable = slide.querySelector("table") !== null;
+    const hasCode = slide.querySelector("pre, code.sourceCode") !== null;
+    const hasVisual =
+      slide.querySelector("figure, img, video, iframe, .mermaid-js") !== null;
+    const hasQuote = slide.querySelector("blockquote") !== null;
+    const isTitleVisual =
+      hasVisual && slide.matches(".title-slide, .level1, .quarto-title-block");
+
     const hasLargeMedia =
       slide.querySelector("figure, img, video, iframe, table, pre, .mermaid-js") !== null;
     const hasShrinkableMedia =
       slide.querySelector("figure, img, video, iframe, .mermaid-js") !== null;
-    const hasCallout =
-      slide.matches('[class*="callout-"], .callout') ||
-      slide.querySelector('[class*="callout-"], .callout') !== null;
+    const hasCallout = hasShrinkableCallout(slide);
 
     const isSparse =
       rawHeight < available.height * 0.52 &&
@@ -312,6 +376,11 @@
       }
     }
 
+    if (scale < 0.96) {
+      gapPx = CONFIG.minGapPx;
+      topSpacePx = 0;
+    }
+
     const projectedHeight =
       scaledHeight +
       topSpacePx +
@@ -319,7 +388,7 @@
 
     const nearOverflow = projectedHeight > available.height * 0.92;
     const mediaTrimPx = hasShrinkableMedia && nearOverflow
-      ? clamp(projectedHeight - available.height + 32, 24, 70)
+      ? clamp(projectedHeight - available.height + (isTitleVisual ? 56 : 32), 24, isTitleVisual ? 110 : 70)
       : 0;
     const calloutTrimPx = hasCallout && nearOverflow
       ? clamp(projectedHeight - available.height + 28, 18, 76)
@@ -335,7 +404,13 @@
       topSpacePx,
       mediaTrimPx,
       calloutTrimPx,
-      isRoomy: isSparse || remainingHeight > available.height * 0.25,
+      hasTable,
+      hasCode,
+      hasVisual,
+      isTitleVisual,
+      hasQuote,
+      safeHeightPx: Math.max(100, available.height - 108),
+      isRoomy: scale >= 0.96 && (isSparse || remainingHeight > available.height * 0.25),
       isOverflow
     };
   }
@@ -370,9 +445,7 @@
         }
       }
 
-      const hasCallout =
-        slide.matches('[class*="callout-"], .callout') ||
-        slide.querySelector('[class*="callout-"], .callout') !== null;
+      const hasCallout = hasShrinkableCallout(slide);
 
       if (hasCallout) {
         layout.calloutTrimPx = clamp(
@@ -401,6 +474,9 @@
         layout.gapPx = CONFIG.minGapPx;
         layout.topSpacePx = 0;
         layout.isOverflow = true;
+        layout.mediaTrimPx = layout.hasVisual
+          ? clamp(layout.mediaTrimPx + 24, 24, layout.isTitleVisual ? 130 : 110)
+          : layout.mediaTrimPx;
       }
 
       applyManagedState(slide, layout);
@@ -448,8 +524,10 @@
 
   function fitCurrentSlide() {
     window.requestAnimationFrame(() => {
-      const slide = getActiveSlide();
-      fitSlide(slide);
+      window.requestAnimationFrame(() => {
+        const slide = getActiveSlide();
+        fitSlide(slide);
+      });
     });
   }
 
@@ -499,13 +577,37 @@
     if (!slide) return;
 
     const images = slide.querySelectorAll("img");
+    let requestedDecodeFit = false;
+
+    const requestImageFit = () => {
+      if (getActiveSlide() !== slide) return;
+      scheduleFitPasses();
+    };
 
     images.forEach((img) => {
       if (!img.complete) {
-        img.addEventListener("load", fitCurrentSlide, { once: true });
-        img.addEventListener("error", fitCurrentSlide, { once: true });
+        img.addEventListener("load", requestImageFit, { once: true });
+        img.addEventListener("error", requestImageFit, { once: true });
+        return;
+      }
+
+      if (
+        !decodedImages.has(img) &&
+        typeof img.decode === "function" &&
+        img.naturalWidth > 0
+      ) {
+        decodedImages.add(img);
+        requestedDecodeFit = true;
+
+        img.decode()
+          .then(requestImageFit)
+          .catch(requestImageFit);
       }
     });
+
+    if (!requestedDecodeFit && images.length > 0) {
+      window.setTimeout(requestImageFit, 120);
+    }
   }
 
   function initRevealFit() {
@@ -539,6 +641,12 @@
     window.addEventListener("load", () => {
       scheduleFitPasses();
     });
+
+    if (document.fonts?.ready) {
+      document.fonts.ready
+        .then(scheduleFitPasses)
+        .catch(() => {});
+    }
 
     /* The include-after-body script can load after Reveal has already fired
        its ready event, so run one pass immediately after binding listeners. */

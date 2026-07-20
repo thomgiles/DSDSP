@@ -29,6 +29,7 @@ format:
       - webr
     title-block-style: none
     include-before-body:
+      - ../../../html/interactive-digital-research-background.html
       - ../../../html/reveal-header.html  
     include-after-body:
       - ../../../js/rjs-footer.js

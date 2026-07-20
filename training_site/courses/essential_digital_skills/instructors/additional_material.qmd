@@ -39,12 +39,6 @@ Use this page for optional additions when you have extra time, a more advanced c
 - Ask learners to rewrite a descriptive finding as an actionable recommendation for a named audience.
 - Use a short scenario where the same chart is interpreted differently when context changes.
 
-### AI in research
-
-- Prompt comparison exercise: weak prompt, stronger prompt, and source-bounded prompt.
-- Verification drill using an AI-generated summary and a source document.
-- Workflow design activity: where should AI help, where should it stop, and where should documentation happen?
-
 ## Optional Demonstrations
 
 These work best when they are short and tightly tied to the lesson objective.

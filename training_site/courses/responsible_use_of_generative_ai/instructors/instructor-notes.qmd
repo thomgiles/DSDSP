@@ -39,11 +39,11 @@ Learners usually understand the material better after they have had to defend a 
 
 ### How AI Impacts Research
 
-Use [How AI Impacts Research](../episodes/ext1-how_ai_impacts_research.qmd) to establish why AI changes research work and why opportunity and risk now travel together. This lesson should reduce simplistic positions like "AI is obviously good" or "AI is obviously cheating" and replace them with more useful judgement.
+Use [How AI Impacts Research](../episodes/ext1-how_ai_impacts_teaching_and_research.qmd) to establish why AI changes research work and why opportunity and risk now travel together. This lesson should reduce simplistic positions like "AI is obviously good" or "AI is obviously cheating" and replace them with more useful judgement.
 
 ### How to Use AI in Research
 
-Use [How to Use AI in Research](../episodes/ext2-how_to_use_ai_in_research.qmd) to move from principle to practice. Focus on prompt design, source boundaries, validation, documentation, and the question of when a repeated task deserves a workflow or agent.
+Use [How to Use AI in Research](../episodes/ext2-how_to_use_ai_in_teaching_and_research.qmd) to move from principle to practice. Focus on prompt design, source boundaries, validation, documentation, and the question of when a repeated task deserves a workflow or agent.
 
 ## Common Sticking Points
 

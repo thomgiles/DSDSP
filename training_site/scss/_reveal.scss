@@ -7,10 +7,10 @@
   --gf: 40px;   /* footer height */
 
   /* Animation timings */
-  --rjs-anim-fast: 240ms;
-  --rjs-anim-med: 720ms;
-  --rjs-anim-slow: 1100ms;
-  --rjs-anim-extra: 1400ms;
+  --rjs-anim-fast: 180ms;
+  --rjs-anim-med: 540ms;
+  --rjs-anim-slow: 825ms;
+  --rjs-anim-extra: 1050ms;
 
   /* Animation easing */
   --rjs-ease-out: cubic-bezier(.16, 1, .3, 1);
@@ -198,32 +198,32 @@
 /* Gentle stagger */
 .reveal .slides > section.present:not(.stack) > *:nth-child(1),
 .reveal .slides > section.stack.present > section.present > *:nth-child(1) {
-  animation-delay: 60ms;
+  animation-delay: 45ms;
 }
 
 .reveal .slides > section.present:not(.stack) > *:nth-child(2),
 .reveal .slides > section.stack.present > section.present > *:nth-child(2) {
-  animation-delay: 160ms;
+  animation-delay: 120ms;
 }
 
 .reveal .slides > section.present:not(.stack) > *:nth-child(3),
 .reveal .slides > section.stack.present > section.present > *:nth-child(3) {
-  animation-delay: 260ms;
+  animation-delay: 195ms;
 }
 
 .reveal .slides > section.present:not(.stack) > *:nth-child(4),
 .reveal .slides > section.stack.present > section.present > *:nth-child(4) {
-  animation-delay: 360ms;
+  animation-delay: 270ms;
 }
 
 .reveal .slides > section.present:not(.stack) > *:nth-child(5),
 .reveal .slides > section.stack.present > section.present > *:nth-child(5) {
-  animation-delay: 460ms;
+  animation-delay: 345ms;
 }
 
 .reveal .slides > section.present:not(.stack) > *:nth-child(n + 6),
 .reveal .slides > section.stack.present > section.present > *:nth-child(n + 6) {
-  animation-delay: 560ms;
+  animation-delay: 420ms;
 }
 
 /* Never animate the persistent chrome */
@@ -380,6 +380,15 @@
   border-radius: var(--rjs-radius-md);
 }
 
+.reveal section.title-slide img,
+.reveal section.level1 img {
+  max-height: calc(100vh - var(--gh) - var(--gf) - 260px) !important;
+  max-width: min(760px, 84%) !important;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+}
+
 .reveal figcaption {
   margin-top: .4em;
   font-size: .72em;
@@ -522,8 +531,7 @@
 .reveal section.rjs-fit-managed.callout-outcomes,
 .reveal section.rjs-fit-managed.callout-questions,
 .reveal section.rjs-fit-managed.callout-keypoints,
-.reveal section.rjs-fit-managed.callout-hints,
-.reveal section.rjs-fit-managed.callout-task {
+.reveal section.rjs-fit-managed.callout-hints {
   box-sizing: border-box;
   max-height: calc(
     100vh - var(--gh) - var(--gf) - 42px - var(--rjs-fit-callout-trim, 0px)
@@ -534,7 +542,7 @@
 }
 
 .reveal section.rjs-fit-managed .callout,
-.reveal section.rjs-fit-managed [class*="callout-"] {
+.reveal section.rjs-fit-managed [class*="callout-"]:not(.callout-task) {
   box-sizing: border-box;
   max-height: calc(
     100vh - var(--gh) - var(--gf) - 150px - var(--rjs-fit-callout-trim, 0px)
@@ -546,9 +554,8 @@
 .reveal section.rjs-fit-callout-tight.callout-questions,
 .reveal section.rjs-fit-callout-tight.callout-keypoints,
 .reveal section.rjs-fit-callout-tight.callout-hints,
-.reveal section.rjs-fit-callout-tight.callout-task,
 .reveal section.rjs-fit-callout-tight .callout,
-.reveal section.rjs-fit-callout-tight [class*="callout-"] {
+.reveal section.rjs-fit-callout-tight [class*="callout-"]:not(.callout-task) {
   padding-top: .45em;
   padding-bottom: .45em;
 }
@@ -698,7 +705,10 @@
   border-spacing: 0;
   border-radius: var(--rjs-radius-md);
   overflow: hidden;
-  font-size: .75em;
+  font-size: .82em;
+  line-height: 1.22;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .reveal thead th {
@@ -807,18 +817,36 @@
 .reveal section.auto-fit figure img,
 .reveal section.auto-fit img {
   max-height: calc(
-    100vh - var(--gh) - var(--gf) - 140px - var(--rjs-fit-media-trim, 0px)
-  );
-  height: auto;
+    100vh - var(--gh) - var(--gf) - 170px - var(--rjs-fit-media-trim, 0px)
+  ) !important;
+  max-width: 100%;
+  height: auto !important;
   object-fit: contain;
+}
+
+.reveal section.rjs-fit-quote-slide figure img,
+.reveal section.rjs-fit-quote-slide img,
+.reveal section.rjs-fit-visual-slide:has(blockquote) figure img,
+.reveal section.rjs-fit-visual-slide:has(blockquote) img {
+  max-height: calc(
+    100vh - var(--gh) - var(--gf) - 290px - var(--rjs-fit-media-trim, 0px)
+  ) !important;
 }
 
 .reveal section.rjs-fit-media-tight figure,
 .reveal section.rjs-fit-media-tight .quarto-figure {
   max-height: calc(
-    100vh - var(--gh) - var(--gf) - 120px - var(--rjs-fit-media-trim, 0px)
+    100vh - var(--gh) - var(--gf) - 170px - var(--rjs-fit-media-trim, 0px)
   );
   overflow: hidden;
+}
+
+.reveal section.rjs-fit-title-visual figure img,
+.reveal section.rjs-fit-title-visual img {
+  max-height: calc(
+    100vh - var(--gh) - var(--gf) - 240px - var(--rjs-fit-media-trim, 0px)
+  ) !important;
+  max-width: min(720px, 82%) !important;
 }
 
 /* Header/footer-aware code limits */
@@ -830,15 +858,52 @@
   line-height: 1.25;
 }
 
+.reveal section.rjs-fit-tight pre code {
+  max-height: min(38vh, 300px);
+  padding: .75em;
+  line-height: 1.18;
+}
+
+.reveal section.rjs-fit-overflow pre code {
+  max-height: min(32vh, 250px);
+}
+
 /* Header/footer-aware table limits */
 .reveal section.rjs-fit-managed table,
 .reveal section.fit-slide table,
 .reveal section.auto-fit table {
-  font-size: .68em;
+  font-size: .82em;
+  max-width: 94%;
+}
+
+.reveal section.rjs-fit-tight table {
+  font-size: .76em;
 }
 
 .reveal section.rjs-fit-tight {
   --rjs-fit-gap: min(var(--rjs-fit-gap, 6px), 8px);
+}
+
+.reveal section.rjs-fit-tight > * + * {
+  margin-top: 8px !important;
+}
+
+.reveal section.rjs-fit-overflow {
+  max-height: var(
+    --rjs-fit-safe-height,
+    calc(100vh - var(--gh) - var(--gf) - 120px)
+  );
+  overflow-y: auto;
+  padding-right: .35em;
+  scrollbar-gutter: stable;
+}
+
+.reveal section.rjs-fit-overflow.callout-task {
+  max-height: var(
+    --rjs-fit-safe-height,
+    calc(100vh - var(--gh) - var(--gf) - 120px)
+  );
+  overflow-y: auto;
 }
 
 .reveal section.rjs-fit-managed.callout-outcomes > :not(h2),
