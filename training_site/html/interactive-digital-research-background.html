@@ -1,0 +1,683 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Teaching Animation</title>
+
+  <style>
+    :root {
+      --uon-blue: #10263b;
+      --uon-blue-soft: #405162;
+      --uon-blue-pale: #eef1f3;
+      --sky-blue: #009bc1;
+      --turquoise: #37b4b0;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+      background: var(--white);
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .scene {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      background: var(--white);
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .scene.is-visible {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    svg {
+      width: min(92vw, 1500px);
+      height: min(88vh, 840px);
+      overflow: visible;
+    }
+
+    .board {
+      fill: var(--white);
+      stroke: var(--uon-blue);
+      stroke-width: 4;
+      opacity: 0;
+    }
+
+    .stand,
+    .chart-axis,
+    .chart-line,
+    .connector,
+    .knowledge-path {
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .stand {
+      stroke: var(--uon-blue-soft);
+      stroke-width: 4;
+      opacity: 0;
+    }
+
+    .slide-divider {
+      stroke: rgba(16, 38, 59, 0.16);
+      stroke-width: 3;
+      opacity: 0;
+    }
+
+    .chart-axis {
+      stroke: rgba(16, 38, 59, 0.36);
+      stroke-width: 3;
+      opacity: 0;
+    }
+
+    .chart-bar {
+      opacity: 0;
+      transform-box: fill-box;
+      transform-origin: bottom;
+    }
+
+    .chart-bar.blue {
+      fill: var(--uon-blue);
+    }
+
+    .chart-bar.sky {
+      fill: var(--sky-blue);
+    }
+
+    .chart-bar.turquoise {
+      fill: var(--turquoise);
+    }
+
+    .chart-line {
+      stroke: var(--uon-blue);
+      stroke-width: 4;
+      opacity: 0;
+    }
+
+    .chart-point {
+      fill: var(--white);
+      stroke: var(--uon-blue);
+      stroke-width: 3;
+      opacity: 0;
+      transform-box: fill-box;
+      transform-origin: center;
+    }
+
+    .text-line {
+      fill: var(--uon-blue);
+      opacity: 0;
+      transform-box: fill-box;
+      transform-origin: left center;
+    }
+
+    .text-line.soft {
+      fill: var(--uon-blue-soft);
+    }
+
+    .text-line.sky {
+      fill: var(--sky-blue);
+    }
+
+    .text-line.turquoise {
+      fill: var(--turquoise);
+    }
+
+    .connector {
+      stroke: rgba(16, 38, 59, 0.18);
+      stroke-width: 4;
+      opacity: 0;
+    }
+
+    .knowledge-path {
+      stroke-width: 7;
+      opacity: 0;
+    }
+
+    .knowledge-path.sky {
+      stroke: var(--sky-blue);
+    }
+
+    .knowledge-path.turquoise {
+      stroke: var(--turquoise);
+    }
+
+    .knowledge-path.blue {
+      stroke: var(--uon-blue);
+    }
+
+    .node {
+      fill: var(--white);
+      stroke: var(--uon-blue);
+      stroke-width: 4;
+      opacity: 0;
+      transform-box: fill-box;
+      transform-origin: center;
+    }
+
+    .node-centre {
+      opacity: 0;
+      transform-box: fill-box;
+      transform-origin: center;
+    }
+
+    .teacher-centre {
+      fill: var(--sky-blue);
+    }
+
+    .student-centre.blue {
+      fill: var(--uon-blue);
+    }
+
+    .student-centre.sky {
+      fill: var(--sky-blue);
+    }
+
+    .student-centre.turquoise {
+      fill: var(--turquoise);
+    }
+
+    .pulse {
+      fill: none;
+      stroke-width: 3;
+      opacity: 0;
+      transform-box: fill-box;
+      transform-origin: center;
+    }
+
+    .pulse.sky {
+      stroke: var(--sky-blue);
+    }
+
+    .pulse.turquoise {
+      stroke: var(--turquoise);
+    }
+
+    .pulse.blue {
+      stroke: var(--uon-blue);
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .board,
+      .stand,
+      .slide-divider,
+      .chart-axis,
+      .chart-bar,
+      .chart-line,
+      .chart-point,
+      .text-line,
+      .connector,
+      .node,
+      .node-centre {
+        opacity: 1 !important;
+        transform: none !important;
+      }
+
+      .knowledge-path,
+      .pulse {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="scene" id="teachingScene" aria-hidden="true">
+    <svg viewBox="0 0 1600 900" role="presentation">
+      <!-- Teaching slide -->
+      <rect class="board" id="board"
+            x="580" y="110" width="440" height="190" rx="22"></rect>
+
+      <line class="slide-divider" id="slideDivider"
+            x1="800" y1="142" x2="800" y2="268"></line>
+
+      <!-- Graph: left side -->
+      <path class="chart-axis" id="chartAxis"
+            d="M625 253 V156 M625 253 H760"></path>
+
+      <rect class="chart-bar blue" id="chartBar1"
+            x="648" y="212" width="19" height="41" rx="5"></rect>
+      <rect class="chart-bar sky" id="chartBar2"
+            x="685" y="186" width="19" height="67" rx="5"></rect>
+      <rect class="chart-bar turquoise" id="chartBar3"
+            x="722" y="162" width="19" height="91" rx="5"></rect>
+
+      <path class="chart-line" id="chartLine"
+            d="M657 209 L694 181 L731 158"></path>
+
+      <circle class="chart-point" id="chartPoint1"
+              cx="657" cy="209" r="6"></circle>
+      <circle class="chart-point" id="chartPoint2"
+              cx="694" cy="181" r="6"></circle>
+      <circle class="chart-point" id="chartPoint3"
+              cx="731" cy="158" r="6"></circle>
+
+      <!-- Text blocks: right side -->
+      <rect class="text-line sky" id="textLine1"
+            x="836" y="156" width="108" height="10" rx="5"></rect>
+      <rect class="text-line" id="textLine2"
+            x="836" y="181" width="142" height="7" rx="3.5"></rect>
+      <rect class="text-line soft" id="textLine3"
+            x="836" y="198" width="124" height="7" rx="3.5"></rect>
+      <rect class="text-line turquoise" id="textLine4"
+            x="836" y="229" width="82" height="8" rx="4"></rect>
+      <rect class="text-line soft" id="textLine5"
+            x="836" y="247" width="132" height="7" rx="3.5"></rect>
+
+      <path class="stand" id="stand"
+            d="M800 300 V360 M750 360 H850"></path>
+
+      <!-- Instructor and learners -->
+      <path class="connector" id="connector1"
+            d="M800 680 C730 725, 650 770, 560 820"></path>
+      <path class="connector" id="connector2"
+            d="M800 680 C765 732, 735 770, 700 820"></path>
+      <path class="connector" id="connector3"
+            d="M800 680 C835 732, 865 770, 900 820"></path>
+      <path class="connector" id="connector4"
+            d="M800 680 C870 725, 950 770, 1040 820"></path>
+
+      <circle class="node" id="teacherNode"
+              cx="800" cy="645" r="46"></circle>
+      <circle class="node-centre teacher-centre" id="teacherCentre"
+              cx="800" cy="645" r="13"></circle>
+
+      <circle class="node" id="studentNode1"
+              cx="560" cy="820" r="36"></circle>
+      <circle class="node-centre student-centre blue" id="studentCentre1"
+              cx="560" cy="820" r="10"></circle>
+
+      <circle class="node" id="studentNode2"
+              cx="700" cy="820" r="36"></circle>
+      <circle class="node-centre student-centre turquoise" id="studentCentre2"
+              cx="700" cy="820" r="10"></circle>
+
+      <circle class="node" id="studentNode3"
+              cx="900" cy="820" r="36"></circle>
+      <circle class="node-centre student-centre sky" id="studentCentre3"
+              cx="900" cy="820" r="10"></circle>
+
+      <circle class="node" id="studentNode4"
+              cx="1040" cy="820" r="36"></circle>
+      <circle class="node-centre student-centre blue" id="studentCentre4"
+              cx="1040" cy="820" r="10"></circle>
+
+      <path class="knowledge-path sky" id="knowledge1"
+            d="M800 680 C730 725, 650 770, 560 820"></path>
+      <path class="knowledge-path turquoise" id="knowledge2"
+            d="M800 680 C765 732, 735 770, 700 820"></path>
+      <path class="knowledge-path sky" id="knowledge3"
+            d="M800 680 C835 732, 865 770, 900 820"></path>
+      <path class="knowledge-path blue" id="knowledge4"
+            d="M800 680 C870 725, 950 770, 1040 820"></path>
+
+      <circle class="pulse sky" id="pulse1"
+              cx="560" cy="820" r="38"></circle>
+      <circle class="pulse turquoise" id="pulse2"
+              cx="700" cy="820" r="38"></circle>
+      <circle class="pulse sky" id="pulse3"
+              cx="900" cy="820" r="38"></circle>
+      <circle class="pulse blue" id="pulse4"
+              cx="1040" cy="820" r="38"></circle>
+    </svg>
+  </div>
+
+  <script>
+    (() => {
+      "use strict";
+
+      const scene = document.getElementById("teachingScene");
+      if (!scene) return;
+
+      const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+      const byId = (id) => document.getElementById(id);
+
+      let sequenceStarted = false;
+      let revealBound = false;
+
+      function drawPath(element, delay, duration, opacity = 1) {
+        const length = element.getTotalLength();
+
+        element.style.strokeDasharray = `${length}`;
+        element.style.strokeDashoffset = `${length}`;
+
+        return element.animate(
+          [
+            {
+              opacity: 0,
+              strokeDashoffset: length
+            },
+            {
+              opacity,
+              strokeDashoffset: 0
+            }
+          ],
+          {
+            duration,
+            delay,
+            easing: "cubic-bezier(.22,.78,.2,1)",
+            fill: "forwards"
+          }
+        );
+      }
+
+      function fadeScale(element, delay, duration, fromScale = 0.75) {
+        return element.animate(
+          [
+            {
+              opacity: 0,
+              transform: `scale(${fromScale})`
+            },
+            {
+              opacity: 1,
+              transform: "scale(1)"
+            }
+          ],
+          {
+            duration,
+            delay,
+            easing: "cubic-bezier(.2,.85,.2,1)",
+            fill: "forwards"
+          }
+        );
+      }
+
+      function wipeIn(element, delay, duration = 460) {
+        return element.animate(
+          [
+            {
+              opacity: 0,
+              transform: "scaleX(0)"
+            },
+            {
+              opacity: 1,
+              transform: "scaleX(1)"
+            }
+          ],
+          {
+            duration,
+            delay,
+            easing: "cubic-bezier(.2,.8,.24,1)",
+            fill: "forwards"
+          }
+        );
+      }
+
+      function growBar(element, delay) {
+        return element.animate(
+          [
+            {
+              opacity: 0,
+              transform: "scaleY(0)"
+            },
+            {
+              opacity: 1,
+              transform: "scaleY(1)"
+            }
+          ],
+          {
+            duration: 520,
+            delay,
+            easing: "cubic-bezier(.2,.85,.2,1)",
+            fill: "forwards"
+          }
+        );
+      }
+
+      function pulseOnce(element, delay) {
+        return element.animate(
+          [
+            {
+              opacity: 0,
+              transform: "scale(0.8)"
+            },
+            {
+              opacity: 0.5,
+              transform: "scale(1)"
+            },
+            {
+              opacity: 0,
+              transform: "scale(1.45)"
+            }
+          ],
+          {
+            duration: 900,
+            delay,
+            easing: "ease-out",
+            fill: "forwards"
+          }
+        );
+      }
+
+      function runSequenceOnce() {
+        if (sequenceStarted) return;
+        sequenceStarted = true;
+
+        if (reducedMotion.matches) return;
+
+        const board = byId("board");
+        const stand = byId("stand");
+        const slideDivider = byId("slideDivider");
+        const chartAxis = byId("chartAxis");
+        const chartBars = ["chartBar1", "chartBar2", "chartBar3"].map(byId);
+        const chartLine = byId("chartLine");
+        const chartPoints = ["chartPoint1", "chartPoint2", "chartPoint3"].map(byId);
+        const textLines = [
+          "textLine1",
+          "textLine2",
+          "textLine3",
+          "textLine4",
+          "textLine5"
+        ].map(byId);
+
+        const teacherNode = byId("teacherNode");
+        const teacherCentre = byId("teacherCentre");
+
+        const connectors = [
+          "connector1",
+          "connector2",
+          "connector3",
+          "connector4"
+        ].map(byId);
+
+        const studentNodes = [
+          "studentNode1",
+          "studentNode2",
+          "studentNode3",
+          "studentNode4"
+        ].map(byId);
+
+        const studentCentres = [
+          "studentCentre1",
+          "studentCentre2",
+          "studentCentre3",
+          "studentCentre4"
+        ].map(byId);
+
+        const knowledgePaths = [
+          "knowledge1",
+          "knowledge2",
+          "knowledge3",
+          "knowledge4"
+        ].map(byId);
+
+        const pulses = [
+          "pulse1",
+          "pulse2",
+          "pulse3",
+          "pulse4"
+        ].map(byId);
+
+        // Board and slide content.
+        fadeScale(board, 120, 650, 0.94);
+        drawPath(stand, 480, 650, 0.75);
+        drawPath(slideDivider, 590, 420, 1);
+        drawPath(chartAxis, 650, 520, 1);
+
+        chartBars.forEach((bar, index) => {
+          growBar(bar, 820 + index * 125);
+        });
+
+        drawPath(chartLine, 1160, 540, 1);
+
+        chartPoints.forEach((point, index) => {
+          fadeScale(point, 1320 + index * 95, 320, 0.35);
+        });
+
+        textLines.forEach((line, index) => {
+          wipeIn(line, 720 + index * 135);
+        });
+
+        // Instructor and learners.
+        fadeScale(teacherNode, 1680, 600, 0.72);
+        fadeScale(teacherCentre, 1850, 400, 0.4);
+
+        connectors.forEach((connector, index) => {
+          drawPath(connector, 2080 + index * 90, 650, 0.85);
+        });
+
+        studentNodes.forEach((node, index) => {
+          fadeScale(node, 2400 + index * 120, 520, 0.65);
+        });
+
+        studentCentres.forEach((centre, index) => {
+          fadeScale(centre, 2570 + index * 120, 360, 0.35);
+        });
+
+        knowledgePaths.forEach((path, index) => {
+          drawPath(path, 2920 + index * 170, 720, 1);
+        });
+
+        pulses.forEach((pulse, index) => {
+          pulseOnce(pulse, 3550 + index * 170);
+        });
+      }
+
+      function getFirstSlide() {
+        const slidesRoot = document.querySelector(".reveal .slides");
+        if (!slidesRoot) return null;
+
+        const firstHorizontal = Array.from(slidesRoot.children).find(
+          (element) => element.tagName === "SECTION"
+        );
+
+        if (!firstHorizontal) return null;
+
+        const firstVertical = Array.from(firstHorizontal.children).find(
+          (element) => element.tagName === "SECTION"
+        );
+
+        return firstVertical || firstHorizontal;
+      }
+
+      function getCurrentSlide() {
+        if (
+          window.Reveal &&
+          typeof window.Reveal.getCurrentSlide === "function"
+        ) {
+          return window.Reveal.getCurrentSlide();
+        }
+
+        return (
+          document.querySelector(
+            ".reveal .slides > section.present > section.present"
+          ) ||
+          document.querySelector(
+            ".reveal .slides > section.present"
+          )
+        );
+      }
+
+      function isFirstRevealSlide() {
+        const firstSlide = getFirstSlide();
+        const currentSlide = getCurrentSlide();
+
+        return Boolean(firstSlide && currentSlide && firstSlide === currentSlide);
+      }
+
+      function updateVisibility() {
+        const visible = isFirstRevealSlide();
+        scene.classList.toggle("is-visible", visible);
+
+        if (visible) {
+          runSequenceOnce();
+        }
+      }
+
+      function bindReveal() {
+        if (
+          revealBound ||
+          !window.Reveal ||
+          typeof window.Reveal.on !== "function"
+        ) {
+          return false;
+        }
+
+        revealBound = true;
+        window.Reveal.on("ready", updateVisibility);
+        window.Reveal.on("slidechanged", updateVisibility);
+        return true;
+      }
+
+      const revealRoot = document.querySelector(".reveal");
+
+      if (!revealRoot) {
+        // Standalone preview.
+        scene.classList.add("is-visible");
+        runSequenceOnce();
+        return;
+      }
+
+      bindReveal();
+
+      // Reveal toggles the `present` class on navigation. Observing the slide
+      // container makes the visibility rule work even when this script loads
+      // before Reveal is fully initialised.
+      const slidesRoot = revealRoot.querySelector(".slides");
+
+      if (slidesRoot) {
+        const observer = new MutationObserver(updateVisibility);
+
+        observer.observe(slidesRoot, {
+          subtree: true,
+          attributes: true,
+          attributeFilter: ["class"]
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        bindReveal();
+        updateVisibility();
+      }, { once: true });
+
+      window.addEventListener("load", () => {
+        bindReveal();
+        updateVisibility();
+      }, { once: true });
+
+      // Initial state remains hidden until a genuine first-slide match exists.
+      updateVisibility();
+    })();
+  </script>
+</body>
+</html>

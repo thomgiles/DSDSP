@@ -8,7 +8,7 @@ Use these prompts for pair work, breakout groups, or end-of-session reflection. 
 
 ## How AI Impacts Research
 
-Use alongside [How AI Impacts Research](../episodes/ext1-how_ai_impacts_research.qmd).
+Use alongside [How AI Impacts Research](../episodes/ext1-how_ai_impacts_teaching_and_research.qmd).
 
 1. Which parts of the research lifecycle feel most changed by AI already?
 2. Where does AI save time in your work, and where does it simply move the effort into checking?
@@ -17,7 +17,7 @@ Use alongside [How AI Impacts Research](../episodes/ext1-how_ai_impacts_research
 
 ## How to Use AI in Research
 
-Use alongside [How to Use AI in Research](../episodes/ext2-how_to_use_ai_in_research.qmd).
+Use alongside [How to Use AI in Research](../episodes/ext2-how_to_use_ai_in_teaching_and_research.qmd).
 
 1. What makes a prompt useful for research rather than generic chat?
 2. Which tasks benefit most from source boundaries and explicit uncertainty prompts?

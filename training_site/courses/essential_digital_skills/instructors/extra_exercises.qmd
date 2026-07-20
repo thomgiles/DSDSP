@@ -97,16 +97,3 @@ Select one dataset and ask learners to produce a short improvement plan under th
 Limit them to one month and realistic changes only.
 
 **Debrief question:** Which FAIR improvements are low effort but high value?
-
-## Exercise 9: AI Verification Drill
-
-**Best fit:** [How to Use AI in Research](../../responsible_use_of_generative_ai/episodes/ext2-how_to_use_ai_in_research.qmd)
-
-Provide a short AI-generated output and ask groups to mark:
-
-- which claims can be accepted quickly
-- which claims require source checking
-- which claims are ambiguous or unsupported
-- what prompt change might have reduced the problem
-
-**Debrief question:** Where did the burden of checking become most visible?

@@ -1,6 +1,5 @@
 ---
 title: "Collecting the Right Data"
-module-icon: "🧺"
 metadata:
   teaching: 40
   exercises: 40
@@ -75,13 +74,11 @@ Digital Trace Data refers to the traces that are left across the internet as hum
 
 Data refers to raw facts, figures, observations, and symbols that represent various aspects of reality. It's the unprocessed material from which information is derived.
 
+
+
+![](fig/05-image1.png)
+
 > ❓ Before analysis, data is not meaningful — it becomes meaningful only after context and interpretation.
-
-## From Data to Meaning
-
-![](fig/05-image1.png){fig-align="center" width="64%"}
-
-> 🔄 Analysis turns raw facts, figures, and symbols into information that can support decisions.
 
 
 ## Why is data important?
@@ -273,20 +270,11 @@ Each group is given a deck of cards with different data formats.
 
 ## Why Trust & Fairness Matter
 
-::: columns
-::: {.column width="52%"}
-
 -	Data is only useful if it accurately represents reality.
 -	Bias can lead to incorrect conclusions or poor decisions.
 -	Fair data improves credibility and decision-making.
 
-:::
-::: {.column width="48%"}
-
-![](fig/05-image2.png){fig-align="center" width="92%"}
-
-:::
-:::
+![](fig/05-image2.png)
 
 > ⚙️ Data is powerful — but only if reliable
 
