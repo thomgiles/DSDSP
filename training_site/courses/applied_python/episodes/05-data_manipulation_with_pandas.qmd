@@ -344,11 +344,12 @@ df["initial_severity"] = df.apply(initial_severity, axis=1)
 ```
 
 ```{python}
-df.groupby("initial_severity").mean()
+day_cols = [c for c in df.columns if c.startswith("day_")]
+df.groupby("initial_severity")[day_cols].mean()
 ```
 
 ```{python}
-summary = df.groupby("initial_severity").agg(["mean", "std", "count"])
+summary = df.groupby("initial_severity")[day_cols].agg(["mean", "std", "count"])
 print(summary)
 ```
 
@@ -435,7 +436,7 @@ print("Wrote out/per_day_summary.csv")
 
 To run the workflow from the shell without using a notebook, save the below as `scripts/summarise_inflammation.py`:
 
-```{python}
+```python
 #!/usr/bin/env python3
 from pathlib import Path
 import argparse
