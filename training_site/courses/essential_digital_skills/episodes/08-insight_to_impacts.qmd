@@ -1,6 +1,5 @@
 ---
 title: "Insight to Impact"
-module-icon: "🎯"
 metadata:
   teaching: 40
   exercises: 40
@@ -74,11 +73,11 @@ In research, "Action" often means building a prototype or testing a theory. The 
 ## Research is a Loop
 
 ::: {.columns}
-::: {.column width="38%"}
+::: {.column}
 
-![](fig/08-image1.png){fig-align="center" width="95%"}
+![](fig/08-image1.png)
 :::
-::: {.column width="62%"}
+::: {.column}
 
 Every answer creates new uncertainty — and that’s a good thing.
 

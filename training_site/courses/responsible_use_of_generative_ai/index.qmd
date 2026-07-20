@@ -20,7 +20,7 @@ course-tags: ["Responsible AI", "Prompting", "Validation", "Source checking", "A
 
 - **Level:** Foundation to intermediate
 - **Duration:** 2 hours
-- **Best for:** Researchers, research staff, doctoral researchers, and professional services colleagues who need clearer judgement about AI use
+- **Best for:** Academics, Teaching Staff, Researchers, research staff, doctoral researchers, and professional services colleagues who need clearer judgement about AI use
 - **Main themes:** research change, prompt design, validation, documentation, governance, and repeatable workflows
 - **Format:** Two linked one-hour sessions or one 2-hour workshop
 - **Outcome:** More confident, source-aware, and defensible use of generative AI in research settings
@@ -30,7 +30,7 @@ course-tags: ["Responsible AI", "Prompting", "Validation", "Source checking", "A
 ::: {.item}
 ## Why This Course Matters
 
-Generative AI can reduce friction in research work, but it also creates new checking work, new governance questions, and new opportunities to over-trust persuasive output. Many people are already experimenting with AI, yet still feel unsure about where it helps, where it creates risk, and what responsible use actually looks like in practice.
+Generative AI can reduce friction in teaching and research work, but it also creates new checking work, new governance questions, and new opportunities to over-trust persuasive output. Many people are already experimenting with AI, yet still feel unsure about where it helps, where it creates risk, and what responsible use actually looks like in practice.
 
 This course is designed to close that gap. It helps learners understand how AI is changing research activity and how to use AI tools more selectively, with clearer boundaries, stronger validation, and better records.
 :::
@@ -93,8 +93,8 @@ Keep lightweight notes, validation steps, and disclosure decisions that make AI 
 
 | Lesson | What you will tackle | Why it matters |
 |---|---|---|
-| [How AI Impacts Research](episodes/ext1-how_ai_impacts_research.qmd) | Opportunities, risks, governance, data security, and how AI changes research work | Builds judgement before tool use becomes routine |
-| [How to Use AI in Research](episodes/ext2-how_to_use_ai_in_research.qmd) | Prompt design, validation, source-grounded workflows, and practical AI exercises | Turns broad principles into concrete, defensible practice |
+| [How AI Impacts Teaching and Research](episodes/ext1-how_ai_impacts_teaching_and_research.qmd) | Opportunities, risks, governance, data security, and how AI changes research work | Builds judgement before tool use becomes routine |
+| [How to Use AI in Teaching and Research](episodes/ext2-how_to_use_ai_in_teaching_and_research.qmd) | Prompt design, validation, source-grounded workflows, and practical AI exercises | Turns broad principles into concrete, defensible practice |
 
 ## Suggested 2-Hour Delivery
 
@@ -105,14 +105,14 @@ This course can run as:
 
 A simple structure is:
 
-1. **Hour 1:** [How AI Impacts Research](episodes/ext1-how_ai_impacts_research.qmd)
-2. **Hour 2:** [How to Use AI in Research](episodes/ext2-how_to_use_ai_in_research.qmd)
+1. **Hour 1:** [How AI Impacts Research](episodes/ext1-how_ai_impacts_teaching_and_research.qmd)
+2. **Hour 2:** [How to Use AI in Research](episodes/ext2-how_to_use_ai_in_teaching_and_research.qmd)
 
 ## What Learners Typically Leave With
 
 By the end of the course, learners should be more able to:
 
-- explain where AI changes research work and where human judgement must remain central
+- explain where AI changes teaching and research work and where human judgement must remain central
 - write stronger prompts with clearer boundaries and verification steps
 - spot when AI output needs source checking, clarification, or rejection
 - document AI-assisted work in a way that supports transparency later

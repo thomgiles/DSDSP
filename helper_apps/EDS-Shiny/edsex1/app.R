@@ -103,14 +103,16 @@ ui <- dashboardPage(
             hr(),
             prettyRadioButtons(
               "q2_area",
-              "2. In what areas do you think AI is changing research the most?",
+              "2. In which areas do you think AI is changing teaching and research the most?",
               choices = c(
-                "Question framing and literature review" = "Question framing and literature review",
-                "Data collection and preparation" = "Data collection and preparation",
-                "Analysis and coding" = "Analysis and coding",
-                "Writing and communication" = "Writing and communication",
-                "Publishing, peer review or funding" = "Publishing, peer review or funding",
-                "Research administration" = "Research administration"
+                "Curriculum and learning design" = "Curriculum and learning design",
+                "Teaching materials and content creation" = "Teaching materials and content creation",
+                "Assessment, marking and feedback" = "Assessment, marking and feedback",
+                "Student support and personalised learning" = "Student support and personalised learning",
+                "Research questions and literature review" = "Research questions and literature review",
+                "Data collection, preparation and analysis" = "Data collection, preparation and analysis",
+                "Writing, communication and publishing" = "Writing, communication and publishing",
+                "Teaching and research administration" = "Teaching and research administration"
               ),
               animation = "jelly",
               status = "success"

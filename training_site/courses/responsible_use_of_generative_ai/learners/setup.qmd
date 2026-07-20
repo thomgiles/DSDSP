@@ -73,8 +73,8 @@ This makes it easier to keep copies of:
 
 | Session theme | Helpful preparation |
 |---|---|
-| [How AI Impacts Research](../episodes/ext1-how_ai_impacts_research.qmd) | Think of one research task where AI already feels useful and one where it feels risky |
-| [How to Use AI in Research](../episodes/ext2-how_to_use_ai_in_research.qmd) | Bring a low-risk prompt, policy page, reading task, or workflow you want to improve |
+| [How AI Impacts Research](../episodes/ext1-how_ai_impacts_teaching_and_research.qmd) | Think of one research task where AI already feels useful and one where it feels risky |
+| [How to Use AI in Research](../episodes/ext2-how_to_use_ai_in_teaching_and_research.qmd) | Bring a low-risk prompt, policy page, reading task, or workflow you want to improve |
 
 ## If You Do Not Have Tool Access
 
