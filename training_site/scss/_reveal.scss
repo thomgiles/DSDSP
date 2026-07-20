@@ -19,6 +19,7 @@
   /* JS-assisted fit fallback.
      Defaults to 1 when no JS is used. */
   --rjs-fit-scale: 1;
+  --rjs-fit-media-max-height: calc(100vh - var(--gh) - var(--gf) - 170px);
 
   /* Shared visual values */
   --rjs-radius-sm: 5px;
@@ -816,8 +817,9 @@
 .reveal section.fit-slide img,
 .reveal section.auto-fit figure img,
 .reveal section.auto-fit img {
-  max-height: calc(
-    100vh - var(--gh) - var(--gf) - 170px - var(--rjs-fit-media-trim, 0px)
+  max-height: var(
+    --rjs-fit-media-max-height,
+    calc(100vh - var(--gh) - var(--gf) - 170px)
   ) !important;
   max-width: 100%;
   height: auto !important;
@@ -828,23 +830,26 @@
 .reveal section.rjs-fit-quote-slide img,
 .reveal section.rjs-fit-visual-slide:has(blockquote) figure img,
 .reveal section.rjs-fit-visual-slide:has(blockquote) img {
-  max-height: calc(
-    100vh - var(--gh) - var(--gf) - 290px - var(--rjs-fit-media-trim, 0px)
+  max-height: var(
+    --rjs-fit-media-max-height,
+    calc(100vh - var(--gh) - var(--gf) - 290px)
   ) !important;
 }
 
 .reveal section.rjs-fit-media-tight figure,
 .reveal section.rjs-fit-media-tight .quarto-figure {
-  max-height: calc(
-    100vh - var(--gh) - var(--gf) - 170px - var(--rjs-fit-media-trim, 0px)
+  max-height: var(
+    --rjs-fit-media-max-height,
+    calc(100vh - var(--gh) - var(--gf) - 170px)
   );
   overflow: hidden;
 }
 
 .reveal section.rjs-fit-title-visual figure img,
 .reveal section.rjs-fit-title-visual img {
-  max-height: calc(
-    100vh - var(--gh) - var(--gf) - 240px - var(--rjs-fit-media-trim, 0px)
+  max-height: var(
+    --rjs-fit-media-max-height,
+    calc(100vh - var(--gh) - var(--gf) - 240px)
   ) !important;
   max-width: min(720px, 82%) !important;
 }

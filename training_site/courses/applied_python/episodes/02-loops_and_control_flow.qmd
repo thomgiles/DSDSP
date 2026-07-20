@@ -104,7 +104,7 @@ for num in odds:
 
 ## General Loop Template
 
-```{python}
+```python
 for variable in collection:
     # do things using variable, such as print
 ```
