@@ -32,7 +32,12 @@ my_function <- function(parameters) {
 Which is used/run as:
 
 ```{r}
-results <- my_function(param1, param2, ...)
+my_function <- function(param1, param2) {
+  param1 + param2
+}
+
+results <- my_function(1, 2)
+results
 ```
 
 ## Defining a Function
@@ -64,7 +69,12 @@ change the function code to return values to 2 decimal places
 ## hint
 
 ```{r}
-return(round(kelvin, 2))
+fahr_to_kelvin <- function(temp) {
+  kelvin <- ((temp - 32) * (5 / 9)) + 273.15
+  return(round(kelvin, 2))
+}
+
+fahr_to_kelvin(98)
 ```
 
 
@@ -86,7 +96,4 @@ fahr_to_celsius <- function(temp) {
 fahr_to_celsius(98)
 
 ```
-
-
-
 

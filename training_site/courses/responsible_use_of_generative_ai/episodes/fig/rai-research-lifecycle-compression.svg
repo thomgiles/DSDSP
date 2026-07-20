@@ -1,31 +1,76 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="330" viewBox="0 0 1200 330" role="img" aria-labelledby="title desc">
-  <title id="title">AI compression of research lifecycle</title>
-  <desc id="desc">AI can shorten paths between question framing, evidence synthesis, analysis, and dissemination.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="390" viewBox="0 0 1200 390" role="img" aria-labelledby="title desc">
+  <title id="title">AI compression of teaching and research workflows</title>
+  <desc id="desc">AI can shorten drafting and synthesis stages in both teaching and research, but review points remain essential.</desc>
   <defs>
-    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M2 2 L10 6 L2 10 Z" fill="#405162"/></marker>
-    <marker id="arrow-light" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M2 2 L10 6 L2 10 Z" fill="#009bc1"/></marker>
-    <filter id="shadow" x="-10%" y="-20%" width="120%" height="145%"><feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#10263b" flood-opacity="0.15"/></filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2 2 L10 6 L2 10 Z" fill="#405162"/>
+    </marker>
+    <marker id="arrow-light" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2 2 L10 6 L2 10 Z" fill="#009bc1"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-20%" width="120%" height="145%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#10263b" flood-opacity="0.15"/>
+    </filter>
   </defs>
-  <rect width="1200" height="330" rx="28" fill="#f7fbfc"/>
-  <g stroke="#405162" stroke-width="5" marker-end="url(#arrow)" fill="none">
-    <path d="M250 181 H335"/>
-    <path d="M535 181 H620"/>
-    <path d="M840 181 H935"/>
-    <path d="M160 130 C265 40 675 40 735 128" stroke="#009bc1" stroke-dasharray="9 9" marker-end="url(#arrow-light)"/>
-    <path d="M440 228 C560 300 915 300 1035 228" stroke="#009bc1" stroke-dasharray="9 9" marker-end="url(#arrow-light)"/>
-  </g><g filter="url(#shadow)" font-family="sans-serif">
-    <rect x="70" y="135" width="180" height="92" rx="18" fill="#006781"/>
-    <rect x="345" y="135" width="190" height="92" rx="18" fill="#298582"/>
-    <rect x="630" y="135" width="210" height="92" rx="18" fill="#405162"/>
-    <rect x="945" y="135" width="180" height="92" rx="18" fill="#10263b"/>
-  </g><g font-family="sans-serif">
-<text x="160.0" y="186.0" font-size="17" font-weight="700" fill="#ffffff" text-anchor="middle">Question framing</text>
-<text x="440.0" y="175.0" font-size="17" font-weight="700" fill="#ffffff" text-anchor="middle">Evidence</text>
-<text x="440.0" y="197.0" font-size="17" font-weight="700" fill="#ffffff" text-anchor="middle">synthesis</text>
-<text x="735.0" y="175.0" font-size="17" font-weight="700" fill="#ffffff" text-anchor="middle">Analysis &amp;</text>
-<text x="735.0" y="197.0" font-size="17" font-weight="700" fill="#ffffff" text-anchor="middle">modelling</text>
-<text x="1035.0" y="186.0" font-size="17" font-weight="700" fill="#ffffff" text-anchor="middle">Dissemination</text>
-    <text x="450" y="52" font-size="15" font-weight="700" fill="#405162" text-anchor="middle">AI-assisted shortcut</text>
-    <text x="745" y="306" font-size="15" font-weight="700" fill="#405162" text-anchor="middle">AI-assisted drafting</text>
+
+  <rect width="1200" height="390" rx="28" fill="#f7fbfc"/>
+
+  <g stroke="#405162" stroke-width="4.5" marker-end="url(#arrow)" fill="none">
+    <path d="M268 128 H338"/>
+    <path d="M548 128 H618"/>
+    <path d="M828 128 H898"/>
+    <path d="M268 268 H338"/>
+    <path d="M548 268 H618"/>
+    <path d="M828 268 H898"/>
+  </g>
+
+  <g stroke="#009bc1" stroke-width="4" stroke-dasharray="9 9" marker-end="url(#arrow-light)" fill="none">
+    <path d="M200 170 C360 210 510 208 680 170"/>
+    <path d="M200 228 C360 188 510 190 680 228"/>
+    <path d="M520 80 C650 34 825 42 985 100"/>
+    <path d="M520 310 C650 356 825 348 985 290"/>
+  </g>
+
+  <g filter="url(#shadow)" font-family="sans-serif">
+    <rect x="70" y="82" width="198" height="92" rx="18" fill="#006781"/>
+    <rect x="338" y="82" width="210" height="92" rx="18" fill="#298582"/>
+    <rect x="618" y="82" width="210" height="92" rx="18" fill="#405162"/>
+    <rect x="898" y="82" width="212" height="92" rx="18" fill="#10263b"/>
+
+    <rect x="70" y="222" width="198" height="92" rx="18" fill="#006781"/>
+    <rect x="338" y="222" width="210" height="92" rx="18" fill="#298582"/>
+    <rect x="618" y="222" width="210" height="92" rx="18" fill="#405162"/>
+    <rect x="898" y="222" width="212" height="92" rx="18" fill="#10263b"/>
+
+    <rect x="500" y="164" width="200" height="62" rx="20" fill="#009bc1"/>
+  </g>
+
+  <g font-family="sans-serif" font-weight="700" fill="#ffffff" text-anchor="middle">
+    <text x="169" y="119" font-size="16">Learning</text>
+    <text x="169" y="141" font-size="16">outcome</text>
+    <text x="443" y="119" font-size="16">Teaching</text>
+    <text x="443" y="141" font-size="16">materials</text>
+    <text x="723" y="119" font-size="16">Delivery &amp;</text>
+    <text x="723" y="141" font-size="16">activity</text>
+    <text x="1004" y="119" font-size="16">Feedback &amp;</text>
+    <text x="1004" y="141" font-size="16">review</text>
+
+    <text x="169" y="259" font-size="16">Research</text>
+    <text x="169" y="281" font-size="16">question</text>
+    <text x="443" y="259" font-size="16">Evidence</text>
+    <text x="443" y="281" font-size="16">synthesis</text>
+    <text x="723" y="259" font-size="16">Analysis &amp;</text>
+    <text x="723" y="281" font-size="16">interpretation</text>
+    <text x="1004" y="259" font-size="16">Publication &amp;</text>
+    <text x="1004" y="281" font-size="16">communication</text>
+
+    <text x="600" y="201" font-size="18">AI support</text>
+  </g>
+
+  <g font-family="sans-serif" font-weight="700" fill="#405162" text-anchor="middle">
+    <text x="144" y="53" font-size="15">Teaching workflow</text>
+    <text x="144" y="359" font-size="15">Research workflow</text>
+    <text x="835" y="50" font-size="14">shorter drafting paths</text>
+    <text x="835" y="346" font-size="14">faster synthesis paths</text>
   </g>
 </svg>

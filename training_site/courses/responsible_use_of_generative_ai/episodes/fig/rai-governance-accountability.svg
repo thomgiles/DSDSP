@@ -1,35 +1,58 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="330" viewBox="0 0 1200 330" role="img" aria-labelledby="title desc">
-  <title id="title">AI governance accountability flow</title>
-  <desc id="desc">AI-assisted contributions feed outputs and claims, but accountability remains with the researcher.</desc>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="360" viewBox="0 0 1200 360" role="img" aria-labelledby="title desc">
+  <title id="title">AI governance and academic accountability</title>
+  <desc id="desc">AI-assisted teaching and research outputs must pass through human review before academic accountability is claimed.</desc>
   <defs>
-    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M2 2 L10 6 L2 10 Z" fill="#405162"/></marker>
-    <marker id="arrow-light" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M2 2 L10 6 L2 10 Z" fill="#009bc1"/></marker>
-    <filter id="shadow" x="-10%" y="-20%" width="120%" height="145%"><feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#10263b" flood-opacity="0.15"/></filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2 2 L10 6 L2 10 Z" fill="#405162"/>
+    </marker>
+    <marker id="arrow-light" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2 2 L10 6 L2 10 Z" fill="#009bc1"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-20%" width="120%" height="145%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#10263b" flood-opacity="0.15"/>
+    </filter>
   </defs>
-  <rect width="1200" height="330" rx="28" fill="#f7fbfc"/>
+
+  <rect width="1200" height="360" rx="28" fill="#f7fbfc"/>
+
   <g stroke="#405162" stroke-width="4" marker-end="url(#arrow)" fill="none">
-    <path d="M265 175 H320"/>
-    <path d="M510 175 H580"/>
-    <path d="M735 175 H920"/>
-    <path d="M510 155 C555 102 570 78 600 75"/>
-    <path d="M745 75 C830 75 862 128 920 155"/>
-    <path d="M510 195 C555 248 570 285 600 285"/>
-    <path d="M760 285 C835 285 865 220 920 195"/>
-  </g><g filter="url(#shadow)" font-family="sans-serif">
-    <rect x="55" y="130" width="210" height="90" rx="18" fill="#006781"/>
-    <rect x="330" y="130" width="180" height="90" rx="18" fill="#298582"/>
-    <rect x="590" y="130" width="145" height="90" rx="18" fill="#405162"/>
-    <rect x="930" y="130" width="220" height="90" rx="18" fill="#10263b"/>
-    <rect x="610" y="40" width="135" height="70" rx="18" fill="#009bc1"/>
-    <rect x="610" y="250" width="150" height="70" rx="18" fill="#009bc1"/>
-  </g><g font-family="sans-serif">
-<text x="160.0" y="169.0" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">AI-assisted</text>
-<text x="160.0" y="191.0" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">contribution</text>
-<text x="420.0" y="180.0" font-size="18" font-weight="700" fill="#ffffff" text-anchor="middle">Research output</text>
-<text x="662.5" y="180.0" font-size="18" font-weight="700" fill="#ffffff" text-anchor="middle">Claim</text>
-<text x="1040.0" y="169.0" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">Researcher</text>
-<text x="1040.0" y="191.0" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">accountability</text>
-<text x="677.5" y="80.0" font-size="18" font-weight="700" fill="#ffffff" text-anchor="middle">Method</text>
-<text x="685.0" y="290.0" font-size="18" font-weight="700" fill="#ffffff" text-anchor="middle">Interpretation</text>
+    <path d="M262 180 H330"/>
+    <path d="M530 154 C570 114 612 96 660 96"/>
+    <path d="M530 206 C570 246 612 264 660 264"/>
+    <path d="M850 96 C910 104 930 135 960 160"/>
+    <path d="M850 264 C910 256 930 225 960 200"/>
+  </g>
+
+  <g stroke="#009bc1" stroke-width="3.5" stroke-dasharray="8 8" marker-end="url(#arrow-light)" fill="none">
+    <path d="M755 126 C755 152 755 184 755 218"/>
+    <path d="M930 180 H965"/>
+  </g>
+
+  <g filter="url(#shadow)" font-family="sans-serif">
+    <rect x="60" y="132" width="202" height="96" rx="18" fill="#006781"/>
+    <rect x="330" y="132" width="200" height="96" rx="18" fill="#298582"/>
+    <rect x="660" y="56" width="190" height="80" rx="18" fill="#405162"/>
+    <rect x="660" y="224" width="190" height="80" rx="18" fill="#405162"/>
+    <rect x="610" y="142" width="290" height="76" rx="20" fill="#009bc1"/>
+    <rect x="965" y="132" width="185" height="96" rx="18" fill="#10263b"/>
+  </g>
+
+  <g font-family="sans-serif" font-weight="700" fill="#ffffff" text-anchor="middle">
+    <text x="161" y="174" font-size="16">AI-assisted</text>
+    <text x="161" y="196" font-size="16">contribution</text>
+    <text x="430" y="174" font-size="16">Draft academic</text>
+    <text x="430" y="196" font-size="16">output</text>
+    <text x="755" y="91" font-size="16">Teaching</text>
+    <text x="755" y="113" font-size="16">materials</text>
+    <text x="755" y="258" font-size="16">Research</text>
+    <text x="755" y="280" font-size="16">claims</text>
+    <text x="755" y="174" font-size="16">Human review</text>
+    <text x="755" y="196" font-size="16">&amp; verification</text>
+    <text x="1057" y="174" font-size="16">Academic</text>
+    <text x="1057" y="196" font-size="16">accountability</text>
+  </g>
+
+  <g font-family="sans-serif" font-weight="700" fill="#405162" text-anchor="middle">
+    <text x="755" y="339" font-size="14">learning outcomes, assessment validity, methods, evidence and interpretation remain human responsibilities</text>
   </g>
 </svg>
