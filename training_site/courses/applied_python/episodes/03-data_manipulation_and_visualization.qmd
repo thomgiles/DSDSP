@@ -933,7 +933,7 @@ matplotlib.pyplot.show()
 
 Use each of the files once to generate a dataset containing values averaged over all patients by completing the code inside the loop given below:
 
-```{python}
+```python
 filenames = glob.glob('data/inflammation*.csv')
 composite_data = numpy.zeros((60, 40))
 for filename in filenames:
