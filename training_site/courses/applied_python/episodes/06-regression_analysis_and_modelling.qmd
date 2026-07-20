@@ -282,7 +282,7 @@ plt.show()
 
 For non-Gaussian outcomes (binary counts, rates):
 
-```{python}
+```python
 import statsmodels.api as sm
 import statsmodels.formula.api as smf
 
