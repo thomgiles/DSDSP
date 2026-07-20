@@ -117,7 +117,7 @@ def span(a):
     diff = numpy.amax(a) - numpy.amin(a)
     return diff
 
-data = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
+data = numpy.loadtxt(fname='data/inflammation-01.csv', delimiter=',')
 print('span of data:', span(data))
 ```
 
@@ -129,7 +129,7 @@ Notice that `span` assigns a value to a variable called `diff`.
 We might very well use a variable with the same name to hold data:
 
 ```python
-diff = numpy.loadtxt(fname='inflammation-01.csv', delimiter=',')
+diff = numpy.loadtxt(fname='data/inflammation-01.csv', delimiter=',')
 print('span of data:', span(diff))
 ```
 
