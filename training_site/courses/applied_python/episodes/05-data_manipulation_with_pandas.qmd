@@ -52,7 +52,7 @@ See the [pandas docs](https://pandas.pydata.org/docs/getting_started/overview.ht
 ```{python}
 import pandas as pd  # the alias pd is commonly used to refer to pandas in code.
 
-df = pd.read_csv("inflammation-01.csv", header=None)
+df = pd.read_csv("data/inflammation-01.csv", header=None)
 ```
 
 We have used `header=None` above because there is no header row in our data.
@@ -492,7 +492,7 @@ if __name__ == "__main__":
     # argparse is in the standard library
     ap = argparse.ArgumentParser()
     # Positional argument: glob pattern for input files
-    ap.add_argument("pattern", help="Glob like 'inflammation-*.csv' (use 'data/inflammation-*.csv' if files are in a subdir)")
+    ap.add_argument("pattern", help="Glob like 'data/inflammation-*.csv'")
     # Optional argument: output CSV path
     ap.add_argument("--out", default="out/per_day_summary.csv")
     # Parse args and call main
@@ -503,7 +503,7 @@ if __name__ == "__main__":
 
 To run from the command line, call the script with a glob pattern and optional output path:
 ```bash
-python scripts/summarise_inflammation.py "inflammation-*.csv" --out out/per_day_summary.csv
+python scripts/summarise_inflammation.py "data/inflammation-*.csv" --out out/per_day_summary.csv
 ```
 :::
 :::
