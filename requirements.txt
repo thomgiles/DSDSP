@@ -3,4 +3,5 @@ jupyter
 ipykernel
 pandas
 matplotlib
-
+statsmodels
+patsy
