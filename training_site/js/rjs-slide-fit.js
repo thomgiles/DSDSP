@@ -36,6 +36,14 @@
 
     overflowTolerancePx: 10,
 
+    minMediaHeightPx: 220,
+    minMediaHeightMobilePx: 150,
+    maxMediaHeightRatio: 0.72,
+    maxTitleMediaHeightRatio: 0.56,
+    maxQuoteMediaHeightRatio: 0.52,
+    mediaReservePx: 18,
+    observerMuteMs: 160,
+
     delayedFitPassesMs: [60, 160, 360, 800, 1400]
   };
 
@@ -62,6 +70,7 @@
   let resizeObserver = null;
   let observedSlide = null;
   let fitPassTimers = [];
+  let observerMutedUntil = 0;
   const decodedImages = new WeakSet();
 
   /* ------------------------------------------------------------------------
@@ -240,6 +249,7 @@
     slide.style.removeProperty("--rjs-fit-gap");
     slide.style.removeProperty("--rjs-fit-top-space");
     slide.style.removeProperty("--rjs-fit-media-trim");
+    slide.style.removeProperty("--rjs-fit-media-max-height");
     slide.style.removeProperty("--rjs-fit-callout-trim");
     slide.style.removeProperty("--rjs-fit-safe-height");
   }
@@ -250,10 +260,20 @@
   }
 
   function applyManagedState(slide, layout) {
+    observerMutedUntil = performance.now() + CONFIG.observerMuteMs;
+
     slide.style.setProperty("--rjs-fit-scale", layout.scale.toFixed(4));
     slide.style.setProperty("--rjs-fit-gap", `${Math.round(layout.gapPx)}px`);
     slide.style.setProperty("--rjs-fit-top-space", `${Math.round(layout.topSpacePx)}px`);
     slide.style.setProperty("--rjs-fit-media-trim", `${Math.round(layout.mediaTrimPx)}px`);
+    if (layout.mediaMaxHeightPx > 0) {
+      slide.style.setProperty(
+        "--rjs-fit-media-max-height",
+        `${Math.round(layout.mediaMaxHeightPx)}px`
+      );
+    } else {
+      slide.style.removeProperty("--rjs-fit-media-max-height");
+    }
     slide.style.setProperty("--rjs-fit-callout-trim", `${Math.round(layout.calloutTrimPx)}px`);
     slide.style.setProperty("--rjs-fit-safe-height", `${Math.round(layout.safeHeightPx)}px`);
 
@@ -305,8 +325,78 @@
      Layout calculation
      ------------------------------------------------------------------------ */
 
-  function calculateLayout(slide, measurement, childCount) {
+  function isMediaElement(el) {
+    if (!el || !(el instanceof HTMLElement)) return false;
+
+    return (
+      el.matches("figure, .quarto-figure, img, video, iframe, .mermaid-js") ||
+      el.querySelector("figure, .quarto-figure, img, video, iframe, .mermaid-js") !== null
+    );
+  }
+
+  function getMediaMinHeight(available, isTitleVisual, hasQuote) {
+    const baseMin = window.innerWidth <= 640
+      ? CONFIG.minMediaHeightMobilePx
+      : CONFIG.minMediaHeightPx;
+
+    const adjustedMin = isTitleVisual || hasQuote
+      ? Math.round(baseMin * 0.82)
+      : baseMin;
+
+    return Math.max(120, Math.min(adjustedMin, available.height * 0.46));
+  }
+
+  function calculateMediaMaxHeight(slide, children, layoutBase) {
+    const {
+      available,
+      scale,
+      gapPx,
+      gapSlots,
+      topSpacePx,
+      hasQuote,
+      isTitleVisual
+    } = layoutBase;
+
+    const mediaChildren = children.filter(isMediaElement);
+
+    if (!mediaChildren.length) {
+      return 0;
+    }
+
+    const nonMediaChildren = children.filter((child) => !isMediaElement(child));
+    const nonMediaMeasurement = measureElements(nonMediaChildren);
+    const nonMediaHeight = Math.max(
+      0,
+      nonMediaMeasurement.contentHeight || nonMediaMeasurement.height || 0
+    );
+
+    const mediaRatio = slide.classList.contains("visual")
+      ? 0.78
+      : isTitleVisual
+        ? CONFIG.maxTitleMediaHeightRatio
+        : hasQuote
+          ? CONFIG.maxQuoteMediaHeightRatio
+          : CONFIG.maxMediaHeightRatio;
+
+    const reservedHeight =
+      nonMediaHeight * scale +
+      topSpacePx +
+      gapSlots * gapPx +
+      CONFIG.mediaReservePx;
+
+    const minMediaHeight = getMediaMinHeight(available, isTitleVisual, hasQuote);
+    const maxMediaHeight = Math.max(
+      minMediaHeight,
+      available.height * mediaRatio
+    );
+    const fitMediaHeight = available.height - reservedHeight;
+
+    return clamp(fitMediaHeight, minMediaHeight, maxMediaHeight);
+  }
+
+  function calculateLayout(slide, measurement, children) {
     const available = getAvailableBox();
+    const childCount = children.length;
 
     const rawHeight = Math.max(1, measurement.contentHeight || measurement.height);
     const rawWidth = Math.max(1, measurement.width);
@@ -323,7 +413,10 @@
       slide.querySelector("figure, img, video, iframe, .mermaid-js") !== null;
     const hasQuote = slide.querySelector("blockquote") !== null;
     const isTitleVisual =
-      hasVisual && slide.matches(".title-slide, .level1, .quarto-title-block");
+      hasVisual && (
+        slide.matches(".title-slide, .quarto-title-block") ||
+        (slide.classList.contains("level1") && childCount <= 2)
+      );
 
     const hasLargeMedia =
       slide.querySelector("figure, img, video, iframe, table, pre, .mermaid-js") !== null;
@@ -387,9 +480,18 @@
       Math.max(0, gapSlots * gapPx);
 
     const nearOverflow = projectedHeight > available.height * 0.92;
-    const mediaTrimPx = hasShrinkableMedia && nearOverflow
-      ? clamp(projectedHeight - available.height + (isTitleVisual ? 56 : 32), 24, isTitleVisual ? 110 : 70)
+    const mediaMaxHeightPx = hasShrinkableMedia
+      ? calculateMediaMaxHeight(slide, children, {
+          available,
+          scale,
+          gapPx,
+          gapSlots,
+          topSpacePx,
+          hasQuote,
+          isTitleVisual
+        })
       : 0;
+    const mediaTrimPx = 0;
     const calloutTrimPx = hasCallout && nearOverflow
       ? clamp(projectedHeight - available.height + 28, 18, 76)
       : 0;
@@ -403,6 +505,7 @@
       gapPx,
       topSpacePx,
       mediaTrimPx,
+      mediaMaxHeightPx,
       calloutTrimPx,
       hasTable,
       hasCode,
@@ -429,11 +532,16 @@
       const hasLargeMedia =
         slide.querySelector("figure, img, video, iframe, .mermaid-js") !== null;
 
-      if (hasLargeMedia) {
-        layout.mediaTrimPx = clamp(
-          layout.mediaTrimPx + (measured.height - available.height) + 24,
-          24,
-          90
+      if (hasLargeMedia && layout.mediaMaxHeightPx > 0) {
+        const minMediaHeight = getMediaMinHeight(
+          available,
+          layout.isTitleVisual,
+          layout.hasQuote
+        );
+
+        layout.mediaMaxHeightPx = Math.max(
+          minMediaHeight,
+          layout.mediaMaxHeightPx - (measured.height - available.height) - 18
         );
         applyManagedState(slide, layout);
         forceLayout(slide);
@@ -474,9 +582,6 @@
         layout.gapPx = CONFIG.minGapPx;
         layout.topSpacePx = 0;
         layout.isOverflow = true;
-        layout.mediaTrimPx = layout.hasVisual
-          ? clamp(layout.mediaTrimPx + 24, 24, layout.isTitleVisual ? 130 : 110)
-          : layout.mediaTrimPx;
       }
 
       applyManagedState(slide, layout);
@@ -514,7 +619,7 @@
         return;
       }
 
-      const layout = calculateLayout(slide, measurement, children.length);
+      const layout = calculateLayout(slide, measurement, children);
       refineLayoutIfNeeded(slide, layout);
       observeSlide(slide);
     } finally {
@@ -560,16 +665,12 @@
     observedSlide = slide;
 
     resizeObserver = new ResizeObserver(() => {
-      if (!isFitting) {
+      if (!isFitting && performance.now() > observerMutedUntil) {
         scheduleFit(80);
       }
     });
 
     resizeObserver.observe(slide);
-
-    getMeasuredChildren(slide).forEach((child) => {
-      resizeObserver.observe(child);
-    });
   }
 
   function fitAfterImagesLoad() {

@@ -391,9 +391,9 @@ def load_one(path: Path) -> pd.DataFrame:
     return df.assign(source=path.name)
 
 # Step 2: Find all files matching inflammation-*.csv
-files = sorted(Path().glob("inflammation-*.csv"))
+files = sorted(Path().glob("data/inflammation-*.csv"))
 if not files:
-    raise SystemExit("No files matched 'inflammation-*.csv'")
+    raise SystemExit("No files matched 'data/inflammation-*.csv'")
 
 # Step 3: Load all files into one "wide" DataFrame
 #    Each row: one patient from one file
