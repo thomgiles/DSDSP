@@ -1,34 +1,58 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="370" viewBox="0 0 1200 370" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="340" viewBox="0 0 1200 340" role="img" aria-labelledby="title desc">
   <title id="title">Contribution boundary examples</title>
   <desc id="desc">Different types of AI use range from surface editing to structural shaping, substantive contribution, and credentialed output.</desc>
   <defs>
-    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M2 2 L10 6 L2 10 Z" fill="#405162"/></marker>
-    <marker id="arrow-light" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M2 2 L10 6 L2 10 Z" fill="#009bc1"/></marker>
-    <filter id="shadow" x="-10%" y="-20%" width="120%" height="145%"><feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#10263b" flood-opacity="0.15"/></filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2 2 L10 6 L2 10 Z" fill="#405162"/>
+    </marker>
+    <marker id="arrow-risk" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2 2 L10 6 L2 10 Z" fill="#009bc1"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-20%" width="120%" height="145%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#10263b" flood-opacity="0.15"/>
+    </filter>
   </defs>
-  <rect width="1200" height="370" rx="28" fill="#f7fbfc"/>
+
+  <rect width="1200" height="340" rx="28" fill="#f7fbfc"/>
+
   <g stroke="#405162" stroke-width="4" marker-end="url(#arrow)" fill="none">
-    <path d="M375 100 H585"/>
-    <path d="M375 190 H585"/>
-    <path d="M375 280 H585"/>
-  </g><g filter="url(#shadow)" font-family="sans-serif">
-    <rect x="80" y="55" width="295" height="70" rx="18" fill="#006781"/>
-    <rect x="585" y="55" width="295" height="70" rx="18" fill="#006781" fill-opacity="0.88"/>
-    <rect x="80" y="145" width="295" height="70" rx="18" fill="#298582"/>
-    <rect x="585" y="145" width="295" height="70" rx="18" fill="#298582" fill-opacity="0.88"/>
-    <rect x="80" y="235" width="295" height="70" rx="18" fill="#405162"/>
-    <rect x="585" y="235" width="295" height="70" rx="18" fill="#405162" fill-opacity="0.88"/>
-    <rect x="665" y="145" width="390" height="90" rx="22" fill="#10263b"/>
-  </g><g font-family="sans-serif">
-<text x="227.5" y="94.0" font-size="17" font-weight="700" fill="#ffffff" text-anchor="middle">Surface editing</text>
-<text x="732.5" y="94.0" font-size="15" font-weight="650" fill="#ffffff" text-anchor="middle">grammar, clarity</text>
-<text x="227.5" y="184.0" font-size="17" font-weight="700" fill="#ffffff" text-anchor="middle">Structural shaping</text>
-<text x="732.5" y="184.0" font-size="15" font-weight="650" fill="#ffffff" text-anchor="middle">outline, framing</text>
-<text x="227.5" y="263.0" font-size="17" font-weight="700" fill="#ffffff" text-anchor="middle">Substantive</text>
-<text x="227.5" y="285.0" font-size="17" font-weight="700" fill="#ffffff" text-anchor="middle">contribution</text>
-<text x="732.5" y="263.0" font-size="15" font-weight="650" fill="#ffffff" text-anchor="middle">ideas, claims,</text>
-<text x="732.5" y="285.0" font-size="15" font-weight="650" fill="#ffffff" text-anchor="middle">methods</text>
-<text x="860" y="195.0" font-size="19" font-weight="700" fill="#ffffff" text-anchor="middle">Credentialed output</text>
-<text x="860" y="223.0" font-size="14" font-weight="650" fill="#ffffff" text-anchor="middle">assessment / publication</text>
+    <path d="M262 170 H330"/>
+    <path d="M522 170 H590"/>
+    <path d="M782 170 H850"/>
+  </g>
+
+  <g stroke="#009bc1" stroke-width="4" marker-end="url(#arrow-risk)" fill="none">
+    <path d="M190 248 C375 304 705 304 940 248"/>
+  </g>
+
+  <g filter="url(#shadow)" font-family="sans-serif">
+    <rect x="70" y="112" width="192" height="116" rx="20" fill="#006781"/>
+    <rect x="330" y="112" width="192" height="116" rx="20" fill="#298582"/>
+    <rect x="590" y="112" width="192" height="116" rx="20" fill="#405162"/>
+    <rect x="850" y="112" width="250" height="116" rx="20" fill="#10263b"/>
+  </g>
+
+  <g font-family="sans-serif" fill="#ffffff" text-anchor="middle">
+    <text x="166" y="151" font-size="17" font-weight="700">Surface editing</text>
+    <text x="166" y="179" font-size="14" font-weight="650">grammar, clarity,</text>
+    <text x="166" y="199" font-size="14" font-weight="650">formatting</text>
+
+    <text x="426" y="151" font-size="17" font-weight="700">Structural shaping</text>
+    <text x="426" y="179" font-size="14" font-weight="650">outline, sequence,</text>
+    <text x="426" y="199" font-size="14" font-weight="650">framing</text>
+
+    <text x="686" y="151" font-size="17" font-weight="700">Substantive</text>
+    <text x="686" y="173" font-size="17" font-weight="700">contribution</text>
+    <text x="686" y="201" font-size="14" font-weight="650">ideas, claims, methods</text>
+
+    <text x="975" y="151" font-size="17" font-weight="700">Credentialed output</text>
+    <text x="975" y="179" font-size="14" font-weight="650">assessment, feedback,</text>
+    <text x="975" y="199" font-size="14" font-weight="650">publication or report</text>
+  </g>
+
+  <g font-family="sans-serif" fill="#405162" text-anchor="middle">
+    <text x="166" y="74" font-size="14" font-weight="700">lower contribution risk</text>
+    <text x="975" y="74" font-size="14" font-weight="700">higher contribution risk</text>
+    <text x="600" y="305" font-size="14" font-weight="700">as AI shapes academic judgement, disclosure and verification become more important</text>
   </g>
 </svg>

@@ -63,12 +63,12 @@ How many of you have already used generative AI in your teaching, assessment or 
 
 ## A Brief Origin Story: The Beginnings of AI (~1950)
 
-- Artificial Intelligence (AI) emerged in the 1950s 
+- Artificial Intelligence (AI) emerged as a concept in the early 1950s 
 - Initial ideas were around whether machines could replicate human thought. 
 
 > 🤔 Alan Turing argued that intelligence might be understood through behaviour rather than internal processes, leading to the famous question: *Can machines think?*
 
-## Expansion of Rule-Based AI (1960–1970)
+## Expansion of Rule-Based AI (1960s)
 
 **Early AI focused on symbolic reasoning.**  Intelligence was treated as a problem of **logic, rules, and formal symbols**.
 
@@ -78,7 +78,7 @@ How many of you have already used generative AI in your teaching, assessment or 
  
 > ⚙️ *If reasoning can be fully specified, it can be automated.*
 
-## Growth of Structured Knowledge Systems
+## Structured Knowledge Systems (1970s)
 
 **Large, structured knowledge bases emerged:** Expert knowledge was represented using **rule sets, semantic networks, and frames**.
 
@@ -90,9 +90,9 @@ How many of you have already used generative AI in your teaching, assessment or 
 
 > 🧠 *Early AI treated thinking as rule-following, not pattern-learning.*
 
-## The First AI Winter (1970–1980)
+## Why Rule-Based AI Struggled (1980s)
 
-**Expert systems struggled to scale:** Human expertise had to be encoded manually, often as **thousands of explicit rules** for diagnosis, recommendation, or classification.
+Expert systems struggled because human expertise had to be encoded manually, often as **thousands of explicit rules** for diagnosis, recommendation, or classification.
 
 - Rule sets became increasingly **large and brittle**
 - **Contradictions and edge cases** multiplied
@@ -101,9 +101,9 @@ How many of you have already used generative AI in your teaching, assessment or 
 
 > 🧠 At the same time, early research into **neural networks stalled** following early mathematical criticism, accelerating the loss of confidence and funding.
 
-## The Emergence of Machine Learning (1980–1995)
+## The Emergence of Machine Learning (1990s)
 
-In the 1980s, machine learning emerged as researchers realised that instead of telling computers *how* to solve problems, they could let them *learn* from examples. 
+In the late 1980s, machine learning emerged as researchers realised that instead of telling computers *how* to solve problems, they could let them *learn* from examples. 
 
 **Three conditions enabled this transition:**
 
@@ -123,13 +123,13 @@ Machine learning is based on three main approaches:
 | **Unsupervised Learning** | Finds structure in unlabelled data | clustering, dimensionality reduction | k-means, PCA, topic modelling |
 | **Reinforcement Learning** | Learns actions through trial-and-error with rewards | control, optimisation, agents | Q-learning, policy gradients |
 
-## Deep Learning (1995–2010)
+## Data-Driven AI Becomes Practical (1990s–2000s)
 
-- In the mid 90s, research shifted toward data-driven methods, with probabilistic graphical models and support vector machines (SVMs) becoming standard in scientific and industrial settings.  
+- In the 1990s and 2000s, research shifted toward data-driven methods, with statistical models and support vector machines (SVMs) becoming standard in scientific and industrial settings.  
 
 - A landmark moment came in 1997 when IBM’s *Deep Blue* defeated Garry Kasparov, demonstrating the power of specialised computation and statistical optimisation. 
 
-> 🧠 Deep learning transformed AI performance across multiple domains by learning rich features automatically.
+> 🧠 The important shift was that systems increasingly learned useful patterns from data rather than relying only on hand-written rules.
 
 ## Natural Language Processing (NLP) (2000s–2016)
 
@@ -139,12 +139,12 @@ In the early 2000s Natural Language Processing (NLP) emerged as a field of AI th
 
 > 🧠 Learning improves when output errors are fed back into the model rather than treated as final answers.
 
-## A field ready for change (2014-2016)
+## Why Language Models Needed a New Approach (2014-2016)
 
 Various deep learning models attempted to address the NLP problem, but these had their limitations:
 
 - They were slow because they processed text step by step
-- They had difficulty capturing long-range relationships (i.e. semantic meaning)
+- They had difficulty connecting words and ideas across long passages
 - They were hard to scale to large datasets
 
 > 🔁 Researchers needed models that could look at text in larger blocks (or all at once).
@@ -159,7 +159,7 @@ By predicting the most likely next token from prior context, transformer models 
 
 ## Foundation Models (2020)
 
-Training transformers models through self-supervision, led to the emergence of general-purpose foundation models that were capable of adaptation across diverse tasks.
+Training transformer models on very large collections of text led to general-purpose foundation models. These models could be adapted to many different tasks rather than being built for only one narrow purpose.
 
 | Property | Description |
 |---------|-------------|
@@ -167,20 +167,20 @@ Training transformers models through self-supervision, led to the emergence of g
 | Generality | Perform across domains |
 | Transferability | Effective adaptation with small datasets |
 
-> 🧠 What we think of as AI now are essentially just massive transformer based models.
+> 🧠 Many current AI tools are built around very large transformer-based models.
 
 ## From Scale to Generality (2020–present)
 
 - **2020**: **GPT-3** (~175B parameters)  
-  First truly large-scale autoregressive model demonstrating broad, task-agnostic capabilities.
+  A very large language model that could perform many tasks from written instructions.
 - **2021**: **PaLM** (~540B parameters)  
-  Empirical validation of scaling laws, with notable gains in multilingual performance and reasoning.
+  Showed that larger models could improve performance across languages and reasoning tasks.
 - **2023**: **GPT-4**, **Claude**, **Gemini** (parameter counts undisclosed but likely Trillion-scale)  
   Shift toward multimodality, alignment, safety, and system-level optimisation rather than raw scale alone.
 - **2024–2025**: **Mixture-of-Experts and hybrid systems**  
-  Trillion-scale *effective* capacity via sparse activation, retrieval-augmented generation, and domain-specialised models.
+  Newer systems combine specialist components, retrieval from documents, and domain-specific tools.
 
-> 🚀 *Foundation models marked a transition from task-specific AI systems to general-purpose computational platforms.*
+> 🚀 *Foundation models marked a transition from task-specific AI systems to flexible tools that can support many kinds of work.*
 
 ## Summary
 
@@ -218,9 +218,9 @@ The current emphasis is increasingly on optimisation because training and runnin
 
 ![](fig/AI2.jpg){fig-align="center" width="400px"}
 
-## AI as a structural shift in academic practice
+## AI Changes Academic Workflows
 
-Generative AI represents a structural change in academic work by **compressing intellectual labour** associated with curriculum planning, drafting, synthesis, translation, feedback scaffolds and technical preparation.  
+Generative AI can reduce the time needed to draft, summarise, reformat and prepare academic materials. This affects curriculum planning, learning materials, synthesis, translation, feedback scaffolds and technical preparation.  
 
 Rather than replacing academic expertise, it can reallocate staff effort from **production** towards **evaluation, verification and judgement**.
 
@@ -230,13 +230,13 @@ Rather than replacing academic expertise, it can reallocate staff effort from **
 
 AI-enabled workflows can shorten the distance between planning, drafting, review and delivery. In teaching, this may accelerate the production of explanations, examples, activities, assessment materials and feedback scaffolds. In research, it can connect ideation, analysis and dissemination more rapidly.
 
-![Research lifecycle compression diagram showing AI shortcuts between question framing, synthesis, analysis, and dissemination.](fig/rai-research-lifecycle-compression.svg){fig-align="center" width="78%"}
+![AI can shorten drafting and synthesis paths in both teaching and research, so deliberate review points become more important.](fig/rai-research-lifecycle-compression.svg){fig-align="center" width="78%"}
 
 > ⏸️ Faster movement between stages makes deliberate review points more important, not less. Increased throughput can remove natural pauses for pedagogic reflection, peer discussion, quality assurance and methodological reconsideration.
 
-## Where genuine opportunities arise
+## Where AI Is Genuinely Useful
 
-Opportunities from AI in teaching and research are best understood as **capacity multipliers**.
+AI is most useful when it helps staff do more preparation, comparison, checking or adaptation in the time available.
 
 Common high-value gains include:
 
@@ -249,7 +249,7 @@ Common high-value gains include:
 
 > ⏱️ These benefits are particularly significant where staff face limited time, high cognitive load or the need to translate complex material across audiences and disciplines.
 
-## Expansion of exploratory space
+## AI Can Help You Explore More Options
 
 AI can increase the *breadth* of exploration by lowering the cost of asking “what if?” questions. It can:
 
@@ -332,13 +332,13 @@ Effective use of AI in academic practice therefore requires intentionally design
 
 > 🎛️ Opportunity only scales with *control*. Speed without control does not create academic value.
 
-## Why governance is now an academic necessity
+## Why Governance Matters
 
-Generative AI makes it easier for substantive contributions to teaching, assessment and research to be produced rapidly and invisibly: 
+AI can now produce teaching, assessment and research material quickly and invisibly. That makes review, disclosure and ownership more important:
 
-![AI-assisted contribution must be compared back to researcher accountability.](fig/rai-governance-accountability.svg){fig-align="center" width="80%"}
+![AI-assisted outputs must pass through human review before accountability can be claimed for teaching materials or research claims.](fig/rai-governance-accountability.svg){fig-align="center" width="80%"}
 
-> 🧾 Accountability cannot be delegated to the tool that generated or shaped the material. This places pressure on established norms around **academic judgement, assessment validity, authorship, contribution, provenance and accountability**.
+> 🧾 Accountability cannot be delegated to the tool that generated or shaped the material. Staff still need to justify academic judgement, assessment validity, authorship, contribution, origin and quality.
 
 ## Academic integrity and authorship: the institutional framing
 
@@ -378,14 +378,14 @@ Academic staff must be able to:
 
 > 👤 AI can assist, but it cannot carry responsibility for the quality of teaching, assessment or research.
 
-## Transparency and traceability as academic norms
+## Keep a Record of AI Use
 
-Traceability aligns with established expectations for quality assurance, academic integrity and research integrity.
+Keeping a clear record of AI use supports quality assurance, academic integrity and research integrity.
 
 | What must be transparent | Why it matters |
 |---|---|
-| Tool(s) and version(s) | provenance and reproducibility |
-| Where AI influenced materials or decisions | auditability of academic judgement |
+| Tool(s) and version(s) | knowing what was used |
+| Where AI influenced materials or decisions | checking academic judgement |
 | What was verified, and how | defensible teaching and research outputs |
 | What data or content was shared | confidentiality and governance |
 | What was not verified | honest uncertainty |
@@ -395,6 +395,8 @@ Traceability aligns with established expectations for quality assurance, academi
 ## Contribution boundaries: editing vs substantive generation
 
 A recurring problem is distinguishing *surface assistance* (clarity, structure or formatting) from *substantive contribution* (learning design, assessment decisions, ideas, methods, claims or interpretation).
+
+A spelling check is different from asking AI to design the assessment, argument, method or feedback approach.
 
 ![Contribution boundary diagram separating surface editing, structural shaping, substantive contribution, and credentialed output.](fig/rai-contribution-boundaries.svg){fig-align="center" width="80%"}
 
@@ -446,10 +448,9 @@ The following assessment guidance was produced using AI:
 
 ## Why AI materially changes academic data risk
 
-Many AI tools operate outside institutional infrastructure and governance controls.  
-This can transform routine academic actions—such as adapting teaching materials, reviewing student work, summarising notes, refining code or drafting interpretation—into potential **boundary-crossing events** that bypass established safeguards.
+Most AI tools operate outside institutional infrastructure and governance controls. This can transform routine academic actions, such as reviewing student work, into potential **boundary-crossing events** that bypass established safeguards.
 
-![AI data risk flow showing routine academic work moving through an external AI service into loss of control and downstream risks.](fig/rai-data-risk-flow.svg){fig-align="center" width="80%"}
+![Teaching, student, research, and project material can become data-risk events when shared with external AI services.](fig/rai-data-risk-flow.svg){fig-align="center" width="80%"}
 
 > 🔐 Once material leaves governed systems, controls become uncertain. 
 
@@ -480,6 +481,8 @@ In AI-assisted workflows, “data” includes any material that encodes student,
 
 > 🧩 Risk frequently arises from **aggregation**, not single items.
 
+A single detail may seem harmless, but several details together can identify a person or reveal sensitive context.
+
 ## De-identification is not a sufficient safeguard
 
 Removing explicit identifiers does not eliminate disclosure risk.  
@@ -498,23 +501,23 @@ A useful governance analogy is to treat an external AI service as a third party 
 
 > 🧭 This framing clarifies why **minimum necessary disclosure** and use of approved institutional tools are defensible defaults.
 
-## Jurisdiction, retention, and opacity
+## Where Does the Data Go?
 
-From a teaching and research governance perspective, unresolved questions include:
+Before using an AI tool with teaching or research material, unresolved questions include:
 
 1. where prompts and uploads are processed and stored  
 2. how long material is retained  
 3. whether content is reused for model improvement  
 4. whether third parties (plugins, analytics, telemetry) have access  
 
-> ❓ Uncertainty itself constitutes a risk factor when handling sensitive research material.
+> ❓ Uncertainty itself constitutes a risk factor when handling sensitive student, teaching or research material.
 
 ## Behavioural drift as a security threat
 
 Risk is not only technical; it is behavioural.  
 Convenience can normalise incremental risk-taking across routine teaching and research activities without explicit decision points.
 
-![Behavioural drift flow showing normal research work becoming convenient AI use, reduced deliberation, normalised exposure, and elevated risk.](fig/rai-behavioural-drift-flow.svg){fig-align="center" width="76%"}
+![Behavioural drift can occur when convenient AI shortcuts become normal across teaching and research without explicit decision points.](fig/rai-behavioural-drift-flow.svg){fig-align="center" width="76%"}
 
 > 🔍 Drift is dangerous because each individual step can feel too small to question. This form of “quiet drift” is harder to detect than discrete policy violations.
 
@@ -526,7 +529,6 @@ A simple operational test:
 
 If not, it should not be shared with an external AI service. Check whether your institution provides an approved or secure version of the tool and seek advice where the boundary is unclear.
 
-
 # Further Information
 
 ::: callout-keypoints
@@ -537,8 +539,7 @@ If not, it should not be shared with an external AI service. Check whether your 
 - Key opportunities include efficiency, broader exploration, clearer communication and reduced repetitive workload.
 - Main risks include factual errors, bias, invalid assessment or feedback, academic integrity concerns, copyright or IP issues, data breaches and loss of critical skills.
 - Ethical use requires transparency, accountability, fairness, privacy and meaningful human oversight.
-
-> 🛡️ Use secure, approved tools; do not upload sensitive student or research material without authorisation; follow institutional, disciplinary, funder and publisher policies.
+- Use secure, approved tools; do not upload sensitive student or research material without authorisation; follow institutional, disciplinary, funder and publisher policies.
 :::
 
 ::: callout-hints

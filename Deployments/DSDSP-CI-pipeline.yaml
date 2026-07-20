@@ -82,6 +82,7 @@ jobs:
 
         unset RENV_PROFILE
         rm -f renv/profile
+        rm -rf renv/library renv/staging renv/profiles
 
         mkdir -p "$HOME/.R/library"
 

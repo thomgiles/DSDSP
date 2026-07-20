@@ -56,15 +56,19 @@
         displayName: 'Install R'
 
       - script: |
+          unset RENV_PROFILE
+          rm -f renv/profile
+          rm -rf renv/library renv/staging renv/profiles
           mkdir -p ~/.R/library
           export R_LIBS_USER=$HOME/.R/library
           echo 'R_LIBS_USER="~/.R/library"' >> ~/.Renviron
           Rscript -e 'install.packages("renv", repos = "https://cloud.r-project.org")'
-          Rscript -e 'renv::activate(); renv::restore()'
+          Rscript -e 'source("renv/activate.R"); Sys.unsetenv("RENV_PROFILE"); renv::restore(lockfile = "renv.lock", prompt = FALSE)'
         workingDirectory: training_site
         displayName: 'Restore R environment'
 
       - script: |
+          unset RENV_PROFILE
           export R_LIBS_USER=$HOME/.R/library
           quarto render .
           echo "list contents"
