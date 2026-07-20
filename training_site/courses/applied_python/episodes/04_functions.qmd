@@ -41,6 +41,12 @@ metadata:
 
 > 🔧 Activities spaced throughout the session  
 
+```{python}
+import glob
+import matplotlib.pyplot
+import numpy
+```
+
 ## Functions in Python
 
 At this point, we've seen that code can have Python make decisions about what it sees in our data. What if we want to convert some of our data, like taking a temperature in Fahrenheit and converting it to Celsius. We could write something like this for converting a single number
@@ -159,6 +165,7 @@ because they no longer exist once the function is done executing.
 If we try to access their values outside of the function, we will encounter an error:
 
 ```{python}
+#| error: true
 print('Again, temperature in Kelvin was:', temp_k)
 ```
 
@@ -199,7 +206,7 @@ Write a function called `fence` that takes two parameters called `original` and 
 and returns a new string that has the wrapper character at the beginning and end of the original.
 A call to your function should look like this:
 
-```{python}
+```python
 print(fence('name', '*'))
 ```
 
@@ -227,7 +234,7 @@ Write a function called `outer`
 that returns a string made up of just the first and last characters of its input.
 A call to your function should look like this:
 
-```{python}
+```python
 print(outer('helium'))
 ```
 
@@ -529,13 +536,14 @@ In fact,
 we can pass the filename to `loadtxt` without the `fname=`:
 
 ```{python}
-numpy.loadtxt('inflammation-01.csv', delimiter=',')
+numpy.loadtxt('data/inflammation-01.csv', delimiter=',')
 ```
 
 but we still need to say `delimiter=`:
 
 ```{python}
-numpy.loadtxt('inflammation-01.csv', ',')
+#| error: true
+numpy.loadtxt('data/inflammation-01.csv', ',')
 ```
 
 To understand what's going on,
@@ -621,7 +629,8 @@ and eight others that do.
 If we call the function like this:
 
 ```{python}
-numpy.loadtxt('inflammation-01.csv', ',')
+#| error: true
+numpy.loadtxt('data/inflammation-01.csv', ',')
 ```
 
 then the filename is assigned to `fname` (which is what we want),
