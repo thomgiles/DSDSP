@@ -644,6 +644,7 @@ the second parameter in the list.
 Given the following code:
 
 ```{python}
+#| error: true
 def numbers(one, two=2, three, four=4):
     n = str(one) + str(two) + str(three) + str(four)
     return n
