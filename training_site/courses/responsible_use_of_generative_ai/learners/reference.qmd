@@ -10,12 +10,14 @@ title: Reference
 - **Source boundary:** An explicit instruction about what source, document, or evidence the tool should rely on.
 - **Hallucination:** A false, unsupported, or invented output presented as if it were reliable.
 - **Validation:** The checking work needed to confirm whether an AI output is accurate, relevant, and usable.
-- **Role prompting:** Asking the model to answer in a particular style or perspective, such as researcher or policy adviser.
+- **Pedagogical alignment:** The fit between a teaching resource, its learning outcome, learner level, activity design, and assessment context.
+- **Assessment integrity:** The protection of fair assessment, student authorship, restricted assessment materials, marking processes, and progression decisions.
+- **Role prompting:** Asking the model to answer in a particular style or perspective, such as subject lecturer, learning designer, accessibility reviewer, researcher, or policy adviser.
 - **Prompt chain:** A sequence of smaller prompts used to refine, check, and restructure output.
 - **Workflow:** A repeatable set of steps that turns a task into a more consistent process.
 - **Agent:** A more structured AI setup that performs a narrow repeated task with defined steps and outputs.
 - **AI use note:** A short record of what tool was used, for what task, with what inputs, and what checks were performed.
-- **Disclosure:** A decision about whether AI use should be reported formally in methods, acknowledgements, or internal records.
+- **Disclosure:** A decision about whether AI use should be reported formally to learners, module teams, collaborators, funders, publishers, methods sections, acknowledgements, or internal records.
 
 ## Quick Decision Guide
 
@@ -24,6 +26,8 @@ title: Reference
 | Situation | Usually sensible | Usually risky |
 |---|---|---|
 | public or low-risk source material | summarising, comparing, outlining, drafting structure | trusting claims without checking |
+| teaching-resource development | drafting examples, discussion questions, alternative explanations, accessibility checks | accepting resources without checking learning alignment, level, inclusion, or source accuracy |
+| assessment-adjacent material | generating general rubric language or practice examples from approved public material | exposing live submissions, marking decisions, exam questions, or restricted assessment content |
 | code or technical scaffolding | explanations, toy examples, boilerplate, debugging support | running uninspected code on real or sensitive data |
 | sensitive, unpublished, or restricted material | only within approved tools and governance rules | pasting into a public AI chat tool |
 | interpretation and judgement | asking for questions, alternatives, or critique | outsourcing conclusions you cannot defend |
@@ -34,6 +38,7 @@ Use prompts that define:
 
 - the task
 - the audience or context
+- the learning outcome, research question, or decision being supported
 - the source boundary
 - the output format
 - the uncertainty instruction
@@ -43,11 +48,21 @@ Use prompts that define:
 
 > Help me with **[task]** for **[context or audience]**. Use **[source or boundary]**. Return the output as **[format]**. If something is uncertain, **flag it explicitly**. Do not invent evidence or citations.
 
+For teaching work, add:
+
+> The learning outcome is **[learning outcome]**. The learners are **[level and assumed prior knowledge]**. The activity will be used in **[teaching context]** and should take **[duration]**. Make clear which parts require lecturer review.
+
+For research work, add:
+
+> The research context is **[project, audience, or stage]**. Use only **[approved source material or data description]**. Separate supported statements from assumptions, and list what I must verify manually.
+
 ## Validation Checklist
 
 | Output type | What to check |
 |---|---|
 | summary or explanation | source accuracy, date, missing caveats |
+| teaching activity | learning outcome alignment, learner level, timing, accessibility, inclusion, and whether it gives away intended reasoning |
+| assessment support | academic-integrity risk, restricted material exposure, fairness, policy fit, and whether human judgement remains central |
 | citation or quotation | exact wording, existence, relevance |
 | comparison | whether the comparison reflects the actual source texts |
 | code or workflow suggestion | assumptions, edge cases, whether it runs or makes sense |
@@ -71,6 +86,18 @@ Example:
 ```text
 Date: 2026-03-23
 Tool: Copilot
+Task: Drafted a 10-minute seminar activity from approved lecture notes
+Input: Non-sensitive lecture outline and learning outcome
+Output kept: Revised discussion questions and activity structure
+Checks: Checked factual claims, level, accessibility, timing, and alignment
+Disclosure: Internal teaching-material record only
+```
+
+Research example:
+
+```text
+Date: 2026-03-23
+Tool: Copilot
 Task: Compared two public AI policy pages
 Input: Public web text copied into prompt
 Output kept: A short comparison table
@@ -82,6 +109,8 @@ Disclosure: Internal project log only
 
 Avoid sharing:
 
+- identifiable student information
+- live assessment submissions, marks, feedback records, or exam material
 - identifiable participant data
 - unpublished findings or draft papers that should remain confidential
 - contract-restricted or commercially sensitive material
@@ -93,6 +122,7 @@ Avoid sharing:
 Ask:
 
 1. Is the material safe for this tool?
-2. What part of the output will I need to verify manually?
-3. Am I using AI for support, or trying to outsource judgement?
-4. What would I need to record so this use could be explained later?
+2. Am I supporting teaching, research, assessment, or administration?
+3. What part of the output will I need to verify manually?
+4. Am I using AI for support, or trying to outsource judgement?
+5. What would I need to record so this use could be explained later?

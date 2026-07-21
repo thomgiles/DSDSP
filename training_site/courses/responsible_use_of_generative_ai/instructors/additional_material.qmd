@@ -4,27 +4,31 @@ title: Additional Material
 
 ## Purpose
 
-Use this page for optional additions when you have extra time, a more confident cohort, or a strong local example to work with. The best extensions still deepen judgement rather than simply adding more AI content.
+Use this page for optional additions when you have extra time, a more confident cohort, or a strong local example to work with. The best extensions still deepen judgement rather than simply adding more AI content. Choose teaching, research, or professional-services examples according to the room.
 
 ## Optional Extensions by Theme
 
-### How AI changes research work
+### How AI changes teaching and research work
 
 - Ask groups to map where AI reduces effort and where it removes natural pauses for reflection.
-- Compare a research task completed manually, with AI support, and with over-reliance on AI.
+- Compare a teaching or research task completed manually, with AI support, and with over-reliance on AI.
 - Use a short case where speed improves output quantity but weakens checking discipline.
+- For teaching cohorts, compare an activity designed from a learning outcome with one generated from a vague topic prompt.
+- For research cohorts, compare a source-grounded project summary with a fluent but unsupported AI summary.
 
 ### Documentation and workflows
 
 - Show a lightweight AI use note and ask what is missing.
 - Workflow design activity: where should AI help, where should it stop, and where should documentation happen?
 - Compare a sensible narrow agent idea with one that automates the wrong kind of judgement.
+- Ask groups to identify who owns final approval: lecturer, module team, researcher, supervisor, project lead, or service owner.
 
 ## Optional Demonstrations
 
 - Demonstrate how a stronger prompt improves usefulness more than a role prompt alone.
 - Show how AI output changes when you move from "answer from memory" to "use only this source".
 - Walk through a simple policy-checking workflow from source to summary to manual validation.
+- Demonstrate the difference between asking for "a teaching activity on X" and asking for an activity tied to a learning outcome, learner level, duration and approved source material.
 
 ## Useful Artefacts to Prepare
 
@@ -32,7 +36,9 @@ If you want richer discussion, bring one or more of the following:
 
 - a weak and strong prompt pair
 - an AI-generated summary with missing caveats
+- an AI-generated teaching activity with weak learning alignment
 - a short example of an AI use note or disclosure paragraph
+- one approved public source that can be used safely by everyone in the room
 
 ## Extension Design Principle
 

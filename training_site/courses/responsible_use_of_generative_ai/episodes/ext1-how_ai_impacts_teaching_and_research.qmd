@@ -36,16 +36,20 @@ metadata:
 
 ## Structure & Agenda
 
-1. **Foundations and Context** – 10 minutes of teaching followed by a 5-minute poll.  
-2. **Opportunities and Risks** – 10 minutes of teaching followed by a 5-minute case demonstration and critique.  
-3. **Ethics, Governance and Good Practice** – 10 minutes of teaching followed by a 5-minute discussion prompt.   
-4. **AI, Data Security and Future Directions** – 10 minutes of teaching followed by a 5-minute confidence poll.  
+1. **Foundations and Context**   
+2. **Opportunities and Risks** 
+3. **Ethics, Governance and Good Practice** 
+4. **AI, Data Security and Future Directions** 
 
 > 🔧 Four activities provide opportunities for reflection, critique and discussion.
 
 # Note
 
+::: callout-note
+
 AI was used (but not harmed) in the generation of these training materials! 
+
+:::
 
 ---
 
@@ -57,18 +61,18 @@ How many of you have already used generative AI in your teaching, assessment or 
 
 :::
 
-# Foundations and Context
+# Foundations: A Brief Origin Story
 
 ![](fig/responsible_ai.png){fig-align="center" width="500px"}
 
-## A Brief Origin Story: The Beginnings of AI (~1950)
+## The Birth of AI (1956)
 
-- Artificial Intelligence (AI) emerged as a concept in the early 1950s 
+- Artificial Intelligence (AI) was named as a field at Dartmouth in 1956. 
 - Initial ideas were around whether machines could replicate human thought. 
 
 > 🤔 Alan Turing argued that intelligence might be understood through behaviour rather than internal processes, leading to the famous question: *Can machines think?*
 
-## Expansion of Rule-Based AI (1960s)
+## Rule-Based systems (1960s)
 
 **Early AI focused on symbolic reasoning.**  Intelligence was treated as a problem of **logic, rules, and formal symbols**.
 
@@ -90,9 +94,9 @@ How many of you have already used generative AI in your teaching, assessment or 
 
 > 🧠 *Early AI treated thinking as rule-following, not pattern-learning.*
 
-## Why Rule-Based AI Struggled (1980s)
+## Death by complexity (1980s)
 
-Expert systems struggled because human expertise had to be encoded manually, often as **thousands of explicit rules** for diagnosis, recommendation, or classification.
+Because human expertise had to be encoded manually, **Expert systems** struggled to scale.
 
 - Rule sets became increasingly **large and brittle**
 - **Contradictions and edge cases** multiplied
@@ -101,45 +105,28 @@ Expert systems struggled because human expertise had to be encoded manually, oft
 
 > 🧠 At the same time, early research into **neural networks stalled** following early mathematical criticism, accelerating the loss of confidence and funding.
 
-## The Emergence of Machine Learning (1990s)
+## Machine Learning (1990s)
 
-In the late 1980s, machine learning emerged as researchers realised that instead of telling computers *how* to solve problems, they could let them *learn* from examples. 
+Eventually, machine learning emerged as researchers realised that instead of telling computers *how* to solve problems, they could let them *learn* from examples. 
 
 **Three conditions enabled this transition:**
 
 - **Data was being generated at scale** in science, finance, and the internet.  
 - **Statistical methods improved** (e.g., Bayesian modelling, maximum likelihood).
 - **Computers became fast enough** to fit models to real datasets.
+- Statistical models and support vector machines (SVMs) became the standard in scientific and industrial settings. 
 
-> 📈 ML became the dominant paradigm because it could adapt to messy, uncertain, real-world problems.
+> ♟️ A landmark moment came in 1997 when IBM’s *Deep Blue* defeated Garry Kasparov, demonstrating the power of specialised computation and statistical optimisation. 
 
-## Core Machine Learning Approaches
+## Natural Language Processing (2000s)
 
-Machine learning is based on three main approaches:
+In the early 2000s Natural Language Processing emerged as a field of AI that focuses on understanding and generating human language. 
 
-| Approach | What It Does | Typical Use Cases | Examples |
-|---------|---------------|-------------------|-----------|
-| **Supervised Learning** | Learns from labelled examples to predict outcomes | classification, regression | regression, random forests, SVMs |
-| **Unsupervised Learning** | Finds structure in unlabelled data | clustering, dimensionality reduction | k-means, PCA, topic modelling |
-| **Reinforcement Learning** | Learns actions through trial-and-error with rewards | control, optimisation, agents | Q-learning, policy gradients |
+![Natural language processing pipeline showing text input being tokenised, represented in context, and used for language tasks such as summarising, translating and answering.](fig/rai-nlp-pipeline.svg){fig-align="center" width="78%"}
 
-## Data-Driven AI Becomes Practical (1990s–2000s)
+> 🧠 Learning was found to improve when output errors are fed back into the model rather than treated as final answers.
 
-- In the 1990s and 2000s, research shifted toward data-driven methods, with statistical models and support vector machines (SVMs) becoming standard in scientific and industrial settings.  
-
-- A landmark moment came in 1997 when IBM’s *Deep Blue* defeated Garry Kasparov, demonstrating the power of specialised computation and statistical optimisation. 
-
-> 🧠 The important shift was that systems increasingly learned useful patterns from data rather than relying only on hand-written rules.
-
-## Natural Language Processing (NLP) (2000s–2016)
-
-In the early 2000s Natural Language Processing (NLP) emerged as a field of AI that focuses on understanding and generating human language. It focused on tasks such as translation, sentiment analysis, summarisation and question answering.
-
-![Neural network flow showing input data passing through input and hidden layers to output data.](fig/rai-neural-network-flow.svg){fig-align="center" width="78%"}
-
-> 🧠 Learning improves when output errors are fed back into the model rather than treated as final answers.
-
-## Why Language Models Needed a New Approach (2014-2016)
+## Another Wall (2010s)
 
 Various deep learning models attempted to address the NLP problem, but these had their limitations:
 
@@ -149,17 +136,19 @@ Various deep learning models attempted to address the NLP problem, but these had
 
 > 🔁 Researchers needed models that could look at text in larger blocks (or all at once).
 
-## Transformers (2017-2020)
+## Transformers (2010s)
 
-Transformers introduced self-attention, allowing models to **attend to all elements of an input simultaneously** and learn contextual relationships across an entire sequence.
-
-By predicting the most likely next token from prior context, transformer models can learn statistical patterns that can be reused across tasks, enabling flexible inference beyond simple memorisation.
+- Transformers introduced **self-attention**.
+- This allowed models to attend to all elements of an input simultaneously.
+- This enabled them to learn contextual relationships across longer passages.
+- By predicting the most likely next token from prior context, transformer models were shown to learn statistical patterns that could be reused across tasks.
+- This enabled flexible inference beyond simple memorisation.
 
 > ✨ Given a sufficiently large training set, this allows them to generate responses that can appear thoughtful. 
 
-## Foundation Models (2020)
+## Foundation Models (2020-2021)
 
-Training transformer models on very large collections of text led to general-purpose foundation models. These models could be adapted to many different tasks rather than being built for only one narrow purpose.
+Training transformer models on very large collections of text led to general-purpose foundation models. 
 
 | Property | Description |
 |---------|-------------|
@@ -167,13 +156,13 @@ Training transformer models on very large collections of text led to general-pur
 | Generality | Perform across domains |
 | Transferability | Effective adaptation with small datasets |
 
-> 🧠 Many current AI tools are built around very large transformer-based models.
+> 🧠 These models could be adapted to many different tasks rather than being built for only one narrow purpose.
 
 ## From Scale to Generality (2020–present)
 
 - **2020**: **GPT-3** (~175B parameters)  
   A very large language model that could perform many tasks from written instructions.
-- **2021**: **PaLM** (~540B parameters)  
+- **2022**: **PaLM** (~540B parameters)  
   Showed that larger models could improve performance across languages and reasoning tasks.
 - **2023**: **GPT-4**, **Claude**, **Gemini** (parameter counts undisclosed but likely Trillion-scale)  
   Shift toward multimodality, alignment, safety, and system-level optimisation rather than raw scale alone.
@@ -201,7 +190,7 @@ The current emphasis is increasingly on optimisation because training and runnin
 
 ::: callout-task
 
-#### Task: Questionnaire
+#### Task: Questionnaire (5m)
 
 <iframe
   src="https://ds-shiny-helper.azurewebsites.net/edsex1/?embed=true#shiny-tab-q1_results"
@@ -218,38 +207,20 @@ The current emphasis is increasingly on optimisation because training and runnin
 
 ![](fig/AI2.jpg){fig-align="center" width="400px"}
 
-## AI Changes Academic Workflows
+## AI in Academic Workflows
 
-Generative AI can reduce the time needed to draft, summarise, reformat and prepare academic materials. This affects curriculum planning, learning materials, synthesis, translation, feedback scaffolds and technical preparation.  
-
-Rather than replacing academic expertise, it can reallocate staff effort from **production** towards **evaluation, verification and judgement**.
-
-> ✍️ The key change is not simply faster content production. Staff increasingly need to act as critical editors of AI-assisted materials, decisions and reasoning.
-
-## Compression of teaching and research workflows
-
-AI-enabled workflows can shorten the distance between planning, drafting, review and delivery. In teaching, this may accelerate the production of explanations, examples, activities, assessment materials and feedback scaffolds. In research, it can connect ideation, analysis and dissemination more rapidly.
-
-![AI can shorten drafting and synthesis paths in both teaching and research, so deliberate review points become more important.](fig/rai-research-lifecycle-compression.svg){fig-align="center" width="78%"}
-
-> ⏸️ Faster movement between stages makes deliberate review points more important, not less. Increased throughput can remove natural pauses for pedagogic reflection, peer discussion, quality assurance and methodological reconsideration.
-
-## Where AI Is Genuinely Useful
-
-AI is most useful when it helps staff do more preparation, comparison, checking or adaptation in the time available.
-
-Common high-value gains include:
+cademics can use generative AI in several practical ways:
 
 - drafting alternative explanations, examples, activities and formative questions  
 - adapting material for different levels, formats and accessibility needs  
 - developing initial assessment, rubric and feedback scaffolds for staff review  
 - rapidly orientating within unfamiliar or interdisciplinary literature  
 - exploring methodological, analytical or technical alternatives  
-- reducing repetitive boilerplate, formatting and coding work  
+- reducing repetitive boilerplate and formatting 
 
-> ⏱️ These benefits are particularly significant where staff face limited time, high cognitive load or the need to translate complex material across audiences and disciplines.
+> ✍️ The key change is not simply faster content production. Staff increasingly need to act as critical editors of AI-assisted materials, decisions and reasoning.
 
-## AI Can Help You Explore More Options
+## AI led discovery
 
 AI can increase the *breadth* of exploration by lowering the cost of asking “what if?” questions. It can:
 
@@ -260,6 +231,17 @@ AI can increase the *breadth* of exploration by lowering the cost of asking “w
 - reframe questions and offer competing explanatory narratives  
 
 > ✅ This can improve teaching and research practice *if* exploration is paired with clear aims, explicit selection criteria and human validation.
+
+## Compression of workflows
+
+- AI can shorten the gap between **planning**, **drafting**, **review** and **delivery**.
+- In teaching, this can speed up the production of explanations, examples, activities, assessment materials and feedback scaffolds.
+- In research, it can connect ideation, literature work, analysis and dissemination more quickly.
+- The risk is that faster production can remove the natural pauses where judgement usually happens.
+
+![AI can compress the distance between planning, drafting, review and delivery across teaching and research workflows.](fig/rai-research-lifecycle-compression.svg){fig-align="center" width="78%"}
+
+> ⏸️ The practical response is to build in review points for pedagogic fit, peer discussion, quality assurance and methodological judgement.
 
 ## A simple academic risk matrix
 
@@ -340,20 +322,16 @@ AI can now produce teaching, assessment and research material quickly and invisi
 
 > 🧾 Accountability cannot be delegated to the tool that generated or shaped the material. Staff still need to justify academic judgement, assessment validity, authorship, contribution, origin and quality.
 
-## Academic integrity and authorship: the institutional framing
+## Academic integrity and authorship
 
-Institutional guidance commonly distinguishes between permitted assistance and AI use that replaces or obscures a person's own intellectual contribution. In assessed work, unpermitted or unacknowledged AI assistance may constitute an academic integrity issue. Staff use also requires appropriate oversight and transparency.
+It is important that AI use does not replace or obscures a person's own intellectual contribution. In assessed work, unpermitted or unacknowledged AI assistance may constitute an academic integrity issue. 
 
-This can include AI contribution to:
-
-- teaching materials, examples and explanations  
-- assessment briefs, marking criteria and feedback  
-- text, argumentation, code and analysis outputs  
-- images, figures or other generated artefacts  
+- Staff use requires appropriate oversight and transparency. 
+- Staff should distinguish between AI used for low-level support, such as editing or formatting, and AI used to shape ideas, arguments, feedback, assessment design or research interpretation 
 
 > 📢 Staff are responsible for setting clear expectations for students and for being transparent where AI materially shapes teaching or research outputs.  
 
-## Permission is contextual, not assumed
+## Contextual Permissions
 
 AI acceptability varies by:
 
@@ -366,7 +344,7 @@ AI acceptability varies by:
 
 > 🔐 The governance principle: **permission and boundaries should be explicit**; ambiguity creates risk.
 
-## Accountability: what must remain human
+## Accountability
 
 Academic staff must be able to:
 
@@ -378,7 +356,7 @@ Academic staff must be able to:
 
 > 👤 AI can assist, but it cannot carry responsibility for the quality of teaching, assessment or research.
 
-## Keep a Record of AI Use
+## Providence
 
 Keeping a clear record of AI use supports quality assurance, academic integrity and research integrity.
 
@@ -392,7 +370,7 @@ Keeping a clear record of AI use supports quality assurance, academic integrity 
 
 > 👤 Transparency is not an extra requirement created by AI; it should extend normal academic quality and integrity practices.
 
-## Contribution boundaries: editing vs substantive generation
+## Contribution boundaries
 
 A recurring problem is distinguishing *surface assistance* (clarity, structure or formatting) from *substantive contribution* (learning design, assessment decisions, ideas, methods, claims or interpretation).
 
@@ -402,7 +380,7 @@ A spelling check is different from asking AI to design the assessment, argument,
 
 > 👤 The risk rises when the tool starts shaping claims, methods, interpretation, or assessed work.
 
-## Integrity risks that look “benign”
+## Integrity risks 
 
 Teaching- and research-related risks often arise from apparently routine workflow choices:
 
@@ -414,7 +392,7 @@ Teaching- and research-related risks often arise from apparently routine workflo
 
 > ⚠️ Failing to review or disclose material AI contribution where required may seem minor, but can have significant educational, ethical and governance implications. 
 
-## What good disclosure achieves
+## Disclosure
 
 Disclosure is not a punishment; it enables:
 
@@ -430,15 +408,24 @@ Disclosure is not a punishment; it enables:
 
 ::: callout-task
 
-#### Task: Worked example for direct critique (AI-assisted, 5-minute discussion)
+#### Task: Before Using AI-Generated Guidance
 
-The following assessment guidance was produced using AI:
+::: panel-tabset
 
-***“This assessment will evaluate students' critical understanding of the topic. Students should use relevant evidence, demonstrate originality and communicate their ideas clearly. Work will be graded for knowledge, analysis and presentation.”***
+##### Question (5 min)
 
-1. What important pedagogic and assessment decisions are missing or obscured?  
-2. What would need to be revised by the module team before this could be used?  
-3. At what point would AI have made a substantive contribution that should be recorded or disclosed?
+You have asked an AI tool to draft assessment guidance for students. 
+
+> Before sharing it, what needs to be checked?
+
+##### Discussion (5 min)
+
+- What should the guidance say about permitted, restricted or acknowledged use of AI?
+- What checks would you make before deciding the guidance is usable?
+
+> 🧭 AI can help produce a first draft, but staff still need to make the pedagogic, assessment and transparency decisions.
+
+:::
 :::
 
 
@@ -446,25 +433,14 @@ The following assessment guidance was produced using AI:
 
 ![](fig/AI4.jpeg){fig-align="center" width="400px"}
 
-## Why AI materially changes academic data risk
+## Why AI changes data risk
 
 Most AI tools operate outside institutional infrastructure and governance controls. This can transform routine academic actions, such as reviewing student work, into potential **boundary-crossing events** that bypass established safeguards.
 
 ![Teaching, student, research, and project material can become data-risk events when shared with external AI services.](fig/rai-data-risk-flow.svg){fig-align="center" width="80%"}
 
 > 🔐 Once material leaves governed systems, controls become uncertain. 
-
-## What “data” means in AI-mediated academic work
-
-In AI-assisted workflows, “data” includes any material that encodes student, teaching or research context, not only formal datasets:
-
-- student submissions, marks, feedback, attendance and support information  
-- reasonable-adjustment, wellbeing or other sensitive student information  
-- unpublished assessments, model answers, teaching plans and internal moderation material  
-- unpublished results, figures, qualitative notes and intermediate tables  
-- grant drafts, reviewer responses and collaboration documents  
-- code containing credentials, endpoints or infrastructure details  
-
+ 
 > 📎 Much of this material is *informally handled* but *formally sensitive*.
 
 ## High-risk material: common categories
@@ -485,8 +461,11 @@ A single detail may seem harmless, but several details together can identify a p
 
 ## De-identification is not a sufficient safeguard
 
-Removing explicit identifiers does not eliminate disclosure risk.  
-Residual risk persists through rare attribute combinations, contextual cues in narrative text, small-n summaries, or linkage with external information.
+Removing explicit identifiers does not eliminate disclosure risk.  Residual risk persists through:
+
+- rare attribute combinations
+- contextual cues in narrative text, small-n summaries
+- linkage with external information
 
 > 🛠️ The practical implication is operational rather than theoretical: *“Anonymised” does not mean “safe to upload.”*
 
@@ -503,7 +482,7 @@ A useful governance analogy is to treat an external AI service as a third party 
 
 ## Where Does the Data Go?
 
-Before using an AI tool with teaching or research material, unresolved questions include:
+Before using an AI tool users should consider:
 
 1. where prompts and uploads are processed and stored  
 2. how long material is retained  
