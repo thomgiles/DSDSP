@@ -1,0 +1,137 @@
+---
+title: "Services"
+breadcrumb: false
+page-class: "landing-page services-page"
+
+format:
+  html:
+    theme:
+      - default
+      - ./uon.scss
+    toc: false
+    number-sections: false
+    page-layout: full
+    sidebar: false
+---
+
+```{=html}
+<script src="js/services-header-hero.js" defer></script>
+<script src="js/services-scroll-reveal.js" defer></script>
+```
+
+{{< include html/landing-page-styles.html >}}
+{{< include html/services-page-styles.html >}}
+
+```{=html}
+<services-header-hero></services-header-hero>
+```
+
+::: {.landing-section .landing-programme-summary .services-summary}
+::: {.landing-summary-copy}
+## Training Support Around Real Work
+
+The Digital Skills programme is more than a catalogue of taught sessions. We also support researchers, research teams and professional services colleagues who need help turning practical digital problems into teachable, reusable workflows.
+:::
+
+::: {.landing-feature-grid}
+::: {.landing-feature}
+### 🧭 Scope
+
+Clarify what people need to learn, what already exists, and which training route will be most useful.
+:::
+::: {.landing-feature}
+### 🛠️ Build
+
+Develop examples, exercises, setup notes and reusable materials around realistic research workflows.
+:::
+::: {.landing-feature}
+### 🔁 Sustain
+
+Create resources that teams can revisit, adapt and maintain beyond a single workshop.
+:::
+:::
+:::
+
+::: {.landing-section .services-offer}
+::: {.landing-section-heading}
+## What We Can Help With
+
+Services are focused on training, skills development and practical capability building. The aim is to help people become more confident and independent, not to take ownership of their research or operational work.
+:::
+
+::: {.service-card-grid}
+::: {.service-card}
+### Coding Clinics
+
+Focused one-to-one or small-group sessions where learners bring code, errors, workflow questions or reproducibility problems and work through them with an instructor.
+:::
+::: {.service-card}
+### Bespoke Workshops
+
+Adapt existing course material or develop a short session for a research group, centre, project team or professional services workflow.
+:::
+::: {.service-card}
+### Training Material Development
+
+Build slides, examples, exercises, templates, setup guides and reference notes that can be reused after a session.
+:::
+::: {.service-card}
+### Skills Consultation
+
+Help teams identify digital skills gaps, choose suitable training routes, and sequence learning around live project needs.
+:::
+::: {.service-card}
+### Workflow Translation
+
+Turn recurring project tasks into teachable patterns, including data cleaning, reporting, automation, reproducibility and responsible AI use.
+:::
+::: {.service-card}
+### Train-The-Trainer Support
+
+Help colleagues adapt materials for their own cohorts, local examples and disciplinary contexts.
+:::
+:::
+:::
+
+::: {.landing-section .landing-split .services-collaboration}
+::: {.landing-split-copy}
+## Collaboration With Teams And Projects
+
+We can work with academic teams, research groups, doctoral training programmes and professional services colleagues to shape training around real needs.
+
+This might mean co-designing a workshop, reviewing an existing session, building a short practical exercise, or helping a team decide which skills should be taught centrally and which should be embedded locally.
+:::
+::: {.landing-split-panel}
+### Good Collaboration Topics
+
+- Data and file organisation
+- Reproducible analysis workflows
+- Python, R or notebook practice
+- Automation with Microsoft 365 tools
+- Responsible AI use in teaching or research
+- Digital confidence for new researchers
+- Reusable templates and local examples
+:::
+:::
+
+::: {.landing-section .services-next-steps}
+::: {.services-route}
+## Find The Right Route
+
+Start with a course if you need a structured introduction. Use a coding clinic if you have a specific coding or workflow problem. Contact the Digital Research Service if you want to discuss a collaboration, bespoke session or training material development.
+
+::: {.service-route-actions}
+[Explore Courses](courses.qmd){.landing-button .landing-button-primary}
+[Book A Coding Clinic](clinics.qmd){.landing-button .landing-button-primary}
+[Digital Research Service](https://digitalresearch.nottingham.ac.uk/){.landing-button .landing-button-primary target="_blank"}
+:::
+:::
+
+::: {.services-contact}
+## Developed With The Digital Research Service
+
+The Digital Skills programme is developed by the University of Nottingham Digital Research Service. For wider research software, data, infrastructure or digital research enquiries, visit the Digital Research Service website.
+
+[Visit digitalresearch.nottingham.ac.uk](https://digitalresearch.nottingham.ac.uk/){.landing-button .landing-button-primary target="_blank"}
+:::
+:::
