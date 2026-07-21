@@ -203,7 +203,7 @@ The current emphasis is increasingly on optimisation because training and runnin
 
 :::
 
-# 1. Opportunities
+# Opportunities 
 
 ![](fig/AI2.jpg){fig-align="center" width="400px"}
 
