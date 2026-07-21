@@ -8,41 +8,54 @@ These exercises are designed for instructors who want more practice material, st
 
 ## Exercise 1: Opportunity or Risk Relocation?
 
-**Best fit:** [How AI Impacts Research](../episodes/ext1-how_ai_impacts_teaching_and_research.qmd)
+**Best fit:** [How AI Impacts Teaching and Research](../episodes/ext1-how_ai_impacts_teaching_and_research.qmd)
 
-Give groups three research tasks and ask them to identify:
+Give groups three teaching, research, or professional tasks and ask them to identify:
 
 - what AI might make faster
 - what checking work would still remain
 - what new risks or responsibilities would appear
+- who remains accountable for the final decision or output
 
 **Debrief question:** Did AI remove work, or mostly move it somewhere less visible?
 
+Example tasks:
+
+- Draft a seminar activity from approved notes.
+- Summarise public funder guidance for a project team.
+- Generate code scaffolding for synthetic data.
+- Reword feedback guidance without using live student work.
+
 ## Exercise 2: Prompt Rewrite Sprint
 
-**Best fit:** [How to Use AI in Research](../episodes/ext2-how_to_use_ai_in_teaching_and_research.qmd)
+**Best fit:** [How to Use AI in Teaching and Research](../episodes/ext2-how_to_use_ai_in_teaching_and_research.qmd)
 
 Take three vague prompts and ask groups to improve them by adding:
 
 - clearer task definition
+- audience, learner level, or research context
 - source boundaries
 - output format
 - one explicit uncertainty instruction
+- a validation or review step
 
 **Debrief question:** Which addition improved the prompt most?
 
 ## Exercise 3: Source Check Triage
 
-**Best fit:** [How to Use AI in Research](../episodes/ext2-how_to_use_ai_in_teaching_and_research.qmd)
+**Best fit:** [How to Use AI in Teaching and Research](../episodes/ext2-how_to_use_ai_in_teaching_and_research.qmd)
 
 Provide a short AI-generated output and ask groups to mark:
 
 - which claims can be checked quickly
 - which claims need careful source comparison
 - which claims are too vague or unsupported to keep
+- which teaching-design or research-judgement decisions still need human review
 - what prompt change might have reduced the problem
 
 **Debrief question:** Where did the burden of checking become most visible?
+
+For teaching cohorts, include checks for learning outcome alignment, academic level, accessibility and assessment integrity. For research cohorts, include checks for source fidelity, methodological assumptions, data sensitivity and disclosure.
 
 ## Exercise 4: What Should Never Become an Agent?
 
@@ -53,6 +66,8 @@ Ask groups to compare two candidate workflows and decide:
 - which task is narrow enough for a repeatable workflow
 - which task should remain manual
 - what validation checkpoint is non-negotiable
+- what information must never be entered into the tool
+- what short AI-use note would be needed afterwards
 
 **Debrief question:** What makes an automation idea look efficient but still irresponsible?
 
@@ -67,5 +82,6 @@ Ask learners to write a short AI use note for one example task, including:
 - input material
 - checks performed
 - what was kept
+- disclosure or record-keeping decision
 
 **Debrief question:** What information was easiest to forget, and why does it matter later?

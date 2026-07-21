@@ -17,9 +17,9 @@ metadata:
 
 ## 💡 Learning Outcomes
 
-- Design effective prompts for producing university teaching materials that are aligned with a defined learning outcome, learner level and teaching context.  
-- Critically assess AI-generated teaching materials for factual accuracy, pedagogical alignment, accessibility, inclusivity and appropriate academic level.  
-- Explore how role, audience and format instructions influence Copilot responses, while recognising that fluent output is not evidence of educational quality.  
+- Design effective prompts for producing teaching materials that are aligned with a defined learning outcome, learner level and teaching context.  
+- Critically assess AI-generated content for factual accuracy, pedagogical alignment, accessibility, inclusivity and appropriate academic level.  
+- Explore how role, audience and format instructions influence AI responses, while recognising that fluent output is not evidence of educational quality.  
 - Apply responsible AI practices by protecting student and institutional information, documenting substantial AI use and retaining academic oversight.  
 - Identify when repeated prompting can be converted into a documented workflow or a simple agent for teaching or research support.  
 :::
@@ -38,14 +38,11 @@ metadata:
 
 ## Structure & Agenda
 
-1. **Orientation and Prompting** – short introduction, a reusable prompt pattern and a prompt practice task.  
-2. **Generating Teaching Materials with Copilot** – create a source-grounded teaching resource for a defined context.  
-3. **Critique and Validation** – evaluate factual accuracy, pedagogical quality, accessibility and alignment.  
-4. **Prompt Framing and Role Effects** – compare how different professional perspectives change the output.  
-5. **Using Agents for Repeated Tasks** – turn a recurring teaching-material workflow into a structured agent.  
-6. **Going Further with AI** – identify responsible uses across teaching and research practice.  
-
-> 🔧 The emphasis is on practical exercises. Short teaching segments provide prompt structure, validation habits and workflow ideas to support each activity.
+1. **Orientation and Prompting** – define the teaching purpose, set source boundaries and practise a reusable prompt pattern.
+2. **Critique and Validation** – review AI-generated material for accuracy, learning alignment, accessibility, inclusion and practical fit.
+3. **Prompt Framing and Role Effects** – compare how subject, learning-design and accessibility perspectives change the review.
+4. **Using Agents for Repeatable Tasks** – turn a structured teaching-material workflow into a reusable agent with human approval built in.
+5. **Going Further with AI** – apply the same define, source, generate, critique, verify and document pattern to wider teaching and research tasks.
 
 # Orientation and Prompting
 
@@ -74,32 +71,31 @@ Academic staff remain responsible for:
 
 > 🎓 AI can reduce drafting effort. It does not replace curriculum expertise, pedagogical judgement or accountability.
 
-## A reusable prompt pattern
+## Start with the educational purpose
 
-A useful prompt for developing teaching materials normally includes:
+Before using AI, define the reason the resource is needed.
 
-- the **task**: what you want Copilot to produce  
-- the **learning outcome**: what learners should be able to do  
-- the **audience**: level, discipline, prior knowledge and relevant needs  
-- the **teaching context**: lecture, seminar, laboratory, workshop or independent study  
-- the **source boundary**: the notes, readings or approved evidence it may use  
-- the **constraints**: duration, length, tone, accessibility and exclusions  
-- the **output format**: slides, explanation, activity, case study, questions or checklist  
-- the **quality checks**: what it should flag rather than invent  
+| Question | Example |
+|---|---|
+| What should learners be able to do? | compare two explanations using evidence |
+| What prior knowledge can be assumed? | introductory disciplinary concepts |
+| Where will the resource be used? | 20-minute seminar activity |
+| What evidence may be used? | approved reading and lecture notes |
+| What must remain with the lecturer? | content selection, standards and final approval |
 
-> ❓ Useful additional instructions include: **cite the supplied source, distinguish fact from suggestion, and flag uncertainty rather than guessing**.
+> 🎯 A polished resource that is not aligned with the learning outcome is still a poor teaching resource.
 
-## A structured teaching prompt
+## Reusable prompt patterns
 
-A reusable pattern is:
+Reusing prompts can make it easier to get consistent answers, an example for generating training material could include:
 
-> **Create** [teaching resource] for [learner level and audience].  
-> The relevant learning outcome is: [learning outcome].  
-> The resource will be used in [teaching context] and should take [duration].  
-> Use only [attached or linked source material].  
-> Include [required components and format].  
-> Ensure [accessibility, inclusivity and level requirements].  
-> Flag any claim that cannot be supported from the supplied material. Do not invent references or policy requirements.
+- **Create** [teaching resource] for [learner level and audience].  
+- The relevant learning outcome is: [learning outcome].  
+- The resource will be used in [teaching context] and should take [duration].  
+- Use only [attached or linked source material].  
+- Include [required components and format].  
+- Ensure [accessibility, inclusivity and level requirements].  
+- Flag any claim that cannot be supported from the supplied material. Do not invent references or policy requirements.
 
 > 🧭 The prompt provides a specification. It does not guarantee that the resulting resource meets it.
 
@@ -115,7 +111,7 @@ A reusable pattern is:
 
 ::: panel-tabset
 
-##### Open Copilot
+##### Activity
 
 [https://m365.cloud.microsoft/chat/](https://m365.cloud.microsoft/chat/)
 
@@ -133,103 +129,8 @@ Use a topic from your own teaching, or use the example below:
 :::
 :::
 
-# Generating Teaching Materials with Copilot
-
-## Start with the educational purpose
-
-Before using AI, define the reason the resource is needed.
-
-| Question | Example |
-|---|---|
-| What should learners be able to do? | compare two explanations using evidence |
-| What prior knowledge can be assumed? | introductory disciplinary concepts |
-| Where will the resource be used? | 20-minute seminar activity |
-| What evidence may be used? | approved reading and lecture notes |
-| What must remain with the lecturer? | content selection, standards and final approval |
-
-> 🎯 A polished resource that is not aligned with the learning outcome is still a poor teaching resource.
-
-## Possible teaching materials
-
-Copilot can help draft:
-
-- explanations at different levels of complexity  
-- worked examples and annotated exemplars  
-- seminar or workshop activities  
-- case studies and discussion prompts  
-- formative questions with model reasoning  
-- glossaries, summaries and revision aids  
-- alternative representations of existing material  
-- accessibility-focused adaptations  
-
-It can also support research communication, coding scaffolds and structured planning, provided the same principles of source control, verification and accountability are applied.
-
-## Low-risk and higher-risk uses
-
-| Lower-risk drafting support | Higher-risk use requiring greater control |
-|---|---|
-| reformatting lecturer-authored notes | generating content outside the lecturer's expertise |
-| producing alternative examples for review | creating factual material without a source boundary |
-| drafting formative discussion questions | generating live summative assessment questions or answers |
-| simplifying an explanation for review | processing identifiable student work or feedback |
-| creating a checklist from approved guidance | making decisions about marks, progression or misconduct |
-
-> ⚖️ The issue is not whether AI was used, but what judgement was delegated, what information was shared and how the output was checked.
-
----
-
-::: callout-task
-
-#### Task 2: Generate a teaching resource
-
-::: panel-tabset
-
-##### Exercise (10 min)
-
-Choose a topic that you teach and define:
-
-1. one learning outcome  
-2. the learner level and expected prior knowledge  
-3. the teaching context and available time  
-4. one approved source or set of notes  
-5. the resource you want Copilot to draft  
-
-Ask Copilot to generate one of the following:
-
-- a short explanation with a worked example  
-- a seminar or workshop activity  
-- a case study with discussion questions  
-- three formative questions with model reasoning  
-- an accessible alternative version of an existing resource  
-
-Save your prompt and output. Do not use personal student data, live student submissions or confidential material.
-
-##### Plenary (5 min)
-
-Be ready to explain:
-
-- how your prompt represented the learning outcome and audience  
-- what Copilot produced well  
-- what was generic, inaccurate or pedagogically weak  
-- what you would need to change before using the material  
-
-:::
-:::
 
 # Critique and Validation
-
-## Source first, material second
-
-A safer workflow is:
-
-1. define the learning outcome and teaching context  
-2. gather the approved source material  
-3. ask Copilot to draft within that evidence boundary  
-4. compare every substantive claim with the source  
-5. evaluate the educational design separately from factual accuracy  
-6. revise, test and approve the material yourself  
-
-> 🔎 AI can help transform source material into a draft. It should not become an unexamined source of disciplinary content.
 
 ## Accuracy is necessary but not sufficient
 
@@ -244,6 +145,20 @@ A teaching resource can be factually correct and still be unsuitable because it:
 - cannot be delivered within the available time  
 
 > 🧠 Validation must examine both **what the material says** and **what learners are being asked to do**.
+
+## Source first, material second
+
+A safer workflow is:
+
+1. define the learning outcome and teaching context  
+2. gather the approved source material  
+3. ask Copilot to draft within that evidence boundary  
+4. compare every substantive claim with the source  
+5. evaluate the educational design separately from factual accuracy  
+6. revise, test and approve the material yourself  
+
+> 🔎 AI can help transform source material into a draft. It should not become an unexamined source of disciplinary content.
+
 
 ## A practical validation checklist
 
@@ -281,13 +196,13 @@ A controlled prompt chain might separate:
 
 ::: callout-task
 
-#### Task 3: Critique the generated resource
+#### Task 2: Critique the generated resource
 
 ::: panel-tabset
 
 ##### Exercise (10 min)
 
-Evaluate the resource produced in Task 2.
+Evaluate the resource produced in Task 1.
 
 Ask Copilot to critique the draft against the validation checklist, but conduct your own review as well. Identify at least:
 
@@ -341,7 +256,7 @@ Changing the intended audience can alter:
 
 ::: callout-task
 
-#### Task 4: Role effects experiment
+#### Task 3: Role effects experiment
 
 ::: panel-tabset
 
@@ -436,7 +351,7 @@ A short record after substantial AI use can include:
 
 ::: callout-task
 
-#### Task 5: Build an agent for teaching-resource development
+#### Task 4: Build an agent for teaching-resource development
 
 ::: panel-tabset
 
@@ -450,7 +365,7 @@ Create an AI agent configured to accept:
 - approved source material  
 - the required type of teaching resource  
 
-Configure the agent to:
+##### Agent Configuration
 
 - generate a structured first draft  
 - use only the supplied source material for factual content  
@@ -513,5 +428,5 @@ The same controlled workflow can support other appropriate tasks, including:
 - **University guidance on AI:** [University of Nottingham guidance](https://www.nottingham.ac.uk/studyingeffectively/studying/ai.aspx) summarises institutional expectations around generative AI and academic integrity.  
 - **AI literacy for teaching and learning staff:** [Jisc AI literacy training](https://nationalcentreforai.jiscinvolve.org/wp/2026/07/08/ai-literacy-training/) provides a wider curriculum for practical and responsible AI use in higher education.  
 - **Microsoft Copilot:** [Microsoft 365 Copilot Chat](https://m365.cloud.microsoft/chat/) can be used for the workshop exercises where institutionally available.  
-- **Local policy and support:** consult current institutional guidance before using AI with student information, assessment materials or restricted content.  
+- **UKRI policy:** follow [UKRI guidance on generative AI in application preparation and assessment](https://www.ukri.org/publications/generative-artificial-intelligence-in-application-and-assessment-policy/use-of-generative-artificial-intelligence-in-application-preparation-and-assessment/) when using AI with funding applications, assessment activity, confidential material or personal data.  
 :::

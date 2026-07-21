@@ -6,32 +6,45 @@ title: Discussion
 
 Use these prompts for pair work, breakout groups, or end-of-session reflection. They are grouped around the two lessons in the course so they can be used during delivery or as a follow-up resource afterwards.
 
-## How AI Impacts Research
+## How AI Impacts Teaching and Research
 
-Use alongside [How AI Impacts Research](../episodes/ext1-how_ai_impacts_teaching_and_research.qmd).
+Use alongside [How AI Impacts Teaching and Research](../episodes/ext1-how_ai_impacts_teaching_and_research.qmd).
 
-1. Which parts of the research lifecycle feel most changed by AI already?
-2. Where does AI save time in your work, and where does it simply move the effort into checking?
-3. What kinds of AI use would feel clearly defensible in your context?
+1. Which parts of your teaching, research, or professional workflow feel most changed by AI already?
+2. Where does AI save time in your work, and where does it simply move the effort into checking, approval, or documentation?
+3. What kinds of AI use would feel clearly defensible in your teaching or research context?
 4. What should remain a human responsibility even if AI tools become more capable?
+5. Which risks differ between teaching use, assessment-adjacent use, and research use?
 
-## How to Use AI in Research
+## Teaching-Material Use
 
-Use alongside [How to Use AI in Research](../episodes/ext2-how_to_use_ai_in_teaching_and_research.qmd).
+Use alongside [How to Use AI in Teaching and Research](../episodes/ext2-how_to_use_ai_in_teaching_and_research.qmd).
 
-1. What makes a prompt useful for research rather than generic chat?
+1. What makes a prompt useful for creating a teaching resource rather than a generic explanation?
+2. How would you tell whether an AI-generated activity is aligned with a learning outcome?
+3. What might make an AI-generated resource unsuitable even if the facts are broadly correct?
+4. Which parts of teaching design should remain with the lecturer or module team?
+5. What checks would you apply before using AI-generated material with students?
+
+## Research and Professional Practice
+
+Use alongside either lesson when discussing research workflows, project support, or professional services tasks.
+
+1. What makes a prompt useful for research or professional work rather than generic chat?
 2. Which tasks benefit most from source boundaries and explicit uncertainty prompts?
-3. What counts as enough validation before you reuse or repeat an AI-generated claim?
+3. What counts as enough validation before you reuse or repeat an AI-generated claim, summary, code scaffold, or workflow suggestion?
 4. When is it worth turning repeated prompting into a documented workflow or agent?
+5. Which uses would need funder, publisher, ethics, data-protection, or local policy checks?
 
 ## Documentation and Disclosure
 
 Use after either lesson when learners are thinking about defensibility and accountability.
 
 1. What would you need to record so you could explain your AI use a month later?
-2. Which uses belong in a methods note, which belong in an internal log, and which may need no formal disclosure?
+2. Which uses belong in a teaching-material record, which belong in a research methods note, which belong in an internal log, and which may need no formal disclosure?
 3. What would make a team-level AI workflow transparent rather than invisible?
 4. How much documentation is enough without becoming bureaucratic?
+5. Who needs to know about the AI use: learners, module teams, collaborators, supervisors, funders, publishers, or nobody beyond the project team?
 
 ## Group Debrief Format
 
@@ -40,6 +53,7 @@ After a small-group discussion, ask each group to report:
 - one use of AI they would keep
 - one use of AI they would restrict or redesign
 - one practical habit they would adopt next week
+- one decision they would not delegate to AI
 
 ## End-of-Course Reflection
 

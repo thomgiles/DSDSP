@@ -4,7 +4,7 @@ title: Instructor Notes
 
 ## About This Course
 
-Responsible Use of Generative AI is a short course about judgement, not hype. The teaching goal is to help learners understand how AI changes research work and to give them practical habits for using AI more selectively, with clearer boundaries, stronger validation, and better records.
+Responsible Use of Generative AI is a short course about judgement, not hype. The teaching goal is to help learners understand how AI changes both teaching and research work, and to give them practical habits for using AI more selectively, with clearer boundaries, stronger validation, and better records.
 
 The course works best when learners leave with:
 
@@ -12,15 +12,16 @@ The course works best when learners leave with:
 - better prompting habits
 - stronger source-checking instincts
 - a lightweight approach to documentation and disclosure
-- more confidence saying "this task should stay manual"
+- more confidence saying "this task should stay manual" or "this task needs an approved tool"
 
 ## Recommended Teaching Approach
 
 - Keep the tone practical and calm.
-- Treat AI as a research assistant that needs supervision, not as an authority.
-- Use concrete examples rather than abstract claims about the future of AI.
+- Treat AI as a drafting, critique, and workflow assistant that needs supervision, not as an authority.
+- Use concrete teaching and research examples rather than abstract claims about the future of AI.
 - Prioritise critique and validation over tool enthusiasm.
 - Keep bringing the discussion back to evidence, accountability, and defensibility.
+- Separate teaching-design decisions, research judgements, assessment decisions, and administrative shortcuts. The risks are different.
 
 ## Delivery Pattern
 
@@ -37,21 +38,37 @@ Learners usually understand the material better after they have had to defend a 
 
 ## Session-Level Emphasis
 
-### How AI Impacts Research
+### How AI Impacts Teaching and Research
 
-Use [How AI Impacts Research](../episodes/ext1-how_ai_impacts_teaching_and_research.qmd) to establish why AI changes research work and why opportunity and risk now travel together. This lesson should reduce simplistic positions like "AI is obviously good" or "AI is obviously cheating" and replace them with more useful judgement.
+Use [How AI Impacts Teaching and Research](../episodes/ext1-how_ai_impacts_teaching_and_research.qmd) to establish why AI changes academic work and why opportunity and risk now travel together. Teaching examples should cover resource drafting, activity design, feedback scaffolds and assessment integrity. Research examples should cover literature work, coding support, data interpretation, authorship, confidentiality and disclosure. This lesson should reduce simplistic positions like "AI is obviously good" or "AI is obviously cheating" and replace them with more useful judgement.
 
-### How to Use AI in Research
+### How to Use AI in Teaching and Research
 
-Use [How to Use AI in Research](../episodes/ext2-how_to_use_ai_in_teaching_and_research.qmd) to move from principle to practice. Focus on prompt design, source boundaries, validation, documentation, and the question of when a repeated task deserves a workflow or agent.
+Use [How to Use AI in Teaching and Research](../episodes/ext2-how_to_use_ai_in_teaching_and_research.qmd) to move from principle to practice. Focus on prompt design, source boundaries, validation, documentation, and the question of when a repeated teaching or research task deserves a workflow or agent.
+
+For teaching-focused cohorts, steer examples towards:
+
+- designing seminar activities from approved source material
+- generating alternative explanations for a known learner level
+- checking whether a resource aligns with a learning outcome
+- identifying where AI use would compromise assessment integrity
+
+For research-focused cohorts, steer examples towards:
+
+- comparing public guidance or literature notes
+- drafting project summaries from approved material
+- generating code scaffolds against non-sensitive data
+- documenting AI support for transparency and later review
 
 ## Common Sticking Points
 
 - Learners confuse confidence in output style with confidence in factual reliability.
+- Learners assume a polished teaching resource is pedagogically sound.
 - People underestimate how much checking work AI creates.
 - Tool questions get mixed up with policy questions.
 - Some learners assume disclosure rules are obvious when they are often context-dependent.
 - Others assume every repeated prompt should become an automation, even when the task is too unstable.
+- Research-focused learners may underplay assessment and student-data risks; teaching-focused learners may underplay authorship, confidentiality and publication risks.
 
 ## Facilitation Moves That Usually Help
 
@@ -60,6 +77,8 @@ Use [How to Use AI in Research](../episodes/ext2-how_to_use_ai_in_teaching_and_r
 - Turn open discussions into ranking tasks when the room is too abstract.
 - When groups describe a benefit, ask what responsibility or risk moved elsewhere.
 - When groups describe a risk, ask what safeguard or habit would reduce it.
+- Ask teaching groups to connect each output back to a learning outcome.
+- Ask research groups to connect each output back to a source, method, or accountability requirement.
 
 ## Managing Policy and Tool Questions
 
@@ -72,6 +91,8 @@ Learners will often ask for definitive answers about local policy, approved tool
 
 This matters especially for:
 
+- teaching resources and assessment materials
+- identifiable or sensitive student information
 - sensitive or unpublished material
 - authorship and disclosure
 - external sharing and cloud tools
@@ -80,6 +101,7 @@ This matters especially for:
 ## Room Setup and Activity Design
 
 - Mixed-discipline groups usually work well because assumptions differ.
+- Mixed-role groups usually work well too: teaching staff, researchers, professional services colleagues and doctoral researchers often spot different risks.
 - If confidence levels vary a lot, start with individual reflection before plenary.
 - If tool access is inconsistent, frame activities so they still work as paper-based prompt or workflow design tasks.
 - Encourage each group to capture one prompt improvement and one validation habit they want to keep.
@@ -88,8 +110,9 @@ This matters especially for:
 
 You are looking for learners who can:
 
-- explain where AI is useful and where it should be constrained
+- explain where AI is useful in teaching and research, and where it should be constrained
 - write prompts with clearer task definition and source boundaries
 - identify what needs verification before reuse
 - describe a lightweight way to document AI use
 - distinguish between a one-off prompt, a reusable workflow, and a risky automation idea
+- articulate which decisions remain with a lecturer, researcher, supervisor, assessor, or responsible team

@@ -4,7 +4,7 @@ title: Setup
 
 ## Before You Attend
 
-Responsible Use of Generative AI is a short course focused on judgement, prompting, validation, and documentation. You do not need coding experience, and you do not need to arrive as an AI expert. It is more helpful to bring one realistic research example and a willingness to critique outputs carefully.
+Responsible Use of Generative AI is a short course focused on judgement, prompting, validation, and documentation in teaching and research contexts. You do not need coding experience, and you do not need to arrive as an AI expert. It is more helpful to bring one realistic, low-risk example and a willingness to critique outputs carefully.
 
 ## Core Access Checklist
 
@@ -22,7 +22,7 @@ Bring:
 
 - a laptop or tablet with a modern web browser
 - a charger
-- access to one low-risk document, policy page, or research task you can use as a live example
+- access to one low-risk document, teaching resource, policy page, research task, or workflow idea you can use as a live example
 
 Optional but useful:
 
@@ -33,18 +33,33 @@ Optional but useful:
 
 The course works best when you have something real in mind. Before the session, try to identify:
 
-- one research task where AI might save time
-- one task where AI might create risk or extra checking work
+- one teaching or research task where AI might save time
+- one task where AI might create risk, extra checking work, or accountability problems
 - one prompt you have used before, or wish you could use better
 - one public or non-sensitive source you could use for validation practice
 
 You do not need to bring live project files. A short written description is often enough.
+
+Good teaching examples include:
+
+- turning approved notes into a short activity
+- drafting alternative explanations for a known learner level
+- checking whether a resource aligns with a learning outcome
+- improving accessibility or clarity of a non-sensitive handout
+
+Good research examples include:
+
+- summarising public guidance
+- structuring a project plan
+- comparing public sources
+- drafting code scaffolds against synthetic or example data
 
 ## Work Safely During the Course
 
 Use realistic examples without exposing restricted material.
 
 - Do not paste confidential, identifiable, unpublished, or contract-restricted material into unapproved AI tools.
+- Do not paste student names, student work, marks, feedback records, live assessment material, or restricted exam content into unapproved AI tools.
 - Prefer public documents, policy pages, synthetic examples, or summarised notes.
 - If you are unsure whether a document is safe to use, switch to a lower-risk example and ask the instructor.
 - Treat classroom prompts as prototypes for your own practice, not as shortcuts around governance rules.
@@ -57,8 +72,11 @@ Keep one folder for all course outputs so you can reuse them later.
 responsible-use-of-generative-ai/
   notes/
   prompts/
+  teaching-examples/
+  research-examples/
   checks/
   workflow-sketches/
+  ai-use-notes/
 ```
 
 This makes it easier to keep copies of:
@@ -73,8 +91,8 @@ This makes it easier to keep copies of:
 
 | Session theme | Helpful preparation |
 |---|---|
-| [How AI Impacts Research](../episodes/ext1-how_ai_impacts_teaching_and_research.qmd) | Think of one research task where AI already feels useful and one where it feels risky |
-| [How to Use AI in Research](../episodes/ext2-how_to_use_ai_in_teaching_and_research.qmd) | Bring a low-risk prompt, policy page, reading task, or workflow you want to improve |
+| [How AI Impacts Teaching and Research](../episodes/ext1-how_ai_impacts_teaching_and_research.qmd) | Think of one teaching or research task where AI already feels useful and one where it feels risky |
+| [How to Use AI in Teaching and Research](../episodes/ext2-how_to_use_ai_in_teaching_and_research.qmd) | Bring a low-risk prompt, teaching resource, policy page, reading task, or workflow you want to improve |
 
 ## If You Do Not Have Tool Access
 
