@@ -278,6 +278,15 @@ If the class **inherits** from another class,
 we include the parent class name in brackets.
 
 ```{python}
+class Patient:
+    def __init__(self, patient_id, inflammation_values):
+        self.patient_id = patient_id
+        self.inflammation_values = inflammation_values
+
+    def mean_inflammation(self):
+        return sum(self.inflammation_values) / len(self.inflammation_values)
+
+
 class TreatedPatient(Patient):
     def __init__(self, patient_id, inflammation_values, dose_mg):
         super().__init__(patient_id, inflammation_values)
