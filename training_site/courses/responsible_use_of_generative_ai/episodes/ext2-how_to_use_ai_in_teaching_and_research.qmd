@@ -179,8 +179,6 @@ A safer workflow is:
 
 ## A worked prompt chain often helps
 
-![Prompt chain flow showing task definition, first structured answer, gap interrogation, format refinement, and verification.](fig/rai-prompt-chain-flow.svg){fig-align="center" width="78%"}
-
 A controlled prompt chain might separate:
 
 1. **Draft** – generate the initial resource from specified material.  
@@ -211,9 +209,7 @@ Ask Copilot to critique the draft against the validation checklist, but conduct 
 - one accessibility, inclusion or clarity issue  
 - one feature that is genuinely useful  
 
-Revise the original prompt or resource in response.
-
-> 🔍 Copilot's self-critique is another AI output. Treat it as a prompt for inspection, not as evidence that the resource is sound.
+> 🔍 Note: Copilot's self-critique is another AI output. Treat it as a prompt for inspection, not as evidence that the resource is sound.
 
 ##### Discussion (5 min)
 
@@ -412,9 +408,6 @@ The same controlled workflow can support other appropriate tasks, including:
 
 - Begin with the learning outcome, audience and teaching context rather than asking AI for a generic resource.  
 - Give the model an explicit source boundary and instruct it to flag uncertainty rather than invent content.  
-- Evaluate pedagogical alignment, academic level, accessibility and inclusion as well as factual accuracy.  
-- Role prompts can widen a review, but they do not provide professional expertise or authority.  
-- Do not enter identifiable student information, live submissions, restricted assessment material or confidential content into unapproved tools.  
 - Repeatable workflows and agents are most useful when the task is narrow, low-risk, source-bounded and easy to validate.  
 - Academic staff remain responsible for the final content, its use and any consequences for learners.  
 :::

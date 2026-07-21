@@ -512,11 +512,11 @@ If not, it should not be shared with an external AI service. Check whether your 
 
 ## 🔦 Key points
 
-- AI can support teaching through planning, explanation, accessibility, formative activity design and feedback scaffolds, and can support research through literature search, coding, analysis and translation.
+- AI can support teaching and research planning, explanation, accessibility, formative activity design, analysis and translation.
 - Key opportunities include efficiency, broader exploration, clearer communication and reduced repetitive workload.
-- Main risks include factual errors, bias, invalid assessment or feedback, academic integrity concerns, copyright or IP issues, data breaches and loss of critical skills.
+- Main risks include factual errors, bias, academic integrity concerns, copyright or IP issues, data breaches and loss of critical skills.
 - Ethical use requires transparency, accountability, fairness, privacy and meaningful human oversight.
-- Use secure, approved tools; do not upload sensitive student or research material without authorisation; follow institutional, disciplinary, funder and publisher policies.
+- Use secure, approved tools; do not upload sensitive material without authorisation; follow institutional and disciplinary policies.
 :::
 
 ::: callout-hints
