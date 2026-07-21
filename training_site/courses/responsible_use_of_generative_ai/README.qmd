@@ -4,7 +4,7 @@ title: "Course README"
 
 # Responsible Use of Generative AI
 
-Responsible Use of Generative AI is a short course for researchers and research support staff who want to use AI more selectively, transparently, and defensibly.
+Responsible Use of Generative AI is a short course for teaching staff, researchers, doctoral researchers and professional services colleagues who want to use AI more selectively, transparently, and defensibly.
 
 ## What This Course Contains
 
@@ -19,7 +19,7 @@ This course section of the site contains:
 
 The course supports participants to:
 
-- understand how AI changes research work and judgement
+- understand how AI changes teaching, research and professional judgement
 - design stronger prompts with clearer boundaries
 - validate AI outputs against real sources
 - document AI-assisted work in a lightweight but useful way
@@ -27,7 +27,7 @@ The course supports participants to:
 
 ## Course Position in the Programme
 
-This course is designed as a focused 2-hour offering within the UoN Digital Skills programme. It can be delivered on its own or used alongside broader digital research training where participants need clearer guidance on validation, documentation, and responsible AI use.
+This course is designed as a focused 90-minute offering within the UoN Digital Skills programme, with scope to extend to 2 hours when more discussion is useful. It can be delivered on its own or used alongside broader digital skills training where participants need clearer guidance on validation, documentation, and responsible AI use.
 
 ## Contributing
 

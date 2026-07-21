@@ -9,7 +9,7 @@ metadata:
 ::: {.content-visible when-format="revealjs"}
 
 <!-- Hidden by default -->
-![](fig/RUAI_qr.png)
+![](fig/qr_responsible_ai_teaching_research.png)
 
 :::
 
@@ -17,8 +17,8 @@ metadata:
 
 ## 💡 Learning Outcomes
 
-- Recognise how generative AI can be applied in university teaching and research, including curriculum design, learning materials, assessment, literature search, data analysis and coding assistance.
-- Identify opportunities and risks associated with using AI in academic practice, such as efficiency, accessibility, bias, hallucinations, copyright, academic integrity and reproducibility.
+- Recognise how generative AI can be applied in university teaching and research.
+- Identify opportunities and risks associated with using AI in academic practice.
 - Apply the principles of transparency, accountability, fairness, privacy and human oversight when integrating AI into teaching or research workflows.
 - Interpret institutional guidance on staff and student use of AI, academic integrity, authorship, disclosure and data security.
 - Incorporate research data governance considerations when selecting and using AI tools.
@@ -43,7 +43,7 @@ metadata:
 
 > 🔧 Four activities provide opportunities for reflection, critique and discussion.
 
-# Note
+# Disclaimer
 
 ::: callout-note
 
@@ -67,7 +67,7 @@ How many of you have already used generative AI in your teaching, assessment or 
 
 ## The Birth of AI (1956)
 
-- Artificial Intelligence (AI) was named as a field at Dartmouth in 1956. 
+- Artificial Intelligence (AI) was first named as a field of research at Dartmouth in 1956. 
 - Initial ideas were around whether machines could replicate human thought. 
 
 > 🤔 Alan Turing argued that intelligence might be understood through behaviour rather than internal processes, leading to the famous question: *Can machines think?*

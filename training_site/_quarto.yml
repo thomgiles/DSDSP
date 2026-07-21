@@ -9,6 +9,10 @@ project:
     - js/about-scroll-reveal.js
     - js/courses-header-hero.js
     - js/courses-finder.js
+    - js/services-header-hero.js
+    - js/services-scroll-reveal.js
+    - js/coding-clinics-header-hero.js
+    - js/coding-clinics-scroll-reveal.js
     - js/rjs-footer.js
     - html/reveal-header.html
   pre-render:
@@ -22,7 +26,9 @@ project:
     - "!renv/**"
     - index.qmd
     - about.qmd
+    - services.qmd
     - courses.qmd
+    - clinics.qmd
     - courses/**/*.qmd
 
 execute:
@@ -81,6 +87,10 @@ website:
         href: about.qmd
       - text: "Courses"
         href: courses.qmd
+      - text: "Services"
+        href: services.qmd
+      - text: "Clinics"
+        href: clinics.qmd
 
   sidebar:
     - id: "essential-digital-skills"

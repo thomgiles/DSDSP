@@ -1,0 +1,160 @@
+---
+title: "Personalised Engagement Clinics"
+breadcrumb: false
+page-class: "landing-page coding-clinics-page"
+
+format:
+  html:
+    theme:
+      - default
+      - ./uon.scss
+    toc: false
+    number-sections: false
+    page-layout: full
+    sidebar: false
+---
+
+```{=html}
+<script src="js/coding-clinics-header-hero.js" defer></script>
+<script src="js/coding-clinics-scroll-reveal.js" defer></script>
+```
+
+{{< include html/landing-page-styles.html >}}
+{{< include html/coding-clinics-page-styles.html >}}
+
+```{=html}
+<coding-clinics-header-hero></coding-clinics-header-hero>
+```
+
+::: {.landing-section .landing-programme-summary .coding-clinic-summary}
+::: {.landing-summary-copy}
+## Practical Support For Real Code
+
+Coding clinics are focused support sessions where learners bring a real coding problem, workflow, dataset or analysis question and work through it with an experienced instructor.
+
+The aim is to fix the immediate issue while building a reusable way to diagnose similar problems later.
+:::
+
+::: {.landing-feature-grid}
+::: {.landing-feature}
+### 🔍 Diagnose
+
+Identify what is failing, where the uncertainty sits, and which assumptions need checking before changing the code.
+:::
+::: {.landing-feature}
+### 🧠 Explain
+
+Turn the fix into a teachable moment so the learner understands the pattern, not just the answer.
+:::
+::: {.landing-feature}
+### 🛠️ Practise
+
+Leave with a cleaner next step, a small improvement to try, or a reusable debugging strategy.
+:::
+:::
+:::
+
+::: {.landing-section .coding-clinic-model}
+::: {.coding-clinic-model-panel}
+## What A Coding Clinic Is
+
+A coding clinic is an engaged one-to-one or small-group teaching format. It sits between a workshop, a helpdesk and a supervision meeting.
+
+Clinics work well when learners need help applying skills to their own work: debugging scripts, interpreting errors, organising files, choosing an analysis approach, refactoring code, or making a workflow more reproducible.
+:::
+
+::: {.clinic-flow}
+::: {.clinic-flow-step}
+### 1. Bring A Real Problem
+
+The learner brings code, an error message, a workflow question, or a small reproducible example.
+:::
+
+::: {.clinic-flow-step}
+### 2. Work Through The Reasoning
+
+The instructor models how to inspect the problem, narrow the cause, test assumptions and choose a sensible next action.
+:::
+
+::: {.clinic-flow-step}
+### 3. Leave With A Next Step
+
+The session ends with a concrete action: a corrected pattern, a safer workflow, a practice task, or a route into deeper training.
+:::
+:::
+:::
+
+::: {.landing-section .landing-split .coding-clinic-why}
+::: {.landing-split-copy}
+## Why One-To-One Teaching Helps
+
+Coding skills often improve fastest when teaching is close to the learner's own work. A clinic lets the instructor respond to the exact point where the learner is stuck, including uncertainty that is hard to expose in a large workshop.
+
+This format also makes tacit practice visible: how experienced coders read errors, test small pieces, search documentation, simplify examples, and decide when a problem is conceptual rather than technical.
+:::
+::: {.landing-split-panel}
+### Skills Built In Clinic Work
+
+- Debugging and error interpretation
+- Reproducible examples
+- Code organisation
+- Package and environment issues
+- Data cleaning decisions
+- Workflow design
+- Confidence asking better questions
+:::
+:::
+
+::: {.landing-section .coding-clinic-principles}
+::: {.landing-section-heading}
+## What Makes A Good Clinic
+
+The best clinics are structured but responsive. They meet the learner where they are, while still developing habits that transfer beyond the current problem.
+:::
+
+::: {.landing-feature-grid}
+::: {.landing-feature}
+### 🎯 Focused Scope
+
+Each session should target one or two tractable problems rather than trying to redesign an entire project.
+:::
+::: {.landing-feature}
+### 🧪 Live Reasoning
+
+The instructor explains the diagnostic process: what they checked, why they checked it, and what each result means.
+:::
+::: {.landing-feature}
+### 📋 Clear Follow-Up
+
+Learners should leave with notes, links, recommended modules, or a short practice task that consolidates the learning.
+:::
+:::
+:::
+
+::: {.landing-section .coding-clinic-form}
+::: {.landing-section-heading}
+## Register Interest
+
+Use this form to tell us what kind of coding support would be useful and what you would like to bring to a clinic.
+:::
+
+```{=html}
+<iframe
+  data-deferred-src="https://forms.office.com/e/rYENuEG4en"
+  width="100%"
+  height="720"
+  loading="lazy"
+  frameborder="0"
+  marginwidth="0"
+  marginheight="0"
+  style="border: none; max-width: 100%; max-height: 100vh;"
+  allowfullscreen
+  webkitallowfullscreen
+  mozallowfullscreen
+  msallowfullscreen
+  title="Personalised engagement clinics registration form">
+</iframe>
+```
+
+[Open the form in a new tab](https://forms.office.com/e/rYENuEG4en){.landing-button .landing-button-primary target="_blank"}
+:::
