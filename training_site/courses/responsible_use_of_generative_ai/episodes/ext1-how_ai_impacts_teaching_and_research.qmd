@@ -203,13 +203,13 @@ The current emphasis is increasingly on optimisation because training and runnin
 
 :::
 
-# 1. Opportunities
+# Opportunities 
 
 ![](fig/AI2.jpg){fig-align="center" width="400px"}
 
 ## AI in Academic Workflows
 
-cademics can use generative AI in several practical ways:
+Academics can use generative AI in several practical ways:
 
 - drafting alternative explanations, examples, activities and formative questions  
 - adapting material for different levels, formats and accessibility needs  
@@ -218,11 +218,13 @@ cademics can use generative AI in several practical ways:
 - exploring methodological, analytical or technical alternatives  
 - reducing repetitive boilerplate and formatting 
 
-> ✍️ The key change is not simply faster content production. Staff increasingly need to act as critical editors of AI-assisted materials, decisions and reasoning.
+> ✍️ The key change is not simply faster content production. In the future, it is likley that staff will need to act as critical editors of AI-assisted materials, decisions and reasoning.
 
 ## AI led discovery
 
-AI can increase the *breadth* of exploration by lowering the cost of asking “what if?” questions. It can:
+AI can increase the *breadth* of exploration by lowering the cost of asking “what if?” questions.
+
+It can:
 
 - suggest alternative explanations, examples and learning activities  
 - identify possible misconceptions or accessibility barriers  
@@ -230,31 +232,15 @@ AI can increase the *breadth* of exploration by lowering the cost of asking “w
 - recommend alternative research methods or sensitivity analyses  
 - reframe questions and offer competing explanatory narratives  
 
-> ✅ This can improve teaching and research practice *if* exploration is paired with clear aims, explicit selection criteria and human validation.
+> ✅ This can improve teaching and research practice, but only *if* exploration is paired with clear aims and human validation.
 
 ## Compression of workflows
 
 - AI can shorten the gap between **planning**, **drafting**, **review** and **delivery**.
-- In teaching, this can speed up the production of explanations, examples, activities, assessment materials and feedback scaffolds.
-- In research, it can connect ideation, literature work, analysis and dissemination more quickly.
-- The risk is that faster production can remove the natural pauses where judgement usually happens.
 
 ![AI can compress the distance between planning, drafting, review and delivery across teaching and research workflows.](fig/rai-research-lifecycle-compression.svg){fig-align="center" width="78%"}
 
 > ⏸️ The practical response is to build in review points for pedagogic fit, peer discussion, quality assurance and methodological judgement.
-
-## A simple academic risk matrix
-
-| Scenario | Typical risk level | Why |
-|---|---|---|
-| summarising a public guidance page for personal notes | low | public source and easy to verify |
-| generating draft examples or quiz questions from public material | low to medium | factual, pedagogic and accessibility errors remain possible |
-| using an approved tool to develop feedback scaffolds from de-identified work | medium | requires careful checking against criteria and the student's submission |
-| uploading identifiable student work or marks to a public AI tool | high | data protection, confidentiality and fairness risks |
-| asking AI to make grading, progression or misconduct decisions | high | academic judgement and accountability cannot be delegated |
-| analysing identifiable participant material in a public tool | high | ethics, governance and disclosure failure |
-
-> ⚖️ The point is not to ban AI in difficult areas. It is to match the tool, safeguards and level of human review to the stakes.
 
 ## Accessibility and inclusion
 
@@ -267,6 +253,19 @@ When used carefully, AI can also support:
 - structured drafting for students, educators and early-career researchers  
 
 > 🌍 These gains can support more inclusive teaching and communication, but generated adaptations still require disciplinary and accessibility review.
+
+## AI can introduce risk
+
+| Scenario | Typical risk level | Why |
+|---|---|---|
+| summarising a public guidance page for personal notes | low | public source and easy to verify |
+| generating draft examples or quiz questions from public material | low to medium | factual, pedagogic and accessibility errors remain possible |
+| using an approved tool to develop feedback scaffolds from de-identified work | medium | requires careful checking against criteria and the student's submission |
+| uploading identifiable student work or marks to a public AI tool | high | data protection, confidentiality and fairness risks |
+| asking AI to make grading, progression or misconduct decisions | high | academic judgement and accountability cannot be delegated |
+| analysing identifiable participant material in a public tool | high | ethics, governance and disclosure failure |
+
+> ⚖️ The point is not to ban AI in difficult areas. It is to match the tool, safeguards and level of human review to the stakes.
 
 ---
 
@@ -289,7 +288,7 @@ For each area, state how AI could reduce staff effort. Can you also identify whe
 
 ![](fig/AI3.jpg){fig-align="center" width="400px"}
 
-## The condition for opportunity: retained ownership
+## Retained ownership
 
 AI-enabled capacity is valuable only when staff retain ownership of:
 
@@ -301,7 +300,7 @@ AI-enabled capacity is valuable only when staff retain ownership of:
 
 > 🚨 Where ownership is ceded, opportunities can rapidly become risks. 
 
-## Capacity gain requires explicit control mechanisms
+## Safeguarding mechanisms
 
 Effective use of AI in academic practice therefore requires intentionally designed safeguards:
 
@@ -329,19 +328,18 @@ It is important that AI use does not replace or obscures a person's own intellec
 - Staff use requires appropriate oversight and transparency. 
 - Staff should distinguish between AI used for low-level support, such as editing or formatting, and AI used to shape ideas, arguments, feedback, assessment design or research interpretation 
 
-> 📢 Staff are responsible for setting clear expectations for students and for being transparent where AI materially shapes teaching or research outputs.  
+> 📢 Staff are also responsible for setting clear expectations for students and for being transparent where AI materially shapes teaching or research outputs.  
 
 ## Contextual Permissions
 
-AI acceptability varies by:
+Context Matters, Lots of factors can affect AI acceptability:
 
-- institutional guidance and approved tools  
-- module and assessment instructions  
+- institutional guidance  
+- funder and publisher expectations   
 - disciplinary and professional norms  
 - data protection, accessibility and equality requirements  
 - collaboration agreements  
-- funder and publisher expectations  
-
+ 
 > 🔐 The governance principle: **permission and boundaries should be explicit**; ambiguity creates risk.
 
 ## Accountability
@@ -514,11 +512,11 @@ If not, it should not be shared with an external AI service. Check whether your 
 
 ## 🔦 Key points
 
-- AI can support teaching through planning, explanation, accessibility, formative activity design and feedback scaffolds, and can support research through literature search, coding, analysis and translation.
+- AI can support teaching and research planning, explanation, accessibility, formative activity design, analysis and translation.
 - Key opportunities include efficiency, broader exploration, clearer communication and reduced repetitive workload.
-- Main risks include factual errors, bias, invalid assessment or feedback, academic integrity concerns, copyright or IP issues, data breaches and loss of critical skills.
+- Main risks include factual errors, bias, academic integrity concerns, copyright or IP issues, data breaches and loss of critical skills.
 - Ethical use requires transparency, accountability, fairness, privacy and meaningful human oversight.
-- Use secure, approved tools; do not upload sensitive student or research material without authorisation; follow institutional, disciplinary, funder and publisher policies.
+- Use secure, approved tools; do not upload sensitive material without authorisation; follow institutional and disciplinary policies.
 :::
 
 ::: callout-hints
