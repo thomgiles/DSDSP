@@ -1,14 +1,7 @@
 ---
 title: "Responsible Use of Generative AI"
-subtitle: "A 90-minute course for selective, defensible AI use in teaching and research"
+subtitle: "An introduction to responsible AI use, with an applied research workshop"
 page-class: course-page
-course-area: "Responsible AI"
-course-level: "Foundation"
-course-status: "Core"
-course-badge: "Extension"
-course-icon: "🤖"
-course-summary: "Prompting, checking, critique, and responsible AI decisions for teaching and research work."
-course-tags: ["Responsible AI", "Prompting", "Validation", "Source checking", "AI governance", "Teaching workflows", "Research workflows"]
 ---
 
 ```{=html}
@@ -19,34 +12,35 @@ course-tags: ["Responsible AI", "Prompting", "Validation", "Source checking", "A
 ### Course At A Glance
 
 - **Level:** Foundation to intermediate
-- **Duration:** 90 minutes, or up to 2 hours with extended discussion
-- **Best for:** academics, teaching staff, researchers, doctoral researchers, analysts, and professional services colleagues who need clearer judgement about AI use
-- **Main themes:** teaching and research change, prompt design, validation, documentation, governance, and repeatable workflows
-- **Format:** Two linked 45-minute sessions or one 90-minute workshop
-- **Outcome:** More confident, source-aware, and defensible use of generative AI in teaching and research settings
+- **Duration:** 2-hour introduction; 3-hour applied workshop, plus breaks
+- **Best for:** Researchers, research staff, doctoral researchers, and professional services colleagues who need clearer judgement about AI use
+- **Main themes:** research change, prompting, literature reviews, analysis, grant applications, automation, and research integrity
+- **Format:** Two linked introductory sessions followed by an applied workshop; sessions can be delivered separately
+- **Outcome:** More confident, source-aware, and defensible use of generative AI in research settings
 :::
 
 ::: {.two-col-grid}
 ::: {.item}
 ## Why This Course Matters
 
-Generative AI can reduce friction in teaching and research work, but it also creates new checking work, new governance questions, and new opportunities to over-trust persuasive output. Many people are already experimenting with AI to draft teaching resources, summarise information, plan activities, support writing, generate examples or structure research tasks, yet still feel unsure about where it helps, where it creates risk, and what responsible use actually looks like in practice.
+Generative AI can reduce friction in research work, but it also creates new checking work, new governance questions, and new opportunities to over-trust persuasive output. Many people are already experimenting with AI, yet still feel unsure about where it helps, where it creates risk, and what responsible use actually looks like in practice.
 
-This course is designed to close that gap. It helps learners understand how AI is changing teaching and research activity, and how to use AI tools more selectively, with clearer boundaries, stronger validation, and better records.
+This course is designed to close that gap. It helps learners understand how AI is changing research activity and how to use AI tools more selectively, with clearer boundaries, stronger validation, and better records.
 :::
 
 ::: {.item}
 ## What You Will Actually Do
 
-This is not a hype session and it is not a tool demo dressed up as policy. Learners work through prompt design, source checking, critique, documentation, and workflow decisions using realistic teaching and research examples.
+This is not a hype session and it is not a tool demo dressed up as policy. Learners work through prompt design, source checking, critique, documentation, and workflow decisions using realistic research examples.
 
 Across the course you will:
 
-- examine where AI genuinely changes teaching and research work
+- examine where AI genuinely changes research work
 - identify opportunities without ignoring risk relocation
 - practise stronger prompting with source boundaries and uncertainty cues
-- validate AI outputs against real documents, teaching purposes, and disciplinary expectations
+- validate AI outputs against real documents
 - decide when AI use should stay ad hoc and when it can become a workflow or agent
+- apply these habits to literature reviews, research design, qualitative or quantitative analysis, and grant preparation
 :::
 :::
 
@@ -55,9 +49,9 @@ Across the course you will:
 This course is especially useful if you:
 
 - already use AI occasionally but want clearer rules for responsible use
-- need to explain or defend AI-assisted work in a teaching, research, or professional setting
+- need to explain or defend AI-assisted work in a research setting
 - want better habits for validation, documentation, and disclosure
-- support learners, researchers, or colleagues and need a stronger framework for advising on AI practice
+- support researchers and need a stronger framework for advising on AI practice
 
 No programming background is required.
 
@@ -67,7 +61,7 @@ No programming background is required.
 ::: {.item}
 ### Judging Where AI Helps
 
-Separate high-value support tasks from situations where AI mainly increases risk, checking burden, or accountability problems.
+Separate high-value support tasks from situations where AI mainly increases risk or checking burden.
 :::
 
 ::: {.item}
@@ -79,7 +73,7 @@ Use clearer task framing, source boundaries, output formats, and follow-up promp
 ::: {.item}
 ### Checking Outputs Properly
 
-Verify claims, quotations, summaries, teaching resources, and workflow outputs against actual sources and expert expectations.
+Verify claims, quotations, summaries, and workflow outputs against actual sources and research expectations.
 :::
 
 ::: {.item}
@@ -93,27 +87,29 @@ Keep lightweight notes, validation steps, and disclosure decisions that make AI 
 
 | Lesson | What you will tackle | Why it matters |
 |---|---|---|
-| [How AI Impacts Teaching and Research](episodes/ext1-how_ai_impacts_teaching_and_research.qmd) | Opportunities, risks, governance, data security, assessment integrity, authorship, and how AI changes academic work | Builds judgement before tool use becomes routine |
-| [How to Use AI in Teaching and Research](episodes/ext2-how_to_use_ai_in_teaching_and_research.qmd) | Prompt design, validation, source-grounded teaching resources, workflow design, and practical AI exercises | Turns broad principles into concrete, defensible practice |
+| [Introduction to AI for Research](episodes/01-Introduction_to_AI_for_research.qmd) | Opportunities, risks, governance, data security, and how AI changes research work | Builds judgement before tool use becomes routine |
+| [Prompting for Research](episodes/02-Prompting_for_research.qmd) | Prompt design, validation, source-grounded workflows, and practical AI exercises | Turns broad principles into concrete, defensible practice |
+| [Applied AI for Research](episodes/03-Applied_AI_for_research.qmd) | Choosing tools, literature reviews, research design, analysis, agents, grants, and integrity | Builds checked, reusable workflows across the research lifecycle |
 
 ## Suggested Delivery
 
-This course can run as:
+The first two lessons can run as:
 
-- one 90-minute session with a short break between the two lessons
-- two linked 45-minute sessions delivered separately
-- up to 2 hours if you want more time for extended discussion
+- one 2-hour session with a short break between the two lessons
+- two linked 1-hour sessions delivered separately
 
 A simple structure is:
 
-1. **Part 1:** [How AI Impacts Teaching and Research](episodes/ext1-how_ai_impacts_teaching_and_research.qmd)
-2. **Part 2:** [How to Use AI in Teaching and Research](episodes/ext2-how_to_use_ai_in_teaching_and_research.qmd)
+1. **Hour 1:** [Introduction to AI for Research](episodes/01-Introduction_to_AI_for_research.qmd)
+2. **Hour 2:** [Prompting for Research](episodes/02-Prompting_for_research.qmd)
+
+Follow these with [Applied AI for Research](episodes/03-Applied_AI_for_research.qmd), a three-hour workshop with additional breaks. It includes eight activities and a choice of qualitative or quantitative analysis practice. The applied sections can also be delivered as shorter linked sessions; completing every activity and both analysis routes needs additional practice time.
 
 ## What Learners Typically Leave With
 
 By the end of the course, learners should be more able to:
 
-- explain where AI changes teaching and research work and where human judgement must remain central
+- explain where AI changes research work and where human judgement must remain central
 - write stronger prompts with clearer boundaries and verification steps
 - spot when AI output needs source checking, clarification, or rejection
 - document AI-assisted work in a way that supports transparency later
@@ -124,8 +120,8 @@ By the end of the course, learners should be more able to:
 It helps to arrive with:
 
 - access to a browser and, if available, an approved institutional AI tool
-- one low-risk teaching or research task you want to improve
-- one public or non-sensitive document, teaching resource, policy page, or reading you can use for critique or comparison
+- one low-risk research task or prompt you want to improve
+- one public or non-sensitive document you can use for critique or comparison
 - one question about AI use, governance, or disclosure that feels unresolved in your context
 
 Detailed preparation guidance is available in [Setup](learners/setup.qmd).
