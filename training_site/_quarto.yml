@@ -167,8 +167,9 @@ website:
           href: courses/responsible_use_of_generative_ai/index.qmd
         - section: "Lessons"
           contents:
-            - courses/responsible_use_of_generative_ai/episodes/ext1-how_ai_impacts_teaching_and_research.qmd
-            - courses/responsible_use_of_generative_ai/episodes/ext2-how_to_use_ai_in_teaching_and_research.qmd
+            - courses/responsible_use_of_generative_ai/episodes/01-Introduction_to_AI_for_research.qmd
+            - courses/responsible_use_of_generative_ai/episodes/02-Prompting_for_research.qmd
+            - courses/responsible_use_of_generative_ai/episodes/03-Applied_AI_for_research.qmd
         - section: "Learners"
           contents:
             - courses/responsible_use_of_generative_ai/learners/setup.qmd

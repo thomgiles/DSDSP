@@ -13,7 +13,7 @@ format:
   revealjs:
     theme:
       - black
-      - ../../../uon.scss
+      - ../../uon.scss
     output-ext: revealjs.html
     slide-number: true
     smaller: true
@@ -29,8 +29,7 @@ format:
       - webr
     title-block-style: none
     include-before-body:
-      - ../../../html/reveal-header.html  
+      - ../../reveal-header.html
     include-after-body:
-      - ../../../js/rjs-footer.js
-      - ../../../js/rjs-slide-fit.js
+      - ../../rjs-footer.js
     allow-html: true
