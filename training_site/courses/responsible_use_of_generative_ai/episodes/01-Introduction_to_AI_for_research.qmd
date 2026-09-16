@@ -1,5 +1,6 @@
 ---
 title: Introduction to AI for Research
+module-icon: "🔬"
 metadata:
   teaching: 40
   exercises: 20
