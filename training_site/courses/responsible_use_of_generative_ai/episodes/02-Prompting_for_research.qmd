@@ -1,5 +1,5 @@
 ---
-title: Prompting for Research
+title: Developing Prompting for Research
 metadata:
   teaching: 20
   exercises: 40
