@@ -32,7 +32,7 @@
     baseGapEm: 0.38,
     maxGapPx: 48,
 
-    maxTopSpacePx: 76,
+    maxTopSpacePx: 0,
 
     overflowTolerancePx: 10,
 
@@ -251,7 +251,6 @@
     slide.style.removeProperty("--rjs-fit-media-trim");
     slide.style.removeProperty("--rjs-fit-media-max-height");
     slide.style.removeProperty("--rjs-fit-callout-trim");
-    slide.style.removeProperty("--rjs-fit-safe-height");
   }
 
   function clearFitPassTimers() {
@@ -275,7 +274,6 @@
       slide.style.removeProperty("--rjs-fit-media-max-height");
     }
     slide.style.setProperty("--rjs-fit-callout-trim", `${Math.round(layout.calloutTrimPx)}px`);
-    slide.style.setProperty("--rjs-fit-safe-height", `${Math.round(layout.safeHeightPx)}px`);
 
     slide.classList.add("rjs-fit-managed");
     slide.classList.add("is-auto-fitted");
@@ -512,7 +510,6 @@
       hasVisual,
       isTitleVisual,
       hasQuote,
-      safeHeightPx: Math.max(100, available.height - 108),
       isRoomy: scale >= 0.96 && (isSparse || remainingHeight > available.height * 0.25),
       isOverflow
     };

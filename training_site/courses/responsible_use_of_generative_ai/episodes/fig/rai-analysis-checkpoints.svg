@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="530" viewBox="0 0 1200 530" role="img" aria-labelledby="title desc">
+  <title id="title">Human checkpoints in qualitative and quantitative analysis</title>
+  <desc id="desc">The research question and method guide two routes. Qualitative work connects source text, AI suggestions, and researcher interpretation. Quantitative work connects raw data, executed code, and checked results. Both lead to a bounded claim.</desc>
+  <defs>
+    <filter id="shadow" x="-10%" y="-20%" width="120%" height="150%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#10263b" flood-opacity="0.15"/>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2 2 L10 6 L2 10 Z" fill="#405162"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="530" rx="28" fill="#f7fbfc"/>
+
+  <g fill="none" stroke="#405162" stroke-width="4.5" marker-end="url(#arrow)">
+    <path d="M270 113 C330 113 338 166 380 188"/>
+    <path d="M270 113 C330 113 338 352 380 374"/>
+    <path d="M600 208 H665"/><path d="M885 208 H930"/>
+    <path d="M600 394 H665"/><path d="M885 394 H930"/>
+  </g>
+
+  <g font-family="sans-serif" text-anchor="middle" filter="url(#shadow)">
+    <rect x="55" y="58" width="215" height="110" rx="24" fill="#10263b"/>
+
+    <rect x="380" y="153" width="220" height="110" rx="22" fill="#006781"/>
+    <rect x="665" y="153" width="220" height="110" rx="22" fill="#298582"/>
+    <rect x="930" y="153" width="215" height="110" rx="22" fill="#405162"/>
+
+    <rect x="380" y="339" width="220" height="110" rx="22" fill="#006781"/>
+    <rect x="665" y="339" width="220" height="110" rx="22" fill="#298582"/>
+    <rect x="930" y="339" width="215" height="110" rx="22" fill="#405162"/>
+  </g>
+
+  <g font-family="sans-serif" text-anchor="middle" fill="#ffffff">
+    <text x="162" y="98" font-size="19" font-weight="800">QUESTION</text>
+    <text x="162" y="126" font-size="19" font-weight="800">+ METHOD</text>
+    <text x="162" y="151" font-size="14">set the rules</text>
+
+    <text x="490" y="197" font-size="20" font-weight="700">Source text</text>
+    <text x="490" y="226" font-size="15">quotes + context</text>
+    <text x="775" y="197" font-size="20" font-weight="700">AI suggestions</text>
+    <text x="775" y="226" font-size="15">codes + alternatives</text>
+    <text x="1037" y="190" font-size="19" font-weight="700">Researcher</text>
+    <text x="1037" y="215" font-size="19" font-weight="700">interpretation</text>
+    <text x="1037" y="240" font-size="14">meaning stays human</text>
+
+    <text x="490" y="383" font-size="20" font-weight="700">Raw data</text>
+    <text x="490" y="412" font-size="15">types + missing values</text>
+    <text x="775" y="383" font-size="20" font-weight="700">Executed code</text>
+    <text x="775" y="412" font-size="15">steps + diagnostics</text>
+    <text x="1037" y="376" font-size="19" font-weight="700">Researcher</text>
+    <text x="1037" y="401" font-size="19" font-weight="700">checks result</text>
+    <text x="1037" y="426" font-size="14">design limits the claim</text>
+  </g>
+
+  <g font-family="sans-serif" font-size="16" font-weight="800" fill="#405162">
+    <text x="380" y="132">QUALITATIVE ROUTE</text>
+    <text x="380" y="318">QUANTITATIVE ROUTE</text>
+  </g>
+</svg>

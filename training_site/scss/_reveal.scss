@@ -48,8 +48,8 @@
 }
 
 .reveal .slides {
-  padding-top: calc(var(--gh) + 100px) !important;
-  padding-bottom: calc(var(--gf) + 50px) !important;
+  padding-top: var(--gh) !important;
+  padding-bottom: var(--gf) !important;
 }
 
 .reveal .slides section {
@@ -894,21 +894,17 @@
 }
 
 .reveal section.rjs-fit-overflow {
-  max-height: var(
-    --rjs-fit-safe-height,
-    calc(100vh - var(--gh) - var(--gf) - 120px)
-  );
+  height: 100% !important;
+  max-height: 100% !important;
   overflow-y: auto;
+  overscroll-behavior-y: contain;
   padding-right: .35em;
   scrollbar-gutter: stable;
 }
 
 .reveal section.rjs-fit-overflow.callout-task {
-  max-height: var(
-    --rjs-fit-safe-height,
-    calc(100vh - var(--gh) - var(--gf) - 120px)
-  );
-  overflow-y: auto;
+  height: 100% !important;
+  max-height: 100% !important;
 }
 
 .reveal section.rjs-fit-managed.callout-outcomes > :not(h2),
@@ -995,8 +991,8 @@
   }
 
   .reveal .slides {
-    padding-top: calc(var(--gh) + 60px) !important;
-    padding-bottom: calc(var(--gf) + 35px) !important;
+    padding-top: var(--gh) !important;
+    padding-bottom: var(--gf) !important;
   }
 
   .reveal ol,

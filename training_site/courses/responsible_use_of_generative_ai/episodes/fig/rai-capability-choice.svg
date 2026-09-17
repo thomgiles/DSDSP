@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="540" viewBox="0 0 1200 540" role="img" aria-labelledby="title desc">
+  <title id="title">Choose AI by capability, not product label</title>
+  <desc id="desc">The research task, available evidence, and planned check guide the choice between fast text generation, reasoning-oriented modes, and large-context or retrieval tools. Each capability has a practical limitation.</desc>
+  <defs>
+    <filter id="shadow" x="-10%" y="-20%" width="120%" height="150%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#10263b" flood-opacity="0.15"/>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2 2 L10 6 L2 10 Z" fill="#405162"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="540" rx="28" fill="#f7fbfc"/>
+
+  <g fill="none" stroke="#405162" stroke-width="5" stroke-linecap="round" marker-end="url(#arrow)">
+    <path d="M470 220 C405 190 382 150 370 135"/>
+    <path d="M730 220 C795 190 818 150 830 135"/>
+    <path d="M600 340 V365"/>
+  </g>
+
+  <g font-family="sans-serif" filter="url(#shadow)">
+    <rect x="50" y="55" width="320" height="170" rx="24" fill="#006781"/>
+    <rect x="830" y="55" width="320" height="170" rx="24" fill="#298582"/>
+    <rect x="450" y="190" width="300" height="150" rx="30" fill="#10263b"/>
+    <rect x="410" y="365" width="380" height="130" rx="24" fill="#405162"/>
+  </g>
+
+  <g font-family="sans-serif" text-anchor="middle" fill="#ffffff">
+    <text x="210" y="99" font-size="22" font-weight="800">FAST TEXT GENERATION</text>
+    <text x="210" y="139" font-size="18" font-weight="700">Reshape checked notes</text>
+    <text x="210" y="174" font-size="18">Speed ≠ accuracy</text>
+
+    <text x="990" y="99" font-size="22" font-weight="800">REASONING MODE</text>
+    <text x="990" y="139" font-size="18" font-weight="700">Compare options</text>
+    <text x="990" y="174" font-size="18">Persuasive ≠ sound</text>
+
+    <text x="600" y="231" font-size="18" font-weight="800">START WITH</text>
+    <text x="600" y="280" font-size="24" font-weight="700">task · evidence · check</text>
+
+    <text x="600" y="406" font-size="21" font-weight="800">LONG CONTEXT / RETRIEVAL</text>
+    <text x="600" y="439" font-size="18" font-weight="700">Work across documents</text>
+    <text x="600" y="469" font-size="18">Uploaded ≠ used</text>
+  </g>
+</svg>

@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="500" viewBox="0 0 1200 500" role="img" aria-labelledby="title desc">
+  <title id="title">Four checks before using AI in research</title>
+  <desc id="desc">A research use of AI passes through four checks: permission to use the material, traceable evidence, fit with the research method, and a named person responsible for the decision. If any check is unclear, narrow the task, change the input, or seek advice.</desc>
+  <defs>
+    <filter id="shadow" x="-10%" y="-20%" width="120%" height="150%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#10263b" flood-opacity="0.15"/>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2 2 L10 6 L2 10 Z" fill="#405162"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="500" rx="28" fill="#f7fbfc"/>
+
+  <g fill="none" stroke="#405162" stroke-width="5" marker-end="url(#arrow)">
+    <path d="M285 177 H325"/><path d="M555 177 H595"/><path d="M825 177 H865"/>
+    <path d="M980 250 C980 355 740 392 590 392"/>
+  </g>
+
+  <g font-family="sans-serif" text-anchor="middle" filter="url(#shadow)">
+    <rect x="55" y="105" width="230" height="145" rx="24" fill="#006781"/>
+    <rect x="325" y="105" width="230" height="145" rx="24" fill="#298582"/>
+    <rect x="595" y="105" width="230" height="145" rx="24" fill="#405162"/>
+    <rect x="865" y="105" width="280" height="145" rx="24" fill="#10263b"/>
+    <rect x="300" y="345" width="590" height="95" rx="24" fill="#009bc1"/>
+  </g>
+
+  <g font-family="sans-serif" text-anchor="middle" fill="#ffffff">
+    <text x="170" y="148" font-size="18" font-weight="800">1 · PERMISSION</text>
+    <text x="170" y="184" font-size="19" font-weight="700">May this material</text>
+    <text x="170" y="210" font-size="19" font-weight="700">enter this service?</text>
+
+    <text x="440" y="148" font-size="18" font-weight="800">2 · EVIDENCE</text>
+    <text x="440" y="184" font-size="19" font-weight="700">Can I trace and</text>
+    <text x="440" y="210" font-size="19" font-weight="700">check the output?</text>
+
+    <text x="710" y="148" font-size="18" font-weight="800">3 · METHOD</text>
+    <text x="710" y="184" font-size="19" font-weight="700">Does this fit the</text>
+    <text x="710" y="210" font-size="19" font-weight="700">research design?</text>
+
+    <text x="1005" y="148" font-size="18" font-weight="800">4 · RESPONSIBILITY</text>
+    <text x="1005" y="184" font-size="19" font-weight="700">Who makes and records</text>
+    <text x="1005" y="210" font-size="19" font-weight="700">the final decision?</text>
+
+    <text x="595" y="383" font-size="19" font-weight="800">IF ANY ANSWER IS UNCLEAR</text>
+    <text x="595" y="415" font-size="18">narrow the task · change the input · seek advice</text>
+  </g>
+</svg>
