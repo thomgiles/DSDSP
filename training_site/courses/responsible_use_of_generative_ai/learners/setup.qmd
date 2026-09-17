@@ -75,9 +75,9 @@ This makes it easier to keep copies of:
 |---|---|
 | [Introduction to AI for Research](../episodes/01-Introduction_to_AI_for_research.qmd) | Think of one research task where AI already feels useful and one where it feels risky |
 | [Prompting for Research](../episodes/02-Prompting_for_research.qmd) | Bring a low-risk prompt, policy page, reading task, or workflow you want to improve |
-| [Applied AI for Research](../episodes/03-Applied_AI_for_research.qmd) | Choose a research question and, optionally, two or three papers you are permitted to upload; synthetic literature, interview, data and grant examples are provided |
+| [Applied AI for Research](../episodes/03-Applied_AI_for_research.qmd) | Think of one research workflow you would like to improve; all literature, interview, data and grant examples needed for the discussion are provided |
 
-For the applied workshop, decide whether you prefer the qualitative or quantitative analysis route. You can complete either route without coding or paid tool access. If you want to run generated analysis code, bring an approved R or Python environment you already use.
+The applied workshop includes a brief choice of qualitative or quantitative material. You can discuss either route without coding or paid tool access. If you later want to practise with real papers or run generated analysis code, use permitted documents and an approved environment.
 
 ## If You Do Not Have Tool Access
 

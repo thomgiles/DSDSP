@@ -2,8 +2,23 @@
 title: Applied AI for Research
 module-icon: "🔬"
 metadata:
-  teaching: 90
-  exercises: 90
+  teaching: 100
+  exercises: 15
+header-includes:
+  - |
+    <style>
+    .reveal {
+      position: relative;
+      z-index: 1;
+    }
+    .reveal .slides > section.slide:not([data-background-color]) {
+      background-color: #ffffff;
+    }
+    body:has(.reveal .slides > section.present:not(#title-slide)) #teachingScene {
+      opacity: 0 !important;
+      visibility: hidden !important;
+    }
+    </style>
 ---
 
 ::: callout-outcomes
@@ -13,11 +28,9 @@ metadata:
 By the end of this module, learners will be able to:
 
 - Select AI tools and approaches suited to different research tasks, evidence sources and data restrictions.
-- Build reusable workflows with clear prompts, document context, iterative checks and records of decisions.
-- Apply AI support across question development, theory, literature review, research design, analysis and academic writing.
-- Verify literature summaries, qualitative interpretations, numerical outputs and proposed research gaps.
-- Design a bounded research automation and use AI to support a grant application with appropriate human review.
-- Explain how confidentiality, intellectual property, bias, reproducibility and disclosure affect their own use of AI.
+- Build reusable, inspectable workflows with labelled sources, staged checks and records of decisions.
+- Evaluate AI support for literature review, research design, analysis, writing, automation and grant development.
+- Decide what can be delegated, what must be verified and what must remain a human research decision.
 
 :::
 
@@ -25,80 +38,112 @@ By the end of this module, learners will be able to:
 
 ## ❓ Questions
 
-1. Which tool or approach fits the research task, and what evidence will it actually see?
-2. How can we move from a useful conversation to a workflow another researcher can check?
-3. Where can AI assist interpretation, and which decisions require disciplinary judgement?
-4. What would make an AI-assisted literature review, analysis or grant application defensible?
+1. What is the research task, and what evidence will the AI actually see?
+2. What would make the output inspectable and defensible?
+3. Which decisions require disciplinary or methodological judgement?
 
 :::
 
-## Structure & Agenda
+## Suggested Two-Hour Shape
 
-This applied workshop builds on [Introduction to AI for Research](01-Introduction_to_AI_for_research.qmd) and [Prompting for Research](02-Prompting_for_research.qmd). It assumes familiarity with basic prompting and source checking; no programming background is required.
+This two-hour workshop builds on [Introduction to AI for Research](01-Introduction_to_AI_for_research.qmd) and [Prompting for Research](02-Prompting_for_research.qmd). It assumes familiarity with basic prompting and source checking; no programming background is required.
 
-| Theme | Teaching | Activity and discussion |
-|---|---|---|
-| The current AI landscape | 15 minutes | 5 minutes |
-| Effective research workflows | 10 minutes | 10 minutes |
-| AI across the research lifecycle | 15 minutes | 10 minutes |
-| AI for literature reviews | 15 minutes | 20 minutes |
-| Qualitative and quantitative analysis | 15 minutes | 20 minutes |
-| Agents and research automation | 10 minutes | 10 minutes |
-| Grant applications | 5 minutes | 10 minutes |
-| Research integrity and responsible use | 5 minutes | 5 minutes |
+| Block | Approximate time |
+|---|---:|
+| Opening and framing | 5 min |
+| Choosing tools and approaches | 10 min |
+| Building inspectable workflows | 10 min |
+| Working across the research lifecycle | 10 min |
+| Literature reviews | 20 min |
 
-Allow **three hours of learning time**, plus breaks. The analysis activity offers two routes; choose one during the workshop and use the other for further practice. Sections can also be delivered as shorter linked sessions.
+## Second Hour: From Analysis to Action
 
-> 🔧 Leave with a tool choice, a checked evidence table, an analysis critique and a reusable workflow for one research task.
+| Block | Approximate time |
+|---|---:|
+| Break | 5 min |
+| Qualitative and quantitative analysis | 20 min |
+| Agents and research automation | 10 min |
+| Grant applications | 10 min |
+| Research integrity, action and close | 20 min |
+
+These timings are a rough guide: delivery will vary with the facilitator and audience. Each content block includes its brief judgement pause, usually one minute with a neighbour and one minute to debrief. No live tool use is required.
+
+> 🔧 Leave with a defensible tool choice, a checking strategy and one bounded workflow to try in your own research.
 
 ## Working Examples and Access
 
 The running example is a proposed study of **peer writing groups for doctoral researchers**. The study extracts, interviews, dataset and funding call below are fictional teaching materials. They are not published evidence, real participant data or a live funding opportunity.
 
-Use an institutionally approved AI service if available. Public tools mentioned here are examples, not a list of services approved by the University. Every exercise can also be completed through prompt design and manual critique without a paid account. For live literature practice, bring two or three papers that you are permitted to upload to the chosen service.
+Use an institutionally approved AI service if available. Public tools mentioned here are examples, not a list of services approved by the University. Every discussion can be completed through manual critique without a paid account. For later live practice, use only papers that you are permitted to upload to the chosen service.
 
 # The Current AI Landscape for Academic Research
 
-## Models, Tools and Workflows
+## Three Layers of an AI-Assisted Task
 
-A **model** generates or interprets content. A **tool** gives you an interface, document access, search or code execution. A **workflow** organises these capabilities around a research task and its checks.
+- A **model** generates or interprets content.
+- A **tool** provides the interface, sources, search or code execution.
+- A **workflow** connects those capabilities to a research task and its checks.
 
-ChatGPT is one way to access AI. Other examples include [Claude](https://claude.com/product/overview), [Gemini](https://ai.google.dev/gemini-api/docs/models) and [Microsoft Copilot Chat](https://learn.microsoft.com/en-us/copilot/overview). Model families include GPT, Claude, Gemini and [Mistral](https://docs.mistral.ai/models); a product may offer several models or choose between them automatically.
-
-The same model can behave differently with a different document collection, search service or set of instructions. Record both the product and the model/version where the product exposes it.
+The same model can behave differently when the available sources, tools or instructions change.
 
 > 🧭 Start with the task, the permitted inputs and the checks you can perform.
 
-## Match the Tool to the Research Task
+## A Product Is More Than Its Model
 
-The following are starting points for evaluation, based on the providers' descriptions linked in the table. They are not comparative performance rankings. **Tool information checked: 14 September 2026.** Features, names, subscriptions and institutional access can change.
+ChatGPT, [Claude](https://claude.com/product/overview), [Gemini](https://ai.google.dev/gemini-api/docs/models) and [Microsoft Copilot Chat](https://learn.microsoft.com/en-us/copilot/overview) are products or interfaces. They may expose several models, select one automatically and add search, document retrieval or code execution.
 
-| Research task | Tools or approaches to consider | What needs checking |
+GPT, Claude, Gemini and [Mistral](https://docs.mistral.ai/models) are model families. Where it is visible, record both the **product/service** and the **model/version**.
+
+## Match the Tool to the Task: Questions and Search
+
+These are starting points, not performance rankings. **Tool information checked: 14 September 2026.** Features, names, subscriptions and institutional access can change.
+
+| Research task | Possible starting point | Check |
 |---|---|---|
-| Refine a question, explain an idea or critique a draft | General assistants such as [Claude](https://claude.com/product/overview), Gemini or an approved Copilot service | Whether the response follows the supplied evidence and preserves disciplinary meaning |
-| Explore a topic or locate public guidance | Web search with an assistant such as [Perplexity](https://www.perplexity.ai/help-center/en/articles/10352155-what-is-perplexity) | The original source, publication date and scope; web results include material beyond academic literature |
-| Find papers using research questions | [Elicit](https://elicit.com/) or [Consensus](https://help.consensus.app/en/articles/9922660-how-to-search-best-practices), alongside disciplinary databases | Coverage, search filters, missed studies and whether answers use abstracts or full texts |
-| Explore related papers and citation networks | [ResearchRabbit](https://www.researchrabbit.ai/) or [Litmaps](https://www.litmaps.com/) | Dependence on starting papers, indexing and citation patterns |
-| Examine how a paper is cited | [Scite](https://scite.ai/) | The citing passage and study itself; citation classification is not a quality appraisal |
-| Ask questions across a selected document collection | Google's [source notebooks](https://support.google.com/gemininotebook/answer/16206563?hl=en), known as NotebookLM and now described as Gemini Notebook in its help pages; approved document assistants | Which sources were included, which passages were retrieved and whether each citation supports the claim |
-| Extract comparable fields across papers | [Elicit's extraction workflows](https://elicit.com/) or a structured prompt applied to approved PDFs | Field definitions, source locations, missing information and extraction errors |
-| Work with interview text and coding | An approved assistant or [MAXQDA AI Assist](https://www.maxqda.com/products/ai-assist) | Data processing arrangements, exact quotations and fit with the analytical approach |
-| Develop analysis code and visualisations | [GitHub Copilot](https://docs.github.com/en/copilot/get-started/what-is-github-copilot) or an approved coding assistant, with R/Python and version control | Executed code, data transformations, statistical assumptions and reproducible results |
+| Refine a question or critique a draft | A general assistant such as Claude, Gemini or an approved Copilot service | Meaning and use of supplied evidence |
+| Explore a topic or public guidance | Web search with an assistant such as [Perplexity](https://www.perplexity.ai/help-center/en/articles/10352155-what-is-perplexity) | Original source, date and scope |
+| Find papers from a research question | [Elicit](https://elicit.com/) or [Consensus](https://help.consensus.app/en/articles/9922660-how-to-search-best-practices), alongside disciplinary databases | Coverage, filters and missed studies |
 
-These categories overlap. Citation mapping, reference management and database searching remain valuable even when they do not use generative AI. Keep the reference library and analysis files in systems the research team can maintain.
+## Match the Tool to the Task: Citation Connections
 
-## Choosing a Model or Mode
+| Research task | Possible starting point | Check |
+|---|---|---|
+| Explore related papers | [ResearchRabbit](https://www.researchrabbit.ai/) or [Litmaps](https://www.litmaps.com/) | Starting papers, indexing and citation patterns |
+| Examine how a paper is cited | [Scite](https://scite.ai/) | The citing passage and study itself |
+
+## Match the Tool to the Task: Document Evidence
+
+| Research task | Possible starting point | Check |
+|---|---|---|
+| Ask across a selected collection | Google's [source notebooks](https://support.google.com/gemininotebook/answer/16206563?hl=en), known as NotebookLM and now described as Gemini Notebook; approved document assistants | Included sources, retrieved passages and claim support |
+| Extract fields across papers | [Elicit's extraction workflows](https://elicit.com/) or a structured prompt over approved PDFs | Definitions, locations and missing information |
+
+## Match the Tool to the Task: Data and Code
+
+| Research task | Possible starting point | Check |
+|---|---|---|
+| Work with interview text | An approved assistant or [MAXQDA AI Assist](https://www.maxqda.com/products/ai-assist) | Processing arrangements, exact quotations and methodological fit |
+| Develop code and visualisations | [GitHub Copilot](https://docs.github.com/en/copilot/get-started/what-is-github-copilot) or an approved coding assistant | Executed code, transformations and assumptions |
+
+Keep the reference library and analysis files in systems the research team can maintain. These categories overlap, and non-generative tools remain valuable.
+
+## Choose Capabilities, Not Labels
 
 | Capability | When it may help | Practical limitation |
 |---|---|---|
-| Fast general text generation | Reformatting checked notes or suggesting alternative wording | Speed gives no assurance of factual accuracy |
-| Reasoning-oriented mode | Comparing design options or working through a difficult coding problem | A persuasive explanation can still rest on incorrect assumptions |
-| Long context or document retrieval | Working with protocols, theory texts or several papers | Accepted files may not be fully read or retrieved for every answer |
-| Multimodal input | Discussing a figure, scanned page or image | Axes, mathematical notation, tables and OCR can be misread |
-| Code execution | Calculating summaries and producing plots | An answer containing code does not prove that the code ran |
-| Institutionally hosted open-weight models | Projects needing an approved, controlled computing environment | Hosting, hardware, licences, logs and external connections still need review |
+| Fast text generation | Reformat checked notes or suggest wording | Speed does not imply accuracy |
+| Reasoning-oriented mode | Compare designs or work through difficult code | A persuasive explanation can rest on false assumptions |
+| Long context or retrieval | Work with protocols, theory or several papers | Accepted files may not be retrieved for every answer |
 
-Open weights mean model parameters are available under a licence; they do not automatically mean unrestricted use or local processing. Mistral, for example, documents both model options and their deployment characteristics in its [model catalogue](https://docs.mistral.ai/models). Check the exact model and service before making a data-handling decision.
+## Capabilities Still Need Verification
+
+| Capability | When it may help | Practical limitation |
+|---|---|---|
+| Multimodal input | Discuss a figure, scan or image | Axes, notation, tables and OCR can be misread |
+| Code execution | Calculate summaries and produce plots | Code in an answer does not prove that it ran |
+| Hosted open-weight models | Use an approved, controlled environment | Hosting, hardware, licences, logs and connections still need review |
+
+Open weights make model parameters available under a licence; they do not automatically mean unrestricted use or local processing. Check the exact model and service before making a data-handling decision. Mistral, for example, documents deployment characteristics in its [model catalogue](https://docs.mistral.ai/models).
 
 ## A Small Evaluation Beats a General Ranking
 
@@ -111,62 +156,77 @@ Compare candidate tools on the **same permitted material**. Include a straightfo
 
 > 🔎 Agreement between two AI tools is a reason to check the evidence, not independent confirmation of a finding.
 
+## Discussion Pause 1: Choose an Approach {background-color="#2b2b2b"}
+
 ::: callout-task
-
-#### Task 1: Choose an Approach
-
-::: panel-tabset
-
-##### Exercise (3 minutes)
-
-Choose an approach for each task and name one check:
+Pick **one** task. Which approach would you use, and what is the single check you would insist on?
 
 1. Find newer papers related to a known article.
-2. Compare the definitions of a concept in three approved PDFs.
-3. Calculate changes in a dataset containing missing follow-up values.
+2. Compare a concept across three approved PDFs.
+3. Calculate change where some follow-up values are missing.
 
-##### Discussion (2 minutes)
-
-Possible choices are citation exploration, a document assistant with source locations, and executable analysis code. Explain what the tool must have access to and what you would verify before reusing the result.
-
+**1 minute with a neighbour · 1 minute debrief**
 :::
-:::
+
+## Debrief: Access and Evidence Determine the Choice
+
+- **Newer related papers:** citation exploration; check coverage and the retrieved records.
+- **Three PDFs:** a document workflow; check source locations and cross-document attribution.
+- **Change with missing values:** executable analysis code; check missingness, exclusions and arithmetic.
+
+The brand name is secondary to the evidence it can access and the checks you can perform.
 
 # Using AI Effectively in Research Workflows
 
-## Build a Research Brief Before Prompting
+## Before the Prompt: Define the Research Task
 
-The prompt pattern from [Prompting for Research](02-Prompting_for_research.qmd) becomes more useful when supported by a short research brief.
+The pattern from [Prompting for Research](02-Prompting_for_research.qmd) becomes more reliable when it starts with a short research brief.
 
-| Include | Example |
+| Include | Writing-group example |
 |---|---|
-| Purpose and audience | Prepare a comparison for a doctoral supervision meeting |
-| Research question and scope | How might peer writing groups support sustained writing over six weeks? |
-| Definitions and analytical position | Distinguish writing time, confidence and completed outputs |
-| Source list and versions | Teaching extracts A–C; no external sources for this task |
-| Output and evidence requirements | One row per source; attach a source ID and location to each claim |
-| Constraints | Do not infer causation, invent missing details or change the question |
-| Acceptance checks | The researcher verifies every extracted value and claim |
+| Purpose and audience | A comparison for a supervision meeting |
+| Question and scope | How might peer writing groups support sustained writing over six weeks? |
+| Definitions and position | Keep writing time, confidence and completed outputs distinct |
 
-Keep instructions separate from source text. Clearly label quotations, background notes and your own decisions so the assistant does not confuse them.
+## Before the Prompt: Define the Evidence Contract
+
+| Include | Writing-group example |
+|---|---|
+| Sources and versions | Teaching extracts A–C; no external sources |
+| Output and evidence | One row per source, with source ID and location |
+| Constraints | Do not infer causation, invent details or change the question |
+| Acceptance check | Researcher verifies every extracted value and claim |
+
+Keep instructions separate from source text. Label quotations, background notes and researcher decisions.
 
 ## Provide Documents Deliberately
 
 1. Check permission to use each document in the selected service.
-2. Give each source a stable ID and record its title, date and version.
-3. Ask for a list of accessible sources and flag unreadable pages or tables.
-4. Start with a small extraction task and check the result against the original.
-5. Expand the task only when the source handling is adequate.
+2. Give each source a stable ID, title, date and version.
+3. Ask which sources are accessible and which pages or tables are unreadable.
+4. Test a small extraction against the original before expanding the task.
 
-A URL in a prompt does not prove that the tool opened the page. A successful upload does not prove that a scanned table was read correctly. Ask for section headings, printed page numbers or passage locations; mark locations as unavailable when the tool cannot provide them reliably.
+## Access Is a Claim to Verify
+
+A URL in a prompt does not prove that the tool opened the page. A successful upload does not prove that a scanned table was read correctly.
+
+Ask for section headings, printed page numbers or passage locations. Mark the location as unavailable when the tool cannot provide it reliably.
 
 ## Understand Retrieval and Context
 
-**Retrieval-augmented generation (RAG)** means retrieving source passages and supplying them to a model when it answers. This can make answers easier to trace, but the retrieval step may omit relevant evidence.
-
-For a comparison across many papers, extract each paper into the same schema before asking for synthesis. Check individual rows before combining them. When a conversation becomes long or changes direction, start a new session with a checked brief and the current sources.
+**Retrieval-augmented generation (RAG)** retrieves source passages and supplies them to a model when it answers. It can improve traceability, but retrieval may omit relevant evidence.
 
 > 📄 A larger context window creates capacity for more material. It does not guarantee equal attention to every page.
+
+## Compare First, Then Combine
+
+For comparisons across many papers:
+
+1. extract every paper into the same schema
+2. check individual rows against the papers
+3. only then ask for a cross-paper synthesis
+
+When a conversation becomes long or changes direction, start a new session with a checked brief and the current sources.
 
 ## Work in Visible Stages
 
@@ -179,9 +239,11 @@ flowchart LR
     D -->|Yes| E[Save output and decisions]
 ```
 
-Ask the assistant to identify assumptions, unresolved questions and alternative interpretations. Then perform the checks yourself. Asking the same assistant to approve its answer can reveal weaknesses, but does not replace independent verification.
+Ask the assistant to identify assumptions, unresolved questions and alternative interpretations. Then perform the checks yourself.
 
-## A Reusable Research Prompt
+Asking the same assistant to approve its own answer can expose weaknesses; it is not independent verification.
+
+## A Reusable Research Prompt: Brief
 
 ```text
 Task: Compare what sources A–C say about peer writing groups.
@@ -189,6 +251,11 @@ Context: I am preparing a research design discussion, not claiming an effect.
 Sources: Use only the labelled teaching extracts supplied below.
 
 First list the sources you can access and any missing information.
+```
+
+## A Reusable Research Prompt: Output and Checks
+
+```text
 Then produce one row per source with:
 source ID; design; participants; outcome or concept; finding;
 source location; limitation; question requiring human review.
@@ -201,28 +268,30 @@ Finish with disagreements and uncertainties for me to check.
 
 Replace the task and source IDs when reusing the template. Test the template again when the material, model or intended output changes.
 
+## Discussion Pause 2: From Request to Workflow {background-color="#2b2b2b"}
+
 ::: callout-task
+Consider: *“Read these papers and tell me what my PhD should study.”*
 
-#### Task 2: Turn a Prompt into a Workflow
+With a neighbour, choose the **single most important change** that would make this request inspectable. Be ready to explain why.
 
-::: panel-tabset
-
-##### Exercise (7 minutes)
-
-Improve this request: *“Read these papers and tell me what my PhD should study.”*
-
-Write a short research brief and three stages: extraction, comparison and researcher decision. Specify an output and a check for each stage. Include what should happen if a source is missing or the evidence conflicts.
-
-##### Discussion (3 minutes)
-
-Swap with a partner. Could they repeat the workflow using your instructions? Which stage requires a decision that the AI cannot make on your behalf?
-
+**1 minute discussion · 1 minute debrief**
 :::
-:::
+
+## Debrief: Separate Support from the Decision
+
+A defensible workflow would define:
+
+- labelled sources and a structured extraction
+- comparison criteria and source locations
+- handling for missing or conflicting evidence
+- a researcher checkpoint before any proposed question becomes a decision
+
+The AI can organise possibilities. It cannot decide what is novel, worthwhile and feasible for the PhD.
 
 # AI Across the Research Lifecycle
 
-## Developing and Refining Research Questions
+## One Topic Can Contain Different Questions
 
 AI can help generate alternatives, expose ambiguous terms and check whether a question matches the proposed data. Supply your disciplinary context, practical constraints and the distinction between exploratory and confirmatory work.
 
@@ -234,15 +303,21 @@ AI can help generate alternatives, expose ambiguous terms and check whether a qu
 - How does self-reported weekly writing time change during a six-week writing group?
 - What study design could estimate the effect of a writing group compared with an appropriate alternative?
 
-These questions need different evidence. The second describes change; it does not, by itself, establish that the group caused it.
+## Make the Evidence Requirement Explicit
+
+Those three questions concern **experience**, **change** and **causal effect**. They need different evidence.
+
+Describing change does not, by itself, establish that the group caused it.
 
 > 📝 “Suggest three questions within this scope. For each, identify the construct, unit of analysis, feasible data and claims the design would not support. Label any proposed novelty as unverified.”
 
-## Exploring Theory and Conceptual Frameworks
+## Use Theory to Generate Explanations
 
 Use AI to compare **supplied theoretical texts**, clarify unfamiliar terms and identify tensions between explanations. Read the original theory and check how concepts are used in your discipline.
 
 For the writing-group example, possible explanations might involve social accountability, protected time or confidence. These are candidate ideas for investigation. Ask for a table linking each proposed construct to a source, definition, possible observation and competing explanation.
+
+## A Diagram Is Still a Proposal
 
 An initial framework might propose:
 
@@ -250,7 +325,7 @@ An initial framework might propose:
 
 Label each arrow as a proposed relationship. Add plausible contextual influences such as workload, caring responsibilities and supervisory support. A tidy diagram does not establish a mechanism or show that all relevant influences have been included.
 
-## Identifying Research Gaps
+## Research Gaps: Absence and Conflict
 
 AI can help organise possible gaps: an underrepresented population, a weakly measured construct, a conflicting result or an untested explanation. Each candidate needs checking.
 
@@ -258,21 +333,26 @@ AI can help organise possible gaps: an underrepresented population, a weakly mea
 |---|---|
 | “Nobody has studied this population” | Searches using alternative terms, relevant databases and citation trails |
 | “Findings conflict” | Comparable outcomes, populations and methods; differences may explain the apparent conflict |
+
+## Research Gaps: Theory and Method
+
+| Proposed gap | Evidence needed before claiming it |
+|---|---|
 | “The mechanism is unknown” | Examination of theoretical and empirical work, including different disciplinary vocabularies |
 | “A new method is needed” | A reason the method would answer a meaningful unresolved question |
 
 Use *“not identified within these sources/searches”* when that is what you have established. A small collection or an empty search result cannot establish that no relevant research exists.
 
-## Research Design, Interviews and Surveys
+## Compare Designs Against the Question
 
 Ask AI to compare design options against the question, access, ethics, time and resources. Retain responsibility for sampling, measurement, power or sample adequacy, analysis and feasibility.
 
 | Task | Useful AI support | Researcher responsibility |
 |---|---|---|
 | Research design | Compare interviews, observational follow-up and controlled evaluation | Choose an approach that can answer the question and justify its assumptions |
-| Interview development | Draft open questions and optional probes | Avoid leading questions; consider power, distress, context and researcher position |
-| Survey development | Flag double questions, unclear recall periods and response gaps | Select suitable measures, check permissions, pilot and assess validity |
 | Analysis planning | List assumptions, required variables and possible failure points | Agree the plan and distinguish exploratory changes from planned analyses |
+
+## Treat Interview and Survey Items as Drafts
 
 **Leading interview question:** “How did the helpful writing group improve your productivity?”
 
@@ -288,29 +368,29 @@ Start with your argument, verified evidence and target audience. Ask for an outl
 
 Keep references in a reference manager and check them against the papers. A formatted bibliography can contain fabricated or irrelevant citations. Use AI critique on your own material only where permitted; externally assigned peer review has separate confidentiality and policy requirements.
 
+## Discussion Pause 3: Match the Claim to the Evidence {background-color="#2b2b2b"}
+
 ::: callout-task
+Choose **one** question:
 
-#### Task 3: Connect a Question to Evidence
+- How do participants describe the group's role?
+- How does writing time change over six weeks?
+- What is the effect of the group compared with an alternative?
 
-::: panel-tabset
+Name **one suitable source of data** and the boundary it places on the claim.
 
-##### Exercise (7 minutes)
-
-Choose one writing-group question above. Produce:
-
-- one proposed explanation and an alternative explanation
-- a suitable design and the evidence it would produce
-- two open interview questions or two draft survey items
-- one claim the design would not justify
-
-Use AI if available, then revise at least one suggestion using your own judgement.
-
-##### Discussion (3 minutes)
-
-Explain why the data match the question. Identify one remaining issue for a supervisor, methods specialist or ethics review.
-
+**1 minute discussion · 1 minute debrief**
 :::
-:::
+
+## Debrief: Design Sets the Boundary
+
+| Question | Possible evidence | Boundary |
+|---|---|---|
+| Experience | Interviews with varied participants | Does not estimate an effect |
+| Change | Repeated measures over six weeks | Change alone is not causation |
+| Effect | A justified comparison design | Depends on allocation, measurement and assumptions |
+
+AI can compare these options. The researcher must justify the design and its claims.
 
 # AI for Literature Reviews
 
@@ -320,27 +400,38 @@ Exploring a topic, writing a narrative review and conducting a systematic review
 
 For a systematic or scoping review, work with an information specialist where possible. Define eligibility, sources, search strategy, screening and extraction procedures. Use reporting guidance appropriate to the review type: [PRISMA 2020](https://www.prisma-statement.org/prisma-2020) and relevant extensions support transparent reporting; they are not a guarantee that the review was conducted well.
 
+## “Deep Research” Is Not a Review Method
+
 An automatically generated “deep research” report can help orientation. Its label does not establish a reproducible search, complete coverage or a systematic review.
 
-## Finding Papers and Exploring Citation Networks
+Ask: **Could another researcher understand what was searched, selected, extracted and checked?**
+
+## Build a Search You Can Report
 
 1. Build concept blocks, synonyms and relevant subject headings. AI can propose terms; check them in the database's vocabulary.
 2. Search suitable disciplinary databases, such as PubMed, Scopus or Web of Science where appropriate and available. Keep exact queries, database/platform names, dates and filters.
 3. Use AI-assisted discovery to explore additional terminology and candidate papers. Record this as another search route.
+
+## Extend the Search Without Losing the Trail
+
 4. Follow references backwards and citations forwards from several relevant starting papers, including contrary findings.
 5. Export records to a reference manager. Check duplicates and distinguish multiple reports of one study from separate studies.
 
 ResearchRabbit and Litmaps offer ways to explore connections and discover related work. Network recommendations depend on the indexed literature and your starting collection; less cited, recent, non-English or poorly indexed work can be missed. See the providers' descriptions of [ResearchRabbit](https://www.researchrabbit.ai/) and [Litmaps](https://www.litmaps.com/).
 
-## Screening and Working Across PDFs
+## Test Screening Suggestions on Difficult Cases
 
 Define inclusion and exclusion criteria before screening. Pilot AI suggestions against a set reviewed by humans, including borderline cases and relevant studies that are easy to miss. Check excluded records as well as included ones; an attractive summary of the included set cannot reveal false exclusions.
 
+Document how automation was used and validated. The [PRISMA expanded checklist](https://www.prisma-statement.org/s/PRISMA_2020_expanded_checklist-yc78.pdf) addresses reporting automation in selection and data collection.
+
+## Keep the PDF and the Decision Distinct
+
 For each PDF, retain a paper ID, bibliographic record and whether you have the full text, abstract only or a partial extract. Check supplements, tables, corrections and retractions where relevant. Keep screening decisions and reasons separate from extraction and interpretation.
 
-Document how automation was used and validated. The [PRISMA expanded checklist](https://www.prisma-statement.org/s/PRISMA_2020_expanded_checklist-yc78.pdf) explicitly addresses reporting automation in selection and data collection. Follow the review protocol's requirements for human review and resolving disagreements.
+Follow the review protocol's requirements for human review and resolving disagreements.
 
-## Extract First, Synthesise Second
+## Evidence Matrix: Identity and Context
 
 Use a structured evidence matrix:
 
@@ -349,13 +440,18 @@ Use a structured evidence matrix:
 | Identity | Paper ID, study ID, citation/DOI and source version |
 | Design and setting | Method, population, recruitment, context and timing |
 | Concepts and outcomes | Definitions, instruments, units and time points |
+
+## Evidence Matrix: Findings and Verification
+
+| Field | What to record |
+|---|---|
 | Findings | Extracted result, uncertainty and the exact supporting location |
 | Limitations | Reported limitations and your separate appraisal |
 | Verification | Checked by whom, corrections and unresolved questions |
 
 Do not let the assistant fill blanks with plausible values. Distinguish **not reported**, **not applicable** and **not accessible**. Reopen the paper when an extraction conflicts with another section or mixes up a group, unit or time point.
 
-## Creating a Structured Literature Review
+## Move from Extraction to Synthesis
 
 Once the matrix is checked, organise synthesis around research questions, themes, theories or methods. Compare what studies can tell you, where they differ and how much confidence their designs support.
 
@@ -365,12 +461,14 @@ A useful review structure is:
 2. Search, selection and appraisal approach.
 3. Characteristics of the included evidence.
 4. Synthesis of patterns, differences and competing explanations.
-5. Limitations of both the evidence and the review process.
+5. Limitations of the evidence and review process.
 6. Implications and carefully bounded research gaps.
+
+## Keep Claims Attached to Studies
 
 Ask AI to draft an outline from the checked matrix and attach paper IDs to each proposed claim. Then write and revise with the papers open. Avoid counting positive papers as proof of an effect; study quality, sample overlap, uncertainty and comparability matter. A meta-analysis requires a justified statistical method, not an average of AI summaries.
 
-## Common Failure Modes
+## Failure Modes in Discovery
 
 | Approach | Useful contribution | Risk to manage |
 |---|---|---|
@@ -378,147 +476,167 @@ Ask AI to draft an outline from the checked matrix and attach paper IDs to each 
 | Web-assisted answers | Find candidate sources quickly | Search ranking, weak sources and citations that do not support the adjacent claim |
 | Scholarly AI search | Identify related papers using natural language | Uneven disciplinary coverage and opaque selection |
 | Citation networks | Explore intellectual connections | Reinforcing the same well-cited cluster |
+
+## Failure Modes in Working with Sources
+
+| Approach | Useful contribution | Risk to manage |
+|---|---|---|
 | Chatting with PDFs | Navigate and compare a defined collection | Retrieval omissions, OCR errors and confusion between papers |
 | Automated synthesis | Draft a structure from extracted evidence | Flattening disagreements, mixing outcomes and hiding missing data |
 
 > 📚 Verification has three parts: the source exists, the source says this, and the source supports this particular claim.
 
+## Fictional Evidence: Sources A and B
+
+**These are teaching extracts, not real papers.**
+
+**A · paragraph 1:** Twenty-four volunteers at one university joined a six-week group. Mean self-rated writing confidence rose from 12 to 17 on a 0–20 scale. There was no comparison group. Variation, follow-up response count and completed outputs were not reported.
+
+**B · paragraph 1:** Interviews with eight attendees described protected time and encouragement. Two said fixed meetings conflicted with caring responsibilities. Non-attendees were not interviewed. Writing output was not measured.
+
+## Fictional Evidence: Source C
+
+**C · paragraph 1:** A cross-sectional survey compared 60 doctoral researchers who chose to attend writing groups with non-attendees. Attendees reported more weekly writing time.
+
+The extract gives no group counts, numerical difference or adjustment for workload or motivation. Confidence was not measured.
+
+## Discussion Pause 4: Challenge the Synthesis {background-color="#2b2b2b"}
+
 ::: callout-task
+Challenge this conclusion:
 
-#### Task 4: Build and Challenge an Evidence Matrix
+> “Three studies prove that writing groups increase doctoral productivity, so universities should require attendance.”
 
-::: panel-tabset
+Which single word or phrase is least defensible? Explain your choice.
 
-##### Teaching Sources
-
-**These are fictional extracts, not references to real papers. Use their paragraph labels as source locations.**
-
-**Source A, paragraph 1:** Twenty-four volunteers at one university joined a six-week peer writing group. Mean self-rated writing confidence was 12 before and 17 afterwards on a 0–20 scale. There was no comparison group. The extract does not report variation, follow-up response count or completed writing outputs.
-
-**Source B, paragraph 1:** Interviews with eight group attendees described protected time and encouragement. Two interviewees said fixed meeting times conflicted with caring responsibilities. Non-attendees were not interviewed. Changes in writing output were not measured.
-
-**Source C, paragraph 1:** A cross-sectional survey of 60 doctoral researchers compared people who chose to attend writing groups with non-attendees. Attendees reported more weekly writing time. The extract provides no group counts, numerical difference or adjustment for workload or motivation. Confidence was not measured.
-
-##### Exercise (15 minutes)
-
-Extract design, sample, outcome, finding, source location and limitations for A–C. Check every cell, then ask for a 100-word synthesis restricted to the extracts.
-
-Challenge this proposed conclusion: *“Three studies prove that writing groups increase doctoral productivity, so universities should require attendance.”*
-
-Identify at least three problems. Write a bounded synthesis and one question worth investigating. If using real papers instead, retain the same extraction and verification steps.
-
-##### Discussion and Checks (5 minutes)
-
-- A describes confidence, B describes experiences and C describes a cross-sectional association; these are different outcomes and designs.
-- A lacks a comparator and important reporting details. C is vulnerable to differences between people who chose to attend and those who did not.
-- B identifies both support and an access barrier; compulsory attendance is not justified.
-- A defensible synthesis reports possible benefits and access issues while making clear that these extracts cannot establish a causal effect on productivity.
-
-A question about flexible participation may be worth exploring. The extracts cannot establish that it is a gap in the wider literature.
-
+**1 minute discussion · 1 minute debrief**
 :::
-:::
+
+## Debrief: Preserve Difference and Uncertainty
+
+- A measures confidence without a comparator; B reports experiences; C reports an unadjusted association.
+- The extracts do not establish a causal effect on productivity.
+- B contains an access barrier, so compulsory attendance is not justified.
+
+**Bounded synthesis:** These extracts suggest possible benefits and access issues, but do not show that writing groups increase productivity.
+
+A question about flexible participation may be worth exploring; these extracts cannot establish a gap in the wider literature.
+
+# Five-Minute Break
+
+When we return: **How do we keep interpretation and computation visible?**
 
 # AI for Qualitative and Quantitative Data Analysis
 
-## Begin with the Analysis Plan
+## Begin with the Question and Analysis Plan
 
-AI can assist with organising material, drafting code and exploring interpretations. The research question and analytical approach determine what counts as a valid result.
+AI can help organise material, draft code and explore interpretations. The research question and analytical approach determine what counts as a valid result.
 
-Keep original data read-only, work on copies and preserve identifiers. Check what leaves your machine, including transcripts, prompts, file previews and error messages. For practice, use the synthetic examples below.
+Do not let the availability of a tool choose the method.
 
-## Qualitative Analysis: Support at Different Stages
+## Protect the Data Boundary
+
+- Keep original data read-only; work on copies and preserve identifiers.
+- Check what leaves your machine: transcripts, prompts, previews and error messages.
+- Use a synthetic sample or schema when that is sufficient to develop the workflow.
+
+The examples that follow are fictional teaching data.
+
+## Qualitative Support: Preparing and Coding
 
 | Stage | Possible AI support | Essential human work |
 |---|---|---|
-| Transcription | Draft a transcript or flag unclear passages | Check consent, approved processing, speaker labels, omissions and relevant non-verbal context against recordings |
-| Familiarisation | Locate passages or prepare navigational summaries | Read the material and write your own observations and reflexive notes |
-| Initial coding | Suggest labels or apply a defined codebook to selected extracts | Check every retained assignment against the text and analytical purpose |
-| Developing themes | Compare candidate patterns and retrieve contrasting passages | Develop and revise interpretations across the full dataset |
-| Reporting | Organise checked extracts and critique an explanation | Preserve participants' meaning, anonymise appropriately and justify the interpretation |
+| Transcription | Draft or flag unclear passages | Check consent, processing, labels and omissions against recordings |
+| Familiarisation | Locate passages or prepare navigational summaries | Read the material and write reflexive notes |
+| Initial coding | Suggest labels or apply a defined codebook | Check every retained assignment against the text and purpose |
 
-For example, [MAXQDA AI Assist](https://www.maxqda.com/products/ai-assist) offers coding support, summaries and questions over text. Evaluate the feature's processing arrangements separately from those of the desktop software. A local project file does not mean an AI feature processes locally.
+## Qualitative Support: Interpretation and Reporting
 
-## Coding Is Not the Same as Thematic Analysis
+| Stage | Possible AI support | Essential human work |
+|---|---|---|
+| Developing themes | Compare patterns and retrieve contrasting passages | Develop interpretations across the full dataset |
+| Reporting | Organise checked extracts and critique an explanation | Preserve meaning, anonymise and justify the interpretation |
 
-Choose the approach before asking the model to “find themes”. In codebook-based work, provide definitions, inclusion/exclusion rules and examples. Pilot suggestions, retain disagreements and version codebook changes.
+[MAXQDA AI Assist](https://www.maxqda.com/products/ai-assist), for example, offers coding support, summaries and questions over text. A local project file does not mean an AI feature processes locally; assess its processing arrangements separately.
 
-In **reflexive thematic analysis**, themes are developed through the researcher's situated interpretation and engagement with the data. Automated label agreement cannot establish the quality of that analysis. Braun and Clarke's [guidance on reflexive thematic analysis](https://www.thematicanalysis.net/doing-reflexive-ta/) explains this interpretative process; their [FAQs](https://www.thematicanalysis.net/faqs/) distinguish codes and themes.
+## Codebook-Based Work Needs Rules
 
-Use AI suggestions, if methodologically appropriate, as material to interrogate. Keep a reflexive memo on how they influenced your attention. Seek exceptions, context and alternative readings; frequency alone does not determine a theme's significance.
+Before asking a model to “find themes”, choose the analytical approach.
 
-## A Prompt for Inspectable Coding Suggestions
+For codebook-based work, provide definitions, inclusion and exclusion rules, and examples. Pilot suggestions, retain disagreements and version changes to the codebook.
+
+## Reflexive Thematic Analysis Is Interpretative
+
+In **reflexive thematic analysis**, themes are developed through the researcher's situated interpretation and engagement with the data. Automated agreement does not establish analytical quality.
+
+Use suggestions, if methodologically appropriate, as material to interrogate. Keep a reflexive memo; seek exceptions, context and alternative readings. Frequency alone does not determine significance. See Braun and Clarke's [guidance](https://www.thematicanalysis.net/doing-reflexive-ta/) and [FAQs](https://www.thematicanalysis.net/faqs/).
+
+## An Inspectable Qualitative Request
 
 ```text
-Use only the labelled synthetic interview extracts below.
-Suggest provisional descriptive codes about participation in writing groups.
+Use only the labelled synthetic extracts.
+Suggest provisional descriptive codes about participation.
 Return: extract ID; exact quotation; proposed code; reason;
 alternative interpretation; uncertainty or missing context.
 
-Do not rewrite quotations or invent participants, experiences or motives.
+Do not rewrite quotations or invent experiences or motives.
 Allow more than one code per extract and allow "unclear".
-Look for evidence that complicates an initially positive interpretation.
-These are coding suggestions for human review, not final themes.
+Look for evidence that complicates a positive interpretation.
+These are suggestions for human review, not final themes.
 ```
 
-Do not ask AI to generate participant quotations, fill gaps in interviews or claim saturation. Synthetic text can be useful for training, but must remain labelled and separate from empirical evidence.
+Never generate participant quotations, fill interview gaps or claim saturation. Synthetic text used for training must remain labelled and separate from empirical evidence.
 
-## Quantitative Analysis: Keep the Computation Visible
+## Quantitative Analysis: Validate Before Transforming
 
-Give the assistant a data dictionary, the study design, planned analysis and relevant software versions. Initially, a synthetic sample or schema may be enough to develop code without uploading real data.
+Give the assistant a data dictionary, study design, planned analysis and relevant software versions.
 
-Ask for a staged approach:
+1. Validate names, types, identifiers, units and allowed values.
+2. Report missingness, duplicate keys and data problems.
+3. Show the proposed analysis and assumptions for review.
 
-1. Validate column names, types, identifiers, units and allowed values.
-2. Report missingness, duplicate keys and data problems before transformation.
-3. Show the proposed analysis and assumptions for researcher review.
-4. Generate code that preserves raw data and records any exclusions or derived variables.
-5. Run the code in an approved environment and inspect its outputs.
-6. Reproduce a small calculation independently and check the conclusions against the design.
+## Quantitative Analysis: Execute and Reproduce
 
-Keep the script or notebook with its input version, package versions and random seeds where relevant. A chat message containing a result or a plausible library call is insufficient evidence that the calculation happened correctly.
+4. Generate code that preserves raw data and records exclusions and derived variables.
+5. Run it in an approved environment and inspect the outputs.
+6. Reproduce a small calculation independently; check the conclusion against the design.
 
-## Statistical Support and Visualisation
+Keep the script or notebook, input version, package versions and relevant random seeds. A plausible chat response is not evidence that a calculation ran.
 
-| AI suggestion | Questions to ask before accepting it |
+## Challenge Statistical Suggestions
+
+| AI suggestion | Ask before accepting |
 |---|---|
-| “Run a t-test” | What is the estimand? Are observations paired, independent or clustered? What assumptions matter? |
-| “Remove outliers” | Is there a documented data error or a scientifically justified rule? How would removal affect conclusions? |
-| “Fill missing values with the mean” | Why are values missing? Is imputation justified by the analysis plan? How is uncertainty handled? |
-| “This relationship is significant” | Did the test run? What are the effect size, interval, assumptions and multiple-testing implications? |
-| “This predicts outcomes well” | Were training and evaluation data separated appropriately, including preprocessing and participant groups? |
-| “Use a bar chart” | Would individual observations, distributions or paired changes answer the question more clearly? |
+| “Run a t-test” | What is the estimand? Paired, independent or clustered? |
+| “Remove outliers” | Data error or justified rule? What changes if they remain? |
+| “Fill missing values with the mean” | Why are they missing? How is uncertainty handled? |
 
-Ask AI to compare plausible methods and explain required information. Involve a statistician when the design or assumptions need specialist judgement. Do not select tests to achieve a preferred result or present exploratory findings as prespecified confirmation.
+## Challenge Claims and Visual Choices
 
-For figures, calculate from the actual data. Verify sample counts, labels, units, scales, uncertainty intervals and colour accessibility. Preserve the plotting code; a generated illustration is not a data visualisation unless its marks faithfully represent the data.
+| AI suggestion | Ask before accepting |
+|---|---|
+| “This is significant” | Did the test run? Effect size, interval and assumptions? |
+| “This predicts well” | Were training and evaluation kept properly separate? |
+| “Use a bar chart” | Would observations, distributions or paired changes be clearer? |
 
-::: callout-task
+Involve a statistician when the design or assumptions need specialist judgement. For figures, verify counts, labels, units, scales, uncertainty and colour accessibility; preserve the plotting code.
 
-#### Task 5: Check an AI-Assisted Analysis
+## Discussion Data: Qualitative Route
 
-Choose **one** route. Spend 15 minutes on the exercise and 5 minutes comparing checks with another group.
+Synthetic extracts:
 
-::: panel-tabset
+- **I01:** “Booking the session made me protect the time. I did not always write more, but I stopped putting it off.”
+- **I02:** “The others were encouraging. The afternoon slot clashed with collecting my children, so I only came twice.”
+- **I03:** “I came most weeks. My supervisor's deadline was probably what got the chapter finished.”
 
-##### Qualitative Route
+Proposed theme: **“Writing groups cause higher productivity for everyone.”**
 
-These are synthetic extracts from three fictional interviewees:
+## Discussion Data: Quantitative Route
 
-- **I01, line 1:** “Booking the session made me protect the time. I did not always write more, but I stopped putting it off.”
-- **I02, line 1:** “The others were encouraging. The afternoon slot clashed with collecting my children, so I only came twice.”
-- **I03, line 1:** “I came most weeks. My supervisor's deadline was probably what got the chapter finished.”
-
-Code the extracts yourself, then request suggestions using the prompt above. If working without AI, critique the proposed theme *“Writing groups cause higher productivity for everyone.”*
-
-Keep, revise or reject each suggestion. Record one alternative explanation and one reflexive note about how your expectations influenced interpretation.
-
-##### Quantitative Route
-
-This synthetic dataset has **one row per person**. `participant_id` is a text identifier; `NA` means a missing value, not zero. Hours are self-reported writing time during the week before the group and during week six. These six fictional people are a separate practice dataset, not the participants described in Sources A–C.
+One row per person; `NA` is missing, not zero. Hours are self-reported at baseline and week six.
 
 ```csv
-participant_id,writing_hours_baseline,writing_hours_week6,sessions_attended
+participant_id,baseline_hours,week6_hours,sessions
 P001,4,6,6
 P002,3,4,4
 P003,5,NA,2
@@ -527,55 +645,62 @@ P005,6,5,1
 P006,4,4,3
 ```
 
-Use this prompt, or work through the calculation manually:
+Proposed conclusion: **“Across all six participants, writing time rose by 0.4 hours/week, proving the group was effective.”**
 
-```text
-Use this synthetic dataset to describe within-person change in weekly
-writing hours. Preserve all six rows and participant IDs in the source data.
-First validate the schema and report missingness. Do not impute values.
-Calculate week6 minus baseline only where both values are present.
-Report the number of complete pairs and their mean change in hours/week.
-Show individual paired values and propose a plot with labelled units.
-If generating R or Python code, keep the raw data unchanged, report any
-excluded observations for this calculation and explain each transformation.
-Do not run a significance test or infer a causal effect.
-```
+## Discussion Pause 5: Find the Hidden Error {background-color="#2b2b2b"}
 
-Check the arithmetic by hand. If code is generated, review and run it in an approved environment; do not treat unexecuted output as a computed result.
+::: callout-task
+Choose the qualitative **or** quantitative route.
 
-##### Checks and Discussion
+Identify one error a fluent explanation could conceal and the check that would catch it.
 
-**Qualitative:** The extracts support possible interpretations involving protected time, encouragement, access barriers and an alternative influence from supervision. They do not establish universal benefit or causation. Any retained quotation must match its source exactly. Three teaching extracts are insufficient for a completed thematic analysis.
-
-**Quantitative:** There are six unique IDs and one missing week-six value. The five complete changes are **2, 1, 0, −1 and 0 hours/week**, giving a mean change of **0.4 hours/week**. Report that P003 is unavailable for this paired calculation and retain their original record. A plot of paired observations can show the variation that the mean conceals. These data do not establish effectiveness.
-
-**Both routes:** Identify an error that a fluent explanation could conceal. Record the specific check that would catch it.
-
+**1 minute discussion · 1 minute debrief**
 :::
-:::
+
+## Debrief: Qualitative Route
+
+The extracts support protected time, encouragement, an access barrier and an alternative influence from supervision.
+
+They do not establish universal benefit, higher output or causation. Check retained quotations exactly, seek contrary cases and record how the researcher's expectations shaped interpretation. Three extracts are not a completed thematic analysis.
+
+## Debrief: Quantitative Route
+
+There are six unique IDs but only **five complete pairs**. Their changes are **2, 1, 0, −1 and 0 hours/week**: a mean of **0.4**.
+
+Report P003 as unavailable for the paired calculation and retain the record. The mean conceals variation, and these data do not establish effectiveness.
 
 # AI Agents and Research Automation
 
-## From a Prompt to a Multi-Step Task
+## Prompt, Workflow or Agent?
 
 A saved prompt standardises an instruction. A **workflow** specifies a sequence of steps. An **agent** uses a model and tools to select or carry out steps towards a goal, potentially searching, reading files or running code.
 
-Useful research candidates include preparing a draft digest from approved sources, extracting fields from permitted documents, checking metadata or assembling a report from validated analysis outputs. Begin with a manual workflow that works; test whether automation actually reduces total effort after checking.
+Begin with a manual workflow that works. Then test whether automation reduces **total effort after checking**.
+
+## Good Candidates Have Clear Checkpoints
 
 | Repeated task | Support automation could provide | Human checkpoint |
 |---|---|---|
 | Literature monitoring | Retrieve new records, flag candidate duplicates and draft relevance notes | Confirm relevance and approve additions to the review library |
 | Document extraction | Apply the same schema across approved papers | Check source locations, ambiguous fields and extraction failures |
+
+## Keep Interpretation Outside the Automation
+
+| Repeated task | Support automation could provide | Human checkpoint |
+|---|---|---|
 | Analysis reporting | Run approved scripts and assemble tables and figures | Review logs, diagnostics and interpretation |
 | Grant preparation | Compare a draft with a supplied call checklist | Confirm eligibility, commitments, costs and final content |
 
-## Worked Example: A Literature Monitoring Assistant
+## Example: Literature Monitoring Inputs
 
 Define the task as: **prepare a draft list of newly retrieved papers for review**.
 
 1. Accept a checked search specification and the previous reviewed library.
 2. Retrieve records from the approved database/API or process an exported search file.
 3. Save query details, retrieval date and original record IDs.
+
+## Example: Literature Monitoring Outputs
+
 4. Flag possible duplicates without deleting source records.
 5. Add a provisional relevance note based on explicit criteria and accessible text.
 6. Produce a draft table with source links, uncertainty and retrieval failures.
@@ -583,15 +708,19 @@ Define the task as: **prepare a draft list of newly retrieved papers for review*
 
 The assistant must distinguish **zero results** from **a failed search**. Check coverage before assuming the literature has not changed. A saved prompt needs an enabled scheduler or automation platform to run periodically; it cannot monitor a topic merely because it says it will.
 
-## Set Boundaries the System Can Enforce
+## Boundaries Should Be Enforceable
 
 Specify permitted sources, input folders, output locations and actions. Use read-only access where possible, a separate draft output area and a small trial batch. Set limits on run time, API requests, cost and retries, and stop with an explicit error when those limits are reached.
 
-Web pages and PDFs can contain instructions that try to redirect an agent: **prompt injection**. Treat retrieved text as source material, not authority to change the task. A sentence in the prompt is only one defence; restrict tool permissions and review proposed actions as well.
-
 > 🤖 Require human approval before sending messages, submitting applications, altering source data or making final screening and research decisions.
 
-## A Reusable Agent Specification
+## Retrieved Material Is Not an Instruction
+
+Web pages and PDFs can contain instructions that try to redirect an agent: **prompt injection**.
+
+Treat retrieved text as source material, not authority to change the task. A sentence in a prompt is only one defence; also restrict permissions and review proposed actions.
+
+## Agent Specification: Purpose and Permissions
 
 ```text
 Purpose: Prepare a draft evidence-monitoring table for researcher review.
@@ -599,7 +728,11 @@ Input: Approved search export, eligibility criteria and previous library.
 Permitted actions: Read these inputs; create a new draft table and run log.
 Not permitted: Delete records, contact authors, upload other files,
 change criteria, decide final inclusion or publish a report.
+```
 
+## Agent Specification: Output, Stops and Log
+
+```text
 Output: Record ID; bibliographic details; candidate duplicate;
 provisional relevance; supporting source; uncertainty; human decision field.
 Stop if: An input is unreadable, a source is unavailable, permissions are
@@ -610,28 +743,23 @@ steps attempted; errors; checks actually performed; items awaiting review.
 
 Test with a small known collection containing a duplicate, an irrelevant paper and an unreadable input. Review missed records and incorrect actions as well as correct output. When the model, sources or instructions change, repeat those checks.
 
+## Discussion Pause 6: Bound the Automation {background-color="#2b2b2b"}
+
 ::: callout-task
+For a literature-monitoring agent, choose the **single most important boundary**: a stop condition or a human approval point. What failure does it prevent?
 
-#### Task 6: Design a Bounded Research Automation
-
-::: panel-tabset
-
-##### Exercise (7 minutes)
-
-Choose literature monitoring, extraction or analysis reporting. Adapt the specification above to define its inputs, actions, outputs, stop conditions and human checkpoint.
-
-Add two test cases: one normal input and one failure such as an inaccessible paper or changed column name. State what you expect the system to do in each case.
-
-##### Discussion (3 minutes)
-
-Trace the task step by step. Where could a plausible but wrong result pass unnoticed? What permission or check would contain that failure?
-
+**1 minute discussion · 1 minute debrief**
 :::
-:::
+
+## Debrief: Fail Closed and Preserve the Decision
+
+Good stop conditions include an unreadable input, failed search, changed schema, unclear permission or exceeded limit.
+
+Human approval should remain before final inclusion, deletion, external communication or publication. Test both a normal case and a known failure case.
 
 # AI for Grant Applications
 
-## Use the Funding Call as the Source
+## Use the Funding Call as the Source of Truth
 
 Provide the current call, eligibility rules, assessment criteria, word limits and an approved project brief. Ask AI to extract requirements before drafting prose. Record the call version and deadline, then verify them at the funder's original page.
 
@@ -639,18 +767,32 @@ Provide the current call, eligibility rules, assessment criteria, word limits an
 |---|---|---|
 | Assessing fit | Map the project to the call's priorities and eligibility criteria | Actual eligibility and strategic fit |
 | Planning the application | Build a section checklist, timetable and evidence map | Owners, time available and internal submission deadlines |
+
+## Drafting Is Constrained by the Evidence
+
+| Application task | Useful AI support | What the team must supply or check |
+|---|---|---|
 | Drafting and editing | Structure the argument, clarify language and reduce word count | Original ideas, evidence, accurate claims and permitted use |
+
+Do not invent preliminary findings, collaborators, letters of support, costs or promised outcomes. An AI-generated reviewer score is not a prediction of a funding decision.
+
+## Use AI to Challenge Delivery Plans
+
+| Application task | Useful AI support | What the team must supply or check |
+|---|---|---|
 | Work packages and impact | Identify unclear dependencies, outputs and assumptions | Feasible methods, partner commitments and credible routes to benefit |
 | Budget and resources | Check consistency between narrative and a supplied costing sheet | Approved rates, arithmetic, eligibility and research-office sign-off |
 | Critical review | Identify weak links against the published criteria | Research quality and final submission decisions |
 
-Do not invent preliminary findings, collaborators, letters of support, costs or promised outcomes. An AI-generated reviewer score is not a prediction of a funding decision.
-
-## Applicant and Assessor Roles Have Different Rules
+## Applicants and Assessors Have Different Rules
 
 Under the [UKRI policy checked on 14 September 2026](https://www.ukri.org/publications/generative-artificial-intelligence-in-application-and-assessment-policy/use-of-generative-artificial-intelligence-in-application-preparation-and-assessment/), applicants are expected to be transparent about substantive AI use, while minimal language or formatting assistance need not be disclosed. Human involvement is required when developing applications or sections, and AI use during application interviews is prohibited.
 
-UKRI assessors may use AI only for language refinement within the specified restrictions: application content and personal information must not be entered, and AI must not interpret or evaluate the application. Read the policy for the applicable role and check the particular funding opportunity before use. Other funders may set different conditions.
+## For Assessors, Confidentiality Changes the Boundary
+
+UKRI assessors may use AI only for language refinement within the specified restrictions: application content and personal information must not be entered, and AI must not interpret or evaluate the application.
+
+Read the policy for the applicable role and check the particular funding opportunity before use. Other funders may set different conditions.
 
 ## A Prompt for Reviewing an Application Draft
 
@@ -665,57 +807,69 @@ Flag conflicts between the work plan, proposed methods and resources.
 Suggest revisions for human review; do not submit anything.
 ```
 
+## Fictional Funding Call
+
+**Requirement 1:** Support a six-month pilot of an inclusive approach to doctoral researcher development.
+
+**Requirement 2:** Specify the research question, recruitment approach, evaluation method, timetable and a justified budget of no more than **£5,000**.
+
+## Fictional Project Notes
+
+- Pilot a flexible peer writing group.
+- Recruit volunteers from one school; interview attendees; collect weekly writing-time diaries.
+- Claim that the study will prove increased productivity across the University.
+- No plan for non-attendees, no timetable and an uncosted facilitator role.
+- No partners have committed to the project.
+
+## Discussion Pause 7: Review Against the Call {background-color="#2b2b2b"}
+
 ::: callout-task
+Which gap or unsupported claim is most consequential for this application? Explain why.
 
-#### Task 7: Review a Proposal Against a Call
-
-::: panel-tabset
-
-##### Fictional Call and Project
-
-**Call, requirement 1:** Support a six-month pilot of an inclusive approach to doctoral researcher development.
-
-**Call, requirement 2:** The application must specify its research question, recruitment approach, evaluation method, timetable and a justified budget of no more than £5,000.
-
-**Project notes:** Pilot a flexible peer writing group. Recruit volunteers from one school, interview attendees and collect weekly writing-time diaries. The draft claims the study will prove increased productivity across the University. It proposes no approach to non-attendees, no timetable and an uncosted facilitator role. No partners have committed to the project.
-
-##### Exercise (7 minutes)
-
-Create a requirements matrix manually or with AI. Identify three missing or unsupported elements, revise the central claim and write two questions for the project team.
-
-##### Discussion (3 minutes)
-
-Check whether the method supports the intended conclusion and whether recruitment addresses inclusion. A stronger proposal would frame feasible pilot questions, supply a timetable and costed roles, and resolve participation barriers. AI cannot supply missing commitments or guarantee that the project meets the call.
-
+**1 minute discussion · 1 minute debrief**
 :::
-:::
+
+## Debrief: AI Cannot Supply Missing Reality
+
+The method cannot prove a University-wide productivity effect, and recruitment from one school does not yet demonstrate inclusion.
+
+A stronger pilot would ask a feasible question, address participation barriers, and supply a timetable and costed roles. AI cannot create commitments, confirm eligibility or guarantee fit with the call.
 
 # Research Integrity and Responsible Use of AI
 
-## Confidentiality, Company Data and Intellectual Property
+## Before Uploading, Check Authority and Permission
 
 Before supplying material to a tool, check the data classification, ethics approval, participant information/consent, contracts and the institution's permitted processing arrangements. Removing names may not remove identifiable combinations of roles, events, locations or quotations.
 
 Company datasets, partner documents, unpublished findings, patentable ideas and applications received in confidence require particular care. Access to a document is not automatically permission to upload it to another provider. Reading access to a paper also does not settle licence conditions for uploading or redistributing it.
 
+## “Not Used for Training” Is Not the Whole Answer
+
 Distinguish model training, retention, administrator access, hosting location, subprocessors and connector permissions. For example, Microsoft's [Copilot Chat privacy documentation](https://learn.microsoft.com/en-us/copilot/privacy-and-protections) describes protections for work accounts while also explaining logging and separate handling of web search queries. A “not used for training” statement does not mean no data is stored or sent elsewhere.
+
+## If Permission Is Unclear, Change the Input
 
 If permission is unclear, use a synthetic example or a schema while seeking advice from the appropriate institutional data, research ethics, information security or contracts/IP team. Keep sensitive AI-use logs in approved storage too.
 
-## Hallucinations, Bias and Appropriate Boundaries
+## Evidence Risks Need Evidence Checks
 
 | Risk | A practical response |
 |---|---|
 | Invented or distorted references | Verify title, authors, DOI and publication details, then read the passage supporting the claim |
 | Unsupported interpretation | Separate source statements, calculations, researcher inference and AI suggestions |
-| Bias in sources or output | Look for missing populations, languages, disciplines, contrary evidence and stereotyped interpretations |
 | Overconfidence from fluent writing | Ask what evidence would overturn the claim and check it outside the conversation |
+
+## Context and Representation Need Deliberate Checks
+
+| Risk | A practical response |
+|---|---|
+| Bias in sources or output | Look for missing populations, languages, disciplines, contrary evidence and stereotyped interpretations |
 | Loss of context | Revisit complete papers, interviews and study designs before making conclusions |
 | Fabricated evidence | Never present generated quotations, measurements, images or citations as observed research data |
 
 AI can support accessibility and language clarity, but it can also standardise away a researcher's voice or a participant's meaning. Review what changed. A more polished answer is not necessarily a better account of the evidence.
 
-## Reproducibility and a Useful Audit Trail
+## Audit Trail: Context and Inputs
 
 Record enough for a colleague to understand the contribution and reproduce the parts that can be reproduced:
 
@@ -725,55 +879,72 @@ Task and reason for using AI:
 Product, model/version if visible, account/service and relevant settings:
 Input files, source IDs, versions and permission basis:
 Prompt/template version and sequence of steps:
+```
+
+## Audit Trail: Outputs and Decisions
+
+```text
 Original outputs, generated code and execution environment:
 Checks performed, errors found and corrections:
 Material retained, rejected or modified and by whom:
 Remaining limitations and disclosure decision:
 ```
 
+## Reproducibility Has Limits
+
 Model updates, changing search indexes and variable outputs can prevent identical reruns. Preserve the actual outputs and decisions rather than assuming a prompt alone is enough. Distinguish reproducible code execution from an AI conversation that can only be documented and evaluated.
 
-## Disclosure, Authorship and Accountability
+## Responsibility Cannot Be Delegated
 
 Authorship carries responsibility for the work; an AI system cannot take that responsibility. The researchers remain accountable for evidence, interpretation and the final text. [Springer Nature's guidance](https://group.springernature.com/gp/group/ai/ai-guidance-for-our-researchers-and-communities) emphasises human accountability and transparent use under its policies.
 
 Check the current institution, funder and target journal requirements. Language editing, substantive drafting, analysis and research methods may require different descriptions. Disclosure does not make an otherwise prohibited or methodologically unsound use acceptable.
 
-A disclosure should describe what actually happened, for example:
+## Describe What Actually Happened
+
+A useful disclosure names the contribution and the checks, for example:
 
 > “We used [tool and model/version, date] to suggest descriptive codes for approved transcript extracts. The research team checked each retained suggestion against the original text, revised the coding and developed the final interpretation. The input specification, prompts and decisions were retained in approved project storage.”
 
 This is a template, not a declaration to copy regardless of your method. Replace the details and only claim checks that were performed.
 
+## Discussion Pause 8: Set Your Boundary {background-color="#2b2b2b"}
+
 ::: callout-task
+Choose one AI-assisted workflow from today. Which boundary would be hardest to make reliable: **permission, evidence, method or responsibility**?
 
-#### Task 8: Write Your Research AI Use Note
-
-Choose one activity from this workshop. Spend three minutes recording the input, tool or manual approach, output, checks and decision. Then use two minutes to explain to a partner:
-
-- one action you would permit in a real project
-- one action that would need approval or specialist advice
-- one decision that must remain with the research team
-
-If no AI was used, record that and identify what would need to change before using the proposed workflow with real research material.
-
+**1 minute discussion · 1 minute debrief**
 :::
+
+## Debrief: A Reusable Decision Test
+
+Before using AI, ask:
+
+1. **Permission:** may this material enter this service?
+2. **Evidence:** can I trace and independently check the output?
+3. **Method:** does the use fit the research design and analytical approach?
+4. **Responsibility:** who makes and records the final decision?
+
+If any answer is unclear, narrow the task, change the input or seek advice.
 
 # Further Information
 
+## 📚 Key Points: Start with the Research
+
 ::: callout-keypoints
+- Choose tools by task, evidence access, data permissions and verification.
+- Use a research brief, labelled sources, structured outputs and visible checks.
+- Keep questions, methods and claims aligned through disciplinary judgement.
+- Build synthesis from verified records while preserving difference and uncertainty.
+:::
 
-## 📚 Key Points
+## 📚 Key Points: Keep the Work Inspectable
 
-- Choose tools by task, evidence access, data permissions and the ability to verify outputs.
-- Use a research brief, labelled sources, structured outputs and visible checking stages.
-- Develop questions, frameworks and instruments with disciplinary judgement; proposed novelty and validity need evidence.
-- Build literature synthesis from verified records and extraction, preserving differences and uncertainty.
-- Keep qualitative interpretation connected to the original material and numerical claims connected to executed analysis.
+::: callout-keypoints
+- Connect qualitative interpretations to source material and numerical claims to executed analysis.
 - Automate bounded steps with logs, failure handling and human checkpoints.
-- Use AI to strengthen a grant application while retaining responsibility for its claims, commitments and compliance with the call.
-- Record and disclose actual AI use according to the applicable requirements.
-
+- Use AI to strengthen grants without inventing evidence, commitments or eligibility.
+- Record and disclose what actually happened under the applicable requirements.
 :::
 
 ::: callout-hints

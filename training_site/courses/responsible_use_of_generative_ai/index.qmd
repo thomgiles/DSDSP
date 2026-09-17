@@ -12,7 +12,7 @@ page-class: course-page
 ### Course At A Glance
 
 - **Level:** Foundation to intermediate
-- **Duration:** 2-hour introduction; 3-hour applied workshop, plus breaks
+- **Duration:** 2-hour introduction; applied workshop approximately 2 hours, including a short break
 - **Best for:** Researchers, research staff, doctoral researchers, and professional services colleagues who need clearer judgement about AI use
 - **Main themes:** research change, prompting, literature reviews, analysis, grant applications, automation, and research integrity
 - **Format:** Two linked introductory sessions followed by an applied workshop; sessions can be delivered separately
@@ -103,7 +103,7 @@ A simple structure is:
 1. **Hour 1:** [Introduction to AI for Research](episodes/01-Introduction_to_AI_for_research.qmd)
 2. **Hour 2:** [Prompting for Research](episodes/02-Prompting_for_research.qmd)
 
-Follow these with [Applied AI for Research](episodes/03-Applied_AI_for_research.qmd), a three-hour workshop with additional breaks. It includes eight activities and a choice of qualitative or quantitative analysis practice. The applied sections can also be delivered as shorter linked sessions; completing every activity and both analysis routes needs additional practice time.
+Follow these with [Applied AI for Research](episodes/03-Applied_AI_for_research.qmd), an approximately two-hour workshop including a short break. It uses eight brief discussion pauses, with a choice of qualitative or quantitative material for the analysis pause. The timings are indicative and can flex with the facilitator, audience and amount of discussion.
 
 ## What Learners Typically Leave With
 

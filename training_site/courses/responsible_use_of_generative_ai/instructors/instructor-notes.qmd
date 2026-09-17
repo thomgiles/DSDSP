@@ -24,14 +24,14 @@ The course works best when learners leave with:
 
 ## Delivery Pattern
 
-The introductory lessons can run as one 2-hour workshop or two linked one-hour sessions. The applied lesson adds three hours of learning time, plus breaks, and can be split into shorter sessions.
+The introductory lessons can run as one 2-hour workshop or two linked one-hour sessions. The applied lesson is designed for approximately two hours, including a short break, and can be split into shorter sessions. Treat all timings as a guide that can flex with the facilitator and audience.
 
 A reliable rhythm is:
 
 1. Short concept framing.
 2. Example or comparison.
-3. Pair or group activity.
-4. Debrief focused on practical decisions.
+3. Brief pair discussion focused on one judgement.
+4. Concise debrief before returning to the lecture.
 
 Learners usually understand the material better after they have had to defend a prompt, identify a weak claim, or explain what should be checked next.
 
@@ -47,14 +47,14 @@ Use [Prompting for Research](../episodes/02-Prompting_for_research.qmd) to move 
 
 ### Applied AI for Research
 
-Use [Applied AI for Research](../episodes/03-Applied_AI_for_research.qmd) to connect tool selection and prompting to the research lifecycle. Follow the short teaching sections with evidence checking, design decisions and workflow practice. The eight activities total 90 minutes alongside 90 minutes of teaching.
+Use [Applied AI for Research](../episodes/03-Applied_AI_for_research.qmd) to connect tool selection and prompting to the research lifecycle. The lecture is the focus. Eight brief pauses ask pairs to make one evidence, design or boundary judgement before a short debrief; together they account for roughly 15 minutes within the two-hour session.
 
 - Use the fictional study extracts, interviews, dataset and funding call included in the lesson if learners cannot supply permitted material.
 - For literature work with real papers, confirm access and upload permissions in advance; public availability alone does not settle licence or institutional requirements.
-- Split groups between the qualitative and quantitative analysis routes, or select the route that best fits the audience. Both routes are available for further practice.
-- Check the numerical exercise against five complete pairs and a mean change of 0.4 hours/week. In qualitative work, expect justified differences in interpretation rather than one correct set of themes.
+- For the analysis pause, let pairs choose the qualitative or quantitative example, or select the route that best fits the audience.
+- Check the quantitative debrief against five complete pairs and a mean change of 0.4 hours/week. In qualitative discussion, expect justified differences in interpretation rather than one correct set of themes.
 - Keep grant preparation distinct from externally assigned assessment. Recheck the linked tool documentation and funder/publisher policies before delivery.
-- Assess the final AI use note for specific checks and decisions, not the fluency of the generated output.
+- Use the final boundary discussion to reinforce permission, evidence, method and responsibility rather than asking for a lengthy written output.
 
 ## Common Sticking Points
 

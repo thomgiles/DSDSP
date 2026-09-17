@@ -28,7 +28,7 @@ The course supports participants to:
 
 ## Course Position in the Programme
 
-The course combines a 2-hour introduction with a 3-hour applied workshop within the UoN Digital Skills programme. Sessions can be delivered separately, with breaks added to the teaching time. The [applied workshop](episodes/03-Applied_AI_for_research.qmd) uses synthetic examples and can be completed without paid AI access.
+The course combines a 2-hour introduction with an applied workshop of approximately 2 hours within the UoN Digital Skills programme. Sessions can be delivered separately. The [applied workshop](episodes/03-Applied_AI_for_research.qmd) includes a short break, uses synthetic examples and can be completed without paid AI access.
 
 ## Contributing
 
