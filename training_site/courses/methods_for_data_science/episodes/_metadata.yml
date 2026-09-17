@@ -15,6 +15,7 @@ format:
       - black
       - ../../../uon.scss
     output-ext: revealjs.html
+    auto-stretch: false
     slide-number: true
     smaller: true
     scrollable: true

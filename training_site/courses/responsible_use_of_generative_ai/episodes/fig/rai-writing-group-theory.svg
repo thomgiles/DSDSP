@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="320" viewBox="0 0 1200 320" role="img" aria-labelledby="title desc">
+  <title id="title">A possible explanation for more regular writing</title>
+  <desc id="desc">A writing group may create protected time, which may lead to more regular writing.</desc>
+  <defs>
+    <filter id="shadow" x="-10%" y="-25%" width="120%" height="160%">
+      <feDropShadow dx="0" dy="8" stdDeviation="8" flood-color="#10263b" flood-opacity="0.15"/>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2 2 L10 6 L2 10 Z" fill="#405162"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="320" rx="28" fill="#f7fbfc"/>
+
+  <g fill="none" stroke="#405162" stroke-width="6" stroke-linecap="round" marker-end="url(#arrow)">
+    <path d="M370 160 H445"/>
+    <path d="M755 160 H830"/>
+  </g>
+
+  <g font-family="sans-serif" text-anchor="middle" filter="url(#shadow)">
+    <rect x="70" y="78" width="300" height="164" rx="24" fill="#006781"/>
+    <rect x="450" y="78" width="305" height="164" rx="24" fill="#298582"/>
+    <rect x="835" y="78" width="295" height="164" rx="24" fill="#10263b"/>
+
+    <g fill="#ffffff">
+      <text x="220" y="120" font-size="16" font-weight="800">ACTIVITY</text>
+      <text x="220" y="164" font-size="27" font-weight="700">Writing group</text>
+      <text x="220" y="201" font-size="17">structured support</text>
+
+      <text x="602" y="120" font-size="16" font-weight="800">POSSIBLE MECHANISM</text>
+      <text x="602" y="164" font-size="27" font-weight="700">Protected time</text>
+      <text x="602" y="201" font-size="17">time is set aside to write</text>
+
+      <text x="982" y="120" font-size="16" font-weight="800">EXPECTED PATTERN</text>
+      <text x="982" y="157" font-size="25" font-weight="700">More regular</text>
+      <text x="982" y="188" font-size="25" font-weight="700">writing</text>
+      <text x="982" y="218" font-size="16">something to test</text>
+    </g>
+  </g>
+</svg>

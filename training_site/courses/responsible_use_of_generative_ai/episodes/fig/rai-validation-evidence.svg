@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="380" viewBox="0 0 1200 380" role="img" aria-labelledby="title desc">
+  <title id="title">Evidence used to validate a research explanation</title>
+  <desc id="desc">Appropriate literature, data, analysis, experiments, and disciplinary expertise work together to validate a research explanation.</desc>
+  <defs>
+    <filter id="shadow" x="-10%" y="-25%" width="120%" height="160%">
+      <feDropShadow dx="0" dy="7" stdDeviation="7" flood-color="#10263b" flood-opacity="0.14"/>
+    </filter>
+    <marker id="arrow" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2 2 L10 6 L2 10 Z" fill="#405162"/>
+    </marker>
+  </defs>
+
+  <rect width="1200" height="380" rx="28" fill="#f7fbfc"/>
+
+  <g fill="none" stroke="#405162" stroke-width="4" stroke-linecap="round">
+    <path d="M130 190 V220 H1070 V190"/>
+    <path d="M365 190 V220"/>
+    <path d="M600 190 V220"/>
+    <path d="M835 190 V220"/>
+    <path d="M600 220 V258" marker-end="url(#arrow)"/>
+  </g>
+
+  <g font-family="sans-serif" text-anchor="middle" filter="url(#shadow)">
+    <rect x="30" y="52" width="200" height="138" rx="22" fill="#006781"/>
+    <rect x="265" y="52" width="200" height="138" rx="22" fill="#298582"/>
+    <rect x="500" y="52" width="200" height="138" rx="22" fill="#405162"/>
+    <rect x="735" y="52" width="200" height="138" rx="22" fill="#298582"/>
+    <rect x="970" y="52" width="200" height="138" rx="22" fill="#006781"/>
+    <rect x="360" y="266" width="480" height="82" rx="23" fill="#10263b"/>
+  </g>
+
+  <g font-family="sans-serif" text-anchor="middle" fill="#ffffff">
+    <text x="130" y="99" font-size="22" font-weight="700">Literature</text>
+    <text x="130" y="132" font-size="15">published knowledge</text>
+    <text x="130" y="155" font-size="15">and prior findings</text>
+
+    <text x="365" y="99" font-size="22" font-weight="700">Data</text>
+    <text x="365" y="132" font-size="15">relevant observations</text>
+    <text x="365" y="155" font-size="15">and measurements</text>
+
+    <text x="600" y="99" font-size="22" font-weight="700">Analysis</text>
+    <text x="600" y="132" font-size="15">appropriate methods</text>
+    <text x="600" y="155" font-size="15">and checked reasoning</text>
+
+    <text x="835" y="99" font-size="22" font-weight="700">Experiments</text>
+    <text x="835" y="132" font-size="15">tests, comparisons</text>
+    <text x="835" y="155" font-size="15">and interventions</text>
+
+    <text x="1070" y="91" font-size="20" font-weight="700">Disciplinary</text>
+    <text x="1070" y="117" font-size="20" font-weight="700">expertise</text>
+    <text x="1070" y="150" font-size="15">context and judgement</text>
+
+    <text x="600" y="301" font-size="16" font-weight="800">TOGETHER THEY SUPPORT</text>
+    <text x="600" y="330" font-size="25" font-weight="700">Validation</text>
+  </g>
+</svg>

@@ -83,40 +83,21 @@ ChatGPT, [Claude](https://claude.com/product/overview), [Gemini](https://ai.goog
 
 GPT, Claude, Gemini and [Mistral](https://docs.mistral.ai/models) are families of models. Where the information is visible, record both the **product or service** and the **model and version**.
 
-## Match the Tool to the Task:
+> Match the Tool to the Task: These are starting points, not performance rankings. 
 
-These are starting points, not performance rankings. 
+## Tools
 
-N.b. Features, names, subscriptions and institutional access can and will change over time!
-
-## Match the Tool to the Task: Discovery and Search
-
-| Research task | Possible starting point | Check |
+| Tool Function | Research Task | Possible Starting Point |
 |---|---|---|
-| Refine a question or critique a draft | A general assistant such as Claude, Gemini or an approved Copilot service | Meaning and use of supplied evidence |
-| Explore a topic or public guidance | Web search with an assistant such as [Perplexity](https://www.perplexity.ai/help-center/en/articles/10352155-what-is-perplexity) | Original source, date and scope |
-| Find papers from a research question | [Elicit](https://elicit.com/) or [Consensus](https://help.consensus.app/en/articles/9922660-how-to-search-best-practices), alongside disciplinary databases | Coverage, filters and missed studies |
-
-## Match the Tool to the Task: Citation Connections
-
-| Research task | Possible starting point | Check |
-|---|---|---|
-| Explore related papers | [ResearchRabbit](https://www.researchrabbit.ai/) or [Litmaps](https://www.litmaps.com/) | Starting papers, indexing and citation patterns |
-| Examine how a paper is cited | [Scite](https://scite.ai/) | The citing passage and study itself |
-
-## Match the Tool to the Task: Document Evidence
-
-| Research task | Possible starting point | Check |
-|---|---|---|
-| Ask across a selected collection | Google's [source notebooks](https://support.google.com/gemininotebook/answer/16206563?hl=en), known as NotebookLM and now described as Gemini Notebook; approved document assistants | Included sources, retrieved passages and claim support |
-| Extract fields across papers | [Elicit's extraction workflows](https://elicit.com/) or a structured prompt over approved PDFs | Definitions, locations and missing information |
-
-## Match the Tool to the Task: Data and Code
-
-| Research task | Possible starting point | Check |
-|---|---|---|
-| Work with interview text | An approved assistant or [MAXQDA AI Assist](https://www.maxqda.com/products/ai-assist) | Processing arrangements, exact quotations and methodological fit |
-| Develop code and visualisations | [GitHub Copilot](https://docs.github.com/en/copilot/get-started/what-is-github-copilot) or an approved coding assistant | Executed code, transformations and assumptions |
+| Discovery and search | Refine a question or critique a draft | A general assistant such as Claude, Gemini or an approved Copilot service |
+| Discovery and search | Explore a topic or public guidance | Web search with an assistant such as [Perplexity](https://www.perplexity.ai/help-center/en/articles/10352155-what-is-perplexity) |
+| Discovery and search | Find papers from a research question | [Elicit](https://elicit.com/) or [Consensus](https://help.consensus.app/en/articles/9922660-how-to-search-best-practices), alongside disciplinary databases |
+| Citation connections | Explore related papers | [ResearchRabbit](https://www.researchrabbit.ai/) or [Litmaps](https://www.litmaps.com/) |
+| Citation connections | Examine how a paper is cited | [Scite](https://scite.ai/) |
+| Document evidence | Ask across a selected collection | Google's [source notebooks](https://support.google.com/gemininotebook/answer/16206563?hl=en), known as NotebookLM and now described as Gemini Notebook; approved document assistants |
+| Document evidence | Extract fields across papers | [Elicit's extraction workflows](https://elicit.com/) or a structured prompt over approved PDFs |
+| Data and code | Work with interview text | An approved assistant or [MAXQDA AI Assist](https://www.maxqda.com/products/ai-assist) |
+| Data and code | Develop code and visualisations | [GitHub Copilot](https://docs.github.com/en/copilot/get-started/what-is-github-copilot) or an approved coding assistant |
 
 ## Choose Tools based on capabilities, Not Labels
 
@@ -124,7 +105,7 @@ N.b. Features, names, subscriptions and institutional access can and will change
 
 ## Verify the Tool is appropriate for the Task
 
-Different tools and models have different strengths. **Do not assume a capability — verify it.**
+Different tools and models have different strengths. **Do not assume a capability: verify it.**
 
 - Some models are better at **reasoning, coding, images, or long documents** than others.
 - Check that the tool can **actually perform the task you need**.
@@ -221,30 +202,40 @@ For comparisons across many papers:
 2. check individual rows against the papers
 3. only then ask for a cross-paper synthesis
 
-When a conversation becomes long or changes direction, you are often better starting a new session with the current sources.
+> When a conversation becomes long or changes direction, you are often better starting a new session with the current sources.
 
 ## Work in Visible Stages
 
+Break down the process into its components
+
 ![](fig/rai-visible-research-workflow.svg){fig-alt="Visible AI-assisted research workflow moving from a defined task through drafting and evidence checking, with unsupported work revised before the output and decisions are saved." fig-align="center" width="91%"}
+
+> Dont try to do everything in one prompt. 
 
 ## Verification Is Still Your Job
 
 Ask the assistant to flag assumptions, unanswered questions and other possible interpretations. Then check these points yourself against the sources and method.
 
-Asking the same assistant to approve its own answer can expose weaknesses; it is not independent verification.
+> Asking a research assistant to approve their own answer can expose weaknesses; it is not independent verification. The same goes for AI. 
 
 ## An example Reusable Research Prompt
 
 ```text
 Task: Compare what sources say about peer writing groups.
+
 Context: I am preparing a research design discussion, not claiming an effect.
+
 Sources: Use only the labelled teaching extracts supplied below.
 
+Process: 
+
 First list the sources you can access and any missing information.
+
 Then produce one row per source with: source ID; design; participants; 
 outcome or concept; finding;source location; limitation; question requiring human review.
 
 Distinguish reported findings from your interpretation.
+
 Use "not reported" for missing details. Do not invent references or values.
 Do not combine different outcomes into a single claim of effectiveness.
 Finish with disagreements and uncertainties for me to check.
@@ -260,7 +251,7 @@ Finish with disagreements and uncertainties for me to check.
 
 Consider the prompt *“Read these papers and tell me what my PhD should study.”*
 
-What do you think is the **single most important change** that would make this request inspectable?
+What do you think is the **single most important change** that you could make to improve this?
 
 ##### Debrief
 
@@ -291,25 +282,20 @@ Possible explanations include **protected time, accountability, confidence or pe
 
 The same observation can often be explained in several different ways.
 
-::: columns
-::: {.column width="48%"}
-> **Why might this happen?**
+**Why might this happen?**
 
-The writing group creates protected time.
-:::
+> The writing group creates protected time.
 
-::: {.column width="52%"}
-> **What else could explain it?**
+**What else could explain it?**
 
-Deadlines, supervision, motivation or workload.
-:::
-:::
+> Deadlines, supervision, motivation or workload.
+
 
 ## Build a Theoretical Explanation
 
 A theory proposes **how or why different concepts might be related**.
 
-**Writing group → protected time → more regular writing**
+![](fig/rai-writing-group-theory.svg){fig-alt="A possible theoretical pathway in which a writing group creates protected time, which may lead to more regular writing." fig-align="center" width="88%"}
 
 Other factors may influence that relationship, such as **motivation, workload or caring responsibilities**.
 
@@ -324,13 +310,13 @@ A theory becomes more useful when it leads to something that could be observed.
 | Protected time matters | Writing becomes more regular when sessions occur |
 | Accountability matters | Peer contact influences engagement |
 
-**Explanation → prediction → evidence**
+> Explanation need to be made into prediction based on evidence
 
 ## Challenge the Explanation
 
 AI can help expose weaknesses before you commit to an idea.
 
-What a research should be asking is:
+It can help you explore:
 
 - What assumptions am I making?
 - What important factors are missing?
@@ -344,7 +330,9 @@ What a research should be asking is:
 Once you have possible explanations, compare them with the evidence available.
 
 **Does the evidence support it?**  
+
 **Does anything contradict it?**  
+
 **What evidence is still missing?**
 
 > Keep **evidence**, **researcher interpretation** and **AI suggestions** separate.
@@ -353,7 +341,7 @@ Once you have possible explanations, compare them with the evidence available.
 
 AI can help generate and challenge explanations, but it cannot establish that they are correct.
 
-Validation comes from appropriate **literature, data, analysis, experiments and disciplinary expertise**.
+![](fig/rai-validation-evidence.svg){fig-alt="Appropriate literature, data, analysis, experiments and disciplinary expertise work together to validate a research explanation." fig-align="center" width="92%"}
 
 Agreement between several AI systems is not independent evidence.
 
@@ -363,7 +351,16 @@ Agreement between several AI systems is not independent evidence.
 
 Research develops by moving from an interesting observation towards something that can be tested.
 
-![](fig/rai-ideas-to-research-flow.svg){fig-alt="A six-stage reasoning flow from an observation through explanation, alternatives, prediction and evidence to a research design." fig-align="center" width="92%"}
+| Stage | Guiding question |
+|---|---|
+| Observation | What did we notice? |
+| Explanation | What might explain it? |
+| Alternatives | What else could explain it? |
+| Prediction | What should follow if the explanation is right? |
+| Evidence | What supports or challenges it? |
+| Research design | How will we test it? |
+
+> 🔎 The important question is whether the evidence supports the explanation.
 
 ## Discussion Pause 3: Match the Claim to the Evidence {background-color="#2b2b2b"}
 
@@ -399,40 +396,49 @@ The take home is that AI can generate competing explanations. **The evidence det
 
 ## What are you reviewing?
 
-An early exploration, a narrative review and a systematic review are different kinds of work. Decide the purpose, question and method before choosing a tool.
+An early exploration, a narrative review and a systematic review are different kinds of work. 
 
-For a systematic or scoping review, work with an information specialist where possible. Set the rules for which studies count, where you will search, how records will be selected and what information will be extracted. 
+Decide the purpose, question and method before choosing a tool.
 
-[PRISMA 2020](https://www.prisma-statement.org/prisma-2020) and its extensions help teams report this work transparently; following a checklist does not by itself make the review sound.
+For a systematic or scoping review, work with an information specialist where possible. 
+
+Set the rules for which studies count, where you will search, how records will be selected and what information will be extracted. 
+
+> Groups like [PRISMA 2020](https://www.prisma-statement.org/prisma-2020) help teams report this work transparently.
 
 ## “Deep Research” Is Not a Review Method
 
-An automatically generated “deep research” report can help you get oriented. The label does not mean that the search can be repeated, that the coverage is complete or that the result is a systematic review.
+An automatically generated “deep research” report can help you get oriented. 
 
-Ask: 
+But the “deep research” label does not mean that:
 
-**Could another researcher understand what was searched, selected, extracted and checked?**
+- The search can be repeated
+- The coverage is complete 
+- The result is a systematic review
+
+> What you need to be asking yourself when using AI for review is: Could another researcher understand what was searched, selected, extracted and checked?
 
 ## A Review Needs a Visible Trail
+
+Break it down into its components: 
 
 ![](fig/rai-literature-review-trail.svg){fig-alt="Traceable literature review workflow moving from the question and method through searching, screening, extraction, synthesis and reporting, with a record kept at every stage." fig-align="center" width="91%"}
 
 ## Build a Search You Can Report
 
-AI may support individual stages. It does not replace the review method or the record of decisions.
+AI may support the individual stages of generating a review, but it does not replace the review method or the record of decisions.
 
 1. Group the main ideas in the question, then list synonyms and database subject headings. AI can suggest terms; check them against the language used in the field and the database.
 2. Search suitable disciplinary databases, such as PubMed, Scopus or Web of Science where appropriate and available. Keep exact queries, database/platform names, dates and filters.
 3. Use AI-assisted discovery to explore additional terminology and candidate papers. Record this as another search route.
-
-## Extend the Search Without Losing the Trail
-
 4. Follow references backwards and citations forwards from several relevant starting papers, including contrary findings.
 5. Export records to a reference manager. Check duplicates and distinguish multiple reports of one study from separate studies.
 
-[ResearchRabbit](https://www.researchrabbit.ai/) and [Litmaps](https://www.litmaps.com/) s offer ways to explore connections and discover related work. 
+> [ResearchRabbit](https://www.researchrabbit.ai/) and [Litmaps](https://www.litmaps.com/) s offer ways to explore connections and discover related work. 
 
 ## Test Screening Suggestions on Difficult Cases
+
+Test AI on the papers that are hardest to classify, not just the obvious ones.
 
 - Define the rules for including and excluding records before screening. 
 - Test AI suggestions against a set already reviewed by people, including borderline cases and relevant studies that are easy to miss. 
@@ -440,9 +446,9 @@ AI may support individual stages. It does not replace the review method or the r
 
 > Document how automation was used and validated. The [PRISMA expanded checklist](https://www.prisma-statement.org/s/PRISMA_2020_expanded_checklist-yc78.pdf) addresses reporting automation in selection and data collection.
 
-## Keep the PDF and the Decision Distinct
+## Keep the source documents and the Decision Distinct
 
-For each paper:
+For each reference:
 
 1. Keep a stable ID, the reference details and whether you have the full text, only the abstract or only part of the paper. 
 2. Check supplements, tables, corrections and retractions where relevant. 
@@ -452,7 +458,7 @@ For each paper:
 
 ## Evidence Matrix: Identity and Context
 
-Use a structured evidence matrix, Do not let AI fill blanks with plausible values. :
+Use a structured evidence matrix, Do not let AI fill blanks with plausible values.
 
 | Field | What to record |
 |---|---|
@@ -475,6 +481,8 @@ A useful review structure could be:
 4. Synthesis of patterns, differences and competing explanations.
 5. Limitations of the evidence and review process.
 6. Implications and carefully bounded research gaps.
+
+> The aim is to turn the collected evidence into a clear, structured account of what is known, uncertain or still missing.
 
 ## Keep Claims Attached to Studies
 
@@ -533,10 +541,6 @@ AI can help **organise data, suggest interpretations and write code**. But first
 
 > 🧭 Choose the method because it fits the research question — not because an AI tool can do it.
 
-## Two Routes, the Same Need for Checks
-
-![](fig/rai-analysis-checkpoints.svg){fig-alt="Human checkpoints in qualitative and quantitative analysis: source text remains connected to interpretation, while raw data remains connected to executed code and checked results." fig-align="center" width="89%"}
-
 ## Protect Your Data
 
 Before using AI, check **what data you are sharing and where it is going**.
@@ -547,85 +551,39 @@ Before using AI, check **what data you are sharing and where it is going**.
 
 > 🔒 Only share the minimum data needed for the task.
 
-## Qualitative Analysis: Preparing the Data
+## Qualitative Analysis
 
-AI can help with some of the **early, repetitive work**.
+AI can help with some of the **early, repetitive work** and also help organise patterns and compare different parts of the dataset.
 
 | Stage | AI can help with | You still need to |
 |---|---|---|
 | Transcription | Draft text and flag unclear sections | Check it against the recording |
 | Reading the data | Find relevant passages and summarise sections | Read the full material yourself |
 | Coding | Suggest labels or apply an existing codebook | Check that each code fits the text |
-
-> 🧭 AI can support the process, but it should not replace close reading.
-
-## Qualitative Analysis: Making Sense of the Data
-
-AI can help organise patterns and compare different parts of the dataset.
-
-| Stage | AI can help with | You still need to |
-|---|---|---|
 | Developing themes | Compare patterns and find contrasting examples | Decide what the patterns mean |
 | Reporting | Organise extracts and challenge your explanation | Preserve context, anonymity and meaning |
 
 > [MAXQDA AI Assist](https://www.maxqda.com/products/ai-assist), for example, offers coding support, summaries and questions over text.
 
-## If You Use a Codebook, Define the Rules
-
-A **codebook** is a list of labels used to classify parts of the data.
-
-For each code, define **what it means, when to use it and when not to**.
-
-Test AI suggestions on a small sample before using them more widely.
-
-> 🧭 Keep disagreements and record any changes to the codebook.
-
-
-## Qualitative Analysis Is Often Interpretative
-
-In [thematic analysis](https://www.thematicanalysis.net/doing-reflexive-ta/), themes are developed through reading and interpretation.
-
-The researcher's perspective is part of that process.
-
-AI can suggest patterns or alternative readings, but these are **ideas to consider**.
-
-> 🔎 Something is not necessarly important simply because AI finds it frequently.
-
-
-## For Qualitative Research, Give AI Clear Instructions
-
-You will generally get better responses if you AI to:
-
-- use only the supplied extracts
-- suggest possible descriptive codes
-- show the quotation supporting each suggestion
-- include alternative interpretations and uncertainty
-- avoid inventing experiences, motives or quotations
-
-> Treat the output as suggestions for human review.
-
-
 ## Quantitative Analysis
 
-Before asking AI to analyse data, explain **what each variable means** and what you want to test.
+Before asking AI to analyse data, explain **what each variable means**, how the data were collected and what you want to test.
 
-Check:
+Start by checking the dataset itself:
 
 1. Names, data types, IDs and units.
 2. Missing values, duplicates and obvious problems.
-3. The proposed analysis and its assumptions.
+3. Whether variables are coded consistently and contain sensible values.
+4. The proposed analysis and its assumptions.
+5. Whether the planned analysis actually answers the research question.
 
-> 🧭 Check the data before transforming or analysing it.
+> 🧭 Investigate and understand the data before transforming, modelling or interpreting it.
 
 ## Make It Reproducible
 
-Ask AI to produce code that **keeps the original data unchanged**.
+When using AI to produce code, ensure that it **keeps the original data unchanged**.
 
-Then:
-
-1. Run the code and inspect the output.
-2. Record exclusions and newly calculated variables.
-3. Check a small calculation independently.
+![](fig/rai-reproducible-code-workflow.svg){fig-alt="A reproducible code workflow: keep original data unchanged, run the code and inspect its output, record exclusions and calculated variables, then independently check a small calculation." fig-align="center" width="92%"}
 
 > 💻 A convincing answer does not prove that the calculation was actually run.
 
@@ -651,11 +609,11 @@ AI can also overstate what an analysis shows.
 | “This predicts well” | Was it tested on new data? |
 | “Use a bar chart” | Would another plot show the data more clearly? |
 
-Use specialist statistical advice when the design or assumptions require it.
+> Use specialist statistical advice when the design or assumptions require it.
 
 ## Discussion Data: Qualitative Example
 
-**Fictional teaching extracts:**
+**Fictional example, below are three feedback responses to a writing group:**
 
 1. “Booking the session made me protect the time.”
 2. “The afternoon slot clashed with collecting my children.”
@@ -667,7 +625,7 @@ Use specialist statistical advice when the design or assumptions require it.
 
 ## Discussion Data: Quantitative Example
 
-Writing time per week at 0 and 6 weeks, `NA` means **missing**, not zero.
+**Fictional example, below is a table showing the started writing time per week at 0 and 6 weeks.
 
 | ID | Baseline | Week 6 |
 |---|---:|---:|
@@ -678,7 +636,9 @@ Writing time per week at 0 and 6 weeks, `NA` means **missing**, not zero.
 | P005 | 6 | 5 |
 | P006 | 4 | 4 |
 
-**AI Proposed conclusion:** “Writing time increased, proving the group was effective.”
+N.b. `NA` means **missing**, not zero.
+
+>**AI Proposed conclusion:** “Writing time increased, proving the group was effective.”
 
 ## Discussion Pause 5: Find the Hidden Error {background-color="#2b2b2b"}
 
@@ -691,7 +651,7 @@ Writing time per week at 0 and 6 weeks, `NA` means **missing**, not zero.
 For either the qualitative **or** quantitative examples we have just looked at. Identify what the AI got wrong
 
 ::: columns
-::: {.column}
+::: {.column width="60%"}
 
 1. “Booking the session made me protect the time.”
 2. “The afternoon slot clashed with collecting my children.”
@@ -701,7 +661,7 @@ For either the qualitative **or** quantitative examples we have just looked at. 
 
 :::
 
-::: {.column}
+::: {.column width="40%"}
 
 | ID | Baseline | Week 6 |
 |---|---:|---:|
@@ -735,20 +695,24 @@ Report P003 as unavailable for the paired calculation and retain the record. The
 
 ## Prompt, Workflow or Agent?
 
-A **prompt** repeats an instruction.
+Different levels of automation suit different kinds of tasks.
 
-A **workflow** follows a set series of steps.
-
-An **agent** can choose and carry out some steps for you, such as searching, reading files or running code.
+- A **prompt** repeats an instruction.
+- A **workflow** follows a set series of steps.
+- An **agent** can choose and carry out some steps for you, such as searching, reading files or running code.
 
 > 🤖 Start with a process that already works, then decide whether automation actually saves time.
 
 ## A Bounded Agent Workflow
 
+A bounded research agent receives approved inputs, uses limited actions, produces a draft and run log, obeys stop conditions, and pauses for a human decision.
+
 ![](fig/rai-bounded-agent-workflow.svg){fig-alt="A bounded research agent receives approved inputs, uses limited actions, produces a draft and run log, obeys stop conditions, and pauses for a human decision." fig-align="center" width="89%"}
 
 
 ## Good Tasks Have Clear Checkpoints
+
+Automation works best when you know **where a person should stop and check the work**.
 
 | Repeated task | AI can help with | Human check |
 |---|---|---|
@@ -759,12 +723,14 @@ An **agent** can choose and carry out some steps for you, such as searching, rea
 
 ## Keep Interpretation with the Researcher
 
+AI can help prepare and organise the work, but **research judgement should stay with the researcher**.
+
 | Task | AI can help with | Human check |
 |---|---|---|
 | Analysis reporting | Run scripts and prepare tables or figures | Check results and interpretation |
 | Grant preparation | Compare a draft with the funding call | Check eligibility, costs and commitments |
 
-AI can prepare material for review. **The researcher makes the decision.**
+> AI can prepare material for review. **The researcher makes the decision.**
 
 ## Example: Monitoring New Research
 
@@ -782,7 +748,9 @@ An agent could regularly prepare a **draft list of new papers**.
 Our example agent should distinguish between:
 
 **No new papers found**  
+
 and  
+
 **The search did not work**
 
 A failed database connection or unreadable file should be reported, not treated as an empty result.
@@ -813,11 +781,11 @@ Agents should be set to treat retrieved material as **content to analyse**, not 
 
 ## Define What the Agent Is Allowed to Do
 
-**Purpose:** prepare a draft list of new papers for researcher review.
+Set clear limits so the agent knows **what it can do and where it must stop**.
 
-**Allowed:** read approved sources, create a draft table and record what it did.
-
-**Not allowed:** delete records, contact people, change the search rules or make final inclusion decisions.
+- **Purpose:** prepare a draft list of new papers for researcher review.
+- **Allowed:** read approved sources, create a draft table and record what it did.
+- **Not allowed:** delete records, contact people, change the search rules or make final inclusion decisions.
 
 > Clear permissions reduce the chance of unexpected actions.
 
@@ -825,11 +793,11 @@ Agents should be set to treat retrieved material as **content to analyse**, not 
 
 In our example the agent should stop and ask for help when:
 
-- a file cannot be read
-- a source is unavailable
-- permissions are unclear
-- an important step fails
-- a limit is reached
+- A file cannot be read
+- A source is unavailable
+- Permissions are unclear
+- An important step fails
+- A limit is reached
 
 > It should report **what worked, what failed and what still needs review**.
 
@@ -875,20 +843,15 @@ Provide the current funding call, eligibility rules, assessment criteria, word l
 |---|---|---|
 | Assessing fit | Map the project to the call's priorities and eligibility criteria | Actual eligibility and strategic fit |
 | Planning the application | Build a section checklist, timetable and evidence map | Owners, time available and internal submission deadlines |
-
-## Make sure AI based drafting is constrained by the evidence
-
-| Application task | Useful AI support | What the team must supply or check |
-|---|---|---|
 | Drafting and editing | Structure the argument, clarify language and reduce word count | Original ideas, evidence, accurate claims and permitted use |
 
-Make sure you are not inventing early findings, collaborators, letters of support, costs or promised outcomes. 
+> Make sure you are not inventing early findings, collaborators, letters of support, costs or promised outcomes. 
 
-## AI Reviewer Scores Are Not Predictions
+## AI Can Read you application and generate a Reviewer Scores
 
 AI can imitate a reviewer and give a **score, ranking or funding recommendation**.
 
-But it does not know:
+Whilst this is super helpful, it does not know:
 
 - the other applications in the round
 - the panel discussion or priorities
@@ -897,6 +860,8 @@ But it does not know:
 > 🎯 Use AI feedback to **find weaknesses and improve clarity**, not to predict whether a proposal will be funded.
 
 ## Use AI to Challenge Delivery Plans
+
+AI is good at estimating workloads, costs and project and breakdown. You can use it to chack:
 
 | Application task | Useful AI support | What the team must supply or check |
 |---|---|---|
@@ -919,9 +884,11 @@ UKRI assessors may use AI only for language refinement within the specified rest
 1. Application content and personal information must not be entered
 2. AI must not interpret or evaluate the application.
 
-Read the policy for the applicable role and check the particular funding opportunity before use. Other funders may set different conditions.
+> Read the policy for the applicable role and check the particular funding opportunity before use. Other funders may set different conditions.
 
 ## A Prompt for Reviewing an Application Draft
+
+Below is an example prompt for reviewing a application draft:
 
 ```text
 Use only the supplied fictional call and project notes.
@@ -937,6 +904,7 @@ Flag conflicts between the work plan, proposed methods and resources.
 
 Suggest revisions for human review; do not submit anything.
 ```
+> 🧭 The aim is to identify gaps and strengthen the draft while keeping all claims grounded in the supplied evidence.
 
 ## Fictional Funding Call
 
@@ -950,14 +918,16 @@ The application must explain:
 - how long it will take
 - what the money will be spent on
 
+> 🧭 Your job is to show clearly how the proposed project meets each requirement of the call.
 
 ## Fictional Project Idea
 
-- Run a flexible peer writing group.
+- Run a flexible peer writing group to check if it increases writing time.
 - Recruit volunteers from one school.
 - Ask participants about their experience and track weekly writing time.
 - Claim that the project will prove writing groups improve productivity across the University.
-- No timetable, no plan for people who do not attend and no cost for the facilitator.
+
+> No timetable, no plan for people who do not attend and no cost for the facilitator.
 
 
 ## Discussion Pause 7: Does the Idea Fit the Call? {background-color="#2b2b2b"}
@@ -1048,7 +1018,7 @@ What is contectually missing?
 
 Record enough information to understand **what AI contributed**.
 
-Keep:
+Keep track of:
 
 - the tool and model used
 - the task and inputs
@@ -1081,15 +1051,16 @@ Keep important **outputs and decisions**.
 
 ## You Are Still Responsible
 
-AI cannot take responsibility for research.
+AI cannot take responsibility for research. Researchers remain responsible for:
 
-Researchers remain responsible for:
+1. evidence 
+2. methods
+3. interpretation
+4. writing
+5. conclusions
 
-**evidence · methods · interpretation · writing · conclusions**
+> Responsibility cannot be delegated. Make sure you stay upto date with the rules set by the **institution, funders and publishers you work with**.
 
-Make sure you stay upto date with the rules set by the **institution, funders and publishers you work with**.
-
-> Responsibility cannot be delegated.
 
 ## Discussion Pause 8: Can You Use This Data? {background-color="#2b2b2b"}
 

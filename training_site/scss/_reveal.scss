@@ -517,6 +517,32 @@
    Callouts
    =========================== */
 
+/* Give task slides a consistent dark canvas across every course. Most
+   lessons use .callout-task; the id selectors cover older episodes where a
+   Task, Exercise, Activity or Challenge heading forms the slide directly. */
+.reveal .slides section.callout-task,
+.reveal .slides section.slide:has(> .callout-task:only-child),
+.reveal .slides section.slide:has(> :is(h1, h2, h3, h4):first-child + .callout-task:last-child),
+.reveal .slides section.slide[id^="task-"],
+.reveal .slides section.slide[id^="exercise-"]:not(#exercise-solutions),
+.reveal .slides section.slide[id^="activity-"],
+.reveal .slides section.slide[id^="challenge-"]:not(#challenge-the-explanation),
+.reveal .slides section.slide[id^="discussion-pause-"] {
+  background-color: #2b2b2b !important;
+  color: $white;
+}
+
+.reveal .slides section.callout-task > :is(h1, h2, h3, h4),
+.reveal .slides section.slide:has(> .callout-task:only-child) > :is(h1, h2, h3, h4),
+.reveal .slides section.slide:has(> :is(h1, h2, h3, h4):first-child + .callout-task:last-child) > :is(h1, h2, h3, h4),
+.reveal .slides section.slide[id^="task-"] > :is(h1, h2, h3, h4),
+.reveal .slides section.slide[id^="exercise-"]:not(#exercise-solutions) > :is(h1, h2, h3, h4),
+.reveal .slides section.slide[id^="activity-"] > :is(h1, h2, h3, h4),
+.reveal .slides section.slide[id^="challenge-"]:not(#challenge-the-explanation) > :is(h1, h2, h3, h4),
+.reveal .slides section.slide[id^="discussion-pause-"] > :is(h1, h2, h3, h4) {
+  color: $white;
+}
+
 .reveal .callout-task {
   text-align: left;
 }
