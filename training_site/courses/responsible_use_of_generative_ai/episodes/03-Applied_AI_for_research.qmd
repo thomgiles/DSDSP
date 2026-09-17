@@ -125,7 +125,7 @@ Compare candidate tools on the **same permitted material**. Include a straightfo
 
 > 🔎 Agreement between two AI tools is a reason to check the evidence, not independent confirmation of a finding.
 
-## Discussion Pause 1: Choose an Approach {background-color="#2b2b2b"}
+## Task 1: Choose an Approach {background-color="#2b2b2b"}
 
 ::: callout-task
 
@@ -241,7 +241,7 @@ Do not combine different outcomes into a single claim of effectiveness.
 Finish with disagreements and uncertainties for me to check.
 ```
 
-## Discussion Pause 2: From Request to Workflow {background-color="#2b2b2b"}
+## Task 2: From Request to Workflow {background-color="#2b2b2b"}
 
 ::: callout-task
 
@@ -362,7 +362,7 @@ Research develops by moving from an interesting observation towards something th
 
 > 🔎 The important question is whether the evidence supports the explanation.
 
-## Discussion Pause 3: Match the Claim to the Evidence {background-color="#2b2b2b"}
+## Task 3: Match the Claim to the Evidence {background-color="#2b2b2b"}
 
 ::: callout-task
 
@@ -505,7 +505,7 @@ AI can absolutly overstate evidence to make semi-fictious claims;
 
 > The studies may point in a similar direction, but they measure different things and do not prove the same claim.
 
-## Discussion Pause 4: Challenge the Synthesis {background-color="#2b2b2b"}
+## Task 4: Challenge the Synthesis {background-color="#2b2b2b"}
 
 ::: callout-task
 
@@ -640,7 +640,7 @@ N.b. `NA` means **missing**, not zero.
 
 >**AI Proposed conclusion:** “Writing time increased, proving the group was effective.”
 
-## Discussion Pause 5: Find the Hidden Error {background-color="#2b2b2b"}
+## Task 5: Find the Hidden Error {background-color="#2b2b2b"}
 
 ::: callout-task
 
@@ -815,7 +815,7 @@ Check what the agent **misses or gets wrong**, not just what it gets right.
 
 > Repeat the test when the model, data or workflow changes.
 
-## Discussion Pause 6: Bound the Automation {background-color="#2b2b2b"}
+## Task 6: Bound the Automation {background-color="#2b2b2b"}
 
 ::: callout-task
 
@@ -930,7 +930,7 @@ The application must explain:
 > No timetable, no plan for people who do not attend and no cost for the facilitator.
 
 
-## Discussion Pause 7: Does the Idea Fit the Call? {background-color="#2b2b2b"}
+## Task 7: Does the Idea Fit the Call? {background-color="#2b2b2b"}
 
 ::: callout-task
 
@@ -1062,7 +1062,7 @@ AI cannot take responsibility for research. Researchers remain responsible for:
 > Responsibility cannot be delegated. Make sure you stay upto date with the rules set by the **institution, funders and publishers you work with**.
 
 
-## Discussion Pause 8: Can You Use This Data? {background-color="#2b2b2b"}
+## Task 8: Can You Use This Data? {background-color="#2b2b2b"}
 
 ::: callout-task
 
