@@ -37,8 +37,8 @@ By the end of this module, learners will be able to:
 
 ## ❓ Questions
 
-1. What are we asking AI to do, and what evidence can it actually see?
-2. How will we check the answer and show how it was produced?
+1. What could we be asking AI to do, and what evidence can it actually see?
+2. How do we check the answer and show how it was produced?
 3. Which decisions still require a researcher's judgement?
 
 :::
@@ -99,20 +99,25 @@ GPT, Claude, Gemini and [Mistral](https://docs.mistral.ai/models) are families o
 | Data and code | Work with interview text | An approved assistant or [MAXQDA AI Assist](https://www.maxqda.com/products/ai-assist) |
 | Data and code | Develop code and visualisations | [GitHub Copilot](https://docs.github.com/en/copilot/get-started/what-is-github-copilot) or an approved coding assistant |
 
-## Choose Tools based on capabilities, Not Labels
+## Choose Tools based on capabilities
 
 ![](fig/rai-capability-choice.svg){fig-alt="The task, evidence and planned check guide the choice between fast text generation, reasoning-oriented modes, and large-context or retrieval tools. Each capability has a practical limitation." fig-align="center" width="86%"}
 
-## Verify the Tool is appropriate for the Task
+>Dont pick tools just because they sound cool!
+
+## Verify the Tool is Appropriate for the Task
 
 Different tools and models have different strengths. **Do not assume a capability: verify it.**
 
-- Some models are better at **reasoning, coding, images, or long documents** than others.
-- Check that the tool can **actually perform the task you need**.
-- Verify important outputs rather than relying on the model's description of its own capabilities.
-- For hosted or open-weight models, also check **where data is processed, licensing, logging and external connections**.
+| Check | What to verify |
+|---|---|
+| **Capability** | Is the tool good at the task: reasoning, coding, images or long documents? |
+| **Functionality** | Can it actually perform the task you need? |
+| **Output** | Does the result match the source, data or calculation? |
+| **Data handling** | Where is data processed, stored or logged? |
+| **Use conditions** | Are the licence and external connections appropriate? |
 
-**Choose the tool for the task, then verify the result.**
+> Choose the tool for the task, then verify the result.
 
 ## A Small Evaluation Beats a General AI Rankings
 
@@ -153,15 +158,13 @@ The brand name is secondary to the evidence it can access and the checks you can
 
 ## Start with the Research Task
 
-Before using AI, briefly define what you want to investigate.
+Before using AI, be clear about **what you are trying to do**.
 
-| Include | Example |
-|---|---|
-| Purpose | Prepare for a supervision meeting |
-| Research question | How might peer writing groups support sustained writing over six weeks? |
-| Scope | Focus on writing time, confidence and completed outputs |
+- **Why?** Prepare for a supervision meeting.
+- **What?** Explore whether peer writing groups help researchers write regularly.
+- **Focus on?** Writing time, confidence and completed work.
 
-> A clear research task helps the model understand **what you need, why you need it and what to focus on**.
+> A clear starting point helps AI stay focused on the question you actually want to answer.
 
 ## Set the Evidence Rules
 
@@ -180,19 +183,23 @@ Be clear about what the AI can use and what a good result should include.
 
 Give the AI the right material, and make sure it can actually find what you want. 
 
-1. Check permission to use each document in the selected service.
+1. Check it has permission to use each document in the selected service.
 2. Give each source a stable ID, title, date and version.
 3. Ask which sources the tool can access and which pages or tables it cannot read.
 4. Test a small extraction against the original before expanding the task.
 
+> Dont assume an AI tool can interpet every bit of information you give it! 
 
 ## Understand How Documents Reach the Model
 
-Many document tools first search the uploaded material for relevant passages and then give only those passages to the model. This is often called **retrieval-augmented generation (RAG)**. It can make answers easier to trace, but the search step can miss important evidence.
+Many document tools first search the uploaded material for relevant passages and then give those to the model. 
 
-Ask for section headings, printed page numbers or passage locations. Mark the location as unavailable when the tool cannot provide it reliably.
+This is often called **retrieval-augmented generation (RAG)**. 
 
-> 📄 Being able to accept a long document does not mean the tool gives equal attention to every page.
+It can make answers easier to trace, but the search step can miss important evidence.
+
+> 📄 
+Ask for section headings, printed page numbers or passage locations. Mark the location as unavailable when the tool cannot provide it reliably. Being able to accept a long document does not mean the tool gives equal attention to every page.
 
 ## Compare First, Then Combine
 
@@ -214,9 +221,15 @@ Break down the process into its components
 
 ## Verification Is Still Your Job
 
-Ask the assistant to flag assumptions, unanswered questions and other possible interpretations. Then check these points yourself against the sources and method.
+You can ask an AI assistant to:
 
-> Asking a research assistant to approve their own answer can expose weaknesses; it is not independent verification. The same goes for AI. 
+ - Flag assumptions
+ - Spot unanswered questions
+ - Identify other possible interpretations. 
+ 
+ But you need to check these points yourself against the sources and method.
+
+> Asking a real life research assistant to approve their own answer is not independent verification. The same goes for AI. 
 
 ## An example Reusable Research Prompt
 
@@ -280,26 +293,29 @@ Possible explanations include **protected time, accountability, confidence or pe
 
 ## Consider Alternative Explanations
 
-The same observation can often be explained in several different ways.
+Lets start with a theoretical project that is studying the affects of study groups on writing time. 
 
-**Why might this happen?**
+They observe that after a 6 week period of study group meetings, people tended to write more. 
 
-> The writing group creates protected time.
+**Why might this happen?** 
 
-**What else could explain it?**
+The writing group creates protected time.
 
-> Deadlines, supervision, motivation or workload.
+**What else could explain it?** 
 
+eadlines, supervision, motivation or workload.
+
+> The same observation can often be explained in several different ways.
 
 ## Build a Theoretical Explanation
 
-A theory proposes **how or why different concepts might be related**.
+Normally a resescher would build a theory to test **how or why different concepts might be related**.
 
 ![](fig/rai-writing-group-theory.svg){fig-alt="A possible theoretical pathway in which a writing group creates protected time, which may lead to more regular writing." fig-align="center" width="88%"}
 
-Other factors may influence that relationship, such as **motivation, workload or caring responsibilities**.
 
-> A plausible explanation is still something to test.
+
+> Other factors may influence that relationship, such as **motivation, workload or caring responsibilities**: A plausible explanation is still something to test.
 
 ## Turn Theory into Predictions
 
@@ -308,9 +324,9 @@ A theory becomes more useful when it leads to something that could be observed.
 | Proposed explanation | What might we expect? |
 |---|---|
 | Protected time matters | Writing becomes more regular when sessions occur |
-| Accountability matters | Peer contact influences engagement |
+| Accountability matters | Peer contact influences drive to write |
 
-> Explanation need to be made into prediction based on evidence
+> Explanation should only be made into prediction based on evidence
 
 ## Challenge the Explanation
 
@@ -323,19 +339,19 @@ It can help you explore:
 - What else could explain the observation?
 - What evidence would contradict my explanation?
 
-> 📝 Use AI to challenge the idea, not just support it.
+> 📝 You can actually ask AI to challenge the idea, not just support it.
 
 ## Compare Ideas with Evidence
 
-Once you have possible explanations, compare them with the evidence available.
+Once you have possible explanations, the normal approach is to compare them against the evidence.
 
-**Does the evidence support it?**  
+**Does the evidence support one or more of our explanations?**  
 
-**Does anything contradict it?**  
+**Does anything contradict some of them?**  
 
 **What evidence is still missing?**
 
-> Keep **evidence**, **researcher interpretation** and **AI suggestions** separate.
+> Keep **evidence**, **researcher interpretation** and **AI suggestions** as separate components in you work.
 
 ## Validate the Theory
 
@@ -344,21 +360,6 @@ AI can help generate and challenge explanations, but it cannot establish that th
 ![](fig/rai-validation-evidence.svg){fig-alt="Appropriate literature, data, analysis, experiments and disciplinary expertise work together to validate a research explanation." fig-align="center" width="92%"}
 
 Agreement between several AI systems is not independent evidence.
-
-> 🔎 The important question is whether the evidence supports the explanation.
-
-## From Ideas to Research
-
-Research develops by moving from an interesting observation towards something that can be tested.
-
-| Stage | Guiding question |
-|---|---|
-| Observation | What did we notice? |
-| Explanation | What might explain it? |
-| Alternatives | What else could explain it? |
-| Prediction | What should follow if the explanation is right? |
-| Evidence | What supports or challenges it? |
-| Research design | How will we test it? |
 
 > 🔎 The important question is whether the evidence supports the explanation.
 
@@ -398,13 +399,13 @@ The take home is that AI can generate competing explanations. **The evidence det
 
 An early exploration, a narrative review and a systematic review are different kinds of work. 
 
-Decide the purpose, question and method before choosing a tool.
+Decide the purpose, question and method **before choosing a tool**.
 
 For a systematic or scoping review, work with an information specialist where possible. 
 
 Set the rules for which studies count, where you will search, how records will be selected and what information will be extracted. 
 
-> Groups like [PRISMA 2020](https://www.prisma-statement.org/prisma-2020) help teams report this work transparently.
+> Resources like [PRISMA 2020](https://www.prisma-statement.org/prisma-2020) help teams plan out how they report this work transparently.
 
 ## “Deep Research” Is Not a Review Method
 
@@ -426,15 +427,25 @@ Break it down into its components:
 
 ## Build a Search You Can Report
 
-AI may support the individual stages of generating a review, but it does not replace the review method or the record of decisions.
+AI can help build a search, but you still need a clear method and a record of what you did.
 
-1. Group the main ideas in the question, then list synonyms and database subject headings. AI can suggest terms; check them against the language used in the field and the database.
-2. Search suitable disciplinary databases, such as PubMed, Scopus or Web of Science where appropriate and available. Keep exact queries, database/platform names, dates and filters.
-3. Use AI-assisted discovery to explore additional terminology and candidate papers. Record this as another search route.
-4. Follow references backwards and citations forwards from several relevant starting papers, including contrary findings.
-5. Export records to a reference manager. Check duplicates and distinguish multiple reports of one study from separate studies.
+1. Break the question into its main ideas.
+2. List synonyms and database subject headings.
+3. Search suitable databases such as PubMed, Scopus or Web of Science.
 
-> [ResearchRabbit](https://www.researchrabbit.ai/) and [Litmaps](https://www.litmaps.com/) s offer ways to explore connections and discover related work. 
+> 🧭 Keep the exact search terms, database, date and filters used.
+
+## Extend and Record the Search
+
+Use other routes to find papers that your first search may have missed.
+
+| Route | What to do |
+|---|---|
+| AI-assisted discovery | Explore extra terms and candidate papers |
+| Citation searching | Follow references backwards and citations forwards |
+| Reference management | Export records and check for duplicates |
+
+> [ResearchRabbit](https://www.researchrabbit.ai/) and [Litmaps](https://www.litmaps.com/) can help explore connections between papers.
 
 ## Test Screening Suggestions on Difficult Cases
 
@@ -535,9 +546,9 @@ Which single word least defensible? Why?
 
 AI can help **organise data, suggest interpretations and write code**. But first decide:
 
-- **What are you trying to find out?**
-- **What data do you have?**
-- **What method is appropriate?**
+- What are you trying to find out?
+- What data do you have?
+- What method is appropriate?
 
 > 🧭 Choose the method because it fits the research question — not because an AI tool can do it.
 
@@ -875,7 +886,7 @@ Under the [UKRI policy checked on 14 September 2026](https://www.ukri.org/public
 
 People must remain involved in developing an application or its sections.
 
-AI use during application interviews is prohibited.
+> Take note; AI use during application interviews is prohibited.
 
 ## For Assessors, Confidentiality Changes the Boundary
 
@@ -986,7 +997,9 @@ Check:
 
 You often do not need real research data to test an AI workflow.
 
-Ways around this problem incldude using: **fake data · example texts · Blank templates · Data structures**
+Ways around this problem incldude using: 
+
+**fake data · example texts · Blank templates · Data structures**
 
 > 🔒 When in doubt, use the minimum information needed.
 
@@ -1033,8 +1046,11 @@ Keep track of:
 AI output is rarely the end of the research process.
 
 **What did AI produce?**  
+
 **What did you check?**  
+
 **What was wrong?**  
+
 **What did you keep, change or reject?**
 
 > This makes your decisions easier to explain later.
