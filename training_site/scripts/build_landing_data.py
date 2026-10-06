@@ -208,6 +208,9 @@ def title_from_filename(path: Path) -> str:
 
 
 def module_number(path: Path) -> str:
+    number = read_frontmatter_value(path, "module-number")
+    if number is not None:
+        return number
     match = re.match(r"^(\d+)", path.stem)
     return match.group(1) if match else ""
 
@@ -257,6 +260,9 @@ def build_data() -> dict[str, list[dict[str, str]]]:
 
         for episode in sorted(episodes.glob("*.qmd")):
             if episode.name.startswith("_"):
+                continue
+            # Keep compatibility pages published without advertising extra sessions.
+            if (read_frontmatter_value(episode, "module-hidden") or "").lower() == "true":
                 continue
             number = module_number(episode)
             module_title = read_frontmatter_value(episode, "title") or title_from_filename(episode)

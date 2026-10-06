@@ -99,6 +99,8 @@ Connect findings to decisions, audiences, feedback, and practical change.
 
 ## Related Courses
 
+For support applying a method to a particular dataset or workflow, explore [Digital Skills Clinics](../../clinics.qmd).
+
 For practical coding and reproducible analysis, continue to [Applied Python](../applied_python/index.qmd) or [Applied R](../applied_R/index.qmd).
 
 For wider digital research foundations, see [Essential Digital Skills](../essential_digital_skills/index.qmd).
@@ -120,7 +122,7 @@ You do not need programming experience for this course. It helps to arrive with:
 
 - a device suitable for group exercises and practical tasks
 - spreadsheet access, ideally Excel
-- one dataset, chart, dashboard, report, or data collection process you have used or questioned
+- one public or fictional dataset, chart, dashboard, report, or data collection process you have used or questioned
 
 Detailed preparation guidance is available in [Setup](learners/setup.qmd).
 
@@ -131,7 +133,8 @@ Detailed preparation guidance is available in [Setup](learners/setup.qmd).
 ### Learners
 
 - [Setup](learners/setup.qmd): what to bring, what to access, and how to prepare
-- [Reference](learners/reference.qmd): glossary, platform guide, and practical checklists
+- [Additional Material](learners/additional_material.qmd): a fictional practice dataset, worked checks, and follow-on learning
+- [Reference](learners/reference.qmd): data-methods glossary, chart choices, and practical checklists
 - [Discussion](learners/discuss.qmd): prompts for breakout work and end-of-session reflection
 :::
 

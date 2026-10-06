@@ -2,22 +2,64 @@
 title: Setup
 ---
 
-This lesson assumes you have current versions of the following installed on your computer:
+## Before You Start
+
+Applied R introduces programming from the beginning across four sessions. Each session is planned for 100 minutes, including a 10-minute break. You should be comfortable creating folders and locating files, but no previous R experience is required. Prepare the software and data below before the first session.
+
+Install compatible versions of the following on your computer, using your organisation's software arrangements on a managed device:
 
 1. the [R software](https://cran.r-project.org/mirrors.html) itself, and
-2. [RStudio Desktop](https://www.rstudio.com/products/rstudio/download/#download).
+2. [RStudio Desktop](https://posit.co/download/rstudio-desktop/).
 
-You also need to download some files to follow this lesson:
+If you already have R and RStudio working, use the checks below rather than reinstalling them. If installation is unavailable, tell the organiser before the session so that an appropriate shared-screen or supported-environment fallback can be arranged.
 
-1. Make a new folder in your Desktop called `applied_R`.
-2. Download the [r-gapminder-data](../episodes/data/gapminder_data.csv)
-  and move the file to this folder.
-3. If it's not unzipped yet, unzip it. There should now be a folder called `data` in the `applied_R` folder.
-4. You can access this folder from the Unix shell with:
+## Create a Project and Obtain the Data
 
-```bash
-$ cd
-$ cd Desktop/applied_R/data
+1. Create a folder called `applied_R` in a location you can find again.
+2. In RStudio, create a project in that existing folder (**File > New Project > Existing Directory**). See the official [Projects guide](https://docs.posit.co/ide/user/ide/guide/code/projects.html).
+3. Create a `data` folder inside the project.
+4. Download [gapminder_data.csv](../episodes/data/gapminder_data.csv) into `data`. This is a CSV file, so it does not need unzipping.
+5. Create and save an R script in the project folder. The loops and tidyverse lessons also use data supplied by the `gapminder` package.
+
+## Prepare the Lesson Packages
+
+Session 3 uses `gapminder`, `dplyr` and `readr`. Installing `tidyverse` supplies `dplyr`, `readr` and the other core tidyverse packages used in session 4.
+
+Run this once in the R console if these packages are not already available:
+
+```r
+install.packages(c("gapminder", "tidyverse"))
 ```
 
+The initial example in [session 4: Data Analysis with tidyverse and ggplot2](../episodes/05-the_tidyverse.qmd) also loads the following packages. Prepare them before the session:
 
+```r
+install.packages(c("rmarkdown", "openxlsx", "gridExtra", "ggExtra", "knitr"))
+```
+
+Package installation needs network access. If you see an error, retain the message and ask the organiser which environment or installation route to use. Install packages once; load them again when starting a new R session.
+
+## Check Your Setup
+
+With the `applied_R` project open, run:
+
+```r
+library(gapminder)
+library(tidyverse)
+
+file.exists("data/gapminder_data.csv")
+head(gapminder::gapminder)
+sessionInfo()
+```
+
+The file check should return `TRUE`, and the dataset should print without a package error. If the file is missing, check `getwd()` and the location of the downloaded CSV. Keep `sessionInfo()` with any request for help so that the R and package versions are visible.
+
+The iteration and data-analysis sessions create an `output` folder for derived files. Keep the course input file unchanged and inspect output destinations before rerunning file-writing examples. The complete course contains four sessions; the former variables page is a compatibility link to foundations.
+
+## After Setup
+
+Start with [session 1: R Foundations](../episodes/01-Rstudio_intro.qmd). The learner [Additional Material](additional_material.qmd) page provides a Gapminder practice workflow and further references. Use [Digital Skills Clinics](../../../clinics.qmd) for follow-up help with a specific R or data task.
+
+## Course Navigation
+
+[Course Overview](../index.qmd) · [Setup](setup.qmd) · [Additional Material](additional_material.qmd) · [Reference](reference.qmd) · [Discussion](discuss.qmd)

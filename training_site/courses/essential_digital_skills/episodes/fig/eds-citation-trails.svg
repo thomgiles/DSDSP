@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="330" viewBox="0 0 1200 330" role="img" aria-labelledby="title desc">
+  <title id="title">Follow a paper's citation trails in both directions</title>
+  <desc id="desc">From a relevant starting paper, look backwards through its references to earlier sources and forwards through cited-by links to later papers. Read and evaluate the sources you find.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M1 1 L8 5 L1 9 Z" fill="#405162"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="330" rx="28" fill="#f7fbfc"/>
+  <g font-family="sans-serif" text-anchor="middle">
+    <text x="200" y="66" font-size="28" font-weight="700" fill="#006781">Look backwards</text>
+    <text x="1000" y="66" font-size="28" font-weight="700" fill="#298582">Look forwards</text>
+    <g fill="none" stroke="#405162" stroke-width="3.5" marker-end="url(#arrow)">
+      <path d="M440 170 H369"/>
+      <path d="M760 170 H831"/>
+    </g>
+    <rect x="40" y="106" width="320" height="130" rx="20" fill="#006781"/>
+    <rect x="440" y="106" width="320" height="130" rx="20" fill="#10263b"/>
+    <rect x="840" y="106" width="320" height="130" rx="20" fill="#298582"/>
+    <g fill="#ffffff">
+      <text x="200" y="146" font-size="29" font-weight="700">Earlier sources</text>
+      <text x="200" y="186" font-size="23">Read the starting</text>
+      <text x="200" y="215" font-size="23">paper's references</text>
+      <text x="600" y="146" font-size="29" font-weight="700">Starting paper</text>
+      <text x="600" y="186" font-size="23">Relevant to your</text>
+      <text x="600" y="215" font-size="23">research question</text>
+      <text x="1000" y="146" font-size="29" font-weight="700">Later papers</text>
+      <text x="1000" y="186" font-size="23">Find work through</text>
+      <text x="1000" y="215" font-size="23">cited-by links</text>
+    </g>
+    <text x="600" y="290" font-size="25" fill="#405162">Follow the links, then read and evaluate each source.</text>
+  </g>
+</svg>

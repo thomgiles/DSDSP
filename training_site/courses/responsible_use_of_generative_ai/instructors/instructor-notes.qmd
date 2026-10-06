@@ -24,7 +24,9 @@ The course works best when learners leave with:
 
 ## Delivery Pattern
 
-The introductory lessons can run as one 2-hour workshop or two linked one-hour sessions. The applied lesson is designed for approximately two hours, including a short break, and can be split into shorter sessions. Treat all timings as a guide that can flex with the facilitator and audience.
+The introductory lessons each allocate 60 minutes and can run as two linked sessions or one combined session with breaks added separately. The applied lesson is modular; allow approximately two hours as a planning guide and confirm the chosen agenda before advertising a delivery time.
+
+The applied lesson's metadata currently allocates 115 minutes of teaching and discussion, while its outline totals 120 minutes without a separate break row. Select coverage and record breaks in the session plan rather than promising that every block and a break will fit into two hours.
 
 A reliable rhythm is:
 
@@ -47,7 +49,7 @@ Use [Prompting for Research](../episodes/02-Prompting_for_research.qmd) to move 
 
 ### Applied AI for Research
 
-Use [Applied AI for Research](../episodes/03-Applied_AI_for_research.qmd) to connect tool selection and prompting to the research lifecycle. The lecture is the focus. Eight brief pauses ask pairs to make one evidence, design or boundary judgement before a short debrief; together they account for roughly 15 minutes within the two-hour session.
+Use [Applied AI for Research](../episodes/03-Applied_AI_for_research.qmd) to connect tool selection and prompting to the research lifecycle. The lecture is the focus. Eight brief pauses ask pairs to make one evidence, design or boundary judgement before a short debrief; the lesson metadata allocates roughly 15 minutes to these pauses.
 
 - Use the fictional study extracts, interviews, dataset and funding call included in the lesson if learners cannot supply permitted material.
 - For literature work with real papers, confirm access and upload permissions in advance; public availability alone does not settle licence or institutional requirements.
@@ -90,6 +92,8 @@ This matters especially for:
 
 ## Room Setup and Activity Design
 
+The [learner practice pack](../learners/additional_material.qmd) provides a self-contained fictional source and authored AI-style response, so a five-minute source check still works without accounts or a live tool. Its prompt and use-record exercises each include a room response and a debrief. Use these as replacements or follow-up tasks; add time explicitly if you include them in a session.
+
 - Mixed-discipline groups usually work well because assumptions differ.
 - If confidence levels vary a lot, start with individual reflection before plenary.
 - If tool access is inconsistent, frame activities so they still work as paper-based prompt or workflow design tasks.
@@ -104,3 +108,7 @@ You are looking for learners who can:
 - identify what needs verification before reuse
 - describe a lightweight way to document AI use
 - distinguish between a one-off prompt, a reusable workflow, and a risky automation idea
+
+## Course Navigation
+
+[Course Overview](../index.qmd) · [Instructor Notes](instructor-notes.qmd) · [Additional Material](additional_material.qmd) · [Extra Exercises](extra_exercises.qmd) · [Learner Setup](../learners/setup.qmd)

@@ -1,9 +1,12 @@
 ---
 title: "Collecting the Right Data"
+module-hidden: true
 metadata:
   teaching: 40
   exercises: 40
 ---
+
+**Current course location:** use [Collecting the Right Data in Methods for Data Science](../../methods_for_data_science/episodes/05-collecting_the_right_data.qmd). This earlier page remains available for existing links; it is not an additional Essential Digital Skills session.
 
 ::: {.content-visible when-format="revealjs"}
 

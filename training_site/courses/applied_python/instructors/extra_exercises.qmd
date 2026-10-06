@@ -1,9 +1,11 @@
 ---
-title: Additional Exercises
+title: Extra Exercises
 ---
 
 A collection of exercises that have been either removed from
 or not (yet) added to the main lesson.
+
+Select exercises after the corresponding topic. For independent consolidation, direct learners to [Learner Additional Material](../learners/additional_material.qmd). Ask pairs to explain a prediction or check before opening a solution.
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
@@ -118,6 +120,8 @@ From: "Defensive Programming"
 
 Fix `range_overlap`. Re-run `test_range_overlap` after each change you make.
 
+The starting implementation and tests are in [Errors, Debugging, and Defensive Programming](../episodes/08-errors_debugging_and_defensive_programming.qmd#test-driven-development). Run those examples first so that this task is self-contained.
+
 :::::::::::::::  solution
 
 ## Solution
@@ -141,6 +145,6 @@ def range_overlap(ranges):
 
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
+## Course Navigation
 
-
-
+[Course Overview](../index.qmd) · [Instructor Notes](instructor-notes.qmd) · [Additional Material](additional_material.qmd) · [Extra Exercises](extra_exercises.qmd) · [Learner Setup](../learners/setup.qmd)

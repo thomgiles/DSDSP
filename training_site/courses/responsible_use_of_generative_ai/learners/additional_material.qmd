@@ -1,0 +1,148 @@
+---
+title: "Additional Material"
+---
+
+## Practise a Checked AI Workflow
+
+This pack extends [Introduction to AI for Research](../episodes/01-Introduction_to_AI_for_research.qmd), [Prompting for Research](../episodes/02-Prompting_for_research.qmd) and [Applied AI for Research](../episodes/03-Applied_AI_for_research.qmd). Use one activity after a lesson or complete the three activities in 15 minutes. They are optional follow-up practice, not extra scheduled sessions.
+
+You need a place to keep notes and, for pair work, someone to compare decisions with. An AI account is optional: all examples below can be inspected without sending anything to a tool.
+
+## Practice Source: A Fictional Research Note
+
+The following extract is **fictional teaching material**. It is not a published study and must not be cited as evidence.
+
+> Six doctoral researchers recorded how long they spent organising references before and after a short training session. Five supplied both measurements. Among those five, the mean weekly time fell from 2.4 hours to 2.0 hours. The training was voluntary, there was no comparison group, and measurements were self-reported. The team did not test whether the difference was statistically significant. They plan a larger follow-up study.
+
+**Authored AI-style response:** the text below was deliberately written for this exercise; it is not the output of a model run.
+
+> A controlled study of six researchers proved that reference-management training significantly improved productivity, reducing time spent organising references by 20%. These results show that all doctoral researchers should receive the training.
+
+## Activity 1: Check the Claims (5 min)
+
+::: callout-task
+
+**Goal:** produce a defensible summary of the fictional source.
+
+**Input:** the practice source and authored response above. Work in pairs: one person marks the claims and the other checks the source.
+
+1. **1 min:** underline claims about sample size, design, effect and generalisation.
+2. **2 min:** mark each claim as supported, contradicted or beyond the source. Calculate the time change using the original units.
+3. **1 min:** rewrite the response in two sentences, retaining one important limitation.
+4. **1 min:** two pairs read one correction to the room; everyone votes on which missing caveat matters most and explains why.
+
+**Keep:** your corrected summary and a claim-to-source check table.
+
+**If working alone or without tool access:** annotate the same source and compare with the debrief below. No AI service is needed.
+
+:::
+
+::: callout-hints
+
+### Debrief
+
+There are **five complete pairs**, although six people took part. The observed mean reduction is **0.4 hours/week**, or about **16.7% of the initial 2.4 hours**, not 20%. The study lacks a comparison group; the extract reports no significance test and cannot establish causation or a recommendation for every doctoral researcher.
+
+A defensible rewrite is: “In this fictional small, uncontrolled study, five complete pairs showed a mean reduction of 0.4 hours/week in self-reported reference-organisation time after training. Selection, measurement and study-design limitations mean the result cannot establish that training caused the change.”
+
+Ask the room: **“Which correction required calculation, and which required understanding the study design?”** A tidy numerical answer still needs an appropriate interpretation.
+
+:::
+
+## Activity 2: Improve the Prompt (5 min)
+
+::: callout-task
+
+**Goal:** write a prompt that makes checking easier.
+
+**Input:** the fictional source above and the vague prompt “Tell me what this study proves.” Work in pairs and swap the writer/checker roles.
+
+1. **1 min:** agree what a useful output would contain.
+2. **2 min:** write a prompt specifying the task, source boundary, format, uncertainty and a human checking step.
+3. **1 min:** the checker identifies one ambiguity and the writer revises it.
+4. **1 min:** two pairs read their source-boundary instruction to the room; the instructor asks what that instruction can and cannot guarantee.
+
+**Keep:** the prompt and a note naming the check you will apply after generation.
+
+**If no approved AI tool is available:** write the prompt on paper. A live run is optional and does not replace checking.
+
+:::
+
+One possible prompt is:
+
+```text
+Using only the fictional extract below, prepare a three-row table:
+observation; supporting words or numbers; limitation.
+Distinguish participants recruited from complete paired observations.
+If reporting a percentage change, show the denominator and calculation.
+Do not invent a significance test, comparison group or citation.
+Separate observed changes from causal claims and flag what is unknown.
+I will compare every row and calculation with the original extract.
+```
+
+**Debrief:** a source boundary expresses the intended constraint; it does not prove that the system followed it. Check the returned claims, denominators and caveats yourself. See the [Reference](reference.qmd) for reusable prompt ingredients.
+
+## Activity 3: Record the Contribution (5 min)
+
+::: callout-task
+
+**Goal:** make the workflow understandable to a future collaborator.
+
+**Input:** your checked summary and prompt, or the supplied teaching examples. Work in pairs.
+
+1. **1 min:** record the task, inputs and tool used; write “no model run” if you only inspected the authored example.
+2. **2 min:** name the claims checked, corrections made and material retained.
+3. **1 min:** identify the relevant policy or permission question for a comparable live task.
+4. **1 min:** two pairs offer one easily forgotten field; the room chooses the field that would most help a collaborator reconstruct the work.
+
+**Keep:** an AI use record using the template below.
+
+**If working alone or offline:** complete the record for the authored example and flag any field you cannot know. Do not invent a tool version or a policy decision.
+
+:::
+
+```text
+Task and date:
+Person responsible for the final judgement:
+Tool/service and model/version if visible (or no model run):
+Input sources, versions and permission check:
+Prompt or workflow version:
+Checks against sources, calculations or expected behaviour:
+Corrections and output retained:
+Unresolved limitations:
+Applicable institutional, publisher or funder guidance checked:
+Disclosure requirement and where it will be recorded:
+Location of the authoritative output:
+```
+
+**Debrief:** this record supports traceability. It is not permission to use restricted material and it does not determine the disclosure wording required by a particular institution, journal or funder. Do not copy confidential source text into a log that has wider access than the source itself.
+
+## Before Repeating or Automating a Task
+
+Use this table alongside the workflow and agent discussion in [Applied AI for Research](../episodes/03-Applied_AI_for_research.qmd).
+
+| Checkpoint | Decision to record |
+|---|---|
+| Task boundary | What is the narrow task, and what must remain a human decision? |
+| Inputs | Which sources are permitted, current and actually available to the tool? |
+| Output | What format and evidence are needed for someone to inspect the result? |
+| Validation | What examples, source comparisons or calculations reveal a failure? |
+| Stop and review | Which missing source, unexpected result or permission issue pauses the workflow? |
+| Ownership | Who reviews the output, maintains the workflow and approves changes? |
+
+Try one small permitted example first. Retain a successful result **and a case the workflow should reject** before considering wider use.
+
+## Primary Guidance
+
+The following are starting points for checking the rules that apply to your task. Read the current guidance and record its date; responsibilities differ between learning, research, publication and assessment.
+
+| Source | Use it for |
+|---|---|
+| [University of Nottingham: using generative AI](https://www.nottingham.ac.uk/studyingeffectively/ai/ai.aspx) | Student-facing guidance and routes to related university information; check the rules for your specific assessment or research activity. |
+| [UKRI: generative AI in application and assessment](https://www.ukri.org/publications/generative-artificial-intelligence-in-application-and-assessment-policy/) | Funding-application and assessment responsibilities. Read the section for your role rather than assuming applicants and assessors have the same permissions. |
+| [Nature Portfolio: artificial intelligence policy](https://www.nature.com/nature-portfolio/editorial-policies/ai) | This publisher's expectations about accountability, transparency and confidentiality; other publishers may specify different requirements. |
+| [European Commission: updated living guidelines for generative AI in research](https://research-and-innovation.ec.europa.eu/news/all-research-and-innovation-news/updated-era-living-guidelines-responsible-use-generative-ai-research-2026-05-08_en) | Wider research-integrity guidance and links to the current guidelines; use alongside applicable institutional and project requirements. |
+
+## Course Navigation
+
+[Course Overview](../index.qmd) · [Setup](setup.qmd) · [Additional Material](additional_material.qmd) · [Reference](reference.qmd) · [Discussion](discuss.qmd)

@@ -1,209 +1,460 @@
 ---
-title: "Introduction to Rstudio"
+title: "R Foundations: RStudio, Objects and Data"
 module-icon: "🖥️"
+module-number: "1"
 author: "DRS Training"
-output: html_document
+metadata:
+  teaching: 60
+  exercises: 30
 ---
 
-# Using RStudio
-We’ll be using RStudio: a free, open source R Integrated Development Environment (IDE). It provides a built-in editor, works on all platforms (including on servers) and provides many advantages such as integration with version control and project management.
+::: callout-outcomes
+## 💡 Learning Outcomes
 
-## Basic Layout
+- Create an RStudio project and save a script that can be rerun.
+- Assign values, inspect their types and use arithmetic and comparisons.
+- Select elements from vectors, lists, matrices and data frames.
+- Load a research table, check its identifiers and rerun the saved workflow.
+- Find help and distinguish installing a package from loading it.
+:::
 
-When you open RStudio for the first time, you will be greeted by three main panels:  
+::: callout-questions
+## ❓ Questions
 
-- The interactive R console/Terminal/... (entire left)
-- Environment/History/Connections/... (tabbed in upper right)
-- Files/Plots/Packages/Help/Viewer/... (tabbed in lower right). 
+1. Where are my files, commands and current objects stored?
+2. Which object structure matches the research information I need to represent?
+3. How can I check a value or selection before using it in an analysis?
+:::
 
----
+## Structure & Agenda
 
-![RStudio first view.](./fig/rstudio_first.png)
+| Block | Teaching | Activity | Output to keep |
+|---|---:|---:|---|
+| RStudio, scripts and projects | 10 min | 5 min | A project and saved script |
+| Arithmetic, comparisons and assignment | 10 min | 5 min | A checked calculation with units |
+| Types and data structures | 10 min | 5 min | Annotated object and indexing examples |
+| **Break** | — | **10 min break** | — |
+| Packages and help | 10 min | 5 min | A note linking a command to its help page |
+| Importing and inspecting a research table | 10 min | 5 min | An input record and identifier checks |
+| Saving and rerunning a workflow | 10 min | 5 min | A script a partner can rerun |
+| **Total** | **60 min** | **30 min** | **100 min including the break** |
 
-Opening/creating a File opens a 4th editor panel. 
+This is **session 1 of four**, with the same 100-minute plan used throughout the course: 60 minutes teaching, 30 minutes activities and a separate 10-minute break. Debriefs are included in activity time. Complete [Setup](../learners/setup.qmd) beforehand. Work in pairs, sharing a screen if one installation is unavailable.
 
-# TASK: Create a new file for R coding
- 
- File > New File > R script  Save the file as something like test.R in a suitable location e.g. R_course (there is a new directory option in the save file dialog)
+# A Research Workspace in RStudio
 
-![RStudio test file.](./fig/rstudio_test_file.png)
+## Begin with a Saved Research Task
 
-  
-# TASK: update file: 
- 
-Add a couple of lines of example code to the file, for instance you could use:      ```{r}   cat('hello')   cat(paste(LETTERS[1:10], 1:10), sep = '\n')   ``` and save. (+ If you want information about any commands note them to use with the R help options later) 
+Imagine that a collaborator needs to rerun a small calculation next week. Commands typed only into a console are easy to lose; save the steps in a script and keep the related files in a project.
 
-## Note the Run and Source buttons above the editor pane**
+R is the language and computing environment. RStudio is the interface used here to edit scripts, inspect objects, manage files and view help. Its [official user guide](https://docs.posit.co/ide/user/) describes the interface and supported workflows.
 
-![RStudio test file run.](./fig/rstudio_test_file_run.png)
+**Room check:** ask pairs where their current spreadsheet, calculation or analysis script lives and what a collaborator would need to repeat it.
 
-**Run:** runs the particular code selected or the line where the cursor is resting. 
+## Find the Panels
 
-**Source:**  runs the whole file. 
+![The RStudio interface before opening a script.](fig/rstudio_first.png){fig-alt="RStudio shows the console on the left, an environment panel at the upper right and files, plots, packages and help at the lower right. Opening a script adds an editor panel." width="90%"}
 
+- **Console:** execute commands and inspect their printed output.
+- **Environment:** inspect objects held in the current R session.
+- **Files, Plots, Packages and Help:** locate files, inspect figures and read documentation.
+- **Editor:** appears when a script is opened; retain the commands you want to rerun.
 
-# TASK:
-  
-Try using the **Run** and **Source** buttons and see how the code behaves when using Run with different text selections or cursor locations
+The screenshots illustrate the established panel layout; menu wording and appearance may differ in the installed version.
 
-# RStudio Themes
+## Create and Run a Script
 
-There are many ways to configure RStudio, including text size, layout and colour schemes. 
-![RStudio prefs.](./fig/rstudio_pref1.png)
-
-
-# TASK: 
- 
-Take a look at the RStudio Preferences/Settings Edit > Preferences...  Or depending on the RStudio version Tools > Global Options In particular look at the <strong>Appearance</strong> settings  Change the 'Editor theme:' to a dark theme (Cobalt is a good example).  Pick a theme to use or return to the default (Textmate) and go OK.
-
-# Using R Packages (CRAN)
-It is possible to add functions to R by writing them yourself, but a major reason for the popularity of R are the many freely available packages for a multitude of computational tasks. There are >21,000 packages available from **CRAN** alone (the Comprehensive R Archive Network). So for any particular task there is a high probability robust pre-existing code exists. 
-
-## R has command driven functionality for managing packages/libraries: 
-
-- You can see what packages are installed by typing `installed.packages()`
-- You can install packages by typing `install.packages("package_name")`, where package_name is the package name, in quotes.
-- You can update installed packages by typing `update.packages()`
-- You can remove a package with `remove.packages("packagename")`
-- You can make a package available for use with `library(package_name)` (typically placed at the top of your R script - note: quotes are optional here). 
-
-## RStudio also allows package management via the GUI
-
-Packages can be viewed, loaded, and detached in the Packages tab of the lower right panel in RStudio. Clicking on this tab will display all of the installed packages with a checkbox next to them. If the box next to a package name is checked, the package is loaded and if it is empty, the package is not loaded. Click an empty box to load that package and click a checked box to detach that package.
-Packages can be installed and updated from the Package tab with the Install and Update buttons at the top of the tab. 
-
-Or use Tools > install Packages…
-
-# TASK: 
-  
-Install a package either from the console   `install.packages('gapminder')` Or via the RStudio menus   **Tools > Install Packages...**   enter 'gapminder' and click install
-
-
-## Note: gapminder is a small package that provides some data that will be used later.**
-
-
-If appropriate your trainer may ask you to install other packages like the dplyr package that we will be using  extensively
-
-# Other Package sources
-
-Packages can also be obtained from other sources such as:
-
-- Github
-- Package Archive files (.tar.gz/.zip)
-- Bioconductor
-
-Some specialist or very new packages may be obtained directly from their authors and require different installation processes e.g: from github using the devtools package  `devtools::install_github("DeveloperName/PackageName")`  <https://cran.r-project.org/web/packages/githubinstall/vignettes/githubinstall.html> 
-
-Or if a suitable package archive file is provided, using `install.packages()` but with the archive file path (which can be a URL) and the `type = "source"` parameter.  
-
-For those working in the areas of biological science the **Bioconductor** package repository may be important.  
-
-It is a source of 2100+ packages of particular interest to bioscientists and bioinformaticians <https://www.bioconductor.org/packages>. 
-
-Setting up Bioconductor packages requires the prior installation of a package called BiocManager which is then used to install the  specialist packages (<https://bioconductor.org/install/>). 
-
-# Projects with RStudio
-
-One powerful and useful aspect of RStudio is its project management functionality. Projects help keep related scripts, R configurations and data organised together and reduces conflicts and confusion between different sets of work. 
-
-**If you are creating more than a few small scripts get into the habit of creating a Project for every collection of related scripts and data**
-
----
-
-If you have already done some work before creating the project use:  
-
-**File > New Project...  > Existing Directory > Create Project From Existing Directory**
-
----
-
-Or if you are starting things from scratch use:
-
-**File > New Project...  > New Directory > New Project > Create New Project** 
-
-
-![RStudio New Project.](./fig/rstudio_newproject.png)
-
----
-
-Note when creating a new project you are given the options to:
-
-- Create a git repository
-- Use renv with this project
-
-These options provide powerful functionality for a project but we will not be covering them further in this introduction, however we recommend looking into their use especially if you end up working with complex or colaborative R coding.  
-
- # TASK: 
- 
- Create a project using the existing Folder and test script saved earlier 
-
-## HINT:
-
-**File > New Project...  > Existing Directory > Create Project From Existing Directory** 
-
-To open an existing R project in RStudio either use **File > Open Project** (or related menu options) or use the file browser to get to the directory where it was saved and open the .Rproj file (which should be associated with RStudio). This will open RStudio and start your R session in the project directory. All your data, plots and scripts will now be relative to the project directory and should be redisplayed in the state that the project was closed in. It is a good habit when using projects to use the File > Open/Close Project menu options as you work.  
-
-RStudio projects have the added benefit of allowing you to open multiple projects at the same time each using its own project directory. This allows you to keep multiple projects open without them interfering with each other.
-
-## Supplementary info: 
-
-#### Code tidying
-
-There are some built in functions for organising code text including:
-
-- Code > Reindent Lines
-- Code > Reformat Lines
-- Code > Comment/Uncomment
-
-#### Working Diectory
-
-Using projects should keep you located in the appropriate directory for your work but if needed you can set your directory location using:  
-
-Session > Set Working Directory > (several options)
-
-The commands `setwd('directory_path')` works from the console also note the handy `getwd()` to display the current working directory can sometimes be helpful. 
-
-#### Finding Help
-
-There are several sources of documentation for R packages on line but RStudio also supplies R package documentation via the search in its Help tab. Whenever you use a new package it is a good idea to take at least a quick look at the description and available parameters.
-
-
-The package help can also be found by entering `?package_name` in the console. 
- 
-# TASK:
- 
-look at help documentation for `paste` and `getwd` using the console
-
-## Hint
+Choose **File > New File > R Script**. Save it as `test.R` in your `applied_R` folder. Add:
 
 ```{r}
-?paste
-
-?getwd
-
+cat("hello\n")
+cat(paste(LETTERS[1:10], 1:10), sep = "\n")
 ```
 
+![A saved R script in the editor.](fig/rstudio_test_file.png){fig-alt="A script editor above the R console holds saved commands that can be selected and run." width="80%"}
 
-**Note: If a package is not currently loaded it will be suggested to try `??package_name` for a more extensive search**
+**Run** executes the selected code or current line. **Source** executes the complete script. Saving the script retains the instructions; the Environment panel shows objects in memory and is not a substitute for that script.
 
-# Cheat Sheets 
+![Run and Source controls in RStudio.](fig/rstudio_test_file_run.png){fig-alt="The editor has controls for running selected lines or sourcing the whole script, with output visible in the console." width="80%"}
 
-For overviews / command references for particular topics there are some very useful "cheat sheets" available from the help menu. 
+## Keep Related Files in a Project
 
+If you completed setup, open the existing `applied_R` project. Otherwise choose **File > New Project > Existing Directory**, select the folder containing your script and create the project. For a fresh folder, use **New Directory > New Project**.
 
-**Help > Cheatsheets**
+![The RStudio New Project dialogue.](fig/rstudio_newproject.png){fig-alt="The New Project dialogue provides options to create a new directory or use an existing directory for related R files." width="75%"}
 
-<https://posit.co/resources/cheatsheets/>
+Opening the `.Rproj` file starts the project. Use paths relative to its folder, such as `data/gapminder_data.csv`, and use `getwd()` to check the working directory. The options to create a Git repository or use `renv` are useful extensions, not requirements for this session. See the [Projects guide](https://docs.posit.co/ide/user/ide/guide/code/projects.html).
 
+## Task 1: Make a Workspace a Partner Can Find (5 min)
 
-# TASK
- 
-Take a look at the RStudio IDE Cheat Sheet From the Help menu
+::: callout-task
+**Goal:** save a project and script that a partner can locate and run. **Input:** the `applied_R` folder and the two `cat()` commands above. Work in pairs.
 
-## Hint
+::: panel-tabset
+##### Do the Task
 
-**Help > Cheatsheets > RStudio IDE Cheat Sheet** 
+1. **1 min:** open or create the project and locate its folder.
+2. **2 min:** save `test.R`; compare Run on one line with Source on the full script.
+3. **1 min:** the partner identifies the saved script and the current working directory.
+4. **1 min:** two pairs tell the room what was saved on disk and what was shown only in the console.
 
-# Other Resources
+**Keep:** the project and script. **If access fails:** annotate the instructor's panel screenshot and write the intended folder and filename.
 
-There are many web resources available to help you use R successfully.
-For general and specific questions about R, Google and Stackoverflow (<https://stackoverflow.com>) are your friends. Resources such as ChatGTP can be now used to generate or refine code, however in an academic context care should always be taken to understand thoroughly how any code actually works before use.
+##### Debrief
+
+The script retains the instructions; printed console output and objects in memory serve different purposes. A project makes file locations easier to explain, but a repeatable analysis still needs complete saved commands and checks.
+:::
+:::
+
+## Make the Interface Readable
+
+Text size, layout and editor themes can be changed in **Tools > Global Options > Appearance**, or the equivalent Preferences menu on your system. Choose a theme and text size that you can read; a dark theme is optional. See the [Themes guide](https://docs.posit.co/ide/user/ide/guide/ui/appearance.html).
+
+![RStudio appearance preferences.](fig/rstudio_pref1.png){fig-alt="Appearance settings offer editor themes and text choices so the interface can be made readable." width="70%"}
+
+# Calculations, Comparisons and Variables
+
+## Use the Console as a Calculator
+
+```{r}
+1 + 100
+2 * (1:100)
+3 + 5 * 2
+(3 + 5) * 2
+2 / 10000
+```
+
+The printed `[1]` marks the index of the first value on that output line. Parentheses change the order of evaluation. R uses the usual arithmetic precedence: parentheses, exponentiation (`^`), multiplication/division and addition/subtraction. Very small or large values may print in scientific notation.
+
+```{r}
+log(1)       # Natural logarithm
+log10(10)    # Base-10 logarithm
+sin(1)       # The angle is in radians
+```
+
+Do not memorise every function. Use help and tab completion, then check the function's arguments and units.
+
+## Recover from an Incomplete Command
+
+An unfinished expression gives the continuation prompt `+`. Try `18 *` **in the console**, then enter `2` to complete it. Press Esc in RStudio, or Ctrl+C in a terminal, to cancel an expression when needed. The incomplete line is intentionally shown as text rather than an executable lesson chunk.
+
+## Compare Values without Losing Precision
+
+```{r}
+1 == 1
+1 != 2
+1 >= -9
+isTRUE(all.equal(0.1 + 0.2, 0.3))
+```
+
+Comparisons return logical values. Exact equality is appropriate for identifiers and exact values, but calculated floating-point values can differ by a small rounding error. `all.equal()` compares with a tolerance; `isTRUE()` converts its answer to a single logical result. Do not convert measurements to integers to make a comparison pass: that would discard their fractional part.
+
+## Assign Values with Units
+
+```{r}
+weight_kg <- 55
+weight_kg
+2.2 * weight_kg
+weight_kg <- 57.5
+weight_lb <- 2.2 * weight_kg
+print(weight_lb)
+```
+
+These fictional teaching values use the original example's approximate conversion factor, **2.2 pounds per kilogram**. Assignment with `<-` gives a value a name; updating `weight_kg` does not automatically rerun an earlier calculation of `weight_lb`. Use `=` for named arguments when calling a function and follow the lesson's `<-` assignment convention.
+
+## Task 2: Predict, Run and Check a Calculation (5 min)
+
+::: callout-task
+**Goal:** explain when a derived value is updated. **Input:** the weight calculation above. Work in pairs, swapping operator and checker.
+
+::: panel-tabset
+##### Do the Task
+
+1. **1 min:** predict the output of `3 + 5 * 2` and `(3 + 5) * 2`.
+2. **2 min:** assign `weight_kg <- 55`, calculate `weight_lb`, then update only `weight_kg`. Inspect both objects.
+3. **1 min:** rerun the conversion and record why its result changed.
+4. **1 min:** vote on whether changing the input automatically changed the previously stored output; two pairs explain the evidence.
+
+**Keep:** the saved calculation and a note about rerunning derived steps. **If access fails:** trace the assignments on paper.
+
+##### Debrief
+
+The arithmetic results are 13 and 16. A derived variable stores the result computed at that time; rerun its assignment after changing an input. Retaining units in names helps a collaborator recognise the conversion and its approximation.
+:::
+:::
+
+# Objects and Data Structures
+
+## Inspect the Type before Operating on It
+
+| Type | Example | What it represents |
+|---|---|---|
+| Double/numeric | `3`, `6.7` | Numerical values, including fractional values |
+| Integer | `2L`, `42L` | Whole numbers explicitly stored as integers |
+| Logical | `TRUE`, `FALSE` | Results of tests or logical conditions |
+| Character | `"sample_01"`, `"666"` | Text, even when it contains digits |
+| Factor | `factor(c("control", "treated"))` | Categories with defined levels |
+
+Use `typeof()`, `class()` and `str()` to inspect objects. Factors occur in both base R and tidyverse workflows; inspect their levels and ordering rather than assuming a category is plain text. The [R introduction](https://cran.r-project.org/doc/manuals/r-release/R-intro.html) explains these structures.
+
+## Vectors and Indexing
+
+An atomic vector holds ordered values of one type. R indexing begins at **1**.
+
+```{r}
+a <- 1:5
+b <- c(1, 2, 3, 4, 5)
+character_numbers <- c("1", "2", "3", "4", "5")
+animals <- c("mouse", "rat", "dog", "cat", "ape")
+typeof(a)
+str(character_numbers)
+animals[2]
+animals[c(3, 2)]
+animals[2:4]
+animals[c(TRUE, FALSE, TRUE, FALSE, TRUE)]
+```
+
+The logical selection has one entry per animal. In later analyses, these logical values are often generated by a comparison. The selected order follows the indices supplied.
+
+## Lists Preserve Different Kinds of Information
+
+```{r}
+stuff <- list("a", 1L, 3.14, LETTERS[3:9])
+str(stuff)
+stuff[4]
+stuff[[4]]
+```
+
+A list can contain different types and nested objects. `stuff[4]` returns a one-element list; `stuff[[4]]` returns the element inside it. Distinguish those results before passing them to a function.
+
+## Matrices Have Two Dimensions and One Type
+
+```{r}
+mx <- matrix(1:9, nrow = 3, ncol = 3, byrow = TRUE)
+rownames(mx) <- c("a", "b", "c")
+colnames(mx) <- c("c", "d", "e")
+mx[2, 3]
+mx[2, ]
+mx[, 3]
+```
+
+`matrix()` accepts data, `nrow`, `ncol`, `byrow` and optional dimension names. A matrix stores one type of value. Use `[row, column]`; omitting one index selects the whole row or column. Check dimensions before applying a calculation along an axis.
+
+## Data Frames Keep Columns with Different Types
+
+```{r}
+samples <- data.frame(
+    sample_id = c("sample_01", "sample_02"),
+    mass_g = c(2.1, 2.4),
+    checked = c(TRUE, FALSE)
+)
+str(samples)
+samples[1, ]
+samples$mass_g
+```
+
+This small example is fictional. Columns can have different types, while each column has a consistent structure. A [tibble](https://tibble.tidyverse.org/) is a data-frame variant used in the tidyverse. A data-frame row can contain both text and measurements: do not blindly convert it to numeric values or average every column.
+
+## Task 3: Choose and Check an Object (5 min)
+
+::: callout-task
+**Goal:** select research information while preserving its meaning. **Input:** `animals`, `mx` and the fictional `samples` table above. Work in pairs.
+
+::: panel-tabset
+##### Do the Task
+
+1. **1 min:** predict the result of `animals[c(3, 2)]` and `mx[2, 3]`.
+2. **2 min:** run the selections, inspect their types and select the `sample_id` and `mass_g` columns from `samples`.
+3. **1 min:** compare the retained IDs and units with the source table.
+4. **1 min:** two pairs report which object suits a mixture of identifiers and measurements and why.
+
+**Keep:** the selected table and one reason for using a data frame. **If access fails:** mark the same selections on the displayed examples.
+
+##### Debrief
+
+The animal result is `dog`, then `rat`; the matrix element is 6. A data frame preserves text identifiers beside numerical measurements. Checking only that a command runs would not reveal a wrong selection or a lost identifier.
+:::
+:::
+
+## Use Names That Explain the Task
+
+Prefer names such as `sample_id` and `mass_g`. Syntactic names can contain letters, numbers, underscores and periods; they cannot begin with a number or underscore, and a leading period cannot be followed by a digit. R also permits quoted non-syntactic names, but simple descriptive names are easier to use here.
+
+Existing code may use `periods.between.words`, `underscores_between_words` or `camelCase`. Follow the surrounding conventions; see the [tidyverse style guide](https://style.tidyverse.org/syntax.html).
+
+## Break (10 min)
+
+Save your script before the break. Leave the project open so the group can resume from the same file location.
+
+# Packages, Help and Reuse
+
+## Install Once, Load in Each Session
+
+Packages add reusable functions and datasets. See [Setup](../learners/setup.qmd) for the packages used in this course.
+
+```r
+install.packages("gapminder")  # Run only if installation is needed.
+library(gapminder)             # Load for the current R session.
+```
+
+Use `installed.packages()` to inspect installations, `update.packages()` to review updates and `remove.packages("package_name")` to remove an installation deliberately. RStudio's Packages tab and **Tools > Install Packages** provide interface routes. An installed package is not necessarily loaded in the current session.
+
+CRAN is the main package repository used here. Specialist packages may come from [Bioconductor](https://bioconductor.org/install/), GitHub or package archives. Check the source and installation instructions before using these; Bioconductor uses `BiocManager`. No additional repository is required for this foundations session.
+
+## Read Help and Tidy a Script
+
+Use `?paste`, `?getwd` or `help("paste")`. Use `??topic` for a wider help search when you do not know the exact function. Read the description, arguments and examples before adapting a command.
+
+RStudio also offers **Code > Reindent Lines**, **Reformat Code** and **Comment/Uncomment**. Its Help menu and the [Posit cheatsheets](https://rstudio.github.io/cheatsheets/) provide compact reminders.
+
+## Task 4: Explain a Command Using Its Help (5 min)
+
+::: callout-task
+**Goal:** make one unfamiliar command understandable to a collaborator. **Input:** `paste()` and `getwd()` in the saved script. Work in pairs.
+
+::: panel-tabset
+##### Do the Task
+
+1. **1 min:** open the help for `paste()`.
+2. **2 min:** find `sep`, change it in one small example and predict the output before running it.
+3. **1 min:** use `getwd()` to explain where a relative data path starts.
+4. **1 min:** two pairs give the room one useful argument and the check that established its behaviour.
+
+**Keep:** an annotated example and a link or help command. **If access fails:** use the instructor's displayed help page and write the predicted result.
+
+##### Debrief
+
+Help connects the syntax to its meaning. `sep` controls the separator in `paste()`; a relative path is resolved from the working directory. A code snippet from another source still needs checking against your input and environment.
+:::
+:::
+
+# Load and Check a Research Table
+
+## Read an Input without Changing It
+
+The downloaded CSV contains historical country–year records from Gapminder. Read it into a named object rather than editing the input file. `read.csv()` uses a header row by default; checking the column names confirms that the header was interpreted as intended.
+
+```{r}
+input_path <- "data/gapminder_data.csv"
+stopifnot(file.exists(input_path))
+gapminder_csv <- read.csv(input_path, stringsAsFactors = FALSE)
+head(gapminder_csv)
+names(gapminder_csv)
+dim(gapminder_csv)
+str(gapminder_csv)
+```
+
+The explicit `stringsAsFactors = FALSE` retains text columns as character values for this import. Inspect the actual types rather than assuming that the CSV retains an R object's metadata.
+
+## Check Observation Level, Identifiers and Units
+
+```{r}
+range(gapminder_csv$year)
+anyDuplicated(gapminder_csv[c("country", "year")])
+gapminder_csv[1, c("country", "year", "lifeExp")]
+```
+
+The country–year combination identifies an observation. Check the available years before answering a question about a particular date. Life expectancy is measured in years and population in people; confirm definitions in the [Gapminder documentation](https://jennybc.github.io/gapminder/).
+
+**Room prediction:** ask whether two rows for the same country in different years are duplicates. The country alone repeats; the combination of country and year represents distinct observations.
+
+## Task 5: Make an Input Record (5 min)
+
+::: callout-task
+**Goal:** make a downloaded table understandable before analysis. **Input:** `data/gapminder_data.csv` in the course project. Work in pairs and swap roles.
+
+::: panel-tabset
+##### Do the Task
+
+1. **1 min:** locate the file and check the working directory.
+2. **2 min:** read it and inspect its names, dimensions and types.
+3. **1 min:** record the country–year identifier, recorded years and the units of one measurement.
+4. **1 min:** two pairs report one check that would catch an incorrect import.
+
+**Keep:** the import code and an input record. **If access fails:** inspect the first rows displayed by the instructor and annotate the same checks.
+
+##### Debrief
+
+The header must remain column names and the first observation must remain data. A country can appear in several years without being a duplicated record. Inspect identifiers and coverage before filtering or merging.
+:::
+:::
+
+# Save and Rerun from a Fresh Session
+
+## Identify What Lives on Disk and in Memory
+
+| Item | Where it lives | What a collaborator needs |
+|---|---|---|
+| Original CSV | `data/` on disk | The source file and its context |
+| Script | Project folder on disk | The commands in a meaningful order |
+| Imported object | Current R session | The saved import command to recreate it |
+| Printed result | Console output | A saved calculation and a check, not only a screenshot |
+
+An analysis can appear to work because an object was created earlier at the console. Test the saved instructions after saving the script and restarting R, rather than relying on the current Environment panel.
+
+## Assemble a Small Checked Script
+
+Put these stages in order: identify the input; load it; inspect identifiers and types; select a record; check the output. For example:
+
+```{r}
+afghanistan_1952 <- gapminder_csv[
+    gapminder_csv$country == "Afghanistan" & gapminder_csv$year == 1952,
+    c("country", "year", "lifeExp")
+]
+stopifnot(nrow(afghanistan_1952) == 1L)
+afghanistan_1952
+```
+
+Compare the result with the original CSV's first row. Keep the identifiers so the value remains traceable. This is a historical teaching comparison; it does not establish present-day conditions or a causal explanation.
+
+## Task 6: Hand Over and Rerun (5 min)
+
+::: callout-task
+**Goal:** discover a missing step before handing work to a collaborator. **Input:** the saved script and CSV from Task 5. Work in pairs.
+
+::: panel-tabset
+##### Do the Task
+
+1. **1 min:** save the script and check that it contains the input, import and selection commands.
+2. **2 min:** restart R after saving and source the script from the beginning with the project open.
+3. **1 min:** the partner compares the selected value and identifiers with the source row and records any missing step.
+4. **1 min:** two pairs tell the room what the fresh-session run established and which source check was still needed.
+
+**Keep:** the rerunnable script and a note of the check. **If access fails:** order the displayed code stages and identify any dependency on an earlier object.
+
+##### Debrief
+
+A fresh-session run reveals dependence on unsaved console work. The source-row comparison checks the selected observation. Neither test alone proves that a later scientific interpretation is appropriate.
+:::
+:::
+
+# Further Information
+
+::: callout-keypoints
+## 📚 Key Points
+
+- A saved script and project make the steps and files easier to find and rerun.
+- Inspect object types, identifiers, units and dimensions before selecting or calculating.
+- Check a small known result; successful execution alone does not establish correctness.
+:::
+
+::: callout-hints
+## 🔦 Hints
+
+- Save before restarting R; run the script from the beginning to discover missing setup steps.
+- Use Esc to leave an incomplete console expression and read help for unfamiliar arguments.
+- Keep original data unchanged and keep derived files separate.
+:::
+
+## Module Summary
+
+You have a project, a saved calculation and checked examples of R's main object structures. Next, turn a repeated calculation into a reusable function in [session 2](03-R_functions.qmd).
+
+## Additional Learning
+
+- [Learner Additional Material](../learners/additional_material.qmd): a checked Gapminder practice workflow.
+- [Reference](../learners/reference.qmd): syntax reminders and terminology.
+- [Discussion](../learners/discuss.qmd): questions about selection, types and reproducibility.
+- [R introduction](https://cran.r-project.org/doc/manuals/r-release/R-intro.html): the primary guide to base R.
+
+This foundations session combines the former RStudio and variables lessons. The original examples draw on [Software Carpentry's R lessons](https://swcarpentry.github.io/r-novice-gapminder/); see the course [README](../README.qmd) and [licence](../LICENSE.qmd).

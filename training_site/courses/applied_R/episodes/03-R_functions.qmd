@@ -1,99 +1,589 @@
 ---
-title: "Functions in R"
+title: "Reusable Functions in R"
 module-icon: "🧩"
+module-number: "2"
 author: "DRS Training"
-output: html_document
+metadata:
+  teaching: 60
+  exercises: 30
 ---
 
-# R Functions
+::: callout-outcomes
+## 💡 Learning Outcomes
 
-A function is a discrete section of code that carries out a particular routine task.
+- Call an existing function with appropriate arguments and explain its returned result.
+- Define and compose a function with explicit inputs, outputs and units.
+- Explain default arguments, local variables and vectorised calculations.
+- Validate inputs and check results with known values without concealing failures.
+- Save a documented function and checks so that a collaborator can rerun them.
+:::
 
-If you are duplicating sections of code to carry out similar actions in different parts of your script (or in multiple scripts) then you should definitely see about creating generally applicable functions.
+::: callout-questions
+## ❓ Questions
 
-The appropriate use of functions makes code more robust and efficient.
+1. Which repeated calculation belongs in a function?
+2. What does the caller need to know about units, inputs and outputs?
+3. Which small example would reveal an incorrect implementation?
+:::
 
-In a way the R language is really just a massive collection of functions!
+## Structure & Agenda
 
-  
-## Structure
+| Topic | Teaching | Activity | Output to keep |
+|---|---:|---:|---|
+| Call existing functions | 10 min | 5 min | A checked function call and interpretation |
+| Define and return a calculation | 10 min | 5 min | A saved temperature conversion |
+| Arguments, composition and precision | 10 min | 5 min | Equivalent conversions and a rounding decision |
+| **Break** | — | — | **10 min, recorded separately** |
+| Scope and vector inputs | 10 min | 5 min | A documented input/output contract |
+| Validate inputs and recognise failures | 10 min | 5 min | A checked function and failure example |
+| Check and hand over reusable code | 10 min | 5 min | A documented script with known-value checks |
+| **Total** | **60 min** | **30 min** | **100 min overall, including the break** |
 
-The general structure of a function is:
+This is **session 2 of four**. The six room activities each take five minutes, including their room responses and debriefs. Complete [R Foundations](01-Rstudio_intro.qmd) first and open the project from [Setup](../learners/setup.qmd).
+
+## Starting Point and Preparation
+
+- **Starting point:** you can save and run an R script, assign values and select a data-frame column.
+- **Tools:** the course RStudio project; this session uses base R and requires no additional packages.
+- **Materials:** [gapminder_data.csv](data/gapminder_data.csv), saved in your project's `data` folder. Its observations are historical country–year records. Temperature readings below are fictional teaching examples.
+- **Working arrangement:** pairs, with one operator and one checker. Swap roles between activities.
+- **Output:** save your commands as `functions_practice.R` in the course project. Keep definitions before calls so the script runs from the beginning.
+- **Access fallback:** share a working screen or annotate the displayed code and predict results on paper. Report an installation or file-access problem to the instructor.
+
+# Call Existing Functions (10 min teaching)
+
+## Begin with a Research Question
+
+You need a short description of the countries represented in the Gapminder data for 2007. R already provides functions for reading a table, counting its rows and calculating a mean. Before writing new code, find an existing operation and understand what it expects.
 
 ```{r}
-my_function <- function(parameters) {
-  # perform action
-  # return stuff
-}
+gapminder_data <- read.csv("data/gapminder_data.csv", stringsAsFactors = FALSE)
+names(gapminder_data)
+gapminder_2007 <- gapminder_data[
+    gapminder_data$year == 2007,
+    c("country", "year", "lifeExp")
+]
+head(gapminder_2007)
+nrow(gapminder_2007)
 ```
 
----
+The selection keeps `country` and `year`, which identify each record. The `lifeExp` column contains life expectancy in years. Inspect a few rows and the selected year before making a summary.
 
-Which is used/run as:
+**Room prediction:** ask pairs whether `nrow(gapminder_2007)` counts countries, years or individual people. Take two reasons before running it.
+
+## Read a Function Call
+
+```{r}
+life_expectancy_mean <- mean(gapminder_2007$lifeExp)
+life_expectancy_mean
+round(life_expectancy_mean, digits = 2)
+```
+
+| Part | Meaning in this example |
+|---|---|
+| `round` | The function being called |
+| `life_expectancy_mean` | The value supplied as its first argument |
+| `digits = 2` | A named argument controlling the number of decimal places |
+| Returned result | A number that can be saved or passed to another function |
+
+The mean gives **each represented country equal weight**. It is not a population-weighted global life expectancy or a summary of individual participants. That distinction follows from the input and calculation, even when the code runs successfully.
+
+## Use Help to Check an Assumption
+
+In the console, open `?mean` and `?round`. Read **Usage**, **Arguments** and **Value**; look for the missing-value and rounding choices rather than reading every detail.
+
+```{r}
+practice_readings <- c(10, 12, NA_real_)
+mean(practice_readings)
+mean(practice_readings, na.rm = TRUE)
+sum(is.na(practice_readings))
+```
+
+These three values are **fictional**. The first mean retains the effect of a missing value. The second excludes it deliberately and answers a different question. `na.rm = TRUE` does not recover the missing observation. Record exclusions and their reason in a research workflow.
+
+## Task 1: Explain an Existing Function Call (5 min)
+
+::: callout-task
+**Goal:** connect a function's arguments to the meaning of its result. **Input:** the Gapminder selection and fictional `practice_readings` above. Work in pairs in `functions_practice.R`.
+
+::: panel-tabset
+##### Do the Task
+
+1. **1 min:** identify what one row in `gapminder_2007` represents and the unit of `lifeExp`.
+2. **2 min:** run `mean()` and `round()` on the selected column. Compare the two `mean(practice_readings)` calls and inspect `?mean`.
+3. **1 min:** add a comment explaining the weighting of the Gapminder mean and the effect of `na.rm = TRUE`.
+4. **1 min:** vote by show of hands on whether the Gapminder result is a population-weighted mean; two pairs explain their vote and join the debrief.
+
+**Keep:** the calls, their results and the two interpretation comments. **If access fails:** inspect the displayed selection and calculate the fictional non-missing mean on paper.
+
+##### Debrief
+
+- **Ask the room:** “What does this mean describe, and what changed when a missing value was removed?”
+- **Expected reasoning:** the Gapminder calculation is an unweighted mean of the represented countries' life expectancies in 2007. The fictional vector gives a missing result by default and 11 when its missing value is excluded.
+- **Common mistake:** averaging an entire mixed-type table or calling the result a mean for individual people. Select a meaningful numeric column and state the observation level.
+- **Transfer:** read the arguments and returned value before using an unfamiliar function on research data.
+:::
+:::
+
+# Define and Return a Calculation (10 min teaching)
+
+## Begin with a Research Task
+
+A collaborator sends temperature readings in Fahrenheit, while your analysis uses Celsius or kelvin. Repeating the conversion throughout a script creates several places where a formula could be mistyped. A named function gives the operation one implementation and a clear interface.
+
+A function accepts arguments, performs its body and returns a result. A clear function can improve reuse and checking; it does not automatically make a calculation scientifically appropriate or computationally faster.
+
+**Room question:** ask pairs to name one calculation they repeat in a spreadsheet or script and the units it expects.
+
+## Recognise a Repeated Operation
+
+The calculation has four parts: an input with a known unit, a fixed conversion, a result with a different unit and a check. Keep this operation separate from reading files, making plots or writing a report.
+
+| Stage | Temperature example |
+|---|---|
+| Input | A value in degrees Fahrenheit |
+| Operation | Subtract 32, multiply by `5 / 9`, then add 273.15 |
+| Returned result | The converted value in kelvin |
+| Check | 32 °F should give 273.15 K |
+
+A function should do one coherent job. Combining conversion, file import and plotting would make the calculation harder to test or reuse for a different table.
+
+## Function Structure
 
 ```{r}
 my_function <- function(param1, param2) {
-  param1 + param2
+    param1 + param2
 }
 
 results <- my_function(1, 2)
 results
 ```
 
-## Defining a Function
+`function()` defines the arguments and the code inside `{}`. R returns the last evaluated expression unless an explicit `return()` ends the function earlier. Names such as `param1` illustrate the structure; use descriptive names in actual analysis.
 
-Let's define a function `fahr_to_kelvin()` that converts temperatures from Fahrenheit to Kelvin:
-
-```{r}
-fahr_to_kelvin <- function(temp) {
-  kelvin <- ((temp - 32) * (5 / 9)) + 273.15
-  return(kelvin)
-}
-```
-
----
-
-We define `fahr_to_kelvin` by assigning it to the output of `function`. The list of argument names are contained within brackets `()`, next the body of the function contains the statements that are executed when it runs, within curly braces `{}`.
-
-It is useful to think of creating functions like writing a cookbook. First you define the "ingredients" that your function needs. In this case, we only need one ingredient to use our function: 'temp'. After we list our ingredients, we then say what we will do with them, in this case, we are taking our ingredient and applying a set of mathematical operators to it and returning an output.
-
-# Task 1:
-
-Copy the fahr_to_kelvin code into a script or the console and run it
-
-try using the function to convert some $^\circ$F to $^\circ$Kelvin. 
-e.g: ` fahr_to_kelvin(98) `
-
-change the function code to return values to 2 decimal places
-
-## hint
+## Convert Fahrenheit to Kelvin
 
 ```{r}
 fahr_to_kelvin <- function(temp) {
-  kelvin <- ((temp - 32) * (5 / 9)) + 273.15
-  return(round(kelvin, 2))
+    kelvin <- ((temp - 32) * (5 / 9)) + 273.15
+    return(kelvin)
 }
 
 fahr_to_kelvin(98)
 ```
 
+The original course formula is retained. `temp` is in degrees Fahrenheit; the result is in **kelvin (K)**, written without a degree sign. Defining the function does not yet perform a conversion; calling it supplies the input. The [R manual](https://cran.r-project.org/doc/manuals/r-release/R-intro.html#Writing-your-own-functions) explains function definitions and returned values.
 
-**Note** On running the code the function information is then listed under 'functions' in the Rstudio environment tab.  
+## Return a Value for the Next Step
 
+```{r}
+temperature_k <- fahr_to_kelvin(temp = 98)
+temperature_k
+is.numeric(temperature_k)
+```
 
-# Task2 
+Saving a returned value lets another calculation use it. `return(kelvin)` makes the output explicit here; the earlier addition function instead uses its final expression. Both approaches return a value.
 
-try creating a fahr_to_celsius function
+`print()` and `cat()` display information; displaying a result alone does not define a useful return contract. In particular, `cat()` returns `NULL`, so a function whose final action is `cat()` will not return the displayed number for later calculation. Keep presentation separate from the conversion.
 
-## Hint
+**Room prediction:** show `temperature_k <- fahr_to_kelvin(98)` and ask which name refers to a function and which refers to a converted value. Ask a pair to justify the distinction in the Environment panel.
+
+## Task 2: Define and Verify a Conversion (5 min)
+
+::: callout-task
+**Goal:** keep a reusable calculation with a known-value check. **Input:** `fahr_to_kelvin()` above. Work in pairs using a saved script in the course project.
+
+::: panel-tabset
+##### Do the Task
+
+1. **1 min:** identify the input unit, output unit and formula.
+2. **2 min:** save and call the function for `98`; then check that `32` returns `273.15`.
+3. **1 min:** inspect the function in the Environment panel and explain the difference between its definition and its returned value.
+4. **1 min:** two pairs report their known-value check to the room.
+
+**Keep:** the function and check. **If access fails:** calculate the `32` example on paper and annotate the definition.
+
+##### Debrief
+
+- **Ask the room:** “What was stored when we defined the function, and what was stored when we called it?”
+- **Expected reasoning:** the definition stores reusable instructions; a call produces a numerical result. At 32 °F the conversion gives 273.15 K.
+- **Common mistake:** replacing the returned numerical value with printed text. Inspect the returned object's type as well as what appears in the console.
+- **Transfer:** use a known value to catch an offset or multiplier mistake before applying the function to unfamiliar readings.
+:::
+:::
+
+# Arguments, Composition and Precision (10 min teaching)
+
+## Name Arguments and Choose Defaults
+
+A **parameter** is the name in the function definition; an **argument** is the value supplied in a call. A default supplies a value when the caller does not specify it. Use named arguments when they make a choice clearer.
+
+## Keep Calculation Separate from Presentation
+
+The original task asks for a result rounded to two decimal places. Make that choice explicit:
+
+```{r}
+fahr_to_kelvin_rounded <- function(temp, digits = 2) {
+    round(fahr_to_kelvin(temp), digits = digits)
+}
+
+fahr_to_kelvin_rounded(98)
+fahr_to_kelvin_rounded(temp = 98, digits = 1)
+fahr_to_kelvin_rounded(digits = 1, temp = 98)
+```
+
+This uses a default argument and reuses the unrounded conversion. The last two calls give the same result because both arguments are named. A caller may override `digits`; omitting it uses `2`. Name important choices and use full parameter names rather than relying on partial matching.
+
+Retain full precision for subsequent calculations unless the analysis explicitly calls for rounding; rounding for a table is a presentation decision. The rounded helper is useful at that presentation boundary, while `fahr_to_kelvin()` remains the calculation to reuse elsewhere.
+
+## Convert Fahrenheit to Celsius
 
 ```{r}
 fahr_to_celsius <- function(temp) {
-  celsius <- ((temp - 32) * (5 / 9))
-  return(celsius)
+    celsius <- (temp - 32) * (5 / 9)
+    return(celsius)
 }
 
 fahr_to_celsius(98)
-
 ```
 
+An equivalent composition converts to kelvin and then subtracts the offset:
+
+```{r}
+kelvin_to_celsius <- function(temp) {
+    temp - 273.15
+}
+
+kelvin_to_celsius(fahr_to_kelvin(98))
+```
+
+The two paths should agree within floating-point tolerance. Names and documentation tell the caller which units to supply; a bare number does not encode its unit.
+
+## Locate the Effect of Rounding
+
+```{r}
+celsius_unrounded <- kelvin_to_celsius(fahr_to_kelvin(98))
+celsius_after_rounding <- kelvin_to_celsius(fahr_to_kelvin_rounded(98))
+c(unrounded = celsius_unrounded, rounded_first = celsius_after_rounding)
+celsius_after_rounding - celsius_unrounded
+```
+
+The second path rounds kelvin before converting to Celsius, so its result differs slightly. This demonstrates a processing choice, not a change in the temperature formula. A display rounded to two decimal places does not imply that the source measurement is accurate to two decimal places.
+
+**Room prediction:** ask which path retains more information for later calculations. Ask a pair where they would put rounding in a script that prepares both an analysis and a report table.
+
+## Task 3: Compare Two Valid Paths (5 min)
+
+::: callout-task
+**Goal:** explain composition and rounding without changing the conversion. **Input:** the functions above. Swap operator and checker.
+
+::: panel-tabset
+##### Do the Task
+
+1. **1 min:** predict the Celsius result for 32 °F.
+2. **2 min:** define `fahr_to_celsius()` in your script using the demonstrated formula; compare its calls with the composed path for `32` and `98`.
+3. **1 min:** compare the unrounded and rounded kelvin results and add a comment explaining the units.
+4. **1 min:** two pairs explain to the room when rounding would affect a later calculation.
+
+**Keep:** both conversion examples and the precision note. **If access fails:** substitute `32` into both formulas and compare the steps.
+
+##### Debrief
+
+- **Ask the room:** “Where did rounding enter your workflow, and why did you choose that point?”
+- **Expected reasoning:** both unrounded conversion paths give 0 °C for 32 °F and agree within floating-point tolerance for 98 °F. Composition reuses a checked operation. Round the report value after the calculations when rounding is only for presentation.
+- **Common mistake:** calling the rounded helper in every subsequent calculation. Retain the unrounded result separately and make the report choice visible.
+- **Transfer:** document the default argument and explain any precision choice that changes the retained result.
+:::
+:::
+
+## Break (10 min)
+
+Save `functions_practice.R`. On returning, swap operator and checker. Keep the unrounded conversions available for the remaining examples.
+
+# Scope and Vector Inputs (10 min teaching)
+
+## Distinguish Local Names from Outside Objects
+
+Parameters and variables assigned inside a function belong to that call. This makes `temp` a local parameter in the conversion, even when an object named `temp` also exists outside it.
+
+```{r}
+temp <- 999
+fahr_to_kelvin(temp = 32)
+temp
+```
+
+The call converts 32 °F, and the outside `temp` remains 999. The local name `kelvin` stores an intermediate result inside the function; the caller receives its returned value. To keep that result outside, assign the call to `temperature_k` or another descriptive name.
+
+If a function uses a name that is neither an argument nor defined locally, R can look in the environment where the function was defined. Such a dependence may be intentional, but an unexplained setting in the workspace makes a research calculation harder to rerun. Pass changing settings as arguments and keep fixed conversion constants visible.
+
+**Room prediction:** before running the example, vote on whether the outside `temp` becomes 32, becomes 273.15 or stays 999. Take one reason from each position represented in the room.
+
+## Convert a Vector without Losing Its Entries
+
+These simple functions expect numeric Fahrenheit or kelvin values as named. R's vectorised arithmetic also lets them convert a numeric vector:
+
+```{r}
+fahr_to_celsius(c(32, 98, 212))
+```
+
+The arithmetic is **vectorised**: it operates on each entry without requiring an explicit loop. Keep the association between each input and output.
+
+```{r}
+temperature_f <- c(reference = 32, reading = 98, missing = NA_real_, boiling = 212)
+temperature_c <- fahr_to_celsius(temperature_f)
+temperature_c
+length(temperature_c) == length(temperature_f)
+identical(names(temperature_c), names(temperature_f))
+```
+
+These labels identify the **fictional teaching readings**. The missing input stays in the same position as a missing output. This function does not discard readings, reorder them or fill a missing value with zero. `NA_real_` explicitly represents a missing numeric value.
+
+## State the Input and Output Contract
+
+A contract tells the caller what the function expects and promises. For this temperature helper, record:
+
+| Requirement | Choice for this lesson |
+|---|---|
+| Input shape and type | A numeric vector, including a single numeric value |
+| Input unit | Degrees Fahrenheit |
+| Missing observations | Retain their positions and return missing values |
+| Output | A Celsius vector in the original order with names retained |
+| Precision | Do not round inside the main conversion |
+| Side effects | Do not change outside objects, read files or write outputs |
+
+The original arithmetic can also operate on some other R structures, such as a numeric matrix. The checked interface in the next block deliberately accepts a vector only. Define a supported shape rather than letting accidental input determine the interface.
+
+In a real workflow, decide whether missing readings should be retained, rejected or handled separately. That is an analytical decision to document. A short comment above the function should state the purpose, units and relevant assumptions.
+
+## Task 4: Trace Scope and Retain Reading Identity (5 min)
+
+::: callout-task
+**Goal:** explain which objects change and whether entries remain identifiable. **Input:** the scope example and named `temperature_f` vector above. Work in pairs, swapping operator and checker.
+
+::: panel-tabset
+##### Do the Task
+
+1. **1 min:** predict the outside value of `temp` and the position of the missing converted reading.
+2. **2 min:** run the scope and vector examples; check the outside value, vector length and names.
+3. **1 min:** add a comment stating input/output units, missing-value handling and whether the function changes outside objects.
+4. **1 min:** two pairs report one check that establishes reading identity; the room compares that check with its predictions.
+
+**Keep:** the named vectors, identity checks and contract comment. **If access fails:** draw four labelled input/output pairs and annotate the local and outside `temp` names.
+
+##### Debrief
+
+- **Ask the room:** “Which check would detect a missing reading being dropped, and which would detect labels being changed?”
+- **Expected reasoning:** the outside `temp` stays 999. Length checks expose a dropped entry; comparing names checks the labels and their order. The missing entry remains missing at its original position.
+- **Limit:** length and names alone do not establish that every numerical conversion is correct; use known-value checks as well.
+- **Transfer:** retain record identifiers when applying a conversion to a real table and inspect a source/output pair.
+:::
+:::
+
+# Validate Inputs and Recognise Failures (10 min teaching)
+
+## Validate at a Boundary
+
+The simple conversion assumes its caller already supplies appropriate data. A helper used by collaborators or fed by an external file benefits from checks that reject unsupported inputs with an informative message.
+
+| Input | Deliberate handling in the checked helper |
+|---|---|
+| `c(32, 98, 212)` | Return a numeric Celsius vector |
+| `c(32, NA_real_, 212)` | Preserve the missing reading and its position |
+| `"98"` or a factor | Reject the input; do not silently coerce it |
+| A matrix or data frame | Reject the unsupported shape |
+| `Inf` or `NaN` | Reject a non-finite value that is not the permitted `NA` marker |
+
+Here `Inf` denotes infinity and `NaN` denotes a numerical result that is “not a number”. The helper accepts `NA` as the documented missing-value marker. It does not establish that a reading is scientifically plausible or that the caller has supplied the correct unit.
+
+## Add Explicit Checks without Changing the Formula
+
+```{r}
+# Convert a numeric Fahrenheit vector to Celsius without rounding.
+# Preserve names, order and NA values; reject other non-finite readings.
+checked_fahr_to_celsius <- function(temp) {
+    if (!is.numeric(temp) || !is.null(dim(temp))) {
+        stop("temp must be a numeric vector in degrees Fahrenheit.", call. = FALSE)
+    }
+    if (any(is.infinite(temp)) || any(is.nan(temp))) {
+        stop("temp must contain finite Fahrenheit readings or NA values.", call. = FALSE)
+    }
+    fahr_to_celsius(temp)
+}
+
+checked_fahr_to_celsius(c(32, NA_real_, 212))
+```
+
+`if` evaluates a condition and runs its body when that condition is true. `!` means “not”; `||` joins two single conditions with “or”. `dim()` identifies a matrix or array shape, and `any()` asks whether at least one entry matches a condition. `stop()` ends the call with an error instead of returning a misleading conversion.
+
+This wrapper delegates the calculation to the original function, keeping one implementation of the formula. The missing-value policy is explicit, and unsupported input is neither discarded nor reinterpreted.
+
+## Inspect an Expected Failure
+
+```{r}
+tryCatch(
+    checked_fahr_to_celsius("98"),
+    error = function(error) {
+        message("Expected rejection in this demonstration: ", conditionMessage(error))
+    }
+)
+```
+
+This demonstration catches the deliberately triggered error **only to display its message**; it supplies no substitute measurement. In ordinary analysis, let an unexpected failure stop the workflow, inspect the offending input and correct its source or handling. Retain the error text when asking for help.
+
+| Symptom | First useful check |
+|---|---|
+| Function not found | Was its definition run before this call? |
+| Argument is missing | Does the call supply every required argument? |
+| Numeric-vector error | Inspect `str(input)` and the column selected from the source |
+| Unexpected result | Check units, missingness and one known conversion |
+
+**Room question:** “If a collaborator supplies `"98"`, what information must you check before deciding to convert that text to a number?” Expect discussion of the source format, units and other entries; changing type alone does not establish validity.
+
+## Task 5: Reject an Unsupported Input Clearly (5 min)
+
+::: callout-task
+**Goal:** keep a useful failure visible while preserving permitted missing data. **Input:** `checked_fahr_to_celsius()` and the two demonstration calls above. Work in pairs.
+
+::: panel-tabset
+##### Do the Task
+
+1. **1 min:** predict what happens to `c(32, NA_real_, 212)` and to the text value `"98"`.
+2. **2 min:** save and run the checked helper and both calls. Read the displayed rejection message and inspect the valid output.
+3. **1 min:** add a comment explaining why replacing invalid input with zero would misrepresent the reading.
+4. **1 min:** vote on “convert automatically”, “return zero” or “stop and inspect”; two pairs explain their vote in the room debrief.
+
+**Keep:** the checked function, a valid example and the expected rejection message. **If access fails:** annotate the checks and identify which branch each input follows.
+
+##### Debrief
+
+- **Ask the room:** “Why is retaining `NA` different from returning zero after a failed conversion?”
+- **Expected reasoning:** `NA` records a missing reading under the stated policy. Zero is a numerical temperature and would invent an observation. The text input is rejected until its meaning and format are checked.
+- **Limit:** numeric-type validation cannot detect a Celsius number incorrectly described as Fahrenheit. Keep units with the source and document the interface.
+- **Transfer:** include the offending object's type, source location and error message in a request for help; avoid hiding failures behind a replacement value.
+:::
+:::
+
+# Check and Hand Over Reusable Code (10 min teaching)
+
+## Check More than One Known Value
+
+```{r}
+stopifnot(isTRUE(all.equal(fahr_to_kelvin(32), 273.15)))
+stopifnot(isTRUE(all.equal(fahr_to_celsius(32), 0)))
+stopifnot(isTRUE(all.equal(fahr_to_celsius(212), 100)))
+stopifnot(isTRUE(all.equal(
+    fahr_to_celsius(98),
+    kelvin_to_celsius(fahr_to_kelvin(98))
+)))
+```
+
+Each check connects a specific input to an expected result. `stopifnot()` stops if a condition fails; successful checks continue without printing a success message. `all.equal()` compares calculated numbers with a tolerance, and `isTRUE()` turns its answer into a single pass/fail condition.
+
+A check that passes is evidence for those cases, not proof of every possible use. Do not truncate a measurement to an integer or change the expected value merely to make the comparison pass.
+
+## Check the Promised Shape and Missingness
+
+```{r}
+checked_temperature_c <- checked_fahr_to_celsius(temperature_f)
+stopifnot(length(checked_temperature_c) == length(temperature_f))
+stopifnot(identical(names(checked_temperature_c), names(temperature_f)))
+stopifnot(is.na(checked_temperature_c["missing"]))
+stopifnot(isTRUE(all.equal(
+    unname(checked_temperature_c[c("reference", "boiling")]),
+    c(0, 100)
+)))
+```
+
+The final comparison uses only the named reference and boiling entries, whose expected conversions are known. `unname()` removes labels from that **temporary comparison**, because the expected vector has no labels; the retained converted vector still has its original names.
+
+| Check | What it can reveal |
+|---|---|
+| 32 °F → 0 °C and 273.15 K | An incorrect offset |
+| 212 °F → 100 °C | An incorrect multiplier or offset |
+| Direct and composed paths | A disagreement between implementations |
+| Names, length and missing position | Dropped or misidentified entries |
+| Deliberately invalid input | A failure message that does not match the stated contract |
+
+Two implementations may agree while sharing the same mistake. Compare with independently known values as well as with another path through the code.
+
+## Save Enough for a Collaborator to Rerun
+
+For the workshop, keep `functions_practice.R` in this order:
+
+1. Read and inspect the Gapminder example using the documented project-relative path.
+2. Define the conversion functions and the checked wrapper.
+3. Call the functions on the labelled practice inputs.
+4. Run the known-value, names and missing-value checks.
+
+Put a concise comment above each reusable helper: purpose, input/output units, missing-value policy and any default or rounding choice. Keep the definitions ahead of their calls.
+
+As a later project grows, definitions can live in `R/temperature_functions.R` and their checks in a separate script. The following is a **file-organisation example**; run it only after creating and saving that definitions file:
+
+```r
+source("R/temperature_functions.R")
+stopifnot(isTRUE(all.equal(fahr_to_celsius(32), 0)))
+```
+
+`source()` evaluates saved commands; it does not install a package. Keep the relative file location, data source and instructions with the project so another researcher does not need objects left in your current Environment.
+
+**Room question:** “Which parts of your calculation would disappear if you closed R without saving the script?” Take one answer about instructions and one about objects held only in memory.
+
+## Task 6: Review a Function for Handover (5 min)
+
+::: callout-task
+**Goal:** make a conversion understandable and checkable by another researcher. **Input:** your saved conversion script. Work in pairs.
+
+::: panel-tabset
+##### Do the Task
+
+1. **1 min:** the checker finds the input units, output units and rounding choice.
+2. **2 min:** add the known-value checks and a concise function comment; run the saved script from the beginning.
+3. **1 min:** confirm the missing-value and names checks; record one requirement the function cannot verify, such as the source unit.
+4. **1 min:** two pairs give the room one assumption and the check they would retain for handover; join the debrief.
+
+**Keep:** the documented script and checks. **If access fails:** annotate the instructor's example with the contract and expected values.
+
+##### Debrief
+
+- **Ask the room:** “Which check would you use first after a collaborator changes this function?”
+- **Expected reasoning:** known conversions check the arithmetic, while names and missingness check the promised handling of records. A collaborator also needs units, file locations and assumptions to repeat the workflow.
+- **Limit:** running the entire script again checks its order but does not prove independence from every object already in memory. After saving all work, a later run in a fresh R session provides a stronger reproducibility check.
+- **Transfer:** retain one independently known result with each important reused calculation; investigate a failed check before proceeding.
+:::
+:::
+
+# Further Information
+
+::: callout-keypoints
+## 📚 Key Points
+
+- A function names and reuses a coherent operation with explicit inputs and outputs.
+- Existing functions still require a check of arguments, observation level and missing-value handling.
+- Keep precision decisions visible and use known-value checks before reuse.
+- Document units, vector shape and missing-value expectations for the caller.
+- Reject unsupported inputs clearly and preserve the identities of retained readings.
+:::
+
+::: callout-hints
+## 🔦 Hints
+
+- Distinguish the function definition from a call and its returned result.
+- Inspect the smallest example before applying a function to a large dataset.
+- Use `str()` and the help page to investigate an unexpected type or argument.
+- Save the function and tests together so they can be rerun from a fresh session.
+:::
+
+## Module Summary
+
+You have explained an existing function call, saved conversion functions, documented their contracts and checked their arithmetic, record identity and failure handling. Next, apply repeated steps systematically in [session 3: Iteration](04-for_loops.qmd).
+
+**Next-week action:** choose one repeated calculation from your own work, name its input/output units, put it in a cohesive function and retain one independently known-value check.
+
+## Additional Learning
+
+- [Reference](../learners/reference.qmd#functions): syntax reminders.
+- [Learner Additional Material](../learners/additional_material.qmd): transfer these habits to a data analysis script.
+- [Discussion](../learners/discuss.qmd): explain object types and reproducibility.
+- [An Introduction to R](https://cran.r-project.org/doc/manuals/r-release/R-intro.html): functions, arguments and scope.
+
+[Course Overview](../index.qmd) · [Previous: R Foundations](01-Rstudio_intro.qmd) · [Next: Iteration](04-for_loops.qmd)

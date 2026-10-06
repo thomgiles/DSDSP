@@ -1,0 +1,8 @@
+row_id,request_id,route,response_minutes
+row01,A101,email,10
+row02,A102,Email,15
+row03,A103,Portal,
+row04,A102,Email,15
+row05,A104,Portal,50
+row06,A105,Email,-2
+row07,A106,Portal,25

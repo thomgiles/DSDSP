@@ -19,3 +19,7 @@ title: Learner Profiles
 - **Background:** Support roles across research governance, data, and systems.
 - **Motivation:** Align support guidance with research realities.
 - **Needs:** Shared language and role-clarity across teams.
+
+## Course Navigation
+
+[Course Overview](../index.qmd) · [Learner Setup](../learners/setup.qmd) · [Additional Material](../learners/additional_material.qmd) · [Instructor Notes](../instructors/instructor-notes.qmd)

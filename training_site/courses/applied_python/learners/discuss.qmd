@@ -2,6 +2,18 @@
 title: Discussion
 ---
 
+Use these questions after a lesson or in a paired review. Further technical examples below are optional extensions; the image-grid section is not a setup requirement.
+
+## Research Workflow Discussion
+
+1. Which result did you check against a small known example, and what did the check establish?
+2. Could a collaborator rerun your notebook from a fresh kernel using only the saved files?
+3. Where could filtering, a wrong axis or a missing-value decision change the scientific meaning of your result?
+4. When would a function help more than a class for the task you are working on?
+5. What information would you include in a request for help without sharing confidential data?
+
+Use the [checked notebook workflow](additional_material.qmd#practice-turn-an-exploratory-notebook-into-a-checked-analysis) to turn one answer into a practical next step.
+
 ## Rules of Debugging
 
 1. Fail early, fail often.
@@ -19,6 +31,21 @@ a week of hard work can sometimes save you an hour of thought.
 
 ## The Call Stack
 
+This extends [Functions](../episodes/04_functions.qmd). Define these functions before running the example:
+
+```python
+def fahr_to_kelvin(temp):
+    return ((temp - 32) * (5 / 9)) + 273.15
+
+def kelvin_to_celsius(temp):
+    return temp - 273.15
+
+def fahr_to_celsius(temp):
+    temp_in_kelvin = fahr_to_kelvin(temp)
+    result = kelvin_to_celsius(temp_in_kelvin)
+    return result
+```
+
 Let's take a closer look at what happens when we call `fahr_to_celsius(32.0)`.
 To make things clearer,
 we'll start by putting the initial value 32.0 in a variable
@@ -31,22 +58,22 @@ final = fahr_to_celsius(original)
 
 The diagram below shows what memory looks like after the first line has been executed:
 
-![](fig/python-call-stack-01.svg){alt='Call Stack (Initial State)'}
+![](../episodes/fig/python-call-stack-01.svg){alt='Call Stack (Initial State)'}
 
 When we call `fahr_to_celsius`,
 Python *doesn't* create the variable `temp` right away.
 Instead,
 it creates something called a [stack frame](../learners/reference.qmd#stack-frame)
-to keep track of the variables defined by `fahr_to_kelvin`.
+to keep track of the variables defined by `fahr_to_celsius`.
 Initially,
 this stack frame only holds the value of `temp`:
 
-![](fig/python-call-stack-02.svg){alt='Call Stack Immediately After First Function Call'}
+![](../episodes/fig/python-call-stack-02.svg){alt='Call Stack Immediately After First Function Call'}
 
 When we call `fahr_to_kelvin` inside `fahr_to_celsius`,
 Python creates another stack frame to hold `fahr_to_kelvin`'s variables:
 
-![](fig/python-call-stack-03.svg){alt='Call Stack During First Nested Function Call'}
+![](../episodes/fig/python-call-stack-03.svg){alt='Call Stack During First Nested Function Call'}
 
 It does this because there are now two variables in play called `temp`:
 the parameter to `fahr_to_celsius`,
@@ -61,18 +88,18 @@ Python throws away `fahr_to_kelvin`'s stack frame
 and creates a new variable in the stack frame for `fahr_to_celsius`
 to hold the temperature in Kelvin:
 
-![](fig/python-call-stack-04.svg){alt='Call Stack After Return From First Nested Function Call'}
+![](../episodes/fig/python-call-stack-04.svg){alt='Call Stack After Return From First Nested Function Call'}
 
 It then calls `kelvin_to_celsius`,
 which means it creates a stack frame to hold that function's variables:
 
-![](fig/python-call-stack-05.svg){alt='Call Stack During Call to Second Nested Function'}
+![](../episodes/fig/python-call-stack-05.svg){alt='Call Stack During Call to Second Nested Function'}
 
 Once again,
 Python throws away that stack frame when `kelvin_to_celsius` is done
 and creates the variable `result` in the stack frame for `fahr_to_celsius`:
 
-![](fig/python-call-stack-06.svg){alt='Call Stack After Second Nested Function Returns'}
+![](../episodes/fig/python-call-stack-06.svg){alt='Call Stack After Second Nested Function Returns'}
 
 Finally,
 when `fahr_to_celsius` is done,
@@ -80,7 +107,7 @@ Python throws away *its* stack frame
 and puts its result in a new variable called `final`
 that lives in the stack frame we started with:
 
-![](fig/python-call-stack-07.svg){alt='Call Stack After All Functions Have Finished'}
+![](../episodes/fig/python-call-stack-07.svg){alt='Call Stack After All Functions Have Finished'}
 
 This final stack frame is always there;
 it holds the variables we defined outside the functions in our code.
@@ -172,6 +199,8 @@ print(outer(fence('carbon', '+')))
 
 ## Image Grids
 
+This inherited optional extension uses `ipythonblocks`, which is not needed for the core course. An instructor choosing this demonstration should check package availability beforehand and provide a prepared visual if it is unavailable. The NumPy and Matplotlib workflow in [lesson 03](../episodes/03-data_manipulation_and_visualization.qmd) is the course's main plotting route.
+
 Let's start by creating some simple heat maps of our own
 using a library called `ipythonblocks`.
 The first step is to create our own "image":
@@ -194,7 +223,7 @@ grid = ImageGrid(5, 3)
 grid.show()
 ```
 
-![](fig/grid-01.png){alt='Grid of black squares with white outlines, 5 across by 3 down, demonstrating ImageGrid'}
+![](../episodes/fig/grid-01.png){alt='Grid of black squares with white outlines, 5 across by 3 down, demonstrating ImageGrid'}
 
 Just like a NumPy array,
 an `ImageGrid` has some properties that hold information about it:
@@ -220,7 +249,7 @@ RGB is an [additive color model](../learners/reference.qmd#additive-color-model)
 every shade is some combination of red, green, and blue intensities.
 We can think of these three values as being the axes in a cube:
 
-![](fig/color-cube.png){alt='RGB Color Cube'}
+![](../episodes/fig/color-cube.png){alt='RGB Color Cube'}
 
 An RGB color is an example of a multi-part value:
 like a Cartesian coordinate,
@@ -295,7 +324,7 @@ row[7, 0] = (0, 255, 255) # green and blue
 row.show()
 ```
 
-![](fig/grid-02.png){alt='Row of 8 squares colored black, white, red, lime green, blue, yellow, fuchsia, and cyan'}
+![](../episodes/fig/grid-02.png){alt='Row of 8 squares colored black, white, red, lime green, blue, yellow, fuchsia, and cyan'}
 
 Simple color values like `(0,255,0)` are easy enough to decipher with a bit of practice,
 but what color is `(214,90,127)`?
@@ -307,7 +336,7 @@ from ipythonblocks import show_color
 show_color(214, 90, 127)
 ```
 
-![](fig/ipythonblocks_show_color_example.png)
+![](../episodes/fig/ipythonblocks_show_color_example.png)
 
 It also provides a table of standard colors:
 
@@ -323,7 +352,7 @@ c[2, 1] = colors['HotPink']
 c.show()
 ```
 
-![](fig/grid-03.png){alt='3 by 2 grid of colored squares. Row1: salmon, lavender, hot-pink. Row2: fuchsia, orchid, lime-green'}
+![](../episodes/fig/grid-03.png){alt='3 by 2 grid of colored squares. Row1: salmon, lavender, hot-pink. Row2: fuchsia, orchid, lime-green'}
 
 :::::::::::::::::::::::::::::::::::::::  challenge
 
@@ -381,55 +410,21 @@ Do you think this is a good or bad design choice?
 ::::::::::::::::::::::::::::::::::::::::::::::::::
 
 
-## Generative AI
+## Optional Discussion: AI Assistance with Code
 
-::: callout-important
+Practise predicting, writing and debugging the small examples yourself first. Those skills are needed to judge any suggested code, including suggestions from a colleague, an online answer or an AI tool.
 
-## Generative AI: Concept
+For a permitted follow-up exercise, use a small public or fictional example and ask:
 
-The section on generative AI is intended to be concise but Instructors may choose to devote more time to the topic in a workshop.
-Depending on your own level of experience and comfort with talking about and using these tools, you could choose to do any of the following:
+1. What does the proposed code change, and do I understand each step?
+2. Does it use the intended identifiers, units, axis and missing-value policy?
+3. Which official documentation and known-value check would establish the claimed behaviour?
+4. Can the saved result be rerun, and what assistance should be recorded with the work?
 
-* Explain how large language models work and are trained, and/or the difference between generative AI, other forms of AI that currently exist, and the limits of what LLMs can do (e.g., they can't "reason").
-* Demonstrate how you recommend that learners use generative AI.
-* Discuss the ethical concerns listed below, as well as others that you are aware of, to help learners make an informed choice about whether or not to use generative AI tools.
+Use approved inputs and tools for the context. Check institutional and project requirements before sharing material; avoid including confidential data in a practice prompt. Compare a suggestion with the [debugging lesson](../episodes/08-errors_debugging_and_defensive_programming.qmd) rather than accepting a successful run as proof of correctness.
 
-This is a fast-moving technology.
-If you are preparing to teach this section and you feel it has become outdated, please open an issue on the lesson repository to let the Maintainers know and/or a pull request to suggest updates and improvements.
+For a fuller discussion of verification, privacy, provenance, bias and resource use, see [Responsible Use of Generative AI](../../responsible_use_of_generative_ai/index.qmd). This is an optional follow-on course, not a Python setup requirement.
 
-:::
+## Course Navigation
 
-## Generative AI: Concept B
-
-It is increasingly common for people to use _generative AI_ chatbots such as ChatGPT to get help while coding.
-You will probably receive some useful guidance by presenting your error message to the chatbot and asking it what went wrong.
-However, the way this help is provided by the chatbot is different.
-Answers on StackOverflow have (probably) been given by a human as a direct response to the question asked.
-But generative AI chatbots, which are based on an advanced statistical model, respond by generating the _most likely_ sequence of text that would follow the prompt they are given.
-
-While responses from generative AI tools can often be helpful, they are not always reliable.
-These tools sometimes generate plausible but incorrect or misleading information, so (just as with an answer found on the internet) it is essential to verify their accuracy.
-You need the knowledge and skills to be able to understand these responses, to judge whether or not they are accurate, and to fix any errors in the code it offers you.
-
-> 💡 Treat AI suggestions as drafts: verify correctness, safety, and relevance.
-
-## Generative AI: Concept C
-
-In addition to asking for help, programmers can use generative AI tools to generate code from scratch; extend, improve and reorganise existing code; translate code between programming languages; figure out what terms to use in a search of the internet; and more.
-However, there are drawbacks that you should be aware of.
-
-The models used by these tools have been "trained" on very large volumes of data, much of it taken from the internet, and the responses they produce reflect that training data, and may recapitulate its inaccuracies or biases.
-The environmental costs (energy and water use) of LLMs are a lot higher than other technologies, both during development (known as training) and when an individual user uses one (also called inference). For more information see the [AI Environmental Impact Primer](https://huggingface.co/blog/sasha/ai-environment-primer) developed by researchers at HuggingFace, an AI hosting platform.
-Concerns also exist about the way the data for this training was obtained, with questions raised about whether the people developing the LLMs had permission to use it.
-Other ethical concerns have also been raised, such as reports that workers were exploited during the training process.
-
-**We recommend that you avoid getting help from generative AI during the workshop** for several reasons:
-
-## Generative AI: Worked Solution
-
-1. For most problems you will encounter at this stage, help and answers can be found among the first results returned by searching the internet.
-2. The foundational knowledge and skills you will learn in this lesson by writing and fixing your own programs  are essential to be able to evaluate the correctness and safety of any code you receive from online help or a generative AI chatbot.
-   If you choose to use these tools in the future, the expertise you gain from learning and practising these fundamentals on your own will help you use them more effectively.
-3. As you start out with programming, the mistakes you make will be the kinds that have also been made -- and overcome! -- by everybody else who learned to program before you.
-  Since these mistakes and the questions you are likely to have at this stage are common, they are also better represented than other, more specialised problems and tasks in the data that was used to train generative AI tools.
-  This means that a generative AI chatbot is _more likely to produce accurate responses_ to questions that novices ask, which could give you a false impression of how reliable they will be when you are ready to do things that are more advanced.
+[Course Overview](../index.qmd) · [Setup](setup.qmd) · [Additional Material](additional_material.qmd) · [Reference](reference.qmd) · [Discussion](discuss.qmd)

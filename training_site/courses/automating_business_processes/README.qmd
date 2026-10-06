@@ -1,9 +1,26 @@
 ---
-title: "README"
+title: "Course README"
 ---
 
 # Automating Business Processes
 
 Course materials for Automating Business Processes.
 
-The first module introduces Power Automate through five short teaching blocks and five practical activities.
+The [Power Automate Fundamentals](episodes/01-power_automate.qmd) lesson introduces triggers, connectors, expressions, approvals and table-driven personalised emails. Its current delivery plan allocates 50 minutes to teaching and 70 minutes to five practical activities: 120 minutes of learning time, with breaks added separately.
+
+The course is intended for researchers and professional services colleagues who already use Microsoft 365. No programming experience is required. Account access, connector availability and permissions should be checked before delivery.
+
+## Start Here
+
+- [Course Overview](index.qmd): audience, outcomes and learning journey.
+- [Setup](learners/setup.qmd): access checks and the supplied Excel and Word practice files.
+- [Additional Material](learners/additional_material.qmd): screen examples, safe testing and handover templates.
+- [Reference](learners/reference.qmd) and [Discussion](learners/discuss.qmd): terminology, troubleshooting and process-review prompts.
+- [Instructor Notes](instructors/instructor-notes.qmd), [Additional Material](instructors/additional_material.qmd) and [Extra Exercises](instructors/extra_exercises.qmd): delivery guidance and optional extensions.
+
+## Course Information
+
+- [Contributing](CONTRIBUTING.qmd)
+- [Learner Profiles](profiles/learner-profiles.qmd)
+- [Code of Conduct](CODE_OF_CONDUCT.qmd)
+- [License](LICENSE.qmd)

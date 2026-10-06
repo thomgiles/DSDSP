@@ -1,0 +1,80 @@
+---
+title: Additional Material
+---
+
+## Purpose
+
+Use these resources to consolidate the four Essential Digital Skills lessons: digital tools, digital delivery, governance and policy, and research data management. The practice uses your own permitted examples or a small fictional project; it introduces no additional course sessions or software requirements.
+
+## Reusable Templates
+
+Download a practice copy and keep it with your course notes.
+
+| Resource | Use it to record | Connected lesson |
+|---|---|---|
+| [Search log](files/search-log.csv){download="search-log.csv"} | The question, search service, date, query, filters, selected source and next action | [Digital Tools](../episodes/01-digital_tools.qmd) |
+| [Co-author review plan](files/coauthor-review-plan.csv){download="coauthor-review-plan.csv"} | The authoritative document/library, roles, review deadline and approved version | [Digital Tools](../episodes/01-digital_tools.qmd) and [Digital Delivery](../episodes/02-digital_delivery.qmd) |
+| [Project handover template](files/project-handover.md){download="project-handover.md"} | File locations, documentation, access, checks and unresolved questions | [Research Data Management](../episodes/04-research_data_managment.qmd) |
+
+The CSV files contain column headings only. Add one row per search or review plan; do not overwrite earlier searches when refining a query. Record dates as `YYYY-MM-DD`. If a result count is unavailable, record that in the notes rather than inventing a number. These are working records, not substitutes for formal institutional documents.
+
+## Practice 1: Make a Search Traceable
+
+Start with a small question, such as “What is known about doctoral writing groups?” Use the search service that suits your discipline.
+
+1. Enter the question, service, date and exact query in the search log.
+2. Inspect the first results, revise one term and record a second row for the revised search.
+3. Retain one candidate source, record a stable link and explain why it is relevant.
+4. Import its reference into EndNote or Zotero and check the bibliographic details against the source.
+5. Attach a reading note with a source location, an observation and a question. Label it as abstract-only if you have not read the relevant full text.
+
+**Check with a partner:** could they repeat the search and locate the evidence behind your note? Distinguish differences caused by changing search results from missing information in your log.
+
+**Keep:** the two search records, checked reference and reading note. Revisit the [Digital Tools reference terms](reference.qmd#literature-and-collaborative-writing) if terminology is unfamiliar.
+
+## Practice 2: Agree How a Document Will Be Reviewed
+
+Use a harmless practice document or the fictional writing pilot in [Digital Tools](../episodes/01-digital_tools.qmd#practice-draft-a-small-writing-pilot).
+
+Complete the co-author review plan, then ask a partner to propose one edit and one comment. Decide which edit to retain and explain your reasoning. Locate version history where your tool supports it, and record which reviewed version would be approved for use.
+
+**Check:** comments explain questions, proposed edits can be reviewed, and both people can identify the authoritative version. A polished sentence still needs evidence; do not strengthen the fictional pilot's conclusion beyond its supplied observations.
+
+**Keep:** a reviewed draft and a completed plan. Use [Digital Delivery](../episodes/02-digital_delivery.qmd) to connect these decisions to roles, deadlines and coordination.
+
+## Practice 3: Record a Question That Needs Advice
+
+**Fictional scenario:** a collaborator requests access to a project folder containing public documents and restricted participant material. The team has not agreed which files the collaborator should receive.
+
+List what you know and what remains uncertain: the material, proposed recipient, access requested, project agreements and person responsible for the decision. Identify the relevant support route using [Data Governance & Policy](../episodes/03-data_governance_and_policy.qmd).
+
+**Check:** your next step resolves the uncertainty before sharing. Do not assume that using an institutional platform or removing names settles whether access is appropriate.
+
+**Keep:** a short question for the project lead or specialist support, with enough context for them to advise.
+
+## Practice 4: Test a Project Handover
+
+Complete the handover template for a small permitted project example. Describe the purpose, authoritative files, raw and derived material, documentation, checks and responsibilities. Record unknown access or retention requirements as questions to resolve.
+
+Give the notes to a partner and ask them to find one file, identify its version and explain what it contains. Record where they become stuck and improve the handover without changing the underlying data.
+
+**Keep:** a revised handover and one realistic next action. Use [Research Data Management](../episodes/04-research_data_managment.qmd) for the deeper planning, metadata and reuse discussion.
+
+## Official Guidance for Further Practice
+
+| Guidance | What it helps you practise |
+|---|---|
+| [UoN EndNote setup guide](https://xerte.nottingham.ac.uk/USER-FILES/53584-uazecw-Nottingham/media/2025%20EndNote%20-%20Separate%20guide%20-%20Downloading%20Endnote.pdf) | Check access and prepare an EndNote library |
+| [Zotero quick start](https://www.zotero.org/support/quick_start_guide) | Collect, organise and cite a small set of references |
+| [Zotero notes](https://www.zotero.org/support/notes) | Keep reading notes linked to the source |
+| [Word cross-references](https://support.microsoft.com/en-us/word/create-a-cross-reference) | Link a document mention to a numbered item |
+| [Word tracked changes](https://support.microsoft.com/en-us/word/training/track-changes-in-word) | Review proposed edits with a co-author |
+| [UoN data management planning checklist](https://www.nottingham.ac.uk/library/documents/research/data-management-plan-resources/general-resources/uon-data-management-plan-checklist-branded.pdf) | Review the questions your project's data management plan should address |
+
+## Optional Next Steps
+
+For data collection, exploration, interpretation and communication, continue to [Methods for Data Science](../../methods_for_data_science/index.qmd). For a repeated administrative workflow, consider [Automating Business Processes](../../automating_business_processes/index.qmd). If you need help applying a skill to a particular task, explore [Digital Skills Clinics](../../../clinics.qmd).
+
+## Course Navigation
+
+[Course Overview](../index.qmd) · [Setup](setup.qmd) · [Additional Material](additional_material.qmd) · [Reference](reference.qmd) · [Discussion](discuss.qmd)

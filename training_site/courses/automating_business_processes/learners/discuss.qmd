@@ -11,3 +11,20 @@ Use these prompts after the Power Automate module:
 - What data would the flow need to read, write, or send?
 - Who should own the flow and its connections?
 - What would a failed run look like, and who should be notified?
+
+## Turn the Discussion into a Process Sketch (5 min)
+
+Work in pairs with a fictional request, such as booking a shared research instrument. Avoid entering live participant or staff data.
+
+1. **1 min:** name the trigger, requester and process owner.
+2. **2 min:** sketch the input, decision, output and authoritative record; identify one step that needs human judgement.
+3. **1 min:** describe a failed or repeated run and the action that prevents a duplicate effect.
+4. **1 min:** two pairs share their checking step with the room; the instructor asks what evidence would show the process worked.
+
+**Keep:** the sketch, one risk and one test. If no tool is available, the sketch itself is the output. Use the [Additional Material](additional_material.qmd#safe-test-matrix) to turn it into a small test plan.
+
+**Debrief:** a useful proposal has a clear start, structured inputs, a recorded decision and a named owner. A flow that sends a message but leaves no durable state may be hard to diagnose or restart safely. Several designs can work; assess them against the process requirements rather than button choices.
+
+## Course Navigation
+
+[Course Overview](../index.qmd) · [Setup](setup.qmd) · [Additional Material](additional_material.qmd) · [Reference](reference.qmd) · [Discussion](discuss.qmd)

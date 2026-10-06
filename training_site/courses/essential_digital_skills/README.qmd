@@ -21,8 +21,19 @@ The course supports participants to:
 
 - use institutional digital tools more effectively
 - apply governance and policy in practical research situations
-- organise, explore, and communicate data more clearly
-- make better everyday decisions about storage, sharing, documentation, and interpretation
+- find literature, manage references and review research writing with collaborators
+- make better everyday decisions about storage, sharing, documentation, and data reuse
+
+The four core lessons cover digital tools, digital delivery, governance and policy, and research data management. Data collection, exploration, interpretation and impact have their own pathway in [Methods for Data Science](../methods_for_data_science/index.qmd).
+
+## Start Here
+
+- [Course Overview and Lessons](index.qmd)
+- [Learner Setup](learners/setup.qmd)
+- [Additional Learning Material](learners/additional_material.qmd)
+- [Reference](learners/reference.qmd)
+- [Discussion](learners/discuss.qmd)
+- [Instructor Notes](instructors/instructor-notes.qmd)
 
 ## Course Position in the Programme
 

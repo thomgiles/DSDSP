@@ -1,9 +1,12 @@
 ---
 title: "Insight to Impact"
+module-hidden: true
 metadata:
   teaching: 40
   exercises: 40
 ---
+
+**Current course location:** use [Insight to Impact in Methods for Data Science](../../methods_for_data_science/episodes/08-insight_to_impacts.qmd). This earlier page remains available for existing links; it is not an additional Essential Digital Skills session.
 
 ::: {.content-visible when-format="revealjs"}
 

@@ -6,6 +6,8 @@ title: Instructor Notes
 
 Essential Digital Skills is a foundation course in practical digital research work. The teaching goal is not to turn participants into policy specialists. It is to help them make better day-to-day decisions about collaboration, governance, data management, interpretation, and responsible AI use.
 
+The four core sessions cover digital tools, digital delivery, governance and policy, and research data management. Broader data interpretation and dedicated AI teaching are separate follow-on courses.
+
 The course works best when learners leave with:
 
 - a clearer mental model of the university research ecosystem
@@ -38,6 +40,21 @@ Maintain that pattern where possible. Learners often understand the concept more
 
 Use [Digital Tools](../episodes/01-digital_tools.qmd) to clarify the role of Microsoft 365, SharePoint, RIS, UniCore, ORCID, and basic digital security practices. Learners often know these systems exist but not how they fit together.
 
+The lesson also includes literature discovery/reference management and writing tools. Allow **120 minutes overall**, including a 10-minute break after Digital Security. All six topics use 10 minutes teaching. The original four topics each have one five-minute activity; each new topic has three five-minute tasks. This totals 60 minutes teaching and 50 minutes activities, including room debriefs.
+
+Before delivery:
+
+- Check library access and prepare two accessible references for anyone whose search or access fails.
+- Test one EndNote or Zotero setup, including importing, duplicate checks, Word citations and export. Demonstrate one tool fully; point out the equivalent workflow in the other.
+- Prepare a separate practice library, a duplicate example and a copy of the fictional writing draft with its table already inserted. Share the draft before the writing activity so learners can begin without retyping it. Keep demonstrations separate from live research libraries and documents.
+- Check desktop Word captions, cross-references, tracked changes and an available version history. Offer the LaTeX route to existing users rather than requiring beginners to install it.
+- Pair learners so one operates and one checks, then swap. Collect actual outputs: a search log, checked references, a reading note, a cited paragraph, an export and a reviewed document.
+- Use the stated show-of-hands prompts and short reports from pairs to involve the room. Collect an unresolved access issue rather than spending the activity installing software.
+
+Use a visible five-minute timer for each task and keep reports brief. Treat the first new task as the start of each pair's workflow so they can reuse their output in the next task. Duplicate resolution, a second citation, export round-trip checks and independent renumbering are follow-up practice if they do not fit the room activity.
+
+The writing block includes two brief AI slides derived from the separate AI course. The invented rewrite works without AI accounts or uploading research material; debrief changes in meaning, unsupported claims, verification and recording the contribution.
+
 ### Delivery and coordination
 
 Use [Digital Delivery](../episodes/02-digital_delivery.qmd) to make project planning feel lighter and more actionable. The aim is not to impose formal agile doctrine, but to give teams language for iteration, coordination, and shared ownership.
@@ -50,9 +67,11 @@ Use [Data Governance & Policy](../episodes/03-data_governance_and_policy.qmd) to
 
 Use [Research Data Management](../episodes/04-research_data_managment.qmd) to connect DMPs, folder structures, metadata, storage, retention, and FAIR reuse. Keep bringing the discussion back to actual files, responsibilities, and workflows.
 
-### Related AI course
+## Optional Follow-on Teaching
 
 Dedicated AI teaching now sits in [Responsible Use of Generative AI](../../responsible_use_of_generative_ai/index.qmd). If learners want deeper coverage of prompting, validation, documentation, and defensible AI use, that course is the natural follow-on.
+
+Data collection, exploration, interpretation and impact belong to [Methods for Data Science](../../methods_for_data_science/index.qmd). Keep these routes separate from the core EDS session list. Use [learner additional material](../learners/additional_material.qmd) to consolidate the four taught themes without adding new prerequisites.
 
 ## Common Sticking Points
 
@@ -105,7 +124,7 @@ You are looking for learners who can:
 - explain why a tool or storage choice is appropriate
 - identify when a governance issue needs escalation
 - improve a weak DMP or documentation example
-- spot a misleading chart or weak interpretation
+- check a citation against its source and improve a weak reading note
 - propose a small, realistic workflow improvement
 - describe AI use in terms of task, source boundary, and verification
 
@@ -118,3 +137,7 @@ If you have time at the end of a session, ask learners to leave with one sentenc
 - "We should clarify..."
 
 This produces better follow-up actions than a generic "Any questions?" close.
+
+## Course Navigation
+
+[Course Overview](../index.qmd) · [Instructor Notes](instructor-notes.qmd) · [Additional Material](additional_material.qmd) · [Extra Exercises](extra_exercises.qmd) · [Learner Setup](../learners/setup.qmd)

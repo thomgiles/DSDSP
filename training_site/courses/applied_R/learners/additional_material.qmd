@@ -1,0 +1,81 @@
+---
+title: Additional Material
+---
+
+Use these optional resources to continue Applied R with a small, checked research workflow. Start with [Setup](setup.qmd) if R, RStudio or the course data are not ready.
+
+## Choose Your Next Step
+
+| If you want to… | Revisit | Keep this output |
+|---|---|---|
+| Find your way around RStudio and its objects | [Session 1: R Foundations](../episodes/01-Rstudio_intro.qmd) | An RStudio project, saved script and checked object selections |
+| Reuse a calculation | [Session 2: Functions](../episodes/03-R_functions.qmd) | A documented function checked against known inputs |
+| Repeat a task across files or groups | [Session 3: Iteration](../episodes/04-for_loops.qmd) | A repeatable operation and a list of its outputs |
+| Summarise and visualise a table | [Session 4: Data Analysis](../episodes/05-the_tidyverse.qmd) | A checked summary and a labelled ggplot2 figure |
+
+## Practice: Explain a Gapminder Comparison
+
+**Goal:** produce a short analysis that makes its data selection and limits visible. Work in the `applied_R` project prepared in setup, using `gapminder::gapminder`. These are historical country-level data, not measurements of individuals and not a current population dataset. Check the [package's data description](https://jennybc.github.io/gapminder/) before interpreting a result.
+
+### 1. Inspect the Data
+
+Use `head()`, `str()` and `names()` to inspect the table. Identify what one row represents and record the meaning and units of `year`, `lifeExp`, `pop` and `gdpPercap` from the data help page (`?gapminder::gapminder`). Check the available years rather than assuming that the table includes the present day.
+
+**Check:** inspect uniqueness of the country–year combination. If that key is not unique in data you later substitute, investigate why before summarising or joining.
+
+### 2. State and Implement a Question
+
+Choose two countries that are present in the data and one recorded year. Filter to those country–year observations and select `country`, `year` and `lifeExp`. Retain the identifiers in the output.
+
+**Check:** the filtered table should contain exactly the observations you intended. Compare its values with the corresponding original rows. An empty result is a reason to check spelling and available years, not to substitute a nearby observation silently.
+
+### 3. Make a Figure with Context
+
+Plot the available life-expectancy series for the two countries using ggplot2. Label the axes, name the countries and include the data source and historical coverage in a caption. Explain what changes over the recorded period without treating an association as evidence of a cause.
+
+**Check:** inspect one plotted value against the filtered table. Make sure the plot covers the years you intended and that country identity remains clear without relying only on colour.
+
+### 4. Save and Rerun
+
+Save your analysis as an R script. Export the selected comparison table and figure into an `output` folder, separate from the input data. Record `sessionInfo()` with your working notes. Save the script, restart R and run it from the beginning with the project open.
+
+**Keep:** the script, checked table, figure and a paragraph stating the question, selection, checks and limitations. Ask a partner to identify these in your work. If software access fails, annotate the lesson's example output with the selection and validation steps you would use.
+
+### Debrief
+
+Discuss: **What would change if the question concerned individuals rather than country-level averages?** The exercise supports a descriptive comparison at the level represented by the data. It does not justify claims about individual outcomes, a causal explanation or present-day conditions. Successful execution also does not validate an unexamined join or missing-value decision.
+
+## A Script Handover Checklist
+
+- Open the project and use paths relative to its folder.
+- Put package loading and analysis parameters near the top of the script.
+- Keep original data separate from derived tables and figures.
+- Preserve row identifiers and record any filtering, missing-value or joining decisions.
+- Check a small calculation manually and compare at least one output with its input.
+- Save before restarting R, rerun from the beginning and retain `sessionInfo()` with the analysis record.
+
+The [RStudio Projects guide](https://docs.posit.co/ide/user/ide/guide/code/projects.html) explains how projects organise working directories and files.
+
+## Further Reading and Quick References
+
+| Resource | Use it for |
+|---|---|
+| [An Introduction to R](https://cran.r-project.org/doc/manuals/r-release/R-intro.html) | Base R objects, indexing, functions and control flow |
+| [R for Data Science, second edition](https://r4ds.hadley.nz/) | A structured follow-on route through importing, tidying, transforming and communicating data |
+| [Introduction to dplyr](https://dplyr.tidyverse.org/articles/dplyr.html) | Checking how filtering, selecting, grouping and summarising work |
+| [ggplot2 documentation](https://ggplot2.tidyverse.org/) | Choosing geoms, labels, scales and plot structure |
+| [Posit cheatsheets](https://rstudio.github.io/cheatsheets/) | A compact reminder after practising the corresponding lesson |
+| [Gapminder package documentation](https://jennybc.github.io/gapminder/) | Understanding the source and coverage of the teaching data |
+
+Consult documentation for your installed package version if syntax differs. A cheatsheet is a reminder; use the full help page to check arguments, types and missing-value behaviour.
+
+## Related Courses and Support
+
+- [Essential Digital Skills](../../essential_digital_skills/index.qmd): strengthen file organisation and research data management.
+- [Methods for Data Science](../../methods_for_data_science/index.qmd): connect coding to a wider analytical workflow.
+- [Applied Python](../../applied_python/index.qmd): compare core concepts and data workflows in another language.
+- [Digital Skills Clinics](../../../clinics.qmd): bring a focused R question with a small, shareable example.
+
+## Course Navigation
+
+[Course Overview](../index.qmd) · [Setup](setup.qmd) · [Additional Material](additional_material.qmd) · [Reference](reference.qmd) · [Discussion](discuss.qmd)

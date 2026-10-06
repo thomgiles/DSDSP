@@ -29,7 +29,7 @@ course-tags: ["Digital tools", "Collaboration", "Data governance", "Research dat
 ::: {.item}
 ## Why This Course Matters
 
-Modern research is full of small digital decisions that carry real consequences. Where should project files live? What counts as good enough documentation? When does a governance issue need escalation? How do you tell the difference between an interesting chart and an actionable insight?
+Modern research is full of small digital decisions that carry real consequences. Where should project files live? What counts as good enough documentation? When does a governance issue need escalation? How can a collaborator check your sources and decisions?
 
 Essential Digital Skills is designed to make those decisions easier. It gives learners a practical foundation for working inside the university research ecosystem with more confidence, less guesswork, and stronger habits for collaboration, compliance, and evidence.
 :::
@@ -42,6 +42,7 @@ This is not a passive overview course. Learners work with realistic scenarios, m
 Across the course you will:
 
 - map research tasks to the right institutional systems
+- find literature, check reference records and review writing with co-authors
 - think through delivery and coordination problems
 - identify governance and data protection risks
 - improve data management and folder structures
@@ -92,16 +93,18 @@ Connect tools, roles, systems, policies, and data decisions into workflows that 
 
 | Lesson | What you will tackle | Why it matters |
 |---|---|---|
-| [01 Digital Tools](episodes/01-digital_tools.qmd) | Institutional systems, collaboration platforms, researcher identity, and digital security | Helps you understand the digital environment you are already working inside |
+| [01 Digital Tools](episodes/01-digital_tools.qmd) | Institutional systems, researcher identity, digital security, literature discovery, reference management, and collaborative writing | Helps you find and organise evidence, choose tools, and review research writing with collaborators |
 | [02 Digital Delivery](episodes/02-digital_delivery.qmd) | Planning, coordination, sprint thinking, and shared ownership | Gives teams a more structured way to move work forward |
 | [03 Data Governance and Policy](episodes/03-data_governance_and_policy.qmd) | GDPR, ethics, classification, and compliance | Strengthens judgement around lawful, ethical, and institutionally defensible practice |
 | [04 Research Data Management](episodes/04-research_data_managment.qmd) | DMPs, storage, metadata, archiving, and FAIR reuse | Turns RDM from paperwork into practical workflow design |
 
 ## Follow-on Courses
 
+For help applying a skill to a particular digital task, explore [Digital Skills Clinics](../../clinics.qmd).
+
 For data quality, exploration, visualisation, and impact, continue to [Methods for Data Science](../methods_for_data_science/index.qmd).
 
-For dedicated AI teaching, see [Responsible Use of Generative AI](../responsible_use_of_generative_ai/index.qmd). That 2-hour course focuses on how AI changes research work and how to use AI more selectively through stronger prompting, validation, documentation, and workflow design.
+For dedicated AI teaching, see the separate [Responsible Use of Generative AI](../responsible_use_of_generative_ai/index.qmd) course. It offers modules on research opportunities and risks, prompting and validation, and applied workflows. This is optional further learning; it is not an additional Essential Digital Skills session.
 
 ## What Learners Typically Leave With
 
@@ -130,6 +133,7 @@ Detailed preparation guidance is available in [Setup](learners/setup.qmd).
 ### Learners
 
 - [Setup](learners/setup.qmd): what to bring, what to access, and how to prepare
+- [Additional Material](learners/additional_material.qmd): follow-up practice, reusable search/review templates and source guidance
 - [Reference](learners/reference.qmd): glossary, platform guide, and practical checklists
 - [Discussion](learners/discuss.qmd): prompts for breakout work and end-of-session reflection
 :::

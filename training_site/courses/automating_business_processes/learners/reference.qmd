@@ -13,6 +13,10 @@ title: "Reference"
 - **Dynamic content:** values supplied by previous steps in the flow.
 - **Expression:** a formula used to transform, test, or format values.
 - **Run history:** the record of each flow run, including inputs, outputs, and errors.
+- **Condition:** a branch that chooses which actions to run based on a test.
+- **System of record:** the agreed location of the authoritative process record.
+- **Connection:** an authenticated link used by a connector; its account and permissions matter.
+- **Idempotency:** designing repeat runs so they do not create unintended duplicate effects.
 
 ## Common Expression Functions
 
@@ -32,3 +36,26 @@ title: "Reference"
 ## Excel Requirements
 
 Power Automate works most reliably with Excel when the data is in a named table inside an `.xlsx` workbook stored in OneDrive or SharePoint.
+
+The supplied workbook is `Example_table.xlsx`, with table `Table1` and columns `First Name`, `Last Name` and `Email`. See [Setup](setup.qmd) for downloads and safe test addresses, and the [Excel Online (Business) connector reference](https://learn.microsoft.com/en-us/connectors/excelonlinebusiness/) for current requirements and limitations.
+
+## First Troubleshooting Checks
+
+| Symptom | Check before changing the design |
+|---|---|
+| Flow never starts | Is it enabled? Does the trigger watch the correct location, and did the required event occur? |
+| File or table is missing | Check the selected cloud location, file permissions and named table. |
+| A field is blank or wrong | Inspect the earlier action's output and the dynamic content mapping. |
+| Wrong approval branch runs | Compare the recorded outcome with the condition; treat rejection as a valid outcome. |
+| Word action is unavailable | Check connector access and licensing; use the email-body fallback described in Setup. |
+| A message was sent twice | Inspect run history and the source record before retrying; decide how repeats should be handled. |
+
+Record the flow name, failed step, run time, expected result and observed result when asking for help. Share only the information a colleague needs; run-history inputs may contain data with restricted access.
+
+## Reusable Checks
+
+The [Additional Material](additional_material.qmd#safe-test-matrix) contains a test matrix and a handover record. Use them alongside [Power Automate Fundamentals](../episodes/01-power_automate.qmd) when developing a flow beyond the workshop.
+
+## Course Navigation
+
+[Course Overview](../index.qmd) · [Setup](setup.qmd) · [Additional Material](additional_material.qmd) · [Reference](reference.qmd) · [Discussion](discuss.qmd)

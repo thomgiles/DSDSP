@@ -23,6 +23,8 @@ title: Reference
 
 ## Institutional Platforms
 
+Use these descriptions alongside [Digital Tools](../episodes/01-digital_tools.qmd) and [Research Data Management](../episodes/04-research_data_managment.qmd). Confirm the approved platform for your project's material before choosing storage.
+
 | Platform | Typical use |
 |---|---|
 | **Microsoft 365** | Day-to-day collaboration, communication, writing, and spreadsheet work |
@@ -113,7 +115,25 @@ If you are not sure what metadata to record, start with:
 - Sensitive data requires both stronger justification and stronger safeguards.
 - A good DMP should match your real storage, access, sharing, and retention practices.
 
-## Data Quality and Analysis Prompts
+## Literature and Collaborative Writing
+
+Use alongside [Digital Tools](../episodes/01-digital_tools.qmd).
+
+- **Reference record:** bibliographic details used to identify and cite a source; a PDF attachment is separate.
+- **DOI:** a persistent identifier for a research output. Check that it resolves to the item you intend to cite.
+- **Citation trail:** earlier references or later citing work connected to a starting paper.
+- **Search log:** the question, service, date, exact query, filters and decisions recorded during discovery.
+- **Citation style:** the rules used to format citations and a bibliography; formatting does not verify the source.
+- **Tracked changes:** proposed edits that an author can review and accept or reject.
+- **Version history:** saved states of a document that can support comparison and recovery.
+
+Before citing a source, check its authors, title, year, publication details, identifier and the claim it supports. Label reading notes as abstract-only if you have not read the relevant full text. Agree where the authoritative document and reference library live, who reviews changes and how approval is recorded.
+
+Practice and reusable templates are in [Additional Material](additional_material.qmd).
+
+## Optional Follow-on: Data Interpretation
+
+These questions connect to [Methods for Data Science](../../methods_for_data_science/index.qmd), which covers data collection, exploration, interpretation and impact in depth.
 
 When reviewing a dataset or chart, ask:
 
@@ -124,26 +144,11 @@ When reviewing a dataset or chart, ask:
 - Does the chart help interpretation or distort it?
 - What action is the audience expected to take from this output?
 
-## AI Use in Research
+## Brief AI Writing Check
 
-Use AI most safely when you define:
+The writing section of Digital Tools includes a short evidence-checking example: compare a rewrite with its source, preserve qualifications and reject unsupported claims. Check permissions before supplying research material to any external service and record actual AI contributions where applicable.
 
-- the task
-- the context
-- the source boundary
-- the output format
-- the verification step
-
-A useful prompt pattern:
-
-> Help me with **[task]** for **[context]**. Use **[source or boundary]**. Return the result as **[format]**. Flag uncertainty and do not invent evidence.
-
-Before using AI on research work, ask:
-
-1. Is the material safe to paste into this tool?
-2. Do I need to use only approved or institutionally permitted services?
-3. What part of the answer must I verify manually?
-4. Am I asking for support, or am I trying to outsource judgement?
+For prompting, validation and broader research workflows, use the separate [Responsible Use of Generative AI](../../responsible_use_of_generative_ai/index.qmd) course and its [reference guide](../../responsible_use_of_generative_ai/learners/reference.qmd). These are optional follow-on resources.
 
 ## End-of-Course Checklist
 
@@ -152,6 +157,10 @@ By the end of the course, you should be able to:
 - choose more appropriate tools for collaboration and storage
 - explain key governance and RDM concepts in practical terms
 - design a clearer folder structure and documentation approach
-- critique charts and data summaries more confidently
-- turn an analysis result into a clearer action or recommendation
-- use AI in a more selective, source-aware, and defensible way
+- check reference records, citations and source-linked reading notes
+- agree a clear review process for shared documents
+- recognise questions that require specialist advice or a follow-on course
+
+## Course Navigation
+
+[Course Overview](../index.qmd) · [Setup](setup.qmd) · [Additional Material](additional_material.qmd) · [Reference](reference.qmd) · [Discussion](discuss.qmd)

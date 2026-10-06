@@ -66,11 +66,11 @@ You do not need a complex logging system. A short note can include:
 - what was kept
 - disclosure decision
 
-Example:
+Fictional teaching example; this is an internal record, not a statement of a publisher's or funder's disclosure requirements:
 
 ```text
-Date: 2026-03-23
-Tool: Copilot
+Date: [date used]
+Tool and model/version if visible: [record the actual service]
 Task: Compared two public AI policy pages
 Input: Public web text copied into prompt
 Output kept: A short comparison table
@@ -96,3 +96,13 @@ Ask:
 2. What part of the output will I need to verify manually?
 3. Am I using AI for support, or trying to outsource judgement?
 4. What would I need to record so this use could be explained later?
+
+## Put the Reference into Practice
+
+The [Additional Material](additional_material.qmd) includes a source-checking exercise, a reusable AI use record and a workflow checkpoint table. Use [Discussion](discuss.qmd) to compare decisions with a colleague.
+
+For policy questions, use the current institution, funder and publisher guidance for the task at hand. The [additional reading table](additional_material.qmd#primary-guidance) explains which questions each source helps answer; a classroom example does not establish permission for a live project.
+
+## Course Navigation
+
+[Course Overview](../index.qmd) · [Setup](setup.qmd) · [Additional Material](additional_material.qmd) · [Reference](reference.qmd) · [Discussion](discuss.qmd)

@@ -13,3 +13,20 @@ Potential extension topics:
 - error handling with scopes and failure branches;
 - child flows and reusable automation components;
 - governance for connectors, data loss prevention policies, and premium licensing.
+
+## Choose an Extension by Learning Need
+
+| Learner need | Prepared extension | What to check in the debrief |
+|---|---|---|
+| “It worked once; is it ready?” | Use the [learner safe test matrix](../learners/additional_material.qmd#safe-test-matrix) and ask pairs to choose a repeat-run case. | Which step might already have succeeded before a later failure? |
+| “Another colleague will maintain it.” | Complete the [flow handover record](../learners/additional_material.qmd#flow-handover-record) for the workshop example. | Can the colleague find the authoritative state, connections and stop procedure? |
+| “Requests must remain visible.” | Sketch a SharePoint-list alternative to a workbook tracker. | What identifies each request, and who can read or update it? |
+| “Errors disappear into email.” | Demonstrate a failed action and a separate review route using a practice flow. | Does the evidence distinguish technical failure from rejection? |
+
+Use [Microsoft's error-handling guidance](https://learn.microsoft.com/en-us/power-automate/guidance/coding-guidelines/error-handling) when preparing run-after or scope demonstrations. Keep live demonstrations within the test environment and do not ask learners to enable connectors, create service accounts or change tenant governance during the class.
+
+The [Extra Exercises](extra_exercises.qmd) provide explicit inputs and expected evidence for reminders, mailbox triage and escalation. Select one extension and add its timing to the delivery plan.
+
+## Course Navigation
+
+[Course Overview](../index.qmd) · [Instructor Notes](instructor-notes.qmd) · [Additional Material](additional_material.qmd) · [Extra Exercises](extra_exercises.qmd) · [Learner Setup](../learners/setup.qmd)

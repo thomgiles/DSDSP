@@ -4,14 +4,38 @@ title: "Extra Exercises"
 
 # Extra Exercises
 
+These optional extensions build on [Power Automate Fundamentals](../episodes/01-power_automate.qmd). Allow 10–15 minutes per exercise and a further five minutes if building and testing the proposed flow. Use a practice copy and test recipients; diagrams and test plans are valid fallbacks where accounts or connectors are unavailable.
+
 ## Reminder Flow
 
 Create a scheduled flow that checks an Excel table for rows where `Status` is not `Complete` and `DueDate` is before today. Send a reminder email for each overdue row.
+
+**Input:** a fictional practice table with a stable `RequestID`, `DueDate`, `Status` and `Email`. The supplied course workbook does not contain these extra columns, so prepare a separate example. Include one overdue item, one future item, one complete item and one missing date.
+
+**Keep:** the filter design and a test matrix showing which rows should receive a reminder. Define the date format, timezone and handling of a missing date rather than silently treating it as overdue.
+
+**Room response and debrief:** two pairs explain one excluded row. Ask how to prevent the same reminder being sent more often than intended, and where the last reminder date would be recorded.
 
 ## Shared Mailbox Triage
 
 Create a flow that starts when an email arrives in a shared mailbox, checks for a keyword in the subject, and posts a summary to a Teams channel.
 
+**Input:** use a permitted test mailbox with fictional messages, or provide three subject lines for an offline design: one matching, one unrelated and one ambiguous. Confirm mailbox and channel access before a live demonstration.
+
+**Keep:** a routing rule and a list of the fields that the Teams message actually needs. Use a brief notification or record link rather than copying confidential message content to a wider audience.
+
+**Room response and debrief:** vote on whether the ambiguous subject should route automatically or enter a manual review queue. Ask whose permissions the connection uses and who sees the destination channel.
+
 ## Approval Escalation Design
 
 Design an approval process where unanswered approvals are escalated after two working days. Identify where the escalation state should be recorded.
+
+**Input:** a fictional equipment request, an approver, a backup approver and an agreed working-day calendar. Treat “two working days” as this exercise's process requirement, not an institutional policy.
+
+**Keep:** a state diagram for approved, rejected, waiting and escalated requests; a test for a weekend or holiday; and the authoritative record location.
+
+**Room response and debrief:** two groups explain how a late response is handled after escalation. A fixed 48-hour delay does not represent two working days; the design needs an explicit calendar rule and a single authoritative decision state.
+
+## Course Navigation
+
+[Course Overview](../index.qmd) · [Instructor Notes](instructor-notes.qmd) · [Additional Material](additional_material.qmd) · [Extra Exercises](extra_exercises.qmd) · [Learner Setup](../learners/setup.qmd)

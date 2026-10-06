@@ -6,6 +6,8 @@ title: Extra Exercises
 
 These exercises are designed for instructors who want more practice material, stronger consolidation, or a backup activity when a room moves quickly. Most can run in 10 to 20 minutes with a short plenary.
 
+Use the self-contained [learner practice pack](../learners/additional_material.qmd) for shorter five-minute tasks and prepared inputs. If extending the activities below, state the input, retained output and access fallback before beginning, and count the plenary in the advertised activity time.
+
 ## Exercise 1: Opportunity or Risk Relocation?
 
 **Best fit:** [Introduction to AI for Research](../episodes/01-Introduction_to_AI_for_research.qmd)
@@ -34,6 +36,8 @@ Take three vague prompts and ask groups to improve them by adding:
 ## Exercise 3: Source Check Triage
 
 **Best fit:** [Prompting for Research](../episodes/02-Prompting_for_research.qmd)
+
+The [fictional source and authored AI-style response](../learners/additional_material.qmd#practice-source-a-fictional-research-note) provide a ready-to-use fallback. Explicitly distinguish an actual model output from a teaching response written to illustrate errors.
 
 Provide a short AI-generated output and ask groups to mark:
 
@@ -69,3 +73,7 @@ Ask learners to write a short AI use note for one example task, including:
 - what was kept
 
 **Debrief question:** What information was easiest to forget, and why does it matter later?
+
+## Course Navigation
+
+[Course Overview](../index.qmd) · [Instructor Notes](instructor-notes.qmd) · [Additional Material](additional_material.qmd) · [Extra Exercises](extra_exercises.qmd) · [Learner Setup](../learners/setup.qmd)

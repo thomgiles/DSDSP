@@ -19,8 +19,9 @@ course-tags: ["Python", "Pandas", "Data analysis", "Modelling", "Debugging", "Re
 ### Course At A Glance
 
 - **Level:** Introductory to lower-intermediate
+- **Programme placement:** The intermediate pathway label describes the course's position in the programme; the opening lessons require no previous Python experience
 - **Best for:** Researchers who want a practical route into programming and data analysis
-- **Environment:** Python with notebook-style or interactive workflows
+- **Environment:** Python 3 with JupyterLab; existing compatible environments can be checked using Setup
 - **Main themes:** Core syntax, data manipulation, plotting, modelling, functions, and debugging
 - **Outcome:** A working foundation for reproducible analysis rather than a vague familiarity with Python
 :::
@@ -98,7 +99,7 @@ Read tracebacks, reason about mistakes, and use defensive programming habits to 
 | [03 Data Manipulation and Visualization](episodes/03-data_manipulation_and_visualization.qmd) | NumPy arrays, plotting, and multi-file analysis tasks | Connects Python to real analytical work quickly |
 | [04 Functions](episodes/04_functions.qmd) | Writing, testing, and documenting reusable functions | Helps learners replace copy-paste analysis with cleaner structure |
 | [05 Data Manipulation with pandas](episodes/05-data_manipulation_with_pandas.qmd) | DataFrames, filtering, reshaping, and grouped summaries | Builds everyday data wrangling fluency |
-| [06 Regression Analysis and Modelling](episodes/06-regression_analysis_and_modelling.qmd) | Simple regression workflows with scikit-learn | Introduces a first practical modelling pipeline |
+| [06 Regression Analysis and Modelling](episodes/06-regression_analysis_and_modelling.qmd) | Simple regression workflows with scikit-learn and statsmodels | Introduces model fitting, evaluation and interpretation |
 | [07 Python Object-Oriented Programming](episodes/07-python_object_oriented_programming.qmd) | Classes, methods, inheritance, and design trade-offs | Gives learners a first look at how larger Python code is organised |
 | [08 Errors, Debugging, and Defensive Programming](episodes/08-errors_debugging_and_defensive_programming.qmd) | Tracebacks, assertions, testing, and debugging habits | Makes learners more independent when code goes wrong |
 
@@ -117,9 +118,9 @@ By the end of the course, learners should be able to:
 
 Before the course, learners should have:
 
-- a laptop with Python installed
+- a laptop with Python 3 and the lesson packages available
 - access to the lesson data and example files
-- a working environment such as JupyterLab, VS Code, IPython, or another Python interface
+- a working JupyterLab environment, or a compatible existing environment checked against Setup
 
 Preparation details are in [Setup](learners/setup.qmd).
 
@@ -130,6 +131,7 @@ Preparation details are in [Setup](learners/setup.qmd).
 ### Learners
 
 - [Setup](learners/setup.qmd): installation and environment guidance
+- [Additional Material](learners/additional_material.qmd): a checked notebook practice workflow and further learning
 - [Reference](learners/reference.qmd): glossary and key concepts
 - [Discussion](learners/discuss.qmd): reflection prompts and discussion questions
 :::
@@ -138,12 +140,14 @@ Preparation details are in [Setup](learners/setup.qmd).
 ### Instructors
 
 - [Instructor Notes](instructors/instructor-notes.qmd): teaching rationale, sequencing, and teaching tips
-- [Additional Material](instructors/additional_material.qmd): extra explanations and optional content
+- [Additional Material](instructors/additional_material.qmd): instructor extensions and optional demonstrations
 - [Extra Exercises](instructors/extra_exercises.qmd): additional challenge tasks and solutions
 :::
 :::
 
 ## Community and Course Information
+
+For the wider analytical pathway, see [Methods for Data Science](../methods_for_data_science/index.qmd). [Essential Digital Skills](../essential_digital_skills/index.qmd) supports file organisation and research workflows; [Applied R](../applied_R/index.qmd) offers a complementary programming route. Bring a focused follow-up question to [Digital Skills Clinics](../../clinics.qmd).
 
 - [Course README](README.qmd)
 - [Contributing](CONTRIBUTING.qmd)

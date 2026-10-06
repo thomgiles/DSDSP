@@ -2,16 +2,17 @@
 title: "Course README"
 ---
 
-# Applied Data Science (R)
+# Applied R
 
-Applied Data Science (R) is part of the UoN Digital Skills programme. It provides a practical route into R programming for research and data analysis.
+Applied R is part of the UoN Digital Skills programme. It provides a practical route into R programming for research and data analysis. Start with the [Course Overview](index.qmd) for the lesson sequence and intended audience.
 
 ## What This Course Contains
 
 This course section of the site contains:
 
-- lesson pages for the Applied R pathway
-- learner setup and reference material
+- four session pages for the Applied R pathway: foundations, functions, iteration and data analysis
+- a compatibility page retaining the former standalone variables URL
+- learner setup, reference, discussion and additional practice material
 - instructor notes and optional teaching extensions
 - course-level information about contribution, conduct, licensing, and learner profiles
 
@@ -28,16 +29,23 @@ The course supports participants to:
 
 This local course is substantially adapted from Software Carpentry's `r-novice-inflammation` lesson.
 
-The UoN version reorganises, extends, and contextualises that material for local delivery in the Methods for Data Science pathway.
+The UoN version reorganises, extends, and contextualises that material into four sessions for local delivery in the Methods for Data Science pathway. Each session has a 100-minute plan: 60 minutes teaching, 30 minutes activities including debriefs, and a separate 10-minute break. The foundations and Gapminder examples also draw on Software Carpentry's `r-novice-gapminder` materials.
 
 - Upstream lesson repository: <https://github.com/swcarpentry/r-novice-inflammation>
 - Upstream lesson site: <https://swcarpentry.github.io/r-novice-inflammation/>
+- Gapminder lesson site: <https://swcarpentry.github.io/r-novice-gapminder/>
 
 ## Contributing
 
 Contribution guidance is available in [CONTRIBUTING.qmd](CONTRIBUTING.qmd).
 
 ## Related Course Information
+
+- [Learner Setup](learners/setup.qmd)
+- [Learner Additional Material](learners/additional_material.qmd)
+- [Reference](learners/reference.qmd)
+- [Discussion](learners/discuss.qmd)
+- [Instructor Notes](instructors/instructor-notes.qmd)
 
 - [Code of Conduct](CODE_OF_CONDUCT.qmd)
 - [License](LICENSE.qmd)

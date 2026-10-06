@@ -2,16 +2,16 @@
 title: "Course README"
 ---
 
-# Applied Data Science (Python)
+# Applied Python
 
-Applied Data Science (Python) is part of the UoN Digital Skills programme. It provides a practical route into Python programming for research and data analysis.
+Applied Python is part of the UoN Digital Skills programme. It provides a practical route into Python programming for research and data analysis. Start with the [Course Overview](index.qmd) for the lesson sequence and intended audience.
 
 ## What This Course Contains
 
 This course section of the site contains:
 
 - lesson pages for the Applied Python pathway
-- learner setup and reference material
+- learner setup, reference, discussion and additional practice material
 - instructor notes and optional teaching extensions
 - course-level information about contribution, conduct, licensing, and learner profiles
 
@@ -38,6 +38,12 @@ The UoN version reorganises, extends, and contextualises that material for local
 Contribution guidance is available in [CONTRIBUTING.qmd](CONTRIBUTING.qmd).
 
 ## Related Course Information
+
+- [Learner Setup](learners/setup.qmd)
+- [Learner Additional Material](learners/additional_material.qmd)
+- [Reference](learners/reference.qmd)
+- [Discussion](learners/discuss.qmd)
+- [Instructor Notes](instructors/instructor-notes.qmd)
 
 - [Code of Conduct](CODE_OF_CONDUCT.qmd)
 - [License](LICENSE.qmd)

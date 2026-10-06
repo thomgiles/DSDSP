@@ -2,121 +2,50 @@
 title: Instructor Notes
 ---
 
-This lesson is written as an introduction to R,
-but its real purpose is to introduce the single most important idea in programming:
-how to solve problems by building functions,
-each of which can fit in a programmer's working memory.
-In order to teach that,
-we must teach people a little about
-the mechanics of manipulating data with lists and file I/O
-so that their functions can do things they actually care about.
-Our teaching order tries to show practical uses of every idea as soon as it is introduced;
-instructors should resist the temptation to explain
-the "other 90%" of the language
-as well.
+## Teach the Four-Session Sequence
 
-The secondary goal of this lesson is to give them a usable mental model of how programs run
-(what computer science educators call a
-[notional machine](../learners/reference.qmd#notional-machine)
-so that they can debug things when they go wrong. In particular,
-they must understand how function call stacks work.
+Applied R introduces programming through researcher tasks with saved, checked outputs. The four sessions are foundations, functions, iteration and data analysis. The former variables URL remains as a compatibility page; it is not a fifth session.
 
-The final example asks them to build a command-line tool
-that works with the Unix pipe-and-filter model.
-We do this because it is a useful skill
-and because it helps learners see that the software they use isn't magical.
-Tools like `grep` might be more sophisticated than
-the programs our learners can write at this point in their careers,
-but it's crucial they realize this is a difference of scale rather than kind.
+| Session | Teaching emphasis | Evidence to ask for |
+|---|---|---|
+| [1. Foundations](../episodes/01-Rstudio_intro.qmd) | Projects, scripts, assignment, types and indexing | A saved script and a selection checked against its source |
+| [2. Functions](../episodes/03-R_functions.qmd) | A clear contract, reuse, precision and known-value checks | A documented conversion and checks for known inputs |
+| [3. Iteration](../episodes/04-for_loops.qmd) | One checked iteration, vectorisation and visible file outputs | An output record plus a read-back comparison |
+| [4. Data Analysis](../episodes/05-the_tidyverse.qmd) | Observation level, identifiers, grouping, joins and interpretation | A checked subset, explained summary and labelled figure |
 
-A typical, half-day, lesson would use the first three lessons:
+All four sessions use a 100-minute plan: **60 minutes teaching, 30 minutes activities and a separate 10-minute break**. The six core room activities each take five minutes including the debrief. Session 4 retains a larger optional reference bank of selection, plotting and worked exercise examples; choose those by learner need instead of trying to demonstrate every variation in sequence.
 
-1. [Analyzing Patient Data](../episodes/02-R_variables_intro.qmd)
-2. [Creating Functions](../episodes/03-R_functions.qmd)
-3. [Analyzing Multiple Data Sets](../episodes/04-for_loops.qmd)
+## Preparation and Access
 
-An additional half-day could add the next two lessons:
+Complete [Learner Setup](../learners/setup.qmd) in the environment you will demonstrate. Check RStudio, the project, the downloaded CSV and packages used by the planned examples. The course uses historical Gapminder data, alongside explicitly fictional small tables and temperature examples. Do not describe the current R sequence as an inflammation study or a command-line programming workshop.
 
-4. Making choices (topic not currently included as a standalone module)
-5. Command-Line Programs (topic not currently included as a standalone module)
+The established episode configuration supports local R examples and WebR. Retain that delivery arrangement and test any browser example you plan to use. Prepare saved tables, figures and code for shared-screen or paper annotation if access fails; package installation should not consume the practical work of a session.
 
-Time permitting,
-you can fit in one of these shorter lessons that cover bigger picture ideas
-like best practices for organizing code, reproducible research,
-and creating packages:
+Inspect the `output` folder before repeating export demonstrations. Outputs are derived practice files and may be replaced by a rerun; keep source files unchanged. Demonstrate a fresh-session run only after saving scripts and learner work.
 
-6. Best practices for using R and designing programs (optional extension topic)
-7. Dynamic reports with knitr (optional extension topic)
-8. Making packages in R (optional extension topic)
+## Teaching Approach
 
-## Using Git in RStudio
+- Build a small program visibly, making each decision and check explicit. Keep intermediate attempts where they help learners understand the change.
+- Ask for a prediction before execution, then take a reasoned answer from a pair after checking it.
+- Use one operator and one checker in each pair and swap roles. Ask the checker to identify input, output, units and the source comparison.
+- Introduce only the language features needed for the task. The goal is a usable mental model rather than exhaustive syntax coverage.
+- Distinguish commands saved in a script, objects in memory and files on disk. Ask learners what remains after restarting R.
+- Use the learner [Additional Material](../learners/additional_material.qmd) workflow for follow-up practice, and select [Extra Exercises](extra_exercises.qmd) after the relevant session.
 
-Some instructors will demo RStudio's git integration at some point during the
-workshop. This often goes over very well, but there can be a few snags with the
-setup. First, RStudio may not know where to find git. You can specify where git
-is located in *Tools > Global Options > Git/SVN*; on Mac/Linux git is often in
-`/usr/bin/git` or `/usr/local/bin/git` and on Windows it is often in
-`C:/Program Files (x86)/Git/bin/git.exe`. If you don't know where git is
-installed on someone's computer, open a terminal and try `which git` on
-Mac/Linux, or `where git` or `whereis git.exe` on Windows. See
-[Jenny Bryan's instructions](https://stat545-ubc.github.io/git03_rstudio-meet-git.html)
-for more detail.
+## Checks That Matter in This Course
 
-If Windows users select the option "Run Git from the Windows command prompt"
-while setting up Git Bash, RStudio will automatically find the git executable.
-If you plan to demo git in RStudio during your workshop, you should edit the
-workshop setup instructions to have the Windows users choose this option during
-setup.
+- **Foundations:** R indexes from one. Data-frame rows may combine text and measurements; averaging or coercing the whole row is not an appropriate default.
+- **Functions:** retain the existing Fahrenheit conversion formulas and distinguish kelvin from degrees Celsius. Two decimal places are a presentation choice; do not round intermediate results silently.
+- **Iteration:** compare one exported country–year record and record row counts. CSV does not retain all R metadata, such as factor levels.
+- **Data analysis:** the packaged Gapminder data end in 2007. Exercise 6 deliberately retains a request for 2012 and `pop <= 3`; discuss unavailable years and population units rather than changing the conditions silently.
+- **Interpretation:** unweighted country means are not population-weighted global means. Repeated country–year plots and smooths do not establish individual or causal claims.
+- **Joins and missing values:** inspect repeated keys and unmatched IDs. The missing-value replacements in the fictional syntax example are arbitrary and require a justified policy before real use.
+- **Plot scales:** the retained axis-limit example can remove observations before smoothing. Inspect warnings and compare the purpose of scale limits with visual zooming.
 
-Another common gotcha is that the push/pull buttons in RStudio are grayed out,
-even after you have added a remote and pushed to it from the command line. You
-need to add an upstream tracking reference before you can push and pull directly
-from RStudio; have your learners do `git push -u origin master` from the command
-line and this should resolve the issue.
+## Optional Git Demonstration
 
-## Teaching Notes
+Git is an extension rather than a prerequisite for these four sessions. Use a practice repository and follow the current [RStudio version-control guide](https://docs.posit.co/ide/user/ide/guide/tools/version-control.html). Check that RStudio can find the installed Git executable before the event. Explain a local change and review before introducing remotes or shared repositories; do not ask learners to alter a live research repository simply to follow the demonstration.
 
-- Watching the instructor grow programs step by step
-  is as helpful to learners as anything to do with R.
-  Resist the urge to clean up your R script as you go
-  (which is what you'd probably do in real life).
-  Instead, keep intermediate steps in your script.
-  Once you've reached the final version
-  you can say,
-  "Now why don't we just breaks things into small functions right from the start?"
+## Course Navigation
 
-- The discussion of command-line scripts
-  assumes that students understand standard I/O and building filters,
-  which are covered in the [Shell lesson](https://swcarpentry.github.io/shell-novice/).
-
-- We are using a dataset with records on inflammation from patients following an
-  arthritis treatment. With it we explain `R` data structure, basic data
-  manipulation and plotting, writing functions and loops.
-
-## [Analyzing Patient Data](../episodes/02-R_variables_intro.qmd)
-
-- Check learners are reading files from the correct location (set working
-  directory); remind them of the [Shell lesson](https://swcarpentry.github.io/shell-novice/).
-
-- Provide shortcut for the assignment operator (`<-`) (RStudio: <kbd>Alt</kbd>\+<kbd>\-</kbd> on
-  Windows/Linux; <kbd>Option</kbd>\+<kbd>\-</kbd> on Mac).
-
-- When performing operations on sliced rows of data frames, be aware that some
-  functions in R automatically convert the object type to a numeric vector, while
-  others do not. For example, `max(dat[1, ])` works as expected, while `mean(dat[1, ])`
-  returns an error. You can fix this by including an explicit call to `as.numeric()`,
-  for example `mean(as.numeric(dat[1, ]))`. This issue is also mentioned in a callout
-  box in the lesson materials, since it is unexpected and can create confusion when
-  simple examples fail (by contrast, operations on sliced columns of data frames always
-  work as expected, since columns of data frames are already vectors).
-
-## Addressing Data (supplement topic)
-
-- Note that the data frame `dat` is not the same set of data as in other lessons.
-
-## [Analyzing Multiple Data Sets](../episodes/04-for_loops.qmd)
-
-- The transition from the previous lesson to this one might be challenging for
-  a very novice audience. Do not rush through the challenges, maybe drop some.
-
-
+[Course Overview](../index.qmd) · [Instructor Notes](instructor-notes.qmd) · [Additional Material](additional_material.qmd) · [Extra Exercises](extra_exercises.qmd) · [Learner Setup](../learners/setup.qmd)

@@ -19,7 +19,7 @@ course-tags: ["Power Automate", "Workflow automation", "Approvals", "Excel table
 ### Course At A Glance
 
 - **Level:** Intermediate
-- **Duration:** Practical workshop format
+- **Duration:** 120 minutes: 50 minutes teaching and 70 minutes practical activities; breaks additional
 - **Best for:** Researchers, research support staff, analysts, administrators, and professional services colleagues who want to reduce repeatable manual work
 - **Main themes:** Power Automate, triggers, connectors, expressions, approvals, Excel tables, Word templates, and maintainable workflow design
 - **Format:** One applied lesson built around short teaching blocks and hands-on flow building
@@ -62,6 +62,8 @@ This course is especially useful if you:
 - support a team where manual handoffs are causing delay or avoidable errors
 
 It works well after [Essential Digital Skills](../essential_digital_skills/index.qmd), but learners can join directly if they already use Microsoft 365 confidently.
+
+No programming background is required. The workshop uses a visual flow designer and introduces the expressions it needs.
 
 ## You Will Build Confidence In
 
@@ -124,7 +126,7 @@ By the end of the course, learners should be more able to:
 
 ## How To Prepare
 
-Learners should have access to a Microsoft 365 account with Power Automate enabled. Some activities use Outlook, Excel, Word, OneDrive, SharePoint, Teams, and the Approvals app. Tenant configuration and licensing can affect which connectors and actions are available.
+Learners should have access to a Microsoft 365 account with Power Automate enabled. Some activities use Outlook, Excel, Word, OneDrive, SharePoint, Teams, and the Approvals app. Tenant configuration and licensing can affect which connectors and actions are available. The [Word Online (Business) connector](https://learn.microsoft.com/en-us/connectors/wordonlinebusiness/) is premium in Power Automate; the workshop can use personalised email text if the template action is unavailable.
 
 It helps to arrive with:
 
@@ -142,7 +144,7 @@ Detailed preparation guidance is available in [Setup](learners/setup.qmd).
 ### Learners
 
 - [Setup](learners/setup.qmd): access checks, example files, and workshop preparation
-- [Additional Material](learners/additional_material.qmd): extra examples, connector guidance, and simplified Microsoft learning notes
+- [Additional Material](learners/additional_material.qmd): screen examples, a safe test matrix and a flow handover record
 - [Reference](learners/reference.qmd): Power Automate terminology, design checks, and troubleshooting prompts
 - [Discussion](learners/discuss.qmd): prompts for process selection, risk review, and reflection
 :::
@@ -155,6 +157,13 @@ Detailed preparation guidance is available in [Setup](learners/setup.qmd).
 - [Extra Exercises](instructors/extra_exercises.qmd): backup activities for deeper practice or consolidation
 :::
 :::
+
+## Optional Next Steps
+
+For support applying a workflow to your own task, explore [Digital Skills Clinics](../../clinics.qmd).
+
+- Use the [learner test and handover pack](learners/additional_material.qmd#safe-test-matrix) before expanding a workshop flow.
+- If you use AI to draft expressions or suggest a flow, the separate [Responsible Use of Generative AI](../responsible_use_of_generative_ai/index.qmd) course develops prompting, validation and documentation habits. It is an optional follow-on course, not a prerequisite or another automation session.
 
 ## Community and Course Information
 

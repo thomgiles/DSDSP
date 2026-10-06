@@ -19,3 +19,7 @@ title: Learner Profiles
 - **Background:** Support researchers across governance, data, methods, or training.
 - **Motivation:** Give more consistent, practical advice about AI use.
 - **Needs:** Shared language, escalation boundaries, and examples of sensible practice.
+
+## Course Navigation
+
+[Course Overview](../index.qmd) · [Learner Setup](../learners/setup.qmd) · [Learner Additional Material](../learners/additional_material.qmd) · [Instructor Notes](../instructors/instructor-notes.qmd)

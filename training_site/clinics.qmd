@@ -1,5 +1,5 @@
 ---
-title: "Personalised Engagement Clinics"
+title: "Digital Skills Clinics"
 breadcrumb: false
 page-class: "landing-page coding-clinics-page"
 
@@ -30,7 +30,7 @@ format:
 ::: {.landing-summary-copy}
 ## Practical Support For Everyday Digital Work
 
-Personalised engagement clinics help you apply digital skills to your own research, study or professional work. Bring a task you find difficult, a process you want to improve, or a question about choosing and using digital tools, and work through it with an experienced instructor.
+Digital skills clinics help you apply digital skills to your own research, study or professional work. Bring a task you find difficult, a process you want to improve, or a question about choosing and using digital tools, and work through it with an experienced instructor.
 
 You do not need to write code or have attended a course to take part. Your starting point might be a spreadsheet, a shared folder, a report, an online form, a recurring administrative task or an unfamiliar piece of software.
 
@@ -253,7 +253,7 @@ A brief description is enough at this stage. Please keep examples free of person
   webkitallowfullscreen
   mozallowfullscreen
   msallowfullscreen
-  title="Personalised engagement clinics registration form">
+  title="Digital skills clinics registration form">
 </iframe>
 ```
 

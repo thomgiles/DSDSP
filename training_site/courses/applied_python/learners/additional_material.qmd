@@ -1,0 +1,85 @@
+---
+title: Additional Material
+---
+
+Use these resources to consolidate Applied Python after a session or to practise a particular research task. They are optional; installation and course data are covered in [Setup](setup.qmd).
+
+## Choose Your Next Step
+
+| If you want to… | Revisit | Keep this output |
+|---|---|---|
+| Understand what a piece of code changes | [Types, Variables, and Basic Operations](../episodes/01-types_variables_and_basic_operations.qmd) | An annotated example distinguishing a copy from a shared object |
+| Automate a repeated check | [Loops and Control Flow](../episodes/02-loops_and_control_flow.qmd) | A loop with a stated condition and expected result |
+| Inspect numerical research data | [Data Manipulation and Visualization](../episodes/03-data_manipulation_and_visualization.qmd) | A labelled plot and a check against the input |
+| Make repeated analysis reusable | [Functions](../episodes/04_functions.qmd) | A documented function and two small test cases |
+| Prepare a table for reporting | [Data Manipulation with pandas](../episodes/05-data_manipulation_with_pandas.qmd) | A checked summary table with row identifiers retained |
+| Understand a first model | [Regression Analysis and Modelling](../episodes/06-regression_analysis_and_modelling.qmd) | A record of inputs, evaluation and limitations |
+| Decide whether classes help | [Object-Oriented Programming](../episodes/07-python_object_oriented_programming.qmd) | A comparison of a function and class design for one task |
+| Diagnose a failure systematically | [Errors, Debugging, and Defensive Programming](../episodes/08-errors_debugging_and_defensive_programming.qmd) | A minimal failing example and a verified correction |
+
+## Practice: Turn an Exploratory Notebook into a Checked Analysis
+
+**Goal:** produce an analysis another researcher can rerun and inspect. Use a practice notebook in the `swc-python` folder prepared during setup. The course's inflammation data are **synthetic teaching data**, so findings from this exercise must not be presented as clinical evidence.
+
+### 1. Inspect Before Summarising
+
+Open [inflammation-01.csv](../episodes/data/inflammation-01.csv) using the approach in lesson 03. Record the array's shape, data type and the meaning of each axis. Select one row and calculate its mean by hand for its first three values, then compare that result with Python.
+
+**Check:** the CSV has no header. If you use pandas, explain why `header=None` is needed and check that the first observation has not become a set of column names.
+
+### 2. Make One Useful Output
+
+Produce a plot of the daily mean across rows. Label the horizontal axis as day index and explain that indexing starts at zero in Python. Label the vertical axis using the lesson's description of the teaching values; do not invent a clinical unit. Save the figure to a separate output folder and add a short Markdown explanation of what it shows and what it cannot establish.
+
+**Check:** choose one day, calculate its mean separately and confirm that it matches the corresponding plotted value. Retain the raw input unchanged.
+
+### 3. Package a Repeated Step
+
+Extract the calculation into a function that accepts an array and returns a daily summary. Write a docstring stating the expected dimensions and output. Test it first with a small array whose mean you can calculate yourself; include an input with the wrong number of dimensions and decide how the function should respond.
+
+**Check:** the function should not silently transpose, discard values or modify its input. State a missing-value policy before adapting it to real data containing missing values.
+
+### 4. Rerun and Review
+
+Save your notebook, restart the kernel and run the cells from top to bottom. Ask a colleague to locate the input, the function, the validation and the saved figure. If practising alone, close the notebook and return to it later with the same questions.
+
+**Keep:** the notebook, figure, software versions and a short note naming the input and checks. If access fails, annotate a printed or saved lesson example with the proposed checks and the cells that need to run first.
+
+### Debrief
+
+Discuss: **Which check would catch a result that looked plausible but used the wrong axis?** A successful run establishes that the code executes in that environment. The hand calculation and axis explanation establish whether the summary matches the intended question. Neither establishes that the synthetic data represent a real study.
+
+## A Notebook Handover Checklist
+
+- Name the input files and distinguish original data from derived outputs.
+- State the research question, units, exclusions and missing-value decisions.
+- Keep imports and parameters visible; avoid relying on cells run out of order.
+- Record Python and relevant package versions from the environment you actually used.
+- Retain a small check with a known answer alongside the analysis.
+- Save before restarting the kernel, then run all cells in order and inspect the outputs.
+
+For kernel management, use the official [JupyterLab guide](https://jupyterlab.readthedocs.io/en/stable/user/running.html). Closing a notebook tab does not itself stop its kernel.
+
+## Official Documentation Worth Bookmarking
+
+| Resource | Use it for |
+|---|---|
+| [Python tutorial](https://docs.python.org/3/tutorial/) | A follow-on explanation of language features once you have practised the basics; it assumes some programming knowledge |
+| [NumPy absolute basics](https://numpy.org/doc/stable/user/absolute_beginners.html) | Arrays, dimensions, indexing and operations along axes |
+| [pandas getting-started tutorials](https://pandas.pydata.org/docs/getting_started/intro_tutorials/index.html) | Reading tables, selecting data, creating columns and calculating summaries |
+| [Matplotlib quick start](https://matplotlib.org/stable/users/explain/quick_start.html) | Figures, axes, labels and common plotting patterns |
+| [scikit-learn common pitfalls](https://scikit-learn.org/stable/common_pitfalls.html) | Checking preprocessing and avoiding leakage between training and test data |
+| [statsmodels getting started](https://www.statsmodels.org/stable/gettingstarted.html) | Following the model-fitting and summary workflow used in lesson 06 |
+
+Use documentation for the version installed in your environment when an example differs from the course. Keep modelling assumptions separate from programming checks: a model that runs successfully still needs scientific justification.
+
+## Related Courses and Support
+
+- [Essential Digital Skills](../../essential_digital_skills/index.qmd): strengthen file organisation, collaboration and research data habits.
+- [Methods for Data Science](../../methods_for_data_science/index.qmd): place programming in the wider analytical workflow.
+- [Applied R](../../applied_R/index.qmd): explore the same programming ideas in a different language.
+- [Digital Skills Clinics](../../../clinics.qmd): bring a specific workflow or error and a small, shareable example.
+
+## Course Navigation
+
+[Course Overview](../index.qmd) · [Setup](setup.qmd) · [Additional Material](additional_material.qmd) · [Reference](reference.qmd) · [Discussion](discuss.qmd)

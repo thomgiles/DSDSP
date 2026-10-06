@@ -36,7 +36,7 @@ Give groups two or three short scenarios and ask them to rank the risks from low
 
 ## Exercise 3: Escalate or Decide?
 
-**Best fit:** Governance or RDM sessions
+**Best fit:** [Data Governance & Policy](../episodes/03-data_governance_and_policy.qmd) or [Research Data Management](../episodes/04-research_data_managment.qmd)
 
 Provide a list of decisions and ask groups to sort them into:
 
@@ -72,7 +72,7 @@ Take a weak DMP paragraph and rewrite it to include:
 
 ## Exercise 5: Folder Rescue
 
-**Best fit:** RDM or organising data sessions
+**Best fit:** [Research Data Management](../episodes/04-research_data_managment.qmd)
 
 Present a messy shared project structure and ask groups to redesign it. They should explain:
 
@@ -97,3 +97,20 @@ Select one dataset and ask learners to produce a short improvement plan under th
 Limit them to one month and realistic changes only.
 
 **Debrief question:** Which FAIR improvements are low effort but high value?
+
+## Exercise 7: Evidence and Document Handover
+
+**Best fit:** [Digital Tools](../episodes/01-digital_tools.qmd)
+
+Use the [learner practice resources](../learners/additional_material.qmd) and ask pairs to exchange a reading note or document plan. The receiving partner should identify:
+
+- the original source or authoritative document
+- the claim, decision or revision being proposed
+- the check already made and anything still unresolved
+- the owner of the next action
+
+**Debrief question:** What could you verify from the handover alone, and what still required the original source?
+
+## Course Navigation
+
+[Course Overview](../index.qmd) · [Instructor Notes](instructor-notes.qmd) · [Additional Material](additional_material.qmd) · [Extra Exercises](extra_exercises.qmd) · [Learner Setup](../learners/setup.qmd)

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="390" viewBox="0 0 1200 390" role="img" aria-labelledby="title desc">
+  <title id="title">Document structure connects headings, captions and references</title>
+  <desc id="desc">A document's Results heading connects to heading styles for navigation, its Table 1 caption to managed numbering, and its See Table 1 mention to a cross-reference that stays linked when numbering changes.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M1 1 L8 5 L1 9 Z" fill="#405162"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="390" rx="28" fill="#f7fbfc"/>
+  <rect x="45" y="32" width="385" height="325" rx="18" fill="#ffffff" stroke="#c5dce2" stroke-width="2"/>
+  <g font-family="sans-serif">
+    <text x="74" y="80" font-size="29" font-weight="700" fill="#10263b">A pilot writing session</text>
+    <rect x="65" y="104" width="345" height="51" rx="9" fill="#e5f1f5"/>
+    <text x="83" y="138" font-size="27" font-weight="700" fill="#006781">Results</text>
+    <rect x="82" y="171" width="310" height="39" rx="8" fill="#e7f2ee"/>
+    <text x="96" y="199" font-size="22" fill="#10263b">Table 1. Participant responses</text>
+    <rect x="83" y="222" width="309" height="41" rx="4" fill="#edf2f5"/>
+    <path d="M83 242 H392 M305 222 V263" fill="none" stroke="#a9bac5" stroke-width="2"/>
+    <rect x="82" y="280" width="310" height="43" rx="8" fill="#e5f1f5"/>
+    <text x="96" y="310" font-size="24" fill="#006781">See Table 1 for the responses.</text>
+    <g fill="none" stroke="#405162" stroke-width="3" marker-end="url(#arrow)">
+      <path d="M430 130 H509"/>
+      <path d="M430 194 H476 V231 H509"/>
+      <path d="M430 302 H476 V332 H509"/>
+    </g>
+    <rect x="520" y="87" width="635" height="82" rx="16" fill="#006781"/>
+    <rect x="520" y="189" width="635" height="82" rx="16" fill="#298582"/>
+    <rect x="520" y="291" width="635" height="82" rx="16" fill="#10263b"/>
+    <g fill="#ffffff">
+      <text x="549" y="122" font-size="28" font-weight="700">Heading styles</text>
+      <text x="549" y="152" font-size="23">Identify sections and support navigation.</text>
+      <text x="549" y="224" font-size="28" font-weight="700">Captions</text>
+      <text x="549" y="254" font-size="23">Describe the item and manage its number.</text>
+      <text x="549" y="326" font-size="28" font-weight="700">Cross-references</text>
+      <text x="549" y="356" font-size="23">Stay linked when numbering changes; refresh and check.</text>
+    </g>
+  </g>
+</svg>

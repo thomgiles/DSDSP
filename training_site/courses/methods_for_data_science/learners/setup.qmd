@@ -13,8 +13,8 @@ Before the first session, make sure you can:
 1. Sign in to your university account without difficulty.
 2. Open Microsoft Excel or another spreadsheet tool.
 3. Download and open example spreadsheets from the course site.
-4. Access Microsoft Forms or the browser-based tools used for room activities.
-5. Join the course Teams space or any local communication channel used by the teaching team.
+4. Open the browser-based activities linked from the lessons; check any Microsoft Forms links supplied by the teaching team.
+5. Check joining instructions for the room or online session and any communication channel supplied by the teaching team.
 
 ## Device and Materials
 
@@ -23,7 +23,15 @@ Bring:
 - a laptop or tablet with a modern web browser
 - a charger
 - spreadsheet access, ideally Excel
-- one dataset, chart, dashboard, report, or data collection process you have used or questioned
+- one public or fictional dataset, chart, dashboard, report, or data collection process you have used or questioned
+
+No Python, R, or specialist statistics package is required. If spreadsheet or browser access fails, work with a partner or annotate the [fictional practice table](additional_material.qmd#practice-dataset) on paper. Record the choices and checks so you can repeat them later.
+
+## Practice Files
+
+The lessons use an [original student spreadsheet](../episodes/data/student_data.xlsx) and a [prepared student spreadsheet](../episodes/data/cleaned_student_data.xlsx). Save a working copy before editing. The prepared file supports later exercises; it does not replace the need to explain cleaning choices.
+
+For independent practice, use the [Additional Material](additional_material.qmd). Its fictional request dataset includes source notes, validation checks, and worked answers. You do not need to bring your own data to participate.
 
 ## Session Preparation
 
@@ -36,4 +44,8 @@ Bring:
 
 ## Data Safety
 
-Do not bring sensitive, confidential, personal, or unpublished research data unless your instructor has explicitly asked for it and confirmed the handling route. Use fictional, public, anonymised, or low-risk examples for discussion.
+Use the supplied practice files or a public or fictional example for room activities. If you want to discuss a real project, describe its question and structure without sharing personal, confidential, or unpublished material. Removing names alone may still leave people identifiable.
+
+## Course Navigation
+
+[Course Overview](../index.qmd) · [Setup](setup.qmd) · [Additional Material](additional_material.qmd) · [Reference](reference.qmd) · [Discussion](discuss.qmd)

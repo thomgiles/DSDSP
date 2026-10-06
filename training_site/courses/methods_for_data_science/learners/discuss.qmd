@@ -6,6 +6,8 @@ title: Discussion
 
 Use these prompts for breakout activities, quick pair work, or end-of-session reflection. They focus on the data-methods half of the Digital Skills pathway.
 
+For a five-minute room activity, choose one question: spend one minute reflecting, two minutes comparing examples with a partner, one minute writing a shared answer, and one minute hearing two pairs report back. Keep one decision, one supporting check, and one unresolved question. Use the [fictional practice example](additional_material.qmd#practice-dataset) if you do not have a suitable public example.
+
 ## Collecting the Right Data
 
 Use alongside [Collecting the Right Data](../episodes/05-collecting_the_right_data.qmd).
@@ -41,3 +43,7 @@ Use alongside [Insight to Impact](../episodes/08-insight_to_impacts.qmd).
 2. Who needs to hear your findings, and what would each audience need emphasised?
 3. What feedback would tell you whether an insight had made a difference?
 4. When should a finding lead to a new question rather than a final recommendation?
+
+## Course Navigation
+
+[Course Overview](../index.qmd) · [Setup](setup.qmd) · [Additional Material](additional_material.qmd) · [Reference](reference.qmd) · [Discussion](discuss.qmd)

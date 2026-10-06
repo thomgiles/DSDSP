@@ -1,8 +1,12 @@
 ---
-title: "Tidyverse and ggplot2 Analysis with Gapminder Dataset"
+title: "Data Analysis with tidyverse and ggplot2"
+module-number: "4"
 module-icon: "📊"
-author: "Data Analysis with R"
+author: "DRS Training"
 date: "July 7, 2025"
+metadata:
+  teaching: 60
+  exercises: 30
 webr:
   packages:
     - tidyverse
@@ -16,56 +20,53 @@ webr:
     - renv
 ---
 
-::: callout-title
-# Tidyverse and ggplot2 with Gapminder
-:::
-
-# Module Overview
-
-- **Module:** DA-R1 — Tidyverse Foundations  
-- **Course:** Data Analysis with R  
-- **Audience:** Early Career Researchers (PhD, Postdoc)  
-- **Duration:** ~60 minutes directed teaching (+14 exercises)  
-
----
-
 ::: callout-outcomes
 ## 💡 Learning Outcomes
 
-- Load, explore, and manipulate datasets with the `tidyverse` suite  
-- Apply `dplyr` verbs for selecting, filtering, mutating, arranging, and summarising data  
-- Perform joins and tidy messy data with `tidyr`  
-- Conduct string operations with `stringr`  
-- Produce high-quality visualisations using `ggplot2`  
-- Export results to delimited and Excel formats  
+- Inspect and select historical country–year observations with explicit identifiers.
+- Derive and summarise columns while recording units, grouping and missing-value decisions.
+- Check joins and exported files against their source records.
+- Create and save a labelled ggplot2 figure with an explanation of its limits.
 :::
-
----
 
 ::: callout-questions
 ## ❓ Questions
 
-1. How can I explore and manipulate tabular data with tidyverse?  
-2. What are the core `dplyr` functions for filtering, selecting, and summarising?  
-3. How do joins work when combining multiple datasets?  
-4. What are the main `ggplot2` visualisation types for data exploration?  
+1. What does one observation represent and which comparisons can the data support?
+2. Which selections, summaries and joins could change the meaning of a result?
+3. How will another researcher check the table and figure against the input?
 :::
 
 ## Structure & Agenda
 
-1. Introduction to tidyverse & Gapminder dataset (~30 min)  
-2. Data manipulation with `dplyr` (~30 min)  
-3. File I/O, tidying, and string handling (~30 min)  
-4. Data visualisation with `ggplot2` (~40 min)  
-5. Exercise solutions and recap (~20 min)
+| Block | Teaching | Activity | Output to keep |
+|---|---:|---:|---|
+| Inspect and select | 10 min | 5 min | A checked subset |
+| Derive and summarise | 10 min | 5 min | A summary with its aggregation level |
+| Join and handle missing values | 10 min | 5 min | A record-retention decision |
+| **Break** | — | **10 min break** | — |
+| Read and write derived files | 10 min | 5 min | A checked export |
+| Specify a plot for the question | 10 min | 5 min | A labelled comparison |
+| Check, save and communicate | 10 min | 5 min | A checked figure and interpretation |
+| **Total** | **60 min** | **30 min** | **100 min including the break** |
 
-# Introduction
+This is **session 4 of four**, building on [Foundations](01-Rstudio_intro.qmd), [Functions](03-R_functions.qmd) and [Iteration](04-for_loops.qmd). All four sessions use the same 100-minute plan. Six five-minute room activities include their debriefs; the separate break is ten minutes. Additional selection, string and plotting examples are retained in an optional reference bank after the core session.
 
-This R Markdown document demonstrates data manipulation and visualization using the `tidyverse` suite of packages, particularly `dplyr`, `tidyr`, `readr`, `stringr`, and `ggplot2`. We will use the `gapminder` dataset to perform various data operations and create visualizations. The document also includes solutions to the provided exercises.
+## Starting Point and Preparation
 
-# Installing and Loading Packages
+Open the project prepared in [Setup](../learners/setup.qmd), load the lesson packages and save the analysis in an R script. Use the packaged Gapminder dataset for the examples and keep original files separate from derived outputs. Pair work uses one operator and one checker; swap roles between activities. If software access fails, annotate the instructor's displayed tables and plots with the same selection and checks.
 
-First, we load the necessary packages
+# Inspect the Data before Selecting
+
+## Begin with a Research Question
+
+A collaborator wants to compare historical life expectancy in two countries. Before producing a chart, identify the observation level, recorded years and units. These data concern countries over time, not individual participants or current conditions. The [Gapminder package documentation](https://jennybc.github.io/gapminder/) describes its source and coverage.
+
+**Room check:** ask pairs to name the identifiers needed to distinguish a country observed in two different years.
+
+## Load the Lesson Packages
+
+Installation is covered in [Setup](../learners/setup.qmd). Load the packages for this R session:
 
 ```{r} 
 library("rmarkdown")
@@ -75,27 +76,31 @@ library("openxlsx")
 library("gridExtra")
 library("ggExtra")
 library("knitr")
-library("tidyverse")
 ```
 
-# Exploring the Gapminder Dataset
+## Exploring the Gapminder Dataset
 
 Let's take a look at the first few rows of the `gapminder` dataset.
 
 ```{r}
 # View first six rows
-head(gapminder) 
+head(gapminder)
+str(gapminder)
+range(gapminder$year)
+stopifnot(!anyDuplicated(gapminder[c("country", "year")]))
 ```
 
-# Data Manipulation with dplyr
+## Data Manipulation with dplyr
 
 The `dplyr` package provides functions for data manipulation, such as `select()`, `filter()`, `mutate()`, `arrange()`, `summarise()`, and `group_by()`.
 
-# Selecting Columns
+As in session 3, `%>%` passes the preceding table into the next function. For example, `gapminder %>% select(country, year)` means `select(gapminder, country, year)`. Read a sequence of pipes from left to right and inspect the result after each transformation.
+
+## Selecting Columns
 
 Select specific columns using `select()`.
 
-## individual columns
+## Select Individual Columns
 
 ```{r}
 # Select individual columns
@@ -103,7 +108,457 @@ sel_data <- gapminder %>% select(country, continent, pop)
 head(sel_data)
 ```
 
-## range of columns
+## Filtering Rows
+
+Use `filter()` to subset rows based on conditions.
+
+## Filter for Belgium
+
+```{r}
+# Filter for Belgium
+filt_data <- gapminder %>% filter(country == "Belgium") %>% head(8)
+filt_data
+```
+
+## Filter with multiple conditions
+
+```{r}
+# Filter with multiple conditions
+gapminder %>% 
+  filter(country == "Oman" & year > 1980 & year <= 2000) %>% 
+  head(8)
+```
+
+## Filter using %in% operator
+
+```{r}
+# Filter using %in% operator
+scandinavia <- c("Denmark", "Iceland", "Norway", "Sweden", "Finland")
+res <- gapminder %>% filter(country %in% scandinavia)
+head(res)
+```
+
+## Combining Select and Filter
+
+Combine `select()` and `filter()` to extract specific data.
+
+```{r}
+uk_gdp <- gapminder %>%
+  filter(country == "United Kingdom") %>%
+  select(country, year, gdpPercap)
+head(uk_gdp)
+```
+
+## Task 1: Check a Country–Year Selection (5 min)
+
+::: callout-task
+**Goal:** retain a specific comparison without losing row identity. **Input:** the packaged `gapminder` table. Work in pairs.
+
+::: panel-tabset
+##### Do the Task
+
+1. **1 min:** check that 1977, Ireland and Brazil are present.
+2. **2 min:** filter to those two country–year observations and select `country`, `year` and `lifeExp`.
+3. **1 min:** compare the selected values with the original rows and record the units.
+4. **1 min:** two pairs tell the room which identifiers and check they retained.
+
+**Keep:** the checked subset and selection code. **If access fails:** annotate the instructor's displayed table.
+
+##### Debrief
+
+The output should have one row per selected country in the chosen year. Keep the country and year rather than two unlabelled values. An empty result requires a spelling or coverage check; do not silently substitute a nearby year.
+:::
+:::
+
+# Derive and Summarise with Meaning
+
+## Mutating Data
+
+Use `mutate()` to create new columns and `transmute()` to keep only new columns.
+
+## Using Mutate to add new columns
+
+```{r}
+# Add new columns
+gapminder %>%  
+  mutate(pop_million = pop / 1000000,
+         countName = substring(country, 1, 3)) %>%
+  head()
+```
+
+## Using Mutate to Keep Only New Columns
+
+The multiplication below demonstrates a derived column. `lifeExp * pop` is not itself evidence of observed person-years or a standard population-health measure; interpreting such a quantity needs a justified analytical definition.
+
+```{r}
+# Keep only new columns
+gapminder %>% transmute(total_years = lifeExp * pop) %>% head()
+```
+
+## Using Mutate to Classify GDP per Capita
+
+The threshold of 10,000 below is an existing **teaching example**, not an official income classification. State its units and rationale before adapting it to a research analysis.
+
+```{r}
+# Classify GDP per capita
+gapminder %>%
+  mutate(GDP_Category = ifelse(gdpPercap > 10000, "High", "Low")) %>%
+  select(country, year, gdpPercap, GDP_Category) %>%
+  head(10)
+```
+
+## Arranging Data
+
+Sort data using `arrange()`.
+
+## Sort in ascending order
+
+```{r}
+# Sort in ascending order
+gapminder %>% arrange(year, gdpPercap) %>% head()
+```
+
+## Sort in descending order
+
+```{r}
+# Sort in descending order
+gapminder %>% arrange(year, desc(gdpPercap)) %>% head()
+```
+
+## Summarizing Data
+
+Compute summary statistics with `summarise()`.
+
+```{r}
+scandinavia <- c("Denmark", "Iceland", "Norway", "Sweden", "Finland")
+gapminder %>% 
+  filter(year == 1982 & country %in% scandinavia) %>% 
+  summarise(n_obs = n(),
+            total_pop = sum(pop),
+            mean_life_exp = mean(lifeExp),
+            range_life_exp = max(lifeExp) - min(lifeExp))
+```
+
+## Grouping Data
+
+Group data with `group_by()` for per-group summaries. The example calculates an unweighted mean across country observations for each year; it is not a population-weighted global life expectancy. Record the aggregation level and weighting choice.
+
+```{r}
+gapminder %>% 
+  group_by(year) %>% 
+  summarise(n_obs = n(),
+            n_countries = n_distinct(country),
+            total_pop = sum(pop),
+            mean_life_exp = mean(lifeExp),
+            range_life_exp = max(lifeExp) - min(lifeExp))
+```
+
+## Task 2: Explain a Summary (5 min)
+
+::: callout-task
+**Goal:** explain the records contributing to a grouped statistic. **Input:** the year-level summary above. Swap operator and checker.
+
+::: panel-tabset
+##### Do the Task
+
+1. **1 min:** choose one recorded year and identify its observations.
+2. **2 min:** inspect the summary's row count, number of countries and mean life expectancy.
+3. **1 min:** compare one statistic with a direct calculation on that year's source rows.
+4. **1 min:** two pairs explain to the room whether the mean represents countries or individual people.
+
+**Keep:** the summary and a sentence naming its aggregation and weighting. **If access fails:** inspect the instructor's summary and identify the records it combines.
+
+##### Debrief
+
+Grouping changes the observation level from country–year to year. The mean gives each country observation equal weight; interpreting it as the experience of an average individual would require a different, justified approach.
+:::
+:::
+
+# Joining Data
+
+Perform joins using `inner_join()`, `left_join()`, `right_join()` and `full_join()`. The employee and department tables below are **fictional teaching examples**. Check uniqueness and unmatched IDs before choosing the records to retain. See the official [join documentation](https://dplyr.tidyverse.org/reference/mutate-joins.html).
+
+## Example data for joining
+
+```{r}
+# Create sample datasets
+employees <- data.frame(
+  id = c(1, 2, 3, 4),
+  name = c("Alice", "Bob", "Charlie", "David"),
+  age = c(25, 30, 22, 28)
+)
+```
+
+------------------------------------------------------------------------
+
+```{r}
+# Create sample datasets
+departments <- data.frame(
+  id = c(2, 3, 5, 6),
+  department = c("HR", "Finance", "IT", "Sales")
+)
+```
+
+## Inspect the Join Keys
+
+```{r}
+stopifnot(!anyDuplicated(employees$id))
+stopifnot(!anyDuplicated(departments$id))
+anti_join(employees, departments, by = "id")
+anti_join(departments, employees, by = "id")
+```
+
+Unmatched IDs are part of the result to explain, not automatically errors to discard. Repeated keys could multiply rows; investigate their meaning before joining.
+
+## Inner join
+
+```{r}
+# Perform inner join
+employees %>% inner_join(departments, by = "id")
+```
+
+## left join
+
+```{r}
+# Perform left join
+employees %>% left_join(departments, by = "id")
+```
+
+## right join
+
+```{r}
+# Perform right join
+employees %>% right_join(departments, by = "id")
+```
+
+## full join
+
+```{r}
+# Perform full join
+employees %>% full_join(departments, by = "id")
+```
+
+## Missing-Value Decisions with tidyr
+
+The fictional table below demonstrates different missing-value operations using `tidyr`. Inspect the affected rows before choosing a policy. These operations change the data and answer different questions; they are not automatic cleaning steps.
+
+## Sample data with missing values
+
+```{r}
+# Sample data with missing values
+df <- data.frame(
+  Name = c("Alice", "Bob", "Charlie", NA, "Eve"),
+  Age = c(25, NA, 30, 28, 22),
+  Score = c(80, 90, NA, 75, 95)
+)
+```
+
+## Remove rows with any NA
+
+```{r}
+# Remove rows with any NA
+df_clean <- drop_na(df)
+```
+
+## Remove rows with NA in specific column
+
+```{r}
+# Remove rows with NA in specific column
+df_clean_age <- drop_na(df, Age)
+```
+
+## Replace NA Values
+
+The replacements of age with 0 and score with 50 are deliberately arbitrary syntax examples. They do not establish a valid imputation method; do not use them in research without an explicit, justified policy. Compare which values change and retain the original `df`.
+
+```{r}
+# Replace NA values
+df_filled <- df %>% replace_na(list(Age = 0, Score = 50, Name = "Unknown"))
+```
+
+## Task 3: Choose a Join and Account for Records (5 min)
+
+::: callout-task
+**Goal:** make the retention decision visible. **Input:** the fictional employee and department tables. Work in pairs.
+
+::: panel-tabset
+##### Do the Task
+
+1. **1 min:** predict which IDs a left join will keep.
+2. **2 min:** compare the left and inner joins and inspect unmatched IDs in both directions.
+3. **1 min:** record which rows each approach retains and why a missing department appears.
+4. **1 min:** vote on a join that retains every employee; two pairs explain their choice.
+
+**Keep:** the chosen join and record-accounting note. **If access fails:** join the displayed ID lists on paper.
+
+##### Debrief
+
+The left join retains employee IDs 1–4; IDs 1 and 4 have no matching department. The inner join keeps only IDs 2 and 3. A full join also retains department-only IDs 5 and 6. Choose according to the question and report unmatched records.
+:::
+:::
+
+## Break (10 min)
+
+Save the current script and note any unmatched records or unresolved missing-value decision before the break.
+
+# Read and Write Derived Files
+
+Use `readr` to read and write delimited files, and `openxlsx` for Excel files. `res` is the Scandinavian-country subset created earlier. These are derived outputs; keep them separate from the original data. Rerunning an export replaces an existing file at the same path, so inspect the destination in a practice project first.
+
+```{r}
+dir.create("output", showWarnings = FALSE)
+```
+
+## Write to a file
+
+```{r}
+# Write to a file
+write_delim(res, "output/gapminder2.txt", delim = "\t")
+```
+
+## Write to Excel
+
+```{r}
+# Write to Excel
+write.xlsx(res, file = "output/gapm3.xlsx", sheetName = "gap", colNames = TRUE, rowNames = TRUE)
+```
+
+## Read from Excel
+
+```{r}
+# Read from Excel
+xl <- read.xlsx("output/gapm3.xlsx", sheet = "gap")
+```
+
+## Check the Export against Its Input
+
+```{r}
+res_readback <- read_delim("output/gapminder2.txt", delim = "\t", show_col_types = FALSE)
+stopifnot(nrow(res_readback) == nrow(res))
+stopifnot(identical(as.character(res_readback$country), as.character(res$country)))
+stopifnot(isTRUE(all.equal(res_readback$year, res$year)))
+```
+
+A CSV or delimited-text round trip does not retain every property of an R object, including factor levels. Check values and IDs as well as types. The Excel example writes row names explicitly; decide whether an extra row-label column suits a real handover.
+
+## Task 4: Inspect a File Round Trip (5 min)
+
+::: callout-task
+**Goal:** verify that a derived table can be located and read. **Input:** `res` and the delimited export above. Work in pairs and swap roles.
+
+::: panel-tabset
+##### Do the Task
+
+1. **1 min:** inspect the output destination and distinguish the source from the derived file.
+2. **2 min:** write the delimited file and read it back.
+3. **1 min:** compare row count, country–year IDs, types and one measurement.
+4. **1 min:** two pairs give the room a check beyond file existence.
+
+**Keep:** the file, code and read-back check. **If access fails:** annotate the instructor's displayed input and read-back table.
+
+##### Debrief
+
+A saved file is useful only when its location and meaning are clear. Record identity and a value comparison check the export; file existence alone cannot. Inspect type differences instead of silently treating them as identical.
+:::
+:::
+
+# Visualise and Communicate with ggplot2
+
+Create visualisations using `ggplot2`. Start with the question, observation level and units. The examples below include all recorded years unless a selection is stated, so pooled country–year plots should not be described as a single-year comparison. The smooth curve describes the plotted association; it does not establish causation. Further plotting styles form an optional reference bank.
+
+## Scatter plot with ggplot2
+
+```{r}
+#| fig-alt: "A scatter plot shows life expectancy against GDP per capita for repeated historical country-year observations in the Gapminder dataset."
+# Basic scatter plot
+ggplot(data = gapminder, aes(x = lifeExp, y = gdpPercap)) +
+  geom_point()
+```
+
+## Match the Plot to a Stated Comparison
+
+The scatter plot above combines repeated country–year observations. For the two-country comparison from Task 1, make the selected year explicit:
+
+```{r}
+#| fig-alt: "Two bars compare historical country-level life expectancy in Brazil and Ireland in 1977, with life expectancy measured in years and the Gapminder source stated."
+comparison_data <- gapminder %>%
+  filter(country %in% c("Ireland", "Brazil"), year == 1977) %>%
+  select(country, year, lifeExp)
+stopifnot(nrow(comparison_data) == 2L)
+
+comparison_plot <- ggplot(comparison_data, aes(x = country, y = lifeExp)) +
+  geom_col() +
+  labs(
+    title = "Life expectancy in Ireland and Brazil, 1977",
+    x = "Country",
+    y = "Life expectancy (years)",
+    caption = "Source: Gapminder teaching dataset; historical country-level observations"
+  ) +
+  theme_minimal()
+comparison_plot
+```
+
+The identifiers and caption explain which observations are plotted. Select a chart according to the question; the additional plotting styles below are optional references, not a checklist of required chart types.
+
+## Task 5: Critique a Plot Specification (5 min)
+
+::: callout-task
+**Goal:** connect a figure to its observation level and units. **Input:** the pooled scatter plot and the two-country comparison above. Work in pairs.
+
+::: panel-tabset
+##### Do the Task
+
+1. **1 min:** identify the observations contributing to each figure.
+2. **2 min:** inspect the two-country plot's labels and compare its heights with `comparison_data`.
+3. **1 min:** state one question the comparison supports and one it cannot answer.
+4. **1 min:** two pairs explain to the room why the selected year and units matter.
+
+**Keep:** the plot specification and limitation. **If access fails:** annotate the displayed figures and the corresponding source rows.
+
+##### Debrief
+
+A historical country-level comparison is descriptive. It does not establish individual outcomes, current conditions or causation. A plotted value checked against a table can still be misinterpreted if its observation level is omitted.
+:::
+:::
+
+# Check, Save and Communicate the Result
+
+## Save the Checked Plot
+
+```{r}
+ggsave("output/country_comparison.png", plot = comparison_plot, width = 7, height = 4)
+```
+
+Inspect the saved figure as well as the on-screen one. Keep its source, analysis script and a short explanation together. Save the script, restart R and run from the beginning to discover dependencies on objects created earlier in the console.
+
+## Task 6: Make a Figure Another Researcher Can Read (5 min)
+
+::: callout-task
+**Goal:** communicate one checked historical comparison. **Input:** your two-country subset from Task 1 or the lesson's Gapminder table. Work in pairs.
+
+::: panel-tabset
+##### Do the Task
+
+1. **1 min:** state the question, countries and year or years used.
+2. **2 min:** create a suitable plot and add descriptive labels, units and a source caption.
+3. **1 min:** check one plotted value against the original row and state one interpretive limitation.
+4. **1 min:** two pairs show the room the check and the limitation rather than only the finished picture.
+
+**Keep:** the saved plot, code and a short interpretation. **If access fails:** annotate an instructor plot with the required labels, source check and limitation.
+
+##### Debrief
+
+A readable figure identifies its observations and units. Comparing a value with the original row checks the transformation; it does not establish a causal explanation. Distinguish historical country-level patterns from present-day or individual claims.
+:::
+:::
+
+# Optional Reference Bank
+
+The core route above is the 100-minute session. The following retained variations support follow-up learning and instructor extensions; select them according to the task. They do not add sessions to the course.
+
+## Selection Variants
+
+## Select a Range of Columns
 
 ```{r}
 # Select range of columns
@@ -159,7 +614,7 @@ sel_data <- gapminder %>% rename(Life_Expectancy = lifeExp)
 head(sel_data)
 ```
 
-# Additional Selection Methods
+## Optional Reference: Additional Selection Methods
 
 Select columns using indices, ranges, or specific patterns.
 
@@ -206,246 +661,14 @@ gapminder %>% select(starts_with('co')) %>% head()
 gapminder %>% select(ends_with('p')) %>% head()
 ```
 
-# \# Select columns containing 'pop'
+## Select Columns Containing 'pop'
 
 ```{r}
 # Select columns containing 'pop'
 gapminder %>% select(contains('pop')) %>% head()
 ```
 
-# Filtering Rows
-
-Use `filter()` to subset rows based on conditions.
-
-## Filter for Belgium
-
-```{r}
-# Filter for Belgium
-filt_data <- gapminder %>% filter(country == "Belgium") %>% head(8)
-filt_data
-```
-
-## Filter with multiple conditions
-
-```{r}
-# Filter with multiple conditions
-gapminder %>% 
-  filter(country == "Oman" & year > 1980 & year <= 2000) %>% 
-  head(8)
-```
-
-## Filter using %in% operator
-
-```{r}
-# Filter using %in% operator
-scandinavia <- c("Denmark", "Iceland", "Norway", "Sweden", "Finland")
-res <- gapminder %>% filter(country %in% scandinavia)
-head(res)
-```
-
-# Combining Select and Filter
-
-Combine `select()` and `filter()` to extract specific data.
-
-```{r}
-uk_gdp <- gapminder %>%
-  filter(country == "United Kingdom") %>%
-  select(country, year, gdpPercap)
-head(uk_gdp)
-```
-
-# Mutating Data
-
-Use `mutate()` to create new columns and `transmute()` to keep only new columns.
-
-# Using Mutate to add new columns
-
-```{r}
-# Add new columns
-gapminder %>%  
-  mutate(pop_million = pop / 1000000,
-         countName = substring(country, 1, 3)) %>%
-  head()
-```
-
-# Using Mutate to Keep only new columns
-
-```{r}
-# Keep only new columns
-gapminder %>% transmute(total_years = lifeExp * pop) %>% head()
-```
-
-# Using Mutate to Classify GDP per capita
-
-```{r}
-# Classify GDP per capita
-gapminder %>%
-  mutate(GDP_Category = ifelse(gdpPercap > 10000, "High", "Low")) %>%
-  select(country, year, gdpPercap, GDP_Category) %>%
-  head(10)
-```
-
-# Arranging Data
-
-Sort data using `arrange()`.
-
-## Sort in ascending order
-
-```{r}
-# Sort in ascending order
-gapminder %>% arrange(year, gdpPercap) %>% head()
-```
-
-## Sort in descending order
-
-```{r}
-# Sort in descending order
-gapminder %>% arrange(year, desc(gdpPercap)) %>% head()
-```
-
-## Summarizing Data
-
-Compute summary statistics with `summarise()`.
-
-```{r}
-scandinavia <- c("Denmark", "Iceland", "Norway", "Sweden", "Finland")
-gapminder %>% 
-  filter(year == 1982 & country %in% scandinavia) %>% 
-  summarise(n_obs = n(),
-            total_pop = sum(pop),
-            mean_life_exp = mean(lifeExp),
-            range_life_exp = max(lifeExp) - min(lifeExp))
-```
-
-## Grouping Data
-
-Group data with `group_by()` for per-group summaries.
-
-```{r}
-gapminder %>% 
-  group_by(year) %>% 
-  summarise(n_obs = n(),
-            n_countries = n_distinct(country),
-            total_pop = sum(pop),
-            mean_life_exp = mean(lifeExp),
-            range_life_exp = max(lifeExp) - min(lifeExp))
-```
-
-# Joining Data
-
-Perform joins using `inner_join()`, `left_join()`, `right_join()`, and `full_join()`.
-
-## Example data for joining
-
-```{r}
-# Create sample datasets
-employees <- data.frame(
-  id = c(1, 2, 3, 4),
-  name = c("Alice", "Bob", "Charlie", "David"),
-  age = c(25, 30, 22, 28)
-)
-```
-
-------------------------------------------------------------------------
-
-```{r}
-# Create sample datasets
-departments <- data.frame(
-  id = c(2, 3, 5, 6),
-  department = c("HR", "Finance", "IT", "Sales")
-)
-```
-
-## Inner join
-
-```{r}
-# Perform inner join
-employees %>% inner_join(departments, by = "id")
-```
-
-## left join
-
-```{r}
-# Perform left join
-employees %>% left_join(departments, by = "id")
-```
-
-## right join
-
-```{r}
-# Perform right join
-employees %>% right_join(departments, by = "id")
-```
-
-## full join
-
-```{r}
-# Perform full join
-employees %>% full_join(departments, by = "id")
-```
-
-# Reading and Writing Files
-
-Use `readr` to read and write delimited files, and `openxlsx` for Excel files.
-
-## Write to a file
-
-```{r}
-# Write to a file
-write_delim(res, "data/gapminder2.txt", delim = "\t")
-```
-
-## Write to Excel
-
-```{r}
-# Write to Excel
-write.xlsx(res, file = "data/gapm3.xlsx", sheetName = "gap", colNames = TRUE, rowNames = TRUE)
-```
-
-## Read from Excel
-
-```{r}
-# Read from Excel
-xl <- read.xlsx("data/gapm3.xlsx", sheet = "gap")
-```
-
-# Tidying Data with tidyr
-
-Handle missing values using `tidyr`.
-
-## Sample data with missing values
-
-```{r}
-# Sample data with missing values
-df <- data.frame(
-  Name = c("Alice", "Bob", "Charlie", NA, "Eve"),
-  Age = c(25, NA, 30, 28, 22),
-  Score = c(80, 90, NA, 75, 95)
-)
-```
-
-## Remove rows with any NA
-
-```{r}
-# Remove rows with any NA
-df_clean <- drop_na(df)
-```
-
-## Remove rows with NA in specific column
-
-```{r}
-# Remove rows with NA in specific column
-df_clean_age <- drop_na(df, Age)
-```
-
-## Replace NA values
-
-```{r}
-# Replace NA values
-df_filled <- df %>% replace_na(list(Age = 0, Score = 50, Name = "Unknown"))
-```
-
-# String Manipulation with stringr
+## String Manipulation with stringr
 
 Perform string operations using `stringr`.
 
@@ -467,11 +690,14 @@ Here we split the sentence up into a list of words
 print(words[[1]][3])
 ```
 
-We can print specific works in the list
+We can print a specific word from the list.
 
 ## Extract substring with stringr
 
-`{r stringr3}#| echo: true #| echo: true # Extract substring sub_text <- str_sub(text, 7, 11) print(sub_text)`
+```{r}
+sub_text <- str_sub(text, 7, 11)
+print(sub_text)
+```
 
 we can extract a substring
 
@@ -485,17 +711,7 @@ print(text)
 
 and we can replace a substring directly
 
-# Visualizations with ggplot2
-
-Create visualizations using `ggplot2`.
-
-## Scatter plot with ggplot2
-
-```{r}
-# Basic scatter plot
-ggplot(data = gapminder, aes(x = lifeExp, y = gdpPercap)) +
-  geom_point()
-```
+## Additional Plotting Styles
 
 ## Bar plot with ggplot2
 
@@ -564,7 +780,9 @@ ggplot(data = gapminder, aes(x = lifeExp, y = gdpPercap)) +
   facet_wrap(~continent)
 ```
 
-## Customized axes
+## Customised Axes
+
+The existing scale limits below remove out-of-range values before statistical layers are calculated. This can change a smooth as well as the visible points. Inspect warnings and exclusions. If you intend only to zoom the view, the [ggplot2 coordinate documentation](https://ggplot2.tidyverse.org/reference/coord_cartesian.html) explains `coord_cartesian()`; the example limits are retained here so this distinction is visible.
 
 ```{r}
 # Customized axes
@@ -674,7 +892,7 @@ p <- ggplot(data = gapminder, aes(x = lifeExp, y = gdpPercap, fill = continent))
 ggMarginal(p, type = "histogram")
 ```
 
-# Saving Plots
+## Saving Plots
 
 Save a plot to a file using `ggsave`.
 
@@ -685,12 +903,14 @@ p1 <- ggplot(data = gapminder, aes(x = lifeExp, y = gdpPercap)) +
   scale_fill_brewer(palette = "Set2") +
   theme_minimal()
 print(getwd())
-ggsave("myplot.png", plot = p1)
+ggsave("output/myplot.png", plot = p1)
 ```
 
-# Exercise Solutions
+# Optional Exercise Bank and Worked Answers
 
-Below are the solutions to the provided exercises.
+Choose exercises that consolidate the topic you need. Predict a result and save your attempt before inspecting the worked code. Exercises 1–5 practise selection; 7–11 practise sorting and summaries; 12–14 revisit joins, files and paths. Exercise 6 deliberately illustrates an unsupported request and should be discussed as a data-coverage check.
+
+The worked answers below preserve the existing examples and analytical thresholds.
 
 ## Exercise 1: Select year, lifeExp, and country
 
@@ -727,7 +947,9 @@ gapminder %>% filter(year == 1977, country == "Ireland")
 gapminder %>% filter(year == 1977, country == "Brazil")
 ```
 
-## Exercise 6: African countries in 2012 with specific criteria
+## Exercise 6: Diagnose a Request the Dataset Cannot Answer
+
+The inherited request asks for African countries in 2012 with `pop <= 3` and `lifeExp >= 70`. The packaged data end in 2007, and `pop` records people, so 3 is not three million. The code below preserves the original conditions and returns no observations. Explain both issues to the requester; do not silently change the year, population unit or threshold. A revised analysis requires an agreed question or another verified data source.
 
 ```{r}
 df <- gapminder %>%
@@ -786,10 +1008,10 @@ Already demonstrated in the "Joining Data" section above.
 
 ## Exercise 13: Read a file
 
-This requires a file like `gapminder.xlsx`. Assuming it's available:
+Use the `output/gapm3.xlsx` file created in the file-writing example above:
 
 ```{r}
-xl <- read.xlsx("data/gapm3.xlsx", sheet = "gap")
+xl <- read.xlsx("output/gapm3.xlsx", sheet = "gap")
 head(xl)
 ```
 
@@ -805,8 +1027,36 @@ last_element <- path_parts[length(path_parts)]
 print(last_element)
 ```
 
-# Conclusion
+# Further Information
 
-This document covers key `tidyverse` functionalities and `ggplot2` visualizations using the `gapminder` dataset. It includes data manipulation, file handling, string manipulation, and various plotting techniques, along with solutions to the exercises.
+::: callout-keypoints
+## 📚 Key Points
 
-To download this R Markdown file, save it with a `.Rmd` extension and open it in RStudio or another R Markdown-compatible environment.
+- Inspect identifiers, units and available years before selecting observations.
+- Record grouping, weighting, unmatched joins and missing-value decisions explicitly.
+- Save derived tables and figures separately and check them against source records.
+:::
+
+::: callout-hints
+## 🔦 Hints
+
+- An empty subset may expose a question the dataset cannot answer.
+- Scale limits can remove observations; inspect warnings before interpreting a plot.
+- Save the script, restart R and run it from the beginning to check hidden dependencies.
+:::
+
+## Module Summary
+
+You have selected and summarised records, accounted for join behaviour and produced a checked plot. Keep the saved analysis and its assumptions together. For further practice, use the [learner Gapminder workflow](../learners/additional_material.qmd).
+
+## Additional Learning
+
+- [Reference](../learners/reference.qmd): syntax and terminology.
+- [Discussion](../learners/discuss.qmd): explain missing values, selection and interpretation.
+- [dplyr introduction](https://dplyr.tidyverse.org/articles/dplyr.html): transformation and grouping.
+- [ggplot2 documentation](https://ggplot2.tidyverse.org/): labels, geoms and scales.
+- [R for Data Science](https://r4ds.hadley.nz/): a structured next step after the four sessions.
+
+For local practice, copy the relevant code into a saved R script in the course project. This page is a Quarto document; changing its extension to `.Rmd` is not required to work through the examples.
+
+[Course Overview](../index.qmd) · [Previous: Iteration](04-for_loops.qmd) · [Further Practice](../learners/additional_material.qmd)

@@ -87,3 +87,11 @@ That is completely fine. You can still participate fully by:
 - critiquing sample AI outputs
 - comparing workflows and validation steps
 - discussing governance, disclosure, and documentation choices
+
+## After the Course
+
+Use the [Additional Material](additional_material.qmd) to practise with a self-contained fictional source, retain an AI use record and plan one checked workflow. These are optional follow-up activities and do not require paid tool access.
+
+## Course Navigation
+
+[Course Overview](../index.qmd) · [Setup](setup.qmd) · [Additional Material](additional_material.qmd) · [Reference](reference.qmd) · [Discussion](discuss.qmd)

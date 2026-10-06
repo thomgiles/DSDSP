@@ -2,14 +2,138 @@
 title: Extra Exercises
 ---
 
-## Exercise 1: Vector and Indexing Practice
+These optional five-minute exercises consolidate the four sessions. Choose a relevant task; they are not extra requirements inside the 100-minute core plan. Work in pairs, ask for a prediction before execution and take two reasoned responses from the room. Learners can continue independently using [Additional Material](../learners/additional_material.qmd).
 
-Create a numeric vector, select subsets using index positions, and compute summary statistics.
+## Exercise 1: Preserve IDs while Selecting Measurements
 
-## Exercise 2: Loop-to-Function Refactor
+**Use after:** [Session 1: Foundations](../episodes/01-Rstudio_intro.qmd). **Goal:** select records without losing identity or units.
 
-Take a loop-based script and refactor repeated logic into a reusable function.
+**Input:** this fictional teaching table:
 
-## Exercise 3: Data Wrangling Challenge
+```r
+samples <- data.frame(
+    sample_id = c("A", "B", "C"),
+    mass_g = c(2.1, 2.4, 1.8),
+    checked = c(TRUE, FALSE, TRUE)
+)
+```
 
-Using a small tabular dataset, perform filtering, grouping, and summary reporting.
+::: panel-tabset
+##### Task (5 min)
+
+1. **1 min:** predict which IDs have `checked == TRUE`.
+2. **2 min:** select those rows and retain `sample_id` and `mass_g`.
+3. **1 min:** compare the selected IDs, order and values with the source.
+4. **1 min:** two pairs explain why a table of masses alone would weaken the handover.
+
+**Keep:** the selected table and source check. **If access fails:** mark the retained rows on the displayed table.
+
+##### Worked Answer and Debrief
+
+```r
+checked_samples <- samples[samples$checked, c("sample_id", "mass_g")]
+stopifnot(identical(checked_samples$sample_id, c("A", "C")))
+stopifnot(isTRUE(all.equal(checked_samples$mass_g, c(2.1, 1.8))))
+```
+
+The output retains A and C in source order. The check should account for identifiers and values; successful execution alone would not reveal that the wrong records were selected.
+:::
+
+## Exercise 2: Give a Function a Known-Value Check
+
+**Use after:** [Session 2: Functions](../episodes/03-R_functions.qmd). **Goal:** document and test a conversion before reuse.
+
+**Input:** the session's `fahr_to_celsius()` function and known values 32 °F = 0 °C and 212 °F = 100 °C.
+
+::: panel-tabset
+##### Task (5 min)
+
+1. **1 min:** identify the input and output units.
+2. **2 min:** test both known values and a vector containing them.
+3. **1 min:** add a comment explaining the units and missing-value expectation.
+4. **1 min:** two pairs report a check that would detect an incorrect offset.
+
+**Keep:** the function comment and tests. **If access fails:** substitute the known values into the displayed formula.
+
+##### Worked Answer and Debrief
+
+```r
+fahr_to_celsius <- function(temp) {
+    (temp - 32) * (5 / 9)
+}
+stopifnot(isTRUE(all.equal(fahr_to_celsius(32), 0)))
+stopifnot(isTRUE(all.equal(fahr_to_celsius(212), 100)))
+stopifnot(isTRUE(all.equal(fahr_to_celsius(c(32, 212)), c(0, 100))))
+```
+
+These checks establish the expected results for the selected cases. A missing input produces a missing value with this implementation; whether that is acceptable belongs in the workflow's input contract.
+:::
+
+## Exercise 3: Reuse a Function inside a Loop
+
+**Use after:** [Session 3: Iteration](../episodes/04-for_loops.qmd). **Goal:** separate one selection from its repetition.
+
+**Input:** `gapminder::gapminder` and country names `Ireland` and `Brazil`.
+
+::: panel-tabset
+##### Task (5 min)
+
+1. **1 min:** describe what changes between the two selections.
+2. **2 min:** create a function selecting one country, then call it inside a loop and keep the resulting tables in a named list.
+3. **1 min:** check that each table contains its named country and retains `year`.
+4. **1 min:** two pairs explain which part would need changing to support another country.
+
+**Keep:** the helper function, loop and checked tables. **If access fails:** trace the two iterations on paper.
+
+##### Worked Answer and Debrief
+
+```r
+select_country <- function(dat, country_name) {
+    dat[as.character(dat$country) == country_name, ]
+}
+
+countries <- c("Ireland", "Brazil")
+tables <- setNames(vector("list", length(countries)), countries)
+for (country_name in countries) {
+    tables[[country_name]] <- select_country(gapminder::gapminder, country_name)
+    stopifnot(all(as.character(tables[[country_name]]$country) == country_name))
+    stopifnot("year" %in% names(tables[[country_name]]))
+}
+```
+
+The function implements one selection; the loop supplies different names. Keep the original data and identifiers unchanged. An unrecognised country can produce an empty table, so inspect the number of selected rows before assuming success.
+:::
+
+## Exercise 4: Explain the Level of a Grouped Summary
+
+**Use after:** [Session 4: Data Analysis](../episodes/05-the_tidyverse.qmd). **Goal:** state the observations and weighting behind a summary.
+
+**Input:** the packaged Gapminder table, restricted to the recorded year 2007.
+
+::: panel-tabset
+##### Task (5 min)
+
+1. **1 min:** inspect the year and observation level.
+2. **2 min:** group by continent and calculate country counts and mean life expectancy.
+3. **1 min:** compare one group's count and mean with a direct calculation on its source rows.
+4. **1 min:** two pairs explain whether the mean gives equal weight to countries or individual people.
+
+**Keep:** the summary and a sentence about its weighting. **If access fails:** annotate the instructor's table and identify the records combined by one group.
+
+##### Worked Answer and Debrief
+
+```r
+library(dplyr)
+selected <- gapminder::gapminder %>% filter(year == 2007)
+summary_table <- selected %>%
+    group_by(continent) %>%
+    summarise(n_countries = n_distinct(country), mean_life_exp_years = mean(lifeExp))
+stopifnot(sum(summary_table$n_countries) == nrow(selected))
+```
+
+The mean weights country observations equally. It is not a population-weighted global or continental mean. The count check accounts for rows under the known country–year key; a direct value comparison is still needed to check the calculation.
+:::
+
+## Course Navigation
+
+[Course Overview](../index.qmd) · [Instructor Notes](instructor-notes.qmd) · [Additional Material](additional_material.qmd) · [Extra Exercises](extra_exercises.qmd) · [Learner Setup](../learners/setup.qmd)

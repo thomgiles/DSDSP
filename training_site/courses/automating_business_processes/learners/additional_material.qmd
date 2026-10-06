@@ -4,7 +4,7 @@ title: "Additional Material"
 
 # Additional Material
 
-This page gives extra examples for learners who want to recognise more Power Automate screens after the workshop.
+This page extends [Power Automate Fundamentals](../episodes/01-power_automate.qmd) with screen examples, a safe test matrix and a reusable handover record. Use [Setup](setup.qmd) for access and the supplied files, and [Reference](reference.qmd) for terms and troubleshooting.
 
 The aim is not to memorise every button. The aim is to understand what each screen is asking you to decide.
 
@@ -22,7 +22,7 @@ Most Power Automate screens are asking one of five questions:
 
 ## Choosing a Trigger
 
-![Microsoft Learn example showing trigger search when creating a flow.](../episodes/fig/ms-flow-search-trigger.png){fig-align="center" width="70%"}
+![Microsoft Learn example showing trigger search when creating a flow.](../episodes/fig/ms-flow-search-trigger.png){fig-alt="Power Automate trigger search showing that the flow start event is selected before later actions." fig-align="center" width="70%"}
 
 > 🚦 The trigger is the start line. Choose it based on how the real work begins, not based on the final action you want to perform.
 
@@ -34,7 +34,7 @@ Examples:
 
 ## Trigger Settings
 
-![Microsoft Learn example of a SharePoint trigger configuration screen.](../episodes/fig/ms-sharepoint-trigger-config.png){fig-align="center" width="82%"}
+![Microsoft Learn example of a SharePoint trigger configuration screen.](../episodes/fig/ms-sharepoint-trigger-config.png){fig-alt="SharePoint trigger configuration with site and list settings that determine which events start the flow." fig-align="center" width="82%"}
 
 > 📍 Trigger settings tell Power Automate where to watch for the event.
 
@@ -48,7 +48,7 @@ A common mistake is choosing the right connector but the wrong location. If a fl
 
 ## Suggested Flows
 
-![Microsoft Learn example of Copilot suggesting a flow design.](../episodes/fig/ms-flow-copilot-suggested-flow.png){fig-align="center" width="78%"}
+![Microsoft Learn example of Copilot suggesting a flow design.](../episodes/fig/ms-flow-copilot-suggested-flow.png){fig-alt="Copilot proposes a trigger and actions that must be checked against the intended process before use." fig-align="center" width="78%"}
 
 > 🧪 Suggested flows can be useful starting points, but they still need checking.
 
@@ -81,7 +81,7 @@ Useful Microsoft references:
 
 ## Dynamic Content
 
-![Microsoft Learn example showing dynamic content in the new designer.](../episodes/fig/ms-dynamic-content-new-designer.png){fig-align="center" width="78%"}
+![Microsoft Learn example showing dynamic content in the new designer.](../episodes/fig/ms-dynamic-content-new-designer.png){fig-alt="The dynamic-content picker lists output values from earlier steps for mapping into a later action." fig-align="center" width="78%"}
 
 > 🧩 Dynamic content is data from earlier steps that you can reuse later in the flow.
 
@@ -96,15 +96,15 @@ Dynamic content is powerful, but it can also be confusing. If you are not sure w
 
 ## Approvals
 
-![Microsoft Learn example showing the approval action selection screen.](../episodes/fig/ms-select-approval-action.png){fig-align="center" width="70%"}
+![Microsoft Learn example showing the approval action selection screen.](../episodes/fig/ms-select-approval-action.png){fig-alt="Approval action choices include creating an approval and waiting for its response." fig-align="center" width="70%"}
 
-> ✅ Approval actions pause the flow until a person responds.
+> ✅ **Start and wait for an approval** waits for a response before continuing. Choose an approval action that matches the intended workflow.
 
 Use approvals when the next step depends on a human decision. Do not use them just to notify someone. If no decision is needed, send an email or Teams message instead.
 
 ## Approval Details
 
-![Microsoft Learn example showing an approval configuration screen.](../episodes/fig/ms-approval-config.png){fig-align="center" width="68%"}
+![Microsoft Learn example showing an approval configuration screen.](../episodes/fig/ms-approval-config.png){fig-alt="Approval configuration collects the decision type, recipient and context for the approver." fig-align="center" width="68%"}
 
 > 📝 A good approval gives the approver enough context to decide without opening five other systems.
 
@@ -119,7 +119,7 @@ Include:
 
 ## Branching After an Approval
 
-![Microsoft Learn example showing a condition based on the approval result.](../episodes/fig/ms-approval-condition.png){fig-align="center" width="72%"}
+![Microsoft Learn example showing a condition based on the approval result.](../episodes/fig/ms-approval-condition.png){fig-alt="A condition checks the approval outcome and routes the flow to approved or rejected actions." fig-align="center" width="72%"}
 
 > 🔀 Approval is not the end of the flow. The outcome should route the next action.
 
@@ -133,7 +133,7 @@ Rejection is not a technical error. It is a valid business outcome.
 
 ## Approval Overview
 
-![Microsoft Learn example summarising the approval flow pattern.](../episodes/fig/ms-approval-overview.png){fig-align="center" width="78%"}
+![Microsoft Learn example summarising the approval flow pattern.](../episodes/fig/ms-approval-overview.png){fig-alt="An approval workflow connects a request, human decision and resulting flow actions." fig-align="center" width="78%"}
 
 > 🧾 Approvals are useful because they create both a message and a decision record.
 
@@ -147,7 +147,7 @@ For important flows, think about where the official decision record should live:
 
 ## Updating an Item or Record
 
-![Microsoft Learn example showing an update item action configuration.](../episodes/fig/ms-update-item-config.png){fig-align="center" width="55%"}
+![Microsoft Learn example showing an update item action configuration.](../episodes/fig/ms-update-item-config.png){fig-alt="An update action selects a record and maps outcome values back into its fields." fig-align="center" width="55%"}
 
 > ✍️ Update actions write the result back to the system of record.
 
@@ -161,7 +161,7 @@ This is what turns a notification flow into a process flow. A useful automation 
 
 ## Run History
 
-![Microsoft Learn example showing the run history menu for a flow.](../episodes/fig/ms-flow-run-history-menu.png){fig-align="center" width="78%"}
+![Microsoft Learn example showing the run history menu for a flow.](../episodes/fig/ms-flow-run-history-menu.png){fig-alt="A flow run-history menu gives access to individual runs for inspecting steps and errors." fig-align="center" width="78%"}
 
 > 🔎 Run history is the first place to look when a flow behaves unexpectedly.
 
@@ -185,6 +185,65 @@ These are the same files used in the workshop:
 
 Use test rows and your own email address before trying any real process.
 
+## Safe Test Matrix
+
+Do not judge a flow only by one successful run. Make a practice copy, keep test recipients under your control and use this matrix to decide what evidence to inspect. The results below are **expected outcomes to design and test**, not claims that the supplied workbook already implements these features.
+
+| Test case | Expected behaviour | Evidence to retain |
+|---|---|---|
+| One valid request or row | Perform the intended action once and record its outcome | Relevant run steps, test message and source-record state |
+| Missing required value | Stop or route for review with an understandable explanation | Validation outcome; confirmation that no unintended message was sent |
+| Approval rejected | Record rejection and notify the requester appropriately | Rejection branch and durable decision record |
+| Approval receives no response | Follow a defined timeout or manual follow-up route | Timeout handling and named follow-up owner |
+| Same request or row processed again | Avoid an unintended duplicate, or flag it before repeating the effect | Stable request identifier or status check and repeat-run result |
+| Action loses file access | Report the failed step and identify who can resolve it | Run error and escalation route, without sharing restricted inputs |
+
+The supplied Excel table has only name and email columns. If you extend the design to track processing, add fields such as a stable `RequestID`, `Status` and `SentAt` to **your practice copy**, then update and test the mapping deliberately. Do not assume that the example already prevents duplicate sends.
+
+### Paired Practice: Design Two Tests (5 min)
+
+::: callout-task
+
+**Goal:** identify checks that a single successful run would miss.
+
+**Input:** the test matrix and a sketch of your workshop flow. Work in pairs.
+
+1. **1 min:** choose one ordinary case and one failure or repeat case.
+2. **2 min:** write the input, expected result and evidence needed for each.
+3. **1 min:** the partner checks that the test cannot send to a real mailing list or alter a live record.
+4. **1 min:** two pairs report their failure test to the room; the instructor asks who would respond if it happened.
+
+**Keep:** the two-case test plan and the name of the role responsible for follow-up.
+
+**If Power Automate access is unavailable:** inspect the flow sketch and write the tests without running them. Mark the results as untested.
+
+:::
+
+**Debrief:** a useful test describes observable evidence, not just “the flow succeeds”. Rejection is an expected business outcome, and a technical failure needs a different handling route. Re-running a failed flow may repeat an action that already succeeded, so inspect the run and source state before retrying.
+
+## Flow Handover Record
+
+Keep this record with the authoritative process documentation. Use role names where possible and avoid copying secrets or restricted run-history inputs.
+
+```text
+Flow name and purpose:
+Environment and location:
+Process owner and maintenance contact:
+Trigger, schedule or event:
+Input locations and stable record identifiers:
+Connections, account owners and access requirements:
+Decisions requiring human review:
+Authoritative record and status values:
+Outputs, recipients and test recipients:
+Repeat-run and duplicate-handling design:
+Failure, timeout and notification routes:
+Test cases, dates and outcomes:
+How to pause the flow and resume safely:
+Review date and changes still needed:
+```
+
+For a proposed live workflow, take the record to the relevant process owner or support team. Confirm access, ownership and maintenance arrangements before relying on it for a shared service.
+
 ## Further Microsoft Learning
 
 These Microsoft Learn pages are useful follow-up reading:
@@ -193,5 +252,10 @@ These Microsoft Learn pages are useful follow-up reading:
 - [Use expressions in conditions](https://learn.microsoft.com/en-us/power-automate/use-expressions-in-conditions)
 - [Modern approvals in Power Automate](https://learn.microsoft.com/en-us/power-automate/modern-approvals)
 - [Power Automate connector reference](https://learn.microsoft.com/en-us/connectors/connector-reference/)
+- [Error handling: run-after settings, scopes and retries](https://learn.microsoft.com/en-us/power-automate/guidance/coding-guidelines/error-handling)
 
 > 🎯 Read these as examples of patterns, not as scripts to copy blindly. Your flow still needs the right owner, permissions, test data, and record location.
+
+## Course Navigation
+
+[Course Overview](../index.qmd) · [Setup](setup.qmd) · [Additional Material](additional_material.qmd) · [Reference](reference.qmd) · [Discussion](discuss.qmd)

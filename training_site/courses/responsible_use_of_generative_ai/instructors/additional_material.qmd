@@ -4,6 +4,8 @@ title: Additional Material
 
 ## Purpose
 
+For ready-to-use sources and expected answers, start with the [learner practice pack](../learners/additional_material.qmd). It supplies three five-minute tasks with a fictional study extract, an authored AI-style response, prompt revision and an AI use record. The [Extra Exercises](extra_exercises.qmd) give longer extension options.
+
 Use this page for optional additions when you have extra time, a more confident cohort, or a strong local example to work with. The best extensions still deepen judgement rather than simply adding more AI content.
 
 ## Optional Extensions by Theme
@@ -37,3 +39,11 @@ If you want richer discussion, bring one or more of the following:
 ## Extension Design Principle
 
 If time is limited, choose one richer case study with a strong debrief over several disconnected mini-tasks. In AI teaching, depth usually beats breadth.
+
+## Guidance to Recheck Before Delivery
+
+Use the [primary guidance table](../learners/additional_material.qmd#primary-guidance) to revisit university, funder, publisher and research-integrity guidance. Record the sources you checked in the session plan. Discuss differences between roles and contexts rather than turning one organisation's rule into a universal claim.
+
+## Course Navigation
+
+[Course Overview](../index.qmd) · [Instructor Notes](instructor-notes.qmd) · [Additional Material](additional_material.qmd) · [Extra Exercises](extra_exercises.qmd) · [Learner Setup](../learners/setup.qmd)

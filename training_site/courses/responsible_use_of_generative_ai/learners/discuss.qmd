@@ -44,6 +44,10 @@ Use after any lesson when learners are thinking about defensibility and accounta
 
 ## Group Debrief Format
 
+For a focused five-minute room activity, choose **one** question above. Spend one minute thinking individually, two minutes comparing in pairs, one minute recording a decision and its evidence, and one minute hearing two pairs report to the room. Keep a note stating **what we would do, what we would check and what remains uncertain**.
+
+Use the [fictional practice source](additional_material.qmd#practice-source-a-fictional-research-note) if you do not have a permitted real example. No AI account is needed. The debrief should distinguish an evidence-backed answer from a policy question that still needs a local source.
+
 After a small-group discussion, ask each group to report:
 
 - one use of AI they would keep
@@ -56,3 +60,7 @@ After a small-group discussion, ask each group to report:
 2. What is one thing you can now use AI for more confidently?
 3. Which validation or documentation habit will you adopt first?
 4. What question about AI use still needs a policy, governance, or local support answer?
+
+## Course Navigation
+
+[Course Overview](../index.qmd) · [Setup](setup.qmd) · [Additional Material](additional_material.qmd) · [Reference](reference.qmd) · [Discussion](discuss.qmd)

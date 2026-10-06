@@ -1,69 +1,309 @@
 ---
-title: "For Loops"
+title: "Iteration and Repeatable Workflows in R"
 module-icon: "🔁"
+module-number: "3"
 author: "DRS Training"
+metadata:
+  teaching: 60
+  exercises: 30
 ---
 
-# R For Loops
+::: callout-outcomes
+## 💡 Learning Outcomes
 
-Loops are a useful part of many programming languages but are perhaps used in more limited ways in R due to the extensive use of "Vectorization".  
+- Trace a `for` loop and distinguish the current value from its position.
+- Retain named results and choose a loop, vectorised operation or reusable function.
+- Diagnose incomplete outputs and record missing inputs explicitly.
+- Repeat a checked operation across Gapminder groups without changing the source.
+- Export, read back and document derived files so a collaborator can review a run.
+:::
 
-"Most of R's functions are vectorized, meaning that the function will operate on all elements of a vector without needing to loop through and act on each element one at a time. This makes writing code more concise, easy to read, and less error prone."
+::: callout-questions
+## ❓ Questions
 
-Vectorization approaches are also used extensively within dataframes.  
----
+1. When does a repeated task need a loop, and when will a vectorised operation do?
+2. What changes on each iteration and what should remain unchanged?
+3. How will we notice a missing output, wrong selection or unexpected overwrite?
+:::
 
-The general structure of a for loop is:
+## Structure & Agenda
+
+| Block | Teaching | Activity | Output to keep |
+|---|---:|---:|---|
+| Loop values and positions | 10 min | 5 min | A predicted and checked trace |
+| Retain results and compare approaches | 10 min | 5 min | Named numerical results and a reasoned choice |
+| Conditions and loop diagnosis | 10 min | 5 min | A missing-input record and a diagnostic check |
+| **Break** | — | **10 min break** | — |
+| Repeat operations over groups and lists | 10 min | 5 min | Checked continent tables and row counts |
+| Plan and write separate file outputs | 10 min | 5 min | A fresh run folder and output record |
+| Read back, rerun and hand over | 10 min | 5 min | A checked export record and saved script |
+| **Total** | **60 min** | **30 min** | **100 min including the break** |
+
+This is **session 3 of four**, with the same 100-minute plan used throughout the course: 60 minutes teaching, 30 minutes activities and a separate 10-minute break. Debriefs are included in activity time.
+
+## Starting Point and Preparation
+
+- **Starting point:** use assignment, indexing and the functions introduced in [R Foundations](01-Rstudio_intro.qmd) and [Functions](03-R_functions.qmd).
+- **Tools and materials:** open the course project and save a script named `iteration.R`. Use `gapminder`, `dplyr` and `readr`, prepared in [Setup](../learners/setup.qmd); no additional packages are needed.
+- **Working arrangement:** pairs, with one operator and one checker; swap roles between tasks.
+- **Access fallback:** share a screen or annotate the instructor's code and output. Retain the proposed selections and checks even when you cannot execute them.
+- **File outputs:** use a new folder for each practice run, separate from input data. Save your script and existing work before restarting R.
+
+# Trace a Repeated Task
+
+## A Research Task with Several Outputs
+
+A collaborator needs one historical country-level table for each continent in the Gapminder teaching dataset. Repeating nearly identical filtering and exporting commands is easy to get wrong. First check one selection, then repeat that same operation across the named groups.
+
+**Room question:** ask pairs for a repeated research task, the item that changes each time and a check they could apply to every result.
+
+## Make One Iteration Visible
+
+```{=html}
+<figure aria-labelledby="iteration-workflow-caption">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 265" role="img" aria-labelledby="iteration-workflow-title iteration-workflow-desc" style="width:100%; height:auto;">
+  <title id="iteration-workflow-title">A checked iteration workflow</title>
+  <desc id="iteration-workflow-desc">Take the next named item, perform the same operation, check the result and retain it with its identity. Return to the next item until the sequence is finished. A failed check stops the workflow for investigation.</desc>
+  <defs><marker id="iteration-arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M1 1 L8 5 L1 9 Z" fill="#405162"/></marker></defs>
+  <rect width="1200" height="265" rx="24" fill="#f7fbfc"/>
+  <g font-family="sans-serif" text-anchor="middle">
+    <g fill="none" stroke="#405162" stroke-width="3" marker-end="url(#iteration-arrow)">
+      <path d="M294 103 H319"/><path d="M584 103 H609"/><path d="M874 103 H899"/>
+      <path d="M1035 165 V224 H165 V172"/>
+    </g>
+    <rect x="36" y="45" width="258" height="120" rx="18" fill="#006781"/>
+    <rect x="326" y="45" width="258" height="120" rx="18" fill="#298582"/>
+    <rect x="616" y="45" width="258" height="120" rx="18" fill="#405162"/>
+    <rect x="906" y="45" width="258" height="120" rx="18" fill="#10263b"/>
+    <g fill="#ffffff">
+      <text x="165" y="84" font-size="29" font-weight="700">Next item</text><text x="165" y="125" font-size="23">Keep its identity</text>
+      <text x="455" y="84" font-size="29" font-weight="700">Operation</text><text x="455" y="125" font-size="23">Repeat the same step</text>
+      <text x="745" y="84" font-size="29" font-weight="700">Check</text><text x="745" y="125" font-size="23">Compare with input</text>
+      <text x="1035" y="84" font-size="29" font-weight="700">Retain</text><text x="1035" y="125" font-size="23">Result and record</text>
+    </g>
+    <rect x="376" y="204" width="448" height="39" rx="12" fill="#f7fbfc"/>
+    <text x="600" y="232" font-size="23" font-weight="700" fill="#006781">Repeat until the sequence is finished</text>
+  </g>
+</svg>
+<figcaption id="iteration-workflow-caption">Repeat the operation, preserving the identity and checks of every result.</figcaption>
+</figure>
+```
+
+Automation repeats mistakes as readily as correct work. Check one small example before increasing the number of iterations.
+
+## A `for` Loop
 
 ```{r}
-sequence=c(1:10)
-for (val in sequence)
-{
-  # do something
+sequence <- 1:10
+for (val in sequence) {
+    # Carry out an action using this iteration's value.
 }
 ```
 
----
+The loop takes each value in `sequence` in order. The body inside `{}` is executed for that value before the next iteration begins. The empty body above is a syntax scaffold: it performs no useful action yet. Use a descriptive loop-variable name in a working script.
 
-The sequence is a vector/list and val takes on each of element of the sequence in turn during the loop. In each iteration, the main code is evaluated in conjunction with that value.  
-
----
-
-## Task 1
-
-Copy the provided test code and run it
-
+## Work Through a Small Example
 
 ```{r}
-for(i in 1:10){
-  cat(paste(i, '*', i, '=', i^2, '\n'))
+for (i in 1:10) {
+    cat(paste(i, "*", i, "=", i^2, "\n"))
 }
-
 ```
 
-## Task 2
+Predict the first and last line before running it. The code prints each value and its square; it does not return a saved table of results.
 
-Try a vectorised alternative 
+## A Value Is Not Its Position
 
+```{r}
+chosen_values <- c(2, 4, 6)
+
+for (value in chosen_values) {
+    cat("value:", value, "square:", value^2, "\n")
+}
+
+for (index in seq_along(chosen_values)) {
+    cat("position:", index, "value:", chosen_values[index], "\n")
+}
+```
+
+The first loop visits **2, 4, 6**; the second visits positions **1, 2, 3** and retrieves their values. Use positions when you need to place each result in a matching output position.
+
+`seq_along()` also gives an empty sequence for an empty vector. In contrast, `1:length(numeric(0))` produces `1:0`, containing two positions. Ask R to generate the valid positions rather than assuming there is always a first element. See the [R sequence documentation](https://stat.ethz.ch/R-manual/R-devel/library/base/html/seq.html).
+
+## Task 1: Trace Before Running (5 min)
+
+::: callout-task
+**Goal:** distinguish an iteration's value, position and output. **Input:** the square-printing loop and `chosen_values` above. Work in pairs.
+
+::: panel-tabset
+##### Do the Task
+
+1. **1 min:** predict the first, second and final printed lines.
+2. **2 min:** run the examples for `c(2, 4, 6)` and write one line showing position, input and square.
+3. **1 min:** compare `seq_along(numeric(0))` with `1:length(numeric(0))`; predict how many times each would run a loop.
+4. **1 min:** the instructor asks whether a loop over `chosen_values` visits positions or values. Vote by show of hands; two pairs explain their evidence.
+
+**Keep:** the annotated loop, three-row trace and empty-input note. **If access fails:** trace the iterations on paper using the displayed values.
+
+##### Debrief
+
+For `1:10`, the first square is 1 and the final square is 100. For `chosen_values`, positions 1, 2 and 3 contain values 2, 4 and 6. The calculation stays the same while the input changes. `seq_along()` produces no iterations for an empty input; `1:0` would incorrectly attempt two. Predicting a small result gives a check more useful than simply seeing many lines of output.
+:::
+:::
+
+# Retain Results and Choose a Clear Approach
+
+## Save a Result for Every Input
+
+Printing answers is useful during diagnosis, but later calculations need retained values. Allocate an output vector of the right length and place each result at the matching position:
+
+```{r}
+nums <- c(2, 4, 6)
+squares <- numeric(length(nums))
+
+for (index in seq_along(nums)) {
+    squares[index] <- nums[index]^2
+}
+
+square_record <- data.frame(input = nums, square = squares)
+square_record
+stopifnot(identical(squares, nums^2))
+```
+
+Initialising the container once keeps the output's length and order clear. Assigning only `answer <- nums[index]^2` on each iteration would replace the previous answer, leaving just the last square. Reinitialising `squares` inside the loop would discard earlier results too.
+
+## Vectorisation
+
+Many R operations act on an entire vector. The original example can also be written:
 
 ```{r}
 nums <- 1:10
-cat(paste(nums, '*', nums, '=', nums^2, collapse = "\n"))
-
+cat(paste(nums, "*", nums, "=", nums^2, collapse = "\n"))
 ```
 
----
+This calculates all squares in one expression. In `paste()`, `sep` controls separators between arguments, while `collapse` combines the resulting elements into one string. Read `?paste` and `?cat` when the output differs from your prediction.
 
-You can investigate the commands/functions cat and paste further using R help e.g: <strong>?cat</strong>
+## Reuse a Function over a Vector
 
----
+```{r}
+square_values <- function(values) {
+    values^2
+}
 
-**But some tasks do lend themselves to for loops, in particular reading things from or writing things to files**
+square_values(1:10)
+```
 
-## Task 3
+A function makes the operation reusable; vectorisation can make this numerical step clear without a loop. A loop remains useful when each iteration performs a separate action, such as writing a different file.
 
-Copy the provided test code, that saves some dataframes as files, and run it
+| Need | Useful approach | Check |
+|---|---|---|
+| Calculate a square for every numerical value | `nums^2` or `square_values(nums)` | Values, length and ordering match expectations |
+| Retain a result alongside a separate record for each input | A loop with an allocated output container | Each result occupies its intended position |
+| Save a separate file for each group | A loop with one named destination per iteration | Selected group, path and read-back content |
 
+Choose by the task, its clarity and its checks rather than assuming one technique is always better.
+
+## Task 2: Compare Equivalent Calculations (5 min)
+
+::: callout-task
+**Goal:** retain complete numerical results and justify an implementation. **Input:** the allocated `squares` loop, vectorised expression and `square_values()` above. Swap operator and checker.
+
+::: panel-tabset
+##### Do the Task
+
+1. **1 min:** identify which examples print text and which retain numerical values.
+2. **2 min:** compare the collected loop results with `square_values(c(2, 4, 6))`; add a fourth input and rerun the whole collection block.
+3. **1 min:** inspect `paste()` help and decide which approach suits a later numerical calculation and which suits separate file exports.
+4. **1 min:** the instructor asks which code would retain only one square if its assignment used no index. Two pairs identify the cause and explain their preferred approach.
+
+**Keep:** the complete `square_record` and a sentence explaining your choice. **If access fails:** make the table on paper and mark where each output would be stored.
+
+##### Debrief
+
+The first three squares are 4, 16 and 36. The allocated loop and vectorised function agree because they implement the same calculation. An assignment without the output index replaces the previous result. Retaining numerical values supports further calculation; printing is presentation. Separate file exports have a distinct filename and side effect on each iteration, which makes a loop appropriate.
+:::
+:::
+
+# Conditions and Loop Diagnosis
+
+## Record a Missing Input Explicitly
+
+This **fictional teaching vector** includes a missing input. Preserve its position and record why no square was calculated:
+
+```{r}
+values_to_check <- c(2, NA_real_, 6)
+checked_squares <- rep(NA_real_, length(values_to_check))
+input_status <- rep("not checked", length(values_to_check))
+
+for (index in seq_along(values_to_check)) {
+    current_value <- values_to_check[index]
+    if (is.na(current_value)) {
+        input_status[index] <- "missing input"
+    } else {
+        checked_squares[index] <- current_value^2
+        input_status[index] <- "calculated"
+    }
+}
+
+check_record <- data.frame(
+    input = values_to_check,
+    square = checked_squares,
+    status = input_status
+)
+check_record
+```
+
+The missing result is retained as `NA`; it is not replaced by zero or removed. This example records missingness rather than deciding how a real study should handle it.
+
+## A Condition Needs One Definite Answer
+
+An `if` statement chooses one branch from a single `TRUE` or `FALSE`. In this loop, `is.na(current_value)` asks about one element. `if (values_to_check > 0)` would supply several answers, and `if (NA)` supplies no definite answer. Both require investigation. See the [R control-flow documentation](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Control.html).
+
+`next` moves to the next iteration; `break` ends the loop. Either can leave incomplete results. If you use one, record what was skipped or why the loop ended. For this example, `if`/`else` makes a result and status visible for every input.
+
+## Diagnose the First Wrong Iteration
+
+| Symptom | Inspect first | Useful check |
+|---|---|---|
+| Only the final result remains | Where the output is initialised and assigned | Output length and input-to-output positions |
+| A condition fails | The current value, `length()` and `is.na()` | One non-missing logical value for `if` |
+| A selection is empty | The exact label and available labels | Count and identity before any export |
+| A later iteration fails | The same body run on that single input | Reproduce outside the loop with its index/name |
+
+Keep the error message and inspect `str(current_value)` rather than suppressing the failure. If a file-writing loop stops, some earlier files may already exist: a partially completed run must not be described as complete.
+
+**Room prediction:** show the missing input before running the code. Ask whether its result should be zero, disappear or remain missing with an explanation; take the evidence behind two answers.
+
+## Task 3: Diagnose and Record a Missing Result (5 min)
+
+::: callout-task
+**Goal:** distinguish a missing input from a failed or incomplete loop. **Input:** the fictional `values_to_check` loop and diagnostic table. Work in pairs.
+
+::: panel-tabset
+##### Do the Task
+
+1. **1 min:** predict the three rows of `check_record`, including the missing result's status.
+2. **2 min:** run the block and compare the result; inspect the missing element with `is.na()` and confirm that all three input positions remain.
+3. **1 min:** choose a diagnostic for a loop that keeps only the last answer and explain why setting missing inputs to zero would change the data.
+4. **1 min:** the instructor asks, “Is every missing output a loop error?” Two pairs use the status record to explain their answer.
+
+**Keep:** `check_record` and one symptom–check pair in your script comments. **If access fails:** annotate the three expected output rows and the missingness decision on paper.
+
+##### Debrief
+
+The squares are 4, missing and 36, with statuses calculated, missing input and calculated. The missing result reflects its input; an omitted position or repeatedly overwritten output reflects an implementation problem. Zero would invent a measurement. A status record makes these cases distinguishable without hiding the issue.
+:::
+:::
+
+## Break (10 min)
+
+Save your script. After the break, transfer the same input–operation–check–output pattern to the real Gapminder teaching data.
+
+# Repeat Operations over Groups and Lists
+
+## Inspect One Group First
+
+The `%>%` pipe passes the object on its left into the next function. In the selection below, `gapminder %>% filter(continent == first_continent)` means `filter(gapminder, continent == first_continent)`: the table becomes the first argument. Loading `dplyr` makes this pipe available for these examples.
 
 ```{r}
 library(gapminder)
@@ -71,18 +311,304 @@ library(dplyr)
 library(readr)
 
 continents <- as.character(unique(gapminder$continent))
-
-for(cont in continents){
-  gm_cont_data <- gapminder %>%  dplyr::filter(continent == cont)
-
-  write_csv(gm_cont_data, paste0('gapminder_', cont,'.csv' ))
-  cat(paste0('gapminder_', cont,'.csv', '\n' ))
-
-}
+continents
+first_continent <- continents[1]
+first_table <- gapminder %>% filter(continent == first_continent)
+head(first_table)
+nrow(first_table)
+stopifnot(!anyNA(gapminder$continent))
+stopifnot(!anyDuplicated(gapminder[c("country", "year")]))
 ```
 
-## Task 4
+Gapminder records historical country–year observations; the [package documentation](https://jennybc.github.io/gapminder/reference/gapminder.html) describes its variables and coverage. Keep `country` and `year` so that records remain identifiable. Verify the selected continent and count before writing a file. The `filter()` expression retains rows whose continent matches the current name; it does not summarise their measurements.
 
-Check the resulting files in the RStudio 'Files' tab
+## Store Tables in a Named List
 
-Can you see the difference between paste and paste0?
+A list can retain tables with different numbers of rows. Allocate one element per continent and label it with the corresponding group:
+
+```{r}
+tables_by_continent <- setNames(
+    vector("list", length(continents)),
+    continents
+)
+group_record <- data.frame(
+    continent = continents,
+    n_rows = integer(length(continents))
+)
+
+for (index in seq_along(continents)) {
+    continent_name <- continents[index]
+    gm_cont_data <- gapminder %>% filter(continent == continent_name)
+    stopifnot(nrow(gm_cont_data) > 0)
+    stopifnot(all(as.character(gm_cont_data$continent) == continent_name))
+    tables_by_continent[[index]] <- gm_cont_data
+    group_record$n_rows[index] <- nrow(gm_cont_data)
+}
+
+group_record
+stopifnot(sum(group_record$n_rows) == nrow(gapminder))
+head(tables_by_continent[["Africa"]])
+```
+
+`[[index]]` puts a whole table inside one list element. `tables_by_continent["Africa"]` returns a one-element list; `tables_by_continent[["Africa"]]` returns the table inside it. Use the latter when a function expects a table.
+
+The row-count check confirms that these partitions account for the source's row total. It does not alone prove correct allocation: duplicated rows and omissions could cancel out, so also inspect group identities and country–year records.
+
+## One Operation across a List
+
+For a straightforward operation on every element, base R's `lapply()` is another option:
+
+```{r}
+row_counts <- lapply(tables_by_continent, nrow)
+row_counts
+```
+
+This returns a named **list** of row counts. It does not create files or combine the original observations. The explicit loop is retained here because it lets us inspect selections, counts and identities together. Keep a clear implementation before exploring other iteration tools.
+
+## Task 4: Check One Group and Its Identity (5 min)
+
+::: callout-task
+**Goal:** inspect a grouped operation without losing observation identity. **Input:** Gapminder, `tables_by_continent` and `group_record`. Swap operator and checker.
+
+::: panel-tabset
+##### Do the Task
+
+1. **1 min:** choose a continent from `continents` and predict what one row represents.
+2. **2 min:** run the list-building block; retrieve the chosen table with `[[ ]]` and inspect its row count and continent values.
+3. **1 min:** select its first country–year pair and find that same pair in `gapminder`; compare `lifeExp` without changing or rounding it.
+4. **1 min:** the instructor asks whether equal total row counts alone prove correct group contents. Vote, then two pairs name the additional check they used.
+
+**Keep:** the grouped tables, row-count record and annotated source comparison. **If access fails:** inspect the instructor's chosen group and locate the country–year record in the displayed source.
+
+##### Debrief
+
+Each row remains a historical country–year observation. A continent table should contain its named group and preserve the selected record's values. Total counts are useful evidence of coverage, while group identities and source comparisons provide different checks. Counts do not turn these tables into population-weighted or individual-level summaries.
+:::
+:::
+
+# Plan and Write Separate Outputs
+
+## Write to a Separate Output Folder
+
+These files are **derived teaching outputs**. Keep them outside `data`. By default, `write_csv()` replaces an existing destination file; see its [official documentation](https://readr.tidyverse.org/reference/write_delim.html). Create a new run folder and refuse to reuse an existing destination before writing.
+
+The label below uses the run's local date and time. When rerunning, begin at the label assignment so a new folder is chosen. If two runs select the same label, the check stops: choose another descriptive label rather than deleting existing work.
+
+```{r}
+run_label <- format(Sys.time(), "%Y%m%d-%H%M%S")
+output_dir <- file.path("output", "continents", run_label)
+if (file.exists(output_dir)) {
+    stop("Output destination already exists; choose a new run_label: ", output_dir)
+}
+
+created <- dir.create(output_dir, recursive = TRUE, showWarnings = FALSE)
+if (!created) {
+    stop("Could not create the output folder: ", output_dir)
+}
+output_dir
+```
+
+## Plan the Files before Writing
+
+```{r}
+output_record <- data.frame(
+    continent = continents,
+    filename = file.path(output_dir, paste0("gapminder_", continents, ".csv")),
+    n_rows = integer(length(continents)),
+    read_back_checked = rep(FALSE, length(continents))
+)
+stopifnot(!anyDuplicated(output_record$filename))
+if (any(file.exists(output_record$filename))) {
+    stop("A planned export file already exists in: ", output_dir)
+}
+output_record
+```
+
+The filenames use the known continent labels from this teaching dataset. For a project receiving filenames from outside the workflow, validate those names before joining paths. `file.path()` constructs paths for the operating system; `paste0()` joins the filename text without a separator.
+
+## Repeat the Checked Export
+
+```{r}
+for (index in seq_along(continents)) {
+    continent_name <- continents[index]
+    gm_cont_data <- gapminder %>% filter(continent == continent_name)
+    stopifnot(nrow(gm_cont_data) == group_record$n_rows[index])
+    stopifnot(all(as.character(gm_cont_data$continent) == continent_name))
+    if (file.exists(output_record$filename[index])) {
+        stop("Refusing to replace an existing export: ", output_record$filename[index])
+    }
+    write_csv(gm_cont_data, output_record$filename[index])
+    output_record$n_rows[index] <- nrow(gm_cont_data)
+    cat(paste0(output_record$filename[index], "\n"))
+}
+
+output_record
+stopifnot(all(file.exists(output_record$filename)))
+stopifnot(sum(output_record$n_rows) == nrow(gapminder))
+```
+
+The loop records what it actually wrote and how many rows were selected. `read_back_checked` remains `FALSE` until the next block verifies the files. Distinguish **a planned path**, **a file on disk** and **a checked result**.
+
+If writing fails midway, retain the error and inspect the incomplete run folder. Fix the cause and start a new run; do not present the partial folder as a complete export or append blindly to its files.
+
+## Task 5: Review the Destination before Exporting (5 min)
+
+::: callout-task
+**Goal:** export separate tables with an explicit destination and no planned overwrite. **Input:** the new run folder, `output_record` and checked Gapminder groups. Work in pairs.
+
+::: panel-tabset
+##### Do the Task
+
+1. **1 min:** inspect `getwd()` and the proposed destination; confirm that the input dataset and source files are separate.
+2. **2 min:** run the folder, file-plan and export blocks once; find the resulting files in RStudio's Files tab.
+3. **1 min:** compare filenames and counts with `group_record`; identify which block refuses an already existing destination.
+4. **1 min:** the instructor asks whether five existing files establish a checked export. Two pairs state what is still needed before handover.
+
+**Keep:** the files, script and output record. **If access fails:** annotate the instructor's file plan with the group, destination and overwrite check for one iteration.
+
+##### Debrief
+
+A fresh run folder retains earlier practice outputs and makes this run identifiable. File existence confirms that something was written; names and counts provide further checks, but content still needs a read-back comparison. Restarting only the export loop encounters its existing-file guard; start the complete workflow at the new label instead.
+:::
+:::
+
+# Read Back, Rerun and Hand Over
+
+## Read Back and Inspect
+
+```{r}
+first_readback <- read_csv(
+    output_record$filename[1],
+    col_types = cols(
+        country = col_character(),
+        continent = col_character(),
+        year = col_integer(),
+        lifeExp = col_double(),
+        pop = col_double(),
+        gdpPercap = col_double()
+    )
+)
+stopifnot(nrow(problems(first_readback)) == 0)
+stopifnot(nrow(first_readback) == output_record$n_rows[1])
+stopifnot(all(first_readback$continent == continents[1]))
+stopifnot(identical(first_readback$country, as.character(first_table$country)))
+stopifnot(identical(first_readback$year, first_table$year))
+stopifnot(isTRUE(all.equal(first_readback$lifeExp, first_table$lifeExp)))
+head(first_readback)
+```
+
+CSV stores values rather than all R object metadata. Factor levels, for example, are not preserved as factor metadata. The explicit import specification states the expected types; inspecting `problems()` prevents parse failures being mistaken for valid missing values. The source's factors are converted to text only for the identity comparison; the source table remains unchanged.
+
+The checks above compare row counts, group identity, country–year ordering and life expectancy. Other numerical columns still require checks, which the repeated verification below supplies.
+
+## Verify Each File and Save the Record
+
+```{r}
+for (index in seq_along(continents)) {
+    expected_table <- tables_by_continent[[index]]
+    exported_table <- read_csv(
+        output_record$filename[index],
+        col_types = cols(
+            country = col_character(),
+            continent = col_character(),
+            year = col_integer(),
+            lifeExp = col_double(),
+            pop = col_double(),
+            gdpPercap = col_double()
+        )
+    )
+    stopifnot(nrow(problems(exported_table)) == 0)
+    stopifnot(nrow(exported_table) == output_record$n_rows[index])
+    stopifnot(identical(names(exported_table), names(expected_table)))
+    stopifnot(identical(exported_table$country, as.character(expected_table$country)))
+    stopifnot(identical(exported_table$continent, as.character(expected_table$continent)))
+    stopifnot(identical(exported_table$year, expected_table$year))
+    for (column_name in c("lifeExp", "pop", "gdpPercap")) {
+        stopifnot(isTRUE(all.equal(
+            exported_table[[column_name]], expected_table[[column_name]]
+        )))
+    }
+    output_record$read_back_checked[index] <- TRUE
+}
+
+stopifnot(all(output_record$read_back_checked))
+record_file <- file.path(output_dir, "output_record.csv")
+if (file.exists(record_file)) {
+    stop("The output record already exists; keep it and start a new run: ", record_file)
+}
+write_csv(output_record, record_file)
+output_record
+```
+
+The small inner loop repeats numerical checks for three named columns. It does not alter the measurements. Floating-point comparisons use `all.equal()` with its default tolerance, rather than rounding or changing data to force a pass. Only after a file passes every check is its status set to `TRUE`.
+
+## What Makes This a Repeatable Workflow?
+
+| Keep together | Why a collaborator needs it |
+|---|---|
+| Saved script, starting with package loading | Recreates the objects rather than relying on console history |
+| Input identity and grouping rule | Explains why each observation is in its file |
+| Run folder and checked `output_record.csv` | Locates the products of this specific run |
+| `sessionInfo()` in working notes | Records R and package versions for troubleshooting |
+| Interpretation and known limitations | Distinguishes preserved data from a scientific conclusion |
+
+Save the script before restarting R. With the project open, run it from the beginning, including the new run-label assignment. A new folder should be created and equivalent input records should produce equivalent tables. The label and file paths will differ between runs; the source data and calculations should not.
+
+## Task 6: Check and Hand Over the Run (5 min)
+
+::: callout-task
+**Goal:** verify exported content and make the run discoverable. **Input:** this run's exports, `output_record`, source tables and saved script. Swap operator and checker.
+
+::: panel-tabset
+##### Do the Task
+
+1. **1 min:** read back the first file and identify the checks for group, row identity and numerical values.
+2. **2 min:** run the repeated verification; save the output record and script, then record `sessionInfo()` in working notes.
+3. **1 min:** the partner locates one exported country–year observation in the source and explains where to begin a new run. Check the script defines every required object.
+4. **1 min:** the instructor asks which check would detect a wrong-group export with the correct row count. Two pairs report their evidence and one limitation of the workflow.
+
+**Keep:** the checked files, saved script, `output_record.csv` and version notes. **If access fails:** annotate the displayed record with the identity and value comparisons you would require before setting a status to `TRUE`.
+
+##### Debrief
+
+A useful output record states what was written, where, with how many rows and whether read-back checks passed. Country–year and continent comparisons can reveal incorrect selection even when counts agree. Numerical comparisons check exported values within their stated tolerance. These checks establish properties of the export, not that the dataset or a later scientific interpretation is appropriate for every research question.
+:::
+:::
+
+# Further Information
+
+::: callout-keypoints
+## 📚 Key Points
+
+- Trace and check one iteration before repeating a task.
+- Retain outputs by position or name; printing is different from storing results.
+- Use vectorised operations for suitable calculations and loops for separate repeated actions.
+- Record missing inputs and incomplete runs rather than hiding or silently changing them.
+- Preserve input data and identifiers; plan destinations and read back derived outputs.
+:::
+
+::: callout-hints
+## 🔦 Hints
+
+- Use `seq_along()` when iterating over positions in a vector, including an empty one.
+- Inspect one problematic input outside the loop; keep its name, position and error message.
+- Check `getwd()` and file paths when an expected output is missing.
+- Rerun from the new-label assignment; an existing destination should trigger investigation.
+- Save the script rather than relying on objects from an earlier console session.
+:::
+
+## Module Summary
+
+You can trace repeated calculations, retain results, explain missing inputs and export checked historical tables systematically. Your script and output record make each run easier for a collaborator to inspect. Next, use those foundations for [session 4: Data Analysis with tidyverse and ggplot2](05-the_tidyverse.qmd).
+
+**Next-week action:** choose one small repeated task in your own project. Check one item, record input identities and expected outputs, then repeat the operation with an explicit failure and file-handling plan.
+
+## Additional Learning
+
+- [Learner Additional Material](../learners/additional_material.qmd): practise a complete Gapminder comparison.
+- [Reference](../learners/reference.qmd#control-flow): syntax reminders.
+- [An Introduction to R](https://cran.r-project.org/doc/manuals/r-release/R-intro.html): vector operations, lists and repeated execution.
+- [R control-flow documentation](https://stat.ethz.ch/R-manual/R-devel/library/base/html/Control.html): conditions, loop values, `next` and `break`.
+- [readr file-writing documentation](https://readr.tidyverse.org/reference/write_delim.html): CSV output and replacement/append behaviour.
+
+[Course Overview](../index.qmd) · [Previous: Functions](03-R_functions.qmd) · [Next: Data Analysis](05-the_tidyverse.qmd)

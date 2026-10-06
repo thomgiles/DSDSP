@@ -1,9 +1,11 @@
 ---
-title: Additional material
+title: Additional Material
 ---
 
 A collection of facts about Python that do not fit into the main lesson
 either due to the scope or time constraints of the main lesson.
+
+These are instructor extensions. Learner-facing practice and official documentation are collected separately in [Learner Additional Material](../learners/additional_material.qmd). Use the [Instructor Notes](instructor-notes.qmd) to decide which extension suits the cohort.
 
 ## Jupyter Notebook/IPython: Who's Who in Memory
 
@@ -25,6 +27,8 @@ weight_lb   float      143.0
 
 <br />
 ## Integer Division
+
+The following Python 2 examples are historical context, not a supported course environment or code learners should run. Applied Python uses Python 3. For current practice, compare `/` with `//` and ask learners to predict both results.
 
 We are using Python 3, where division always returns a floating point number:
 
@@ -100,4 +104,6 @@ use a double-slash:
 1
 ```
 
+## Course Navigation
 
+[Course Overview](../index.qmd) · [Instructor Notes](instructor-notes.qmd) · [Additional Material](additional_material.qmd) · [Extra Exercises](extra_exercises.qmd) · [Learner Setup](../learners/setup.qmd)

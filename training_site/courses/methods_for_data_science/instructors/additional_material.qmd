@@ -6,6 +6,15 @@ title: Additional Material
 
 Use this page for optional additions when you have extra time, a more advanced cohort, or a strong local data example to work with.
 
+The learner [Additional Material](../learners/additional_material.qmd) provides a complete fictional dataset, source notes, four five-minute tasks, and worked answers. Start there when you need a prepared example or access fallback. The options below extend that practice; they are not extra compulsory sessions.
+
+| Lesson | Prepared resource | Useful output |
+|---|---|---|
+| [Collecting the Right Data](../episodes/05-collecting_the_right_data.qmd) | Learner Task 1 or the source cards in [Extra Exercises](extra_exercises.qmd) | A collection question, population, variable list, and source limitation |
+| [Organising and Exploring Data](../episodes/06-organising_and_exploring_data.qmd) | Learner Task 2 and the [practice CSV](../learners/data/practice_requests.csv) | A working copy and justified change log |
+| [Making Sense of Data](../episodes/07-making_sense_of_data.qmd) | Learner Task 3 and the [chart guidance](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/) | A checked summary and an accurate caption |
+| [Insight to Impact](../episodes/08-insight_to_impacts.qmd) | Learner Task 4 | Separate evidence, interpretation, action, and evaluation statements |
+
 ## Optional Extensions
 
 ### Data Source Comparison
@@ -17,13 +26,24 @@ Use this page for optional additions when you have extra time, a more advanced c
 
 - Show a before-and-after spreadsheet with inconsistent labels, missing values, and duplicated records.
 - Ask learners which transformations should be documented.
+- Use the fictional request source notes to justify each change. Compare summaries with and without the valid 50-minute response to show why removing an unusual value needs evidence.
 
 ### Visualisation Critique
 
 - Use a gallery of charts with truncated axes, overloaded colour, missing labels, or weak context.
 - Ask learners to rewrite the chart title as a claim and then test whether the chart supports it.
+- Provide the underlying values, units, and source context alongside the chart. Ask for a text description that communicates the evidence without relying on colour.
 
 ### Insight Communication
 
 - Give learners one finding and three audiences.
 - Ask them to adapt the emphasis without changing the evidence.
+- Compare messages for a researcher, service owner, and service user. Retain the same count, period, missingness, and uncertainty in all three.
+
+## External Teaching Resources
+
+The learner resource page links to verified [Data Carpentry spreadsheet lessons](https://datacarpentry.github.io/spreadsheet-ecology-lesson/), [NIST exploratory analysis guidance](https://www.itl.nist.gov/div898/handbook/eda/eda.htm), and [Government Analysis Function chart guidance](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/). Select a specific example for the cohort and check its reuse conditions before reproducing external materials.
+
+## Course Navigation
+
+[Course Overview](../index.qmd) · [Instructor Notes](instructor-notes.qmd) · [Additional Material](additional_material.qmd) · [Extra Exercises](extra_exercises.qmd) · [Learner Setup](../learners/setup.qmd)

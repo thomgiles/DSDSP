@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="310" viewBox="0 0 1200 310" role="img" aria-labelledby="title desc">
+  <title id="title">A practical workflow with a visible check</title>
+  <desc id="desc">Identify the input, carry out a task, check the result against the goal and retain a useful output. If the check fails, revisit the task before sharing the output.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M1 1 L8 5 L1 9 Z" fill="#405162"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="310" rx="28" fill="#f7fbfc"/>
+  <g font-family="sans-serif" text-anchor="middle">
+    <g fill="none" stroke="#405162" stroke-width="3" marker-end="url(#arrow)">
+      <path d="M294 127 H319"/>
+      <path d="M584 127 H609"/>
+      <path d="M874 127 H899"/>
+      <path d="M745 194 V252 H455 V201"/>
+    </g>
+    <rect x="36" y="60" width="258" height="134" rx="18" fill="#006781"/>
+    <rect x="326" y="60" width="258" height="134" rx="18" fill="#298582"/>
+    <rect x="616" y="60" width="258" height="134" rx="18" fill="#405162"/>
+    <rect x="906" y="60" width="258" height="134" rx="18" fill="#10263b"/>
+    <g fill="#ffffff">
+      <text x="165" y="101" font-size="29" font-weight="700">Input</text>
+      <text x="165" y="141" font-size="23">Know the material</text>
+      <text x="165" y="170" font-size="23">and the goal</text>
+      <text x="455" y="101" font-size="29" font-weight="700">Task</text>
+      <text x="455" y="141" font-size="23">Apply a clear</text>
+      <text x="455" y="170" font-size="23">sequence of steps</text>
+      <text x="745" y="101" font-size="29" font-weight="700">Check</text>
+      <text x="745" y="141" font-size="23">Compare the result</text>
+      <text x="745" y="170" font-size="23">with the goal</text>
+      <text x="1035" y="101" font-size="29" font-weight="700">Output</text>
+      <text x="1035" y="141" font-size="23">Keep a result</text>
+      <text x="1035" y="170" font-size="23">you can explain</text>
+    </g>
+    <rect x="488" y="234" width="225" height="38" rx="12" fill="#f7fbfc"/>
+    <text x="600" y="260" font-size="23" font-weight="700" fill="#006781">Revisit if needed</text>
+  </g>
+</svg>

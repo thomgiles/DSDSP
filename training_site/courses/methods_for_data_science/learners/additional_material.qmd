@@ -1,0 +1,132 @@
+---
+title: Additional Material
+---
+
+## How To Use This Page
+
+Use these optional worksheets to practise the four course lessons independently or in pairs. Each task takes approximately five minutes, including a short comparison or room response. They supplement the lessons rather than add compulsory course sessions.
+
+Keep a collection plan, a validation log, a checked summary, and a short evidence-to-action note. The [Reference](reference.qmd) page explains the terms and checking steps.
+
+## Practice Dataset {#practice-dataset}
+
+**This dataset and its source notes are fictional teaching material.** Each observation is a completed request to a research support service. Response time is elapsed minutes from receipt to the first substantive response. The table is a small export for practising data checks, not evidence about a real service or its users.
+
+[Download the fictional request dataset (CSV)](data/practice_requests.csv), or copy the table into a spreadsheet. Keep the original unchanged. `row_id` identifies an exported row; `request_id` identifies a request and should occur once in this particular export.
+
+| row_id | request_id | route | response_minutes |
+|---|---|---|---:|
+| row01 | A101 | email | 10 |
+| row02 | A102 | Email | 15 |
+| row03 | A103 | Portal | |
+| row04 | A102 | Email | 15 |
+| row05 | A104 | Portal | 50 |
+| row06 | A105 | Email | -2 |
+| row07 | A106 | Portal | 25 |
+
+**Fictional source notes for this exercise:**
+
+- The collection protocol uses the categories `Email` and `Portal`; `email` is the same route as `Email`.
+- The export log confirms `row04` repeats the same request as `row02`; it is not a second measurement.
+- The source record confirms A105 took **2 minutes**; the negative sign is an export error.
+- A103 has no recorded response time. It remains missing; there is no evidence for a replacement value.
+- A104's **50 minutes** is confirmed by the source. It is a valid longer response, not an error to remove.
+
+Without those source notes, flag the uncertain records and investigate before changing them. Similar-looking values do not justify deduplication or correction by themselves.
+
+## Task 1: Plan a Better Collection (5 min)
+
+Use with [Collecting the Right Data](../episodes/05-collecting_the_right_data.qmd).
+
+**Goal:** decide what further data would answer: “Are support requests answered promptly across the service?” **Input:** the practice dataset and its scope. Work in pairs; one proposes a plan and the other checks it.
+
+1. **1 min:** define “promptly”, the period to examine, and which requests should be included.
+2. **2 min:** specify three additional fields or source details, including their meaning or units.
+3. **1 min:** identify who or what this completed-request export could miss.
+4. **1 min:** compare plans with another pair; in a taught session, two pairs name one missing group to the room.
+
+**Keep:** a question, target population, variable list, and one source limitation. **Access fallback:** write the plan using the displayed table; no account or software is needed.
+
+::: {.callout-note collapse="true"}
+## Check Your Reasoning
+
+A defensible plan might include receipt and response timestamps with a stated time zone, request type, and a status field covering unresolved requests. Define whether minutes mean elapsed or working time. An export containing only completed requests may miss those still waiting. This seven-row example does not establish a service-wide rate or a target for acceptable response time.
+:::
+
+## Task 2: Validate Without Losing the Evidence (5 min)
+
+Use with [Organising and Exploring Data](../episodes/06-organising_and_exploring_data.qmd).
+
+**Goal:** produce a working table and traceable change log. **Input:** the practice dataset and its source notes. Work in pairs and retain both identifiers.
+
+1. **1 min:** mark the category inconsistency, duplicate candidate, missing value, and invalid value.
+2. **2 min:** apply only changes supported by the source notes to a working copy. Log the affected identifiers, original values, action, and evidence.
+3. **1 min:** count unique requests and observed response times; check what remains missing.
+4. **1 min:** ask two pairs to explain why the 50-minute value stays. Independently, write the same explanation.
+
+**Keep:** a working table and change log. **Access fallback:** annotate the displayed rows and record the intended changes on paper.
+
+::: {.callout-note collapse="true"}
+## Worked Check
+
+Standardise `row01` to `Email`. Exclude `row04` from the request-level summary because the source confirms a repeated export; preserve the original row and log the exclusion. Correct `row06` from -2 to 2 using the source record. Keep A103 missing and A104 at 50.
+
+There are **seven original rows, six unique requests, and five observed response times** after those documented steps. A missing response time is not zero. A large valid value should not be deleted simply because it affects the average.
+:::
+
+## Task 3: Check a Summary and Its Claim (5 min)
+
+Use with [Making Sense of Data](../episodes/07-making_sense_of_data.qmd).
+
+**Goal:** calculate a checked summary and choose an appropriate display. **Input:** the documented working table from Task 2. Swap operator and checker roles.
+
+1. **2 min:** calculate the mean, median, minimum, and maximum for the observed response times; state their count.
+2. **1 min:** choose a simple display showing the individual times or their distribution, with minutes labelled.
+3. **1 min:** assess this invented headline: “All support requests are answered in about 20 minutes.”
+4. **1 min:** hear two pairs propose a more accurate headline; independently, write yours and its limitation.
+
+**Keep:** the calculations, proposed chart, and revised claim. **Access fallback:** sort the five values on paper and use a calculator; sketch the display.
+
+::: {.callout-note collapse="true"}
+## Worked Check
+
+The sorted observed times are **2, 10, 15, 25, 50 minutes**. Their mean is **20.4 minutes**, median **15 minutes**, and range **2–50 minutes**, based on **five observed times from six unique requests**. One response time is missing.
+
+An accurate statement is: “The five recorded response times in this example range from 2 to 50 minutes; their median is 15 minutes.” A dot plot or a clearly labelled table retains the individual observations. The original headline hides missingness and variation and extends this small export to all requests. These summaries do not establish that either route causes slower responses.
+:::
+
+## Task 4: Turn an Observation Into a Testable Next Step (5 min)
+
+Use with [Insight to Impact](../episodes/08-insight_to_impacts.qmd).
+
+**Goal:** write an evidence-to-action note without overstating the result. **Input:** the checked summary from Task 3. Work in pairs.
+
+1. **1 min:** write one observation and one plausible explanation, keeping them separate.
+2. **2 min:** propose one proportionate next step, an owner, and a possible unintended effect.
+3. **1 min:** specify how you would check whether the action helps and which groups or unresolved requests to examine.
+4. **1 min:** two pairs report their next step; the room identifies whether each is evidence gathering or an operational change.
+
+**Keep:** four short statements: evidence, interpretation, action, and evaluation. **Access fallback:** use the worked summary above and write the note without a spreadsheet.
+
+::: {.callout-note collapse="true"}
+## Check Your Reasoning
+
+An appropriate first step is to ask the service owner to investigate the missing time and the context of the longer request, then review a defined period of complete records. The export cannot establish why response times differ. If a later pilot changes the process, record the comparison period, request mix, unresolved cases, and other concurrent changes. A shorter average alone does not demonstrate that the pilot caused improvement or helped every group.
+:::
+
+## Further Learning
+
+These optional resources deepen specific parts of the course. They are not prerequisites.
+
+| Resource | Use it to practise |
+|---|---|
+| [Data Carpentry: Data Organization in Spreadsheets for Ecologists](https://datacarpentry.github.io/spreadsheet-ecology-lesson/) | Table structure, formatting problems, dates, quality control, and export; its ecology examples transfer to other tabular research data |
+| [NIST: Exploratory Data Analysis](https://www.itl.nist.gov/div898/handbook/eda/eda.htm) | Explore graphical and numerical approaches, assumptions, and case studies; choose a section relevant to your question |
+| [Government Analysis Function: Data visualisation—charts](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/) | Check chart choice, labelling, source context, and accessible alternatives before sharing a figure |
+| [Applied Python](../../applied_python/index.qmd) or [Applied R](../../applied_R/index.qmd) | Continue into coding for analysis after practising the methodological checks here |
+
+For more room discussion, use [Discussion](discuss.qmd). For a project requiring individual advice, see [Digital Skills Clinics](../../../clinics.qmd).
+
+## Course Navigation
+
+[Course Overview](../index.qmd) · [Setup](setup.qmd) · [Additional Material](additional_material.qmd) · [Reference](reference.qmd) · [Discussion](discuss.qmd)

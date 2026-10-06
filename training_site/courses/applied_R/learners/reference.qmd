@@ -1,8 +1,10 @@
 ---
-title: 'Basic Operation'
+title: Reference
 ---
 
-## Basic Operation
+Use this page alongside the lessons. [Additional Material](additional_material.qmd) provides a checked Gapminder workflow and official references for further practice.
+
+## Basic Operations
 
 - `# this is a comment in R`
 - Use `x <- 3` to assign a value, `3`,  to a variable, `x`
@@ -20,6 +22,8 @@ Remove objects in current environment
 
 Remove all objects from current environment
 `rm(list = ls())`
+
+Save your work before removing objects. Clearing the environment does not save the commands that produced those objects; retain the analysis in a script.
 
 ## Control Flow
 
@@ -56,7 +60,7 @@ This will print:
 - Use `==` to test for equality
   - `3 == 3`, will return `TRUE`,
   - `'apple' == 'orange'` will return `FALSE`
-- `X & Y` is `TRUE` is both X and Y are true
+- `X & Y` is `TRUE` if both X and Y are true
 - `X | Y` is `TRUE` if either X or Y, or both are true
 
 ## Functions
@@ -64,13 +68,8 @@ This will print:
 - Defining a function:
 
 ```r
-is_positive <- function(integer_value){
-	if(integer_value > 0){
-	   TRUE
-	}
-	else{
-	   FALSE
-	{
+is_positive <- function(integer_value) {
+    integer_value > 0
 }
 ```
 
@@ -97,8 +96,18 @@ increment_me <- function(value_to_increment, value_to_increment_by = 1){
 ## Packages
 
 - Install package by using `install.packages("package-name")`
-- Update packages by using `update.packages("package-name")`
+- Check and update installed packages using `update.packages()`; use `install.packages("package-name")` to reinstall a particular package
 - Load packages by using `library("package-name")`
+
+## Working with Tables
+
+- Inspect `str(dat)`, `names(dat)` and `dim(dat)` before selecting or summarising.
+- Use `dat[rows, columns]` to select a data-frame subset; a single-column selection may simplify to a vector.
+- Use `dplyr::filter()` for rows, `dplyr::select()` for columns and `dplyr::mutate()` for derived columns.
+- Use `dplyr::group_by()` with `dplyr::summarise()` for grouped results; retain identifiers and state the aggregation level.
+- Choose missing-value handling explicitly. `mean(values)` and `mean(values, na.rm = TRUE)` answer different questions when `values` contains missing observations.
+- Check join keys, repeated keys and unmatched records before accepting a merged table.
+- Keep inputs unchanged and save derived outputs separately.
 
 ## Glossary
 
@@ -195,4 +204,6 @@ standard output is displayed on the screen; in a [pipe](#pipe), it is passed to 
 [while loop]{#while-loop}
 :   A loop that keeps executing as long as some condition is true. See also: [for loop](#for-loop).
 
+## Course Navigation
 
+[Course Overview](../index.qmd) · [Setup](setup.qmd) · [Additional Material](additional_material.qmd) · [Reference](reference.qmd) · [Discussion](discuss.qmd)

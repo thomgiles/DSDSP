@@ -30,6 +30,17 @@ Optional but useful:
 - a phone for QR-code polls or quick room activities
 - headphones if you prefer to work through short demos individually
 
+## Literature and Writing Preparation
+
+For the literature and writing activities in [Digital Tools](../episodes/01-digital_tools.qmd), also prepare:
+
+- one research question or topic to search; a practice topic is supplied if you need one
+- access to the university library's online resources
+- **either EndNote or Zotero**, with the relevant writing integration installed and checked where possible
+- a writing tool, preferably desktop Word for the captions and cross-references exercise, or LaTeX if you already use it
+
+Use [UoN's EndNote setup guidance](https://xerte.nottingham.ac.uk/USER-FILES/53584-uazecw-Nottingham/media/2025%20EndNote%20-%20Separate%20guide%20-%20Downloading%20Endnote.pdf) or the [Zotero quick start](https://www.zotero.org/support/quick_start_guide). You do not need both tools or a new paid account. If installation or access is unavailable, you can work with a partner or check the instructor's demonstration.
+
 ## Bring a Real Project Example
 
 Most activities work best when you can map them onto something real. Before each session, try to identify:
@@ -37,7 +48,7 @@ Most activities work best when you can map them onto something real. Before each
 - one project, dataset, or service you are currently working on
 - one collaboration challenge you want to improve
 - one governance, storage, or documentation question you are unsure about
-- one decision you need to make about tools, access, sharing, or AI use
+- one decision you need to make about tools, access, sharing, or documenting your work
 
 You do not need to bring full project files. A short written description is often enough.
 
@@ -47,7 +58,7 @@ Use live examples without exposing sensitive material.
 
 - Do not bring confidential or special category data into open classroom activities.
 - Prefer anonymised, synthetic, or summarised examples where possible.
-- Do not upload restricted research data into unapproved external AI tools.
+- Use only examples you are permitted to share in the classroom or chosen service.
 - If you are unsure whether an example is safe to use, ask the instructor and switch to a lower-risk version.
 
 ## Suggested Working Folder
@@ -67,9 +78,10 @@ This makes it easier to keep copies of:
 - folder structure sketches
 - DMP notes
 - FAIR checklists
-- chart critique notes
+- search logs and source-linked reading notes
+- co-author review agreements
 - action plans from group discussions
-- AI prompt and verification examples
+- records of checks made on citations, documents and workflows
 
 ## During the Course
 
@@ -84,11 +96,10 @@ These light checks will help you get more from each topic.
 
 | Session theme | Helpful preparation |
 |---|---|
-| [Digital Tools](../episodes/01-digital_tools.qmd) | Know which platforms your team already uses and where work currently gets stuck |
+| [Digital Tools](../episodes/01-digital_tools.qmd) | Bring a search topic; check library access and one reference manager/writing integration; know where your team writes and reviews documents |
 | [Digital Delivery](../episodes/02-digital_delivery.qmd) | Bring a current project timeline, meeting rhythm, or planning challenge |
 | [Data Governance & Policy](../episodes/03-data_governance_and_policy.qmd) | Think of one project involving personal, sensitive, or shared data |
 | [Research Data Management](../episodes/04-research_data_managment.qmd) | Bring an example of a dataset, folder structure, or DMP question |
-| [Responsible Use of Generative AI](../../responsible_use_of_generative_ai/index.qmd) | Bring a low-risk prompt, reading task, or workflow you want to improve |
 
 ## If You Are New to These Systems
 
@@ -98,3 +109,7 @@ That is completely fine. The course is designed to help you:
 - choose more appropriate places to store and share work
 - ask better questions of support services
 - make more defensible day-to-day research decisions
+
+## Course Navigation
+
+[Course Overview](../index.qmd) · [Setup](setup.qmd) · [Additional Material](additional_material.qmd) · [Reference](reference.qmd) · [Discussion](discuss.qmd)

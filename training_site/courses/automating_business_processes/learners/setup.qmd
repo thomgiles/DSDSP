@@ -17,7 +17,15 @@ Check that you can open:
 - Word for the web;
 - Teams or the Approvals app, if available.
 
-Power Automate works through your Microsoft 365 account. If your account cannot access a file, mailbox, SharePoint site, or approval app, the flow may not be able to access it either.
+Power Automate uses connections to access services. In the workshop, check which signed-in account each connection uses. If that account cannot access a file, mailbox, SharePoint site or approval app, the flow may not be able to access it either.
+
+### Check the Word Template Action
+
+Microsoft lists [Word Online (Business)](https://learn.microsoft.com/en-us/connectors/wordonlinebusiness/) as a **premium connector** in Power Automate. Confirm whether your account and environment can use **Populate a Microsoft Word template** before the session; an ordinary Microsoft 365 sign-in does not establish this access.
+
+Use the supplied template rather than creating its content controls during the workshop. Microsoft's connector documentation notes that the Developer tab is unavailable in Word for the web; opening a template in the browser and creating its controls are different tasks.
+
+**If the template action is unavailable:** use Excel values directly in a personalised test email body. You can still practise reading a table, mapping fields and inspecting the result without a Word action.
 
 ## Download the Example Files
 
@@ -103,4 +111,12 @@ Before the Excel and Word activity, check that you can:
 5. Find both files from Power Automate when adding actions.
 6. Send a test email to yourself from Power Automate.
 
-If any of these checks fail, use the activity time to troubleshoot access and file location before building the full flow.
+If any of these checks fail, tell the teaching team before the session if possible. During the activity, work with a partner or inspect the instructor's example and record the proposed trigger, field mapping and test; use the personalised-email fallback if only the Word action is unavailable.
+
+## After the Workshop
+
+Use the [safe test matrix and handover record](additional_material.qmd#safe-test-matrix) before extending a flow. The [Reference](reference.qmd) explains terms and first troubleshooting checks; [Discussion](discuss.qmd) helps you decide which part of a real process to tackle next.
+
+## Course Navigation
+
+[Course Overview](../index.qmd) · [Setup](setup.qmd) · [Additional Material](additional_material.qmd) · [Reference](reference.qmd) · [Discussion](discuss.qmd)

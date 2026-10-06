@@ -4,21 +4,23 @@ title: "Instructor Notes"
 
 # Instructor Notes
 
-The first module is designed for approximately 100 minutes:
+The [Power Automate Fundamentals](../episodes/01-power_automate.qmd) lesson currently allocates 120 minutes of learning time:
 
 - 50 minutes directed teaching;
-- 50 minutes practical activity;
+- 70 minutes practical activity;
 - five teaching blocks, each followed by an activity.
+
+Activities are allocated 10, 15, 15, 15 and 15 minutes respectively. Record any breaks separately. The longer build times reflect the current lesson plan; do not assume these are all five-minute discussion tasks.
 
 ## Session Map
 
-| Part | Focus | Activity |
-|---|---|---|
-| 1 | Start the flow | Build a manual request trigger |
-| 2 | Move data | Add a connector and notification |
-| 3 | Shape values | Clean, format, and route inputs |
-| 4 | Pause for a decision | Add an approval branch |
-| 5 | Work from a table | Send personalised test emails |
+| Part | Focus | Activity | Practical time |
+|---|---|---|---:|
+| 1 | Start the flow | Build a manual request trigger | 10 min |
+| 2 | Move data | Add a connector and notification | 15 min |
+| 3 | Shape values | Clean, format, and route inputs | 15 min |
+| 4 | Pause for a decision | Add an approval branch | 15 min |
+| 5 | Work from a table | Send personalised test emails | 15 min |
 
 The session is intentionally practical. Each short teaching block is followed by an activity where everyone builds or modifies a real flow in Power Automate.
 
@@ -26,7 +28,7 @@ The session is intentionally practical. Each short teaching block is followed by
 
 ```{mermaid}
 flowchart LR
-  A[Teach 8-10 min] --> B[Build 8-10 min]
+  A[Teach 10 min] --> B[Build and test 10-15 min]
   B --> C[Test]
   C --> D[Inspect run history]
   D --> E[Discuss production risks]
@@ -38,6 +40,8 @@ Every activity follows the same pattern: build a small version, test with safe d
 ## Before Teaching
 
 Confirm which connectors are enabled in the tenant, especially Approvals, Excel Online, Word Online, Outlook, Teams, OneDrive, and SharePoint. If Word template actions are not available, run Activity 5 with personalised email body text instead of populated Word documents.
+
+Check the specific [Word Online (Business) premium connector](https://learn.microsoft.com/en-us/connectors/wordonlinebusiness/) access with the teaching account. Have learners use the supplied template; Word for the web does not provide the Developer tab for creating the controls. Use the [learner setup checklist](../learners/setup.qmd) to confirm file locations and safe recipients.
 
 Prepare a small test workbook and Word template in case learners cannot create their own quickly.
 
@@ -56,4 +60,10 @@ Emphasise:
 
 ## Timing
 
+The [learner follow-up pack](../learners/additional_material.qmd) provides a safe test matrix, a handover record and a five-minute paired test-design task. Use it as consolidation or a replacement activity; add its time explicitly if extending the workshop.
+
 If time is short, keep Activities 1 to 4 hands-on and treat Activity 5 as a worked design plus a short demonstration. If time is available, learners can build the full Excel-to-email loop with one or two test rows.
+
+## Course Navigation
+
+[Course Overview](../index.qmd) · [Instructor Notes](instructor-notes.qmd) · [Additional Material](additional_material.qmd) · [Extra Exercises](extra_exercises.qmd) · [Learner Setup](../learners/setup.qmd)

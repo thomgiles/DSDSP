@@ -13,6 +13,7 @@ Use this page for optional additions when you have extra time, a more advanced c
 - Live walkthrough of how a project might use OneDrive, Teams, SharePoint, RIS, and ORCID together.
 - Research identity audit using a fictional or volunteer profile.
 - Short exercise comparing poor and strong folder structures for collaborative work.
+- Use the [search log and co-author review templates](../learners/additional_material.qmd) to consolidate the literature and writing tasks without introducing new tools.
 
 ### Delivery and coordination
 
@@ -33,7 +34,9 @@ Use this page for optional additions when you have extra time, a more advanced c
 - Metadata minimum exercise: ask groups what another team would need in order to reuse a dataset.
 - FAIR maturity self-assessment using a live or fictional dataset.
 
-### Data interpretation and impact
+### Optional extension into data interpretation and impact
+
+These activities connect to the separate [Methods for Data Science](../../methods_for_data_science/index.qmd) course; they are extensions rather than additional EDS sessions.
 
 - Chart critique gallery: display 3 to 5 weak charts and ask groups to identify what each one hides.
 - Ask learners to rewrite a descriptive finding as an actionable recommendation for a named audience.
@@ -61,3 +64,7 @@ If you want richer discussion, bring one or more of the following:
 ## Extension Design Principle
 
 If time is limited, prefer one extra case study with a strong debrief over several disconnected mini-tasks. In this course, depth usually teaches more than breadth.
+
+## Course Navigation
+
+[Course Overview](../index.qmd) · [Instructor Notes](instructor-notes.qmd) · [Additional Material](additional_material.qmd) · [Extra Exercises](extra_exercises.qmd) · [Learner Setup](../learners/setup.qmd)

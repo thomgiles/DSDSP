@@ -21,6 +21,29 @@ The course works best when learners leave with:
 - Separate what the data shows from what the learner thinks should happen next.
 - Use debriefs to connect analysis choices to real-world consequences.
 
+## Before Teaching
+
+- Review the [Course Overview](../index.qmd), [Learner Setup](../learners/setup.qmd), and the four linked episodes. Confirm the session plan against the episode agendas; optional exercises below do not alter those timings.
+- Check the original and prepared student spreadsheets open, and test the browser activity in [Making Sense of Data](../episodes/07-making_sense_of_data.qmd) on the teaching network.
+- Keep the [fictional request worksheet](../learners/additional_material.qmd#practice-dataset) available as an access fallback. It includes source notes and worked checks, so a pair can participate on paper.
+- Prepare a shared-screen or paired-access route for learners without spreadsheet access. No coding installation is required.
+- Use public or fictional examples. Invite a description of a real research question rather than requesting confidential records.
+
+## Facilitation and Checks
+
+For a five-minute optional task, allow one minute to inspect, two minutes to attempt, one minute to check, and one minute for two pairs to report. Count the debrief inside the five minutes. Use the [Discussion](../learners/discuss.qmd) questions to connect a task to learners' own research.
+
+| Watch for | Ask or demonstrate |
+|---|---|
+| Removing rows merely because values match | “What does a row represent, and what source confirms this is a duplicate?” |
+| Replacing an impossible value with a reasonable guess | Flag the value, check the source, and log a correction only when supported |
+| Treating blanks as zero | State how many values contribute to the calculation and what is unknown |
+| Removing a large valid value | Compare its source and context; show its effect on mean, median, and spread |
+| Treating an association as a cause | Ask for competing explanations and what further design or evidence is needed |
+| Calling a recommendation an impact | Name an owner, a feedback measure, and a check for unintended effects |
+
+Ask learners to keep the original data, working copy, and change log. An apparently cleaner table should still be traceable to its source.
+
 ## Session-Level Emphasis
 
 ### Collecting the right data
@@ -38,3 +61,13 @@ Use [Making Sense of Data](../episodes/07-making_sense_of_data.qmd) to build vis
 ### Insight to impact
 
 Use [Insight to Impact](../episodes/08-insight_to_impacts.qmd) to connect findings to audiences, action, feedback, and iteration. Keep asking what would change because of the insight.
+
+## Consolidation and Follow-On Learning
+
+The learner [Additional Material](../learners/additional_material.qmd) has four short tasks matched to these lessons, including worked answers. The [Reference](../learners/reference.qmd) provides reusable checks. Use [Instructor Additional Material](additional_material.qmd) and [Extra Exercises](extra_exercises.qmd) for optional extensions matched to the course outcomes.
+
+For learners ready to implement the same checks in code, signpost [Applied Python](../../applied_python/index.qmd) or [Applied R](../../applied_R/index.qmd). For foundational storage or governance questions, signpost [Essential Digital Skills](../../essential_digital_skills/index.qmd).
+
+## Course Navigation
+
+[Course Overview](../index.qmd) · [Instructor Notes](instructor-notes.qmd) · [Additional Material](additional_material.qmd) · [Extra Exercises](extra_exercises.qmd) · [Learner Setup](../learners/setup.qmd)

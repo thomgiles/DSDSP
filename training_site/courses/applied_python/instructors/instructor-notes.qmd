@@ -4,6 +4,10 @@ title: Instructor Notes
 
 ## About the lesson
 
+This local course has eight lessons, listed in the [Course Overview](../index.qmd). The introduction through functions establishes the programming foundation; pandas, modelling, classes and defensive programming extend it. Select the delivery scope to match the advertised session and cohort rather than treating every extension as a prerequisite.
+
+Before teaching, complete the [learner setup checks](../learners/setup.qmd) in the same JupyterLab environment learners will use. Check NumPy, Matplotlib, pandas, scikit-learn and statsmodels for the lessons you plan to teach. Prepare a working notebook and the downloaded data as an access fallback.
+
 Our real goal isn't to teach workshop attendees Python as a programming language,
 but to teach them the basic concepts that all programming depends on.
 We use Python in our lessons because:
@@ -37,13 +41,7 @@ instructors should resist the temptation to explain
 the "other 90%" of the language
 as well.
 
-The final example asks them to build a command-line tool
-that works with the Unix pipe-and-filter model.
-We do this because it is a useful skill
-and because it helps learners see that the software they use isn't magical.
-Tools like `grep` might be more sophisticated than
-the programs our learners can write at this point in their careers,
-but it's crucial they realize this is a difference of scale rather than kind.
+The current local sequence ends with [Errors, Debugging, and Defensive Programming](../episodes/08-errors_debugging_and_defensive_programming.qmd). The inherited `code` download also includes command-line examples; these are optional extensions rather than the course finale. Introduce shell input/output separately if you use them.
 
 Explain that we use Python because:
 
@@ -57,14 +55,13 @@ Explain that we use Python because:
   as we'd covered in three days in Perl,
   and that retention was higher.)
 
-We do *not* include instructions on running the Jupyter Notebook in the tutorial
-because we want to focus on the language rather than the tools.
-Instructors should, however, walk learners through some basic operations:
+The learner setup page covers launching JupyterLab. Begin by checking the following operations together:
 
-- Launch from the command line with `jupyter notebook`.
+- Launch JupyterLab in the prepared environment and locate the course folder.
 - Create a new notebook.
 - Enter code or data in a cell and execute it.
 - Explain the difference between `In[#]` and `Out[#]`.
+- Save, restart the kernel and run cells in order; distinguish notebook text from the state held in memory.
 
 Watching the instructor grow programs step by step
 is as helpful to learners as anything to do with Python.
@@ -90,7 +87,7 @@ which are covered in the lesson on the shell.
   and `import matplotlib.pyplot as plt`. Despite that, we have decided
   not to introduce aliasing imports in this novice lesson due to the
   additional cognitive load it puts on students, despite the typing that
-  it saves. A good summary of arguments for and against can be found in
+  it saves. The local plotting lesson now explains aliases, and the pandas lesson uses `pd`; follow the conventions shown in the lesson being taught. A summary of the original arguments can be found in
   [PR #61](https://github.com/swcarpentry/python-novice-inflammation/pull/61).
   
   It is up to you as an individual instructor whether you want to introduce
@@ -99,7 +96,7 @@ which are covered in the lesson on the shell.
 
 - NumPy methods.
   
-  We used to use NumPy array methods in the first [NumPy topic](02-numpy.html).
+  We used to use NumPy array methods in the first [NumPy topic](../episodes/03-data_manipulation_and_visualization.qmd).
   We switched these methods to the equivalent functions because a majority
   of instructors supported the change; see
   [PR #244](https://github.com/swcarpentry/python-novice-inflammation/pull/244)
@@ -118,4 +115,15 @@ which are covered in the lesson on the shell.
 
 After discussing the challenges is a good time to introduce the `b *= 2` syntax.
 
+## Consolidation and Room Checks
+
+- Ask learners to predict a small result before running it, then compare predictions in pairs.
+- For data tasks, ask which axis or row identifiers were retained and which check connects the output to the input.
+- For a traceback, ask two pairs to identify the exception and the smallest failing example before discussing a correction.
+- Use the learner [Additional Material](../learners/additional_material.qmd) workflow for follow-up practice; use [Extra Exercises](extra_exercises.qmd) selectively during a session.
+- Keep model evaluation separate from scientific justification, and identify synthetic teaching data explicitly.
+
+## Course Navigation
+
+[Course Overview](../index.qmd) · [Instructor Notes](instructor-notes.qmd) · [Additional Material](additional_material.qmd) · [Extra Exercises](extra_exercises.qmd) · [Learner Setup](../learners/setup.qmd)
 

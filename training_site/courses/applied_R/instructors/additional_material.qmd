@@ -2,12 +2,28 @@
 title: Additional Material
 ---
 
-## Optional Extensions
+These are instructor extensions to the four-session course. Learner-facing practice and references are in [Learner Additional Material](../learners/additional_material.qmd). Choose one extension that addresses the cohort's needs and connect it to a saved output.
 
-- Additional data-cleaning practice with base R and tidyverse tools.
-- Extra examples for plotting and exploratory analysis.
-- Optional reproducibility discussion topics (project structure, script conventions).
+## A Small Bank of Optional Demonstrations
 
-## Suggested Use
+| Extension | Build on | Demonstration and check |
+|---|---|---|
+| Base R and tidyverse selection | Sessions 1 and 4 | Select the same country–year observations both ways; compare IDs and values rather than printed formatting |
+| A helper function for repeated summaries | Sessions 2 and 4 | State the expected input, units and missing-value policy; test a small known table before reuse |
+| Read back a derived CSV | Session 3 | Compare dimensions, identifiers and types; explain why factor metadata is not encoded in the CSV |
+| A plot as a scientific argument | Session 4 | Compare an unlabelled pooled plot with a labelled, selected comparison and state what each can establish |
+| Project handover | Any session | Ask a partner to find the input, script, output and checks, then rerun the saved script from a fresh session |
 
-Use this page as a flexible bank of optional material when cohort needs differ across sessions.
+## Reproducibility Discussion
+
+Use a small completed script to ask: which settings, packages, input data and decisions would another researcher need? Record `sessionInfo()`, a data-source note and the analysis question. Explain why a software version record helps diagnosis but does not by itself recreate every dependency or validate the science.
+
+Git, `renv` and Quarto reports are sensible follow-on topics when the learner needs them. They are not additional setup requirements for the core four sessions. Use the official [RStudio Projects guide](https://docs.posit.co/ide/user/ide/guide/code/projects.html) and the learner's [further reading](../learners/additional_material.qmd#further-reading-and-quick-references) as starting points.
+
+## Use the Existing Reference Bank
+
+Session 4 retains optional selection and plotting variants and fourteen worked exercise examples. Use these after the core room tasks or assign a small set for consolidation. Discuss the unsupported-year example as a data-coverage check, not as a failed coding attempt.
+
+## Course Navigation
+
+[Course Overview](../index.qmd) · [Instructor Notes](instructor-notes.qmd) · [Additional Material](additional_material.qmd) · [Extra Exercises](extra_exercises.qmd) · [Learner Setup](../learners/setup.qmd)

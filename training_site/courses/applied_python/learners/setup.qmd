@@ -2,23 +2,23 @@
 title: Setup
 ---
 
-# Setup
+## Before You Start
 
-This lesson is designed to be run on a personal computer.
-All of the software and data used in this lesson are freely available online,
-and instructions on how to obtain them are provided below.
+Applied Python uses Python 3 and JupyterLab on a personal computer. No previous Python experience is required; being able to create folders, download files and locate them on your computer will help. Prepare the software and data below before the session and keep a note of any step that fails.
+
+If you already have a working Python environment, use the checks below rather than installing a second copy. Follow your organisation's software installation arrangements on a managed device; if installation is unavailable, contact the organiser before the session so that shared-screen practice or a supported environment can be arranged.
 
 ## Install Python with Anaconda
 
-We recommend using the Anaconda installer, which installs Python along with lots of packages which we will need in the lessons.
+The established course setup uses Anaconda Distribution, which includes Python, JupyterLab and scientific packages. Follow its current [installation guidance](https://www.anaconda.com/docs/getting-started/installation) for your operating system and check the download's terms against your institution's arrangements.
 
-1. Open [https://www.anaconda.com/download](https://www.anaconda.com/download/success).
+1. Open the [Anaconda download page](https://www.anaconda.com/download/success).
 2. Download the Anaconda installer (if you are not sure which version to choose, you probably want the Graphical Installer).
-3. Run the Anaconda Installer. Make sure to say yes to **Add Anaconda to my PATH environment variable**.
+3. Run the installer using the recommended options for your system. Do not change your system PATH just to follow this course; launch through Anaconda Navigator or the environment's supported terminal.
 
 ## Launch JupyterLab
 
-This course will be taught using JupyterLab, a programming environment that runs in a web browser. After installing Anaconda, follow the instructions here to launch JupyterLab: [https://www.anaconda.com/docs/getting-started/guides/how-to-open-jupyterlab#](https://www.anaconda.com/docs/getting-started/guides/how-to-open-jupyterlab#).
+This course uses JupyterLab, a programming environment that runs in a web browser. After installing Anaconda, follow the official [launch instructions](https://www.anaconda.com/docs/legacy/anaconda-navigator/tutorials/how-to-open-jupyterlab), create a Python notebook and run `print("Python is ready")` in a cell. If you use an existing environment, the [JupyterLab documentation](https://jupyterlab.readthedocs.io/en/stable/user/running.html) explains kernel management.
 
 ## Obtain lesson materials
 
@@ -33,13 +33,41 @@ Desktop.
 
 ::: {.callout-note}
 
-Once you have successfully installed Anaconda, launched JupyterLab, and downloaded the lesson materials, your setup is complete.
+Create your practice notebook directly inside `swc-python`, alongside `data` and `code`. The lessons use paths such as `data/inflammation-01.csv`; placing a notebook inside `data` would change the path needed to read that file.
 
 :::
 
-## Other Python environments
+## Check Your Setup
 
-Although this course uses JupyterLab, there are other ways to run Python that you may want to explore, including:
+Run this in your practice notebook. These are the libraries used by the data and modelling lessons; a successful import checks availability in the selected notebook kernel.
+
+```python
+import sys
+import numpy
+import matplotlib
+import pandas
+import sklearn
+import statsmodels
+
+print(sys.version)
+```
+
+Then check that the notebook can read the downloaded teaching data:
+
+```python
+from pathlib import Path
+
+data_path = Path("data/inflammation-01.csv")
+print(data_path.exists())
+data = numpy.loadtxt(data_path, delimiter=",")
+print(data.shape)
+```
+
+The file check should print `True`. If an import fails, record the package name and error and ask the organiser for help with that environment. If the file check fails, inspect the notebook's folder and whether the ZIP has been extracted. The course's inflammation files contain synthetic teaching data; use them for practice.
+
+## Other Python Environments
+
+Although this course uses JupyterLab, there are other ways to run Python that you may want to explore. These are optional alternatives, not additional preparation requirements; check that the chosen environment can access the lesson files and packages.
 
 - Python REPL: Open a command prompt or terminal and run `python` or `python3` or `py`, depending on your system.
 - [Visual Studio Code](https://code.visualstudio.com/docs/python/)
@@ -48,3 +76,10 @@ Although this course uses JupyterLab, there are other ways to run Python that yo
 - [IPython](https://ipython.org)
 - [Google Colab](https://colab.research.google.com/)
 
+## After Setup
+
+Start with [Types, Variables, and Basic Operations](../episodes/01-types_variables_and_basic_operations.qmd). The learner [Additional Material](additional_material.qmd) page provides a checked notebook practice workflow and official references for later use. Use [Digital Skills Clinics](../../../clinics.qmd) for follow-up help with a specific coding or analysis task.
+
+## Course Navigation
+
+[Course Overview](../index.qmd) · [Setup](setup.qmd) · [Additional Material](additional_material.qmd) · [Reference](reference.qmd) · [Discussion](discuss.qmd)

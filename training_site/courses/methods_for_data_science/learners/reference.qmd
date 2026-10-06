@@ -4,154 +4,113 @@ title: Reference
 
 ## Core Terms
 
-- **RDM (Research Data Management):** Planning, organising, storing, documenting, sharing, and preserving research data across the project lifecycle.
-- **DMP (Data Management Plan):** A living plan describing how data will be collected, stored, documented, shared, retained, and preserved.
-- **FAIR:** Data principles that aim to make data Findable, Accessible, Interoperable, and Reusable.
-- **Metadata:** Descriptive information that helps data be understood, located, and reused.
-- **Data lifecycle:** The sequence from planning and collection through analysis, sharing, preservation, and reuse.
-- **Personal data:** Information relating to an identified or identifiable person.
-- **Special category data:** More sensitive personal data, such as health, genetic, biometric, race, religion, or sexual orientation data.
-- **Lawful basis:** The legal justification for processing personal data under UK GDPR.
-- **DPIA:** Data Protection Impact Assessment used to identify and reduce data protection risks.
-- **Data controller:** The organisation that decides why and how personal data are processed.
-- **Processor:** A party processing data on behalf of the controller.
-- **Ethics review:** Formal review of research involving humans, personal data, or other significant risks.
-- **Retention:** How long data are kept.
-- **Preservation:** Longer-term keeping of data so they remain usable and understandable.
-- **Version control:** A way of tracking changes to files, code, documents, or datasets over time.
-- **Reproducibility:** The ability to understand, check, and rerun a workflow or analysis.
-
-## Institutional Platforms
-
-| Platform | Typical use |
+| Term | Meaning in this course |
 |---|---|
-| **Microsoft 365** | Day-to-day collaboration, communication, writing, and spreadsheet work |
-| **OneDrive** | Individual working storage with sync and version history |
-| **Teams** | Group communication, meetings, and shared project working space |
-| **SharePoint** | Collaborative document storage with permissions and longer-lived team spaces |
-| **RIS (Worktribe)** | Research lifecycle tracking, outputs, grants, and linked researcher information |
-| **UniCore** | Finance, HR, procurement, and operational research administration |
-| **ORCID** | Persistent researcher identifier used to maintain a consistent research identity |
-| **TRE Secure Storage** | Restricted environment for sensitive or confidential data |
-| **CPS Research Storage** | Group-managed research storage for backed-up project data |
+| **Observation** | The entity or event represented by one row, such as one request or one measurement at a stated time |
+| **Variable** | A property recorded for each observation, with its meaning, unit, and allowed values defined |
+| **Identifier** | A value used to distinguish or link records; check whether it is expected to be unique |
+| **Data dictionary** | Documentation of column meanings, types, units, categories, and missing-value conventions |
+| **Missing value** | An absent observation; its reason may matter, and it is not automatically zero |
+| **Validation** | Checks against stated rules, source records, or expected relationships |
+| **Duplicate candidate** | Records that may repeat the same observation; matching values alone do not establish duplication |
+| **Provenance** | The source of the data and the record of how it reached its current form |
+| **Selection bias** | A difference caused by who or what is included in the data, affecting what it can represent |
+| **Exploratory analysis** | Inspecting structure, distributions, and relationships to understand data and develop questions |
+| **Denominator** | The population or count used to calculate a proportion, rate, or average |
+| **Outlier** | An observation unusual relative to others; investigate its context before treating it as an error |
+| **Association** | Variables vary together; this alone does not establish that one causes the other |
+| **Uncertainty** | Limits to what a result establishes, including sampling variation, measurement issues, or missing context |
 
-## Quick Decision Guide
+## Collecting the Right Data
 
-### Where should this work live?
+Use with [Collecting the Right Data](../episodes/05-collecting_the_right_data.qmd).
 
-| Situation | Usually the best fit |
+Before collecting or reusing data, record:
+
+1. The question and decision the data should inform.
+2. What one row will represent, including any repeated measurements.
+3. The population of interest and who or what the source may miss.
+4. The variables needed, their units, categories, and collection method.
+5. The source, collection dates, permitted use, and important limitations.
+
+Do not equate a large dataset with a representative dataset. Consider whether a source covers the people, places, period, or events in your question.
+
+## Organising and Exploring Data
+
+Use with [Organising and Exploring Data](../episodes/06-organising_and_exploring_data.qmd).
+
+### Before changing values
+
+- Keep the original file and work on a copy.
+- Preserve stable row or observation identifiers.
+- Define missing values explicitly and keep them distinct from zero.
+- Check units and categories against documentation before converting them.
+- Investigate duplicate candidates against the collection process and source records.
+- Do not replace an unusual value with a plausible guess.
+
+Use a change log with **record identifier; original value; change; evidence; reason**. Keep unresolved issues visible. A tidy layout does not establish that the measurements are valid.
+
+### Before trusting a summary
+
+| Check | Why it matters |
 |---|---|
-| Personal draft notes or early working files | **OneDrive** |
-| Shared project documents used by a team | **Teams / SharePoint** |
-| Sensitive or confidential research data | **Approved secure storage** such as TRE Secure Storage |
-| Proposal, output, or institutional research record | **RIS (Worktribe)** |
-| Finance or procurement workflow | **UniCore** |
-| Public researcher identity and linked outputs | **ORCID** plus institutional systems |
+| Row count and unique observation count | Detects unplanned row loss, repeated exports, or legitimate repeated measurements |
+| Missingness by column and group | Shows which observations contribute to a comparison |
+| Minimum, maximum, and units | Helps identify impossible values or mixed scales |
+| Category counts | Reveals spelling variants and unexpected categories |
+| Mean, median, and distribution | Shows how an average may conceal skew, spread, or unusual observations |
+| Filters and denominator | Makes exclusions and the basis of a result explicit |
 
-### Before you share a file or dataset
+**Mean:** sum of the included values divided by their count. **Median:** the middle value after sorting; average the two middle values for an even count. **Mode:** the most frequent value or category; ties are possible. State which records contribute to each calculation.
 
-Ask:
+## Making Sense of Data
 
-1. Does it contain personal, confidential, or commercially sensitive information?
-2. Is the storage location approved for that level of sensitivity?
-3. Are permissions set to the smallest group that needs access?
-4. Is there enough documentation for someone else to understand the file?
-5. Have you recorded the version, source, and context?
+Use with [Making Sense of Data](../episodes/07-making_sense_of_data.qmd).
 
-## Practical Good Practice
+| Question | Useful starting point | Check |
+|---|---|---|
+| How do categories compare? | Bar chart | Show counts or rates clearly; bar length should use a meaningful baseline |
+| How does a measure change over time? | Line chart | Label time intervals and account for gaps or changes in measurement |
+| What is the distribution of a numerical measure? | Histogram or box plot | Check binning or plot conventions; retain information about spread |
+| Are two numerical measures associated? | Scatter plot | Consider unusual observations, group differences, and alternative explanations |
 
-### File and folder naming
+Check the title, source, units, period, denominator, filters, uncertainty, and axis scale. Add a text description or data table so the evidence can be understood without relying on the image or colour alone. See the [Government Analysis Function chart guidance](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/) for worked design and accessibility examples.
 
-Use names that are consistent, sortable, and readable.
+## Insight to Impact
 
-```text
-2026-03-23_interview-theme-summary_v01.docx
-project-alpha/
-  raw-data/
-  cleaned-data/
-  documentation/
-  outputs/
-```
+Use with [Insight to Impact](../episodes/08-insight_to_impacts.qmd).
 
-Helpful patterns:
+Keep four statements distinct:
 
-- use dates in `YYYY-MM-DD` format
-- avoid spaces if files move across systems regularly
-- use meaningful version labels such as `v01`, `v02`, `final-reviewed`
-- separate raw, cleaned, and derived data
+| Statement | What to record |
+|---|---|
+| **Evidence** | What was observed, in which source and population, over which period |
+| **Interpretation** | What the observation may mean, with alternative explanations |
+| **Proposed action** | Who could do what, with constraints and possible unintended effects |
+| **Evaluation** | How you will check whether the action helped, for whom, and under what conditions |
 
-### Minimum documentation to keep
-
-For most projects, try to retain:
-
-- who created or updated the file
-- when it was created or changed
-- what the file contains
-- how values, variables, or categories should be interpreted
-- what processing or transformation has already happened
-- where the authoritative version is stored
-
-### Metadata prompts
-
-If you are not sure what metadata to record, start with:
-
-- title
-- creator or owner
-- date
-- format
-- location
-- description
-- methods or source
-- access restrictions
-- reuse conditions
-
-## Governance and Compliance Reminders
-
-- Ethics approval and data protection are related but not identical.
-- Consent is important, but it is not automatically the lawful basis for research processing.
-- Personal data can include indirect identifiers, not just names and email addresses.
-- Sensitive data requires both stronger justification and stronger safeguards.
-- A good DMP should match your real storage, access, sharing, and retention practices.
-
-## Data Quality and Analysis Prompts
-
-When reviewing a dataset or chart, ask:
-
-- What exactly does each row represent?
-- Are categories used consistently?
-- What is missing, ambiguous, or mixed together?
-- What would a collaborator misunderstand without explanation?
-- Does the chart help interpretation or distort it?
-- What action is the audience expected to take from this output?
-
-## AI Use in Research
-
-Use AI most safely when you define:
-
-- the task
-- the context
-- the source boundary
-- the output format
-- the verification step
-
-A useful prompt pattern:
-
-> Help me with **[task]** for **[context]**. Use **[source or boundary]**. Return the result as **[format]**. Flag uncertainty and do not invent evidence.
-
-Before using AI on research work, ask:
-
-1. Is the material safe to paste into this tool?
-2. Do I need to use only approved or institutionally permitted services?
-3. What part of the answer must I verify manually?
-4. Am I asking for support, or am I trying to outsource judgement?
+A before-and-after change can support further investigation, but other changes may explain it. Do not label an action effective solely because a result improved after it was introduced.
 
 ## End-of-Course Checklist
 
-By the end of the course, you should be able to:
+You should be able to:
 
-- choose more appropriate tools for collaboration and storage
-- explain key governance and RDM concepts in practical terms
-- design a clearer folder structure and documentation approach
-- critique charts and data summaries more confidently
-- turn an analysis result into a clearer action or recommendation
-- use AI in a more selective, source-aware, and defensible way
+- connect a collection plan to a clear question and population
+- define row meaning, identifiers, variables, units, and missing values
+- explain and document justified cleaning decisions
+- calculate a summary with a stated denominator and exclusions
+- choose and critique a chart using its source and context
+- distinguish an observation, an interpretation, and a proposed action
+- plan feedback that checks the effects and limitations of an action
+
+Practise these checks with the [worked fictional dataset](additional_material.qmd#practice-dataset).
+
+## Related Foundations
+
+For storage, metadata, ethics, and institutional research systems, use the [Essential Digital Skills reference](../../essential_digital_skills/learners/reference.qmd). Those foundations support this course; its four lessons focus on data collection, exploration, interpretation, and impact.
+
+For a coding route after this course, see [Applied Python](../../applied_python/index.qmd) or [Applied R](../../applied_R/index.qmd).
+
+## Course Navigation
+
+[Course Overview](../index.qmd) · [Setup](setup.qmd) · [Additional Material](additional_material.qmd) · [Reference](reference.qmd) · [Discussion](discuss.qmd)

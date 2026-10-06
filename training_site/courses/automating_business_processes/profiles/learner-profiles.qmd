@@ -11,3 +11,7 @@ This course is suitable for learners who:
 - maintain small Excel trackers;
 - send repeated communications to groups;
 - want to understand when no-code automation is appropriate and when a more governed system is needed.
+
+## Course Navigation
+
+[Course Overview](../index.qmd) · [Learner Setup](../learners/setup.qmd) · [Learner Additional Material](../learners/additional_material.qmd) · [Instructor Notes](../instructors/instructor-notes.qmd)

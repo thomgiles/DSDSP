@@ -1,10 +1,23 @@
 ---
-title: 'Glossary'
+title: Reference
 ---
+
+## Quick Reference
+
+Use this page while working through the lessons. [Additional Material](additional_material.qmd) provides checked practice and links to the official package documentation.
+
+| Task | Pattern | Check |
+|---|---|---|
+| Inspect an object | `type(value)`, `len(values)` | Choose an inspection appropriate to the object type |
+| Select part of a sequence | `values[start:stop]` | The stop index is excluded; indexing begins at zero |
+| Repeat a task | `for value in values:` | Indent the loop body and inspect one iteration first |
+| Work with numerical arrays | `numpy.loadtxt(path, delimiter=",")` | Verify dimensions and which axis represents each quantity |
+| Read a headerless CSV with pandas | `pandas.read_csv(path, header=None)` | Preserve the first observation as data |
+| Define a reusable step | `def function_name(argument):` | State the expected input and use a small known result to test it |
+| Diagnose an error | Read the traceback and exception message | Reproduce the failure with a small input before changing code |
 
 ## Glossary
 
-{:auto\_ids}
 [additive color model]{#additive-color-model}
 :   A way to represent colors as the sum of contributions from primary colors
 such as [red, green, and blue](#rgb).
@@ -57,7 +70,7 @@ depending on whether a test is true or false.
 :   (CSV) A common textual representation for tables
 in which the values in each row are separated by commas.
 
-[debug](#debug)
+[debug]{#debug}
 :   The action of finding and resolving errors (also known as 'bugs') 
 within computer programs or systems.
 
@@ -285,7 +298,7 @@ against which the results of a test can be compared.
 
 [type]{#type}
 :   The classification of something in a program (for example, the contents of a variable)
-as a kind of number (e.g. [floating-point](#float), [integer](#integer)),
+as a kind of number (e.g. [floating-point](#floating-point-number), [integer](#integer)),
 [string](#string), or something else.
 
 [type of error]{#type-of-error}
@@ -302,3 +315,7 @@ See also: [for loop](#for-loop).
 
 [whitespace]{#whitespace}
 :   The space, newline, carriage return, and horizontal and vertical tab characters that take up space but do not create a visible mark.
+
+## Course Navigation
+
+[Course Overview](../index.qmd) · [Setup](setup.qmd) · [Additional Material](additional_material.qmd) · [Reference](reference.qmd) · [Discussion](discuss.qmd)

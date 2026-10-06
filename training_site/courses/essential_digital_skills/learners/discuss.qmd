@@ -14,6 +14,8 @@ Use alongside [Digital Tools](../episodes/01-digital_tools.qmd).
 2. Where do people in your team store files now, and which part of that setup feels most fragile?
 3. What makes a researcher identity feel consistent across ORCID, RIS, local profiles, and outputs?
 4. Which digital security habit would reduce the most risk for your current work?
+5. How do you record where a paper was found and why you retained it?
+6. What would help a co-author check your reading notes, citations and document revisions?
 
 ## Digital Delivery and Coordination
 
@@ -46,7 +48,7 @@ Use alongside [Research Data Management](../episodes/04-research_data_managment.
 
 After a small-group discussion, ask each group to report:
 
-- Summarize one practical change your group recommends.
+- Summarise one practical change your group recommends.
 - Identify one barrier to implementing that change.
 - Propose one realistic first step for the next 2–4 weeks.
 
@@ -58,3 +60,9 @@ Use these prompts near the end of the course or as follow-up reflection.
 2. What is one decision you can make more confidently than before?
 3. Which support service, platform, or practice do you need to engage with next?
 4. What will you change first: tooling, documentation, governance, collaboration, or analysis practice?
+
+For follow-up practice and templates, use [Additional Material](additional_material.qmd).
+
+## Course Navigation
+
+[Course Overview](../index.qmd) · [Setup](setup.qmd) · [Additional Material](additional_material.qmd) · [Reference](reference.qmd) · [Discussion](discuss.qmd)

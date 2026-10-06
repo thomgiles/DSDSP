@@ -2,11 +2,25 @@
 title: Extra Exercises
 ---
 
+## How To Use These Exercises
+
+Each optional exercise is a five-minute pair task: one minute to inspect the input, two minutes to attempt it, one minute to check with a partner, and one minute for two pairs to report to the room. Keep the stated output. Use a shared screen or paper if software is unavailable. The [learner worksheet](../learners/additional_material.qmd) provides a common fictional example and worked checks; these exercises do not change the core lesson timings.
+
 ## Exercise 1: Source Quality Triage
 
 **Best fit:** [Collecting the Right Data](../episodes/05-collecting_the_right_data.qmd)
 
 Give groups three possible data sources for the same question. Ask them to rank each source for relevance, trustworthiness, completeness, and likely bias.
+
+**Prepared fictional input:** “What proportion of all requests received last month got a response within 30 elapsed minutes?”
+
+| Source card | Scope and limitation |
+|---|---|
+| Completed-request export | Contains receipt and response times, but omits requests still awaiting a response |
+| Voluntary satisfaction survey | Contains reported waiting times from respondents; response rate and respondent coverage are unknown |
+| Full service log | Includes received, completed, and unresolved requests; status meanings and timestamp quality still need checking |
+
+**Keep:** a preferred source, two checks, and a limitation. **Debrief reasoning:** the full log is the strongest starting point for this question because it can identify the denominator, but its definitions and timestamps must be validated. The other sources answer narrower questions.
 
 **Debrief question:** Which source looked useful at first but became weaker after inspection?
 
@@ -16,6 +30,8 @@ Give groups three possible data sources for the same question. Ask them to rank 
 
 Give learners a broad research question and a long list of possible variables. Ask them to choose only the variables they would collect first and justify what they excluded.
 
+**Prepared input:** use Exercise 1's question and choose from request identifier, receipt timestamp, first-response timestamp, status, route, request type, home address, and favourite colour. **Keep:** a minimum field list and definitions, including units and the treatment of unresolved requests. **Debrief reasoning:** start with the identifier, timestamps, and status; justify any grouping fields with a specific comparison. Home address and favourite colour do not answer this question.
+
 **Debrief question:** Which "nice to have" variable was hardest to drop?
 
 ## Exercise 3: Messy Table Audit
@@ -23,6 +39,8 @@ Give learners a broad research question and a long list of possible variables. A
 **Best fit:** [Organising and Exploring Data](../episodes/06-organising_and_exploring_data.qmd)
 
 Ask learners to inspect a deliberately messy spreadsheet and classify each issue as missingness, duplication, inconsistent labelling, invalid value, or unclear structure.
+
+**Prepared input:** the [fictional request dataset and source notes](../learners/additional_material.qmd#practice-dataset). **Keep:** an audit list separating confirmed corrections from unresolved checks. **Debrief reasoning:** row04 is a confirmed repeated export, A103 remains missing, and A104's valid 50-minute response stays. The mean of the five documented observed times is 20.4 minutes.
 
 **Debrief question:** Which issue would most distort a summary statistic?
 
@@ -32,6 +50,8 @@ Ask learners to inspect a deliberately messy spreadsheet and classify each issue
 
 Show several weak charts and ask learners to identify what each chart appears to claim, which design choice shapes that claim, what context is missing, and how they would redesign it.
 
+**Preparation:** use a public example or create a practice chart from the request dataset. Compare a chart headed “All requests take 20 minutes” with a display of the five observed times and a caption stating the missing value. **Keep:** a revised title, one design change, and a limitation. **Debrief reasoning:** retain the observed spread and disclose the denominator; a chart cannot establish service-wide performance from this export.
+
 **Debrief question:** Which chart looked persuasive before you inspected it carefully?
 
 ## Exercise 5: From Insight to Action
@@ -40,4 +60,10 @@ Show several weak charts and ask learners to identify what each chart appears to
 
 Give a short data finding and ask groups to write three versions: a research interpretation, an operational recommendation, and a short message for a non-specialist audience.
 
+**Prepared fictional input:** “Five recorded request times range from 2 to 50 minutes, with a median of 15 minutes; one of six unique requests has a missing time.” **Keep:** the three statements and a proposed follow-up check. **Debrief reasoning:** audience and emphasis may change, but counts, units, missingness, and uncertainty remain. Investigate before making a causal claim or imposing a process change.
+
 **Debrief question:** What changed between the three versions, and what had to stay the same?
+
+## Course Navigation
+
+[Course Overview](../index.qmd) · [Instructor Notes](instructor-notes.qmd) · [Additional Material](additional_material.qmd) · [Extra Exercises](extra_exercises.qmd) · [Learner Setup](../learners/setup.qmd)

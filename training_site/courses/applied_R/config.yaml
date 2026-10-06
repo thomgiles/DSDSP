@@ -1,5 +1,7 @@
 #------------------------------------------------------------
-# Values for this lesson.
+# Retained Carpentries metadata for the local Applied R course.
+# Quarto navigation is defined in training_site/_quarto.yml; this ordered list
+# mirrors the four current sessions and excludes the compatibility-only page.
 #------------------------------------------------------------
 
 # Which carpentry is this (swc, dc, lc, or cp)?
@@ -11,13 +13,13 @@
 carpentry: 'swc'
 
 # Overall title for pages.
-title: 'Programming with R'
+title: 'Applied R'
 
 # Date the lesson was created (YYYY-MM-DD, this is empty by default)
 created: '2014-12-18'
 
 # Comma-separated list of keywords for the lesson
-keywords: 'software, data, lesson, The Carpentries'
+keywords: 'R, RStudio, research, data analysis, tidyverse, ggplot2, reproducibility'
 
 # Life cycle stage of the lesson
 # possible values: pre-alpha, alpha, beta, stable
@@ -26,14 +28,14 @@ life_cycle: 'stable'
 # License of the lesson materials (recommended CC-BY 4.0)
 license: 'CC-BY 4.0'
 
-# Link to the source repository for this lesson
+# Upstream source repository retained for attribution
 source: 'https://github.com/swcarpentry/r-novice-inflammation'
 
 # Default branch of your lesson
 branch: 'main'
 
 # Who to contact if there are any issues
-contact: 'team@carpentries.org'
+contact: 'digitalresearch@nottingham.ac.uk'
 
 # Navigation ------------------------------------------------
 #
@@ -58,31 +60,28 @@ contact: 'team@carpentries.org'
 # - another-learner.md
 
 # Order of episodes in your lesson
-episodes: 
-- 01-starting-with-data.Rmd
-- 02-func-R.Rmd
-- 03-loops-R.Rmd
-- 04-cond.Rmd
-- 05-cmdline.Rmd
-- 06-best-practices-R.Rmd
-- 07-knitr-R.Rmd
-- 08-making-packages-R.Rmd
-- 09-supp-intro-rstudio.Rmd
-- 10-supp-addressing-data.Rmd
-- 11-supp-read-write-csv.Rmd
-- 12-supp-factors.Rmd
-- 13-supp-data-structures.Rmd
-- 14-supp-call-stack.Rmd
-- 15-supp-loops-in-depth.Rmd
+episodes:
+- 01-Rstudio_intro.qmd
+- 03-R_functions.qmd
+- 04-for_loops.qmd
+- 05-the_tidyverse.qmd
 
 # Information for Learners
-learners: 
+learners:
+- setup.qmd
+- additional_material.qmd
+- reference.qmd
+- discuss.qmd
 
 # Information for Instructors
-instructors: 
+instructors:
+- instructor-notes.qmd
+- additional_material.qmd
+- extra_exercises.qmd
 
 # Learner Profiles
-profiles: 
+profiles:
+- learner-profiles.qmd
 
 # Customisation ---------------------------------------------
 #
@@ -90,6 +89,6 @@ profiles:
 # sandpaper and varnish versions) should live
 
 
+# Upstream website retained for attribution; local pages are served by Quarto.
 url: 'https://swcarpentry.github.io/r-novice-inflammation'
-analytics: carpentries
 lang: en

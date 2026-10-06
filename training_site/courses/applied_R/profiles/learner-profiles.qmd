@@ -2,6 +2,8 @@
 title: Learner Profiles
 ---
 
+These profiles guide teaching choices; they are not entry requirements. Use the [Course Overview](../index.qmd) to choose a starting point and [Setup](../learners/setup.qmd) to prepare.
+
 ## Profile 1: Researchers New to Programming
 
 - **Background:** New to R and moving from manual or spreadsheet-heavy analysis toward code-based workflows.
@@ -19,3 +21,11 @@ title: Learner Profiles
 - **Background:** Interested in using R not just to get answers, but to structure analysis more transparently and repeatably.
 - **Motivation:** Improve code reuse, debugging confidence, and the ability to explain analytical steps clearly.
 - **Needs:** Good habits around functions, iteration, tidyverse workflows, and readable analytical code.
+
+## Put the Profiles into Practice
+
+- For new programmers, start with the foundations and use paired prediction before running code.
+- For analysts changing language, connect familiar operations to the local reference and inspect differences in indexing and object types.
+- For reproducibility-focused learners, use [Additional Material](../learners/additional_material.qmd) to check a saved workflow from a fresh session.
+
+[Course Overview](../index.qmd) · [Learner Materials](../learners/additional_material.qmd) · [Instructor Notes](../instructors/instructor-notes.qmd)

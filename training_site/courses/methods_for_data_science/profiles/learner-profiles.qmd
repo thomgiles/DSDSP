@@ -4,18 +4,24 @@ title: Learner Profiles
 
 ## Profile 1: Early-Career Researchers
 
-- **Background:** New to institutional digital research systems.
-- **Motivation:** Build confidence in day-to-day digital research practice.
-- **Needs:** Clear workflows, practical examples, and policy context.
+- **Background:** Beginning to collect or interpret research data; spreadsheet experience varies.
+- **Motivation:** Plan useful data collection and avoid misleading summaries.
+- **Needs:** Clear questions, variable definitions, small practice tables, and visible checking steps.
 
 ## Profile 2: Research Staff Expanding Digital Practice
 
-- **Background:** Experienced in research methods but variable digital workflow maturity.
-- **Motivation:** Improve reproducibility, collaboration, and compliance.
-- **Needs:** Strong templates and operational decision frameworks.
+- **Background:** Experienced in a discipline, with recurring data cleaning, exploration, or reporting work.
+- **Motivation:** Make transformations traceable and interpretations easier for collaborators to assess.
+- **Needs:** Data dictionaries, change logs, chart critique, and clear distinctions between observation and explanation.
 
 ## Profile 3: Professional Services Partners
 
-- **Background:** Support roles across research governance, data, and systems.
-- **Motivation:** Align support guidance with research realities.
-- **Needs:** Shared language and role-clarity across teams.
+- **Background:** Produces or uses survey results, service metrics, dashboards, or operational reports.
+- **Motivation:** Connect trustworthy evidence to practical decisions and useful feedback.
+- **Needs:** Source-quality checks, clear denominators, audience-aware communication, and proportionate evaluation plans.
+
+These profiles guide example choice; they are not separate prerequisites. See [Learner Setup](../learners/setup.qmd) for access and [Instructor Notes](../instructors/instructor-notes.qmd) for facilitation.
+
+## Course Navigation
+
+[Course Overview](../index.qmd) · [Learner Setup](../learners/setup.qmd) · [Additional Material](../learners/additional_material.qmd) · [Instructor Notes](../instructors/instructor-notes.qmd)

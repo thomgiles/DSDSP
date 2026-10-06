@@ -29,6 +29,12 @@ project:
     - services.qmd
     - courses.qmd
     - clinics.qmd
+    - courses/applied_R/README.qmd
+    - courses/applied_python/README.qmd
+    - courses/automating_business_processes/README.qmd
+    - courses/essential_digital_skills/README.qmd
+    - courses/methods_for_data_science/README.qmd
+    - courses/responsible_use_of_generative_ai/README.qmd
     - courses/**/*.qmd
 
 execute:
@@ -110,8 +116,9 @@ website:
         - section: "Learners"
           contents:
             - courses/essential_digital_skills/learners/setup.qmd
-            - courses/essential_digital_skills/learners/discuss.qmd
+            - courses/essential_digital_skills/learners/additional_material.qmd
             - courses/essential_digital_skills/learners/reference.qmd
+            - courses/essential_digital_skills/learners/discuss.qmd
         - section: "Instructors"
           contents:
             - courses/essential_digital_skills/instructors/additional_material.qmd
@@ -142,8 +149,9 @@ website:
         - section: "Learners"
           contents:
             - courses/methods_for_data_science/learners/setup.qmd
-            - courses/methods_for_data_science/learners/discuss.qmd
+            - courses/methods_for_data_science/learners/additional_material.qmd
             - courses/methods_for_data_science/learners/reference.qmd
+            - courses/methods_for_data_science/learners/discuss.qmd
         - section: "Instructors"
           contents:
             - courses/methods_for_data_science/instructors/additional_material.qmd
@@ -173,8 +181,9 @@ website:
         - section: "Learners"
           contents:
             - courses/responsible_use_of_generative_ai/learners/setup.qmd
-            - courses/responsible_use_of_generative_ai/learners/discuss.qmd
+            - courses/responsible_use_of_generative_ai/learners/additional_material.qmd
             - courses/responsible_use_of_generative_ai/learners/reference.qmd
+            - courses/responsible_use_of_generative_ai/learners/discuss.qmd
         - section: "Instructors"
           contents:
             - courses/responsible_use_of_generative_ai/instructors/additional_material.qmd
@@ -209,8 +218,9 @@ website:
         - section: "Learners"
           contents:
             - courses/applied_python/learners/setup.qmd
-            - courses/applied_python/learners/discuss.qmd
+            - courses/applied_python/learners/additional_material.qmd
             - courses/applied_python/learners/reference.qmd
+            - courses/applied_python/learners/discuss.qmd
         - section: "Instructors"
           contents:
             - courses/applied_python/instructors/additional_material.qmd
@@ -234,16 +244,20 @@ website:
           href: courses/applied_R/index.qmd
         - section: "Lessons"
           contents:
-            - courses/applied_R/episodes/01-Rstudio_intro.qmd
-            - courses/applied_R/episodes/02-R_variables_intro.qmd
-            - courses/applied_R/episodes/03-R_functions.qmd
-            - courses/applied_R/episodes/04-for_loops.qmd
-            - courses/applied_R/episodes/05-the_tidyverse.qmd
+            - text: "1. Foundations in RStudio"
+              href: courses/applied_R/episodes/01-Rstudio_intro.qmd
+            - text: "2. Functions"
+              href: courses/applied_R/episodes/03-R_functions.qmd
+            - text: "3. Iteration"
+              href: courses/applied_R/episodes/04-for_loops.qmd
+            - text: "4. Data Analysis with the Tidyverse"
+              href: courses/applied_R/episodes/05-the_tidyverse.qmd
         - section: "Learners"
           contents:
             - courses/applied_R/learners/setup.qmd
-            - courses/applied_R/learners/discuss.qmd
+            - courses/applied_R/learners/additional_material.qmd
             - courses/applied_R/learners/reference.qmd
+            - courses/applied_R/learners/discuss.qmd
         - section: "Instructors"
           contents:
             - courses/applied_R/instructors/additional_material.qmd
@@ -272,8 +286,8 @@ website:
           contents:
             - courses/automating_business_processes/learners/setup.qmd
             - courses/automating_business_processes/learners/additional_material.qmd
-            - courses/automating_business_processes/learners/discuss.qmd
             - courses/automating_business_processes/learners/reference.qmd
+            - courses/automating_business_processes/learners/discuss.qmd
         - section: "Instructors"
           contents:
             - courses/automating_business_processes/instructors/additional_material.qmd

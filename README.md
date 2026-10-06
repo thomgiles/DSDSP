@@ -4,12 +4,33 @@ This repository contains training content for the Digital Research Service (DRS)
 
 The main build target is the Quarto site in `training_site/`, rendered to `training_site/_site/` and deployed with Azure Static Web Apps.
 
+All six courses inherit that site project. Course-specific episode formatting
+lives in `episodes/_metadata.yml`; avoid creating nested website projects that
+separate course navigation or prevent access to the parent site's extensions.
+
 ## Repository Layout 
 
 - `training_site/`: Quarto project, lesson content, Python and R dependencies
 - `Deployments/`: Azure Pipelines definitions for development and production
 - `helper_apps/`: supporting applications/scripts
 - `Documents/`: project documentation and supporting materials
+
+## Episode Authoring
+
+Use [`training_site/resources/episode_template.qmd`](training_site/resources/episode_template.qmd)
+when creating episodes or improving their teaching structure. It includes an
+authoring guide, timed room activities, figure and accessibility conventions,
+worked-example patterns and verification expectations. Copy or replace its
+example figure when adapting it into an episode.
+
+The root [`AGENTS.md`](AGENTS.md) directs Codex sessions in this repository to read
+the template before working. Keep shared episode guidance in the template so it
+has one maintained source.
+
+An episode may set `module-number` to show its session number in the course finder
+while retaining its existing filename. Set `module-hidden: true` on a compatibility
+page that should remain available at an old URL but should not appear as another
+course session. These options affect the generated course/module catalogue only.
 
 ## Branches and CI
 
