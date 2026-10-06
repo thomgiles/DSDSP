@@ -61,9 +61,9 @@ Services are focused on training, skills development and practical capability bu
 
 ::: {.service-card-grid}
 ::: {.service-card}
-### Coding Clinics
+### Digital Skills Clinics
 
-Focused one-to-one or small-group sessions where learners bring code, errors, workflow questions or reproducibility problems and work through them with an instructor.
+Focused one-to-one or small-group sessions where learners work through digital tasks with an instructor, including collaboration, spreadsheets, data organisation, reporting, automation, responsible AI use and coding.
 :::
 ::: {.service-card}
 ### Bespoke Workshops
@@ -118,11 +118,11 @@ This might mean co-designing a workshop, reviewing an existing session, building
 ::: {.services-route}
 ## Find The Right Route
 
-Start with a course if you need a structured introduction. Use a coding clinic if you have a specific coding or workflow problem. Contact the Digital Research Service if you want to discuss a collaboration, bespoke session or training material development.
+Start with a course if you need a structured introduction. Use a digital skills clinic if you have a specific task, tool or workflow question. Contact the Digital Research Service if you want to discuss a collaboration, bespoke session or training material development.
 
 ::: {.service-route-actions}
 [Explore Courses](courses.qmd){.landing-button .landing-button-primary}
-[Book A Coding Clinic](clinics.qmd){.landing-button .landing-button-primary}
+[Explore Digital Skills Clinics](clinics.qmd){.landing-button .landing-button-primary}
 [Digital Research Service](https://digitalresearch.nottingham.ac.uk/){.landing-button .landing-button-primary target="_blank"}
 :::
 :::

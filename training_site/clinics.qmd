@@ -28,114 +28,215 @@ format:
 
 ::: {.landing-section .landing-programme-summary .coding-clinic-summary}
 ::: {.landing-summary-copy}
-## Practical Support For Real Code
+## Practical Support For Everyday Digital Work
 
-Coding clinics are focused support sessions where learners bring a real coding problem, workflow, dataset or analysis question and work through it with an experienced instructor.
+Personalised engagement clinics help you apply digital skills to your own research, study or professional work. Bring a task you find difficult, a process you want to improve, or a question about choosing and using digital tools, and work through it with an experienced instructor.
 
-The aim is to fix the immediate issue while building a reusable way to diagnose similar problems later.
+You do not need to write code or have attended a course to take part. Your starting point might be a spreadsheet, a shared folder, a report, an online form, a recurring administrative task or an unfamiliar piece of software.
+
+The aim is to make progress on the immediate task while helping you understand the choices involved and build skills you can reuse independently.
 :::
 
 ::: {.landing-feature-grid}
 ::: {.landing-feature}
-### 🔍 Diagnose
+### 🔍 Clarify
 
-Identify what is failing, where the uncertainty sits, and which assumptions need checking before changing the code.
+Describe what you want to achieve, identify where you are getting stuck, and agree a manageable question to work on together.
 :::
 ::: {.landing-feature}
 ### 🧠 Explain
 
-Turn the fix into a teachable moment so the learner understands the pattern, not just the answer.
+Explore the tools, steps and decisions involved. Understand why an approach fits your task and how to check whether it has worked.
 :::
 ::: {.landing-feature}
 ### 🛠️ Practise
 
-Leave with a cleaner next step, a small improvement to try, or a reusable debugging strategy.
+Try the approach with guidance, then leave with a practical next step, useful resources and a way to continue building confidence.
 :::
 :::
 :::
 
 ::: {.landing-section .coding-clinic-model}
 ::: {.coding-clinic-model-panel}
-## What A Coding Clinic Is
+## What A Digital Skills Clinic Is
 
-A coding clinic is an engaged one-to-one or small-group teaching format. It sits between a workshop, a helpdesk and a supervision meeting.
+A clinic is a focused one-to-one or small-group learning session shaped around your own work. It gives you space to ask questions, try an approach and discuss decisions that may be difficult to explore in a larger workshop.
 
-Clinics work well when learners need help applying skills to their own work: debugging scripts, interpreting errors, organising files, choosing an analysis approach, refactoring code, or making a workflow more reproducible.
+You might need help getting started, applying something from a course, troubleshooting an unexpected result or improving an established routine. You can also bring an early idea: a clearly described task is enough to begin, even if you do not yet know which tool to use.
+
+Clinics focus on learning and practical capability. You remain responsible for your work; the instructor helps you understand and carry out the next steps. If your question needs specialist IT support, formal approval or a larger project, the session can help identify an appropriate route.
 :::
 
 ::: {.clinic-flow}
 ::: {.clinic-flow-step}
-### 1. Bring A Real Problem
+### 1. Agree A Goal
 
-The learner brings code, an error message, a workflow question, or a small reproducible example.
+Explain the task, who it is for, what you have tried and what a useful result would look like. Together, choose one or two questions that can be tackled meaningfully in the session.
 :::
 
 ::: {.clinic-flow-step}
 ### 2. Work Through The Reasoning
 
-The instructor models how to inspect the problem, narrow the cause, test assumptions and choose a sensible next action.
+Look at the current process, compare suitable options and try a small example. The instructor explains their reasoning while you practise the steps and ask questions.
 :::
 
 ::: {.clinic-flow-step}
 ### 3. Leave With A Next Step
 
-The session ends with a concrete action: a corrected pattern, a safer workflow, a practice task, or a route into deeper training.
+Review what changed and how you checked it. Identify what you can now do yourself, what needs more practice and which resources or support will help you continue.
 :::
 :::
 :::
 
 ::: {.landing-section .landing-split .coding-clinic-why}
 ::: {.landing-split-copy}
-## Why One-To-One Teaching Helps
+## Who Clinics Are For
 
-Coding skills often improve fastest when teaching is close to the learner's own work. A clinic lets the instructor respond to the exact point where the learner is stuck, including uncertainty that is hard to expose in a large workshop.
+Clinics are useful for postgraduate researchers, research staff and professional services colleagues at different levels of digital confidence. You might be learning the basics, returning to a tool after a break or looking for a more reliable way to complete a familiar task.
 
-This format also makes tacit practice visible: how experienced coders read errors, test small pieces, search documentation, simplify examples, and decide when a problem is conceptual rather than technical.
+Working with your own example connects the learning to something that matters to you. It also makes everyday judgement visible: how to break a task into steps, choose a tool, check an output, document a decision and recognise when to seek further help.
+
+For a small group, a shared task or recurring difficulty provides a useful focus. Colleagues can compare approaches and agree a consistent way of working.
 :::
 ::: {.landing-split-panel}
 ### Skills Built In Clinic Work
 
-- Debugging and error interpretation
-- Reproducible examples
-- Code organisation
-- Package and environment issues
-- Data cleaning decisions
-- Workflow design
-- Confidence asking better questions
+- Choosing tools that suit the task
+- Organising files, information and data
+- Collaborating and documenting shared work
+- Checking accuracy and interpreting results
+- Troubleshooting unfamiliar behaviour
+- Reducing repetitive work
+- Explaining decisions and asking clearer questions
+:::
+:::
+
+::: {.landing-section}
+::: {.landing-section-heading}
+## What You Can Bring
+
+These examples show the range of questions a clinic can explore. The focus is on the task and the skills you need, rather than on a particular software package.
+:::
+
+::: {.landing-feature-grid}
+::: {.landing-feature}
+### Digital Tools And Collaboration
+
+Work through how to organise shared documents, use collaboration tools or make a team process easier to follow. Discuss file versions, responsibilities and sharing choices so colleagues can find and use the right information.
+
+**Example:** “Our team keeps emailing different versions of the same document. How could we organise the work more clearly?”
+:::
+::: {.landing-feature}
+### Spreadsheets And Data Handling
+
+Explore how to structure a spreadsheet, use formulas, check inconsistent entries or summarise a dataset. Practise checking your results and recording changes so you can explain how an output was produced.
+
+**Example:** “I need a monthly summary from this spreadsheet, but I am unsure whether my formulas and totals are correct.”
+:::
+::: {.landing-feature}
+### File Organisation And Research Data
+
+Review folder structures, naming conventions, documentation and the practical steps involved in storing and sharing project data. Identify questions about access, retention or governance that need specialist advice.
+
+**Example:** “Someone else needs to use my project files. What structure and notes would help them understand the data?”
+:::
+::: {.landing-feature}
+### Reporting And Communicating Results
+
+Choose a useful table, chart or report structure for your audience. Discuss labels, units, accessible presentation and the checks needed to make sure your message is supported by the data.
+
+**Example:** “I have several charts, but I need help deciding which ones answer the question and how to explain them.”
+:::
+::: {.landing-feature}
+### Everyday Automation
+
+Map a repetitive task and consider whether templates, forms or an automation tool could simplify it. Start with a small test and think through exceptions, checks and who will maintain the process.
+
+**Example:** “I repeatedly collect form responses and send reminders. Which steps could be made more consistent or automated?”
+:::
+::: {.landing-feature}
+### Responsible AI Use And Coding
+
+Explore whether an AI tool is suitable for a task, how to give it clear instructions and how to evaluate its output. Coding questions are also welcome, including scripts, error messages, notebooks and reproducible analysis.
+
+**Example:** “Could AI help me draft a summary, and how would I check it?” or “Why does this script produce an unexpected result?”
+:::
+:::
+:::
+
+::: {.landing-section .landing-split}
+::: {.landing-split-copy}
+## How To Prepare
+
+Choose one task that would make a useful difference to your work. Write a few sentences explaining your goal, the tools you currently use, where you are getting stuck and anything you have already tried.
+
+Bring a small example if you can: a sample spreadsheet, a screenshot, a draft report, a folder outline or a sketch of the steps in your process. If something is going wrong, note what you expected to happen and what actually happened.
+
+Use a copy or a safe sample for practice. Remove personal, confidential or sensitive information from anything you submit or share; invented data can often demonstrate the same question. Check that you can access the relevant tool, without sharing passwords or account details.
+:::
+::: {.landing-split-panel}
+### Useful Information To Include
+
+- The task and the result you want
+- Your starting point and confidence level
+- The software or systems involved
+- A specific question or example
+- Any access constraints or deadlines
+- Accessibility requirements or learning preferences
+
+If you do not have an example yet, describe the task in plain language. You do not need technical terminology to ask for help.
 :::
 :::
 
 ::: {.landing-section .coding-clinic-principles}
 ::: {.landing-section-heading}
-## What Makes A Good Clinic
+## What You Can Expect To Take Away
 
-The best clinics are structured but responsive. They meet the learner where they are, while still developing habits that transfer beyond the current problem.
+A useful clinic combines progress on your task with an understanding of how to continue. Larger questions may need further work, so the session should finish with a realistic next step and a clear account of anything still unresolved.
 :::
 
 ::: {.landing-feature-grid}
 ::: {.landing-feature}
-### 🎯 Focused Scope
+### 🎯 A Practical Improvement
 
-Each session should target one or two tractable problems rather than trying to redesign an entire project.
+A tested formula, a clearer folder structure, an improved chart, a documented process or a small working example that you can build on.
 :::
 ::: {.landing-feature}
-### 🧪 Live Reasoning
+### 🧪 A Reusable Method
 
-The instructor explains the diagnostic process: what they checked, why they checked it, and what each result means.
+An understanding of the steps taken, why they were appropriate and how to check the result when you apply the same approach again.
 :::
 ::: {.landing-feature}
-### 📋 Clear Follow-Up
+### 📋 A Learning Plan
 
-Learners should leave with notes, links, recommended modules, or a short practice task that consolidates the learning.
+Brief notes, relevant guidance or a practice task, with a recommendation for further training or specialist support where needed.
 :::
 :::
+:::
+
+::: {.landing-section}
+::: {.landing-section-heading}
+## How Clinics Connect To The Programme
+
+Courses provide a structured introduction; clinics help you apply that learning to your own situation. You can use a clinic to identify a starting point, consolidate a workshop skill or decide what to learn next.
+:::
+
+- [Essential Digital Skills](courses/essential_digital_skills/index.qmd) develops foundations in digital tools, collaboration and research data management.
+- [Methods for Data Science](courses/methods_for_data_science/index.qmd) explores collecting, organising, interpreting and communicating data.
+- [Automating Business Processes](courses/automating_business_processes/index.qmd) introduces practical workflow automation.
+- [Responsible Use of Generative AI](courses/responsible_use_of_generative_ai/index.qmd) supports thoughtful use and evaluation of AI tools.
+- [Applied Data Science with Python](courses/applied_python/index.qmd) and [R](courses/applied_R/index.qmd) offer programming pathways for analysis.
+
+[Explore Courses And Modules](courses.qmd){.landing-button .landing-button-primary}
 :::
 
 ::: {.landing-section .coding-clinic-form}
 ::: {.landing-section-heading}
 ## Register Interest
 
-Use this form to tell us what kind of coding support would be useful and what you would like to bring to a clinic.
+Use this form to describe the digital task or skill you would like help with. Include your goal, the tools involved and whether you are asking as an individual or a small group. This helps us understand your needs and identify a suitable focus for the clinic.
+
+A brief description is enough at this stage. Please keep examples free of personal, confidential or sensitive information.
 :::
 
 ```{=html}

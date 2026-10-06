@@ -283,7 +283,7 @@ class CodingClinicsHeaderHero extends HTMLElement {
         }
       </style>
 
-      <section class="hero" aria-label="Coding Clinics">
+      <section class="hero" aria-label="Personalised Engagement Clinics">
         <div class="copy">
           <h1>Personalised Engagement Clinics</h1>
         </div>
