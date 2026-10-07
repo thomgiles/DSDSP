@@ -1,0 +1,23 @@
+---
+title: Contributing
+---
+
+## Contributing to FAIR and Open Research Practices
+
+Useful contributions include clearer cross-disciplinary examples, accessible figures, stronger activity debriefs, corrections to primary-source links and updated institutional guidance.
+
+## How To Contribute
+
+1. Open an issue identifying the page, the proposed correction and its evidence.
+2. Follow the repository's authoring instructions and episode template when editing content.
+3. Submit a focused pull request explaining the change and any effect on delivery or timings.
+
+Keep the course's two decisions central: how usable is an output, and which Open Research practices fit the project? Avoid extending it into routine RDM or detailed software engineering. Label fictional cases and distinguish missing evidence from demonstrated weaknesses.
+
+For source-dependent claims, link primary guidance and identify its relevant scope. If a publication or access requirement changes, update the learner reference and instructor notes as well as the lesson. Retain British English, figure alternative text and explicit room engagement.
+
+## Licensing and Participation
+
+Contributions are published under the [course licence](LICENSE.qmd). Preserve third-party attribution and permissions. Participants and contributors follow the [Code of Conduct](CODE_OF_CONDUCT.qmd).
+
+Return to the [Course Overview](index.qmd).

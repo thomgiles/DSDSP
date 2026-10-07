@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="410" viewBox="0 0 1200 410" role="img" aria-labelledby="title desc">
+  <title id="title">Open Research decisions across the project</title>
+  <desc id="desc">Four stages connect planning, conducting, communicating and enabling reuse. Planning includes protocols and preregistration or Registered Reports. Conduct includes visible methods and contributions. Communication includes preprints, Open Access and peer review. Reuse includes appropriate data and software access and FAIR records. Benefits and harms are reviewed throughout.</desc>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M1 1 L8 5 L1 9 Z" fill="#405162"/></marker></defs>
+  <rect width="1200" height="410" rx="28" fill="#f7fbfc"/>
+  <g font-family="sans-serif">
+    <text x="600" y="53" font-size="29" font-weight="700" fill="#10263b" text-anchor="middle">Choose practices that expose useful evidence</text>
+    <rect x="35" y="89" width="260" height="220" rx="18" fill="#10263b"/>
+    <rect x="325" y="89" width="260" height="220" rx="18" fill="#006781"/>
+    <rect x="615" y="89" width="260" height="220" rx="18" fill="#298582"/>
+    <rect x="905" y="89" width="260" height="220" rx="18" fill="#405162"/>
+    <g fill="#ffffff" text-anchor="middle">
+      <text x="165" y="132" font-size="29" font-weight="700">Plan</text>
+      <text x="165" y="177" font-size="24">Protocols</text>
+      <text x="165" y="215" font-size="24">Preregistration</text>
+      <text x="165" y="253" font-size="24">Registered Reports</text>
+      <text x="455" y="132" font-size="29" font-weight="700">Conduct</text>
+      <text x="455" y="177" font-size="24">Visible methods</text>
+      <text x="455" y="215" font-size="24">Decisions + changes</text>
+      <text x="455" y="253" font-size="24">Contribution records</text>
+      <text x="745" y="132" font-size="29" font-weight="700">Communicate</text>
+      <text x="745" y="177" font-size="24">Preprints</text>
+      <text x="745" y="215" font-size="24">Open Access</text>
+      <text x="745" y="253" font-size="24">Peer review</text>
+      <text x="1035" y="132" font-size="29" font-weight="700">Enable reuse</text>
+      <text x="1035" y="177" font-size="24">Data + software</text>
+      <text x="1035" y="215" font-size="24">Access + licences</text>
+      <text x="1035" y="253" font-size="24">FAIR records</text>
+    </g>
+    <text x="600" y="362" font-size="27" font-weight="700" fill="#10263b" text-anchor="middle">Review benefits, rights and potential harms at every stage</text>
+  </g>
+  <g stroke="#405162" stroke-width="3" marker-end="url(#arrow)" fill="none"><path d="M298 199 H320"/><path d="M588 199 H610"/><path d="M878 199 H900"/></g>
+</svg>

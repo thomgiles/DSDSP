@@ -1,0 +1,122 @@
+---
+title: "Fictional Research Scenario Pack"
+---
+
+## How To Use These Cases
+
+**All projects, people, records and values on this page are fictional teaching examples.** They do not describe Nottingham projects or repository policies. References to a persistent identifier mean a hypothetical teaching record; no real DOI or participant identifier is supplied.
+
+Use the same four cases throughout [FAIR Research Outputs](../episodes/01-fair_research_outputs.qmd). In [Open Research Practices](../episodes/02-open_research_practices.qmd), develop a strategy for the expanded Urban Shade project below. The [FAIR assessment worksheet](files/fair-assessment.md) and [Open Research strategy worksheet](files/open-research-strategy.md) can be copied into a document or printed.
+
+Evidence not stated in a case is **unknown**, rather than automatically satisfactory or automatically absent. Record what you would ask the depositor. Assess the output and its metadata separately where that matters.
+
+## A — Urban Shade {#urban-shade}
+
+**Discipline and output:** environmental field measurements exported as `data.csv`.
+
+| Evidence in the case | What another researcher sees |
+|---|---|
+| Location | A public download on a researcher's personal website; no repository record or maintained persistent identifier |
+| Description | “Data from the shade project”; no location, sampling dates or population in the description |
+| Structure | Columns `t`, `loc`, `val`; values include `03/04/25`, `North` and `28.4` |
+| Context | Date convention, time zone, meaning of the site label and measurement units are undefined |
+| Permissions and method | No licence, measurement protocol, calibration account or output version is stated |
+
+The file is downloadable. That alone does not establish that somebody can interpret or reuse it correctly. Do not guess whether the date is 3 April or 4 March, or whether `28.4` is a temperature in degrees Celsius.
+
+## B — Steps and Sleep {#steps-and-sleep}
+
+**Discipline and output:** clinical participant measurements with personal information; unrestricted release is inappropriate.
+
+| Evidence in the case | What another researcher sees |
+|---|---|
+| Location and discovery | A recognised controlled-access repository, a hypothetical persistent identifier and an indexed, descriptive metadata record |
+| Description | Study purpose, population, dates, creators, related article and version; public metadata excludes participant identities |
+| Retrieval | A documented application form, eligibility criteria, authentication, governance review and a named service contact |
+| If access is declined | The applicant receives reasons and a documented review route; public metadata states the restriction and remains accessible |
+| Interpretation | A data dictionary, defined clinical terminology, explicit units, ISO-style dates and documented pseudonymous participant identifiers |
+| Reuse | Measurement and processing methods, provenance, known limitations, citation instructions and agreed-use conditions including no redistribution |
+| Preservation | A stated commitment to retain the metadata record even if the files are withdrawn |
+
+The case describes a clear retrieval process; it does not promise that every applicant receives the data. A documented access process is compatible with FAIR. Whether access is appropriate for a particular proposed use remains a governance decision.
+
+## C — Market Letters {#market-letters}
+
+**Discipline and output:** researcher-created transcriptions of historical market correspondence.
+
+| Evidence in the case | What another researcher sees |
+|---|---|
+| Location and discovery | A repository record with a hypothetical persistent identifier and a meaningful collection title |
+| Description | Creators, date range, languages, archive collection and version are recorded |
+| Access | The researcher's UTF-8 CSV transcriptions are publicly retrievable through the repository |
+| Permissions | CC BY 4.0 applies to the researcher-created transcriptions; archive images require separate permission and are not included |
+| Interpretation gap | Rows lack stable archive item identifiers; editorial symbols and language/category labels are not fully defined |
+| Provenance gap | The record does not explain OCR corrections, editorial interventions or transcription-quality checks |
+
+The rights statement is useful because it distinguishes materials. It does not grant permission to reproduce the archive's images. The title and licence do not resolve missing item links or transcription provenance.
+
+## D — Watershed Patterns {#watershed-patterns}
+
+**Discipline and output:** an engineering analysis workflow supplied as a ZIP supplement to a paper.
+
+| Evidence in the case | What another researcher sees |
+|---|---|
+| Discovery | The paper citation points to a workflow, but the workflow has no separate persistent identifier or descriptive output record |
+| Retrieval | “Email the lead author for the latest ZIP”; no maintained access service or eligibility information |
+| Interpretation | Some filenames refer to study sites, but input schemas, measurement units and dependency information are missing |
+| Reuse | No stated software licence, workflow version, method description or limitations |
+| Attribution | Authors are listed on the paper; software-specific contributors and a recommended workflow citation are unspecified |
+
+Do not infer that the workflow is incorrect or that it fails to run. The evidence establishes that another researcher cannot currently judge those questions reliably. Propose output-level changes; a Git or testing tutorial is outside this exercise.
+
+## Final Project — Urban Shade, Expanded {#urban-shade-project}
+
+An interdisciplinary team is investigating urban heat exposure. They have explored existing field measurements and now propose a new study comparing shaded and unshaded sites over a predefined measurement period. They also plan interviews about outdoor working conditions. They have **not yet collected the new study's measurements or interviews**.
+
+The existing data exploration informed the new question; it must remain labelled as exploratory. The prospective comparison offers an opportunity to specify the hypothesis, primary outcome, eligible sites, exclusions, sampling window and analysis before seeing the new outcomes. Do not claim that old, already inspected analyses were preregistered.
+
+### Outputs and Constraints
+
+| Output | Current state and constraint |
+|---|---|
+| Article | A draft combining environmental methods and planned social research; target journal and publication route undecided |
+| Existing measurements | The ambiguous public CSV from Case A; the team must confirm meanings and provenance before publishing a corrected record |
+| New measurements | Planned sensor data and precise home/workplace coordinates; combinations of place and time could identify participants |
+| Interviews | Planned interviews may include vulnerable workers; proposed consent allows approved research uses, not unrestricted publication of verbatim transcripts |
+| Analysis | A script for aggregating temperatures and comparing site groups; it can be separated from participant records and demonstrated with fictional data |
+| Protocol | A draft sampling and interview protocol; identifying recruitment details should be removed from any public version |
+| Third-party material | Map images supplied under an agreement that does not grant unrestricted redistribution |
+
+Removing names would not, by itself, make precise locations or quotations safe to publish. The public record can explain restrictions without exposing protected information. Choices about access require appropriate consent, rights and institutional review; this exercise does not substitute for that review.
+
+### Contributors
+
+| Person | Described contribution |
+|---|---|
+| Maya | Research question, conceptualisation and study design |
+| Joel | Sensor deployment, measurement collection and quality checks |
+| Priya | Analysis methods and software |
+| Alex | Community liaison, interviews and curation |
+| Sam | Funding acquisition and supervision |
+
+These are starting descriptions for a contribution discussion. Agree accurate roles with the people involved, record writing and review contributions as they occur, and apply relevant authorship criteria separately. A contributor role or senior job title does not automatically determine authorship.
+
+### Nine Decisions To Make
+
+Use the [strategy worksheet](files/open-research-strategy.md). For each choice, record a reason and an unresolved check:
+
+1. **Publication:** which Open Access route and manuscript version?
+2. **Preprint:** share it, delay it or decline it; at what stage and with what status label?
+3. **Study design:** what can be preregistered, and would a Registered Report suit the prospective component?
+4. **Methods:** which protocol and reporting details should be shared?
+5. **Data:** which elements should be open, restricted, controlled or closed, and why?
+6. **Analysis/code:** which parts can be shared without protected inputs, and what context is required?
+7. **Licence:** who holds the rights, what permissions are appropriate and what must be excluded?
+8. **Contributions:** how will roles, authorship and output citations be agreed?
+9. **Metadata/PIDs:** what records and links would make each output discoverable and usable?
+
+The debrief in the lesson provides defensible choices, including alternatives. There is no single plan that maximises both public access and every other interest.
+
+## Course Navigation
+
+[Course Overview](../index.qmd) · [Setup](setup.qmd) · [Additional Material](additional_material.qmd) · [Reference](reference.qmd) · [Discussion](discuss.qmd)

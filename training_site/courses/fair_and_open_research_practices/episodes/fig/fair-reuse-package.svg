@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="510" viewBox="0 0 1200 510" role="img" aria-labelledby="title desc">
+  <title id="title">The information that supports appropriate reuse</title>
+  <desc id="desc">Six supporting pieces surround a research output: purpose and scope, definitions and units, method and provenance, version and limitations, reuse permissions, and citation. Their connections help another researcher assess suitability, use the output correctly and give credit.</desc>
+  <rect width="1200" height="510" rx="28" fill="#f7fbfc"/>
+  <g font-family="sans-serif" text-anchor="middle">
+    <text x="600" y="48" font-size="31" font-weight="700" fill="#10263b">An output needs enough context for its next user</text>
+    <g fill="none" stroke="#405162" stroke-width="3">
+      <path d="M339 139 L446 239"/>
+      <path d="M339 262 H430"/>
+      <path d="M339 389 L446 287"/>
+      <path d="M861 139 L754 239"/>
+      <path d="M861 262 H770"/>
+      <path d="M861 389 L754 287"/>
+    </g>
+    <rect x="35" y="90" width="304" height="98" rx="18" fill="#006781"/>
+    <rect x="35" y="213" width="304" height="98" rx="18" fill="#298582"/>
+    <rect x="35" y="340" width="304" height="98" rx="18" fill="#405162"/>
+    <rect x="430" y="206" width="340" height="112" rx="20" fill="#10263b"/>
+    <rect x="861" y="90" width="304" height="98" rx="18" fill="#405162"/>
+    <rect x="861" y="213" width="304" height="98" rx="18" fill="#298582"/>
+    <rect x="861" y="340" width="304" height="98" rx="18" fill="#006781"/>
+    <g fill="#ffffff" font-size="27" font-weight="700">
+      <text x="187" y="132">Purpose</text>
+      <text x="187" y="165">and scope</text>
+      <text x="187" y="255">Definitions</text>
+      <text x="187" y="288">and units</text>
+      <text x="187" y="382">Method</text>
+      <text x="187" y="415">and provenance</text>
+      <text x="600" y="253" font-size="31">Research output</text>
+      <text x="600" y="289" font-size="25" font-weight="400">For an intended reuse</text>
+      <text x="1013" y="132">Version</text>
+      <text x="1013" y="165">and limitations</text>
+      <text x="1013" y="255">Reuse</text>
+      <text x="1013" y="288">permissions</text>
+      <text x="1013" y="382">Citation</text>
+      <text x="1013" y="415">and attribution</text>
+    </g>
+    <text x="600" y="479" font-size="25" fill="#405162">Assess suitability, use correctly, recognise limits and give credit.</text>
+  </g>
+</svg>

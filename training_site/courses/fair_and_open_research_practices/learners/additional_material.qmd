@@ -1,0 +1,88 @@
+---
+title: Additional Material
+---
+
+## Materials To Keep
+
+Use these resources with the [fictional scenario pack](scenarios.qmd). Download the worksheets, copy them into a document or print them. No account, repository deposit or paid service is needed.
+
+| Resource | What you record |
+|---|---|
+| [FAIR assessment worksheet](files/fair-assessment.md){download="fair-assessment.md"} | Evidence, uncertainties and improvements under Findable, Accessible, Interoperable and Reusable |
+| [Open Research strategy worksheet](files/open-research-strategy.md){download="open-research-strategy.md"} | Nine project decisions, their benefits, constraints, checks and owners |
+| [Scenario pack](scenarios.qmd) | Four output records and the expanded Urban Shade project used in both lessons |
+| [Reference](reference.qmd) | Decision checks and primary guidance to consult when adapting the worksheets |
+
+The worksheets support reasoning; they are not certification, ethics approval or a publication agreement. For your own project, use a non-sensitive description and record unresolved questions before acting.
+
+## Optional Practice: Improve a Record (5 min)
+
+::: callout-task
+**Goal:** make a record easier to discover without inventing missing facts. **Input:** [A — Urban Shade](scenarios.qmd#urban-shade). Work in pairs, with one writer and one checker.
+
+1. **1 min:** identify two details a researcher would need to distinguish this output from another dataset.
+2. **2 min:** draft a descriptive title and a two-sentence record description. Mark unknown locations, dates and units as questions for the depositor.
+3. **1 min:** the checker asks whether somebody could identify the scope, creator and related method from the draft.
+4. **1 min:** two pairs read one improvement to the room; explain what remains unknown.
+
+**Keep:** the draft and two questions. **If access fails:** use a printed case or the instructor's screen.
+
+**Worked feedback:** “Urban Shade field measurements” is more informative than “Data from the shade project”, but still needs verified place, period and measurement context. Do not expand `t`, `loc` or `val` by guessing. An identifier should resolve to a useful, maintained record; adding one does not supply missing evidence.
+:::
+
+## Optional Practice: Separate Materials and Permissions (5 min)
+
+::: callout-task
+**Goal:** distinguish permissions for different parts of an output. **Input:** [C — Market Letters](scenarios.qmd#market-letters). Swap writer and checker.
+
+1. **1 min:** list the transcriptions and archive images separately.
+2. **2 min:** state what the case permits for each, and identify the information needed to interpret the transcriptions.
+3. **1 min:** draft a reuse note naming the licensed material, attribution and exclusions.
+4. **1 min:** vote “ready”, “revise” or “seek permission” for a proposed public package containing both materials; two pairs explain.
+
+**Keep:** a rights-and-context note. **If access fails:** annotate the case on paper.
+
+**Worked feedback:** the stated CC BY licence applies to the researcher-created transcriptions. The case does not grant permission to redistribute archive images. The CSV also needs item identifiers, editorial conventions and provenance. A licence resolves a permission question for specified material; it does not fill those documentation gaps. Consult the [CC BY 4.0 terms](https://creativecommons.org/licenses/by/4.0/) when adapting the note.
+:::
+
+## Optional Practice: Name What Was Planned (5 min)
+
+::: callout-task
+**Goal:** label exploratory and prospective work honestly. **Input:** [the expanded Urban Shade project](scenarios.qmd#urban-shade-project). Work in pairs.
+
+1. **1 min:** underline what the team has already explored and what it has not yet collected.
+2. **2 min:** rewrite “We preregistered the shade effect after finding a promising difference” to distinguish the old exploration from a new study plan.
+3. **1 min:** name one outcome, eligibility rule or analysis decision that the prospective plan should specify.
+4. **1 min:** two pairs read their revised sentence; the room identifies the timing distinction.
+
+**Keep:** the revised claim and one planning question. **If access fails:** use the instructor's displayed project description.
+
+**Worked feedback:** a defensible statement is “Exploratory analysis of existing measurements motivated the new study. Before collecting its outcomes, we will register the primary comparison and planned analysis.” Do not claim that an already inspected result was prospectively planned. Report later changes and their reasons rather than hiding them. The [Centre for Open Science guide](https://www.cos.io/initiatives/prereg) explains the planned/unplanned distinction.
+:::
+
+## Optional Practice: Write a Safe Access Statement (5 min)
+
+::: callout-task
+**Goal:** communicate a retrieval process while protecting people. **Input:** [B — Steps and Sleep](scenarios.qmd#steps-and-sleep). Swap roles.
+
+1. **1 min:** separate safe public metadata from participant measurements and identities.
+2. **2 min:** draft an access statement covering the application, eligibility, review and contact route.
+3. **1 min:** explain what an unsuccessful applicant can still discover and what happens if files are withdrawn.
+4. **1 min:** two pairs report one useful public detail and one detail they would protect.
+
+**Keep:** the access statement. **If access fails:** use a printed case and write the proposed statement in notes.
+
+**Worked feedback:** describe the documented application and governance review; do not promise approval. Safe metadata can explain the population, methods, conditions, version and contact without participant identities. The case states that metadata persist if files are withdrawn. This supports discoverability and accessibility without an unrestricted download.
+:::
+
+## Apply One Change To Your Own Project
+
+Choose one output rather than trying to redesign an entire project. Record its current record/location, one evidenced weakness, one feasible improvement, who can make it and a review date. Ask a colleague whether the improved description answers a question they previously could not answer.
+
+For publication decisions, check current [Nottingham Open Access guidance](https://www.nottingham.ac.uk/library/research/open-access/index.aspx) and [funder/institutional requirements](https://www.nottingham.ac.uk/library/research/open-access/policy.aspx). Use [Digital Skills Clinics](../../../clinics.qmd) for follow-up support with a specific output or workflow.
+
+Routine storage, backups and DMP work are covered in [Essential Digital Skills: Research Data Management](../../essential_digital_skills/episodes/04-research_data_managment.qmd). Implementation of computational reports and code is developed in [Applied R](../../applied_R/index.qmd) and [Applied Python](../../applied_python/index.qmd).
+
+## Course Navigation
+
+[Course Overview](../index.qmd) · [Setup](setup.qmd) · [Additional Material](additional_material.qmd) · [Reference](reference.qmd) · [Discussion](discuss.qmd)

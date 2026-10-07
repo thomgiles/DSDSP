@@ -1,0 +1,27 @@
+---
+title: Learner Profiles
+---
+
+## Postgraduate Researcher
+
+- **Starting point:** Has encountered basic RDM and is planning or producing their first research outputs.
+- **Goal:** Understand what others need to discover and reuse the work, and distinguish exploratory analysis from prospective plans.
+- **Teaching needs:** Small worked records, clear terminology, a retained assessment and publication decisions with immediate feedback.
+
+## Research Staff Member
+
+- **Starting point:** Creates datasets, workflows, protocols or scholarly resources, often with collaborators and access constraints.
+- **Goal:** Improve output metadata, interpretation, provenance, permissions and contribution records.
+- **Teaching needs:** Cases beyond articles and biomedical data; explicit treatment of restricted access, unknowns and justified priorities.
+
+## Academic or Project Lead
+
+- **Starting point:** Makes publication, supervision and collaboration decisions across a project lifecycle.
+- **Goal:** Select a feasible combination of Open Research practices and agree who implements and reviews them.
+- **Teaching needs:** Publication routes, preregistration and Registered Report distinctions, credit discussions and defensible strategies for sensitive or third-party material.
+
+These profiles guide facilitation, not separate prerequisites. All learners can use a browser or printed materials, and no coding or repository account is required.
+
+## Course Navigation
+
+[Course Overview](../index.qmd) · [Learner Setup](../learners/setup.qmd) · [Additional Material](../learners/additional_material.qmd) · [Instructor Notes](../instructors/instructor-notes.qmd)

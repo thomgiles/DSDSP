@@ -1,0 +1,18 @@
+---
+title: README
+---
+
+# FAIR and Open Research Practices
+
+Two practical, 100-minute lessons for postgraduate researchers, research staff and academics. Learners assess the usability of research outputs, then justify appropriate practices for transparent and responsible research.
+
+1. [FAIR Research Outputs](episodes/01-fair_research_outputs.qmd): four principles applied to data, transcriptions and a workflow.
+2. [Open Research Practices](episodes/02-open_research_practices.qmd): publication, early sharing, research plans, methods, credit and access choices.
+
+Each lesson allocates 55 minutes to teaching and review and 45 minutes to active learning, including debriefs. Breaks are additional. The course assumes basic RDM familiarity; it does not reteach routine management or detailed software engineering.
+
+Start with the [Course Overview](index.qmd), [Setup](learners/setup.qmd) and [fictional scenario pack](learners/scenarios.qmd). Use [Additional Material](learners/additional_material.qmd), [Reference](learners/reference.qmd) and [Discussion](learners/discuss.qmd) to consolidate your decisions. Teaching teams should read [Instructor Notes](instructors/instructor-notes.qmd), [Instructor Additional Material](instructors/additional_material.qmd) and [Extra Exercises](instructors/extra_exercises.qmd).
+
+All fictional cases are teaching examples. Primary guidance is linked where claims require a source; publication and access decisions for real projects require checking the applicable requirements at the time of use.
+
+See [Contributing](CONTRIBUTING.qmd), the [Code of Conduct](CODE_OF_CONDUCT.qmd) and [Licence](LICENSE.qmd) for reuse and participation.

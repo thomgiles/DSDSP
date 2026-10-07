@@ -1,0 +1,116 @@
+---
+title: "FAIR and Open Research Practices"
+subtitle: "Discoverable outputs, transparent methods and responsible sharing"
+page-class: course-page
+course-area: "Open Research"
+course-level: "Foundation"
+course-status: "Available"
+course-badge: "Two Lessons"
+course-icon: "🔓"
+course-summary: "Assess research outputs against FAIR principles and justify an Open Research strategy suited to a project's methods, contributors and constraints."
+course-tags: ["FAIR", "Open Research", "Open Access", "Preregistration", "Research outputs", "Responsible sharing"]
+---
+
+```{=html}
+<div class="course-page-marker" aria-hidden="true"></div>
+```
+
+::: {.tier-card}
+### Course At A Glance
+
+- **Level:** Foundation, building on basic research data management
+- **Best for:** Postgraduate researchers, research staff and academics across disciplines
+- **Main themes:** FAIR outputs, Open Access, preregistration, transparent methods, credit and responsible openness
+- **Format:** Two lessons of 100 minutes each; 45 minutes of activities in each lesson
+- **Outcome:** A FAIR assessment and a justified Open Research strategy you can adapt to your own project
+:::
+
+::: {.two-col-grid}
+::: {.item}
+## Why This Course Matters
+
+A research output can exist online and still be difficult to discover, interpret or reuse. An openly downloadable file can lack essential context; a sensitive dataset can have excellent metadata and a clear, controlled access process.
+
+This course helps you judge the difference. FAIR concerns how people and systems find, access, interpret and reuse outputs. Open Research also concerns the transparency of the research process and the decisions about when, how and with whom to share.
+:::
+
+::: {.item}
+## What You Will Actually Do
+
+You will compare fictional repository records, diagnose ambiguous data, assess four outputs from different disciplines, and make publication and sharing decisions for an interdisciplinary project.
+
+Each task includes a pair or group decision, a brief room response and immediate feedback. You keep a set of practical decisions rather than a list of definitions.
+:::
+:::
+
+## Who This Is For
+
+Researchers who create or reuse datasets, articles, software, protocols, models, notebooks, archival transcriptions or other digital outputs. Programming experience is not required, and no repository account or paid publication service is needed for the activities.
+
+Some familiarity with research data management is useful. Review [Essential Digital Skills: Research Data Management](../essential_digital_skills/episodes/04-research_data_managment.qmd) if you need that starting point.
+
+## Learning Outcomes
+
+By the end of the course, you should be able to:
+
+- explain FAIR and distinguish it from Open Research;
+- evaluate the FAIRness of different research outputs and propose practical improvements to each principle;
+- explain the roles of metadata, persistent identifiers, standards, provenance and licensing;
+- describe major Open Research practices across the research lifecycle;
+- distinguish exploratory research, preregistration and Registered Reports;
+- assess the roles of preprints, Open Access, open methods and open peer review;
+- recognise when unrestricted openness would be inappropriate;
+- select and justify FAIR and Open Research practices for a research project.
+
+## Learning Journey
+
+| Lesson | What you will tackle | What you keep |
+|---|---|---|
+| [01 FAIR Research Outputs](episodes/01-fair_research_outputs.qmd) | Findability, access mechanisms, interoperable descriptions, reuse conditions and FAIR beyond data | Four evidence-based assessments and prioritised improvements |
+| [02 Open Research Practices](episodes/02-open_research_practices.qmd) | Publication routes, early sharing, research plans, transparent reporting, contribution and responsible access | A project strategy covering nine publication, methods and sharing decisions |
+
+Each lesson is **100 minutes: 55 minutes teaching and review, 45 minutes active learning**. Debriefs are included in activity time. Schedule any break separately; it is not included in the 100 minutes. Teach the lessons in order so the FAIR assessment informs the Open Research strategy.
+
+## How To Prepare
+
+Read [Learner Setup](learners/setup.qmd) and open the [fictional scenario pack](learners/scenarios.qmd). Bring a browser and somewhere to make notes, or use printed copies. Optional: bring a brief, non-sensitive description of one output you would like to improve.
+
+## Course Materials
+
+::: {.two-col-grid}
+::: {.item}
+### Learners
+
+- [Setup](learners/setup.qmd): preparation and accessible alternatives
+- [Scenario Pack](learners/scenarios.qmd): the four outputs and final project
+- [Additional Material](learners/additional_material.qmd): worksheets, follow-up practice and worked reasoning
+- [Reference](learners/reference.qmd): decision checks and primary guidance
+- [Discussion](learners/discuss.qmd): prompts for applying decisions to your own research
+:::
+
+::: {.item}
+### Instructors
+
+- [Instructor Notes](instructors/instructor-notes.qmd): timings, facilitation and assessment debriefs
+- [Additional Material](instructors/additional_material.qmd): demonstrations and discipline adaptations
+- [Extra Exercises](instructors/extra_exercises.qmd): optional practice and feedback
+:::
+:::
+
+## Related Learning and Support
+
+[Essential Digital Skills](../essential_digital_skills/index.qmd) covers routine data management, governance and digital tools. This course builds on those foundations through decisions about output usability and research transparency; storage, backups, file organisation and DMP writing remain in the RDM material.
+
+[Responsible Use of Generative AI](../responsible_use_of_generative_ai/index.qmd) develops the use and evaluation of AI-assisted research methods. [Applied R](../applied_R/index.qmd) and [Applied Python](../applied_python/index.qmd) teach implementation and computational workflows.
+
+The planned **Best Practice in Software Engineering for Research** course will cover Git, version control, collaboration and testing in detail. Those technical practices are outside these two lessons.
+
+For current institutional guidance, use [Nottingham Open Research](https://www.nottingham.ac.uk/research/open-research/open-research.aspx) and [Libraries' Open Access support](https://www.nottingham.ac.uk/library/research/open-access/index.aspx). For help applying the course to a specific digital task, see [Digital Skills Clinics](../../clinics.qmd).
+
+## Community and Course Information
+
+- [Course README](README.qmd)
+- [Contributing](CONTRIBUTING.qmd)
+- [Learner Profiles](profiles/learner-profiles.qmd)
+- [Code of Conduct](CODE_OF_CONDUCT.qmd)
+- [Licence](LICENSE.qmd)

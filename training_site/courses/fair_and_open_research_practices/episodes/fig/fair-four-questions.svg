@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="500" viewBox="0 0 1200 500" role="img" aria-labelledby="title desc">
+  <title id="title">One output, four FAIR questions</title>
+  <desc id="desc">Four cards ask whether the same research output can be discovered, obtained through a defined route, interpreted using shared meaning, and reused with appropriate context and permissions. These questions apply to people and systems; openness is a separate access and permission decision.</desc>
+  <rect width="1200" height="500" rx="28" fill="#f7fbfc"/>
+  <g font-family="sans-serif" text-anchor="middle">
+    <text x="600" y="49" font-size="32" font-weight="700" fill="#10263b">One output, four different checks</text>
+    <rect x="36" y="85" width="548" height="155" rx="20" fill="#006781"/>
+    <rect x="616" y="85" width="548" height="155" rx="20" fill="#298582"/>
+    <rect x="36" y="267" width="548" height="155" rx="20" fill="#405162"/>
+    <rect x="616" y="267" width="548" height="155" rx="20" fill="#10263b"/>
+    <g fill="#ffffff">
+      <text x="310" y="132" font-size="31" font-weight="700">Findable</text>
+      <text x="310" y="176" font-size="26">Can someone discover</text>
+      <text x="310" y="209" font-size="26">and identify it?</text>
+      <text x="890" y="132" font-size="31" font-weight="700">Accessible</text>
+      <text x="890" y="176" font-size="26">Is there a defined route</text>
+      <text x="890" y="209" font-size="26">to obtain it?</text>
+      <text x="310" y="314" font-size="31" font-weight="700">Interoperable</text>
+      <text x="310" y="358" font-size="26">Can people and systems</text>
+      <text x="310" y="391" font-size="26">interpret its meaning?</text>
+      <text x="890" y="314" font-size="31" font-weight="700">Reusable</text>
+      <text x="890" y="358" font-size="26">Is there context and permission</text>
+      <text x="890" y="391" font-size="26">for appropriate reuse?</text>
+    </g>
+    <text x="600" y="469" font-size="26" fill="#405162">For people and systems; access may have necessary conditions.</text>
+  </g>
+</svg>

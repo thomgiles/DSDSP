@@ -69,6 +69,8 @@ Use [Research Data Management](../episodes/04-research_data_managment.qmd) to co
 
 ## Optional Follow-on Teaching
 
+For deeper output-level FAIR assessments and choices about publication, preregistration, methods, credit and responsible access, signpost [FAIR and Open Research Practices](../../fair_and_open_research_practices/index.qmd). Its two 100-minute lessons build on the RDM session; keep storage, backups, file organisation and DMP instruction in EDS rather than extending the FAIR course into another management course.
+
 Dedicated AI teaching now sits in [Responsible Use of Generative AI](../../responsible_use_of_generative_ai/index.qmd). If learners want deeper coverage of prompting, validation, documentation, and defensible AI use, that course is the natural follow-on.
 
 Data collection, exploration, interpretation and impact belong to [Methods for Data Science](../../methods_for_data_science/index.qmd). Keep these routes separate from the core EDS session list. Use [learner additional material](../learners/additional_material.qmd) to consolidate the four taught themes without adding new prerequisites.

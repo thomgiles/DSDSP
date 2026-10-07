@@ -73,6 +73,8 @@ Give the notes to a partner and ask them to find one file, identify its version 
 
 ## Optional Next Steps
 
+Continue to [FAIR and Open Research Practices](../../fair_and_open_research_practices/index.qmd) to assess research outputs and justify publication and sharing choices. Its [scenario pack](../../fair_and_open_research_practices/learners/scenarios.qmd) and [worksheets](../../fair_and_open_research_practices/learners/additional_material.qmd) extend the RDM handover exercise into output-level decisions.
+
 For data collection, exploration, interpretation and communication, continue to [Methods for Data Science](../../methods_for_data_science/index.qmd). For a repeated administrative workflow, consider [Automating Business Processes](../../automating_business_processes/index.qmd). If you need help applying a skill to a particular task, explore [Digital Skills Clinics](../../../clinics.qmd).
 
 ## Course Navigation

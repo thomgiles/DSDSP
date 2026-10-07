@@ -1,0 +1,58 @@
+---
+title: Additional Material
+---
+
+## Choose One Useful Demonstration
+
+These additions support the course's decisions; they are optional and outside the two 100-minute lesson plans. Choose an example relevant to the room. Prepare a screenshot or printed record so internet access does not determine participation.
+
+| Demonstration | What to show | Question and feedback |
+|---|---|---|
+| **Inspect a repository record** | A public record's title, creators, version, identifier, licence, related outputs and retrieval conditions | “Which information lets you distinguish and reuse this output?” Point to evidence in the record; do not equate repository presence with complete FAIRness. |
+| **Follow an output relationship** | A real article's links to data, a protocol or software, using only public material | “Can we trace this claim to the right output and version?” Show a broken or ambiguous relationship if available, then a clear one. |
+| **Compare access statements** | The fictional Urban Shade download and Steps and Sleep application process | “Which access mechanism is clearer, and why?” Separate public retrieval from documented controlled retrieval; do not equate FAIR with public release. |
+| **Locate a manuscript version** | A rights-cleared submitted draft, accepted manuscript and publisher page | “Which file is the proposed deposit?” Explain the version difference and the need to check current terms; visual polish does not identify permitted reuse. |
+| **Read a prospective plan** | A non-sensitive public preregistration and its linked report, or the fictional Urban Shade planning example | “What was specified before outcomes, and what changed?” Identify the timing, decisions and transparent deviations without judging all exploration negatively. |
+
+For a Nottingham publication example, use the [current deposit guidance](https://www.nottingham.ac.uk/library/research/open-access/depositing-output.aspx). Publication deposits follow RIS arrangements; do not route every output to the dataset repository. Verify access and rights before class.
+
+## Adapt the Cases Without Changing Their Purpose
+
+| Cohort emphasis | Useful emphasis in the existing cases | Boundary to retain |
+|---|---|---|
+| Humanities and qualitative research | Market Letters' archive item links, editorial intervention, language and material-specific rights; Urban Shade interviews | Transparency can explain interpretive decisions and adaptations. Do not require every design to become a hypothesis-testing experiment. |
+| Clinical and social research | Steps and Sleep's safe metadata, eligibility, governance and use conditions | Do not imply that removing names permits public release or that all applicants must receive access. |
+| Environmental research | Urban Shade's units, timing, location and sensor provenance | Accurate metadata can improve reuse while precise ecological or participant-related locations need protection. |
+| Engineering and computational research | Watershed Patterns' output identity, schemas, dependencies, licence and methods | Explain what a reuser needs to judge the workflow; detailed Git, testing and software deployment are outside this course. |
+
+Invite examples from researchers without asking for confidential content. Keep the same four assessment questions and require evidence for each proposed improvement.
+
+## Prepare Examples With Immediate Feedback
+
+Use a weak record and an improved record side by side. Ask pairs to predict what a new researcher could determine from each, then reveal a short worked explanation. Avoid deliberately weak records that can be solved only by guessing a hidden fact.
+
+A useful prepared pair is the Urban Shade description “Data from the shade project” and a draft description with **marked questions** for location, period, units and method. Ask learners which facts must be confirmed before publication. This demonstrates an improvement process without fabricating missing metadata.
+
+For contribution discussion, use the five people in [the final project](../learners/scenarios.qmd#urban-shade-project). Show candidate [CRediT roles](https://credit.niso.org/) and ask how to confirm them with the people involved. Keep role descriptions and authorship decisions separate.
+
+## Reading for Preparation
+
+| Primary guidance | Teaching use |
+|---|---|
+| [GO FAIR principles](https://www.gofair.foundation/fair-principles) | Check the distinction between retrieval conditions, persistent metadata and unrestricted access |
+| [DataCite metadata schema](https://schema.datacite.org/) | Prepare a realistic output-record example with relationships and versions |
+| [Nottingham Open Research](https://www.nottingham.ac.uk/research/open-research/open-research.aspx) | Locate current local support and institutional context |
+| [Nottingham OA policy guidance](https://www.nottingham.ac.uk/library/research/open-access/policy.aspx) | Confirm applicable requirements at delivery rather than teaching one universal embargo or charge rule |
+| [COS preregistration](https://www.cos.io/initiatives/prereg) | Prepare examples distinguishing planned decisions, exploration and reported changes |
+| [COS Registered Reports](https://www.cos.io/initiatives/registered-reports) | Check the review sequence, conditional acceptance and outlet/design differences |
+| [NISO CRediT](https://credit.niso.org/) | Use the official contribution-role descriptions |
+| [Creative Commons FAQ](https://creativecommons.org/faq/) | Discuss appropriate rightsholders, material boundaries and reuse permissions |
+| [Open peer review systematic review](https://pmc.ncbi.nlm.nih.gov/articles/PMC5437951/) | Distinguish open identities, reports and participation without promising the same model everywhere |
+
+## Extend the Course Deliberately
+
+Use [Extra Exercises](extra_exercises.qmd) when additional time is explicitly available. Follow up routine management in [Essential Digital Skills](../../essential_digital_skills/index.qmd), AI methods in [Responsible Use of Generative AI](../../responsible_use_of_generative_ai/index.qmd), and computational implementation in [Applied R](../../applied_R/index.qmd) or [Applied Python](../../applied_python/index.qmd). The planned Best Practice in Software Engineering for Research course will develop Git, version control, collaboration and testing in detail.
+
+## Course Navigation
+
+[Course Overview](../index.qmd) · [Instructor Notes](instructor-notes.qmd) · [Additional Material](additional_material.qmd) · [Extra Exercises](extra_exercises.qmd) · [Learner Setup](../learners/setup.qmd)

@@ -1,0 +1,71 @@
+---
+title: Extra Exercises
+---
+
+## Optional Five-Minute Extensions
+
+These tasks are outside the two 100-minute lesson plans. Use one for additional practice, catch-up or a later clinic. Debriefs and room responses are included in the five minutes. All inputs below extend the [fictional scenario pack](../learners/scenarios.qmd); they are not institutional determinations.
+
+## Exercise 1: Which Missing Detail Matters First? (5 min)
+
+::: callout-task
+**Goal:** prioritise an improvement for a particular reuser. **Input:** [Market Letters](../learners/scenarios.qmd#market-letters). Fictional extension: a historian wants to verify a quotation against the original archive item. Work in pairs.
+
+1. **1 min:** identify what that user must trace from the CSV to the source.
+2. **2 min:** choose one improvement and draft the question to send to the depositor.
+3. **1 min:** identify a second issue that the first change will not solve.
+4. **1 min:** two pairs report their priority and evidence; ask the room for a justified alternative.
+
+**Keep:** a prioritised request and limitation. **If access fails:** read the case aloud and provide a printed copy.
+
+**Feedback:** stable archive item identifiers are a defensible priority for source verification. Editorial conventions and correction provenance remain necessary for interpretation. An alternative first action is acceptable when it names a different concrete user need. A new file format alone would not establish the missing link to the source.
+:::
+
+## Exercise 2: A Licence for the Wrong Material (5 min)
+
+::: callout-task
+**Goal:** detect a conflict between a sharing plan and stated rights. **Input:** [expanded Urban Shade](../learners/scenarios.qmd#urban-shade-project). Fictional proposed statement: “All sensor records, interview transcripts, map images and analysis code are released under CC BY 4.0.” Swap writer and checker.
+
+1. **1 min:** underline the materials whose rights or consent are insufficiently established.
+2. **2 min:** replace the blanket statement with a material-by-material proposal.
+3. **1 min:** record one permission or specialist review needed before release.
+4. **1 min:** vote “ready”, “revise” or “seek advice”; two pairs explain which evidence settles the vote.
+
+**Keep:** the revised proposal and unresolved check. **If access fails:** use the instructor's printed statement.
+
+**Feedback:** the case does not permit unrestricted interview transcripts or redistribution of map images. Precise locations need assessment. A rightsholder must choose appropriate permissions for each material; software needs a suitable software licence. Safe metadata and a non-sensitive code demonstration can still be shared. The [Creative Commons FAQ](https://creativecommons.org/faq/) explains relevant licence boundaries; a licence does not override consent or third-party rights.
+:::
+
+## Exercise 3: Explain a Change to the Plan (5 min)
+
+::: callout-task
+**Goal:** report a changed method without concealing its timing. **Input:** the prospective Urban Shade comparison. Fictional extension: after collection begins, a sensor fault reveals an unforeseen missing-data issue and the team proposes an additional analysis. Work in pairs.
+
+1. **1 min:** distinguish the original planned analysis from the new proposal.
+2. **2 min:** draft a change record stating what changed, when, why and what outcomes had been seen.
+3. **1 min:** decide how the original and additional analyses will be labelled and reported.
+4. **1 min:** two pairs read one sentence; the room identifies any timing or reporting ambiguity.
+
+**Keep:** the change record and reporting labels. **If access fails:** annotate the fictional extension on paper.
+
+**Feedback:** keep the original plan identifiable and report the fault, prior outcome access and added analysis explicitly. Explain departures and distinguish the additional work from the planned comparison. Do not silently edit the earlier plan to imply foresight. If using a Registered Report, consult the outlet about protocol changes and acceptance conditions. See [COS preregistration guidance](https://www.cos.io/initiatives/prereg).
+:::
+
+## Exercise 4: What Does “Open Review” Mean Here? (5 min)
+
+::: callout-task
+**Goal:** distinguish review transparency choices. **Input:** two fictional publication policies: **A** publishes reports with anonymous reviewers; **B** reveals reviewer identities to authors but does not publish reports. Swap roles.
+
+1. **1 min:** name what is visible to whom under each policy.
+2. **2 min:** choose one benefit and one concern for a researcher considering each route.
+3. **1 min:** write one question about timing, consent, conflicts or confidentiality to ask the outlet.
+4. **1 min:** two pairs report their questions; the room identifies why the same label cannot answer them.
+
+**Keep:** a review-policy comparison and question. **If access fails:** display or read the two policies.
+
+**Feedback:** A opens reports without necessarily opening identities; B discloses identities to authors without creating a public review history. Either arrangement needs its actual terms examined. Possible benefits include inspectable reasoning or accountable interaction; possible concerns include confidentiality, conflicts and uneven power relationships. Avoid claiming that either model automatically produces better review. [The systematic review of open peer review](https://pmc.ncbi.nlm.nih.gov/articles/PMC5437951/) describes the variety of implementations.
+:::
+
+## Course Navigation
+
+[Course Overview](../index.qmd) · [Instructor Notes](instructor-notes.qmd) · [Additional Material](additional_material.qmd) · [Extra Exercises](extra_exercises.qmd) · [Learner Setup](../learners/setup.qmd)

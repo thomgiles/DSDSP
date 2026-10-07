@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="385" viewBox="0 0 1200 385" role="img" aria-labelledby="title desc">
+  <title id="title">Choose an appropriate access arrangement</title>
+  <desc id="desc">Four separate choices are shown without a ranking. Open means public access. Restricted means a stated limit such as an embargo or defined audience. Controlled means an application, eligibility review or secure setting. Closed means no external sharing. Terminology can overlap, and each choice needs a reason, safe metadata and an explanation of access or restrictions.</desc>
+  <rect width="1200" height="385" rx="28" fill="#f7fbfc"/>
+  <g font-family="sans-serif" text-anchor="middle">
+    <text x="600" y="47" font-size="29" font-weight="700" fill="#10263b">Choose for the output, its benefits and its potential harms</text>
+    <rect x="35" y="85" width="260" height="188" rx="18" fill="#006781"/>
+    <rect x="325" y="85" width="260" height="188" rx="18" fill="#298582"/>
+    <rect x="615" y="85" width="260" height="188" rx="18" fill="#405162"/>
+    <rect x="905" y="85" width="260" height="188" rx="18" fill="#10263b"/>
+    <g fill="#ffffff">
+      <text x="165" y="129" font-size="29" font-weight="700">Open</text>
+      <text x="165" y="178" font-size="24">Public access</text><text x="165" y="216" font-size="24">Stated permissions</text>
+      <text x="455" y="129" font-size="29" font-weight="700">Restricted</text>
+      <text x="455" y="178" font-size="24">A stated limit</text><text x="455" y="216" font-size="24">Embargo or audience</text>
+      <text x="745" y="129" font-size="29" font-weight="700">Controlled</text>
+      <text x="745" y="178" font-size="24">Application + review</text><text x="745" y="216" font-size="24">or a secure setting</text>
+      <text x="1035" y="129" font-size="29" font-weight="700">Closed</text>
+      <text x="1035" y="178" font-size="24">No external sharing</text><text x="1035" y="216" font-size="24">Explain where safe</text>
+    </g>
+    <text x="600" y="318" font-size="25" font-weight="700" fill="#10263b">Give reasons, safe metadata and the appropriate access explanation</text>
+    <text x="600" y="354" font-size="22" fill="#405162">Working distinctions: repository terms may differ or overlap</text>
+  </g>
+</svg>

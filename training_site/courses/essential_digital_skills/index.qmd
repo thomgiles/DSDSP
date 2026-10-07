@@ -100,6 +100,8 @@ Connect tools, roles, systems, policies, and data decisions into workflows that 
 
 ## Follow-on Courses
 
+For assessing output usability and choosing transparent, responsible research practices, continue to [FAIR and Open Research Practices](../fair_and_open_research_practices/index.qmd). Its two lessons build on Research Data Management through FAIR assessments, publication decisions and an Open Research strategy.
+
 For help applying a skill to a particular digital task, explore [Digital Skills Clinics](../../clinics.qmd).
 
 For data quality, exploration, visualisation, and impact, continue to [Methods for Data Science](../methods_for_data_science/index.qmd).

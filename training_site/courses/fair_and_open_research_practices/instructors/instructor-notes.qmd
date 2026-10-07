@@ -1,0 +1,102 @@
+---
+title: Instructor Notes
+---
+
+## Delivery and Scope
+
+Teach [FAIR Research Outputs](../episodes/01-fair_research_outputs.qmd) before [Open Research Practices](../episodes/02-open_research_practices.qmd). Each lesson is **100 minutes: 55 minutes teaching/review and 45 minutes active learning**. Pair/group decisions, reports and debriefs are included in activity time. Any break is additional; agree its position and length with the organiser.
+
+The audience is postgraduate researchers, research staff and academics across disciplines, with some research data management familiarity. This course develops judgement about outputs and research transparency. Refer routine storage, backups, naming and DMP work to [Essential Digital Skills](../../essential_digital_skills/index.qmd). Detailed Git, testing and software engineering belong in separate technical teaching.
+
+## Prepare Before Delivery
+
+Read [Learner Setup](../learners/setup.qmd), the [scenario pack](../learners/scenarios.qmd), both lessons and the [learner reference](../learners/reference.qmd). Print or share the two [worksheets](../learners/additional_material.qmd). Have the case tables available on screen and on paper. No accounts or software installation are required.
+
+Check the current [Nottingham Open Access deposit route](https://www.nottingham.ac.uk/library/research/open-access/depositing-output.aspx) and [policy guidance](https://www.nottingham.ac.uk/library/research/open-access/policy.aspx) before each delivery. Check relevant publisher, funder and discipline requirements before presenting a real example. Do not improvise an embargo period, charge entitlement or licence requirement from memory.
+
+All cases are fictional. Do not ask learners to upload participant records, protected quotations or confidential project files. For personal transfer, ask for a non-sensitive description and a decision to investigate. A shared screen or printed worksheet gives the same reasoning task when access fails.
+
+## Lesson 1 Clock
+
+Times below are minutes elapsed from the start; pause the clock for any separately scheduled break.
+
+| Clock | Topic | Teaching/review | Activity | Evidence to ask for |
+|---|---|---:|---:|---|
+| 0–10 | Why FAIR matters | 7 | 3 | A ranked comparison with reasons |
+| 10–22 | Findable | 8 | 4 | A record improvement and missing evidence |
+| 22–34 | Accessible | 8 | 4 | A justified retrieval comparison |
+| 34–49 | Interoperable | 10 | 5 | Defined terms, units and formats; unknowns retained |
+| 49–64 | Reusable | 10 | 5 | Context, provenance and permission gaps |
+| 64–74 | FAIR beyond data | 7 | 3 | The four questions applied to another output |
+| 74–95 | FAIR assessment | 0 | 21 | Four assessments with priority improvements |
+| 95–100 | Review | 5 | 0 | A transfer action and remaining question |
+| **Total** | | **55** | **45** | **100 minutes** |
+
+## Lesson 2 Clock
+
+| Clock | Topic | Teaching/review | Activity | Evidence to ask for |
+|---|---|---:|---:|---|
+| 0–8 | What Open Research includes | 6 | 2 | A process/output distinction |
+| 8–22 | Open Access | 8 | 6 | A route, manuscript version and policy check |
+| 22–30 | Preprints | 5 | 3 | A sharing stage and status label |
+| 30–44 | Preregistration | 8 | 6 | A more specific prospective plan |
+| 44–54 | Registered Reports | 7 | 3 | The review sequence and acceptance conditions |
+| 54–64 | Open methods/reporting | 7 | 3 | Details needed to evaluate a method |
+| 64–72 | Credit and contributions | 5 | 3 | Agreed candidate roles; authorship considered separately |
+| 72–82 | Responsible openness | 4 | 6 | Access decisions with benefits and harms |
+| 82–95 | Project strategy | 0 | 13 | Nine seeded decisions, two examined closely |
+| 95–100 | Review | 5 | 0 | A justified next action |
+| **Total** | | **55** | **45** | **100 minutes** |
+
+## Facilitate Decisions and Immediate Feedback
+
+Use an operator/writer and a checker, then swap roles. Announce the task's time and expected output before starting. Ask for one decision **and the evidence supporting it**; take two contrasting reports and give a short reasoned response. Invite the rest of the room to identify what evidence would change its answer.
+
+For very short activities, ask for a vote plus one sentence rather than a complete presentation. Display worked reasoning after learners commit to an answer. Keep disagreements grounded in the stated scenario; distinguish “not provided” from “known to be absent”. Useful specialist questions can be recorded for follow-up while the class completes the decision.
+
+Adapt examples to the room without changing the outcomes: an archive transcription can expose rights and provenance, a clinical dataset can expose controlled access, and an engineering workflow can expose unclear dependencies and output versions. Do not turn the workflow example into a programming tutorial. Use [Additional Material](additional_material.qmd) for prepared adaptations.
+
+## Debrief the FAIR Assessment
+
+The four cases are in [the scenario pack](../learners/scenarios.qmd); the lesson provides full worked feedback. These are defensible priorities, rather than a score key:
+
+| Output | Priority reasoning to listen for |
+|---|---|
+| **A — Urban Shade** | Public retrieval is a strength, but a personal download lacks a maintained record and usable context. Confirm dates, units, site meaning and methods before building metadata, identifiers and reuse conditions. Do not invent interpretations. |
+| **B — Steps and Sleep** | Recognise the indexed record, clear application process, defined variables and conditions. Restrictions protect participants; universal approval is not required. Ask how the proposed use fits eligibility and governance rather than recommending public release. |
+| **C — Market Letters** | Retain the repository/identifier and clear separation of transcription/image rights. Prioritise stable archive item links, editorial definitions and transcription provenance. A CC licence does not remove those gaps. |
+| **D — Watershed Patterns** | A paper citation helps point towards the workflow, but an email request does not establish a maintained service. Prioritise an output record, reliable retrieval, version, licence and method/input/dependency descriptions. Do not infer that the workflow is scientifically wrong. |
+
+Award feedback for evidence under all four headings, feasible improvements and justified uncertainty. A pair can choose a different first improvement if it explains the dependency and the user who benefits. Do not call an output fully FAIR because it has a DOI, or fail a controlled dataset solely because it lacks public files.
+
+## Keep the 13-Minute Strategy Task Feasible
+
+Ask pairs to retain decisions made during the OA, preprint, planning, reporting, credit and access activities in their [strategy worksheet](../learners/files/open-research-strategy.md). The final exercise assembles these decisions; it should not start with nine blank rows. Prepare a partially completed copy for pairs needing a catch-up route.
+
+Use the task timing in the lesson. Aim for short entries in every row, then two decisions examined closely. Room reports focus on one choice, its reason and what could change it. Do not require each pair to read all nine rows aloud.
+
+## A Defensible Urban Shade Strategy
+
+This is a worked teaching plan, not a determination of real permissions or institutional approval. Alternatives are welcome when justified against the case.
+
+| Decision | Defensible choice and unresolved check |
+|---|---|
+| **Publication** | Select a suitable Green, Gold or Diamond route after checking funder/institutional requirements, journal terms, manuscript version and any charges. Retain the accepted manuscript for the permitted deposit route. |
+| **Preprint** | Consider sharing a sufficiently developed manuscript after rights, participant protection, co-author agreement and journal checks. State its actual review status and version, and link later outputs. Delay it if protected content cannot yet be removed safely. |
+| **Study design** | Label the existing exploration accurately. Specify the prospective sensor comparison before its outcomes; assess a Registered Report's design fit and timetable. Explain how the interview approach will be planned and reported without forcing it into an unsuitable confirmatory model. |
+| **Methods** | Share a reviewed sampling/analysis protocol without identifying recruitment details. Explain eligibility, outcomes, analysis decisions, deviations and relevant computational/AI contributions. Report exploratory work and null/negative findings transparently. |
+| **Data** | Confirm the old CSV's meanings and provenance before releasing an improved record. Assess new measurements and safe summaries separately from precise coordinates and interviews. Use appropriate controlled access or justified closure for protected material; publish safe metadata. |
+| **Analysis/code** | Share the non-sensitive analytical component with fictional demonstration inputs, method descriptions, version, limitations and an appropriate software licence. Confirm no participant or protected third-party content is embedded. |
+| **Licence** | Identify the rightsholders and select permissions for each material. Exclude the third-party map images unless permission is obtained; do not assign one blanket licence to the whole package. |
+| **Contributions** | Agree accurate roles with Maya, Joel, Priya, Alex and Sam; record writing/review as work develops. Resolve authorship separately, link agreed ORCID records and cite data/software/protocol outputs. |
+| **Metadata/PIDs** | Create descriptive, maintained records and appropriate identifiers for outputs; link article, data, methods and analysis. Explain versions, access conditions, rights and restrictions without exposing identities. |
+
+The important result is a coherent, reviewable strategy. Look for conflicts: a promised public transcript release contradicts the stated consent; a blanket licence includes material the team cannot license; retrospective exploration is described as prospectively confirmed. Ask the pair to revise the conflicting rows together.
+
+## Final Check and Follow-Up
+
+Ask each learner for one change, an owner and a review date. Keep unresolved institutional or disciplinary questions with the action rather than presenting a classroom answer as approval. Refer specific digital implementation questions to [Digital Skills Clinics](../../../clinics.qmd) and policy/deposit questions to [Nottingham Open Research support](https://www.nottingham.ac.uk/research/open-research/open-research.aspx).
+
+## Course Navigation
+
+[Course Overview](../index.qmd) · [Instructor Notes](instructor-notes.qmd) · [Additional Material](additional_material.qmd) · [Extra Exercises](extra_exercises.qmd) · [Learner Setup](../learners/setup.qmd)

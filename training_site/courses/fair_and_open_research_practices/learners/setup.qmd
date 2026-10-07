@@ -1,0 +1,51 @@
+---
+title: Setup
+---
+
+## Before You Attend
+
+This course is for postgraduate researchers, research staff and academics who want to make outputs more usable and choose appropriate Open Research practices. Basic familiarity with research data management is useful; you do not need programming experience.
+
+If you need a refresher, use [Essential Digital Skills: Research Data Management](../../essential_digital_skills/episodes/04-research_data_managment.qmd). The FAIR course builds on that lesson through output and publication decisions.
+
+## What To Bring
+
+- A laptop or tablet with a browser, or the printed materials supplied by the instructor.
+- Somewhere to keep brief notes: a document, notebook or annotated worksheet.
+- Optional: a short, non-sensitive description of an output you create or reuse.
+
+No R, Python, Git, repository account, ORCID account or paid publishing service is required for the taught activities. Work in pairs; the operator or reader and the checker swap roles during the lesson.
+
+## Open the Materials
+
+| Material | Use it for |
+|---|---|
+| [Fictional scenario pack](scenarios.qmd) | Comparing the four outputs and the expanded Urban Shade project |
+| [FAIR assessment worksheet](files/fair-assessment.md){download="fair-assessment.md"} | Recording strengths, unknowns and practical improvements |
+| [Open Research strategy worksheet](files/open-research-strategy.md){download="open-research-strategy.md"} | Nine justified decisions and the checks needed before acting |
+| [Reference](reference.qmd) | Looking up terms, decision checks and primary guidance |
+
+The worksheets are plain-text Markdown: open them in a text editor, copy the tables into your preferred writing tool, or print the page. The scenario pack is also usable directly in the browser.
+
+## Preparation by Lesson
+
+| Lesson | Preparation |
+|---|---|
+| [01 FAIR Research Outputs](../episodes/01-fair_research_outputs.qmd) | Skim Cases A–D. Choose one output that looks easy to reuse and one that raises questions; be ready to explain the evidence. |
+| [02 Open Research Practices](../episodes/02-open_research_practices.qmd) | Retain your FAIR assessment. Read the expanded Urban Shade project, noting which research has already been explored and which work is prospective. |
+
+Each lesson takes 100 minutes, including activities and debriefs. Breaks are scheduled separately. You can participate using the supplied fictional cases throughout.
+
+## If Access or Technology Fails
+
+Use a shared screen or printed scenario pack and record decisions on paper. The core exercises do not depend on a live search or successful deposit. If an optional guidance site is unavailable, use the course reference and note the question to check later with the relevant service.
+
+## Using Your Own Research
+
+For optional transfer tasks, describe the output's type, purpose, access constraints and current documentation. Keep participant details, confidential methods and third-party files out of room notes. Removing names alone may leave people identifiable.
+
+For a question about publishing or sharing real work, start with [Nottingham Libraries' Open Access support](https://www.nottingham.ac.uk/library/research/open-access/index.aspx) or [research data guidance](https://www.nottingham.ac.uk/library/research/research-data-management/index.aspx). [Digital Skills Clinics](../../../clinics.qmd) can help you apply a digital workflow to a specific task.
+
+## Course Navigation
+
+[Course Overview](../index.qmd) · [Setup](setup.qmd) · [Additional Material](additional_material.qmd) · [Reference](reference.qmd) · [Discussion](discuss.qmd)

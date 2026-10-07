@@ -144,6 +144,10 @@ When reviewing a dataset or chart, ask:
 - Does the chart help interpretation or distort it?
 - What action is the audience expected to take from this output?
 
+## Optional Follow-on: FAIR and Open Research
+
+[FAIR and Open Research Practices](../../fair_and_open_research_practices/index.qmd) develops output assessment, Open Access, preregistration, transparent methods, contribution and responsible sharing. Its [reference guide](../../fair_and_open_research_practices/learners/reference.qmd) provides practical decision checks. FAIR does not require unrestricted access: a clear, justified retrieval process and useful metadata can support restricted outputs.
+
 ## Brief AI Writing Check
 
 The writing section of Digital Tools includes a short evidence-checking example: compare a rewrite with its source, preserve qualifications and reject unsupported claims. Check permissions before supplying research material to any external service and record actual AI contributions where applicable.

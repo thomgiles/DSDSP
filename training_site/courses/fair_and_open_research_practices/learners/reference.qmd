@@ -1,0 +1,81 @@
+---
+title: Reference
+---
+
+## Two Questions To Keep Separate
+
+**FAIR:** can people and systems find, retrieve, interpret and reuse this output appropriately? **Open Research:** how can the research process and its outputs be communicated transparently and responsibly? A public download can have weak FAIR features. A restricted output can have strong metadata and a defined retrieval process. See the [GO FAIR principles](https://www.gofair.foundation/fair-principles) and [UNESCO's Open Science recommendation](https://www.unesco.org/en/legal-affairs/recommendation-open-science).
+
+## Practical FAIR Checks
+
+| Principle | Questions to ask of the output and its record |
+|---|---|
+| **Findable** | Is there a maintained identifier, descriptive metadata and a searchable record? Can the record distinguish this output and version from related work? |
+| **Accessible** | Does the identifier lead to a defined retrieval mechanism? Are authentication, permission and restriction conditions clear? Can safe metadata remain available when the files cannot? |
+| **Interoperable** | Are formats and structures understood by the intended community and tools? Are units, terms, identifiers and relationships defined using appropriate standards? |
+| **Reusable** | Are permissions, provenance, methods, version, context and limitations sufficient for the proposed use? Can a user identify and credit the relevant output? |
+
+These are classroom decision prompts derived from the [FAIR principles](https://www.gofair.foundation/fair-principles), not a formal audit instrument. Record evidence and unknowns; a DOI, CSV or licence alone does not establish every principle.
+
+## Terms Used in the Lessons
+
+| Term | Meaning and useful check |
+|---|---|
+| **Metadata** | Structured descriptions of an output, such as creator, title, scope, dates, version, rights and related outputs. Distinguish record-level descriptions from variable definitions. |
+| **Persistent identifier (PID)** | An enduring reference supported by maintenance and a resolving service. Ask what it identifies and where it resolves. |
+| **DOI** | A type of PID used for research outputs and other resources. Check the output/version and associated metadata rather than treating the identifier as a quality award. |
+| **ORCID iD** | An identifier for a researcher, helping distinguish people with similar names and connect their contributions. It identifies the person rather than replacing an output's identifier. |
+| **Standard/schema** | A shared way to structure and describe information. Choose a documented community practice appropriate to the material; there is no single format for every discipline. |
+| **Controlled vocabulary/ontology** | Agreed terms or explicit relationships that reduce ambiguity. Record mappings when local categories differ; do not silently merge concepts with different meanings. |
+| **Provenance** | The origins and changes that explain how an output was produced: source material, methods, transformations, responsible people and versions. |
+| **Licence** | Stated permissions and conditions for specified material. Confirm the rightsholder and exclusions; being able to download a file does not itself grant reuse permission. |
+
+[DataCite's metadata schema](https://schema.datacite.org/) provides a concrete output-record model; [ORCID's introduction](https://info.orcid.org/what-is-orcid/) explains researcher identifiers. The [Creative Commons FAQ](https://creativecommons.org/faq/) addresses choosing and applying CC licences, including limits concerning third-party rights. Software licensing needs a suitable software licence and rights review; a data licence is not automatically an appropriate software licence.
+
+## Publication and Research-Process Decisions
+
+| Practice | What to decide |
+|---|---|
+| **Green Open Access** | Deposit an allowed manuscript version in a repository. Check version, licence, timing and applicable requirements. |
+| **Gold Open Access** | Make the article openly available through the publisher. Check charges and eligible funding; a Gold route does not always involve an author charge. |
+| **Diamond Open Access** | Publish through a route that charges neither readers nor authors. Check journal suitability and the actual licence. |
+| **Accepted manuscript** | The author manuscript after peer review and acceptance, before publisher production. Keep it distinct from the submitted draft and publisher's version of record. |
+| **Preprint** | Share a manuscript before journal acceptance, typically before formal journal peer review. Identify its actual review status and version, communicate limitations and link later versions; check relevant journal and disciplinary requirements. |
+
+Use [Nottingham Open Access support](https://www.nottingham.ac.uk/library/research/open-access/index.aspx), [depositing guidance](https://www.nottingham.ac.uk/library/research/open-access/depositing-output.aspx) and [policy guidance](https://www.nottingham.ac.uk/library/research/open-access/policy.aspx) for current local decisions. Publication deposits use the University's RIS arrangements; follow the current guidance rather than assuming that a dataset repository is the publication deposit route.
+
+| Research planning term | Distinction to retain |
+|---|---|
+| **Exploratory research** | Investigate patterns, questions and possibilities. Identify what was already inspected and avoid presenting a later explanation as a prior prediction. |
+| **Preregistration** | Record a specific plan before the relevant outcomes are known, making planned and unplanned work distinguishable. Explain prior access, decisions and later changes. |
+| **Registered Report** | A publication format with design/method review before outcomes and conditional in-principle acceptance. Final publication depends on meeting the outlet's protocol, quality and reporting conditions rather than obtaining a preferred result. |
+| **Open methods/reporting** | Supply the detail needed to evaluate the work: protocol, decisions, deviations, scope, limitations and relevant computational or AI methods. Explain null and negative findings appropriately. |
+
+Consult the [COS preregistration guidance](https://www.cos.io/initiatives/prereg) and [Registered Reports guidance](https://www.cos.io/initiatives/registered-reports). Check whether the particular design and outlet support the approach; these practices are not interchangeable or appropriate to every study.
+
+## Review and Credit
+
+**Open peer review** can involve published reports, disclosed identities, wider participation or combinations. Ask what becomes public, to whom and when, and how consent, conflicts and confidentiality are handled. A published review report does not necessarily identify its reviewer. [Ross-Hellauer's systematic review](https://pmc.ncbi.nlm.nih.gov/articles/PMC5437951/) explains why the term has multiple implementations.
+
+**CRediT** describes contributions using 14 roles, including methods, investigation, software, curation, analysis, supervision and writing. Agree accurate descriptions with contributors and determine authorship separately under the relevant criteria. Use [NISO's CRediT taxonomy](https://credit.niso.org/) and link people through their agreed ORCID records. Cite reused data, software and protocols as identifiable outputs rather than crediting only the associated article.
+
+## Access Labels Used in the Activities
+
+These are practical descriptions for the scenarios, not a universal legal taxonomy or a fixed ladder of quality. Real services may use overlapping labels.
+
+| Label | Arrangement to describe explicitly |
+|---|---|
+| **Open** | Public retrieval with stated reuse permissions and any conditions. Specify the material and licence. |
+| **Restricted** | Access has a stated limitation, such as an embargo or permission condition. Explain its scope and duration where applicable. |
+| **Controlled** | A defined application and approval process determines access under agreed conditions. Explain eligibility, review, authentication and contact. |
+| **Closed** | No external access route is currently offered. Explain the reason where safe and consider what public metadata or summary can be provided. |
+
+Judge each output separately. Precise locations, interviews, culturally sensitive material, ecological information, commercial/IP interests, security concerns and third-party content can require different decisions. A licence does not override consent, privacy or another party's rights. Transparency can include a reasoned restriction and useful safe metadata. [UNESCO's recommendation](https://www.unesco.org/en/legal-affairs/recommendation-open-science) sets openness within broader responsibilities and rights.
+
+## Use These Checks in Your Project
+
+Start with the [scenario pack](scenarios.qmd) and [worksheets](additional_material.qmd), then consult [Nottingham Open Research](https://www.nottingham.ac.uk/research/open-research/open-research.aspx). Use [Research Data Management support](https://www.nottingham.ac.uk/library/research/research-data-management/index.aspx) for the routine management foundation and [Digital Skills Clinics](../../../clinics.qmd) for help with a specific digital task.
+
+## Course Navigation
+
+[Course Overview](../index.qmd) · [Setup](setup.qmd) · [Additional Material](additional_material.qmd) · [Reference](reference.qmd) · [Discussion](discuss.qmd)

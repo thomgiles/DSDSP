@@ -1,0 +1,30 @@
+format:
+  html:
+    toc: true
+    number-sections: false
+    page-layout: article
+    title-block-style: none
+    allow-html: true
+
+  revealjs:
+    theme:
+      - black
+      - ../../../uon.scss
+    output-ext: revealjs.html
+    auto-stretch: false
+    slide-number: true
+    smaller: true
+    scrollable: true
+    chalkboard: true
+    controls: true
+    controls-layout: bottom-right
+    preview-links: auto
+    navigation-mode: linear
+    title-block-style: none
+    include-before-body:
+      - ../../../html/interactive-digital-research-background.html
+      - ../../../html/reveal-header.html
+    include-after-body:
+      - ../../../js/rjs-footer.js
+      - ../../../js/rjs-slide-fit.js
+    allow-html: true

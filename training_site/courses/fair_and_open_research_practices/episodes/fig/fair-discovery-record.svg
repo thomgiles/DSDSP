@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="500" viewBox="0 0 1200 500" role="img" aria-labelledby="title desc">
+  <title id="title">Search, record and identified output</title>
+  <desc id="desc">Search terms lead to an indexed descriptive repository record. Its output identifier leads to the research object. The record also links to identified creators and related methods or publications, so discovery does not depend on knowing a filename.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M1 1 L8 5 L1 9 Z" fill="#405162"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="500" rx="28" fill="#f7fbfc"/>
+  <g font-family="sans-serif" text-anchor="middle">
+    <text x="600" y="48" font-size="31" font-weight="700" fill="#10263b">A useful record connects discovery and identity</text>
+    <g fill="none" stroke="#405162" stroke-width="3" marker-end="url(#arrow)">
+      <path d="M300 178 H350"/>
+      <path d="M840 178 H890"/>
+      <path d="M475 291 V337"/>
+      <path d="M725 291 V337"/>
+    </g>
+    <rect x="35" y="103" width="265" height="170" rx="19" fill="#006781"/>
+    <rect x="360" y="81" width="480" height="210" rx="19" fill="#10263b"/>
+    <rect x="900" y="103" width="265" height="170" rx="19" fill="#298582"/>
+    <rect x="360" y="347" width="230" height="92" rx="17" fill="#405162"/>
+    <rect x="610" y="347" width="230" height="92" rx="17" fill="#405162"/>
+    <g fill="#ffffff">
+      <text x="167" y="151" font-size="29" font-weight="700">Search terms</text>
+      <text x="167" y="191" font-size="25">Subject, place,</text>
+      <text x="167" y="224" font-size="25">period, method</text>
+      <text x="600" y="127" font-size="29" font-weight="700">Indexed repository record</text>
+      <text x="600" y="171" font-size="25">Title, description, scope</text>
+      <text x="600" y="208" font-size="25">Creators, version, rights</text>
+      <text x="600" y="253" font-size="27" font-weight="700">Persistent output identifier</text>
+      <text x="1032" y="151" font-size="29" font-weight="700">Research output</text>
+      <text x="1032" y="191" font-size="25">Files or a defined</text>
+      <text x="1032" y="224" font-size="25">access route</text>
+      <text x="475" y="384" font-size="26" font-weight="700">Creators</text>
+      <text x="475" y="416" font-size="24">ORCID links</text>
+      <text x="725" y="384" font-size="26" font-weight="700">Related work</text>
+      <text x="725" y="416" font-size="24">Methods and paper</text>
+    </g>
+    <text x="600" y="476" font-size="24" fill="#405162">The output and its creator have different identifiers.</text>
+  </g>
+</svg>

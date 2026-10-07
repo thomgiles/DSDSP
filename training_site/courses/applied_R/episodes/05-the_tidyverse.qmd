@@ -497,7 +497,18 @@ A saved file is useful only when its location and meaning are clear. Record iden
 
 ## Keep the Calculation Separate from Its Presentation
 
-The shared project contains `analysis.R`, a notebook, an app and known-value/failure checks. Read the helper rather than treating a downloaded file as an authority.
+The shared project contains `analysis.R`, a notebook, an app and known-value/failure checks. Read the helper rather than treating a downloaded file as an authority. Run the following commands from the extracted project folder.
+
+```{r}
+#| label: shared-project-render-start
+#| include: false
+# Render this example in the supplied project, as learners do after extraction.
+lesson_render_root <- knitr::opts_knit$get("root.dir")
+project_dir <- normalizePath(file.path(dirname(knitr::current_input(dir = TRUE)),
+                                       "../learners/files/research-project"),
+                             mustWork = TRUE)
+knitr::opts_knit$set(root.dir = project_dir)
+```
 
 ```{r}
 source("analysis.R")
@@ -506,6 +517,13 @@ selection <- select_observations(research_data, c("Ireland", "Brazil"), 2007)
 summary <- summarise_selection(selection)
 stopifnot(nrow(selection) == 2L)
 summary
+```
+
+```{r}
+#| label: shared-project-render-end
+#| include: false
+# Keep the other lesson examples at their original rendering location.
+knitr::opts_knit$set(root.dir = lesson_render_root)
 ```
 
 The summary states selected, observed and missing counts. Its mean is unweighted across the selected observed country values; it is not a population-weighted estimate. Both later outputs call the same helper, while their inputs and presentation remain explicit.

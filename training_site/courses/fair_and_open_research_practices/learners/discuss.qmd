@@ -1,0 +1,56 @@
+---
+title: Discussion
+---
+
+## Discuss Decisions, Using Evidence
+
+Use these prompts after the taught activities or with a research group. Start with the [fictional cases](scenarios.qmd), then transfer the reasoning to a non-sensitive description of your own work. A justified alternative is useful evidence of learning; a missing fact is a question to investigate.
+
+## After FAIR Research Outputs
+
+In pairs, choose one case and take one minute each to explain:
+
+- Which FAIR judgement changed once you looked beyond download availability?
+- What would a new researcher or system misunderstand?
+- Which improvement should come first, and which evidence supports that priority?
+- What useful metadata could remain available if files could not be released?
+
+Invite two pairs to report contrasting priorities. The room identifies the principle each improvement supports; one improvement may support several principles. Keep the action and the unresolved check in your [assessment worksheet](files/fair-assessment.md).
+
+## After Open Research Practices
+
+Compare two plans for the [Urban Shade project](scenarios.qmd#urban-shade-project): a plan that makes every file public immediately, and a plan that describes each output and justifies different release conditions.
+
+Ask:
+
+- Which decisions change when the analysis is prospective rather than already explored?
+- What would a preprint reader need to understand about status and limitations?
+- Can the article be Open Access while participant transcripts remain controlled?
+- What can be disclosed about an access restriction without exposing protected information?
+- Which contribution could disappear from the record if only authorship were discussed?
+
+Have each pair defend one decision. Another pair asks what evidence would change it. Keep the revised choice, its reason and the next check in your [strategy worksheet](files/open-research-strategy.md).
+
+## A Research-Group Conversation
+
+Choose one output and agree a concrete action:
+
+| Prompt | Record |
+|---|---|
+| What should a future user be able to discover and understand? | A specific user and reuse purpose |
+| Which detail is missing today? | Evidence from the current record |
+| Who can supply or approve it? | A named role |
+| What can be shared safely, and what needs review? | Output-level conditions |
+| How will we know the improvement helped? | A colleague's discovery or interpretation check |
+
+Avoid using public access as the only measure of success. A clear explanation of a justified restriction may improve the record without changing access to its files.
+
+## Questions To Take to Support
+
+Bring a brief description of the output, proposed use, known rights/access conditions and the decision you cannot resolve. Examples include which manuscript version to deposit, whether an agreement permits reuse of a map, or how to describe controlled data without disclosing identities.
+
+Use [Nottingham Libraries' Open Access guidance](https://www.nottingham.ac.uk/library/research/open-access/index.aspx), [research data support](https://www.nottingham.ac.uk/library/research/research-data-management/index.aspx), or [Digital Skills Clinics](../../../clinics.qmd) as appropriate. A publication policy question and a digital workflow question may need different advice.
+
+## Course Navigation
+
+[Course Overview](../index.qmd) · [Setup](setup.qmd) · [Additional Material](additional_material.qmd) · [Reference](reference.qmd) · [Discussion](discuss.qmd)

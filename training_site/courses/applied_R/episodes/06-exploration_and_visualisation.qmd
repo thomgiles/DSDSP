@@ -237,12 +237,32 @@ A plot must disclose its selection and presentation choices. Inspect warnings ra
 
 ## Reuse the Project's Checked Selection
 
+Run these commands from the extracted shared project folder, which contains `analysis.R` and its `data` directory.
+
+```{r}
+#| label: shared-project-render-start
+#| include: false
+# Render this example in the supplied project, as learners do after extraction.
+lesson_render_root <- knitr::opts_knit$get("root.dir")
+project_dir <- normalizePath(file.path(dirname(knitr::current_input(dir = TRUE)),
+                                       "../learners/files/research-project"),
+                             mustWork = TRUE)
+knitr::opts_knit$set(root.dir = project_dir)
+```
+
 ```{r}
 source("analysis.R")
 research_data <- read_research_data()
 selection <- select_observations(research_data, c("Ireland", "Brazil"), 2007)
 comparison <- make_comparison(selection)
 comparison
+```
+
+```{r}
+#| label: shared-project-render-end
+#| include: false
+# Keep the other lesson examples at their original rendering location.
+knitr::opts_knit$set(root.dir = lesson_render_root)
 ```
 
 Use `ggsave()` with a named practice destination, explicit width/height and units. Inspect the saved file, compare one value with its source and write an interpretation containing the year, units, observation level and limitation. [Lesson 7](07-digital_research_notebooks.qmd) places this output in a computational research notebook.

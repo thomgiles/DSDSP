@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="490" viewBox="0 0 1200 490" role="img" aria-labelledby="title desc">
+  <title id="title">Registered Reports workflow</title>
+  <desc id="desc">Follow six numbered stages in a snake from left to right across the top, then right to left across the bottom. The research question and design receive Stage 1 review before conditional in-principle acceptance. Data collection and analysis follow, then a report of the results with Stage 2 checks, and publication when conditions are met. Outcomes do not determine acceptance, but adherence and quality still matter.</desc>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M1 1 L8 5 L1 9 Z" fill="#405162"/></marker></defs>
+  <rect width="1200" height="490" rx="28" fill="#f7fbfc"/>
+  <g font-family="sans-serif" text-anchor="middle">
+    <text x="600" y="49" font-size="29" font-weight="700" fill="#10263b">Review the design before observing the outcomes</text>
+    <rect x="40" y="87" width="330" height="132" rx="18" fill="#10263b"/>
+    <rect x="435" y="87" width="330" height="132" rx="18" fill="#006781"/>
+    <rect x="830" y="87" width="330" height="132" rx="18" fill="#298582"/>
+    <rect x="830" y="288" width="330" height="132" rx="18" fill="#006781"/>
+    <rect x="435" y="288" width="330" height="132" rx="18" fill="#405162"/>
+    <rect x="40" y="288" width="330" height="132" rx="18" fill="#10263b"/>
+    <g fill="#ffffff" font-size="27" font-weight="700">
+      <text x="205" y="132">1. Question</text><text x="205" y="167">+ study design</text>
+      <text x="600" y="132">2. Stage 1</text><text x="600" y="167">peer review</text>
+      <text x="995" y="132">3. In-principle</text><text x="995" y="167">acceptance</text>
+      <text x="995" y="334">4. Collect + analyse</text><text x="995" y="369">Produce results</text>
+      <text x="600" y="334">5. Report results</text><text x="600" y="369">Stage 2 checks</text>
+      <text x="205" y="334">6. Publication</text><text x="205" y="369">Conditions met</text>
+    </g>
+    <text x="995" y="199" font-size="23" fill="#ffffff">Conditional on requirements</text>
+    <text x="600" y="461" font-size="25" font-weight="700" fill="#10263b">Publication depends on agreed quality and reporting, not a positive result</text>
+  </g>
+  <g stroke="#405162" stroke-width="3" marker-end="url(#arrow)" fill="none"><path d="M374 153 H426"/><path d="M769 153 H821"/><path d="M995 223 V279"/><path d="M826 354 H774"/><path d="M431 354 H379"/></g>
+</svg>

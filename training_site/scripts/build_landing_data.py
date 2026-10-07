@@ -19,6 +19,7 @@ COURSE_ORDER = {
     "automating_business_processes": 4,
     "applied_python": 5,
     "applied_R": 6,
+    "fair_and_open_research_practices": 7,
 }
 
 COURSE_FRONTMATTER_KEYS = {

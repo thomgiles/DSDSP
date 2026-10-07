@@ -36,6 +36,7 @@ project:
     - courses/essential_digital_skills/README.qmd
     - courses/methods_for_data_science/README.qmd
     - courses/responsible_use_of_generative_ai/README.qmd
+    - courses/fair_and_open_research_practices/README.qmd
     - courses/**/*.qmd
     - "!courses/applied_R/learners/files/research-project/**"
 
@@ -280,6 +281,38 @@ website:
             - courses/applied_R/CODE_OF_CONDUCT.qmd
             - courses/applied_R/LICENSE.qmd
             - courses/applied_R/profiles/learner-profiles.qmd
+
+    - id: "fair-and-open-research-practices"
+      title: "FAIR and Open Research Practices"
+      style: "docked"
+      search: true
+      collapse-level: 3
+      contents:
+        - text: "Overview"
+          href: courses/fair_and_open_research_practices/index.qmd
+        - section: "Lessons"
+          contents:
+            - courses/fair_and_open_research_practices/episodes/01-fair_research_outputs.qmd
+            - courses/fair_and_open_research_practices/episodes/02-open_research_practices.qmd
+        - section: "Learners"
+          contents:
+            - courses/fair_and_open_research_practices/learners/setup.qmd
+            - courses/fair_and_open_research_practices/learners/scenarios.qmd
+            - courses/fair_and_open_research_practices/learners/additional_material.qmd
+            - courses/fair_and_open_research_practices/learners/reference.qmd
+            - courses/fair_and_open_research_practices/learners/discuss.qmd
+        - section: "Instructors"
+          contents:
+            - courses/fair_and_open_research_practices/instructors/additional_material.qmd
+            - courses/fair_and_open_research_practices/instructors/extra_exercises.qmd
+            - courses/fair_and_open_research_practices/instructors/instructor-notes.qmd
+        - section: "Community & Metadata"
+          contents:
+            - courses/fair_and_open_research_practices/README.qmd
+            - courses/fair_and_open_research_practices/CONTRIBUTING.qmd
+            - courses/fair_and_open_research_practices/CODE_OF_CONDUCT.qmd
+            - courses/fair_and_open_research_practices/LICENSE.qmd
+            - courses/fair_and_open_research_practices/profiles/learner-profiles.qmd
 
     - id: "automating-business-processes"
       title: "Automating Business Processes"

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="565" viewBox="0 0 1200 565" role="img" aria-labelledby="title desc">
+  <title id="title">A defined access route can include approval</title>
+  <desc id="desc">A persistent metadata record describes how to obtain the output. Where access is open, retrieval can proceed directly. Where conditions apply, an application and identity check lead either to authorised use or an explained refusal. The metadata record remains available in both cases.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M1 1 L8 5 L1 9 Z" fill="#405162"/>
+    </marker>
+  </defs>
+  <rect width="1200" height="565" rx="28" fill="#f7fbfc"/>
+  <g font-family="sans-serif" text-anchor="middle">
+    <text x="600" y="48" font-size="31" font-weight="700" fill="#10263b">Describe what happens, including a refusal</text>
+    <g fill="none" stroke="#405162" stroke-width="3" marker-end="url(#arrow)">
+      <path d="M305 237 H352"/>
+      <path d="M765 237 H818 V174 H867"/>
+      <path d="M765 237 H818 V385 H867"/>
+    </g>
+    <rect x="35" y="139" width="270" height="196" rx="20" fill="#006781"/>
+    <rect x="365" y="139" width="400" height="196" rx="20" fill="#405162"/>
+    <rect x="880" y="91" width="285" height="166" rx="20" fill="#298582"/>
+    <rect x="880" y="302" width="285" height="166" rx="20" fill="#10263b"/>
+    <g fill="#ffffff">
+      <text x="170" y="186" font-size="29" font-weight="700">Metadata record</text>
+      <text x="170" y="231" font-size="25">Identifier, scope,</text>
+      <text x="170" y="265" font-size="25">access route</text>
+      <text x="170" y="306" font-size="24">Retained over time</text>
+      <text x="565" y="183" font-size="29" font-weight="700">Check access conditions</text>
+      <text x="565" y="227" font-size="25">Open: retrieve directly</text>
+      <text x="565" y="266" font-size="25">Controlled: apply, identify,</text>
+      <text x="565" y="300" font-size="25">obtain approval</text>
+      <text x="1022" y="140" font-size="29" font-weight="700">Permitted</text>
+      <text x="1022" y="184" font-size="25">Obtain and use under</text>
+      <text x="1022" y="219" font-size="25">the stated conditions</text>
+      <text x="1022" y="351" font-size="29" font-weight="700">Not permitted</text>
+      <text x="1022" y="395" font-size="25">Reason and any</text>
+      <text x="1022" y="430" font-size="25">review route explained</text>
+    </g>
+    <text x="430" y="403" font-size="25" font-weight="700" fill="#006781">Approval depends on eligibility</text>
+    <text x="430" y="437" font-size="25" fill="#405162">and the proposed use.</text>
+    <text x="600" y="522" font-size="26" fill="#405162">The metadata record remains accessible when files cannot be supplied.</text>
+  </g>
+</svg>

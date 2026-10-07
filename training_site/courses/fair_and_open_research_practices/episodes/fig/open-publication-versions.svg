@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="410" viewBox="0 0 1200 410" role="img" aria-labelledby="title desc">
+  <title id="title">Publication versions and sharing routes</title>
+  <desc id="desc">The submitted manuscript precedes the author's accepted manuscript after peer review, which precedes the publisher's version of record. An earlier manuscript can become a preprint, an appropriate accepted manuscript can be shared through a repository route, and the version of record can be shared through publisher Open Access or other permissions. Status and permissions must be checked for each version.</desc>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M1 1 L8 5 L1 9 Z" fill="#405162"/></marker></defs>
+  <rect width="1200" height="410" rx="28" fill="#f7fbfc"/>
+  <g font-family="sans-serif" text-anchor="middle">
+    <text x="600" y="47" font-size="29" font-weight="700" fill="#10263b">Name the version before deciding how to share it</text>
+    <rect x="40" y="86" width="330" height="126" rx="18" fill="#10263b"/>
+    <rect x="435" y="86" width="330" height="126" rx="18" fill="#006781"/>
+    <rect x="830" y="86" width="330" height="126" rx="18" fill="#298582"/>
+    <g fill="#ffffff" font-size="27" font-weight="700">
+      <text x="205" y="137">Submitted</text><text x="205" y="174">manuscript</text>
+      <text x="600" y="137">Author's accepted</text><text x="600" y="174">manuscript</text>
+      <text x="995" y="137">Publisher's</text><text x="995" y="174">version of record</text>
+    </g>
+    <g fill="#e1eff2" stroke="#405162" stroke-width="1.5">
+      <rect x="40" y="265" width="330" height="78" rx="16"/><rect x="435" y="265" width="330" height="78" rx="16"/><rect x="830" y="265" width="330" height="78" rx="16"/>
+    </g>
+    <g fill="#10263b" font-size="24">
+      <text x="205" y="297">Preprint route</text><text x="205" y="327">Check review status</text>
+      <text x="600" y="297">Repository route</text><text x="600" y="327">Check deposit conditions</text>
+      <text x="995" y="297">Publisher Open Access</text><text x="995" y="327">or other permissions</text>
+    </g>
+    <text x="600" y="382" font-size="25" font-weight="700" fill="#10263b">Check rights, timing and policy; link related versions</text>
+  </g>
+  <g stroke="#405162" stroke-width="3" marker-end="url(#arrow)" fill="none"><path d="M374 149 H426"/><path d="M769 149 H821"/><path d="M205 216 V257"/><path d="M600 216 V257"/><path d="M995 216 V257"/></g>
+</svg>
