@@ -3,6 +3,7 @@ title: "A checked historical country comparison"
 format:
   html:
     toc: true
+    embed-resources: true
 params:
   countries: ["Ireland", "Brazil"]
   year: 2007

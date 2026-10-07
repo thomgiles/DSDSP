@@ -18,6 +18,12 @@ Re-render and inspect the inline values, table and figure. The app instead
 recalculates its selection when an input changes. It requires a running R
 process; publishing `report.html` does not publish a live Shiny application.
 
+The report embeds its figure and supporting presentation assets in the HTML
+snapshot. This keeps an earlier report's figure intact when another parameter
+set is rendered; the source notebook, helper and permitted input are still
+required to rerun the analysis. Save outputs with names that identify the
+selected question or version.
+
 Missing life-expectancy values remain in selected tables. The summary reports
 observed and missing counts; its mean uses observed country values without
 population weights. The chart omits missing measurements and discloses the count.

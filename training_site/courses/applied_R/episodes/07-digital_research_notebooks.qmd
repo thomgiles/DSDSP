@@ -196,6 +196,8 @@ params:
 
 Change the year to another recorded year, such as 1952, and re-render. The selected records, figure, summary and inline year should all change together. Read the [parameter guidance](https://quarto.org/docs/computations/parameters.html) for additional interfaces.
 
+The starter uses `embed-resources: true` for HTML snapshots. Each saved HTML report keeps its own figure, so a later parameter run cannot replace the image referenced by an earlier report. This snapshot still needs the notebook, helper and input files for a fresh computation.
+
 ```bash
 quarto render report.qmd -P year:1952
 ```

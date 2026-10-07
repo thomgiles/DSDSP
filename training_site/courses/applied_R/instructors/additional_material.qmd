@@ -8,8 +8,8 @@ These are instructor extensions to the eight-lesson course. Learner-facing pract
 
 | Extension | Build on | Demonstration and check |
 |---|---|---|
-| Base R and tidyverse selection | Sessions 1 and 4 | Select the same country–year observations both ways; compare IDs and values rather than printed formatting |
-| A helper function for repeated summaries | Sessions 2 and 4 | State the expected input, units and missing-value policy; test a small known table before reuse |
+| Base R and tidyverse selection | Lessons 2 and 5 | Select the same country–year observations both ways; compare IDs and values rather than printed formatting |
+| A helper function for repeated summaries | Lessons 3 and 5 | State the expected input, units and missing-value policy; test a small known table before reuse |
 | Read back a derived CSV | Lesson 4 | Compare dimensions, identifiers and types; explain why factor metadata is not encoded in the CSV |
 | A plot as a scientific argument | Lesson 6 | Compare an unlabelled pooled plot with a labelled, selected comparison and state what each can establish |
 | Project handover | Any session | Ask a partner to find the input, script, output and checks, then rerun the saved script from a fresh session |

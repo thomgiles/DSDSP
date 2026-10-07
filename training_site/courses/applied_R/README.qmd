@@ -10,8 +10,8 @@ Applied R is part of the UoN Digital Skills programme. It provides a practical r
 
 This course section of the site contains:
 
-- four session pages for the Applied R pathway: foundations, functions, iteration and data analysis
-- a compatibility page retaining the former standalone variables URL
+- eight lesson pages covering foundations, data, defensive programming, iteration, wrangling, visualisation, notebooks and dashboards
+- the established variables URL, now the active lesson on importing and understanding research data
 - learner setup, reference, discussion and additional practice material
 - instructor notes and optional teaching extensions
 - course-level information about contribution, conduct, licensing, and learner profiles
