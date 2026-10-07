@@ -6,12 +6,24 @@ Use these optional resources to continue Applied R with a small, checked researc
 
 ## Choose Your Next Step
 
-| If you want to… | Revisit | Keep this output |
-|---|---|---|
-| Find your way around RStudio and its objects | [Session 1: R Foundations](../episodes/01-Rstudio_intro.qmd) | An RStudio project, saved script and checked object selections |
-| Reuse a calculation | [Session 2: Functions](../episodes/03-R_functions.qmd) | A documented function checked against known inputs |
-| Repeat a task across files or groups | [Session 3: Iteration](../episodes/04-for_loops.qmd) | A repeatable operation and a list of its outputs |
-| Summarise and visualise a table | [Session 4: Data Analysis](../episodes/05-the_tidyverse.qmd) | A checked summary and a labelled ggplot2 figure |
+| Lesson | Follow-up output |
+|---|---|
+| [01 R and RStudio Foundations](../episodes/01-Rstudio_intro.qmd) | A saved and checked starting workflow |
+| [02 Importing and Understanding Research Data](../episodes/02-R_variables_intro.qmd) | An inspectable input and selection |
+| [03 Functions, Testing and Defensive Programming](../episodes/03-R_functions.qmd) | Reusable and tested calculations |
+| [04 Iteration and Repeatable Workflows](../episodes/04-for_loops.qmd) | A repeatable operation with recorded outcomes |
+| [05 Cleaning, Wrangling and Joining Data](../episodes/05-the_tidyverse.qmd) | A checked table and reusable analysis |
+| [06 Exploratory Analysis and Visualisation](../episodes/06-exploration_and_visualisation.qmd) | Figures with qualified interpretations |
+| [07 Digital Research Notebooks](../episodes/07-digital_research_notebooks.qmd) | A reproducible computational research record |
+| [08 Interactive Research Dashboards](../episodes/08-interactive_research_dashboards.qmd) | A checked local interactive app |
+
+## Shared Notebook and Dashboard Project
+
+[Download the project ZIP](files/research-project.zip){download="research-project.zip"}. Extract it and open its folder as an RStudio project. The bundle contains unchanged teaching data, shared validation/selection/plot functions, a complete Quarto notebook, a complete Shiny app and executable checks. Use its README from lesson 5 onwards; setup steps are in [Setup](setup.qmd).
+
+Run `source("tests.R")` in the R console or `Rscript tests.R` in a terminal. Render `report.qmd`, change a recorded year and re-render, then run `shiny::runApp(".")`. Compare one observation across the input, notebook, app and download. Clear all country choices and inspect the message. A meaningful result needs both a successful run and source/interpretation checks.
+
+**Keep:** the original inputs, notebook/app source, test results, a checked output and a brief note identifying parameters, assumptions and limitations. This public historical example has no upload facility and is not a template for sharing confidential data without an agreed arrangement.
 
 ## Practice: Explain a Gapminder Comparison
 
@@ -66,6 +78,8 @@ The [RStudio Projects guide](https://docs.posit.co/ide/user/ide/guide/code/proje
 | [ggplot2 documentation](https://ggplot2.tidyverse.org/) | Choosing geoms, labels, scales and plot structure |
 | [Posit cheatsheets](https://rstudio.github.io/cheatsheets/) | A compact reminder after practising the corresponding lesson |
 | [Gapminder package documentation](https://jennybc.github.io/gapminder/) | Understanding the source and coverage of the teaching data |
+| [Quarto computations](https://quarto.org/docs/get-started/computations/rstudio.html) | Keeping narrative, code and results in a reproducible document |
+| [Shiny reactive flow](https://shiny.posit.co/r/getstarted/build-an-app/reactive-flow/reactive-flow.html) | Connecting controls and checked calculations to displayed outputs |
 
 Consult documentation for your installed package version if syntax differs. A cheatsheet is a reminder; use the full help page to check arguments, types and missing-value behaviour.
 

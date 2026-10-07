@@ -17,6 +17,7 @@ project:
     - html/reveal-header.html
   pre-render:
     - scripts/build_landing_data.py
+    - scripts/build_r_project_bundle.py
   render:
     - "!_extensions/**"
     - "!.quarto/**"
@@ -36,6 +37,7 @@ project:
     - courses/methods_for_data_science/README.qmd
     - courses/responsible_use_of_generative_ai/README.qmd
     - courses/**/*.qmd
+    - "!courses/applied_R/learners/files/research-project/**"
 
 execute:
   freeze: auto
@@ -246,12 +248,20 @@ website:
           contents:
             - text: "1. Foundations in RStudio"
               href: courses/applied_R/episodes/01-Rstudio_intro.qmd
-            - text: "2. Functions"
+            - text: "2. Importing and Understanding Data"
+              href: courses/applied_R/episodes/02-R_variables_intro.qmd
+            - text: "3. Functions, Testing and Defensive Programming"
               href: courses/applied_R/episodes/03-R_functions.qmd
-            - text: "3. Iteration"
+            - text: "4. Iteration and Repeatable Workflows"
               href: courses/applied_R/episodes/04-for_loops.qmd
-            - text: "4. Data Analysis with the Tidyverse"
+            - text: "5. Cleaning, Wrangling and Joining"
               href: courses/applied_R/episodes/05-the_tidyverse.qmd
+            - text: "6. Exploration and Visualisation"
+              href: courses/applied_R/episodes/06-exploration_and_visualisation.qmd
+            - text: "7. Digital Research Notebooks"
+              href: courses/applied_R/episodes/07-digital_research_notebooks.qmd
+            - text: "8. Shiny Dashboards"
+              href: courses/applied_R/episodes/08-interactive_research_dashboards.qmd
         - section: "Learners"
           contents:
             - courses/applied_R/learners/setup.qmd

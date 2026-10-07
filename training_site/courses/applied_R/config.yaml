@@ -1,7 +1,7 @@
 #------------------------------------------------------------
 # Retained Carpentries metadata for the local Applied R course.
 # Quarto navigation is defined in training_site/_quarto.yml; this ordered list
-# mirrors the four current sessions and excludes the compatibility-only page.
+# mirrors the eight lessons while preserving established URLs.
 #------------------------------------------------------------
 
 # Which carpentry is this (swc, dc, lc, or cp)?
@@ -62,9 +62,13 @@ contact: 'digitalresearch@nottingham.ac.uk'
 # Order of episodes in your lesson
 episodes:
 - 01-Rstudio_intro.qmd
+- 02-R_variables_intro.qmd
 - 03-R_functions.qmd
 - 04-for_loops.qmd
 - 05-the_tidyverse.qmd
+- 06-exploration_and_visualisation.qmd
+- 07-digital_research_notebooks.qmd
+- 08-interactive_research_dashboards.qmd
 
 # Information for Learners
 learners:

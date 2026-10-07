@@ -29,7 +29,7 @@ The course supports participants to:
 
 This local course is substantially adapted from Software Carpentry's `r-novice-inflammation` lesson.
 
-The UoN version reorganises, extends, and contextualises that material into four sessions for local delivery in the Methods for Data Science pathway. Each session has a 100-minute plan: 60 minutes teaching, 30 minutes activities including debriefs, and a separate 10-minute break. The foundations and Gapminder examples also draw on Software Carpentry's `r-novice-gapminder` materials.
+The UoN version reorganises, extends, and contextualises that material into eight lessons for local delivery in the Methods for Data Science pathway. Each lesson has a 100-minute plan: 60 minutes teaching, 30 minutes activities including debriefs, and a separate 10-minute break. The foundations and Gapminder examples also draw on Software Carpentry's `r-novice-gapminder` materials. Lessons 5–8 share a checked project leading to a computational notebook and Shiny dashboard. The inherited examples and optional reference banks remain available.
 
 - Upstream lesson repository: <https://github.com/swcarpentry/r-novice-inflammation>
 - Upstream lesson site: <https://swcarpentry.github.io/r-novice-inflammation/>

@@ -1,40 +1,28 @@
 ---
-title: "Data Analysis with tidyverse and ggplot2"
-module-number: "4"
-module-icon: "📊"
+title: "Cleaning, Wrangling and Joining Data"
+module-icon: "🧹"
+module-number: "5"
 author: "DRS Training"
-date: "July 7, 2025"
 metadata:
   teaching: 60
   exercises: 30
-webr:
-  packages:
-    - tidyverse
-    - rmarkdown
-    - knitr
-    - gapminder
-    - readxl
-    - openxlsx
-    - gridExtra
-    - ggExtra
-    - renv
 ---
 
 ::: callout-outcomes
 ## 💡 Learning Outcomes
 
-- Inspect and select historical country–year observations with explicit identifiers.
-- Derive and summarise columns while recording units, grouping and missing-value decisions.
-- Check joins and exported files against their source records.
-- Create and save a labelled ggplot2 figure with an explanation of its limits.
+- Select and derive columns while retaining observation identity.
+- Explain grouped summaries, missing-value choices and unmatched join records.
+- Reshape a table and verify a round trip.
+- Export a checked table and reuse one analysis across later outputs.
 :::
 
 ::: callout-questions
 ## ❓ Questions
 
-1. What does one observation represent and which comparisons can the data support?
-2. Which selections, summaries and joins could change the meaning of a result?
-3. How will another researcher check the table and figure against the input?
+1. Which transformations change the meaning or number of records?
+2. What evidence supports a missing-value or join decision?
+3. How can the notebook and dashboard use the same checked calculation?
 :::
 
 ## Structure & Agenda
@@ -42,19 +30,19 @@ webr:
 | Block | Teaching | Activity | Output to keep |
 |---|---:|---:|---|
 | Inspect and select | 10 min | 5 min | A checked subset |
-| Derive and summarise | 10 min | 5 min | A summary with its aggregation level |
-| Join and handle missing values | 10 min | 5 min | A record-retention decision |
+| Derive and summarise | 10 min | 5 min | An explicit summary |
+| Join and account for records | 10 min | 5 min | A join audit |
 | **Break** | — | **10 min break** | — |
-| Read and write derived files | 10 min | 5 min | A checked export |
-| Specify a plot for the question | 10 min | 5 min | A labelled comparison |
-| Check, save and communicate | 10 min | 5 min | A checked figure and interpretation |
+| Reshape and verify | 10 min | 5 min | A checked round trip |
+| File exchange | 10 min | 5 min | A checked export |
+| Share the analysis | 10 min | 5 min | Reusable selection and checks |
 | **Total** | **60 min** | **30 min** | **100 min including the break** |
 
-This is **session 4 of four**, building on [Foundations](01-Rstudio_intro.qmd), [Functions](03-R_functions.qmd) and [Iteration](04-for_loops.qmd). All four sessions use the same 100-minute plan. Six five-minute room activities include their debriefs; the separate break is ten minutes. Additional selection, string and plotting examples are retained in an optional reference bank after the core session.
+This is **lesson 5 of eight**. Each five-minute activity includes a room response and debrief. Save work before the ten-minute break; use a practice copy and keep original inputs unchanged.
 
 ## Starting Point and Preparation
 
-Open the project prepared in [Setup](../learners/setup.qmd), load the lesson packages and save the analysis in an R script. Use the packaged Gapminder dataset for the examples and keep original files separate from derived outputs. Pair work uses one operator and one checker; swap roles between activities. If software access fails, annotate the instructor's displayed tables and plots with the same selection and checks.
+Use the [shared research project](../learners/files/research-project.zip) in a practice copy for lessons 5–8. Open that folder as the RStudio project. Complete lessons 1–4 and prepare the packages in [Setup](../learners/setup.qmd). The original Gapminder examples and calculations below are retained.
 
 # Inspect the Data before Selecting
 
@@ -94,7 +82,7 @@ stopifnot(!anyDuplicated(gapminder[c("country", "year")]))
 
 The `dplyr` package provides functions for data manipulation, such as `select()`, `filter()`, `mutate()`, `arrange()`, `summarise()`, and `group_by()`.
 
-As in session 3, `%>%` passes the preceding table into the next function. For example, `gapminder %>% select(country, year)` means `select(gapminder, country, year)`. Read a sequence of pipes from left to right and inspect the result after each transformation.
+As in lesson 4, `%>%` passes the preceding table into the next function. For example, `gapminder %>% select(country, year)` means `select(gapminder, country, year)`. Read a sequence of pipes from left to right and inspect the result after each transformation.
 
 ## Selecting Columns
 
@@ -399,7 +387,50 @@ The left join retains employee IDs 1–4; IDs 1 and 4 have no matching departmen
 
 ## Break (10 min)
 
-Save the current script and note any unmatched records or unresolved missing-value decision before the break.
+Save the join audit before continuing.
+
+# Reshape without Losing Observations
+
+## Long and Wide Describe Different Arrangements
+
+Keep the country-year key while presenting one measurement in different layouts. The two years are recorded in the data; no missing year is invented.
+
+```{r}
+long_table <- gapminder %>%
+    filter(country %in% c("Ireland", "Brazil"), year %in% c(1952, 2007)) %>%
+    select(country, year, lifeExp)
+wide_table <- tidyr::pivot_wider(long_table, names_from = year,
+                                values_from = lifeExp, names_prefix = "year_")
+restored <- tidyr::pivot_longer(wide_table, cols = starts_with("year_"),
+                              names_to = "year", names_prefix = "year_",
+                              values_to = "lifeExp") %>%
+    mutate(year = as.integer(year)) %>% arrange(country, year)
+expected_long <- long_table %>% arrange(country, year)
+stopifnot(isTRUE(all.equal(as.data.frame(restored), as.data.frame(expected_long))))
+```
+
+The integer conversion applies to year labels generated by the reshape, not to research measurements. A reshape can expose missing combinations; investigate the source before filling them. Different measurements and units should not be pooled into one unnamed numeric column.
+
+## Task 4: Check a Reshape Round Trip (5 min)
+
+::: callout-task
+**Goal:** preserve four country-year measurements **Input:** the long and wide examples Work in pairs: one operates and one checks; swap roles between tasks.
+
+::: panel-tabset
+##### Do the Task
+
+1. **1 min:** Predict the rows and columns in each arrangement.
+2. **2 min:** Reshape to wide and back to long.
+3. **1 min:** Compare keys, units and values after arranging by the same key.
+4. **1 min:** Two pairs report what a failed comparison would require them to inspect.
+
+**Keep:** both arrangements and their comparison. **If access fails:** annotate the instructor's displayed input and output with the same decisions and checks.
+
+##### Debrief
+
+Changing arrangement is not permission to aggregate, drop duplicates or impute missing combinations. Compare identity and measurements, not appearance alone.
+:::
+:::
 
 # Read and Write Derived Files
 
@@ -441,7 +472,7 @@ stopifnot(isTRUE(all.equal(res_readback$year, res$year)))
 
 A CSV or delimited-text round trip does not retain every property of an R object, including factor levels. Check values and IDs as well as types. The Excel example writes row names explicitly; decide whether an extra row-label column suits a real handover.
 
-## Task 4: Inspect a File Round Trip (5 min)
+## Task 5: Inspect a File Round Trip (5 min)
 
 ::: callout-task
 **Goal:** verify that a derived table can be located and read. **Input:** `res` and the delimited export above. Work in pairs and swap roles.
@@ -462,97 +493,48 @@ A saved file is useful only when its location and meaning are clear. Record iden
 :::
 :::
 
-# Visualise and Communicate with ggplot2
+# Share One Checked Analysis
 
-Create visualisations using `ggplot2`. Start with the question, observation level and units. The examples below include all recorded years unless a selection is stated, so pooled country–year plots should not be described as a single-year comparison. The smooth curve describes the plotted association; it does not establish causation. Further plotting styles form an optional reference bank.
+## Keep the Calculation Separate from Its Presentation
 
-## Scatter plot with ggplot2
-
-```{r}
-#| fig-alt: "A scatter plot shows life expectancy against GDP per capita for repeated historical country-year observations in the Gapminder dataset."
-# Basic scatter plot
-ggplot(data = gapminder, aes(x = lifeExp, y = gdpPercap)) +
-  geom_point()
-```
-
-## Match the Plot to a Stated Comparison
-
-The scatter plot above combines repeated country–year observations. For the two-country comparison from Task 1, make the selected year explicit:
+The shared project contains `analysis.R`, a notebook, an app and known-value/failure checks. Read the helper rather than treating a downloaded file as an authority.
 
 ```{r}
-#| fig-alt: "Two bars compare historical country-level life expectancy in Brazil and Ireland in 1977, with life expectancy measured in years and the Gapminder source stated."
-comparison_data <- gapminder %>%
-  filter(country %in% c("Ireland", "Brazil"), year == 1977) %>%
-  select(country, year, lifeExp)
-stopifnot(nrow(comparison_data) == 2L)
-
-comparison_plot <- ggplot(comparison_data, aes(x = country, y = lifeExp)) +
-  geom_col() +
-  labs(
-    title = "Life expectancy in Ireland and Brazil, 1977",
-    x = "Country",
-    y = "Life expectancy (years)",
-    caption = "Source: Gapminder teaching dataset; historical country-level observations"
-  ) +
-  theme_minimal()
-comparison_plot
+source("analysis.R")
+research_data <- read_research_data()
+selection <- select_observations(research_data, c("Ireland", "Brazil"), 2007)
+summary <- summarise_selection(selection)
+stopifnot(nrow(selection) == 2L)
+summary
 ```
 
-The identifiers and caption explain which observations are plotted. Select a chart according to the question; the additional plotting styles below are optional references, not a checklist of required chart types.
+The summary states selected, observed and missing counts. Its mean is unweighted across the selected observed country values; it is not a population-weighted estimate. Both later outputs call the same helper, while their inputs and presentation remain explicit.
 
-## Task 5: Critique a Plot Specification (5 min)
+## Task 6: Check the Shared Analysis (5 min)
 
 ::: callout-task
-**Goal:** connect a figure to its observation level and units. **Input:** the pooled scatter plot and the two-country comparison above. Work in pairs.
+**Goal:** connect a result to its input and reusable function **Input:** the project and `analysis.R` Work in pairs: one operates and one checks; swap roles between tasks.
 
 ::: panel-tabset
 ##### Do the Task
 
-1. **1 min:** identify the observations contributing to each figure.
-2. **2 min:** inspect the two-country plot's labels and compare its heights with `comparison_data`.
-3. **1 min:** state one question the comparison supports and one it cannot answer.
-4. **1 min:** two pairs explain to the room why the selected year and units matter.
+1. **1 min:** Locate the source CSV and helper functions.
+2. **2 min:** Select the two countries for 2007 and inspect the summary.
+3. **1 min:** Compare one selected value with the original table; identify the missing-value policy.
+4. **1 min:** Two pairs explain which code should be shared by a report and a dashboard.
 
-**Keep:** the plot specification and limitation. **If access fails:** annotate the displayed figures and the corresponding source rows.
-
-##### Debrief
-
-A historical country-level comparison is descriptive. It does not establish individual outcomes, current conditions or causation. A plotted value checked against a table can still be misinterpreted if its observation level is omitted.
-:::
-:::
-
-# Check, Save and Communicate the Result
-
-## Save the Checked Plot
-
-```{r}
-ggsave("output/country_comparison.png", plot = comparison_plot, width = 7, height = 4)
-```
-
-Inspect the saved figure as well as the on-screen one. Keep its source, analysis script and a short explanation together. Save the script, restart R and run from the beginning to discover dependencies on objects created earlier in the console.
-
-## Task 6: Make a Figure Another Researcher Can Read (5 min)
-
-::: callout-task
-**Goal:** communicate one checked historical comparison. **Input:** your two-country subset from Task 1 or the lesson's Gapminder table. Work in pairs.
-
-::: panel-tabset
-##### Do the Task
-
-1. **1 min:** state the question, countries and year or years used.
-2. **2 min:** create a suitable plot and add descriptive labels, units and a source caption.
-3. **1 min:** check one plotted value against the original row and state one interpretive limitation.
-4. **1 min:** two pairs show the room the check and the limitation rather than only the finished picture.
-
-**Keep:** the saved plot, code and a short interpretation. **If access fails:** annotate an instructor plot with the required labels, source check and limitation.
+**Keep:** the checked selection and documented helper contract. **If access fails:** annotate the instructor's displayed input and output with the same decisions and checks.
 
 ##### Debrief
 
-A readable figure identifies its observations and units. Comparing a value with the original row checks the transformation; it does not establish a causal explanation. Distinguish historical country-level patterns from present-day or individual claims.
+Reuse helps keep a calculation consistent, but each interface still needs input validation, evidence checks and a statement of limitations.
 :::
 :::
 
 # Optional Reference Bank
+
+The established selection, string and worked exercise examples below remain available for follow-up. Plotting variants now live in [lesson 6](06-exploration_and_visualisation.qmd). They are outside the core 100-minute plan.
+
 
 The core route above is the 100-minute session. The following retained variations support follow-up learning and instructor extensions; select them according to the task. They do not add sessions to the course.
 
@@ -711,201 +693,6 @@ print(text)
 
 and we can replace a substring directly
 
-## Additional Plotting Styles
-
-## Bar plot with ggplot2
-
-```{r}
-# Bar plot
-ggplot(data = gapminder, aes(x = continent)) +
-  geom_bar()
-```
-
-## Histogram plot with ggplot2
-
-```{r}
-# Histogram
-ggplot(data = gapminder, aes(x = lifeExp)) +
-  geom_histogram()
-```
-
-## Box plot with ggplot2
-
-```{r ggplot24}
-# Box plot
-ggplot(gapminder, aes(x = continent, y = lifeExp)) +
-  geom_boxplot()
-```
-
-## Violin plot with ggplot2
-
-```{r}
-# Violin plot
-ggplot(gapminder, aes(x = continent, y = gdpPercap)) +
-  geom_violin()
-```
-
-## Scatter plot with color aesthetic with ggplot2
-
-```{r}
-# Scatter plot with color aesthetic
-ggplot(data = gapminder, aes(x = lifeExp, y = gdpPercap, color = continent)) +
-  geom_point()
-```
-
-## Scatter plot with custom color
-
-```{r}
-# Scatter plot with custom color
-ggplot(data = gapminder, aes(x = lifeExp, y = gdpPercap)) +
-  geom_point(color = "red")
-```
-
-## Scatter plot with smooth line
-
-```{r}
-# Scatter plot with smooth line
-ggplot(data = gapminder, aes(x = lifeExp, y = gdpPercap)) +
-  geom_point() +
-  geom_smooth(alpha = 0.5)
-```
-
-## Faceted plot in ggplot2
-
-```{r}
-# Faceted plot
-ggplot(data = gapminder, aes(x = lifeExp, y = gdpPercap)) +
-  geom_point() +
-  geom_smooth(alpha = 0.5) +
-  facet_wrap(~continent)
-```
-
-## Customised Axes
-
-The existing scale limits below remove out-of-range values before statistical layers are calculated. This can change a smooth as well as the visible points. Inspect warnings and exclusions. If you intend only to zoom the view, the [ggplot2 coordinate documentation](https://ggplot2.tidyverse.org/reference/coord_cartesian.html) explains `coord_cartesian()`; the example limits are retained here so this distinction is visible.
-
-```{r}
-# Customized axes
-ggplot(data = gapminder, aes(x = lifeExp, y = gdpPercap)) +
-  geom_point() +
-  geom_smooth(alpha = 0.5) +
-  xlab("Life Expectancy") +
-  ylab("GDP Per Capita") +
-  xlim(0, 70) +
-  ylim(0, 100000)
-```
-
-## Box plot with customized y-axis
-
-```{r}
-# Box plot with customized y-axis
-ggplot(gapminder, aes(x = continent, y = lifeExp)) +
-  geom_boxplot() +
-  scale_y_continuous(name = "Life Expectancy (Years)",
-                     limits = c(10, 90),
-                     breaks = c(10, 20, 30, 40, 50, 60, 70, 80, 90))
-```
-
-## Box plot with customized x-axis
-
-```{r}
-# Box plot with customized x-axis
-ggplot(gapminder, aes(x = continent, y = lifeExp)) +
-  geom_boxplot() +
-  scale_x_discrete(name = "Continent",
-                   labels = c("Africa" = "AF", "Americas" = "AM",
-                              "Asia" = "AS", "Europe" = "EU", "Oceania" = "OC"))
-```
-
-## Color gradient scale
-
-```{r}
-# Color gradient scale
-ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp, color = pop)) +
-  geom_point() +
-  scale_color_gradient(low = "blue", high = "red")
-```
-
-## Discrete color scale
-
-```{r}
-# Discrete color scale
-ggplot(data = gapminder, aes(x = gdpPercap, y = lifeExp, color = continent)) +
-  geom_point() +
-  scale_color_manual(values = c("#1f78b4", "#33a02c", "#e31a1c", "#ff7f00", "#6a3d9a"))
-```
-
-## Plot with color palette
-
-```{r}
-# Plot with color palette
-ggplot(data = gapminder, aes(x = lifeExp, y = gdpPercap)) +
-  geom_point(aes(fill = continent), size = 5, shape = 21) +
-  geom_smooth(alpha = 0.5) +
-  scale_fill_brewer(palette = "Set2") +
-  theme_minimal()
-```
-
-## Box plot with theme_classic
-
-```{r}
-# Box plot with theme_classic
-ggplot(gapminder, aes(x = continent, y = lifeExp)) +
-  geom_boxplot() +
-  theme_classic()
-```
-
-## Box plot with jitter
-
-```{r}
-# Box plot with jitter
-ggplot(gapminder, aes(x = continent, y = lifeExp)) +
-  geom_boxplot(outlier.colour = "hotpink") +
-  geom_jitter(position = position_jitter(width = 0.1, height = 0), alpha = 1/4)
-```
-
-## Combined violin and box plot
-
-```{r}
-# Combined violin and box plot
-ggplot(gapminder) +
-  geom_violin(aes(x = continent, y = gdpPercap), scale = "width") +
-  geom_boxplot(aes(x = continent, y = gdpPercap), width = 0.1)
-```
-
-## Multiple plots with gridExtra
-
-```{r}
-# Multiple plots with gridExtra
-p1 <- ggplot(gapminder) + geom_boxplot(aes(x = continent, y = gdpPercap, fill = continent))
-p2 <- ggplot(gapminder) + geom_violin(aes(x = continent, y = gdpPercap, fill = continent))
-grid.arrange(p1, p2, nrow = 1)
-```
-
-## Marginal histogram
-
-```{r}
-# Marginal histogram
-p <- ggplot(data = gapminder, aes(x = lifeExp, y = gdpPercap, fill = continent)) +
-  geom_point() +
-  theme(legend.position = "none")
-ggMarginal(p, type = "histogram")
-```
-
-## Saving Plots
-
-Save a plot to a file using `ggsave`.
-
-```{r}
-p1 <- ggplot(data = gapminder, aes(x = lifeExp, y = gdpPercap)) +
-  geom_point(aes(fill = continent), size = 5, shape = 21) +
-  geom_smooth(alpha = 0.5) +
-  scale_fill_brewer(palette = "Set2") +
-  theme_minimal()
-print(getwd())
-ggsave("output/myplot.png", plot = p1)
-```
-
 # Optional Exercise Bank and Worked Answers
 
 Choose exercises that consolidate the topic you need. Predict a result and save your attempt before inspecting the worked code. Exercises 1–5 practise selection; 7–11 practise sorting and summaries; 12–14 revisit joins, files and paths. Exercise 6 deliberately illustrates an unsupported request and should be discussed as a data-coverage check.
@@ -1032,31 +819,27 @@ print(last_element)
 ::: callout-keypoints
 ## 📚 Key Points
 
-- Inspect identifiers, units and available years before selecting observations.
-- Record grouping, weighting, unmatched joins and missing-value decisions explicitly.
-- Save derived tables and figures separately and check them against source records.
+- Retain the question, source, units and decisions with the result.
+- Compare at least one output with an independent known value or source record.
+- A successful run is one check; interpretation and limitations still need review.
 :::
 
 ::: callout-hints
 ## 🔦 Hints
 
-- An empty subset may expose a question the dataset cannot answer.
-- Scale limits can remove observations; inspect warnings before interpreting a plot.
-- Save the script, restart R and run it from the beginning to check hidden dependencies.
+- Save before restarting R and rerun from the beginning.
+- Keep original inputs separate from derived outputs.
+- Record unresolved questions instead of silently changing data to obtain an answer.
 :::
 
 ## Module Summary
 
-You have selected and summarised records, accounted for join behaviour and produced a checked plot. Keep the saved analysis and its assumptions together. For further practice, use the [learner Gapminder workflow](../learners/additional_material.qmd).
+You can account for selection, summary, join and reshape decisions and keep an analysis reusable. Next, explore and communicate its results visually.
 
 ## Additional Learning
 
-- [Reference](../learners/reference.qmd): syntax and terminology.
-- [Discussion](../learners/discuss.qmd): explain missing values, selection and interpretation.
-- [dplyr introduction](https://dplyr.tidyverse.org/articles/dplyr.html): transformation and grouping.
-- [ggplot2 documentation](https://ggplot2.tidyverse.org/): labels, geoms and scales.
-- [R for Data Science](https://r4ds.hadley.nz/): a structured next step after the four sessions.
+- [tidyr pivoting](https://tidyr.tidyverse.org/articles/pivot.html): long/wide transformations and their assumptions.
+- [Learner Additional Material](../learners/additional_material.qmd): practice, the shared project and official references.
+- [Reference](../learners/reference.qmd): terms and checking reminders.
 
-For local practice, copy the relevant code into a saved R script in the course project. This page is a Quarto document; changing its extension to `.Rmd` is not required to work through the examples.
-
-[Course Overview](../index.qmd) · [Previous: Iteration](04-for_loops.qmd) · [Further Practice](../learners/additional_material.qmd)
+[Course Overview](../index.qmd) · [Previous](04-for_loops.qmd) · [Next](06-exploration_and_visualisation.qmd)

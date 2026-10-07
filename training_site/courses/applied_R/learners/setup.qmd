@@ -4,7 +4,7 @@ title: Setup
 
 ## Before You Start
 
-Applied R introduces programming from the beginning across four sessions. Each session is planned for 100 minutes, including a 10-minute break. You should be comfortable creating folders and locating files, but no previous R experience is required. Prepare the software and data below before the first session.
+Applied R introduces programming from the beginning across eight lessons. Each lesson is planned for 100 minutes, including a 10-minute break. You should be comfortable creating folders and locating files, but no previous R experience is required. Prepare the software and data below before the first session.
 
 Install compatible versions of the following on your computer, using your organisation's software arrangements on a managed device:
 
@@ -23,7 +23,7 @@ If you already have R and RStudio working, use the checks below rather than rein
 
 ## Prepare the Lesson Packages
 
-Session 3 uses `gapminder`, `dplyr` and `readr`. Installing `tidyverse` supplies `dplyr`, `readr` and the other core tidyverse packages used in session 4.
+Lesson 4 uses `gapminder`, `dplyr` and `readr`. Installing `tidyverse` supplies those packages and `tidyr` for lessons 5 and 6.
 
 Run this once in the R console if these packages are not already available:
 
@@ -31,7 +31,7 @@ Run this once in the R console if these packages are not already available:
 install.packages(c("gapminder", "tidyverse"))
 ```
 
-The initial example in [session 4: Data Analysis with tidyverse and ggplot2](../episodes/05-the_tidyverse.qmd) also loads the following packages. Prepare them before the session:
+The retained examples in [lesson 5](../episodes/05-the_tidyverse.qmd) and [lesson 6](../episodes/06-exploration_and_visualisation.qmd) also use the following packages. Prepare them before those lessons:
 
 ```r
 install.packages(c("rmarkdown", "openxlsx", "gridExtra", "ggExtra", "knitr"))
@@ -54,7 +54,35 @@ sessionInfo()
 
 The file check should return `TRUE`, and the dataset should print without a package error. If the file is missing, check `getwd()` and the location of the downloaded CSV. Keep `sessionInfo()` with any request for help so that the R and package versions are visible.
 
-The iteration and data-analysis sessions create an `output` folder for derived files. Keep the course input file unchanged and inspect output destinations before rerunning file-writing examples. The complete course contains four sessions; the former variables page is a compatibility link to foundations.
+The iteration and data-analysis sessions create an `output` folder for derived files. Keep the course input file unchanged and inspect output destinations before rerunning file-writing examples. The complete course contains eight lessons; the former variables page is now lesson 2 on research data.
+
+## Prepare the Shared Project for Lessons 5–8
+
+Download [research-project.zip](files/research-project.zip){download="research-project.zip"}, extract it and open the extracted `research-project` folder as an RStudio project. Keep the structure intact: `analysis.R`, `report.qmd`, `app.R`, `tests.R`, the README and `data/gapminder_data.csv` belong together. The CSV is a copy of the existing public historical teaching data.
+
+Check from that project's R console:
+
+```r
+source("analysis.R")
+dat <- read_research_data()
+nrow(select_observations(dat, c("Ireland", "Brazil"), 2007))
+```
+
+The selection should contain two observations. Once Shiny is available, use `source("tests.R")` to check the complete shared project, including reactive inputs. Do not run the app in the same session while those server tests run.
+
+## Digital Notebook and Dashboard Access
+
+For [lesson 7](../episodes/07-digital_research_notebooks.qmd), install the [Quarto CLI](https://quarto.org/docs/get-started/) if it is unavailable in RStudio. Check `quarto --version` in a terminal, then open `report.qmd` and use Render. The report needs `knitr` and `rmarkdown`; HTML output avoids requiring a PDF/LaTeX installation.
+
+For [lesson 8](../episodes/08-interactive_research_dashboards.qmd), install Shiny if needed:
+
+```r
+install.packages("shiny")
+```
+
+With the extracted project open, run `shiny::runApp(".")`. Country/year controls, a figure and table should appear in a browser. Keep the R process running and use Stop/Esc to finish. Install software before class; use a partner's screen or instructor demonstration if access fails. No paid hosting account is required for the local exercises.
+
+Use [Shiny's getting-started guide](https://shiny.posit.co/r/getstarted/) for further help. A rendered report and a live Shiny service have different sharing requirements; deployment is outside classroom setup.
 
 ## After Setup
 

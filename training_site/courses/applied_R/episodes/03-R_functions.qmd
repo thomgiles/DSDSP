@@ -1,7 +1,7 @@
 ---
-title: "Reusable Functions in R"
+title: "Functions, Testing and Defensive Programming"
 module-icon: "🧩"
-module-number: "2"
+module-number: "3"
 author: "DRS Training"
 metadata:
   teaching: 60
@@ -39,7 +39,7 @@ metadata:
 | Check and hand over reusable code | 10 min | 5 min | A documented script with known-value checks |
 | **Total** | **60 min** | **30 min** | **100 min overall, including the break** |
 
-This is **session 2 of four**. The six room activities each take five minutes, including their room responses and debriefs. Complete [R Foundations](01-Rstudio_intro.qmd) first and open the project from [Setup](../learners/setup.qmd).
+This is **lesson 3 of eight**. The six room activities each take five minutes, including their room responses and debriefs. Complete [Research Data](02-R_variables_intro.qmd) first and open the project from [Setup](../learners/setup.qmd).
 
 ## Starting Point and Preparation
 
@@ -575,7 +575,7 @@ stopifnot(isTRUE(all.equal(fahr_to_celsius(32), 0)))
 
 ## Module Summary
 
-You have explained an existing function call, saved conversion functions, documented their contracts and checked their arithmetic, record identity and failure handling. Next, apply repeated steps systematically in [session 3: Iteration](04-for_loops.qmd).
+You have explained an existing function call, saved conversion functions, documented their contracts and checked their arithmetic, record identity and failure handling. Next, apply repeated steps systematically in [lesson 4: Iteration](04-for_loops.qmd).
 
 **Next-week action:** choose one repeated calculation from your own work, name its input/output units, put it in a cohesive function and retain one independently known-value check.
 
@@ -586,4 +586,4 @@ You have explained an existing function call, saved conversion functions, docume
 - [Discussion](../learners/discuss.qmd): explain object types and reproducibility.
 - [An Introduction to R](https://cran.r-project.org/doc/manuals/r-release/R-intro.html): functions, arguments and scope.
 
-[Course Overview](../index.qmd) · [Previous: R Foundations](01-Rstudio_intro.qmd) · [Next: Iteration](04-for_loops.qmd)
+[Course Overview](../index.qmd) · [Previous: Research Data](02-R_variables_intro.qmd) · [Next: Iteration](04-for_loops.qmd)

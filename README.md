@@ -32,6 +32,13 @@ while retaining its existing filename. Set `module-hidden: true` on a compatibil
 page that should remain available at an old URL but should not appear as another
 course session. These options affect the generated course/module catalogue only.
 
+The Applied R project download is rebuilt by
+`python3 training_site/scripts/build_r_project_bundle.py` (also a Quarto
+pre-render hook). Edit its listed source files under
+`courses/applied_R/learners/files/research-project/`; the reproducible ZIP excludes
+generated reports, caches and unlisted files. The notebook is downloadable source,
+not an additional course page in the website's render list.
+
 ## Branches and CI
 
 The repository has two CI deployment pipelines:

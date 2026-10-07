@@ -2,7 +2,7 @@
 title: Additional Material
 ---
 
-These are instructor extensions to the four-session course. Learner-facing practice and references are in [Learner Additional Material](../learners/additional_material.qmd). Choose one extension that addresses the cohort's needs and connect it to a saved output.
+These are instructor extensions to the eight-lesson course. Learner-facing practice and references are in [Learner Additional Material](../learners/additional_material.qmd). Choose one extension that addresses the cohort's needs and connect it to a saved output.
 
 ## A Small Bank of Optional Demonstrations
 
@@ -10,19 +10,23 @@ These are instructor extensions to the four-session course. Learner-facing pract
 |---|---|---|
 | Base R and tidyverse selection | Sessions 1 and 4 | Select the same country–year observations both ways; compare IDs and values rather than printed formatting |
 | A helper function for repeated summaries | Sessions 2 and 4 | State the expected input, units and missing-value policy; test a small known table before reuse |
-| Read back a derived CSV | Session 3 | Compare dimensions, identifiers and types; explain why factor metadata is not encoded in the CSV |
-| A plot as a scientific argument | Session 4 | Compare an unlabelled pooled plot with a labelled, selected comparison and state what each can establish |
+| Read back a derived CSV | Lesson 4 | Compare dimensions, identifiers and types; explain why factor metadata is not encoded in the CSV |
+| A plot as a scientific argument | Lesson 6 | Compare an unlabelled pooled plot with a labelled, selected comparison and state what each can establish |
 | Project handover | Any session | Ask a partner to find the input, script, output and checks, then rerun the saved script from a fresh session |
 
 ## Reproducibility Discussion
 
 Use a small completed script to ask: which settings, packages, input data and decisions would another researcher need? Record `sessionInfo()`, a data-source note and the analysis question. Explain why a software version record helps diagnosis but does not by itself recreate every dependency or validate the science.
 
-Git, `renv` and Quarto reports are sensible follow-on topics when the learner needs them. They are not additional setup requirements for the core four sessions. Use the official [RStudio Projects guide](https://docs.posit.co/ide/user/ide/guide/code/projects.html) and the learner's [further reading](../learners/additional_material.qmd#further-reading-and-quick-references) as starting points.
+Quarto notebooks and Shiny dashboards are now core lessons 7/8. Git and `renv` remain optional extensions when the learner needs an explicit team/environment workflow. Use the official [RStudio Projects guide](https://docs.posit.co/ide/user/ide/guide/code/projects.html) and the learner's [further reading](../learners/additional_material.qmd#further-reading-and-quick-references) as starting points.
 
 ## Use the Existing Reference Bank
 
-Session 4 retains optional selection and plotting variants and fourteen worked exercise examples. Use these after the core room tasks or assign a small set for consolidation. Discuss the unsupported-year example as a data-coverage check, not as a failed coding attempt.
+Lesson 5 retains selection/string variants and fourteen worked exercises; lesson 6 retains plotting variants. Use these after the core room tasks or assign a small set for consolidation. Discuss the unsupported-year example as a data-coverage check, not as a failed coding attempt.
+
+## Notebook and App Extensions
+
+Use the [shared project](../learners/files/research-project.zip) to test a new country/year selection, inspect a missing-value case in a clearly labelled altered copy and compare its report/app states. Keep a record of the known check, expected failure and data policy. Choose one extension after the core tasks rather than adding several controls or packages at once.
 
 ## Course Navigation
 

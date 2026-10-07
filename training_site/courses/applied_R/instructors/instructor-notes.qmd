@@ -2,18 +2,22 @@
 title: Instructor Notes
 ---
 
-## Teach the Four-Session Sequence
+## Teach the Eight-Lesson Sequence
 
-Applied R introduces programming through researcher tasks with saved, checked outputs. The four sessions are foundations, functions, iteration and data analysis. The former variables URL remains as a compatibility page; it is not a fifth session.
+Applied R progresses from saved calculations and checked inputs through defensive programming, repeatable analysis, notebooks and dashboards. The first five established URLs remain available; the old variables page now teaches lesson 2.
 
-| Session | Teaching emphasis | Evidence to ask for |
-|---|---|---|
-| [1. Foundations](../episodes/01-Rstudio_intro.qmd) | Projects, scripts, assignment, types and indexing | A saved script and a selection checked against its source |
-| [2. Functions](../episodes/03-R_functions.qmd) | A clear contract, reuse, precision and known-value checks | A documented conversion and checks for known inputs |
-| [3. Iteration](../episodes/04-for_loops.qmd) | One checked iteration, vectorisation and visible file outputs | An output record plus a read-back comparison |
-| [4. Data Analysis](../episodes/05-the_tidyverse.qmd) | Observation level, identifiers, grouping, joins and interpretation | A checked subset, explained summary and labelled figure |
+| Lesson | Evidence to ask for |
+|---|---|
+| [1. R and RStudio Foundations](../episodes/01-Rstudio_intro.qmd) | A saved and checked starting workflow |
+| [2. Importing and Understanding Research Data](../episodes/02-R_variables_intro.qmd) | An inspectable input and selection |
+| [3. Functions, Testing and Defensive Programming](../episodes/03-R_functions.qmd) | Reusable and tested calculations |
+| [4. Iteration and Repeatable Workflows](../episodes/04-for_loops.qmd) | A repeatable operation with recorded outcomes |
+| [5. Cleaning, Wrangling and Joining Data](../episodes/05-the_tidyverse.qmd) | A checked table and reusable analysis |
+| [6. Exploratory Analysis and Visualisation](../episodes/06-exploration_and_visualisation.qmd) | Figures with qualified interpretations |
+| [7. Digital Research Notebooks](../episodes/07-digital_research_notebooks.qmd) | A reproducible computational research record |
+| [8. Interactive Research Dashboards](../episodes/08-interactive_research_dashboards.qmd) | A checked local interactive app |
 
-All four sessions use a 100-minute plan: **60 minutes teaching, 30 minutes activities and a separate 10-minute break**. The six core room activities each take five minutes including the debrief. Session 4 retains a larger optional reference bank of selection, plotting and worked exercise examples; choose those by learner need instead of trying to demonstrate every variation in sequence.
+All eight lessons use 60 minutes teaching, six five-minute activities including room responses/debriefs and a separate ten-minute break: 100 minutes overall. Deliver two lessons per half-day workshop if useful. Lessons 5–8 carry the same project through analysis, figures, a computational notebook and a reactive app. The larger inherited banks in lessons 5/6 remain optional, outside that core plan.
 
 ## Preparation and Access
 
@@ -34,17 +38,25 @@ Inspect the `output` folder before repeating export demonstrations. Outputs are 
 
 ## Checks That Matter in This Course
 
-- **Foundations:** R indexes from one. Data-frame rows may combine text and measurements; averaging or coercing the whole row is not an appropriate default.
+- **Foundations and research data:** R indexes from one. Data-frame rows may combine text and measurements; averaging or coercing the whole row is not an appropriate default.
 - **Functions:** retain the existing Fahrenheit conversion formulas and distinguish kelvin from degrees Celsius. Two decimal places are a presentation choice; do not round intermediate results silently.
 - **Iteration:** compare one exported country–year record and record row counts. CSV does not retain all R metadata, such as factor levels.
-- **Data analysis:** the packaged Gapminder data end in 2007. Exercise 6 deliberately retains a request for 2012 and `pop <= 3`; discuss unavailable years and population units rather than changing the conditions silently.
+- **Wrangling:** the packaged Gapminder data end in 2007. Exercise 6 deliberately retains a request for 2012 and `pop <= 3`; discuss unavailable years and population units rather than changing the conditions silently.
 - **Interpretation:** unweighted country means are not population-weighted global means. Repeated country–year plots and smooths do not establish individual or causal claims.
 - **Joins and missing values:** inspect repeated keys and unmatched IDs. The missing-value replacements in the fictional syntax example are arbitrary and require a justified policy before real use.
 - **Plot scales:** the retained axis-limit example can remove observations before smoothing. Inspect warnings and compare the purpose of scale limits with visual zooming.
 
+## Prepare the Notebook and Dashboard
+
+Download/extract the [shared project](../learners/files/research-project.zip) before delivery. Check `Rscript tests.R`, a fresh `quarto render report.qmd`, a second recorded year and `shiny::runApp(".")`. Verify that table, plot, coverage and download agree; clear the countries to check the empty state. Do not start an app server while running `tests.R` in the same session.
+
+Prepare a rendered notebook and app screenshots for the access fallback. Show the complete app before asking learners to change an identifier; maintain an untouched practice copy so the deliberately broken connection can be restored. Ask pairs to trace input → shared selection → output and identify one check rather than merely copying UI code.
+
+Do not attempt hosting, authentication or production operations inside the 100-minute introduction. Explain the runtime and ownership needed for a conventional Shiny service, and keep the classroom example public. Learners leave with a checked local app and a handover, not an automatically deployed service.
+
 ## Optional Git Demonstration
 
-Git is an extension rather than a prerequisite for these four sessions. Use a practice repository and follow the current [RStudio version-control guide](https://docs.posit.co/ide/user/ide/guide/tools/version-control.html). Check that RStudio can find the installed Git executable before the event. Explain a local change and review before introducing remotes or shared repositories; do not ask learners to alter a live research repository simply to follow the demonstration.
+Git is an extension rather than a prerequisite for these eight lessons. Use a practice repository and follow the current [RStudio version-control guide](https://docs.posit.co/ide/user/ide/guide/tools/version-control.html). Check that RStudio can find the installed Git executable before the event. Explain a local change and review before introducing remotes or shared repositories; do not ask learners to alter a live research repository simply to follow the demonstration.
 
 ## Course Navigation
 

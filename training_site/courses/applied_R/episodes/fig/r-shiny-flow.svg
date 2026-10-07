@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="285" viewBox="0 0 1200 285" role="img" aria-labelledby="title desc">
+  <title id="title">Reactive research dashboard</title>
+  <desc id="desc">A recorded input changes a validated selection; the plot and table use the same reactive data.</desc>
+  <rect width="1200" height="285" rx="28" fill="#f7fbfc" />
+  <g font-family="sans-serif" text-anchor="middle">
+    <text x="600" y="42" font-size="27" font-weight="700" fill="#10263b">Reactive research dashboard</text>
+    <rect x="36" y="78" width="258" height="142" rx="18" fill="#006781" />
+    <text x="165" y="119" font-size="27" font-weight="700" fill="white">Inputs</text>
+    <text x="165" y="158" font-size="23" fill="white">Country and</text>
+    <text x="165" y="187" font-size="23" fill="white">recorded year</text>
+    <path d="M294 149 H313 L308 143 M313 149 L308 155" fill="none" stroke="#405162" stroke-width="3" />
+    <rect x="326" y="78" width="258" height="142" rx="18" fill="#298582" />
+    <text x="455" y="119" font-size="27" font-weight="700" fill="white">Selection</text>
+    <text x="455" y="158" font-size="23" fill="white">Validate, then</text>
+    <text x="455" y="187" font-size="23" fill="white">filter the table</text>
+    <path d="M584 149 H603 L598 143 M603 149 L598 155" fill="none" stroke="#405162" stroke-width="3" />
+    <rect x="616" y="78" width="258" height="142" rx="18" fill="#405162" />
+    <text x="745" y="119" font-size="27" font-weight="700" fill="white">Outputs</text>
+    <text x="745" y="158" font-size="23" fill="white">One source for</text>
+    <text x="745" y="187" font-size="23" fill="white">plot and table</text>
+    <path d="M874 149 H893 L888 143 M893 149 L888 155" fill="none" stroke="#405162" stroke-width="3" />
+    <rect x="906" y="78" width="258" height="142" rx="18" fill="#10263b" />
+    <text x="1035" y="119" font-size="27" font-weight="700" fill="white">User review</text>
+    <text x="1035" y="158" font-size="23" fill="white">Check the result</text>
+    <text x="1035" y="187" font-size="23" fill="white">and empty states</text>
+    <text x="600" y="260" font-size="23" fill="#405162">Keep the source, checking decisions and limitations with the output.</text>
+  </g>
+</svg>

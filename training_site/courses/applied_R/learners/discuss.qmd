@@ -2,7 +2,7 @@
 title: Discussion
 ---
 
-Use these questions after the four sessions or during a paired review. Turn one answer into a practical next step using [Additional Material](additional_material.qmd).
+Use these questions after the eight lessons or during a paired review. Turn one answer into a practical next step using [Additional Material](additional_material.qmd).
 
 ## Review a Research Workflow
 
@@ -33,11 +33,23 @@ rowMeans(mass_columns)
 
 The first mean is 2.2 g; the second remains missing with the default missing-value handling. `rowMeans(mass_columns, na.rm = TRUE)` would answer a different question by using the available value in the second row. Record that decision explicitly. Keep `sample_id` beside any derived result and do not convert an entire mixed row with `as.numeric()` to suppress an error.
 
-Compare this with [session 1's object structures](../episodes/01-Rstudio_intro.qmd#objects-and-data-structures). The official [row and column summaries documentation](https://stat.ethz.ch/R-manual/R-devel/library/base/html/colSums.html) explains supported inputs and missing-value arguments.
+Compare this with [lesson 2's object structures](../episodes/02-R_variables_intro.qmd#objects-and-data-structures). The official [row and column summaries documentation](https://stat.ethz.ch/R-manual/R-devel/library/base/html/colSums.html) explains supported inputs and missing-value arguments.
 
 ## Room Discussion: An Empty Result
 
 The inherited Gapminder exercise asks for 2012 and uses `pop <= 3`. What must be checked before changing the code? Ask pairs to inspect available years and population units, then take two explanations from the room. A well-formed filter may correctly return no rows because the dataset cannot support the request. Agree a revised question or data source; do not silently change a threshold or substitute another year.
+
+## Review a Notebook and Dashboard Together
+
+Use the [shared project](files/research-project.zip) and compare:
+
+1. Which source, country/year selection and helper support the notebook and app?
+2. Does a changed parameter/control update the text, table and figure consistently?
+3. What happens when no country is selected, a year is unavailable or a source file is missing?
+4. Does the downloaded CSV retain identifiers and unrounded measurements?
+5. What must be shared to rerun the notebook or run the live app?
+
+For a five-minute room task, spend one minute choosing a case, two minutes trying it, one minute comparing with a partner and one minute hearing two pairs report. Keep a check, a correction and an unresolved question.
 
 ## Course Navigation
 

@@ -27,5 +27,6 @@ These profiles guide teaching choices; they are not entry requirements. Use the 
 - For new programmers, start with the foundations and use paired prediction before running code.
 - For analysts changing language, connect familiar operations to the local reference and inspect differences in indexing and object types.
 - For reproducibility-focused learners, use [Additional Material](../learners/additional_material.qmd) to check a saved workflow from a fresh session.
+- For researchers communicating results, use lessons 7/8 to compare a computational notebook and a reactive interface, retaining source checks and limitations in both.
 
 [Course Overview](../index.qmd) · [Learner Materials](../learners/additional_material.qmd) · [Instructor Notes](../instructors/instructor-notes.qmd)

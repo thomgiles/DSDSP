@@ -204,6 +204,17 @@ standard output is displayed on the screen; in a [pipe](#pipe), it is passed to 
 [while loop]{#while-loop}
 :   A loop that keeps executing as long as some condition is true. See also: [for loop](#for-loop).
 
+## Computational Notebooks and Dashboards
+
+- **Computational notebook:** a saved document combining a question, code, outputs and research decisions.
+- **Render:** run a document's saved computation and produce its output; an interactive session may contain objects that the source does not recreate.
+- **Parameter:** an explicit choice such as a country/year used by the saved analysis.
+- **Reactive expression:** a Shiny calculation that updates when its dependencies change and can be reused by several outputs.
+- **UI/server identifier:** the name connecting a declared control/output to the corresponding server code.
+- **Validation message:** an explanation of why a requested input cannot support a displayed result.
+
+Use [lesson 7](../episodes/07-digital_research_notebooks.qmd) and [lesson 8](../episodes/08-interactive_research_dashboards.qmd) with the [shared project](files/research-project.zip). Check the input, selected observations, table, figure and download together. The starter preserves missing observations, discloses counts and reports unweighted observed country means. A rendered HTML file and a live Shiny service need different sharing arrangements.
+
 ## Course Navigation
 
 [Course Overview](../index.qmd) · [Setup](setup.qmd) · [Additional Material](additional_material.qmd) · [Reference](reference.qmd) · [Discussion](discuss.qmd)

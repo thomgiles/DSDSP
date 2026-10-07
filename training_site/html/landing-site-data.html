@@ -152,15 +152,15 @@
       "level": "Intermediate",
       "status": "Optional",
       "badge": "R",
-      "summary": "R and tidyverse workflows for applied analysis.",
+      "summary": "Eight lessons from R foundations to checked analysis, digital notebooks and Shiny dashboards.",
       "intro": "Applied R is built for researchers who want to move from ad hoc spreadsheet-style analysis toward clearer, more reproducible workflows. It introduces R as a practical research tool for organising data, writing reusable code, and working more systematically with analysis tasks.",
       "glance": [
         "Level: Introductory to lower-intermediate",
         "Programme placement: The intermediate pathway label describes the course's position in the programme; session 1 starts from the basics and requires no previous R experience",
         "Best for: Researchers who want a practical route into data analysis with R",
         "Environment: R and RStudio",
-        "Structure: Four sessions of 100 minutes each: foundations, functions, iteration, and data analysis",
-        "Main themes: Core syntax, objects, functions, loops, tidyverse and ggplot2 workflows",
+        "Structure: Eight lessons of 100 minutes each; two per half-day workshop",
+        "Main themes: Foundations, data inspection, defensive programming, iteration, wrangling, visualisation, notebooks and dashboards",
         "Outcome: A usable foundation for reproducible data work in R rather than a surface-level introduction"
       ],
       "tags": [
@@ -168,7 +168,9 @@
         "RStudio",
         "Tidyverse",
         "Data analysis",
-        "Functions",
+        "Defensive programming",
+        "Quarto",
+        "Shiny",
         "Reproducible workflows"
       ],
       "icon": "📈"
@@ -573,7 +575,7 @@
       "icon": "🛡️"
     },
     {
-      "title": "R Foundations: RStudio, Objects and Data",
+      "title": "R and RStudio Foundations",
       "href": "courses/applied_R/episodes/01-Rstudio_intro.html",
       "course": "Applied R",
       "courseSlug": "applied_R",
@@ -587,14 +589,16 @@
         "RStudio",
         "Tidyverse",
         "Data analysis",
-        "Functions",
+        "Defensive programming",
+        "Quarto",
+        "Shiny",
         "Reproducible workflows"
       ],
       "icon": "🖥️"
     },
     {
-      "title": "Reusable Functions in R",
-      "href": "courses/applied_R/episodes/03-R_functions.html",
+      "title": "Importing and Understanding Research Data",
+      "href": "courses/applied_R/episodes/02-R_variables_intro.html",
       "course": "Applied R",
       "courseSlug": "applied_R",
       "area": "Data Science",
@@ -607,7 +611,31 @@
         "RStudio",
         "Tidyverse",
         "Data analysis",
-        "Functions",
+        "Defensive programming",
+        "Quarto",
+        "Shiny",
+        "Reproducible workflows"
+      ],
+      "icon": "🗂️"
+    },
+    {
+      "title": "Functions, Testing and Defensive Programming",
+      "href": "courses/applied_R/episodes/03-R_functions.html",
+      "course": "Applied R",
+      "courseSlug": "applied_R",
+      "area": "Data Science",
+      "level": "Intermediate",
+      "status": "Optional",
+      "badge": "R",
+      "number": "3",
+      "tags": [
+        "R",
+        "RStudio",
+        "Tidyverse",
+        "Data analysis",
+        "Defensive programming",
+        "Quarto",
+        "Shiny",
         "Reproducible workflows"
       ],
       "icon": "🧩"
@@ -621,19 +649,21 @@
       "level": "Intermediate",
       "status": "Optional",
       "badge": "R",
-      "number": "3",
+      "number": "4",
       "tags": [
         "R",
         "RStudio",
         "Tidyverse",
         "Data analysis",
-        "Functions",
+        "Defensive programming",
+        "Quarto",
+        "Shiny",
         "Reproducible workflows"
       ],
       "icon": "🔁"
     },
     {
-      "title": "Data Analysis with tidyverse and ggplot2",
+      "title": "Cleaning, Wrangling and Joining Data",
       "href": "courses/applied_R/episodes/05-the_tidyverse.html",
       "course": "Applied R",
       "courseSlug": "applied_R",
@@ -641,16 +671,84 @@
       "level": "Intermediate",
       "status": "Optional",
       "badge": "R",
-      "number": "4",
+      "number": "5",
       "tags": [
         "R",
         "RStudio",
         "Tidyverse",
         "Data analysis",
-        "Functions",
+        "Defensive programming",
+        "Quarto",
+        "Shiny",
+        "Reproducible workflows"
+      ],
+      "icon": "🧹"
+    },
+    {
+      "title": "Exploratory Analysis and Visualisation",
+      "href": "courses/applied_R/episodes/06-exploration_and_visualisation.html",
+      "course": "Applied R",
+      "courseSlug": "applied_R",
+      "area": "Data Science",
+      "level": "Intermediate",
+      "status": "Optional",
+      "badge": "R",
+      "number": "6",
+      "tags": [
+        "R",
+        "RStudio",
+        "Tidyverse",
+        "Data analysis",
+        "Defensive programming",
+        "Quarto",
+        "Shiny",
         "Reproducible workflows"
       ],
       "icon": "📊"
+    },
+    {
+      "title": "Digital Research Notebooks and Reproducible Reporting",
+      "href": "courses/applied_R/episodes/07-digital_research_notebooks.html",
+      "course": "Applied R",
+      "courseSlug": "applied_R",
+      "area": "Data Science",
+      "level": "Intermediate",
+      "status": "Optional",
+      "badge": "R",
+      "number": "7",
+      "tags": [
+        "R",
+        "RStudio",
+        "Tidyverse",
+        "Data analysis",
+        "Defensive programming",
+        "Quarto",
+        "Shiny",
+        "Reproducible workflows"
+      ],
+      "icon": "📓"
+    },
+    {
+      "title": "Interactive Research Dashboards with Shiny",
+      "href": "courses/applied_R/episodes/08-interactive_research_dashboards.html",
+      "course": "Applied R",
+      "courseSlug": "applied_R",
+      "area": "Data Science",
+      "level": "Intermediate",
+      "status": "Optional",
+      "badge": "R",
+      "number": "8",
+      "tags": [
+        "R",
+        "RStudio",
+        "Tidyverse",
+        "Data analysis",
+        "Defensive programming",
+        "Quarto",
+        "Shiny",
+        "Reproducible workflows"
+      ],
+      "icon": "🎛️"
     }
   ]
 }

@@ -1,7 +1,7 @@
 ---
 title: "Iteration and Repeatable Workflows in R"
 module-icon: "🔁"
-module-number: "3"
+module-number: "4"
 author: "DRS Training"
 metadata:
   teaching: 60
@@ -39,7 +39,7 @@ metadata:
 | Read back, rerun and hand over | 10 min | 5 min | A checked export record and saved script |
 | **Total** | **60 min** | **30 min** | **100 min including the break** |
 
-This is **session 3 of four**, with the same 100-minute plan used throughout the course: 60 minutes teaching, 30 minutes activities and a separate 10-minute break. Debriefs are included in activity time.
+This is **lesson 4 of eight**, with the same 100-minute plan used throughout the course: 60 minutes teaching, 30 minutes activities and a separate 10-minute break. Debriefs are included in activity time.
 
 ## Starting Point and Preparation
 
@@ -599,7 +599,7 @@ A useful output record states what was written, where, with how many rows and wh
 
 ## Module Summary
 
-You can trace repeated calculations, retain results, explain missing inputs and export checked historical tables systematically. Your script and output record make each run easier for a collaborator to inspect. Next, use those foundations for [session 4: Data Analysis with tidyverse and ggplot2](05-the_tidyverse.qmd).
+You can trace repeated calculations, retain results, explain missing inputs and export checked historical tables systematically. Your script and output record make each run easier for a collaborator to inspect. Next, use those foundations for [lesson 5: Cleaning, Wrangling and Joining Data](05-the_tidyverse.qmd).
 
 **Next-week action:** choose one small repeated task in your own project. Check one item, record input identities and expected outputs, then repeat the operation with an explicit failure and file-handling plan.
 

@@ -7,8 +7,8 @@ course-level: "Intermediate"
 course-status: "Optional"
 course-badge: "R"
 course-icon: "📈"
-course-summary: "R and tidyverse workflows for applied analysis."
-course-tags: ["R", "RStudio", "Tidyverse", "Data analysis", "Functions", "Reproducible workflows"]
+course-summary: "Eight lessons from R foundations to checked analysis, digital notebooks and Shiny dashboards."
+course-tags: ["R", "RStudio", "Tidyverse", "Data analysis", "Defensive programming", "Quarto", "Shiny", "Reproducible workflows"]
 ---
 
 ```{=html}
@@ -22,8 +22,8 @@ course-tags: ["R", "RStudio", "Tidyverse", "Data analysis", "Functions", "Reprod
 - **Programme placement:** The intermediate pathway label describes the course's position in the programme; session 1 starts from the basics and requires no previous R experience
 - **Best for:** Researchers who want a practical route into data analysis with R
 - **Environment:** R and RStudio
-- **Structure:** Four sessions of 100 minutes each: foundations, functions, iteration, and data analysis
-- **Main themes:** Core syntax, objects, functions, loops, tidyverse and ggplot2 workflows
+- **Structure:** Eight lessons of 100 minutes each; two per half-day workshop
+- **Main themes:** Foundations, data inspection, defensive programming, iteration, wrangling, visualisation, notebooks and dashboards
 - **Outcome:** A usable foundation for reproducible data work in R rather than a surface-level introduction
 :::
 
@@ -49,6 +49,8 @@ You will spend time:
 - using loops and control flow
 - manipulating data with tidyverse tools
 - building habits that make analysis easier to rerun and share
+- recording code, outputs and decisions in a Quarto notebook
+- building a small, checked Shiny dashboard
 :::
 :::
 
@@ -93,14 +95,20 @@ Use tidyverse tools to filter, transform, summarise, and communicate data more c
 
 ## Course Journey
 
-| Lesson | What you will practise | Why it matters |
+| Lesson | What you will practise | What you keep |
 |---|---|---|
-| [01 R Foundations: RStudio, Objects and Data](episodes/01-Rstudio_intro.qmd) | Projects, scripts, calculations, types and indexing | Establishes a saved workflow and a clear model of R objects |
-| [02 Reusable Functions in R](episodes/03-R_functions.qmd) | Inputs, outputs, composition, units and known-value checks | Replaces repeated calculations with documented, checked functions |
-| [03 Iteration and Repeatable Workflows](episodes/04-for_loops.qmd) | Loops, vectorisation and checked file exports | Repeats a task while retaining source data and recording outputs |
-| [04 Data Analysis with tidyverse and ggplot2](episodes/05-the_tidyverse.qmd) | Selection, summaries, joins, missing values, file input/output and plots | Produces an analysis whose transformations and limitations can be explained |
+| [01 R and RStudio Foundations](episodes/01-Rstudio_intro.qmd) | Projects, scripts, calculations, vectors, help and debugging | A saved and checked starting workflow |
+| [02 Importing and Understanding Research Data](episodes/02-R_variables_intro.qmd) | Structures, types, imports, identifiers, units and missingness | An inspectable input and selection |
+| [03 Functions, Testing and Defensive Programming](episodes/03-R_functions.qmd) | Arguments, scope, contracts, failures and known-value checks | Reusable and tested calculations |
+| [04 Iteration and Repeatable Workflows](episodes/04-for_loops.qmd) | Loops, vectorisation, conditions, lists and guarded exports | A repeatable operation with recorded outcomes |
+| [05 Cleaning, Wrangling and Joining Data](episodes/05-the_tidyverse.qmd) | Selection, summaries, joins, missingness, reshaping and file exchange | A checked table and reusable analysis |
+| [06 Exploratory Analysis and Visualisation](episodes/06-exploration_and_visualisation.qmd) | Distributions, relationships, groups, scales and source checks | Figures with qualified interpretations |
+| [07 Digital Research Notebooks](episodes/07-digital_research_notebooks.qmd) | Quarto, saved execution, parameters, inline values and handover | A reproducible computational research record |
+| [08 Interactive Research Dashboards](episodes/08-interactive_research_dashboards.qmd) | Shiny inputs, reactivity, validation, downloads and peer review | A checked local interactive app |
 
-Each session contains 60 minutes teaching, 30 minutes activities and a separate 10-minute break. Activity times include paired work, room responses and debriefs. The former standalone variables page now links to session 1 for existing bookmarks; it is not a fifth session. Optional reference examples support further practice beyond the core plan.
+Each lesson has 60 minutes teaching, six five-minute activities and a separate ten-minute break. Room responses and debriefs are inside activity time. Eight lessons total 13 hours 20 minutes, including breaks, and can be delivered as four half-day workshops. Established filenames remain available; the former variables page is now the active second lesson.
+
+Lessons 5–8 use one [downloadable research project](learners/files/research-project.zip) from checked data through figures, a Quarto notebook and a Shiny app. The inherited selection and plotting banks remain optional practice outside core timing.
 
 ## What You Will Leave With
 
@@ -112,6 +120,7 @@ By the end of the course, learners should be able to:
 - understand how loops and iteration work in practice
 - perform common data wrangling tasks using tidyverse tools
 - approach future R learning with a stronger conceptual base
+- keep a checked notebook/app project and a record of its sources, assumptions and limitations
 
 ## What To Prepare
 

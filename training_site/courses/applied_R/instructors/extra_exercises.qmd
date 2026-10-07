@@ -2,11 +2,11 @@
 title: Extra Exercises
 ---
 
-These optional five-minute exercises consolidate the four sessions. Choose a relevant task; they are not extra requirements inside the 100-minute core plan. Work in pairs, ask for a prediction before execution and take two reasoned responses from the room. Learners can continue independently using [Additional Material](../learners/additional_material.qmd).
+These optional five-minute exercises consolidate the eight lessons. Choose a relevant task; they are not extra requirements inside the 100-minute core plan. Work in pairs, ask for a prediction before execution and take two reasoned responses from the room. Learners can continue independently using [Additional Material](../learners/additional_material.qmd).
 
 ## Exercise 1: Preserve IDs while Selecting Measurements
 
-**Use after:** [Session 1: Foundations](../episodes/01-Rstudio_intro.qmd). **Goal:** select records without losing identity or units.
+**Use after:** [Lesson 2: Research Data](../episodes/02-R_variables_intro.qmd). **Goal:** select records without losing identity or units.
 
 **Input:** this fictional teaching table:
 
@@ -41,7 +41,7 @@ The output retains A and C in source order. The check should account for identif
 
 ## Exercise 2: Give a Function a Known-Value Check
 
-**Use after:** [Session 2: Functions](../episodes/03-R_functions.qmd). **Goal:** document and test a conversion before reuse.
+**Use after:** [Lesson 3: Functions](../episodes/03-R_functions.qmd). **Goal:** document and test a conversion before reuse.
 
 **Input:** the session's `fahr_to_celsius()` function and known values 32 °F = 0 °C and 212 °F = 100 °C.
 
@@ -71,7 +71,7 @@ These checks establish the expected results for the selected cases. A missing in
 
 ## Exercise 3: Reuse a Function inside a Loop
 
-**Use after:** [Session 3: Iteration](../episodes/04-for_loops.qmd). **Goal:** separate one selection from its repetition.
+**Use after:** [Lesson 4: Iteration](../episodes/04-for_loops.qmd). **Goal:** separate one selection from its repetition.
 
 **Input:** `gapminder::gapminder` and country names `Ireland` and `Brazil`.
 
@@ -106,7 +106,7 @@ The function implements one selection; the loop supplies different names. Keep t
 
 ## Exercise 4: Explain the Level of a Grouped Summary
 
-**Use after:** [Session 4: Data Analysis](../episodes/05-the_tidyverse.qmd). **Goal:** state the observations and weighting behind a summary.
+**Use after:** [Lesson 5: Wrangling](../episodes/05-the_tidyverse.qmd). **Goal:** state the observations and weighting behind a summary.
 
 **Input:** the packaged Gapminder table, restricted to the recorded year 2007.
 
@@ -133,6 +133,14 @@ stopifnot(sum(summary_table$n_countries) == nrow(selected))
 
 The mean weights country observations equally. It is not a population-weighted global or continental mean. The count check accounts for rows under the known country–year key; a direct value comparison is still needed to check the calculation.
 :::
+
+## Exercise 5: Notebook Parameter Review
+
+**Use after:** [Lesson 7](../episodes/07-digital_research_notebooks.qmd). In a five-minute pair task, spend one minute predicting the effect of changing the year, two minutes rendering the supplied report for a different recorded year, one minute checking narrative/table/figure alignment and one minute hearing two pairs explain a fragile manually copied value. Keep the parameter record and check. If access fails, compare the instructor's two prepared reports. The selection and inline expressions should change together; the input stays unchanged.
+
+## Exercise 6: Dashboard Failure Review
+
+**Use after:** [Lesson 8](../episodes/08-interactive_research_dashboards.qmd). Spend one minute predicting an empty selection, two minutes trying it and restoring a country, one minute comparing the restored observation with the source and one minute hearing two pairs explain why an empty choice is not a zero measurement. Keep a test case and observed state. A shared-screen or screenshot comparison is a valid fallback; check what it can and cannot establish.
 
 ## Course Navigation
 
