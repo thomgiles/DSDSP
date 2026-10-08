@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="390" viewBox="0 0 1200 390" role="img" aria-labelledby="title desc">
   <title id="title">Document structure connects headings, captions and references</title>
-  <desc id="desc">A document's Results heading connects to heading styles for navigation, its Table 1 caption to managed numbering, and its See Table 1 mention to a cross-reference that stays linked when numbering changes.</desc>
+  <desc id="desc">A sample document connects its Results heading, Table 1 caption, and See Table 1 mention to the corresponding heading style, caption, and cross-reference tools.</desc>
   <defs>
     <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
       <path d="M1 1 L8 5 L1 9 Z" fill="#405162"/>
@@ -28,11 +28,8 @@
     <rect x="520" y="291" width="635" height="82" rx="16" fill="#10263b"/>
     <g fill="#ffffff">
       <text x="549" y="122" font-size="28" font-weight="700">Heading styles</text>
-      <text x="549" y="152" font-size="23">Identify sections and support navigation.</text>
       <text x="549" y="224" font-size="28" font-weight="700">Captions</text>
-      <text x="549" y="254" font-size="23">Describe the item and manage its number.</text>
       <text x="549" y="326" font-size="28" font-weight="700">Cross-references</text>
-      <text x="549" y="356" font-size="23">Stay linked when numbering changes; refresh and check.</text>
     </g>
   </g>
 </svg>

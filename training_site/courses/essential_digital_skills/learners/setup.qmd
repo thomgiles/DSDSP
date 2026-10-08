@@ -32,14 +32,9 @@ Optional but useful:
 
 ## Literature and Writing Preparation
 
-For the literature and writing activities in [Digital Tools](../episodes/01-digital_tools.qmd), also prepare:
+The literature and writing activities in [Digital Tools](../episodes/01-digital_tools.qmd) use a supplied question, fictional reference records and a short draft. Bring somewhere to make notes, or use printed copies. No EndNote, Zotero, Word, LaTeX or AI installation/account is required for these activities; a live literature search is optional.
 
-- one research question or topic to search; a practice topic is supplied if you need one
-- access to the university library's online resources
-- **either EndNote or Zotero**, with the relevant writing integration installed and checked where possible
-- a writing tool, preferably desktop Word for the captions and cross-references exercise, or LaTeX if you already use it
-
-Use [UoN's EndNote setup guidance](https://xerte.nottingham.ac.uk/USER-FILES/53584-uazecw-Nottingham/media/2025%20EndNote%20-%20Separate%20guide%20-%20Downloading%20Endnote.pdf) or the [Zotero quick start](https://www.zotero.org/support/quick_start_guide). You do not need both tools or a new paid account. If installation or access is unavailable, you can work with a partner or check the instructor's demonstration.
+For optional hands-on practice after the lesson, use [UoN's EndNote setup guidance](https://xerte.nottingham.ac.uk/USER-FILES/53584-uazecw-Nottingham/media/2025%20EndNote%20-%20Separate%20guide%20-%20Downloading%20Endnote.pdf) or the [Zotero quick start](https://www.zotero.org/support/quick_start_guide), and your existing writing tool. See [Additional Material](additional_material.qmd) for that follow-up practice.
 
 ## Bring a Real Project Example
 
@@ -96,7 +91,7 @@ These light checks will help you get more from each topic.
 
 | Session theme | Helpful preparation |
 |---|---|
-| [Digital Tools](../episodes/01-digital_tools.qmd) | Bring a search topic; check library access and one reference manager/writing integration; know where your team writes and reviews documents |
+| [Digital Tools](../episodes/01-digital_tools.qmd) | Bring a search topic or use the supplied one; know where your team writes and reviews documents. The literature and writing tasks need only paper or notes. |
 | [Digital Delivery](../episodes/02-digital_delivery.qmd) | Bring a current project timeline, meeting rhythm, or planning challenge |
 | [Data Governance & Policy](../episodes/03-data_governance_and_policy.qmd) | Think of one project involving personal, sensitive, or shared data |
 | [Research Data Management](../episodes/04-research_data_managment.qmd) | Bring an example of a dataset, folder structure, or DMP question |

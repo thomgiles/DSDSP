@@ -97,7 +97,7 @@ Think through permissions, connection ownership, service accounts, failure handl
 
 | Lesson | What you will tackle | Why it matters |
 |---|---|---|
-| [Power Automate Fundamentals](episodes/01-power_automate.qmd) | Workflow shape, triggers, connectors, expressions, approvals, Excel tables, Word templates, and email automation | Gives learners a practical foundation for designing and testing small automations safely |
+| [01 Power Automate Fundamentals](episodes/01-power_automate.qmd) | Workflow shape, triggers, connectors, expressions, approvals, Excel tables, Word templates, and email automation | Gives learners a practical foundation for designing and testing small automations safely |
 
 ## Practical Build
 

@@ -145,10 +145,10 @@ website:
           href: courses/methods_for_data_science/index.qmd
         - section: "Lessons"
           contents:
-            - courses/methods_for_data_science/episodes/05-collecting_the_right_data.qmd
-            - courses/methods_for_data_science/episodes/06-organising_and_exploring_data.qmd
-            - courses/methods_for_data_science/episodes/07-making_sense_of_data.qmd
-            - courses/methods_for_data_science/episodes/08-insight_to_impacts.qmd
+            - courses/methods_for_data_science/episodes/01-collecting_the_right_data.qmd
+            - courses/methods_for_data_science/episodes/02-organising_and_exploring_data.qmd
+            - courses/methods_for_data_science/episodes/03-making_sense_of_data.qmd
+            - courses/methods_for_data_science/episodes/04-insight_to_impacts.qmd
         - section: "Learners"
           contents:
             - courses/methods_for_data_science/learners/setup.qmd

@@ -10,10 +10,10 @@ The learner [Additional Material](../learners/additional_material.qmd) provides 
 
 | Lesson | Prepared resource | Useful output |
 |---|---|---|
-| [Collecting the Right Data](../episodes/05-collecting_the_right_data.qmd) | Learner Task 1 or the source cards in [Extra Exercises](extra_exercises.qmd) | A collection question, population, variable list, and source limitation |
-| [Organising and Exploring Data](../episodes/06-organising_and_exploring_data.qmd) | Learner Task 2 and the [practice CSV](../learners/data/practice_requests.csv) | A working copy and justified change log |
-| [Making Sense of Data](../episodes/07-making_sense_of_data.qmd) | Learner Task 3 and the [chart guidance](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/) | A checked summary and an accurate caption |
-| [Insight to Impact](../episodes/08-insight_to_impacts.qmd) | Learner Task 4 | Separate evidence, interpretation, action, and evaluation statements |
+| [Collecting the Right Data](../episodes/01-collecting_the_right_data.qmd) | Learner Task 1 or the source cards in [Extra Exercises](extra_exercises.qmd) | A collection question, population, variable list, and source limitation |
+| [Organising and Exploring Data](../episodes/02-organising_and_exploring_data.qmd) | Learner Task 2 and the [practice CSV](../learners/data/practice_requests.csv) | A working copy and justified change log |
+| [Making Sense of Data](../episodes/03-making_sense_of_data.qmd) | Learner Task 3 and the [chart guidance](https://analysisfunction.civilservice.gov.uk/policy-store/data-visualisation-charts/) | A checked summary and an accurate caption |
+| [Insight to Impact](../episodes/04-insight_to_impacts.qmd) | Learner Task 4 | Separate evidence, interpretation, action, and evaluation statements |
 
 ## Optional Extensions
 

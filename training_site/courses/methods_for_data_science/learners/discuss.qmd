@@ -10,7 +10,7 @@ For a five-minute room activity, choose one question: spend one minute reflectin
 
 ## Collecting the Right Data
 
-Use alongside [Collecting the Right Data](../episodes/05-collecting_the_right_data.qmd).
+Use alongside [Collecting the Right Data](../episodes/01-collecting_the_right_data.qmd).
 
 1. Which data sources in your work feel trustworthy, and why?
 2. Which variables are genuinely needed for your current question?
@@ -19,7 +19,7 @@ Use alongside [Collecting the Right Data](../episodes/05-collecting_the_right_da
 
 ## Organising and Exploring Data
 
-Use alongside [Organising and Exploring Data](../episodes/06-organising_and_exploring_data.qmd).
+Use alongside [Organising and Exploring Data](../episodes/02-organising_and_exploring_data.qmd).
 
 1. Where do errors or inconsistencies most often enter your data?
 2. What makes a spreadsheet easy or hard to analyse?
@@ -28,7 +28,7 @@ Use alongside [Organising and Exploring Data](../episodes/06-organising_and_expl
 
 ## Making Sense of Data
 
-Use alongside [Making Sense of Data](../episodes/07-making_sense_of_data.qmd).
+Use alongside [Making Sense of Data](../episodes/03-making_sense_of_data.qmd).
 
 1. What chart, dashboard, or statistic have you seen misinterpreted?
 2. Which context would change how someone reads your current findings?
@@ -37,7 +37,7 @@ Use alongside [Making Sense of Data](../episodes/07-making_sense_of_data.qmd).
 
 ## Insight to Impact
 
-Use alongside [Insight to Impact](../episodes/08-insight_to_impacts.qmd).
+Use alongside [Insight to Impact](../episodes/04-insight_to_impacts.qmd).
 
 1. What makes an insight actionable rather than merely interesting?
 2. Who needs to hear your findings, and what would each audience need emphasised?

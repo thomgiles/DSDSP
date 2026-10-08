@@ -861,3 +861,11 @@ You can account for selection, summary, join and reshape decisions and keep an a
 - [Reference](../learners/reference.qmd): terms and checking reminders.
 
 [Course Overview](../index.qmd) · [Previous](04-for_loops.qmd) · [Next](06-exploration_and_visualisation.qmd)
+
+::: {.content-visible when-format="revealjs"}
+
+## Feedback and Register
+
+![](fig/Digital_Skills_2026_2027_QR.png){fig-alt="Scan the QR code to give feedback on Digital Skills training."}
+
+:::

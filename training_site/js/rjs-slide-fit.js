@@ -219,12 +219,13 @@
 
     const topBuffer = getCssNumber("--rjs-fit-top-buffer", 72);
     const bottomBuffer = getCssNumber("--rjs-fit-bottom-buffer", 36);
+    const contentTopOffset = getCssNumber("--rjs-fit-content-top-offset", 0);
 
     return {
       width: window.innerWidth * CONFIG.viewportWidthRatio,
       height: Math.max(
         100,
-        window.innerHeight - gh - gf - topBuffer - bottomBuffer
+        window.innerHeight - gh - gf - topBuffer - bottomBuffer - contentTopOffset
       )
     };
   }

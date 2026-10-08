@@ -338,3 +338,11 @@ Constructive feedback turns collaboration into continuous calibration.
 * Prioritise clarity and collaboration over strict adherence to frameworks.
 * Reflect frequently and celebrate progress to build resilience.
 :::
+
+::: {.content-visible when-format="revealjs"}
+
+## Feedback and Register
+
+![](fig/Digital_Skills_2026_2027_QR.png){fig-alt="Scan the QR code to give feedback on Digital Skills training."}
+
+:::

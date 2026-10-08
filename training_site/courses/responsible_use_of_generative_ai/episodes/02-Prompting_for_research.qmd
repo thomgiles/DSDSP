@@ -349,3 +349,11 @@ Note where it succeeds, where it struggles and where human oversight is required
 - **Prompt engineering resources**: explore official guides and examples of effective prompts.  
 - **Ethics & integrity**: [Microsoft’s 6 Responsible AI principles](https://azurementor.wordpress.com/2024/03/08/the-6-microsoft-responsible-ai-principles-explained/)  
 :::
+
+::: {.content-visible when-format="revealjs"}
+
+## Feedback and Register
+
+![](fig/Digital_Skills_2026_2027_QR.png){fig-alt="Scan the QR code to give feedback on Digital Skills training."}
+
+:::

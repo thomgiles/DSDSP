@@ -587,3 +587,11 @@ You have explained an existing function call, saved conversion functions, docume
 - [An Introduction to R](https://cran.r-project.org/doc/manuals/r-release/R-intro.html): functions, arguments and scope.
 
 [Course Overview](../index.qmd) · [Previous: Research Data](02-R_variables_intro.qmd) · [Next: Iteration](04-for_loops.qmd)
+
+::: {.content-visible when-format="revealjs"}
+
+## Feedback and Register
+
+![](fig/Digital_Skills_2026_2027_QR.png){fig-alt="Scan the QR code to give feedback on Digital Skills training."}
+
+:::

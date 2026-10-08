@@ -9,7 +9,7 @@ metadata:
 ::: {.content-visible when-format="revealjs"}
 
 <!-- Hidden by default -->
-![](fig/0_qr.png)
+![](fig/03_qr.png)
 
 :::
 
@@ -382,4 +382,12 @@ Modern research governance relies on a set of **standard documents** that ensure
 * Incorporate compliance into project design, not post-hoc review.
 * Keep records in DMPs and ethics applications.
 * International collaboration may trigger Trusted Research checks.
+:::
+
+::: {.content-visible when-format="revealjs"}
+
+## Feedback and Register
+
+![](fig/Digital_Skills_2026_2027_QR.png){fig-alt="Scan the QR code to give feedback on Digital Skills training."}
+
 :::

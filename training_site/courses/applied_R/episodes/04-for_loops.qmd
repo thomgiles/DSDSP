@@ -612,3 +612,11 @@ You can trace repeated calculations, retain results, explain missing inputs and 
 - [readr file-writing documentation](https://readr.tidyverse.org/reference/write_delim.html): CSV output and replacement/append behaviour.
 
 [Course Overview](../index.qmd) · [Previous: Functions](03-R_functions.qmd) · [Next: Data Analysis](05-the_tidyverse.qmd)
+
+::: {.content-visible when-format="revealjs"}
+
+## Feedback and Register
+
+![](fig/Digital_Skills_2026_2027_QR.png){fig-alt="Scan the QR code to give feedback on Digital Skills training."}
+
+:::

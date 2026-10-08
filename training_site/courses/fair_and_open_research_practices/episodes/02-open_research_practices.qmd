@@ -67,11 +67,13 @@ An openly available article may still leave its methods unclear. A controlled cl
 
 ![Open Research decisions across a project.](fig/open-research-lifecycle.svg){fig-alt="Before a study, make plans and protocols transparent. During the study, record methods, decisions and contributions. During communication, consider preprints, Open Access and peer review. For reuse, provide appropriate data and software access, licences and FAIR records. Review benefits and harms at every stage." fig-align="center" width="95%"}
 
+## Choose Practices Deliberately
+
 Open Research includes **preregistration, Registered Reports, open protocols, transparent reporting, preprints, Open Access, open peer review, open data and open software**. Different projects can use different combinations.
 
 > **As open as possible, as restricted as necessary.** Make the reason for a restriction understandable wherever it is safe to do so.
 
-## Task 1: Choose a Useful Practice (2 min)
+## Task 1: Choose a Practice (2 min)
 
 ::: callout-task
 **Goal:** connect one practice with a research need. **Input:** these fictional project needs; work in pairs.
@@ -127,10 +129,7 @@ Creative Commons licences state reuse permissions. For example, **CC BY 4.0** al
 
 For a UKRI-funded output, consult the [current UKRI Open Access policy](https://www.ukri.org/publications/ukri-open-access-policy/). Ask the [UoN Open Access team](https://www.nottingham.ac.uk/library/research/open-access/index.aspx) about uncertain routes, rights retention or funding.
 
-## Task 2: Advise Three Research Teams (6 min)
-
-::: callout-task
-**Goal:** identify a plausible Open Access route and its unresolved check. **Input:** fictional scenarios below; pairs record one sentence per scenario.
+## Three Publication Scenarios
 
 These scenarios imagine possible publication stages. The integrated Urban Shade project used in the final exercise is still being planned.
 
@@ -139,6 +138,11 @@ These scenarios imagine possible publication stages. The integrated Urban Shade 
 | Urban Shade article | The authors have an accepted manuscript. Their chosen journal charges an APC that the project cannot cover. Deposit permissions and policy alignment need checking. |
 | Market Letters article | A relevant Diamond journal has no reader or author charges. The article includes archival images with separate rights. |
 | Watershed Patterns article | A fully Open Access journal offers a CC BY article for an APC. An author believes an institutional agreement will pay, but has not checked eligibility. |
+
+## Task 2: Choose a Route (6 min)
+
+::: callout-task
+**Goal:** identify a plausible Open Access route and its unresolved check. **Input:** the three fictional publication scenarios above. Work in pairs; record one sentence per scenario.
 
 ::: panel-tabset
 ##### Do the Task
@@ -176,7 +180,7 @@ Before posting, agree the decision with co-authors and check participant protect
 
 **Clear status statement:** “Preprint, version 1, dated [actual date]. This manuscript has not undergone journal peer review. Findings are preliminary; see the methods and limitations.” Change the statement if review has occurred, and link the evidence of that review.
 
-## Task 3: Release Now, Revise First or Wait? (3 min)
+## Task 3: Decide When To Share (3 min)
 
 ::: callout-task
 **Goal:** make an early-sharing decision with a reason. **Input:** fictional Urban Shade draft: preliminary results from the old sensor measurements, identifying worker recruitment details with a workplace location, co-author approval still pending. The new interviews have not taken place. Work in pairs.
@@ -228,7 +232,7 @@ Plans can change for good reasons. Keep the original plan identifiable and repor
 
 Choose registration and visibility arrangements that suit the project; public registration is not the only available arrangement. Methods are not exempt from sensitivity checks. See [COS's guidance on choosing a template](https://www.cos.io/blog/choosing-preregistration-template-guide-for-researchers).
 
-## Task 4: Improve a Vague Plan (6 min)
+## Task 4: Specify the Plan (6 min)
 
 ::: callout-task
 **Goal:** make a future test sufficiently specific to discuss with the research team. **Input:** fictional Urban Shade proposal: “We will compare shaded and unshaded places during hot weather, remove bad readings and see if shade helps.” No new measurements have yet been collected. Work in pairs.
@@ -271,7 +275,7 @@ The approach addresses publication decisions that depend on obtaining a striking
 
 Registered Reports require a suitable outlet, time for review and a design compatible with its requirements. Standard prospective formats do not fit a completed analysis that has already revealed the outcomes. Some outlets offer variants for existing data: check their rules rather than assuming eligibility.
 
-## Task 5: Correct a Colleague's Claim (3 min)
+## Task 5: Check the Claim (3 min)
 
 ::: callout-task
 **Goal:** explain what a Registered Report changes. **Input:** a fictional message imagining a later, completed Urban Shade study: “We found no shade effect. Let's register the completed study now; the journal will have to publish it.” Work in pairs.
@@ -330,7 +334,7 @@ These features can be combined independently; publishing reports does not necess
 
 The [Ross-Hellauer review of open peer review](https://pmc.ncbi.nlm.nih.gov/articles/PMC5437951/) explains these distinct features. Consider accountability benefits alongside reviewer consent, confidentiality and the effects of power differences. Open review still needs sound judgement and clear rules.
 
-## Task 6: Repair a Methods Statement (3 min)
+## Task 6: Explain the Method (3 min)
 
 ::: callout-task
 **Goal:** reveal a decision hidden by vague reporting. **Input:** fictional Urban Shade sentence: “We removed unsuitable sites and performed further tests until the pattern was clear.” Work in pairs.
@@ -370,10 +374,7 @@ Prefer the output's recommended citation. Include its creators, title, year, rep
 
 Credit the software or dataset directly as well as an associated paper where relevant. Acknowledgements can recognise technical or community contributions, subject to agreement; they do not replace appropriate authorship or a contribution statement.
 
-## Task 7: Make Contributions Visible (3 min)
-
-::: callout-task
-**Goal:** draft accurate roles without guessing authorship. **Input:** fictional Urban Shade contributors; work in pairs.
+## Urban Shade Contributions
 
 For this activity, imagine the project after collection and analysis. The table describes completed contributions at that later stage; confirm actual roles as the project progresses.
 
@@ -384,6 +385,11 @@ For this activity, imagine the project after collection and analysis. The table 
 | Priya | Developed the analysis method and wrote the analysis script |
 | Alex | Coordinated community contact, conducted interviews and curated the records |
 | Sam (supervisor) | Obtained funding and supervised the project |
+
+## Task 7: Agree Credit (3 min)
+
+::: callout-task
+**Goal:** draft accurate roles without guessing authorship. **Input:** the contributor table above and the [scenario pack](../learners/scenarios.qmd#urban-shade-project). Work in pairs.
 
 ::: panel-tabset
 ##### Do the Task
@@ -420,10 +426,7 @@ Consider a redacted protocol, appropriately assessed aggregate data or a control
 
 Use relevant ethics, data protection, community, information security and intellectual-property advice where the decision requires it. The [UKRI Open Research resource hub](https://www.ukri.org/manage-your-award/good-research-resource-hub/open-research/) signposts guidance. Keep routine management detail in [Essential Digital Skills RDM](../../essential_digital_skills/episodes/04-research_data_managment.qmd).
 
-## Task 8: Set Access and Explain It (6 min)
-
-::: callout-task
-**Goal:** choose defensible access arrangements with benefits and harms in view. **Input:** planned fictional Urban Shade outputs; make prospective decisions in pairs.
+## Urban Shade Outputs and Constraints
 
 | Output | Relevant constraint |
 |---|---|
@@ -431,6 +434,11 @@ Use relevant ethics, data protection, community, information security and intell
 | Worker interview transcripts and exact work/home coordinates | Includes potentially vulnerable participants; consent limits onward sharing |
 | Protocol and blank interview questions | Can support evaluation; operational details may reveal protected sites |
 | Third-party map images | The project's agreement does not grant public redistribution |
+
+## Task 8: Choose Access (6 min)
+
+::: callout-task
+**Goal:** choose defensible access arrangements with benefits and harms in view. **Input:** the planned Urban Shade outputs above and the scenario pack. Work in pairs.
 
 ::: panel-tabset
 ##### Do the Task
@@ -453,12 +461,12 @@ Use relevant ethics, data protection, community, information security and intell
 
 # Design an Open Research Strategy (13 min)
 
-## Task 9: Bring the Decisions Together (13 min)
+The project combines an exploratory observation from old sensor measurements, a proposed future shade comparison, consent-limited interviews, an article draft, an analysis script, a protocol, third-party maps and several contributors. Precise locations can identify participants. There is no requirement to maximise public disclosure.
+
+## Task 9: Build the Strategy (13 min)
 
 ::: callout-task
 **Goal:** produce a coherent project strategy with justified choices. **Input:** [Urban Shade integrated project](../learners/scenarios.qmd) and your [strategy worksheet](../learners/files/open-research-strategy.md). Work in pairs and reuse decisions from Tasks 2–8.
-
-The project combines an exploratory observation from old sensor measurements, a proposed future shade comparison, consent-limited interviews, an article draft, an analysis script, a protocol, third-party maps and several contributors. Precise locations can identify participants. There is no requirement to maximise public disclosure.
 
 ::: panel-tabset
 ##### Do the Task
@@ -538,3 +546,11 @@ You have drafted an Open Research strategy covering publication, early sharing, 
 ## Course Navigation
 
 [Course Overview](../index.qmd) · [FAIR Research Outputs](01-fair_research_outputs.qmd) · [Scenario Pack](../learners/scenarios.qmd) · [Reference](../learners/reference.qmd) · [Discussion](../learners/discuss.qmd)
+
+::: {.content-visible when-format="revealjs"}
+
+## Feedback and Register
+
+![](fig/Digital_Skills_2026_2027_QR.png){fig-alt="Scan the QR code to give feedback on Digital Skills training."}
+
+:::

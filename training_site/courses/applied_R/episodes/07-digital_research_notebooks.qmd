@@ -326,3 +326,11 @@ You have a computational research notebook whose question, code, outputs and lim
 - [Reference](../learners/reference.qmd): terms and checking reminders.
 
 [Course Overview](../index.qmd) · [Previous](06-exploration_and_visualisation.qmd) · [Next](08-interactive_research_dashboards.qmd)
+
+::: {.content-visible when-format="revealjs"}
+
+## Feedback and Register
+
+![](fig/Digital_Skills_2026_2027_QR.png){fig-alt="Scan the QR code to give feedback on Digital Skills training."}
+
+:::

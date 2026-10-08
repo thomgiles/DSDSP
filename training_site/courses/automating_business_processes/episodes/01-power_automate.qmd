@@ -701,3 +701,11 @@ In this module you built and inspected small Power Automate flows that:
 ## Further Learning
 
 Useful next topics include SharePoint lists as workflow records, Dataverse, solution-aware flows, error handling with scopes, reminders and escalation, custom connectors, data loss prevention policies, and Power Automate Desktop.
+
+::: {.content-visible when-format="revealjs"}
+
+## Feedback and Register
+
+![](fig/Digital_Skills_2026_2027_QR.png){fig-alt="Scan the QR code to give feedback on Digital Skills training."}
+
+:::

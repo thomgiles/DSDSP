@@ -94,9 +94,9 @@ Keep lightweight notes, validation steps, and disclosure decisions that make AI 
 
 | Lesson | What you will tackle | Why it matters |
 |---|---|---|
-| [Introduction to AI for Research](episodes/01-Introduction_to_AI_for_research.qmd) | Opportunities, risks, governance, data security, and how AI changes research work | Builds judgement before tool use becomes routine |
-| [Prompting for Research](episodes/02-Prompting_for_research.qmd) | Prompt design, validation, source-grounded workflows, and practical AI exercises | Turns broad principles into concrete, defensible practice |
-| [Applied AI for Research](episodes/03-Applied_AI_for_research.qmd) | Choosing tools, literature reviews, research design, analysis, agents, grants, and integrity | Builds checked, reusable workflows across the research lifecycle |
+| [01 Introduction to AI for Research](episodes/01-Introduction_to_AI_for_research.qmd) | Opportunities, risks, governance, data security, and how AI changes research work | Builds judgement before tool use becomes routine |
+| [02 Prompting for Research](episodes/02-Prompting_for_research.qmd) | Prompt design, validation, source-grounded workflows, and practical AI exercises | Turns broad principles into concrete, defensible practice |
+| [03 Applied AI for Research](episodes/03-Applied_AI_for_research.qmd) | Choosing tools, literature reviews, research design, analysis, agents, grants, and integrity | Builds checked, reusable workflows across the research lifecycle |
 
 ## Suggested Delivery
 
@@ -107,10 +107,10 @@ The first two lessons provide 120 minutes of teaching and activities. They can r
 
 A simple structure is:
 
-1. **Hour 1:** [Introduction to AI for Research](episodes/01-Introduction_to_AI_for_research.qmd)
-2. **Hour 2:** [Prompting for Research](episodes/02-Prompting_for_research.qmd)
+1. **Hour 1:** [01 Introduction to AI for Research](episodes/01-Introduction_to_AI_for_research.qmd)
+2. **Hour 2:** [02 Prompting for Research](episodes/02-Prompting_for_research.qmd)
 
-Follow these with [Applied AI for Research](episodes/03-Applied_AI_for_research.qmd), a modular workshop for which approximately two hours is a useful planning guide. It uses eight brief discussion pauses, with a choice of qualitative or quantitative material for the analysis pause. Confirm the selected topics, discussion time and break with the teaching team; the full lesson provides more material than every cohort needs to cover.
+Follow these with [03 Applied AI for Research](episodes/03-Applied_AI_for_research.qmd), a modular workshop for which approximately two hours is a useful planning guide. It uses eight brief discussion pauses, with a choice of qualitative or quantitative material for the analysis pause. Confirm the selected topics, discussion time and break with the teaching team; the full lesson provides more material than every cohort needs to cover.
 
 ## What Learners Typically Leave With
 

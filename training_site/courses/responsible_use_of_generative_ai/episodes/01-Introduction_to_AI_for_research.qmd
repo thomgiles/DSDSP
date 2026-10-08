@@ -208,12 +208,7 @@ Big shift now is on optimisation as running large models is expensive!
 
 > 🌐 Modern generative AI is the result of many incremental breakthroughs.
 
-::: {.content-visible when-format="revealjs"}
 
-<!-- Hidden by default -->
-![](fig/EXT1-Q1-qr_code.png)
-
-:::
 
 ---
 
@@ -221,14 +216,66 @@ Big shift now is on optimisation as running large models is expensive!
 
 #### Task: Questionaire
 
+::: {.content-visible when-format="revealjs"}
+
+::: panel-tabset
+
+##### Contribute
+
+<div style="text-align: center; background: transparent;">
+<a href="https://ds-shiny-helper.azurewebsites.net/edsex1/?contribute=true&amp;embed=true#shiny-tab-input" style="color: #ffffff; background: transparent; display: inline-block;">
+<img src="fig/EXT1-Q1-qr_code.png" alt="QR code for the AI questionnaire response form." style="width: 35%;"><br>
+Open the response form
+</a>
+</div>
+
+##### Contribute / Results
+
 <iframe
   src="https://ds-shiny-helper.azurewebsites.net/edsex1/?embed=true#shiny-tab-q1_results"
+  data-contribute-src="https://ds-shiny-helper.azurewebsites.net/edsex1/?embed=true&amp;contribute=true#shiny-tab-input"
   width="100%"
   height="500"
   frameborder="0"
   style="border:none;"
   title="Q1">
-</iframe> 
+</iframe>
+
+:::
+
+:::
+
+::: {.content-visible when-format="html"}
+
+<div class="shiny-lesson-placeholder" data-shiny-placeholder>
+<p><strong>Live lesson component</strong></p>
+<p>Questions and live results are available during the taught session.</p>
+<template>
+<iframe
+  src="https://ds-shiny-helper.azurewebsites.net/edsex1/?embed=true#shiny-tab-q1_results"
+  data-contribute-src="https://ds-shiny-helper.azurewebsites.net/edsex1/?embed=true&amp;contribute=true#shiny-tab-input"
+  width="100%"
+  height="500"
+  frameborder="0"
+  style="border:none;"
+  title="Q1">
+</iframe>
+</template>
+</div>
+
+:::
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const params = new URLSearchParams(window.location.search);
+  if (params.get("contribute") !== "true" || document.querySelector(".reveal")) return;
+  document.querySelectorAll("[data-shiny-placeholder]").forEach(function(placeholder) {
+    const frame = placeholder.querySelector("template").content.querySelector("iframe").cloneNode(true);
+    frame.src = frame.dataset.contributeSrc;
+    placeholder.replaceChildren(frame);
+  });
+});
+</script>
 
 :::
 
@@ -567,4 +614,12 @@ AI supports research via literature search, coding, analysis and translation, bu
 - **Living guidelines:** The European Research Area’s living guidelines on generative AI provide best‑practice recommendations [Swedish Research Council news](https://www.vr.se/english/just-now/news/news-archive/2024-04-09-new-guidelines-for-using-ai-in-europe.html).  
 - **Microsoft responsible AI:** [AzureMentor blog](https://azurementor.wordpress.com/2024/03/08/the-6-microsoft-responsible-ai-principles-explained/) explains the six pillars of Microsoft’s responsible AI framework.  
 - **Generative AI ethics:** [TechTarget article](https://www.techtarget.com/searchenterpriseai/tip/Generative-AI-ethics-8-biggest-concerns) lists ethical concerns and risks of generative AI.    
+:::
+
+::: {.content-visible when-format="revealjs"}
+
+## Feedback and Register
+
+![](fig/Digital_Skills_2026_2027_QR.png){fig-alt="Scan the QR code to give feedback on Digital Skills training."}
+
 :::

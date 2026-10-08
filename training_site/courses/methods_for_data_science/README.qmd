@@ -8,6 +8,6 @@ Methods for Data Science is a foundation course in practical data judgement. It 
 
 The course sits after Essential Digital Skills and before more code-focused Applied Python or Applied R pathways.
 
-The four lessons cover [data collection](episodes/05-collecting_the_right_data.qmd), [organisation and exploration](episodes/06-organising_and_exploring_data.qmd), [interpretation and visualisation](episodes/07-making_sense_of_data.qmd), and [insight and impact](episodes/08-insight_to_impacts.qmd). Programming experience is not required.
+The four lessons cover [data collection](episodes/01-collecting_the_right_data.qmd), [organisation and exploration](episodes/02-organising_and_exploring_data.qmd), [interpretation and visualisation](episodes/03-making_sense_of_data.qmd), and [insight and impact](episodes/04-insight_to_impacts.qmd). Programming experience is not required.
 
 Start with the [Course Overview](index.qmd) and [Learner Setup](learners/setup.qmd). Learners can use [Additional Material](learners/additional_material.qmd), [Reference](learners/reference.qmd), and [Discussion](learners/discuss.qmd) to practise and review. Teaching teams should read the [Instructor Notes](instructors/instructor-notes.qmd), [Instructor Additional Material](instructors/additional_material.qmd), and [Extra Exercises](instructors/extra_exercises.qmd).

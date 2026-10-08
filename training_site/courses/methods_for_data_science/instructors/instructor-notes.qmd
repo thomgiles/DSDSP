@@ -24,7 +24,7 @@ The course works best when learners leave with:
 ## Before Teaching
 
 - Review the [Course Overview](../index.qmd), [Learner Setup](../learners/setup.qmd), and the four linked episodes. Confirm the session plan against the episode agendas; optional exercises below do not alter those timings.
-- Check the original and prepared student spreadsheets open, and test the browser activity in [Making Sense of Data](../episodes/07-making_sense_of_data.qmd) on the teaching network.
+- Check the original and prepared student spreadsheets open, and test the browser activity in [Making Sense of Data](../episodes/03-making_sense_of_data.qmd) on the teaching network.
 - Keep the [fictional request worksheet](../learners/additional_material.qmd#practice-dataset) available as an access fallback. It includes source notes and worked checks, so a pair can participate on paper.
 - Prepare a shared-screen or paired-access route for learners without spreadsheet access. No coding installation is required.
 - Use public or fictional examples. Invite a description of a real research question rather than requesting confidential records.
@@ -48,19 +48,19 @@ Ask learners to keep the original data, working copy, and change log. An apparen
 
 ### Collecting the right data
 
-Use [Collecting the Right Data](../episodes/05-collecting_the_right_data.qmd) to show that analysis quality starts before analysis begins. Emphasise question design, source quality, variables, formats, and fairness.
+Use [Collecting the Right Data](../episodes/01-collecting_the_right_data.qmd) to show that analysis quality starts before analysis begins. Emphasise question design, source quality, variables, formats, and fairness.
 
 ### Organising and exploring data
 
-Use [Organising and Exploring Data](../episodes/06-organising_and_exploring_data.qmd) to make messy data visible. Learners should practise spotting inconsistencies, standardising structures, and asking early exploratory questions.
+Use [Organising and Exploring Data](../episodes/02-organising_and_exploring_data.qmd) to make messy data visible. Learners should practise spotting inconsistencies, standardising structures, and asking early exploratory questions.
 
 ### Making sense of data
 
-Use [Making Sense of Data](../episodes/07-making_sense_of_data.qmd) to build visual and interpretive judgement. Emphasise that charts are arguments, not neutral decorations.
+Use [Making Sense of Data](../episodes/03-making_sense_of_data.qmd) to build visual and interpretive judgement. Emphasise that charts are arguments, not neutral decorations.
 
 ### Insight to impact
 
-Use [Insight to Impact](../episodes/08-insight_to_impacts.qmd) to connect findings to audiences, action, feedback, and iteration. Keep asking what would change because of the insight.
+Use [Insight to Impact](../episodes/04-insight_to_impacts.qmd) to connect findings to audiences, action, feedback, and iteration. Keep asking what would change because of the insight.
 
 ## Consolidation and Follow-On Learning
 

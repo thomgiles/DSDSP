@@ -1,17 +1,15 @@
 ---
 title: "Making Sense of Data"
-module-hidden: true
+module-icon: "🔎"
 metadata:
   teaching: 40
   exercises: 40
 ---
 
-**Current course location:** use [Making Sense of Data in Methods for Data Science](../../methods_for_data_science/episodes/07-making_sense_of_data.qmd). This earlier page remains available for existing links; it is not an additional Essential Digital Skills session.
-
 ::: {.content-visible when-format="revealjs"}
 
 <!-- Hidden by default -->
-![](fig/07_qr.png)
+![](fig/03_qr.png)
 
 :::
 
@@ -151,29 +149,72 @@ In a chart, you instantly see: Chips dominate. Cookies are next. Fruit lags behi
 
 ---
 
-::: {.content-visible when-format="revealjs"}
-
-**Please Complete following short poll**
-
-![](fig/07-app_qr.png)
-:::
-
----
-
 ::: callout-task
 
 #### Activity: Quick Poll
 
 N.b. this is only active during lessions. 
 
+::: {.content-visible when-format="revealjs"}
+
+::: panel-tabset
+
+##### Contribute
+
+<div style="text-align: center; background: transparent;">
+<a href="https://ds-shiny-helper.azurewebsites.net/edsm7/?contribute=true&amp;embed=true#shiny-tab-input" style="color: #ffffff; background: transparent; display: inline-block;">
+<img src="fig/07-app_qr.png" alt="QR code for the learner poll response form." style="width: 35%;"><br>
+Open the response form
+</a>
+</div>
+
+##### Contribute / Results
+
 <iframe
   src="https://ds-shiny-helper.azurewebsites.net/edsm7/?embed=true#shiny-tab-results"
+  data-contribute-src="https://ds-shiny-helper.azurewebsites.net/edsm7/?embed=true&amp;contribute=true#shiny-tab-input"
   width="100%"
   height="500"
   frameborder="0"
   style="border:none;"
   title="Q1">
-</iframe> 
+</iframe>
+
+:::
+
+:::
+
+::: {.content-visible when-format="html"}
+
+<div class="shiny-lesson-placeholder" data-shiny-placeholder>
+<p><strong>Live lesson component</strong></p>
+<p>Questions and live results are available during the taught session.</p>
+<template>
+<iframe
+  src="https://ds-shiny-helper.azurewebsites.net/edsm7/?embed=true#shiny-tab-results"
+  data-contribute-src="https://ds-shiny-helper.azurewebsites.net/edsm7/?embed=true&amp;contribute=true#shiny-tab-input"
+  width="100%"
+  height="500"
+  frameborder="0"
+  style="border:none;"
+  title="Q1">
+</iframe>
+</template>
+</div>
+
+:::
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const params = new URLSearchParams(window.location.search);
+  if (params.get("contribute") !== "true" || document.querySelector(".reveal")) return;
+  document.querySelectorAll("[data-shiny-placeholder]").forEach(function(placeholder) {
+    const frame = placeholder.querySelector("template").content.querySelector("iframe").cloneNode(true);
+    frame.src = frame.dataset.contributeSrc;
+    placeholder.replaceChildren(frame);
+  });
+});
+</script>
 :::
 
 # Making Sense of Visuals
@@ -511,3 +552,11 @@ The concepts in this module connect directly to practical data handling and expl
 | Insight to Action        | Create summary reports or dashboards; link visuals to decisions      | Prepares learners to communicate results clearly and responsibly.            |
 
 > 📚 You can apply the same activities directly in Python to reinforce these concepts.
+
+::: {.content-visible when-format="revealjs"}
+
+## Feedback and Register
+
+![](fig/Digital_Skills_2026_2027_QR.png){fig-alt="Scan the QR code to give feedback on Digital Skills training."}
+
+:::

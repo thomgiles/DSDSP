@@ -9,7 +9,7 @@ metadata:
 ::: {.content-visible when-format="revealjs"}
 
 <!-- Hidden by default -->
-![](fig/05_qr.png)
+![](fig/01_qr.png)
 
 :::
 
@@ -373,3 +373,11 @@ The concepts in this module connect directly to practical data handling in Pytho
 | Planning for Good Data     | Filter, select, and structure data programmatically in Python.                    | Reinforces that well-planned data leads to robust analysis.         |
 | Tools & Formats            | Read and write CSV, JSON, and XLSX files using `pandas`.                          | Supports movement between tools and reproducible workflows.        |
 | Trust & Fairness           | Inspect missingness, imbalance, and bias using summaries and visualisation.       | Encourages ethical, transparent, and reliable data analysis.       |
+
+::: {.content-visible when-format="revealjs"}
+
+## Feedback and Register
+
+![](fig/Digital_Skills_2026_2027_QR.png){fig-alt="Scan the QR code to give feedback on Digital Skills training."}
+
+:::

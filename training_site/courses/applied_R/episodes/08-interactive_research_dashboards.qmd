@@ -324,3 +324,11 @@ You have a small reactive research dashboard whose inputs, outputs, validation a
 - [Reference](../learners/reference.qmd): terms and checking reminders.
 
 [Course Overview](../index.qmd) · [Previous](07-digital_research_notebooks.qmd) · [Next](../learners/additional_material.qmd)
+
+::: {.content-visible when-format="revealjs"}
+
+## Feedback and Register
+
+![](fig/Digital_Skills_2026_2027_QR.png){fig-alt="Scan the QR code to give feedback on Digital Skills training."}
+
+:::

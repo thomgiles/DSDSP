@@ -23,7 +23,7 @@ title: Reference
 
 ## Collecting the Right Data
 
-Use with [Collecting the Right Data](../episodes/05-collecting_the_right_data.qmd).
+Use with [Collecting the Right Data](../episodes/01-collecting_the_right_data.qmd).
 
 Before collecting or reusing data, record:
 
@@ -37,7 +37,7 @@ Do not equate a large dataset with a representative dataset. Consider whether a 
 
 ## Organising and Exploring Data
 
-Use with [Organising and Exploring Data](../episodes/06-organising_and_exploring_data.qmd).
+Use with [Organising and Exploring Data](../episodes/02-organising_and_exploring_data.qmd).
 
 ### Before changing values
 
@@ -65,7 +65,7 @@ Use a change log with **record identifier; original value; change; evidence; rea
 
 ## Making Sense of Data
 
-Use with [Making Sense of Data](../episodes/07-making_sense_of_data.qmd).
+Use with [Making Sense of Data](../episodes/03-making_sense_of_data.qmd).
 
 | Question | Useful starting point | Check |
 |---|---|---|
@@ -78,7 +78,7 @@ Check the title, source, units, period, denominator, filters, uncertainty, and a
 
 ## Insight to Impact
 
-Use with [Insight to Impact](../episodes/08-insight_to_impacts.qmd).
+Use with [Insight to Impact](../episodes/04-insight_to_impacts.qmd).
 
 Keep four statements distinct:
 

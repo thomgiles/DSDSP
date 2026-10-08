@@ -8,7 +8,7 @@ Each optional exercise is a five-minute pair task: one minute to inspect the inp
 
 ## Exercise 1: Source Quality Triage
 
-**Best fit:** [Collecting the Right Data](../episodes/05-collecting_the_right_data.qmd)
+**Best fit:** [Collecting the Right Data](../episodes/01-collecting_the_right_data.qmd)
 
 Give groups three possible data sources for the same question. Ask them to rank each source for relevance, trustworthiness, completeness, and likely bias.
 
@@ -26,7 +26,7 @@ Give groups three possible data sources for the same question. Ask them to rank 
 
 ## Exercise 2: Variable Cut-Down
 
-**Best fit:** [Collecting the Right Data](../episodes/05-collecting_the_right_data.qmd)
+**Best fit:** [Collecting the Right Data](../episodes/01-collecting_the_right_data.qmd)
 
 Give learners a broad research question and a long list of possible variables. Ask them to choose only the variables they would collect first and justify what they excluded.
 
@@ -36,7 +36,7 @@ Give learners a broad research question and a long list of possible variables. A
 
 ## Exercise 3: Messy Table Audit
 
-**Best fit:** [Organising and Exploring Data](../episodes/06-organising_and_exploring_data.qmd)
+**Best fit:** [Organising and Exploring Data](../episodes/02-organising_and_exploring_data.qmd)
 
 Ask learners to inspect a deliberately messy spreadsheet and classify each issue as missingness, duplication, inconsistent labelling, invalid value, or unclear structure.
 
@@ -46,7 +46,7 @@ Ask learners to inspect a deliberately messy spreadsheet and classify each issue
 
 ## Exercise 4: Chart Critique Gallery
 
-**Best fit:** [Making Sense of Data](../episodes/07-making_sense_of_data.qmd)
+**Best fit:** [Making Sense of Data](../episodes/03-making_sense_of_data.qmd)
 
 Show several weak charts and ask learners to identify what each chart appears to claim, which design choice shapes that claim, what context is missing, and how they would redesign it.
 
@@ -56,7 +56,7 @@ Show several weak charts and ask learners to identify what each chart appears to
 
 ## Exercise 5: From Insight to Action
 
-**Best fit:** [Insight to Impact](../episodes/08-insight_to_impacts.qmd)
+**Best fit:** [Insight to Impact](../episodes/04-insight_to_impacts.qmd)
 
 Give a short data finding and ask groups to write three versions: a research interpretation, an operational recommendation, and a short message for a non-specialist audience.
 

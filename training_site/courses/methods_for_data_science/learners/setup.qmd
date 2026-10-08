@@ -37,10 +37,10 @@ For independent practice, use the [Additional Material](additional_material.qmd)
 
 | Session | Prepare before attending |
 |---|---|
-| [Collecting the Right Data](../episodes/05-collecting_the_right_data.qmd) | Think of one data source you trust and one you would treat cautiously |
-| [Organising and Exploring Data](../episodes/06-organising_and_exploring_data.qmd) | Bring a messy spreadsheet, table, or repeated reporting problem in mind |
-| [Making Sense of Data](../episodes/07-making_sense_of_data.qmd) | Bring an example chart or dashboard you have used or questioned |
-| [Insight to Impact](../episodes/08-insight_to_impacts.qmd) | Think of one analysis result that did or did not lead to action |
+| [Collecting the Right Data](../episodes/01-collecting_the_right_data.qmd) | Think of one data source you trust and one you would treat cautiously |
+| [Organising and Exploring Data](../episodes/02-organising_and_exploring_data.qmd) | Bring a messy spreadsheet, table, or repeated reporting problem in mind |
+| [Making Sense of Data](../episodes/03-making_sense_of_data.qmd) | Bring an example chart or dashboard you have used or questioned |
+| [Insight to Impact](../episodes/04-insight_to_impacts.qmd) | Think of one analysis result that did or did not lead to action |
 
 ## Data Safety
 

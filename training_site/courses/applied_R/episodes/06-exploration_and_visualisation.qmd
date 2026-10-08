@@ -525,3 +525,11 @@ You can specify, inspect and save figures with source checks and limitations. Ne
 - [Reference](../learners/reference.qmd): terms and checking reminders.
 
 [Course Overview](../index.qmd) · [Previous](05-the_tidyverse.qmd) · [Next](07-digital_research_notebooks.qmd)
+
+::: {.content-visible when-format="revealjs"}
+
+## Feedback and Register
+
+![](fig/Digital_Skills_2026_2027_QR.png){fig-alt="Scan the QR code to give feedback on Digital Skills training."}
+
+:::

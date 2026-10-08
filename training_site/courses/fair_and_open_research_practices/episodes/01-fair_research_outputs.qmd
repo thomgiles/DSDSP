@@ -67,6 +67,8 @@ The obstacle is more than access: the researcher cannot confidently decide what 
 
 ![Four questions for a research output.](fig/fair-four-questions.svg){fig-alt="Four connected questions surround the same research output: can it be discovered, obtained through a defined route, interpreted using shared meaning, and reused with appropriate context and permissions?" fig-align="center" width="94%"}
 
+## FAIR for People and Machines
+
 FAIR addresses **Findability, Accessibility, Interoperability and Reusability** for people and machines. Useful descriptions should support both a researcher reading a record and a service searching or interpreting it. [Original FAIR principles](https://www.nature.com/articles/sdata201618).
 
 ## FAIRness and Openness Answer Different Questions
@@ -79,7 +81,7 @@ A public download may lack meaning and permission. A controlled dataset may have
 
 We will consider the broader research process in [Open Research Practices](02-open_research_practices.qmd).
 
-## Task 1: Which Output Looks More FAIR? (3 min)
+## Task 1: Rank the Outputs (3 min)
 
 ::: callout-task
 **Goal:** distinguish a working download from a usable research output.
@@ -145,7 +147,7 @@ These alternatives describe the same Market Letters transcriptions; they are tea
 
 The improvement is information that helps discovery and interpretation, rather than a longer title alone. Specific repository metadata fields will vary; [DataCite's schema](https://datacite-metadata-schema.readthedocs.io/en/4.6/) illustrates structured descriptions and relationships.
 
-## Task 2: Strengthen a Discovery Record (4 min)
+## Task 2: Improve a Record (4 min)
 
 ::: callout-task
 **Goal:** make an output discoverable to someone who does not know its filename.
@@ -211,7 +213,7 @@ Metadata should remain accessible when the data no longer exist. A retained reco
 
 A DOI that resolves to a blank page is insufficient. A retained metadata record meets an important part of accessibility, but does not make an unobtainable file reusable.
 
-## Task 3: Accessible to Whom? (4 min)
+## Task 3: Compare Access (4 min)
 
 ::: callout-task
 **Goal:** judge accessibility using the documented route and permitted use.
@@ -282,7 +284,7 @@ This fictional extract extends Urban Shade for the activity. `row_id` is supplie
 
 We cannot assume that `t` means measurement date, that the site names are identical, that `val` has one unit, or that `n/a` means “not measured”. A CSV can be machine-readable while these meanings remain unresolved. Supporting table metadata can state field types and interpretations. [W3C tabular data model](https://www.w3.org/TR/tabular-data-model/).
 
-## Task 4: Make an Interpretation Map (5 min)
+## Task 4: Map the Meanings (5 min)
 
 ::: callout-task
 **Goal:** propose improvements without inventing scientific meaning.
@@ -355,7 +357,7 @@ State which output and version the licence or agreement covers, who can grant th
 
 Steps and Sleep instead uses a documented agreement defining eligible purposes and prohibiting redistribution. Clear permitted reuse can coexist with controlled access.
 
-## Task 5: Remove the Biggest Reuse Barriers (5 min)
+## Task 5: Improve Reuse (5 min)
 
 ::: callout-task
 **Goal:** prioritise documentation and rights improvements for a specific reuse.
@@ -414,7 +416,7 @@ For a notebook, for example, ask: “Which output and input versions does this r
 
 For practical notebook authoring, the existing [R course lesson](../../applied_R/episodes/07-digital_research_notebooks.qmd) is a follow-on. For general data management, revisit [Essential Digital Skills](../../essential_digital_skills/episodes/04-research_data_managment.qmd) when that prerequisite needs attention.
 
-## Task 6: Choose One Improvement Beyond Data (3 min)
+## Task 6: Improve Another Object (3 min)
 
 ::: callout-task
 **Goal:** transfer FAIR reasoning to a research object other than a dataset.
@@ -455,24 +457,24 @@ Use all four [fictional cases](../learners/scenarios.qmd): **Urban Shade**, **St
 
 For each principle record **evidence of a strength**, **a weakness or unknown**, and **a practical improvement**. “Not described” is a useful finding; it does not prove the feature is absent in every real system.
 
-## Task 7: Assess Four Outputs and Prioritise Action (21 min)
+## Task 7: Assess FAIRness (21 min)
 
 ::: callout-task
 **Goal:** produce a comparative assessment and defend the most valuable improvements.
 
-**Input:** the scenario pack and [assessment worksheet](../learners/files/fair-assessment.md). Work in pairs; share the reasoning, rather than assigning cases silently to individuals.
+**Input:** the scenario pack and [four prepared assessment tables](../learners/files/fair-assessment.md). Work in pairs; discuss each case together.
 
 ::: panel-tabset
 ##### Do the Task
 
-1. **2 min:** read the cases and agree a plausible future user for each.
-2. **12 min:** allow **3 min per case** to complete F/A/I/R strengths, weaknesses or unknowns, and improvements. Cite the case detail supporting each judgement.
-3. **3 min:** choose two priority improvements across your assessment, with an owner and a check; distinguish a necessary restriction from a missing process.
-4. **4 min:** the instructor takes one brief report per case, challenges one unsupported assumption and gives the worked feedback on the next slides.
+1. **2 min:** read the cases; choose a future user for each.
+2. **12 min:** spend **3 min per case** recording F/A/I/R strengths, gaps and improvements. Support judgements with case evidence.
+3. **3 min:** prioritise two improvements, with owners and checks. Separate justified restrictions from missing processes.
+4. **4 min:** one pair reports per case. The instructor challenges an assumption and gives the worked feedback on the next slides.
 
 **Keep:** four assessments and two justified priorities to adapt to your project.
 
-**If access fails:** use the printed worksheet and pack. If reading takes longer, the instructor reads each case aloud while pairs annotate the same four questions.
+**If access fails:** use printed cases and tables.
 
 ##### Prepare Your Room Response
 
@@ -544,3 +546,11 @@ Your assessment addresses output usability. In [Lesson 2: Open Research Practice
 | [Creative Commons guidance](https://creativecommons.org/faq/) | You need to check the scope and conditions of a proposed content licence |
 | [Learner reference](../learners/reference.qmd) | You want a reusable glossary and decision prompts |
 | [Additional materials](../learners/additional_material.qmd) | You want repository, institutional and further-practice resources |
+
+::: {.content-visible when-format="revealjs"}
+
+## Feedback and Register
+
+![](fig/Digital_Skills_2026_2027_QR.png){fig-alt="Scan the QR code to give feedback on Digital Skills training."}
+
+:::

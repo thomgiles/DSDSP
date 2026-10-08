@@ -1141,3 +1141,11 @@ If this is unclear, use **fake or simplified data** until permission is confirme
 - Read [PRISMA 2020](https://www.prisma-statement.org/prisma-2020) and its relevant extensions when planning review reporting.
 - Check the current [UKRI application and assessment policy](https://www.ukri.org/publications/generative-artificial-intelligence-in-application-and-assessment-policy/) and [Springer Nature guidance](https://group.springernature.com/gp/group/ai/ai-guidance-for-our-researchers-and-communities) alongside local requirements.
 :::
+
+::: {.content-visible when-format="revealjs"}
+
+## Feedback and Register
+
+![](fig/Digital_Skills_2026_2027_QR.png){fig-alt="Scan the QR code to give feedback on Digital Skills training."}
+
+:::

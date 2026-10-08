@@ -9,7 +9,7 @@ metadata:
 ::: {.content-visible when-format="revealjs"}
 
 <!-- Hidden by default -->
-![](fig/08_qr.png)
+![](fig/04_qr.png)
 
 :::
 
@@ -572,3 +572,11 @@ The concepts in this module connect directly to practical data handling and expl
 | The Audience Pivot    | Export different visuals and summaries (`plt.savefig()`, multiple chart styles)    | Enables the same insight to be translated effectively for different stakeholders. |
 
 > 📚 You can apply the same activities directly in Python to reinforce these concepts.
+
+::: {.content-visible when-format="revealjs"}
+
+## Feedback and Register
+
+![](fig/Digital_Skills_2026_2027_QR.png){fig-alt="Scan the QR code to give feedback on Digital Skills training."}
+
+:::

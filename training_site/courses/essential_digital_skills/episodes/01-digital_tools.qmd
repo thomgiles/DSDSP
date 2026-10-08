@@ -3,13 +3,13 @@ title: Digital Tools
 module-icon: "🧰"
 metadata:
   teaching: 60
-  exercises: 50
+  exercises: 45
 ---
 
 ::: {.content-visible when-format="revealjs"}
 
 <!-- Hidden by default -->
-![](fig/01_qr.png)
+![](fig/01_qr.png){fig-align="center" max-height=80%}
 
 :::
 
@@ -21,9 +21,8 @@ metadata:
 - Apply digital best practices in collaboration & file organisation
 - Manage your research identity
 - Identify essential practices for secure research
-- Find relevant literature, record searches and maintain a checked reference library
-- Use writing tools to structure documents, manage citations and review work with co-authors
-- Evaluate AI-assisted writing against its sources and record its contribution
+- Plan literature searches, record the approach and check reference records
+- Explain how writing tools support document structure, citations and co-author review
 :::
 
 ::: callout-questions
@@ -48,20 +47,20 @@ metadata:
 
 1. Introduction to the Digital Skills Programme (~10+5 min)
 2. Institutional Systems for Digital Research (~10+5 min)
-3. Research Identity and Profiles (~10+5 min)
+3. Research Identity and Profiles (~10+10 min)
 4. Digital Security & Good Practice (~10+5 min)
-5. Literature Discovery and Reference Management (~10+15 min)
-6. Tools to Support Writing (~10+15 min)
+5. Literature Discovery and Reference Management (~10+10 min)
+6. Tools to Support Writing (~10+10 min)
 
-> 🔧 Each topic has 10 minutes of teaching. Tasks take five minutes each, including room debriefs. Allow 120 minutes overall: 60 minutes teaching, 50 minutes activities and a 10-minute break after Digital Security.
+> 🔧 Each topic has no more than 10 minutes of directed teaching
 
 ## What is the Digital Skills programme
 
 The **Digital Skills** programme equips researchers with the competencies required for modern, data-driven scholarship. 
 
-The programme is not about tools....
+**The programme is not about tools....**
 
-It is also about **connecting researchers** with the people who work with data, including **data stewards**, **software engineers**, and **information specialists**. 
+> It is also about **connecting researchers** with the people who work with data, including **data stewards**, **software engineers**, and **information specialists**. 
 
 ## Bridging Communities
 
@@ -85,13 +84,15 @@ The programme offers **three tiers of learning**, from foundational to applied a
 
 ## Courses
 
-| Course                             | Description                                                                 | Duration       | Note |
-|------------------------------------|-----------------------------------------------------------------------------|----------------|------|
-| Essential Digital Skills – Foundation | Introduces the tools, practices, and principles needed to participate confidently in digital research. | 4× half days   |      |
-| Methods for Data Science – Theoretical    | Introduces coding, software, and collaboration practices needed for sustainable research. | 4× half days   |      |
-| Methods for Data Science – Applied Python | Provides practical experience in data analysis and interpretation using Python. | 2 days         | Introductory and intermediate |
-| Methods for Data Science – Applied R      | Provides practical experience in data analysis and interpretation using R.     | 2 days         | Introductory and intermediate |
-| Advanced       | —           | 1 day?    |  AI? ML? Bioinformatics?    |
+| Course | Focus | Format |
+|---|---|---|
+| [Essential Digital Skills](../index.qmd) | Digital tools, collaboration, governance and RDM | 4 lessons |
+| [Methods for Data Science](../../methods_for_data_science/index.qmd) | Data quality, exploration, visualisation and interpretation | 4 lessons |
+| [Applied Python](../../applied_python/index.qmd) | Programming, data analysis, modelling and debugging | 8 lessons |
+| [Applied R](../../applied_R/index.qmd) | Data analysis, defensive programming, notebooks and dashboards | 8 lessons |
+| [Responsible Use of Generative AI](../../responsible_use_of_generative_ai/index.qmd) | Research applications, prompting and responsible use | 3 lessons |
+| [Automating Business Processes](../../automating_business_processes/index.qmd) | Power Automate and repeatable workflows | 1 lesson |
+| [FAIR and Open Research Practices](../../fair_and_open_research_practices/index.qmd) | Usable outputs, transparent methods and responsible sharing | 2 lessons |
 
 ---
 
@@ -103,12 +104,29 @@ Let’s start by reflecting on your current skills.
 
 ❓ *Which digital skills (or tools) do you want to learn more about this year?* 
 
-<div id="frame-q1"></div> 
+::: {.content-visible when-format="revealjs"}
+
+::: panel-tabset
+
+##### Contribute
+
+<div style="text-align: center; background: transparent;">
+<a href="https://ds-shiny-helper.azurewebsites.net/edsm1/?contribute=true&amp;embed=true#shiny-tab-q1_input" style="color: #ffffff; background: transparent; display: inline-block;">
+<img src="fig/edsm1-q1-contribute-qr.png" alt="QR code for the digital skills reflection response form." style="width: 35%;"><br>
+Open the response form
+</a>
+</div>
+
+##### Contribute / Results
+
+<div id="frame-q1"></div>
+
 <script>
 document.addEventListener("DOMContentLoaded", function() {
   const params = new URLSearchParams(window.location.search);
   const base = "https://ds-shiny-helper.azurewebsites.net/edsm1/?embed=true";
-  const isContrib = params.get("contribute") === "true";
+  const isContrib = params.get("contribute") === "true" && !document.querySelector(".reveal");
+  if (!document.querySelector(".reveal") && !isContrib) return;
 
   const src = isContrib
     ? `${base}&contribute=true#shiny-tab-q1_input`
@@ -119,6 +137,10 @@ document.addEventListener("DOMContentLoaded", function() {
              style="border:none;" title="Q1"></iframe>`;
 });
 </script>
+
+:::
+
+:::
 
 :::
 
@@ -149,7 +171,7 @@ At the University of Nottingham, research operates within a **digitally integrat
 
 ## Microsoft 365: A Platform for Collaboration
 
-Microsoft 365 supports daily research activity—from communication to data management—within a single, integrated workspace.
+Microsoft 365 supports daily research activities within a single, integrated workspace.
 
 | **Tool** | **Function** |
 |-----------|---------------|
@@ -197,23 +219,9 @@ UniCore and RIS link the operational and administrative sides of research.
 | **Grant Management** | Develop and cost funding proposals |
 | **Outputs Tracking** | Record publications and datasets |
 | **Impact Recording** | Capture engagement and REF evidence |
-| **ORCID Integration** | Synchronise researcher identity and outputs |
+| **Integration** | Syncs with ORCID and external repositories |
 
 > 📚 *RIS ensures research activity is captured and connected institutionally.*
-
-
-## System Use in Context
-
-| **Research Task** | **Recommended System** | **Collaboration Benefit** |
-|--------------------|------------------------|----------------------------|
-| Co-author a paper | OneDrive / Word | Real-time editing and version control |
-| Submit a funding bid | RIS | Shared proposal development and audit trail |
-| Claim expenses | UniCore | Secure and traceable reimbursement |
-| Share datasets | SharePoint / Teams | Controlled access and persistence |
-| Record outputs | RIS + ORCID | Automatic institutional linking |
-
-> ⚙️ *Each platform serves a distinct role in the research ecosystem.*
-
 
 ## The Broader Vision: Connected Research
 
@@ -229,35 +237,57 @@ By using institutional systems effectively teams build **trust and accountabilit
 
 #### Task 2: Match Research Tasks to Tools (5 min)
 
-::: panel-tabset
-##### Activity
-
 List the digital tools you would use for each of the following:
 
+::: {.content-visible when-format="revealjs"}
+
+::: panel-tabset
+
+##### Contribute
+
+<div style="text-align: center; background: transparent;">
+<a href="https://ds-shiny-helper.azurewebsites.net/edsm1/?contribute=true&amp;embed=true#shiny-tab-q2_input" style="color: #ffffff; background: transparent; display: inline-block;">
+<img src="fig/edsm1-q2-contribute-qr.png" alt="QR code for the research task and digital tools response form." style="width: 35%;"><br>
+Open the response form
+</a>
+</div>
+
+##### Contribute / Results
+
 <div id="frame-q2"></div>
+
 <script>
 document.addEventListener("DOMContentLoaded", function() {
   const params = new URLSearchParams(window.location.search);
   const base = "https://ds-shiny-helper.azurewebsites.net/edsm1/?embed=true";
-  const isContrib = params.get("contribute") === "true";
+  const isContrib = params.get("contribute") === "true" && !document.querySelector(".reveal");
+  if (!document.querySelector(".reveal") && !isContrib) return;
 
   const src = isContrib
     ? `${base}&contribute=true#shiny-tab-q2_input`
     : `${base}#shiny-tab-q2_results`;
 
-  document.getElementById("frame-q2").innerHTML =
+document.getElementById("frame-q2").innerHTML =
     `<iframe src="${src}" width="100%" height="500" frameborder="0"
              style="border:none;" title="Q2"></iframe>`;
 });
 </script>
 
-##### Answers
+##### Discussion
 
-- **Microsoft Word -> Sharepoint + Teams** are ideal for collaborative document editing  
-- **RIS (Worktribe)** is used for grant applications and research output tracking  
-- **UniCore** handles finance, procurement, HR and expenses  
-- **Microsoft Teams + SharePoint** are best for group file access and collaboration  
+| Research task | Suggested answer |
+|---|---|
+| Co-write a manuscript | **Word** with **Teams**; store the shared file in **SharePoint** or **OneDrive**. |
+| Submit a funding bid | **RIS (Worktribe)** for the bid; use **Word** and **Teams** for drafting and collaboration. |
+| Order equipment | **UniCore**. |
+| Share large datasets | **SharePoint** through **Teams**, subject to access controls and local research data storage guidance. |
+
+The Shiny activity offers **Teams, Word, SharePoint, RIS, UniCore** and **OneDrive** as options, but it does not score responses against a fixed answer key.
+
 :::
+
+:::
+
 :::
 
 # Research Identity & Profiles
@@ -292,20 +322,6 @@ A consistent identity links your outputs, affiliations, and roles automatically 
 
 > 🧠 ORCID is useful because other systems can read the same stable identifier.
 
-
-## RIS (Research Information System) at UoN
-
-At UoN, **RIS (Worktribe)** complements your ORCID profile by linking research activity to institutional records.
-
-| **Feature** | **Function** |
-|--------------|--------------|
-| **Grant Management** | Tracks proposals, approvals, and costings |
-| **Outputs Dashboard** | Records publications, datasets, and impacts |
-| **Compliance** | Supports REF and Open Access requirements |
-| **Integration** | Syncs with ORCID and external repositories |
-
-> 🏛️ *RIS ensures your institutional identity mirrors your global research presence.*
-
 ## Managing Your Research Profiles
 
 It is recomended that you:
@@ -322,7 +338,7 @@ It is recomended that you:
 
 ::: callout-task 
 
-#### Task 3: Research Identity Self-Audit (5 min)
+#### Task 3: Research Identity Self-Audit (10 min)
 
 ::: panel-tabset
 
@@ -387,7 +403,6 @@ Protecting them is vital for maintaining research integrity and trust.
 
 > ⚙️ *Encryption safeguards your work even when devices are compromised.*
 
-
 ## Secure Remote Access
 
 Remote work expands flexibility but increases risk.  
@@ -430,14 +445,29 @@ Cybersecurity requires daily habits, not one-off actions.
 
 #### Task 4: Digital Security Self-Audit (5 min)
 
+::: {.content-visible when-format="revealjs"}
+
 ::: panel-tabset
-##### Exercise  
+
+##### Contribute
+
+<div style="text-align: center; background: transparent;">
+<a href="https://ds-shiny-helper.azurewebsites.net/edsm1/?contribute=true&amp;embed=true#shiny-tab-q4_input" style="color: #ffffff; background: transparent; display: inline-block;">
+<img src="fig/edsm1-q4-contribute-qr.png" alt="QR code for the digital security response form." style="width: 35%;"><br>
+Open the response form
+</a>
+</div>
+
+##### Contribute / Results
+
 <div id="frame-q4"></div>
+
 <script>
 document.addEventListener("DOMContentLoaded", function() {
   const params = new URLSearchParams(window.location.search);
   const base = "https://ds-shiny-helper.azurewebsites.net/edsm1/?embed=true";
-  const isContrib = params.get("contribute") === "true";
+  const isContrib = params.get("contribute") === "true" && !document.querySelector(".reveal");
+  if (!document.querySelector(".reveal") && !isContrib) return;
 
   const src = isContrib
     ? `${base}&contribute=true#shiny-tab-q4_input`
@@ -449,406 +479,344 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 </script>
 
-##### Follow-up  
+<details>
+<summary>Follow-up</summary>
+
 - Identify one way in which you can improve your digital security in the coming week  
-- Reflect on what was easy/hard to assess, and which barriers exist for better practice  
+- Reflect on what was easy/hard to assess, and which barriers exist for better practice
+
+</details>
+
 :::
+
+:::
+
 :::
 
 # Literature Discovery and Reference Management
 
-![A literature workflow you can trace.](fig/eds-literature-workflow.svg){fig-alt="Find literature, check its details, read and organise sources, then cite them. New questions return to the search; keep a search log and source links throughout." fig-align="center" width="90%"}
+## Find Evidence You Can Use
+
+Literature review are an intrisic component of the research lifecycle: Researchers need relevant papers, accurate references and notes you can trace back to the sources.
+
+A literature review can be broken down into three parts:
+
+- **Discovery:** choose a search service and build a focused search.
+- **Organisation:** check references, handle duplicates and keep useful reading notes.
+- **Citeation:** connect claims to sources and maintain the bibliography.
+
+## A Literature Workflow You Can Trace
+
+A research question leads to a search, checked records, linked notes and claims that can be traced back to their sources.
+
+![Four connected steps: find, check, read and organise, then cite.](fig/eds-literature-workflow.svg){fig-alt="Find literature and follow citation trails, check the reference against its source, organise reading notes with the reference, then cite and check the bibliography. A return arrow connects new questions to further searching." fig-align="center" width="88%"}
+
+> 🧭 New questions refine the search. Keep a search log and stable source links throughout.
 
 ## Start with a Research Question
 
-A useful literature workflow connects **the question, the search, the reference and your reading notes**.
+A useful workflow connects **the question, the search, the reference and your reading notes**.
 
-- What do you need to understand or support with evidence?
-- Which concepts, populations or contexts matter?
-- What would make a source relevant to this question?
+- Define what you need to understand or support with evidence.
+- Identify the main concepts and alternative terms.
+- Decide what would make a source relevant.
 
-**Room check:** turn to a neighbour and describe one question from your research. Together, identify two searchable concepts.
+> 📖 Finding a paper is the start: decide what it contributes before citing it.
 
-> 🔎 Finding a paper is the start: you still need to decide what it contributes.
+## Choose a Search Service
 
-## Choose an Appropriate Search Service
+| Service | Useful for |
+|---|---|
+| **NUsearch** | Finding material available through the UoN library |
+| **Subject databases** | Discipline-specific literature, fields and subject headings |
+| **Google Scholar** | Broad discovery and citation trails |
+| **AI-assisted search tools** ([Elicit](https://elicit.com), [Consensus](https://consensus.app), [Semantic Scholar](https://www.semanticscholar.org), [ResearchRabbit](https://www.researchrabbit.ai)) | Discovering relevant papers, exploring research questions and identifying connections between studies |
 
-| Starting point | Useful for | What to check |
-|---|---|---|
-| **NUsearch** | Finding material available through the university library | Whether the record links to the full text you need |
-| **Subject databases** | Searching literature within a discipline | Coverage, subject headings and available search fields |
-| **Google Scholar** | Broad discovery and following citations | Publication type, source quality and search limitations |
-| **A relevant paper's references** | Finding earlier work behind a claim or method | Whether you need the original source rather than a later summary |
-
-Choose the service that fits the question. One search service will not necessarily cover all relevant literature.
-
-[UoN Libraries: bibliographic databases](https://www.nottingham.ac.uk/library/documents/research/subject-databases-for-searching.pdf)
+> 🔎 Check coverage and search features. One service may not cover all relevant literature. [UoN Libraries: bibliographic databases](https://www.nottingham.ac.uk/library/documents/research/subject-databases-for-searching.pdf)
 
 ## Construct a Basic Search
 
-List synonyms **within** each concept, then combine **different** concepts.
+Most search engines use similar controls to restrict searches. For example; (doctoral OR postgraduate) AND ("writing group" OR "writing retreat"). In this instance:
 
-```text
-(doctoral OR postgraduate) AND ("writing group" OR "writing retreat")
-```
+- **OR:** alternative terms for the same concept.
+- **AND:** combine different concepts.
+- **Quotation marks:** phrases, where supported.
 
-- **OR** includes alternative terms for a concept.
-- **AND** requires both concepts in the results.
-- Quotation marks can search a phrase where the service supports them.
-- Check the service's syntax; field names and search operators vary.
+> 🔍 Check the service's syntax and record filters. 
 
-Inspect the first few results. Are relevant papers appearing? Adjust one part of the search and compare what changes. Record filters rather than applying them without explanation.
+## Follow Citation Trails
 
-> 🧠 The example is a starting search, not a complete systematic review strategy.
+From a relevant starting paper, follow its reference list backwards and find later papers through cited-by links.
 
-## Follow Citation Trails and Access the Paper
+![Citation trails in both directions.](fig/eds-citation-trails.svg){fig-alt="From a starting paper, follow its references backwards to earlier sources and cited-by links forwards to later papers." fig-align="center" width="85%"}
 
-![Citation trails in both directions.](fig/eds-citation-trails.svg){fig-alt="Follow a starting paper's references backwards to earlier sources and cited-by links forwards to later papers. Read and evaluate the sources you find." fig-align="center" width="90%"}
+> 🔎 Follow the links, then read and evaluate each source.
 
-- **Look backwards:** inspect the references of a relevant paper.
-- **Look forwards:** use a service's cited-by links to find later papers that cite it.
-- **Retrieve the source:** follow the library's full-text links and sign in when required.
-- **If access fails:** check for a lawful open-access version or ask the library about obtaining it.
+## Access and Read the Source
 
-Check which version you are reading, including whether it is a preprint or published article. Record its DOI or another stable link.
+- Follow **references backwards** and **cited-by links forwards**.
+- Use the library's full-text links and sign in where required.
+- If access fails, look for a lawful open version or ask the library.
+- Record the DOI or stable link and the version you read.
 
-> 📖 A search snippet or abstract can help you select a paper; it cannot replace reading the material needed to support your claim.
+> 📚 An abstract can help select a paper. Read the relevant full text before using it to support a claim.
 
-## Record Searches and Keep Up with a Topic
+## Keep a Search Log
 
-Keep a short search log:
+Record five things:
 
-| Record | Example |
+1. Research question.
+2. Service and date searched.
+3. Exact query and filters.
+4. Relevant references and result count, if available.
+5. Next search or citation trail to follow.
+
+> 📝 A colleague should be able to understand how you found the source. some modern software help you record this by default
+
+## Keep Up with a Topic
+
+Where available, save a search and create an **email or RSS alert**. Author, journal and citation alerts offer other routes.
+
+Review alerts regularly and record which papers you retain. Alerts support discovery; they do not replace the search record needed for a review.
+
+## Storing References; EndNote or Zotero?
+
+| Tool | Why consider it? |
 |---|---|
-| Question | What is known about doctoral writing groups? |
-| Service and date | Named subject database; date searched |
-| Exact query and filters | Search string, fields, date limits and other filters |
-| Result | Number returned and references selected for reading |
-| Next step | Search another term or follow a citation trail |
+| **EndNote** | Groups, library sharing and Cite While You Write integration; check UoN access |
+| **Zotero** | Free reference manager with browser capture, collections, notes and citation integration |
 
-Where supported, save the search and set an **email or RSS alert** for new results. Author, journal or citation alerts can also help you keep up with a topic.
+> 🧭 Choose one that suits your co-authors and writing workflow. You do not need either installed for today's tasks. [UoN EndNote guidance](https://xerte.nottingham.ac.uk/USER-FILES/53584-uazecw-Nottingham/media/2025%20EndNote%20-%20Separate%20guide%20-%20Downloading%20Endnote.pdf) · [Zotero quick start](https://www.zotero.org/support/quick_start_guide)
 
-Record when you review an alert and which papers you retain. Alerts support ongoing discovery; they do not replace a documented search when a review needs one.
+## Import, Then Check
 
-## Recommended Reference Managers: EndNote and Zotero
+Import through a database export, supported browser capture or identifier such as a DOI. The **reference record** and **PDF attachment** are separate. Always check:
 
-Both tools help you collect, organise and cite references. Choose one that fits your collaborators and writing workflow.
+- authors and order;
+- title, year and item type;
+- journal/publisher, volume and pages;
+- DOI or stable URL.
 
-| Tool | Why consider it? | Before you begin |
-|---|---|---|
-| **EndNote** | An established reference manager with library organisation and Cite While You Write integration | Check UoN access, your installed version and the writing integration you need |
-| **Zotero** | A free reference manager with browser capture, notes, collections and citation integration | Install the application and browser Connector; check your writing integration |
+> ✅ Correct the library record so later citations use the corrected details.
 
-You do not need to learn both today. Agree a compatible approach with co-authors before building a large shared library.
+## Organise and Annotate
 
-[UoN EndNote setup guidance](https://xerte.nottingham.ac.uk/USER-FILES/53584-uazecw-Nottingham/media/2025%20EndNote%20-%20Separate%20guide%20-%20Downloading%20Endnote.pdf) · [Zotero quick start](https://www.zotero.org/support/quick_start_guide)
+Use **EndNote groups** or **Zotero collections** for projects and topics.
 
-## Import References and Check the Details
+A useful reading note contains:
 
-Import from a database's export function, a supported browser capture tool or a recognised identifier such as a DOI. A **reference record** and its **full-text attachment** are separate things.
+- the finding relevant to your question;
+- its page, section, table or figure;
+- a limitation or next question.
 
-Compare the imported record with the original source:
+> 📝 Keep quotations, paraphrases and your own ideas distinct. Label an abstract-only note and attach lawfully obtained full text where appropriate.
 
-- Authors and their order
-- Title, publication year and item type
-- Journal or publisher
-- Volume, issue, pages or article number, where applicable
-- DOI or stable URL
+## Duplicates and Shared Libraries
 
-Correct the record in your library so future citations use the corrected details.
+Compare suspected duplicates before removing anything. Preserve useful notes and attachments; a preprint and published article can require separate records.
 
-> 🔍 Automatic import saves typing; it does not guarantee accuracy.
+> 🤝 For a shared library, agree **owner, editors, organisation and correction responsibilities**. Check which notes and attachments the sharing method includes. [Zotero duplicates](https://www.zotero.org/support/duplicate_detection) · [Group libraries](https://www.zotero.org/support/groups) · [EndNote groups](https://docs.endnote.com/docs/endnote/2025/v1/windows/en/content/05groups_and_tags/the_groups_panel.htm)
 
-## Organise a Library and Attach Reading Notes
+## Cite and Generate a Bibliography
 
-Use **groups in EndNote** or **collections in Zotero** to organise references by project or topic. Use a small, consistent set of tags or keywords where useful.
+1. Insert a citation linked to the checked record.
+2. Add a page locator where required.
+3. Generate the bibliography from cited records.
+4. Choose the required style and refresh.
 
-Attach a reading note to the reference, or record it in the reference's notes field:
+> 🔍 Check that the source supports the claim. Fix bibliographic errors in the library; preserve citation fields in the working document. [Zotero citation guidance](https://www.zotero.org/support/creating_bibliographies)
 
-- **Question:** why am I reading this?
-- **Evidence:** what does the source actually report?
-- **Location:** page, section, table or figure supporting the note
-- **Interpretation:** my response, limitations and next questions
+## Move Between Tools Carefully
 
-Label exact quotations and keep them distinct from paraphrases and your own ideas. Attach a lawfully obtained PDF where appropriate.
+Export in a supported format such as **BibTeX**. 
 
-> 📝 Record enough context to understand the note when you return to it months later.
+- Keep the original library and test a small sample.
+- Compare counts and key fields after importing.
+- Check notes, attachments and organisation.
+- Check existing document citation links separately.
 
-## Handle Duplicates and Shared Libraries
+> 📦 A formatted bibliography is not a portable library. [Zotero export guidance](https://www.zotero.org/support/kb/exporting)
 
-Duplicate checks identify **possible matches**, not a reason to delete records automatically. Compare identifiers, titles, authors and versions, then preserve useful notes and attachments.
+## Search Plan: Worked Check
 
-- **Zotero:** inspect Duplicate Items and merge genuine duplicates after reviewing the retained fields.
-- **EndNote:** use Find Duplicates and review which record to retain; preserve useful content before removing a duplicate.
-- A preprint and its published article may need separate records.
+A subject database can support a discipline-specific search; NUsearch can help locate accessible material. The example query combines alternatives using OR and concepts using AND.
 
-For a shared library, agree an owner, editing permissions, organisation and who corrects records. Use the tool's supported sharing features; check whether the selected sharing method includes notes and attachments.
-
-**Room question:** who should be able to edit your project's reference library, and who would maintain it if you left?
-
-[Zotero duplicate detection](https://www.zotero.org/support/duplicate_detection) · [Zotero group libraries](https://www.zotero.org/support/groups) · [EndNote groups and sharing guidance](https://docs.endnote.com/docs/endnote/2025/v1/windows/en/content/05groups_and_tags/the_groups_panel.htm)
-
-## Insert Citations and Generate a Bibliography
-
-Use the reference manager's writing integration to:
-
-1. Insert a citation linked to a library record.
-2. Add a page locator when required, particularly for quotations.
-3. Generate the bibliography from the cited records.
-4. Change the citation style and refresh the document.
-
-Check the result against your discipline or publication's requirements. Correct source details in the library rather than repeatedly editing a generated bibliography.
-
-Keep citation fields intact in the working document. If a submission requires plain text, create a separate final copy.
-
-[Zotero citations and bibliographies](https://www.zotero.org/support/creating_bibliographies)
-
-## Export References When Changing Tools
-
-Use a format the receiving tool supports, such as **RIS** or **BibTeX**. Here, RIS is a reference exchange format, distinct from UoN's Research Information System.
-
-- Keep a backup of the original library.
-- Export a small sample and import it into a separate test library first.
-- Compare record counts and key bibliographic fields.
-- Check notes, attachments and organisation: these may not transfer completely.
-- Check existing document citations separately; exporting a library does not automatically convert their links to another manager.
-
-> 🧳 A formatted bibliography is not a portable copy of your reference library.
-
-[Zotero export guidance](https://www.zotero.org/support/kb/exporting)
-
-## Task 5a: Search Together (5 min)
+Record the service, date, exact query and filters. Follow references or cited-by links, then check whether a saved-search alert is available. Other choices are valid when they fit the question.
 
 ::: callout-task
 
-Work in pairs. Choose one research question; use **doctoral writing groups** if you need a starting topic.
-
-1. **1 min:** agree two concepts and choose a search service. Explain the choice to your partner.
-2. **2 min:** search, inspect the results and change one term. Record the service, date, exact queries and filters.
-3. **1 min:** select one relevant source and follow one backward or forward citation link. Try to open the full text through the library.
-4. **1 min:** locate an alert or saved-search option and join the room debrief. If none exists, name another monitoring route.
-
-**Room engagement:** the instructor takes a show of hands for each search service and asks two pairs: “What changed when you revised your search?”
-
-**Keep:** a search log and two candidate references. A candidate still needs checking before you use it as evidence.
-:::
-
-## Task 5b: Build a Checked Library (5 min)
-
-::: callout-task
-
-Use EndNote or Zotero. One person operates the software; the other checks the sources. Swap roles halfway through.
-
-1. **2 min:** import your two candidate references into a practice library and organise them in a named group or collection.
-2. **1 min:** compare one record's authors, year and DOI or stable URL with the original source. Correct an error or record the fields checked.
-3. **1 min:** attach a short reading note to that reference. Label it as an **abstract-only note** if that is all you have read. Include a source location and one question for further reading.
-4. **1 min:** inspect the instructor's duplicate example and join the room debrief. State how you would confirm a match and preserve useful notes.
-
-**Room engagement:** compare one checked field with a neighbouring pair. The instructor asks two pairs to explain why it matters for citation accuracy.
-
-**Keep:** two imported records, one checked record and one source-linked reading note.
-
-**Follow-up practice:** check the second record fully, then import a reference again in your practice library and resolve the genuine duplicate without losing the note.
-:::
-
-## Task 5c: Cite, Export and Compare (5 min)
-
-::: callout-task
-
-1. **2 min:** write one sentence describing what your checked source covers. Insert a linked citation using the writing integration and generate a bibliography. Check that the citation supports the sentence.
-2. **1 min:** change the citation style and refresh the bibliography. Compare the result with your partner.
-3. **1 min:** export the two references in a supported format. Keep the original library and name one thing you would check after importing the file elsewhere.
-4. **1 min:** agree who would own a shared library and who could edit it. Two pairs report their decisions during the room debrief.
-
-**Room debrief:** “What could be lost when we share or move this library?” The instructor collects examples covering metadata, notes, attachments and document citation links.
-
-**If software or an integration is unavailable:** join a pair with a working setup, or check sources and write notes while the instructor demonstrates import, citation and export. Record the access issue for follow-up.
-
-**Keep:** a cited paragraph, bibliography and reference export, or checked notes and a record of the demonstrated steps.
-
-**Follow-up practice:** cite the second source and import your export into a separate test library. Compare counts, fields, notes and attachments.
-:::
-
-# Tools to Support Writing
-
-![Structure supports navigation and reliable numbering.](fig/eds-document-structure.svg){fig-alt="A document heading connects to styles for navigation, a table caption to managed numbering, and a cross-reference to a linked mention that stays connected when numbering changes." fig-align="center" width="90%"}
-
-## Choose Word or LaTeX for the Work
-
-| Tool | A useful starting point when... | Discuss with co-authors |
-|---|---|---|
-| **Microsoft Word** | You want familiar editing, comments, tracked changes and reference-manager integration | Desktop/web features, document location and review responsibilities |
-| **LaTeX**, locally or through a service such as Overleaf | Your discipline uses mathematical typesetting or a LaTeX publication template | Who can edit the source, bibliography workflow and available collaboration features |
-
-LaTeX uses marked-up source files that compile into a document. Word offers direct visual editing. Neither removes the need to check the final output.
-
-**Room check:** show of hands for Word, LaTeX or another tool. Ask a neighbour: “Could every co-author review my chosen format?”
-
-## Structure Before Appearance
-
-| Purpose | Word | LaTeX |
-|---|---|---|
-| Identify sections | Heading styles | Section commands such as `\section{...}` |
-| Describe tables and figures | Insert Caption | A caption within the appropriate table or figure environment |
-| Refer to an item | Insert Cross-reference | A label and reference, such as `\label{...}` and `\ref{...}` |
-| Manage references | EndNote or Zotero writing integration | A bibliography file and the template's citation commands |
-
-Use structure rather than manually typing numbers or making text look like a heading. Update fields or recompile after changes, then check the references and layout.
-
-Heading styles also support navigation and accessibility; bold text alone does not identify a heading.
-
-[Word captions](https://support.microsoft.com/en-us/word/add-format-or-delete-captions-in-word) · [Word cross-references](https://support.microsoft.com/en-us/word/create-a-cross-reference) · [LaTeX cross-references](https://www.overleaf.com/learn/latex/Cross_referencing_sections%2C_equations_and_floats)
-
-## Comments and Tracked Changes Have Different Jobs
-
-- **Comments:** ask a question, explain a concern or request evidence.
-- **Tracked changes:** propose an identifiable edit for someone to accept or reject.
-- **Author review:** respond to comments and decide which edits to retain.
-
-In Word, turn on Track Changes before reviewing. Hiding markup does not accept the changes or remove comments.
-
-For LaTeX, agree how you will review source changes and discuss the compiled document. Services may offer comments and tracked changes, but availability depends on the tool and account.
-
-> 💬 “What evidence supports this sentence?” is more useful than silently rewriting its meaning.
-
-[Word tracked changes](https://support.microsoft.com/en-us/word/training/track-changes-in-word) · [Overleaf tracked changes](https://docs.overleaf.com/collaborating/track-changes)
-
-## Version History and the Authoritative Version
-
-Tracked changes support **review**; version history supports **recovering and comparing saved states**. They serve different purposes.
-
-- For shared Word documents, use an agreed Teams/SharePoint location and check the available version history.
-- For LaTeX, use the editor's history or an agreed source version-control workflow, such as Git where the team already uses it.
-- Keep the editable document or source files, bibliography and supporting assets together.
-- Record the reviewed version used for submission, including the compiled PDF where relevant.
-
-An emailed attachment is a separate copy. Agree how any edits to that copy return to the authoritative document.
-
-[Microsoft 365 version history](https://support.microsoft.com/en-gb/office/collab-files/view-previous-versions-of-office-files)
-
-## Agree a Co-author Review Process
-
-![Review one authoritative source together.](fig/eds-coauthor-review-loop.svg){fig-alt="Co-authors draft in an agreed location, propose edits and comments, decide which changes to retain, and record an approved version. Return revisions to the same source; use version history to inspect saved states." fig-align="center" width="90%"}
-
-Before substantial writing, agree:
-
-1. **Where:** the authoritative document and reference library live.
-2. **Who:** drafts, checks evidence, reviews and accepts changes.
-3. **How:** co-authors propose edits, discuss disagreements and update references.
-4. **When:** reviews are due and which version is ready for approval.
-5. **What is retained:** the approved document, sources and record of important decisions.
-
-Use one writing and citation workflow that the team can maintain. Check the references again before submission, especially after combining contributions.
-
-> 🤝 A shared link helps only when everyone knows which document it identifies and how to review it.
-
-## Practice Draft: A Small Writing Pilot
-
-Use this **fictional teaching example** for the writing activities. The counts are invented for practice.
-
-**Title:** A pilot writing session
-
-**Background:** We wanted to explore participants' experiences of a writing session.
-
-**Results:** Six volunteers attended a one-hour session. Four reported feeling more confident immediately afterwards. There was no comparison group or later follow-up.
-
-**Draft conclusion:** These findings prove that writing sessions benefit all researchers.
-
-| Immediate self-reported confidence | Number of participants |
-|---|---:|
-| More confident | 4 |
-| Unchanged | 2 |
-
-**Unstructured draft reference:** “See the table above.”
-
-> 🧪 This exercise checks writing and review skills. It provides no real evidence about writing sessions.
-
-## Task 6a: Give the Draft Structure (5 min)
-
-::: callout-task
-
-Work in pairs using Word, or LaTeX if you already use it. Start from the practice draft above.
-
-1. **1 min:** open a copy of the practice draft and apply meaningful section headings. Check that you can navigate by its structure.
-2. **2 min:** give the supplied table a numbered caption and replace “the table above” with a cross-reference.
-3. **1 min:** follow the instructor's renumbering demonstration: insert another captioned table before it, update fields or recompile, and check where the cross-reference points.
-4. **1 min:** swap the operator and checker. Explain what is generated automatically and what you must still inspect.
-
-**Room engagement:** the instructor asks a pair to demonstrate the changed numbering and the room to identify why a manually typed table number would be fragile.
-
-**If your editor lacks the feature:** use a partner's desktop setup or check the instructor's demonstration. Note which feature your workflow requires.
-
-**Keep:** a structured document with a caption and a working cross-reference.
-
-**Follow-up practice:** repeat the renumbering test yourself and check the compiled or exported document.
-:::
-
-## Task 6b: Review as Co-authors (5 min)
-
-::: callout-task
-
-One person acts as the author and the other as the reviewer.
-
-1. **1 min:** the reviewer comments on the draft conclusion and proposes a more defensible sentence using tracked changes, or the agreed LaTeX review method.
-2. **1 min:** the author explains whether they accept the edit and responds to the comment. Swap roles to check the revision.
-3. **2 min:** write a three-line agreement: **authoritative location; reviewer and decision-maker; review deadline and how the approved version will be recorded**. Locate version history if your setup supports it.
-4. **1 min:** two pairs report one review rule; the room compares these with their own agreements. The instructor asks: “What happens if a co-author returns an edited attachment?”
-
-**Debrief:** the conclusion exceeds the supplied evidence. Review should correct the claim as well as improve the prose. Agree how edits return to the authoritative version before creating parallel copies.
-
-**Keep:** a reviewed document and a short co-author agreement.
-:::
-
-## AI for Writing: Set the Boundaries
-
-AI can suggest an outline, clarify a sentence or shorten text. Keep the **evidence, interpretation and final decision** with the researcher.
-
-- Define the **task, context, source boundary and output format**; ask it to flag uncertainty.
-- Use only material permitted in the chosen service. Practise with public or fictional text when permissions are unclear.
-- Check claims, numbers and citations against the original sources. Editing can change meaning or remove caveats.
-- Record the tool/model, date, important inputs and prompts, checks and changes retained. Follow applicable disclosure requirements.
-
-These principles come from [Responsible Use of Generative AI](../../responsible_use_of_generative_ai/index.qmd), particularly [Prompting for Research](../../responsible_use_of_generative_ai/episodes/02-Prompting_for_research.qmd).
-
-> 🧠 A polished rewrite still needs an evidence check.
-
-## Task 6c: Check an AI-style Rewrite Together (5 min)
-
-::: callout-task
-
-The following rewrite is **invented for this exercise**, not a live AI response. Compare it with the practice draft's results.
-
-> “The session significantly improved researchers' writing confidence. The findings demonstrate lasting benefits for researchers across the university.”
+#### Task 5: Check the Records (5 min)
 
 ::: panel-tabset
 
-##### Pair Work and Room Vote
+##### Task
 
-1. **2 min:** underline claims that the source does not support. Rewrite the passage while preserving the counts and limitations.
-2. **1 min:** vote by show of hands: **accept; revise; reject**. Two pairs read their revisions and explain one correction.
-3. **2 min:** agree one instruction that might prevent this drift and one check you would still perform. Write a brief record of the example reviewed, checks made and wording retained.
+**Fictional teaching example.** Both records below were imported from the same article. 
 
-##### Debrief
+| Field | Record A | Record B |
+|---|---|---|
+| Authors | Chen, R. | Chen, R.; Patel, M. |
+| Year | 2024 | 2025 |
+| Title | Writing groups | Doctoral writing groups: a small pilot |
+| Reading note | Question about recruitment | Methods, p. 13: six volunteers |
 
-No statistical test supports “significantly”, no follow-up supports “lasting”, and six volunteers cannot establish a university-wide effect.
+Its title-page details are:
 
-A defensible revision is: “Four of six volunteers reported greater confidence immediately after the session. With no comparison group or later follow-up, we cannot establish its effect or whether any benefit persisted.”
+Chen, R. and Patel, M. (2025). *Doctoral writing groups: a small pilot*. Example Research Journal, 4(1), 12–19.
 
-Ask for clarity without adding evidence or strengthening claims. Compare the revision with the source yourself; record and disclose actual AI contributions where required.
+1. **2 min:** identify the fields to correct and decide how to combine this confirmed duplicate without losing either note.
+2. **2 min:** write a source-linked reading note and choose a project group or collection.
+3. **1 min:** two pairs share one correction and the information they would preserve.
+
+##### Discussion
+
+Record B matches the supplied authors, title and year. Complete the journal, volume and pages from the source; retain both useful notes with their context.
+
+A note could be: “Methods, p. 13: six volunteers; check recruitment before drawing wider conclusions.” Do not invent a DOI or findings absent from the supplied material.
 :::
+:::
+
+
+# Tools to Support Writing
+
+## Make Writing Easier To Review
+
+You are drafting a paper with co-authors. Everyone needs to navigate the document, check the evidence and identify the version being reviewed.
+
+Writing tools can help you to:
+
+- **Structure your work:** use headings, captions and cross-references.
+- **Collaborate:** agree how comments, edits and versions are handled.
+- **Check:** keep revisions, including rewrites, faithful to the evidence.
+
+>  Agree a format with your co-authors before you start writing. 
+
+## Structure Supports Reliable Writing
+
+Heading styles organise sections, captions label tables and figures, and cross-references connect mentions to the relevant item.
+
+![A sample Results page connects its heading, table caption and table mention to document structure tools.](fig/eds-document-structure.svg){fig-alt="A sample Results page connects its heading to heading styles, its table caption to captions, and its table mention to cross-references." fig-align="center" width="85%"}
+
+> 🔗 Refresh fields after edits, then check captions and cross-references in the final document.
+
+## Choose Word or LaTeX
+
+There are multiple tools you can use to write with. two of the most common in scientific research are Micorsoft Word and LaTeX:
+
+| Tool | Useful when |
+|---|---|
+| **Word** | Co-authors want familiar editing, comments, tracked changes and citation integration |
+| **LaTeX** | The discipline needs mathematical typesetting or a LaTeX publication template |
+
+> Check that co-authors can review the chosen format. Word uses visual editing; LaTeX compiles marked-up source. Both need a final output check.
+
+## Use Document Structure
+
+Always conform with the tool you are using when structuring documents:
+
+| Purpose | Word | LaTeX |
+|---|---|---|
+| Sections | Heading styles | `\section{...}` |
+| Tables/figures | Insert Caption | Caption in the appropriate environment |
+| Linked mentions | Insert Cross-reference | `\label{...}` and `\ref{...}` |
+
+> Update fields or recompile after changes. Bold text alone does not identify a heading; manually typed numbers can become stale. [Word captions](https://support.microsoft.com/en-us/word/add-format-or-delete-captions-in-word) · [Cross-references](https://support.microsoft.com/en-us/word/create-a-cross-reference) · [LaTeX references](https://www.overleaf.com/learn/latex/Cross_referencing_sections%2C_equations_and_floats)
+
+## Structure Scientific Writing with IMRaD
+
+Most scientific research papers follow the **IMRaD structure** to communicate research clearly and logically:
+
+| Section | Key question | Purpose |
+|---|---|---|
+| **Introduction** | Why was the study needed? | Establish context, identify the research gap and state the objectives |
+| **Methods** | How was the study conducted? | Describe the design, data and methods sufficiently to support reproducibility |
+| **Results** | What was found? | Present findings objectively using text, tables and figures |
+| **Discussion** | What do the findings mean? | Interpret results, relate them to existing evidence and acknowledge limitations |
+
+> **Think of IMRaD as a logical argument:** Why? → How? → What? → So what? The structure supports clarity and reproducibility, but conventions vary between disciplines and journals. [Scientific writing (IMRaD)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC442179/)
+
+## Comments and Tracked Changes
+
+Use both comments and tracked changes when collaborating:
+
+- **Comment:** ask a question or explain a concern.
+- **Tracked change:** propose an edit for acceptance or rejection.
+- **Author decision:** respond and decide what to retain.
+
+> For LaTeX, agree how to review source changes and the compiled document; collaboration features depend on the tool and account. [Word review](https://support.microsoft.com/en-us/word/training/track-changes-in-word) · [Overleaf review](https://docs.overleaf.com/collaborating/track-changes)
+
+## Identify the Authoritative Version
+
+**Tracked changes support review. Version history supports comparison and recovery.**
+
+Agree:
+
+- where the authoritative document, bibliography and assets live;
+- who reviews and accepts changes, and by when;
+- how the approved version is recorded.
+
+> An emailed attachment is a separate copy. Return its edits to the agreed source. For LaTeX, use editor history or the team's existing source version-control workflow. [Microsoft 365 version history](https://support.microsoft.com/en-gb/office/collab-files/view-previous-versions-of-office-files)
+
+## A Co-author Review Workflow
+
+An agreed review workflow makes clear which document is authoritative and how suggested changes become approved.
+
+![Co-authors draft, review, decide and approve work in a repeated cycle.](fig/eds-coauthor-review-loop.svg){fig-alt="Co-authors work in an agreed location, propose edits and questions, check evidence and decide which changes to accept, then record the approved version. A return arrow connects revisions to the shared source." fig-align="center" width="85%"}
+
+> 🔁 Return edits to the same source. Use version history to inspect saved states and review markup to track proposed changes.
+
+## AI for Writing: Set the Boundaries
+
+AI can suggest an outline or rewrite. The researcher remains responsible for meaning and evidence.
+
+- Specify the task, source boundary and output required.
+- Use only material permitted in the chosen service.
+- Check claims, numbers and citations against the sources.
+- Record the tool, date, contribution and checks; follow disclosure requirements.
+
+> See [Responsible Use of Generative AI](../../responsible_use_of_generative_ai/index.qmd) and [Prompting for Research](../../responsible_use_of_generative_ai/episodes/02-Prompting_for_research.qmd).
+
+
+
+::: callout-task
+
+#### Task 6: Mark Up the Structure (10 min)
+
+::: panel-tabset
+
+##### Task
+
+**Fictional example:** six volunteers attended a one-hour writing session. Four reported greater confidence immediately afterwards. There was no comparison group or later follow-up.
+
+**Draft conclusion:** “These findings prove that writing sessions benefit all researchers.”
+
+Work in pairs or small groups; no writing software is required you can do this on you computer or using paper or notes. 
+
+ACTIVITY. **5 min:** propose section headings to write up these results, a table, a caption and a clearer table reference. What other information would you need to turn this into a research paper? 
+
+##### Discussion
+
+**Possible structure:** Methods describes the six volunteers, the one-hour session, recruitment and how confidence was assessed. Results reports that four of six volunteers said they felt more confident immediately afterwards.
+
+**Possible table caption:** “Table 1. Volunteers reporting greater confidence immediately after the writing session (n = 6).” A text reference could read: “Four of six volunteers reported greater confidence immediately after the session (Table 1).”
+
+The conclusion should describe this small, uncontrolled pilot. It cannot show that the session caused the change, that it benefits all researchers or that any change lasted. A fuller report would need details of recruitment, the confidence measure, the session content and any relevant ethics approval.
+
+:::
+
 :::
 
 # Further Information
 
 ## UoN Training Resources
 
-- Microsoft 365 Training Resources
-- Excel 2016: Basic–Advanced (Online)
-- Staff session: Managing your online and RIS research profiles
-- Digital Accessibility: The Core Nottingham Accessible Practices
-- RIS: Worktribe User Guidance 
-- UniCore Training Materials
-- UoN Information Security: Protect Your Data & Devices
+- [Microsoft 365 Training Resources](https://training.nottingham.ac.uk/Course?courseref=M365TR&dates=0)
+- [Excel 2016: Basic–Advanced (Online)](https://training.nottingham.ac.uk/portal/BrowseCoursesFromSubCat?cat=21&subCatId=34)
+- [Staff session: Managing your online and RIS research profiles](https://training.nottingham.ac.uk/Portal/BrowseCategory?cat=8)
+- [Digital Accessibility: The Core Nottingham Accessible Practices](https://training.nottingham.ac.uk/Course?courseref=LT-COREACCESSIBILITY&dates=0)
+- [RIS: Worktribe User Guidance](http://moodle.nottingham.ac.uk/course/view.php?id=47898)
+- [UniCore Training Materials](https://www.nottingham.ac.uk/dts/unicore.aspx)
+- [UoN Information Security: Annual Data Protection and Information Security Awareness](https://training.nottingham.ac.uk/Portal/BrowseCategory?cat=8)
 
 ## Literature and Writing Guidance
 
@@ -857,8 +825,6 @@ Ask for clarity without adding evidence or strengthening claims. Compare the rev
 - [Zotero quick start](https://www.zotero.org/support/quick_start_guide)
 - [Overleaf: learning LaTeX](https://www.overleaf.com/learn)
 - [Responsible Use of Generative AI](../../responsible_use_of_generative_ai/index.qmd)
-
----
 
 ::: callout-keypoints
 
@@ -871,10 +837,7 @@ Ask for clarity without adding evidence or strengthening claims. Compare the rev
 - Record searches and check imported references against their original sources.
 - Use a reference manager to connect reading notes, citations and a bibliography.
 - Structure writing with headings, captions and cross-references, then agree how co-authors review the authoritative version.
-- Verify AI-assisted revisions against the evidence and retain a record of the contribution.
 :::
-
----
 
 ::: callout-hints
 
@@ -882,16 +845,15 @@ Ask for clarity without adding evidence or strengthening claims. Compare the rev
 
 - Store shared project files in Microsoft Teams rather than OneDrive to ensure long-term access for collaborators.
 - Use version history in OneDrive/SharePoint instead of manually renaming file versions.
-- Link your ORCID iD to your RIS profile to automate tracking of publications and outputs.
 - Practice “security by default”
 - Test a small reference export before moving a whole library to another tool.
-- Use comments for questions, tracked changes for proposed edits and version history to inspect saved states.
+- Use comments, tracked changes and version history to review documents.
 :::
 
 ::: {.content-visible when-format="revealjs"}
 
-## Feedback
+## Feedback and Register
 
-![](fig/feedback.png)
+![](fig/Digital_Skills_2026_2027_QR.png){fig-alt="Scan the QR code to give feedback on Digital Skills training."}
 
 :::

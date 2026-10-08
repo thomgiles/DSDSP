@@ -36,7 +36,7 @@ Without those source notes, flag the uncertain records and investigate before ch
 
 ## Task 1: Plan a Better Collection (5 min)
 
-Use with [Collecting the Right Data](../episodes/05-collecting_the_right_data.qmd).
+Use with [Collecting the Right Data](../episodes/01-collecting_the_right_data.qmd).
 
 **Goal:** decide what further data would answer: “Are support requests answered promptly across the service?” **Input:** the practice dataset and its scope. Work in pairs; one proposes a plan and the other checks it.
 
@@ -55,7 +55,7 @@ A defensible plan might include receipt and response timestamps with a stated ti
 
 ## Task 2: Validate Without Losing the Evidence (5 min)
 
-Use with [Organising and Exploring Data](../episodes/06-organising_and_exploring_data.qmd).
+Use with [Organising and Exploring Data](../episodes/02-organising_and_exploring_data.qmd).
 
 **Goal:** produce a working table and traceable change log. **Input:** the practice dataset and its source notes. Work in pairs and retain both identifiers.
 
@@ -76,7 +76,7 @@ There are **seven original rows, six unique requests, and five observed response
 
 ## Task 3: Check a Summary and Its Claim (5 min)
 
-Use with [Making Sense of Data](../episodes/07-making_sense_of_data.qmd).
+Use with [Making Sense of Data](../episodes/03-making_sense_of_data.qmd).
 
 **Goal:** calculate a checked summary and choose an appropriate display. **Input:** the documented working table from Task 2. Swap operator and checker roles.
 
@@ -97,7 +97,7 @@ An accurate statement is: “The five recorded response times in this example ra
 
 ## Task 4: Turn an Observation Into a Testable Next Step (5 min)
 
-Use with [Insight to Impact](../episodes/08-insight_to_impacts.qmd).
+Use with [Insight to Impact](../episodes/04-insight_to_impacts.qmd).
 
 **Goal:** write an evidence-to-action note without overstating the result. **Input:** the checked summary from Task 3. Work in pairs.
 

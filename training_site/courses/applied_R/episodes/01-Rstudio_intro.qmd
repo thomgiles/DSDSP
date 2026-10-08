@@ -398,3 +398,11 @@ You have a project, saved calculations and checked vector selections. Next, impo
 - [Reference](../learners/reference.qmd): terms and checking reminders.
 
 [Course Overview](../index.qmd) · [Previous](../learners/setup.qmd) · [Next](02-R_variables_intro.qmd)
+
+::: {.content-visible when-format="revealjs"}
+
+## Feedback and Register
+
+![](fig/Digital_Skills_2026_2027_QR.png){fig-alt="Scan the QR code to give feedback on Digital Skills training."}
+
+:::

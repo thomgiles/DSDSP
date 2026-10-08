@@ -19,6 +19,7 @@
   /* JS-assisted fit fallback.
      Defaults to 1 when no JS is used. */
   --rjs-fit-scale: 1;
+  --rjs-fit-content-top-offset: 50px;
   --rjs-fit-media-max-height: calc(100vh - var(--gh) - var(--gf) - 170px);
 
   /* Shared visual values */
@@ -793,7 +794,9 @@
 .reveal section.fit-slide,
 .reveal section.auto-fit {
   font-size: calc(1em * var(--rjs-fit-scale));
-  padding-top: var(--rjs-fit-top-space, 0) !important;
+  padding-top: calc(
+    var(--rjs-fit-top-space, 0px) + var(--rjs-fit-content-top-offset)
+  ) !important;
 }
 
 /* Tighter vertical spacing only on fitted slides.

@@ -40,18 +40,17 @@ Maintain that pattern where possible. Learners often understand the concept more
 
 Use [Digital Tools](../episodes/01-digital_tools.qmd) to clarify the role of Microsoft 365, SharePoint, RIS, UniCore, ORCID, and basic digital security practices. Learners often know these systems exist but not how they fit together.
 
-The lesson also includes literature discovery/reference management and writing tools. Allow **120 minutes overall**, including a 10-minute break after Digital Security. All six topics use 10 minutes teaching. The original four topics each have one five-minute activity; each new topic has three five-minute tasks. This totals 60 minutes teaching and 50 minutes activities, including room debriefs.
+The lesson also includes literature discovery/reference management and writing tools. Allow **115 minutes overall**, including a 10-minute break after Digital Security. All six topics use 10 minutes teaching. Research Identity has a ten-minute audit; the other original topics each have one five-minute task. Sections 5 and 6 each have two five-minute tasks. This totals 60 minutes teaching and 45 minutes activities, including feedback.
 
 Before delivery:
 
-- Check library access and prepare two accessible references for anyone whose search or access fails.
-- Test one EndNote or Zotero setup, including importing, duplicate checks, Word citations and export. Demonstrate one tool fully; point out the equivalent workflow in the other.
-- Prepare a separate practice library, a duplicate example and a copy of the fictional writing draft with its table already inserted. Share the draft before the writing activity so learners can begin without retyping it. Keep demonstrations separate from live research libraries and documents.
-- Check desktop Word captions, cross-references, tracked changes and an available version history. Offer the LaTeX route to existing users rather than requiring beginners to install it.
-- Pair learners so one operates and one checks, then swap. Collect actual outputs: a search log, checked references, a reading note, a cited paragraph, an export and a reviewed document.
-- Use the stated show-of-hands prompts and short reports from pairs to involve the room. Collect an unresolved access issue rather than spending the activity installing software.
+- Print or project the supplied search question, reference comparison and writing pilot. All four new tasks work on paper or in notes, without accounts or installations.
+- Use two five-minute tasks per section. Collect a search plan, checked reference and reading note, annotated structure plan, and reviewed sentence with a co-author agreement.
+- Put pair reports and feedback inside the task time. There are no separate room checks in these two sections.
+- Show worked feedback after each task. The reference records and writing pilot are fictional; do not present them as published evidence.
+- Keep any live EndNote/Zotero or Word/LaTeX demonstration optional and separate from the required tasks. Use the learner additional material for practical import, citation, export and document-editing follow-up.
 
-Use a visible five-minute timer for each task and keep reports brief. Treat the first new task as the start of each pair's workflow so they can reuse their output in the next task. Duplicate resolution, a second citation, export round-trip checks and independent renumbering are follow-up practice if they do not fit the room activity.
+Use a visible five-minute timer and take two brief reports. Each task has a supplied input and can be completed independently. Do not spend the task installing software or troubleshooting a writing integration.
 
 The writing block includes two brief AI slides derived from the separate AI course. The invented rewrite works without AI accounts or uploading research material; debrief changes in meaning, unsupported claims, verification and recording the contribution.
 
