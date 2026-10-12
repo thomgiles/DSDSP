@@ -1,5 +1,6 @@
 format:
   html:
+    fig-align: center
     toc: true
     number-sections: false
     page-layout: article
@@ -11,6 +12,7 @@ format:
     allow-html: true
 
   revealjs:
+    fig-align: center
     theme:
       - black
       - ../../../uon.scss
@@ -31,7 +33,7 @@ format:
     title-block-style: none
     include-before-body:
       - ../../../html/interactive-digital-research-background.html
-      - ../../../html/reveal-header.html  
+      - ../../../html/reveal-header.html
     include-after-body:
       - ../../../js/rjs-footer.js
       - ../../../js/rjs-slide-fit.js

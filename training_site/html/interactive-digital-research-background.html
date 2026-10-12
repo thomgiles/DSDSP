@@ -1,38 +1,13 @@
-<!doctype html>
-<html lang="en-GB">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Teaching Animation</title>
-
   <style>
-    :root {
+    #teachingScene {
       --uon-blue: #10263b;
       --uon-blue-soft: #405162;
       --uon-blue-pale: #eef1f3;
       --sky-blue: #009bc1;
       --turquoise: #37b4b0;
       --white: #ffffff;
-    }
-
-    * {
       box-sizing: border-box;
-    }
-
-    html,
-    body {
-      width: 100%;
-      height: 100%;
-      margin: 0;
-      overflow: hidden;
-      background: var(--white);
-    }
-
-    body {
       font-family: Arial, Helvetica, sans-serif;
-    }
-
-    .scene {
       position: fixed;
       inset: 0;
       z-index: 0;
@@ -45,77 +20,77 @@
       pointer-events: none;
     }
 
-    .scene.is-visible {
+    #teachingScene.is-visible {
       opacity: 1;
       visibility: visible;
     }
 
-    svg {
+    #teachingScene svg {
       width: min(92vw, 1500px);
       height: min(88vh, 840px);
       overflow: visible;
     }
 
-    .board {
+    #teachingScene .board {
       fill: var(--white);
       stroke: var(--uon-blue);
       stroke-width: 4;
       opacity: 0;
     }
 
-    .stand,
-    .chart-axis,
-    .chart-line,
-    .connector,
-    .knowledge-path {
+    #teachingScene .stand,
+    #teachingScene .chart-axis,
+    #teachingScene .chart-line,
+    #teachingScene .connector,
+    #teachingScene .knowledge-path {
       fill: none;
       stroke-linecap: round;
       stroke-linejoin: round;
     }
 
-    .stand {
+    #teachingScene .stand {
       stroke: var(--uon-blue-soft);
       stroke-width: 4;
       opacity: 0;
     }
 
-    .slide-divider {
+    #teachingScene .slide-divider {
       stroke: rgba(16, 38, 59, 0.16);
       stroke-width: 3;
       opacity: 0;
     }
 
-    .chart-axis {
+    #teachingScene .chart-axis {
       stroke: rgba(16, 38, 59, 0.36);
       stroke-width: 3;
       opacity: 0;
     }
 
-    .chart-bar {
+    #teachingScene .chart-bar {
       opacity: 0;
       transform-box: fill-box;
       transform-origin: bottom;
     }
 
-    .chart-bar.blue {
+    #teachingScene .chart-bar.blue {
       fill: var(--uon-blue);
     }
 
-    .chart-bar.sky {
+    #teachingScene .chart-bar.sky {
       fill: var(--sky-blue);
     }
 
-    .chart-bar.turquoise {
+    #teachingScene .chart-bar.turquoise {
       fill: var(--turquoise);
     }
 
-    .chart-line {
+    #teachingScene .chart-line {
       stroke: var(--uon-blue);
       stroke-width: 4;
       opacity: 0;
     }
 
-    .chart-point {
+    #teachingScene .chart-point {
       fill: var(--white);
       stroke: var(--uon-blue);
       stroke-width: 3;
@@ -124,49 +99,49 @@
       transform-origin: center;
     }
 
-    .text-line {
+    #teachingScene .text-line {
       fill: var(--uon-blue);
       opacity: 0;
       transform-box: fill-box;
       transform-origin: left center;
     }
 
-    .text-line.soft {
+    #teachingScene .text-line.soft {
       fill: var(--uon-blue-soft);
     }
 
-    .text-line.sky {
+    #teachingScene .text-line.sky {
       fill: var(--sky-blue);
     }
 
-    .text-line.turquoise {
+    #teachingScene .text-line.turquoise {
       fill: var(--turquoise);
     }
 
-    .connector {
+    #teachingScene .connector {
       stroke: rgba(16, 38, 59, 0.18);
       stroke-width: 4;
       opacity: 0;
     }
 
-    .knowledge-path {
+    #teachingScene .knowledge-path {
       stroke-width: 7;
       opacity: 0;
     }
 
-    .knowledge-path.sky {
+    #teachingScene .knowledge-path.sky {
       stroke: var(--sky-blue);
     }
 
-    .knowledge-path.turquoise {
+    #teachingScene .knowledge-path.turquoise {
       stroke: var(--turquoise);
     }
 
-    .knowledge-path.blue {
+    #teachingScene .knowledge-path.blue {
       stroke: var(--uon-blue);
     }
 
-    .node {
+    #teachingScene .node {
       fill: var(--white);
       stroke: var(--uon-blue);
       stroke-width: 4;
@@ -175,29 +150,29 @@
       transform-origin: center;
     }
 
-    .node-centre {
+    #teachingScene .node-centre {
       opacity: 0;
       transform-box: fill-box;
       transform-origin: center;
     }
 
-    .teacher-centre {
+    #teachingScene .teacher-centre {
       fill: var(--sky-blue);
     }
 
-    .student-centre.blue {
+    #teachingScene .student-centre.blue {
       fill: var(--uon-blue);
     }
 
-    .student-centre.sky {
+    #teachingScene .student-centre.sky {
       fill: var(--sky-blue);
     }
 
-    .student-centre.turquoise {
+    #teachingScene .student-centre.turquoise {
       fill: var(--turquoise);
     }
 
-    .pulse {
+    #teachingScene .pulse {
       fill: none;
       stroke-width: 3;
       opacity: 0;
@@ -205,43 +180,40 @@
       transform-origin: center;
     }
 
-    .pulse.sky {
+    #teachingScene .pulse.sky {
       stroke: var(--sky-blue);
     }
 
-    .pulse.turquoise {
+    #teachingScene .pulse.turquoise {
       stroke: var(--turquoise);
     }
 
-    .pulse.blue {
+    #teachingScene .pulse.blue {
       stroke: var(--uon-blue);
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .board,
-      .stand,
-      .slide-divider,
-      .chart-axis,
-      .chart-bar,
-      .chart-line,
-      .chart-point,
-      .text-line,
-      .connector,
-      .node,
-      .node-centre {
+      #teachingScene .board,
+      #teachingScene .stand,
+      #teachingScene .slide-divider,
+      #teachingScene .chart-axis,
+      #teachingScene .chart-bar,
+      #teachingScene .chart-line,
+      #teachingScene .chart-point,
+      #teachingScene .text-line,
+      #teachingScene .connector,
+      #teachingScene .node,
+      #teachingScene .node-centre {
         opacity: 1 !important;
         transform: none !important;
       }
 
-      .knowledge-path,
-      .pulse {
+      #teachingScene .knowledge-path,
+      #teachingScene .pulse {
         display: none;
       }
     }
   </style>
-</head>
-
-<body>
   <div class="scene" id="teachingScene" aria-hidden="true">
     <svg viewBox="0 0 1600 900" role="presentation">
       <!-- Teaching slide -->
@@ -343,8 +315,14 @@
   </div>
 
   <script>
-    (() => {
+    (function initialiseTeachingScene() {
       "use strict";
+
+      // A before-body include runs before Quarto has added the slide container.
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", initialiseTeachingScene, { once: true });
+        return;
+      }
 
       const scene = document.getElementById("teachingScene");
       if (!scene) return;
@@ -616,7 +594,10 @@
       }
 
       function updateVisibility() {
-        const visible = isFirstRevealSlide();
+        const inOverview = window.Reveal &&
+          typeof window.Reveal.isOverview === "function" &&
+          window.Reveal.isOverview();
+        const visible = isFirstRevealSlide() && !inOverview;
         scene.classList.toggle("is-visible", visible);
 
         if (visible) {
@@ -636,6 +617,8 @@
         revealBound = true;
         window.Reveal.on("ready", updateVisibility);
         window.Reveal.on("slidechanged", updateVisibility);
+        window.Reveal.on("overviewshown", updateVisibility);
+        window.Reveal.on("overviewhidden", updateVisibility);
         return true;
       }
 
@@ -665,11 +648,6 @@
         });
       }
 
-      document.addEventListener("DOMContentLoaded", () => {
-        bindReveal();
-        updateVisibility();
-      }, { once: true });
-
       window.addEventListener("load", () => {
         bindReveal();
         updateVisibility();
@@ -679,5 +657,3 @@
       updateVisibility();
     })();
   </script>
-</body>
-</html>

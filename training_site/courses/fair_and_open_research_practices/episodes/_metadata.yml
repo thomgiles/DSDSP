@@ -1,5 +1,6 @@
 format:
   html:
+    fig-align: center
     toc: true
     number-sections: false
     page-layout: article
@@ -7,6 +8,7 @@ format:
     allow-html: true
 
   revealjs:
+    fig-align: center
     theme:
       - black
       - ../../../uon.scss

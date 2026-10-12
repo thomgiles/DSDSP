@@ -1,6 +1,12 @@
 /* ===========================
    IMAGES
    =========================== */
+main.content img,
+.reveal .slides img {
+  display: block;
+  margin-inline: auto;
+}
+
 .round-img {
   width: clamp(72px, 14vw, 120px);
   height: clamp(72px, 14vw, 120px);
