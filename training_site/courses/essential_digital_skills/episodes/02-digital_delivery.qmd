@@ -37,10 +37,11 @@ metadata:
 
 ## Structure & Agenda
 
-1. Digital Delivery Principles (~15 min)
-2. Planning & Coordination in Digital Projects (~15 min)
-3. Agile Thinking and Sprint-Based Delivery (~15 min)
+1. Digital Delivery Principles (~20 min)
+2. Planning & Coordination in Digital Projects (~20 min)
+3. Agile Thinking and Sprint-Based Delivery (~20 min)
 4. Shared Ownership & Research Culture (~15 min)
+5. Examples of Agile for research (~10m)
 
 # Digital Delivery Principles
 
