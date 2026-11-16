@@ -58,6 +58,10 @@ The writing block includes two brief AI slides derived from the separate AI cour
 
 Use [Digital Delivery](../episodes/02-digital_delivery.qmd) to make project planning feel lighter and more actionable. The aim is not to impose formal agile doctrine, but to give teams language for iteration, coordination, and shared ownership.
 
+Assume no knowledge of agile. Teach the booking-guide example first: purpose and users, iteration versus increments, the four values, backlogs, priorities, task boards, completion checks, Scrum versus Kanban, and review versus retrospective. Introduce the linked research adaptations—ScrumAdemia, Agile Research Studios, Scrum for Science, the agile supervision model and SCORE—by comparing separate dissertations, research training, shared projects, supervision and research-group mentoring. Distinguish the original source contexts from suggested applications, then translate the concepts using the fictional sensor project. The research cycle is a lightweight adaptation; explain how it differs from formal Scrum.
+
+Use The Turing Way to support project planning and the NIH Team Science guide to explain written collaboration agreements. Signpost Lean Research for participant-centred fieldwork and the OLS Open Seeds curriculum for optional open-science project training. These supporting resources serve different purposes from the agile frameworks and introduce no new activity or software requirement.
+
 ### Governance and policy
 
 Use [Data Governance & Policy](../episodes/03-data_governance_and_policy.qmd) to distinguish ethics, lawful basis, data classification, and institutional compliance. Learners often collapse these into one vague idea of "policy".

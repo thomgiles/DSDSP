@@ -94,7 +94,7 @@ Connect tools, roles, systems, policies, and data decisions into workflows that 
 | Lesson | What you will tackle | Why it matters |
 |---|---|---|
 | [01 Digital Tools](episodes/01-digital_tools.qmd) | Institutional systems, researcher identity, digital security, literature discovery, reference management, and collaborative writing | Helps you find and organise evidence, choose tools, and review research writing with collaborators |
-| [02 Digital Delivery](episodes/02-digital_delivery.qmd) | Planning, coordination, sprint thinking, and shared ownership | Gives teams a more structured way to move work forward |
+| [02 Digital Delivery](episodes/02-digital_delivery.qmd) | Agile from first principles, prioritised tasks, research delivery cycles, quality checks and shared ownership | Helps teams plan reviewable work and adapt delivery while keeping scientific decisions traceable |
 | [03 Data Governance and Policy](episodes/03-data_governance_and_policy.qmd) | GDPR, ethics, classification, and compliance | Strengthens judgement around lawful, ethical, and institutionally defensible practice |
 | [04 Research Data Management](episodes/04-research_data_managment.qmd) | DMPs, storage, metadata, archiving, and FAIR reuse | Turns RDM from paperwork into practical workflow design |
 
